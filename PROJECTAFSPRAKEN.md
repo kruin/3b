@@ -51,6 +51,9 @@ Voor iedere release:
 7. Er zijn geen absolute lokale paden, localhost-verwijzingen of geheime
    gegevens opgenomen.
 8. `index.html` staat in de hoofdmap van de publicatie-ZIP.
+9. Iedere release heeft een hoger nummer in `VERSIE.txt`, `config.js` en de
+   querystring van `config.js`/`app.js` in `index.html`, zodat GitHub Pages geen
+   oude JavaScriptversie uit de CDN-cache kan blijven leveren.
 
 ## Wijzigingslog
 
@@ -75,3 +78,10 @@ Voor iedere release:
 - Spiegeltransformatie gebruikt dezelfde stipwaarden en wisselt west/oost.
 - Versie-1-browserconfiguraties worden eenmalig naar het nieuwe assenmodel
   gemigreerd.
+
+### 2026-09-13 — publicatiecontrole versie 4
+
+- Zichtbaar appversienummer toegevoegd.
+- `VERSIE.txt` als ondubbelzinnige release-identificatie toegevoegd.
+- Cachebrekende versienummers aan `config.js` en `app.js` toegevoegd.
+- Publicatie-BAT uitgebreid met map-, Git-root-, versie- en commitcontrole.

@@ -81,6 +81,7 @@
 
   function init() {
     normalizeState();
+    el("releaseVersion").textContent = START.release || "?";
     START.patterns.forEach(name => el("patternSelect").add(new Option(name, name)));
     el("patternSelect").value = currentPattern;
     el("noseDirection").value = noseDirection;

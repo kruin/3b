@@ -40,6 +40,8 @@ en wordt bij de eerste commit direct gepubliceerd.
 5. Wacht tot **Actions** en **Settings → Pages** de publicatie als geslaagd tonen.
 6. Open de publieke URL en controleer Klein/Groot, een patroon, tekenen,
    JSON-export/import en SVG-export.
+7. Controleer onderaan de app of het zichtbare versienummer overeenkomt met
+   `VERSIE.txt` uit het publicatiepakket.
 
 ## Belangrijk onderscheid
 

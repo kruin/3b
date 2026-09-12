@@ -1,0 +1,7 @@
+DRIEBAND GitHub Pages versie 4
+
+Kenmerken:
+- correcte horizontale spiegeling west/oost;
+- alle vier nummeringsassen spiegelen mee;
+- browserconfiguratie versie 2;
+- cachebrekende asset-URL's ?v=4.

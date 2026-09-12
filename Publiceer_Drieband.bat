@@ -8,6 +8,15 @@ echo ============================================================
 echo DRIEBAND - PUBLICEREN NAAR GITHUB
 echo ============================================================
 echo.
+echo Publicatiemap: %CD%
+if exist "VERSIE.txt" (
+  for /f "usebackq delims=" %%V in ("VERSIE.txt") do if not defined APP_VERSIE set "APP_VERSIE=%%V"
+  echo Lokale versie: !APP_VERSIE!
+) else (
+  echo FOUT: VERSIE.txt ontbreekt. Publicatie gestopt.
+  goto :einde_fout
+)
+echo.
 
 where git >nul 2>nul
 if errorlevel 1 (
@@ -26,6 +35,16 @@ if not exist ".git" (
   echo Eerste publicatie: lokale Git-repository wordt gemaakt.
   git init
   if errorlevel 1 goto :git_fout
+)
+
+for /f "delims=" %%G in ('git rev-parse --show-toplevel') do set "GIT_ROOT=%%G"
+for %%G in ("!GIT_ROOT!") do set "GIT_ROOT_VOLLEDIG=%%~fG"
+if /i not "!GIT_ROOT_VOLLEDIG!"=="%CD%" (
+  echo FOUT: de BAT staat niet in de hoofdmap van deze Git-repository.
+  echo Git-hoofdmap: !GIT_ROOT_VOLLEDIG!
+  echo BAT-map:      %CD%
+  echo Kopieer de INHOUD van het pakket naar de Git-hoofdmap.
+  goto :einde_fout
 )
 
 git branch -M main
@@ -69,6 +88,8 @@ if errorlevel 1 goto :git_fout
 
 echo.
 echo KLAAR: de bestanden staan op branch main van kruin/drieband.
+for /f "delims=" %%C in ('git rev-parse --short HEAD') do echo Gepushte commit: %%C
+echo Gepubliceerde versie: !APP_VERSIE!
 echo Nu kan bij GitHub Settings ^> Pages gekozen worden:
 echo   Source: Deploy from a branch
 echo   Branch: main
