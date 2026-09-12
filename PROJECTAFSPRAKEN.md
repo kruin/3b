@@ -98,3 +98,12 @@ Voor iedere release:
 - Scripts hebben nu onveranderlijke releasenamen: `config-v5.js` en `app-v5.js`.
 - Zelfstandige `controle-v5.html` toegevoegd om de online release onafhankelijk
   van lokale opslag en de hoofdapp te controleren.
+
+### 2026-09-13 — leesbare nummeringen versie 6
+
+- Stipcirkels vergroot van 2,7 naar 3,6 SVG-eenheden.
+- Nummeringen vergroot van 9 naar 13 SVG-eenheden en zwaarder gezet.
+- Lichte contrastrand rond cijfers toegevoegd voor leesbaarheid op alle zijden.
+- Meer afstand tussen nummering en stiplijn toegepast.
+- Releasebestanden hernoemd naar `config-v6.js`, `app-v6.js` en
+  `controle-v6.html`.

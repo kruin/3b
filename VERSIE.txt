@@ -1,8 +1,9 @@
-DRIEBAND GitHub Pages versie 5
+DRIEBAND GitHub Pages versie 6
 
 Kenmerken:
 - correcte horizontale spiegeling west/oost;
 - alle vier nummeringsassen spiegelen mee;
 - een canonieke westconfig; oost is alleen een gespiegelde view;
 - browserconfiguratie versie 3;
-- onveranderlijke assets `config-v5.js` en `app-v5.js`.
+- onveranderlijke assets `config-v6.js` en `app-v6.js`;
+- grotere, contrastrijke stippen en bandnummeringen.

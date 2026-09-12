@@ -298,20 +298,20 @@
 
   function drawDots(table, map) {
     let dots = `<g fill="#fff8dc" stroke="#3b291c" stroke-width=".7">`;
-    let labels = `<g fill="#3b291c" font-family="system-ui,sans-serif" font-size="9" font-weight="700">`;
+    let labels = `<g fill="#2b2118" stroke="#f7f1e5" stroke-width="3" paint-order="stroke fill" font-family="system-ui,sans-serif" font-size="13" font-weight="800">`;
     ["west", "oost"].forEach(band => {
       for (let v = 0; v <= 80; v += 10) {
         const p = map(resolveDisplayPoint({ band, value: v }, table));
-        dots += `<circle cx="${p.x}" cy="${p.y}" r="2.7"/>`;
-        const tx = p.x + (band === "west" ? -8 : 8);
-        labels += `<text x="${tx}" y="${p.y + 3}" text-anchor="${band === "west" ? "end" : "start"}">${v}</text>`;
+        dots += `<circle cx="${p.x}" cy="${p.y}" r="3.6"/>`;
+        const tx = p.x + (band === "west" ? -12 : 12);
+        labels += `<text x="${tx}" y="${p.y + 4.5}" text-anchor="${band === "west" ? "end" : "start"}">${v}</text>`;
       }
     });
     ["noord", "zuid"].forEach(band => {
       for (let v = 0; v <= 40; v += 10) {
         const p = map(resolveDisplayPoint({ band, value: v }, table));
-        dots += `<circle cx="${p.x}" cy="${p.y}" r="2.7"/>`;
-        labels += `<text x="${p.x}" y="${p.y + (band === "noord" ? -8 : 14)}" text-anchor="middle">${v}</text>`;
+        dots += `<circle cx="${p.x}" cy="${p.y}" r="3.6"/>`;
+        labels += `<text x="${p.x}" y="${p.y + (band === "noord" ? -12 : 21)}" text-anchor="middle">${v}</text>`;
       }
     });
     return dots + `</g>` + labels + `</g>`;
