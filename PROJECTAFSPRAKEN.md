@@ -51,9 +51,9 @@ Voor iedere release:
 7. Er zijn geen absolute lokale paden, localhost-verwijzingen of geheime
    gegevens opgenomen.
 8. `index.html` staat in de hoofdmap van de publicatie-ZIP.
-9. Iedere release heeft een hoger nummer in `VERSIE.txt`, `config.js` en de
-   querystring van `config.js`/`app.js` in `index.html`, zodat GitHub Pages geen
-   oude JavaScriptversie uit de CDN-cache kan blijven leveren.
+9. Iedere release heeft een hoger nummer in `VERSIE.txt`, de configuratie en de
+   bestandsnamen van de JavaScript-assets, zodat GitHub Pages geen ouder script
+   met dezelfde URL uit de CDN-cache kan blijven leveren.
 
 ## Wijzigingslog
 
@@ -85,3 +85,16 @@ Voor iedere release:
 - `VERSIE.txt` als ondubbelzinnige release-identificatie toegevoegd.
 - Cachebrekende versienummers aan `config.js` en `app.js` toegevoegd.
 - Publicatie-BAT uitgebreid met map-, Git-root-, versie- en commitcontrole.
+
+### 2026-09-13 — redesign spiegeling en publicatie versie 5
+
+- Eén canonieke westconfig ingevoerd; wisselen van view muteert nooit meer de
+  opgeslagen lijnconfiguratie.
+- Oost wordt uitsluitend tijdens weergave exact horizontaal gespiegeld.
+- In de oost-view tonen en bewerken bandkeuzes de gespiegelde bandnaam, terwijl
+  intern de canonieke westconfig behouden blijft.
+- Alle vier nummeringsassen gebruiken dezelfde viewtransformatie.
+- Configuraties uit opslagversie 1 en 2 worden naar canoniek west gemigreerd.
+- Scripts hebben nu onveranderlijke releasenamen: `config-v5.js` en `app-v5.js`.
+- Zelfstandige `controle-v5.html` toegevoegd om de online release onafhankelijk
+  van lokale opslag en de hoofdapp te controleren.

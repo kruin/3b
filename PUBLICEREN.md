@@ -35,13 +35,15 @@ en wordt bij de eerste commit direct gepubliceerd.
 
 1. Bewaar eerst eventueel lokaal ingevoerde configuraties via **Config**.
 2. Vervang in de repository de programmabestanden door de nieuwe versie.
-3. Controleer dat `index.html`, `styles.css`, `app.js` en `config.js` aanwezig zijn.
+3. Controleer dat `index.html`, `styles.css`, `app-v5.js`, `config-v5.js` en
+   `VERSIE.txt` aanwezig zijn.
 4. Commit met een herkenbare omschrijving en push naar `main`.
 5. Wacht tot **Actions** en **Settings → Pages** de publicatie als geslaagd tonen.
 6. Open de publieke URL en controleer Klein/Groot, een patroon, tekenen,
    JSON-export/import en SVG-export.
 7. Controleer onderaan de app of het zichtbare versienummer overeenkomt met
    `VERSIE.txt` uit het publicatiepakket.
+8. Open `/controle-v5.html`; daar moet geladen configuratieversie `5` staan.
 
 ## Belangrijk onderscheid
 

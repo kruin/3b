@@ -3,7 +3,7 @@
 
   const START = window.TAFEL_STARTCONFIG;
   const STORAGE_KEY = "tafel-lijnconfig-v1";
-  const STATE_VERSION = 2;
+  const STATE_VERSION = 3;
   const bandOptions = ["west", "noord", "oost", "zuid"];
   const bandLabels = { west: "West", noord: "Noord", oost: "Oost", zuid: "Zuid" };
   function el(id) { return document.getElementById(id); }
@@ -13,11 +13,11 @@
   let currentPattern = state.ui?.pattern || "VIJF";
   let noseDirection = state.ui?.noseDirection || "west";
 
-  function blankPattern(direction = "west") {
+  function blankPattern() {
     const pattern = {};
     START.lines.forEach(line => {
       pattern[line.key] = line.key === "neus"
-        ? { from: { kind: "acquit", value: "Z" }, to: { band: direction, value: null } }
+        ? { from: { kind: "acquit", value: "Z" }, to: { band: "west", value: null } }
         : { from: { band: "", value: null }, to: { band: "", value: null } };
     });
     return pattern;
@@ -39,19 +39,21 @@
   function loadState() {
     try {
       const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
-      if (saved?.data && (saved.version === 1 || saved.version === STATE_VERSION)) return migrateState(saved);
+      if (saved?.data && [1, 2, STATE_VERSION].includes(saved.version)) return migrateState(saved);
     } catch (_) {}
     return { version: STATE_VERSION, data: buildInitialData(), ui: { table: "groot", pattern: "VIJF", noseDirection: "west" } };
   }
 
   function migrateState(saved) {
-    if (saved.version === 1) {
+    if (saved.version === 1 || saved.version === 2) {
+      const oldVersion = saved.version;
       Object.values(saved.data).forEach(patterns => Object.values(patterns || {}).forEach(pattern => {
         if (pattern?.neus?.to?.band !== "oost") return;
         Object.values(pattern).forEach(segment => [segment?.from, segment?.to].forEach(point => {
-          if ((point?.band === "noord" || point?.band === "zuid") && Number.isFinite(Number(point.value))) {
+          if (oldVersion === 1 && (point?.band === "noord" || point?.band === "zuid") && Number.isFinite(Number(point.value))) {
             point.value = 40 - Number(point.value);
           }
+          if (point?.band) point.band = mirrorBand(point.band);
         }));
       }));
       saved.version = STATE_VERSION;
@@ -94,18 +96,14 @@
       const button = event.target.closest("button[data-table]");
       if (!button) return;
       currentTable = button.dataset.table;
-      noseDirection = currentData().neus?.to?.band || "west";
       saveState(); render();
     });
     el("patternSelect").addEventListener("change", event => {
       currentPattern = event.target.value;
-      noseDirection = currentData().neus?.to?.band || "west";
       saveState(); render();
     });
     el("noseDirection").addEventListener("change", event => {
-      const previous = noseDirection;
       noseDirection = event.target.value;
-      mirrorCurrentPattern(previous, noseDirection);
       saveState(); render();
     });
     el("exportSvg").addEventListener("click", exportSvg);
@@ -120,31 +118,19 @@
     return band;
   }
 
-  function mirrorValue(band, value) {
-    if (value === null || value === "" || !Number.isFinite(Number(value))) return value;
-    return Number(value);
+  function viewBand(band) {
+    return noseDirection === "oost" ? mirrorBand(band) : band;
   }
 
-  function mirrorCurrentPattern(previous, next) {
-    if (previous === next) return;
-    Object.values(currentData()).forEach(segment => {
-      [segment.from, segment.to].forEach(point => {
-        if (point.kind === "acquit") return;
-        const oldBand = point.band;
-        point.value = mirrorValue(oldBand, point.value);
-        point.band = mirrorBand(oldBand);
-      });
-    });
-    const nose = currentData().neus;
-    nose.from = { kind: "acquit", value: "Z" };
-    nose.to.band = next;
+  function storedBand(band) {
+    return noseDirection === "oost" ? mirrorBand(band) : band;
   }
 
   function render() {
     [...el("tableButtons").querySelectorAll("button")].forEach(button => button.classList.toggle("active", button.dataset.table === currentTable));
     el("noseDirection").value = noseDirection;
     el("editorTitle").textContent = `${START.tables[currentTable].label} · ${currentPattern}`;
-    el("drawingTitle").textContent = `${currentPattern} · ${START.tables[currentTable].label}`;
+    el("drawingTitle").textContent = `${currentPattern} · ${START.tables[currentTable].label} · neuslijn ${noseDirection}`;
     renderRows();
     renderDrawing();
   }
@@ -167,10 +153,10 @@
         fixed.innerHTML = `<span class="fixed-z">Z</span>`;
         tr.append(fixed);
       } else {
-        tr.append(makeBandCell(line.key, "from", segment.from.band));
+        tr.append(makeBandCell(line.key, "from", viewBand(segment.from.band)));
         tr.append(makeValueCell(line.key, "from", segment.from.value));
       }
-      tr.append(makeBandCell(line.key, "to", segment.to.band));
+      tr.append(makeBandCell(line.key, "to", viewBand(segment.to.band)));
       tr.append(makeValueCell(line.key, "to", segment.to.value));
 
       const clearCell = document.createElement("td");
@@ -204,13 +190,14 @@
   }
 
   function updatePoint(lineKey, side, field, value) {
+    if (field === "band") value = storedBand(value);
     currentData()[lineKey][side][field] = value;
     saveState(); renderDrawing();
   }
 
   function clearLine(lineKey) {
     currentData()[lineKey] = lineKey === "neus"
-      ? { from: { kind: "acquit", value: "Z" }, to: { band: noseDirection, value: null } }
+      ? { from: { kind: "acquit", value: "Z" }, to: { band: "west", value: null } }
       : { from: { band: "", value: null }, to: { band: "", value: null } };
   }
 
@@ -236,14 +223,20 @@
     const { widthCm: w, heightCm: h, dotOffsetCm: d } = table;
     if (point.kind === "acquit") return { x: w / 2, y: h * .75 };
     const v = Number(point.value);
-    const mirrored = noseDirection === "oost";
+    let resolved;
     switch (point.band) {
-      case "west": return { x: -d, y: (mirrored ? v / 80 : 1 - v / 80) * h };
-      case "oost": return { x: w + d, y: (mirrored ? 1 - v / 80 : v / 80) * h };
-      case "noord": return { x: (mirrored ? 1 - v / 40 : v / 40) * w, y: -d };
-      case "zuid": return { x: (mirrored ? v / 40 : 1 - v / 40) * w, y: h + d };
+      case "west": resolved = { x: -d, y: (1 - v / 80) * h }; break;
+      case "oost": resolved = { x: w + d, y: (v / 80) * h }; break;
+      case "noord": resolved = { x: (v / 40) * w, y: -d }; break;
+      case "zuid": resolved = { x: (1 - v / 40) * w, y: h + d }; break;
       default: return null;
     }
+    return noseDirection === "oost" ? { x: w - resolved.x, y: resolved.y } : resolved;
+  }
+
+  function resolveDisplayPoint(point, table) {
+    const canonical = { ...point, band: noseDirection === "oost" ? mirrorBand(point.band) : point.band };
+    return resolvePoint(canonical, table);
   }
 
   const esc = value => String(value).replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
@@ -308,7 +301,7 @@
     let labels = `<g fill="#3b291c" font-family="system-ui,sans-serif" font-size="9" font-weight="700">`;
     ["west", "oost"].forEach(band => {
       for (let v = 0; v <= 80; v += 10) {
-        const p = map(resolvePoint({ band, value: v }, table));
+        const p = map(resolveDisplayPoint({ band, value: v }, table));
         dots += `<circle cx="${p.x}" cy="${p.y}" r="2.7"/>`;
         const tx = p.x + (band === "west" ? -8 : 8);
         labels += `<text x="${tx}" y="${p.y + 3}" text-anchor="${band === "west" ? "end" : "start"}">${v}</text>`;
@@ -316,7 +309,7 @@
     });
     ["noord", "zuid"].forEach(band => {
       for (let v = 0; v <= 40; v += 10) {
-        const p = map(resolvePoint({ band, value: v }, table));
+        const p = map(resolveDisplayPoint({ band, value: v }, table));
         dots += `<circle cx="${p.x}" cy="${p.y}" r="2.7"/>`;
         labels += `<text x="${p.x}" y="${p.y + (band === "noord" ? -8 : 14)}" text-anchor="middle">${v}</text>`;
       }
@@ -339,7 +332,7 @@
     const file = event.target.files[0]; if (!file) return;
     try {
       const imported = JSON.parse(await file.text());
-      if (!imported?.data || (imported.version !== 1 && imported.version !== STATE_VERSION)) throw new Error("Onbekende configuratie-indeling");
+      if (!imported?.data || ![1, 2, STATE_VERSION].includes(imported.version)) throw new Error("Onbekende configuratie-indeling");
       const migrated = migrateState(imported);
       state.version = STATE_VERSION; state.data = migrated.data; state.ui = migrated.ui || state.ui; normalizeState();
       currentTable = state.ui.table || "groot"; currentPattern = state.ui.pattern || "VIJF"; noseDirection = state.ui.noseDirection || "west";

@@ -31,6 +31,25 @@ if not exist "index.html" (
   goto :einde_fout
 )
 
+if not exist "app-v5.js" (
+  echo FOUT: app-v5.js ontbreekt. Dit is geen volledig versie-5-pakket.
+  goto :einde_fout
+)
+if not exist "config-v5.js" (
+  echo FOUT: config-v5.js ontbreekt. Dit is geen volledig versie-5-pakket.
+  goto :einde_fout
+)
+findstr /C:"app-v5.js" "index.html" >nul
+if errorlevel 1 (
+  echo FOUT: index.html verwijst niet naar app-v5.js.
+  goto :einde_fout
+)
+findstr /C:"config-v5.js" "index.html" >nul
+if errorlevel 1 (
+  echo FOUT: index.html verwijst niet naar config-v5.js.
+  goto :einde_fout
+)
+
 if not exist ".git" (
   echo Eerste publicatie: lokale Git-repository wordt gemaakt.
   git init
@@ -85,6 +104,15 @@ echo.
 echo Publiceren naar GitHub...
 git push -u origin main
 if errorlevel 1 goto :git_fout
+
+for /f "delims=" %%L in ('git rev-parse HEAD') do set "LOKALE_COMMIT=%%L"
+for /f "tokens=1" %%R in ('git ls-remote origin refs/heads/main') do set "REMOTE_COMMIT=%%R"
+if /i not "!LOKALE_COMMIT!"=="!REMOTE_COMMIT!" (
+  echo FOUT: origin/main wijst niet naar de zojuist gecontroleerde lokale commit.
+  echo Lokaal: !LOKALE_COMMIT!
+  echo GitHub: !REMOTE_COMMIT!
+  goto :einde_fout
+)
 
 echo.
 echo KLAAR: de bestanden staan op branch main van kruin/drieband.
