@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TAFEL — lijnconfigurator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">LKLK · lokale werkconfig</p>
+      <h1>TAFEL lijnconfigurator</h1>
+      <p class="subtitle">Vul stipwaarden in en bekijk de volledige loop direct.</p>
+    </div>
+    <div class="save-state" id="saveState" aria-live="polite">Lokaal opgeslagen</div>
+  </header>
+
+  <main>
+    <section class="controls panel" aria-label="Keuzes">
+      <div class="control-group">
+        <span class="label">Tafel</span>
+        <div class="segmented" id="tableButtons">
+          <button type="button" data-table="klein">Klein</button>
+          <button type="button" data-table="groot" class="active">Groot</button>
+        </div>
+      </div>
+      <label class="control-group">
+        <span class="label">Naam</span>
+        <select id="patternSelect"></select>
+      </label>
+      <label class="control-group">
+        <span class="label">Neuslijn</span>
+        <select id="noseDirection">
+          <option value="west">Naar west — standaard</option>
+          <option value="oost">Naar oost — gespiegeld</option>
+        </select>
+      </label>
+      <div class="actions">
+        <button type="button" id="exportSvg">SVG</button>
+        <button type="button" id="exportJson">Config</button>
+        <label class="file-button">Importeer<input id="importJson" type="file" accept="application/json"></label>
+        <button type="button" id="resetPattern" class="danger">Wis naam</button>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <article class="editor panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">On-screen config</p>
+            <h2 id="editorTitle">Groot · VIJF</h2>
+          </div>
+          <span class="status-pill" id="completionStatus">0/7 lijnen</span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Lijn</th>
+                <th colspan="2">V · vertrek</th>
+                <th colspan="2">A · aankomst</th>
+                <th></th>
+              </tr>
+              <tr class="subhead">
+                <th></th><th>Band</th><th>Waarde</th><th>Band</th><th>Waarde</th><th></th>
+              </tr>
+            </thead>
+            <tbody id="lineRows"></tbody>
+          </table>
+        </div>
+        <p class="help">Lange stiplijnen: 0–80. Korte stiplijnen: 0–40. Vertrek neuslijn is altijd Z. Berekende decimalen mogen blijven staan.</p>
+        <div id="messages" class="messages" aria-live="polite"></div>
+      </article>
+
+      <article class="drawing panel">
+        <div class="section-heading drawing-heading">
+          <div>
+            <p class="eyebrow">Directe weergave</p>
+            <h2 id="drawingTitle">VIJF · Groot</h2>
+          </div>
+          <span class="legend-dot"></span>
+        </div>
+        <div id="svgMount" class="svg-mount"></div>
+      </article>
+    </section>
+  </main>
+
+  <footer>Alle punten zijn lijnpunten op de vier stiplijnen · bandrand is geen rekenlijn · gegevens blijven in deze browser.</footer>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

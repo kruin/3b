@@ -1,0 +1,89 @@
+@echo off
+setlocal EnableDelayedExpansion
+cd /d "%~dp0"
+
+set "DRIEBAND_REMOTE=https://github.com/kruin/drieband.git"
+
+echo ============================================================
+echo DRIEBAND - PUBLICEREN NAAR GITHUB
+echo ============================================================
+echo.
+
+where git >nul 2>nul
+if errorlevel 1 (
+  echo FOUT: Git is niet geinstalleerd of niet beschikbaar in PATH.
+  echo Installeer Git for Windows en voer deze BAT daarna opnieuw uit.
+  goto :einde_fout
+)
+
+if not exist "index.html" (
+  echo FOUT: index.html ontbreekt in deze map.
+  echo Pak de volledige ZIP uit en start de BAT vanuit die uitgepakte map.
+  goto :einde_fout
+)
+
+if not exist ".git" (
+  echo Eerste publicatie: lokale Git-repository wordt gemaakt.
+  git init
+  if errorlevel 1 goto :git_fout
+)
+
+git branch -M main
+if errorlevel 1 goto :git_fout
+
+git remote get-url origin >nul 2>nul
+if errorlevel 1 (
+  git remote add origin "%DRIEBAND_REMOTE%"
+  if errorlevel 1 goto :git_fout
+) else (
+  for /f "delims=" %%R in ('git remote get-url origin') do set "BESTAANDE_REMOTE=%%R"
+  if /i not "!BESTAANDE_REMOTE!"=="%DRIEBAND_REMOTE%" (
+    echo FOUT: deze map heeft al een andere GitHub-koppeling:
+    git remote get-url origin
+    echo Verwacht: %DRIEBAND_REMOTE%
+    echo De koppeling is voor de veiligheid niet gewijzigd.
+    goto :einde_fout
+  )
+)
+
+git add .
+if errorlevel 1 goto :git_fout
+
+git diff --cached --quiet
+if errorlevel 1 (
+  git commit -m "Werk Drieband-app bij"
+  if errorlevel 1 (
+    echo.
+    echo De commit is niet gemaakt. Controleer of Git je naam en e-mailadres kent.
+    echo Zie PUBLICEREN.md onder Problemen oplossen.
+    goto :einde_fout
+  )
+) else (
+  echo Geen nieuwe of gewijzigde bestanden om te committen.
+)
+
+echo.
+echo Publiceren naar GitHub...
+git push -u origin main
+if errorlevel 1 goto :git_fout
+
+echo.
+echo KLAAR: de bestanden staan op branch main van kruin/drieband.
+echo Nu kan bij GitHub Settings ^> Pages gekozen worden:
+echo   Source: Deploy from a branch
+echo   Branch: main
+echo   Folder: /(root)
+echo Daarna wordt de site: https://kruin.github.io/drieband/
+echo.
+pause
+exit /b 0
+
+:git_fout
+echo.
+echo FOUT: Git kon de opdracht niet voltooien.
+echo Lees de foutmelding hierboven. Er is niets automatisch verwijderd.
+
+:einde_fout
+echo.
+pause
+exit /b 1
