@@ -23,6 +23,9 @@ bijgewerkt.
 - VIJF t/m TWAALF zijn afzonderlijk selecteerbaar.
 - De neuslijn vertrekt standaard uit Z; overige lijnwaarden bestaan uit V en A.
 - Bekende stipwaarden: west/oost 0–80 en noord/zuid 0–40.
+- Bij spiegelen van neuslijn west naar oost spiegelen ook alle vier zichtbare
+  nummeringsassen. Dezelfde stipwaarde blijft dezelfde waarde in het gekozen
+  perspectief; west/oost wisselen als bandzijde.
 - Stiplijnen liggen 9,5 cm buiten de bandrand.
 - Baldiameter: 61,5 mm.
 
@@ -64,3 +67,11 @@ Voor iedere release:
 - `Publiceer_Drieband.bat` toegevoegd voor initialisatie, eerste commit en push.
 - Vastgelegd dat de echte `index.html` wordt geplaatst; geen lege tussenpagina.
 - BAT stopt veilig bij een afwijkende bestaande Git-remote.
+
+### 2026-09-13 — gespiegelde nummeringen
+
+- Nummeringen op alle vier stiplijnen zichtbaar gemaakt.
+- Nummeringsrichting spiegelt mee met neuslijn west/oost.
+- Spiegeltransformatie gebruikt dezelfde stipwaarden en wisselt west/oost.
+- Versie-1-browserconfiguraties worden eenmalig naar het nieuwe assenmodel
+  gemigreerd.

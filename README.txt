@@ -21,6 +21,8 @@ Gebruik
 
 De neuslijn vertrekt altijd vanuit Z. Stipwaarden lopen op west/oost van 0–80
 en op noord/zuid van 0–40. De vier stiplijnen liggen 9,5 cm buiten de bandrand.
+Bij keuze “Naar oost — gespiegeld” spiegelen de lijnen en de nummeringen op alle
+vier stiplijnen samen.
 
 Bewaren
 -------

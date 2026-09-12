@@ -3,6 +3,7 @@
 
   const START = window.TAFEL_STARTCONFIG;
   const STORAGE_KEY = "tafel-lijnconfig-v1";
+  const STATE_VERSION = 2;
   const bandOptions = ["west", "noord", "oost", "zuid"];
   const bandLabels = { west: "West", noord: "Noord", oost: "Oost", zuid: "Zuid" };
   function el(id) { return document.getElementById(id); }
@@ -38,9 +39,24 @@
   function loadState() {
     try {
       const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
-      if (saved?.version === 1 && saved.data) return saved;
+      if (saved?.data && (saved.version === 1 || saved.version === STATE_VERSION)) return migrateState(saved);
     } catch (_) {}
-    return { version: 1, data: buildInitialData(), ui: { table: "groot", pattern: "VIJF", noseDirection: "west" } };
+    return { version: STATE_VERSION, data: buildInitialData(), ui: { table: "groot", pattern: "VIJF", noseDirection: "west" } };
+  }
+
+  function migrateState(saved) {
+    if (saved.version === 1) {
+      Object.values(saved.data).forEach(patterns => Object.values(patterns || {}).forEach(pattern => {
+        if (pattern?.neus?.to?.band !== "oost") return;
+        Object.values(pattern).forEach(segment => [segment?.from, segment?.to].forEach(point => {
+          if ((point?.band === "noord" || point?.band === "zuid") && Number.isFinite(Number(point.value))) {
+            point.value = 40 - Number(point.value);
+          }
+        }));
+      }));
+      saved.version = STATE_VERSION;
+    }
+    return saved;
   }
 
   function normalizeState() {
@@ -105,7 +121,6 @@
 
   function mirrorValue(band, value) {
     if (value === null || value === "" || !Number.isFinite(Number(value))) return value;
-    if (band === "noord" || band === "zuid") return 40 - Number(value);
     return Number(value);
   }
 
@@ -220,11 +235,12 @@
     const { widthCm: w, heightCm: h, dotOffsetCm: d } = table;
     if (point.kind === "acquit") return { x: w / 2, y: h * .75 };
     const v = Number(point.value);
+    const mirrored = noseDirection === "oost";
     switch (point.band) {
-      case "west": return { x: -d, y: h - (v / 80) * h };
-      case "oost": return { x: w + d, y: (v / 80) * h };
-      case "noord": return { x: (v / 40) * w, y: -d };
-      case "zuid": return { x: w - (v / 40) * w, y: h + d };
+      case "west": return { x: -d, y: (mirrored ? v / 80 : 1 - v / 80) * h };
+      case "oost": return { x: w + d, y: (mirrored ? 1 - v / 80 : v / 80) * h };
+      case "noord": return { x: (mirrored ? 1 - v / 40 : v / 40) * w, y: -d };
+      case "zuid": return { x: (mirrored ? v / 40 : 1 - v / 40) * w, y: h + d };
       default: return null;
     }
   }
@@ -262,7 +278,7 @@
       `<line x1="${x+fieldW+d}" y1="${y}" x2="${x+fieldW+d}" y2="${y+fieldH}"/>`+
       `<line x1="${x}" y1="${y-d}" x2="${x+fieldW}" y2="${y-d}"/>`+
       `<line x1="${x}" y1="${y+fieldH+d}" x2="${x+fieldW}" y2="${y+fieldH+d}"/></g>`;
-    svg += drawDots(x, y, fieldW, fieldH, d);
+    svg += drawDots(table, map);
     svg += `<defs><marker id="arrow" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0 0L9 3.5L0 7Z" fill="context-stroke"/></marker></defs>`;
 
     segments.forEach(line => {
@@ -286,17 +302,25 @@
     el("svgMount").innerHTML = svg;
   }
 
-  function drawDots(x, y, w, h, d) {
-    let s = `<g fill="#fff8dc" stroke="#3b291c" stroke-width=".7">`;
-    for (let v = 0; v <= 80; v += 10) {
-      const yw = y + h - (v/80)*h, yo = y + (v/80)*h;
-      s += `<circle cx="${x-d}" cy="${yw}" r="2.7"/><circle cx="${x+w+d}" cy="${yo}" r="2.7"/>`;
-    }
-    for (let v = 0; v <= 40; v += 10) {
-      const xn = x + (v/40)*w, xs = x + w - (v/40)*w;
-      s += `<circle cx="${xn}" cy="${y-d}" r="2.7"/><circle cx="${xs}" cy="${y+h+d}" r="2.7"/>`;
-    }
-    return s + `</g>`;
+  function drawDots(table, map) {
+    let dots = `<g fill="#fff8dc" stroke="#3b291c" stroke-width=".7">`;
+    let labels = `<g fill="#3b291c" font-family="system-ui,sans-serif" font-size="9" font-weight="700">`;
+    ["west", "oost"].forEach(band => {
+      for (let v = 0; v <= 80; v += 10) {
+        const p = map(resolvePoint({ band, value: v }, table));
+        dots += `<circle cx="${p.x}" cy="${p.y}" r="2.7"/>`;
+        const tx = p.x + (band === "west" ? -8 : 8);
+        labels += `<text x="${tx}" y="${p.y + 3}" text-anchor="${band === "west" ? "end" : "start"}">${v}</text>`;
+      }
+    });
+    ["noord", "zuid"].forEach(band => {
+      for (let v = 0; v <= 40; v += 10) {
+        const p = map(resolvePoint({ band, value: v }, table));
+        dots += `<circle cx="${p.x}" cy="${p.y}" r="2.7"/>`;
+        labels += `<text x="${p.x}" y="${p.y + (band === "noord" ? -8 : 14)}" text-anchor="middle">${v}</text>`;
+      }
+    });
+    return dots + `</g>` + labels + `</g>`;
   }
 
   function download(name, content, type) {
@@ -314,8 +338,9 @@
     const file = event.target.files[0]; if (!file) return;
     try {
       const imported = JSON.parse(await file.text());
-      if (imported?.version !== 1 || !imported.data) throw new Error("Onbekende configuratie-indeling");
-      state.data = imported.data; state.ui = imported.ui || state.ui; normalizeState();
+      if (!imported?.data || (imported.version !== 1 && imported.version !== STATE_VERSION)) throw new Error("Onbekende configuratie-indeling");
+      const migrated = migrateState(imported);
+      state.version = STATE_VERSION; state.data = migrated.data; state.ui = migrated.ui || state.ui; normalizeState();
       currentTable = state.ui.table || "groot"; currentPattern = state.ui.pattern || "VIJF"; noseDirection = state.ui.noseDirection || "west";
       el("patternSelect").value = currentPattern; el("noseDirection").value = noseDirection;
       saveState(); render();
