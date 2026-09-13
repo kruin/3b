@@ -1,4 +1,4 @@
-# Projectafspraken TAFEL
+# Projectafspraken 3B
 
 Dit document wordt bij iedere functionele of technische projectwijziging
 bijgewerkt.
@@ -6,8 +6,8 @@ bijgewerkt.
 ## Publicatiemodel
 
 - Doelplatform: GitHub Pages (`github.io`).
-- Repository: `https://github.com/kruin/drieband`.
-- Publieke app: `https://kruin.github.io/drieband/`.
+- Repository: `https://github.com/kruin/3b`.
+- Publieke app: `https://kruin.github.io/3b/`.
 - De productie-app blijft statisch: HTML, CSS en client-side JavaScript.
 - Iedere nieuwe specificatie wordt gecontroleerd op GitHub Pages-compatibiliteit.
 - Functies die accounts, centrale opslag, automatische synchronisatie, geheime
@@ -21,7 +21,7 @@ bijgewerkt.
 - Overdracht en reservekop verlopen via JSON-export en JSON-import.
 - Klein en Groot hebben gescheiden configuraties.
 - VIJF t/m TWAALF zijn afzonderlijk selecteerbaar.
-- De neuslijn vertrekt standaard uit Z; overige lijnwaarden bestaan uit V en A.
+- Neus vertrekt standaard uit Z; overige delen bestaan uit V en A.
 - Bekende stipwaarden: west/oost 0–80 en noord/zuid 0–40.
 - Bij spiegelen van neuslijn west naar oost spiegelen ook alle vier zichtbare
   nummeringsassen. Dezelfde stipwaarde blijft dezelfde waarde in het gekozen
@@ -35,8 +35,14 @@ bijgewerkt.
 - ZES t/m TWAALF zijn voorlopig leeg.
 - Geen effect-, fysica- of ervaringscorrecties zolang daarvoor geen geldige
   gegevens zijn vastgelegd.
-- Benamingen zijn: neus/neuslijn, kop/koplijn, nek/neklijn, romp/romplijn,
-  kruis/kruislijn, linkerbeen/linkerbeenlijn en rechterbeen/rechterbeenlijn.
+- Benamingen zijn: Neus, Kop, Nek, Romp, Kruis en Been.
+- Engels is de standaardtaal; Nederlands is on-screen selecteerbaar.
+- De weergave kan Groot, Klein of Beide tonen. Bij Beide kiest de gebruiker
+  expliciet welke tafel in het invoerscherm wordt bewerkt.
+- De vertrekkeuze is Neus of Verkorte 4-bander. In de verkorte weergave
+  verdwijnt Neus en wordt Kop het eerste deel op basis van zijn eigen V en A.
+- Beide speelvlakken hebben dezelfde beeldmaat. De fysieke tafelmaten en vaste
+  stiplijnafstand van 9,5 cm bepalen wel hun eigen geometrie.
 
 ## Publicatiecontrole
 
@@ -56,6 +62,16 @@ Voor iedere release:
    met dezelfde URL uit de CDN-cache kan blijven leveren.
 
 ## Wijzigingslog
+
+### 2026-09-13 — 3B versie 9
+
+- Project- en publicatienaam gewijzigd van `drieband` naar `3b`.
+- Tweetalige interface toegevoegd, met Engels als standaard.
+- Groot/Klein/Beide, West/Oost en vertrekkeuze on-screen configureerbaar.
+- Twee benen samengevoegd tot Been; het achtervoegsel “lijn” verwijderd.
+- Mijn tafels/My tables vervangt Config als JSON-download.
+- Nieuwe geïsoleerde browseropslag voorkomt invloed van oudere releases.
+- Publicatiecontrole wacht maximaal tien minuten en keurt uitsluitend v9 goed.
 
 ### 2026-09-12 — publicatiepakket v1
 

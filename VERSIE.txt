@@ -1,10 +1,10 @@
-DRIEBAND GitHub Pages versie 8
+3B GitHub Pages versie 9
 
-Kenmerken:
-- correcte horizontale spiegeling west/oost;
-- alle vier nummeringsassen spiegelen mee;
-- een canonieke westconfig; oost is alleen een gespiegelde view;
-- browserconfiguratie versie 3;
-- onveranderlijke assets `config-v8.js` en `app-v8.js`;
-- grotere, contrastrijke stippen en bandnummeringen.
-- schone canonieke browseropslag `drieband-canoniek-west-v1`.
+- Engels standaard; Nederlands selecteerbaar.
+- Tafelkeuze Groot, Klein of Beide; richting West of gespiegeld Oost.
+- Vertrekkeuze Neus of Verkorte 4-bander.
+- Bij Verkorte 4-bander verdwijnt Neus en gebruikt Kop zijn eigen V en A.
+- Namen: Neus, Kop, Nek, Romp, Kruis, Been.
+- Speelvlakken visueel even groot; maat en 9,5 cm blijven tafelafhankelijk.
+- Stippen en nummeringen staan op het bruine hout.
+- Opslagruimte 3b-canonical-west-v2; assets config-v9.js en app-v9.js.

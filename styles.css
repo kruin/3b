@@ -65,8 +65,10 @@ td input.invalid, td select.invalid { border-color: #b83434; background: #fff1ef
 .drawing { position: sticky; top: 12px; }
 .drawing-heading { margin-bottom: 4px; }
 .legend-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 5px rgba(23,105,210,.14); }
-.svg-mount { display: grid; place-items: center; min-height: 650px; }
+.svg-mount { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; place-items: start center; min-height: 650px; }
+.drawing-card { width: 100%; display: grid; place-items: center; }
 .svg-mount svg { display: block; width: 100%; max-height: 75vh; }
+.edit-table-control[hidden] { display: none; }
 .empty-note { color: #fce9bb; font-size: 13px; font-weight: 700; }
 
 footer { padding: 0 24px 28px; text-align: center; color: #766959; font-size: 13px; }

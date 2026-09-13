@@ -1,110 +1,34 @@
-# TAFEL publiceren via GitHub Pages
+# 3B publiceren via GitHub Pages
 
-## Eenmalige inrichting
+Repository: `https://github.com/kruin/3b`  
+Website: `https://kruin.github.io/3b/`
 
-1. Meld je aan bij GitHub en maak de repository `drieband`.
-2. Pak de distributie-ZIP uit.
-3. Plaats **de inhoud** van de ZIP in de hoofdmap van de repository. `index.html`
-   moet dus rechtstreeks in de repository staan, niet in een extra submap.
-4. Commit en push de bestanden naar de branch `main`.
-5. Open in GitHub: **Settings → Pages**.
-6. Kies bij **Build and deployment**:
-   - Source: **Deploy from a branch**
-   - Branch: **main**
-   - Folder: **/(root)**
-7. Klik **Save**. Na de eerste publicatie staat de app normaal op:
-   `https://kruin.github.io/drieband/`
+## Eerste inrichting
 
-## Eerste inhoud plaatsen met de BAT
+1. Hernoem of maak de repository `3b`.
+2. Plaats de inhoud van dit pakket rechtstreeks in de hoofdmap; `index.html`
+   moet dus in de root staan.
+3. Start `Publiceer_3B.bat`.
+4. Kies op GitHub bij **Settings → Pages**: **Deploy from a branch**,
+   branch **main**, map **/(root)**.
 
-GitHub toont branch `main` pas nadat de repository ten minste één commit heeft.
-Daarom staat `Publiceer_Drieband.bat` in het pakket:
+## Iedere release
 
-1. Pak de volledige ZIP uit.
-2. Controleer dat `index.html` en `Publiceer_Drieband.bat` in dezelfde map staan.
-3. Dubbelklik op `Publiceer_Drieband.bat`.
-4. Meld je bij GitHub aan wanneer Git daarom vraagt.
-5. De BAT maakt zo nodig de lokale repository en branch `main`, koppelt
-   `https://github.com/kruin/drieband.git`, commit de echte app en pusht deze.
-6. Open daarna **Settings → Pages** en selecteer `main` en `/(root)`.
+Vervang de bestanden in de lokale clone en start `Publiceer_3B.bat`. De BAT:
 
-De BAT maakt bewust geen lege `index.html`: de echte startpagina is al aanwezig
-en wordt bij de eerste commit direct gepubliceerd.
+- weigert een andere remote dan `kruin/3b`;
+- controleert alle versie-9-bestanden vóór commit en push;
+- vergelijkt lokale commit en `origin/main`;
+- wacht maximaal tien minuten op GitHub Pages;
+- meldt pas KLAAR als de publieke site werkelijk `app-v9.js`,
+  `config-v9.js` en versie 9 levert.
 
-## Bij iedere nieuwe versie
+Controleer aanvullend `https://kruin.github.io/3b/controle-v9.html`.
 
-1. Bewaar eerst eventueel lokaal ingevoerde configuraties via **Config**.
-2. Vervang in de repository de programmabestanden door de nieuwe versie.
-3. Controleer dat `index.html`, `styles.css`, `app-v8.js`, `config-v8.js` en
-   `VERSIE.txt` aanwezig zijn.
-4. Commit met een herkenbare omschrijving en push naar `main`.
-5. Wacht tot **Actions** en **Settings → Pages** de publicatie als geslaagd tonen.
-6. Open de publieke URL en controleer Klein/Groot, een patroon, tekenen,
-   JSON-export/import en SVG-export.
-7. Controleer onderaan de app of het zichtbare versienummer overeenkomt met
-   `VERSIE.txt` uit het publicatiepakket.
-8. Open `/controle-v8.html`; daar moet geladen configuratieversie `8` staan.
+## Belangrijk
 
-De BAT meldt pas `KLAAR` nadat niet alleen `origin/main`, maar ook de openbare
-GitHub Pages-site is gecontroleerd. Hij probeert maximaal 24 keer met steeds
-10 seconden tussentijd. Online `VERSIE.txt` moet bij de lokale release passen en
-online `index.html` moet `app-v8.js` en `config-v8.js` laden.
+On-screen invoer staat alleen in de lokale browser. Publiceren verandert die
+invoer niet en stuurt deze niet naar GitHub. Maak via **My tables/Mijn tafels**
+een JSON-reservekop om configuraties tussen apparaten over te brengen.
 
-Blijft Pages oud, dan eindigt de BAT met `PUBLICATIE NIET GESLAAGD` en toont hij
-de stappen om Pages tijdelijk op `None` te zetten en opnieuw vanaf `main` en
-`/(root)` te activeren. Een geslaagde `git push` wordt dus niet langer ten
-onrechte als een geslaagde websitepublicatie gemeld.
-
-## Belangrijk onderscheid
-
-- `config.js` bevat de openbare startconfiguratie en komt op GitHub.
-- Invoer via het scherm wordt in `localStorage` van de browser bewaard en komt
-  niet op GitHub.
-- Klanten hebben geen GitHub-account en geen toegang tot de repository nodig.
-- Er is geen automatische synchronisatie tussen apparaten. Daarvoor exporteert
-  de gebruiker JSON op apparaat A en importeert die op apparaat B.
-- Verwijderen van browsergegevens, privévensters of een andere browser kan een
-  lokale configuratie onbereikbaar maken. JSON-export is de reservekop.
-
-## Git-opdrachten (optioneel)
-
-Voer deze uit in de uitgepakte projectmap nadat de lege repository is gemaakt:
-
-```bash
-git init
-git add .
-git commit -m "Publiceer TAFEL lijnconfigurator"
-git branch -M main
-git remote add origin https://github.com/kruin/drieband.git
-git push -u origin main
-```
-
-Voor een volgende versie:
-
-```bash
-git add .
-git commit -m "Werk TAFEL bij"
-git push
-```
-
-De vastgelegde repository voor dit project is `kruin/drieband`.
-
-## Problemen oplossen
-
-Als Git bij de eerste commit om je identiteit vraagt, voer dan eenmaal uit:
-
-```bash
-git config --global user.name "Jouw naam"
-git config --global user.email "jouw-github-email@example.com"
-```
-
-Start daarna `Publiceer_Drieband.bat` opnieuw. Als GitHub om aanmelding vraagt,
-gebruik dan de aanmeldmethode van Git Credential Manager; een gewoon
-GitHub-wachtwoord wordt niet als Git-wachtwoord gebruikt.
-
-## GitHub Pages-compatibiliteit
-
-De app gebruikt uitsluitend statische HTML, CSS en JavaScript. Er zijn geen
-server, database, Python-installatie of geheime sleutels nodig. Nieuwe functies
-moeten dit uitgangspunt behouden of uitdrukkelijk melden waarom een externe
-dienst nodig is.
+De app is volledig statisch (HTML, CSS en JavaScript) en GitHub Pages-compatibel.

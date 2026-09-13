@@ -1,56 +1,29 @@
-TAFEL LIJNCONFIGURATOR
-=====================
+3B LINE CONFIGURATOR — VERSION 9
+================================
 
-Online gebruiken
-----------------
-Open de GitHub Pages-link die de beheerder verstrekt. De app werkt op desktop,
-tablet en mobiel. Iedere gebruiker bewaart de eigen invoer lokaal in de eigen
-browser; de invoer wordt niet naar GitHub verstuurd.
+Open index.html locally or use https://kruin.github.io/3b/.
+English is the default language; Dutch is selectable on screen.
 
-Starten
--------
-Dubbelklik op Open_TAFEL.bat of rechtstreeks op index.html. De app werkt lokaal
-en heeft geen installatie, Python of internetverbinding nodig.
+Configuration
+-------------
+- Tables: Large, Small or Both.
+- Direction: West (canonical default) or East (mirrored view).
+- Route: Nose, or Shortened four-cushion.
+- When Shortened four-cushion is selected, Nose disappears and Head becomes
+  the first visible part using Head's configured V and A.
+- Parts: Nose, Head, Neck, Body, Cross and Leg.
+- In Both mode, “Edit table” determines which table the form edits.
 
-Gebruik
--------
-1. Kies Klein of Groot.
-2. Kies VIJF t/m TWAALF.
-3. Vul voor iedere lijn vertrekband/-waarde (V) en aankomstband/-waarde (A) in.
-4. De tekening verandert onmiddellijk.
+Both playing fields are displayed at the same size. Physical dimensions remain
+115 × 230 cm and 142 × 284 cm. Diamond lines stay 9.5 cm outside the cushion;
+the diamonds and numbering are drawn on the brown wood.
 
-De neuslijn vertrekt altijd vanuit Z. Stipwaarden lopen op west/oost van 0–80
-en op noord/zuid van 0–40. De vier stiplijnen liggen 9,5 cm buiten de bandrand.
-Er is één canonieke westconfig. Bij keuze “Naar oost — gespiegeld” verandert de
-config niet: de weergave van lijnen, bandnamen en nummeringen op alle vier
-stiplijnen wordt als één geheel horizontaal gespiegeld.
-Onderaan staat het actieve releasenummer. Dit moet na publicatie overeenkomen
-met `VERSIE.txt`.
+Data
+----
+Changes are stored only in this browser under 3b-canonical-west-v2.
+“My tables” / “Mijn tafels” downloads a JSON backup. Import restores it.
+SVG downloads the visible drawing(s).
 
-Bewaren
--------
-Invoer wordt automatisch in de browser opgeslagen. Gebruik “Config” om een
-JSON-reservekop te downloaden en “Importeer” om die later terug te zetten.
-Gebruik “SVG” om de huidige tekening te downloaden.
-
-Versie 7 gebruikt de canonieke opslagruimte `drieband-canoniek-west-v1` en leest
-de oude automatische browsertoestand uit versies 1–6 niet in. Een gewenste oude
-reservekop kan alleen bewust via “Importeer” worden teruggezet.
-
-Let op: lokale browsergegevens zijn per apparaat en per browser gescheiden.
-Maak daarom geregeld een JSON-reservekop. Gebruik export en import om dezelfde
-configuratie op een ander apparaat te openen.
-
-Inhoud
-------
-- VIJF bevat de bestaande waarden als startconfig.
-- ZES t/m TWAALF zijn leeg en worden niet automatisch berekend.
-- Configuraties van Klein en Groot worden afzonderlijk opgeslagen.
-- Er worden geen effect-, fysica- of ervaringscorrecties toegepast.
-
-Documentatie
-------------
-- PUBLICEREN.md: instructie voor beheer en publicatie via GitHub Pages.
-- Publiceer_Drieband.bat: maakt zo nodig branch main en plaatst de app via Git.
-- KLANT-INSTRUCTIE.md: korte gebruiksinstructie voor klanten.
-- PROJECTAFSPRAKEN.md: blijvende technische en functionele afspraken.
+Publication
+-----------
+Use Publiceer_3B.bat. See PUBLICEREN.md and KLANT-INSTRUCTIE.md.
