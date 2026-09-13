@@ -1,4 +1,4 @@
-3B LINE CONFIGURATOR — VERSION 18
+3B LINE CONFIGURATOR — VERSION 20
 ================================
 
 Open index.html locally or use https://kruin.github.io/3b/.
@@ -44,8 +44,8 @@ position and stroke length are saved per table, system and shot view.
 Terminology: LKL is the Pattern; FIVE, SIX etc. are Lines; Nose through Leg are
 Parts. Values use compact cycle buttons, so mobile does not open a numeric
 keyboard. Fixed rail directions mirror automatically with West/East. Leg A is
-one continuous corner zone: North 20–40 followed by East 0–40. The mirrored
-view uses North 20–0 followed by West 0–40. One Leg therefore covers both
+one continuous corner zone: North 20–40 followed by East 0–80. The mirrored
+view uses North 20–0 followed by West 0–80. One Leg therefore covers both
 former leg variants.
 Line 1 is always the first departure line and supports dragging plus 1 cm
 precision buttons and desktop arrow keys.
@@ -58,6 +58,10 @@ its separate function: dragging it changes the physical length of Line 1.
 On touchscreens, draggable balls have a larger invisible hit area and a visible
 dashed halo. Normal page scrolling remains available until a ball drag starts;
 only during that drag is page scrolling blocked.
+
+For reliable mobile editing, tap a cushion ball to open a fixed control panel
+with −10, −1, +1 and +10. Direct dragging remains available but is no longer
+required. Shared-ball steps recalculate both adjacent values together.
 
 Line 1 variants
 ---------------

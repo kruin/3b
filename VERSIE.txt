@@ -1,4 +1,4 @@
-3B GitHub Pages versie 18
+3B GitHub Pages versie 20
 
 - Terminologie: Patroon LKL; Lijnen VIJF, ZES enz.; Delen Neus t/m Been.
 - VIJF t/m ACHT zijn in config aan LKL gekoppeld.
@@ -22,8 +22,15 @@
 - Een gestippelde halo maakt duidelijk welke ballen sleepbaar zijn.
 - Paginascroll wordt alleen geblokkeerd vanaf het moment dat een balsleep begint.
 - Pointer-move en pointer-cancel worden expliciet afgehandeld.
-- Been A is één doorlopende hoekzone: Noord 20–40, daarna Oost 0–40.
-- Bij oostspiegeling wordt dit Noord 20–0, daarna West 0–40.
+- Been A is één doorlopende hoekzone: Noord 20–40, daarna Oost 0–80.
+- Bij oostspiegeling wordt dit Noord 20–0, daarna West 0–80.
 - Slepen van de Been-eindbal wisselt bij de hoek automatisch van band.
 - Eén Been dekt daarmee de twee vroegere benen.
-- Assets zijn config-v18.js en app-v18.js.
+- Klein VIJF: Kruis V/A = 36/10; Been V/A = 5/70.
+- Bestaande lokale Klein-VIJF-config met exact vier nullen (0/0 en 0/0) wordt eenmalig hersteld.
+- Been A accepteert de volledige langebandwaarde tot 80.
+- Tik op een bandbal om hem op mobiel te selecteren.
+- Groot vast bedieningspaneel met −10, −1, +1 en +10.
+- Gedeelde balstappen herberekenen A en V samen; Been A stapt over de hoekzone.
+- Direct slepen blijft daarnaast beschikbaar.
+- Assets zijn config-v20.js en app-v20.js.

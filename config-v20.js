@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 11, release: "18",
+  version: 13, release: "20",
   terminology: {
     pattern: { key: "LKL", en: "long-short-long", nl: "lang-kort-lang" },
     line: { en: "Line", nl: "Lijn" },
@@ -43,7 +43,12 @@ window.THREEB_START_CONFIG = {
       keyboardStep: 1,
       touchTargetRadiusBallRadii: 2.4,
       showDragHalo: true,
-      lockPageScrollWhileDragging: true
+      lockPageScrollWhileDragging: true,
+      mobileNudgePanel: {
+        enabled: true,
+        steps: [-10,-1,1,10],
+        selectByTap: true
+      }
     },
     guideToDiamondLineAtDeparture: true,
     guideToDiamondLineAtArrival: true,
@@ -102,11 +107,11 @@ window.THREEB_START_CONFIG = {
         type: "continuous_corner_zone",
         canonicalPath: [
           {band:"noord",minimum:20,maximum:40,direction:"toward_northeast_corner"},
-          {band:"oost",minimum:0,maximum:40,direction:"away_from_northeast_corner"}
+          {band:"oost",minimum:0,maximum:80,direction:"along_east_long_rail"}
         ],
         mirroredPath: [
           {band:"noord",minimum:0,maximum:20,direction:"toward_northwest_corner"},
-          {band:"west",minimum:0,maximum:40,direction:"away_from_northwest_corner"}
+          {band:"west",minimum:0,maximum:80,direction:"along_west_long_rail"}
         ],
         defaultPoint:{band:"noord",value:20},
         switchBandAtCorner:true
@@ -141,7 +146,9 @@ window.THREEB_START_CONFIG = {
       neus:{from:{kind:"acquit",value:"Z"},to:{band:"west",value:50}},
       kop:{from:{band:"west",value:38},to:{band:"noord",value:19}},
       nek:{from:{band:"noord",value:15},to:{band:"oost",value:30}},
-      romp:{from:{band:"oost",value:20},to:{band:"zuid",value:38}}
+      romp:{from:{band:"oost",value:20},to:{band:"zuid",value:38}},
+      kruis:{from:{band:"zuid",value:36},to:{band:"west",value:10}},
+      been:{from:{band:"west",value:5},to:{band:"oost",value:70}}
     }},
     groot:{VIJF:{
       neus:{from:{kind:"acquit",value:"Z"},to:{band:"west",value:50}},

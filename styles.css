@@ -87,6 +87,13 @@ td input.invalid, td select.invalid { border-color: #b83434; background: #fff1ef
 .junction-ball { filter: drop-shadow(0 0 3px rgba(20,12,5,.45)); }
 .drag-halo { pointer-events: none; fill: none; stroke: #fff3b0; stroke-width: 2; stroke-dasharray: 3 3; opacity: .9; }
 body.ball-dragging { overscroll-behavior: none; touch-action: none; user-select: none; }
+.ball-nudge-panel { position: sticky; bottom: 8px; z-index: 9; display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: 8px; padding: 10px; border: 2px solid #d2a33a; border-radius: 12px; background: rgba(255,250,238,.97); box-shadow: 0 8px 24px rgba(54,35,16,.22); }
+.ball-nudge-panel[hidden] { display: none; }
+.ball-nudge-panel > div:first-child { display: grid; gap: 2px; font-size: 12px; }
+.ball-nudge-panel > div:first-child span { color: var(--muted); }
+.nudge-actions { display: flex; gap: 5px; }
+.nudge-actions button { min-width: 46px; min-height: 44px; padding: 5px 8px; font-size: 16px; font-weight: 900; }
+.nudge-actions .nudge-close { min-width: 38px; color: var(--red); }
 
 .drawing { position: sticky; top: 12px; }
 .drawing-heading { margin-bottom: 4px; }
@@ -128,4 +135,8 @@ footer { padding: 0 24px 28px; text-align: center; color: #766959; font-size: 13
   .line-name { min-width: 74px; }
   th { padding: 4px; }
   .help { font-size: 11px; }
+  .ball-nudge-panel { position: fixed; right: 6px; bottom: max(6px,env(safe-area-inset-bottom)); left: 6px; flex-direction: column; align-items: stretch; padding: 8px; }
+  .ball-nudge-panel > div:first-child { text-align: center; }
+  .nudge-actions { display: grid; grid-template-columns: repeat(4,1fr) 38px; }
+  .nudge-actions button { min-width: 0; min-height: 50px; }
 }

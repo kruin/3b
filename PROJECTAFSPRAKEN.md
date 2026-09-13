@@ -108,11 +108,26 @@ Voor iedere release:
 
 - Been A is één doorlopende aankomstzone van midden Noord via de
   noordoosthoek naar midden Oost.
-- In canonieke stipwaarden is dat Noord 20–40, gevolgd door Oost 0–40.
-- De gespiegeld-oostweergave gebruikt Noord 20–0, gevolgd door West 0–40.
+- In canonieke stipwaarden is dat Noord 20–40, gevolgd door Oost 0–80.
+- De gespiegeld-oostweergave gebruikt Noord 20–0, gevolgd door West 0–80.
 - Bij stappen of slepen wisselt de app bij de hoek automatisch van band.
 - Eén Been vervangt hiermee functioneel de vroegere linker- en
   rechterbeenvarianten.
+
+### 2026-09-13 — Klein VIJF voltooid versie 19
+
+- Standaard Klein VIJF: Kruis V 36, A 10; Been V 5, A 70.
+- Been A 70 is een geldige langebandwaarde en mag niet naar 40 worden geklemd.
+- Alleen een bestaande lokale Klein-VIJF-staart met exact vier nulwaarden wordt
+  eenmalig naar deze standaard gemigreerd; andere gebruikerswaarden blijven staan.
+
+### 2026-09-13 — Mobiele balbediening versie 20
+
+- Direct slepen blijft bestaan, maar is niet langer noodzakelijk.
+- Tikken op een bandbal opent een vast mobiel paneel met −10, −1, +1 en +10.
+- Het paneel benoemt de geselecteerde bal en toont de bijbehorende A- en V-waarden.
+- Bij een gedeelde bal wijzigen beide aangrenzende waarden als één geometrische stap.
+- Bij Been A lopen de stapknoppen over de geconfigureerde hoekzone en wisselen automatisch van band.
 
 ### 2026-09-13 — exacte ballen en versleepbare afstoot versie 13
 
