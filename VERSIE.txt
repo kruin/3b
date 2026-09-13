@@ -1,4 +1,4 @@
-3B GitHub Pages versie 14
+3B GitHub Pages versie 15
 
 - Terminologie: Patroon LKL; Lijnen VIJF, ZES enz.; Delen Neus t/m Been.
 - VIJF t/m ACHT zijn in config aan LKL gekoppeld.
@@ -10,4 +10,8 @@
 - Lijn 1 is de eerste afstootlijn: Neus of bij Verkorte 4-bander Kop.
 - Speelbal is sleepbaar; −/+ en pijltjestoetsen corrigeren per 1 cm.
 - Tafel blijft op mobiel boven de compacte invoer zichtbaar.
-- Assets zijn config-v14.js en app-v14.js.
+- Lijn 1 kent drie expliciet gescheiden vormen: basis, parallel en Waaier.
+- VIJF+1 blijft parallel aan VIJF, komt één stip verder aan en start bij Z+1.
+- Parallelle varianten lopen configureerbaar van -4 tot +4.
+- HALFZES is een Waaierlijn tussen VIJF en ZES: vertrek Z blijft vast, de richting draait.
+- Assets zijn config-v15.js en app-v15.js.

@@ -67,12 +67,21 @@ Voor iedere release:
 
 - Terminologie gecorrigeerd: LKL is Patroon; VIJF enz. zijn Lijnen; Neus enz.
   zijn Delen.
-- VIJF t/m ACHT zijn aan LKL gekoppeld; HALFZES is als latere lijn genoteerd.
+- VIJF t/m ACHT zijn aan LKL gekoppeld.
 - Bandvolgorde is vaste config en heeft geen on-screen keuzelijsten meer.
 - Waardeknoppen rouleren zonder schermtoetsenbord binnen config-min/max.
 - VIJF Nek-V heeft als eerste expliciete range 13–18.
 - Buiten LKL-ranges wordt de status Vrij spel.
 - Lijn 1 is de eerste afstootlijn en heeft sleepbediening plus stappen van 1 cm.
+
+### 2026-09-13 — Parallelle lijnen en Waaier versie 15
+
+- HALFZES is geen gewone tussennaam maar onderdeel van de Waaier.
+- Bij de Waaier blijft het vertrekpunt Z vast en draait de richting van Lijn 1.
+- `VIJF+1`, `ZES-1` enzovoort zijn zelfstandige lijnen die parallel lopen aan hun basislijn.
+- Een parallelstap is één stip: `VIJF+1` verschuift van W 50 naar W 60 en van Z naar Z+1.
+- De startpunten Z-4 t/m Z+4 liggen op de verticale middenlijn en zijn configureerbaar.
+- Parallelverschuiving en Waaier mogen nooit door één rekenregel worden afgehandeld.
 - Desktop houdt de tafel sticky; mobiel toont de tafel vóór en tijdens de
   compacte invoer.
 

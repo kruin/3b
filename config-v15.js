@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 7, release: "14",
+  version: 8, release: "15",
   terminology: {
     pattern: { key: "LKL", en: "long-short-long", nl: "lang-kort-lang" },
     line: { en: "Line", nl: "Lijn" },
@@ -47,6 +47,26 @@ window.THREEB_START_CONFIG = {
     }
   },
   shotLines: ["VIJF","ZES","ZEVEN","ACHT","NEGEN","TIEN","ELF","TWAALF"],
+  lineOneVariants: {
+    defaultMode: "basis",
+    modes: ["basis", "parallel", "waaier"],
+    parallel: {
+      minimumOffset: -4,
+      maximumOffset: 4,
+      defaultOffset: 0,
+      longRailUnitsPerStep: 10,
+      startLabel: "Z",
+      startAxis: "vertical_centerline",
+      rule: "translate_line_one_without_rotation"
+    },
+    fan: {
+      rule: "rotate_line_one_around_Z",
+      startPoint: "Z",
+      entries: [
+        { key: "HALFZES", labels: { en: "FIVE-AND-A-HALF", nl: "HALFZES" }, between: ["VIJF", "ZES"], fraction: 0.5 }
+      ]
+    }
+  },
   patternByLine: { VIJF:"LKL", ZES:"LKL", ZEVEN:"LKL", ACHT:"LKL" },
   patternLabels: {
     VIJF:{en:"FIVE",nl:"VIJF"}, ZES:{en:"SIX",nl:"ZES"}, ZEVEN:{en:"SEVEN",nl:"ZEVEN"}, ACHT:{en:"EIGHT",nl:"ACHT"},

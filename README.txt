@@ -1,4 +1,4 @@
-3B LINE CONFIGURATOR — VERSION 14
+3B LINE CONFIGURATOR — VERSION 15
 ================================
 
 Open index.html locally or use https://kruin.github.io/3b/.
@@ -46,6 +46,16 @@ Parts. Values use compact cycle buttons, so mobile does not open a numeric
 keyboard. Fixed rail directions mirror automatically with West/East.
 Line 1 is always the first departure line and supports dragging plus 1 cm
 precision buttons and desktop arrow keys.
+
+Line 1 variants
+---------------
+- Base keeps the configured Line 1 unchanged.
+- Parallel shift creates names such as FIVE+1 or SIX-1. Start and arrival move
+  by the same physical diamond step, so Line 1 does not rotate. FIVE+1 is
+  displayed from Z+1 to W60 when base FIVE runs from Z to W50.
+- Fan keeps Z fixed and rotates Line 1. FIVE-AND-A-HALF / HALFZES is halfway
+  between the configured Line 1 arrivals of FIVE and SIX. It is not estimated
+  while either arrival is missing.
 
 Publication
 -----------

@@ -72,6 +72,9 @@ td input.invalid, td select.invalid { border-color: #b83434; background: #fff1ef
 .stroke-control { display: inline-grid; grid-template-columns: 34px minmax(76px,auto) 34px; align-items: center; gap: 4px; margin-top: 6px; }
 .stroke-control button { min-height: 32px; padding: 2px 8px; }
 .stroke-control output { padding: 6px 8px; border-radius: 8px; background: #eee5d6; font-size: 12px; font-weight: 800; text-align: center; }
+.compact-stepper { display: grid; grid-template-columns: 30px 42px 30px; gap: 3px; align-items: center; }
+.compact-stepper button { min-height: 34px; padding: 2px 6px; }
+.compact-stepper output { padding: 7px 4px; border-radius: 8px; background: #eee5d6; font-size: 13px; font-weight: 900; text-align: center; }
 .help { margin: 14px 2px 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
 .messages { display: grid; gap: 6px; margin-top: 10px; color: var(--red); font-size: 13px; }
 .correction-advice { margin-top: 14px; padding: 11px 13px; border: 1px solid #d6c39b; border-radius: 10px; background: #fff4d8; color: #5b472d; font-size: 13px; font-weight: 700; }

@@ -20,10 +20,10 @@ Vervang de bestanden in de lokale clone en start `Publiceer_3B.bat`. De BAT:
 - controleert alle versie-14-bestanden vóór commit en push;
 - vergelijkt lokale commit en `origin/main`;
 - wacht maximaal tien minuten op GitHub Pages;
-- meldt pas KLAAR als de publieke site werkelijk `app-v14.js`,
-  `config-v14.js` en versie 14 levert.
+- meldt pas KLAAR als de publieke site werkelijk `app-v15.js`,
+  `config-v15.js` en versie 15 levert.
 
-Controleer aanvullend `https://kruin.github.io/3b/controle-v14.html`.
+Controleer aanvullend `https://kruin.github.io/3b/controle-v15.html`.
 
 ## Belangrijk
 
