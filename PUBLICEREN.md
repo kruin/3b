@@ -17,13 +17,13 @@ Website: `https://kruin.github.io/3b/`
 Vervang de bestanden in de lokale clone en start `Publiceer_3B.bat`. De BAT:
 
 - weigert een andere remote dan `kruin/3b`;
-- controleert alle versie-12-bestanden vóór commit en push;
+- controleert alle versie-13-bestanden vóór commit en push;
 - vergelijkt lokale commit en `origin/main`;
 - wacht maximaal tien minuten op GitHub Pages;
-- meldt pas KLAAR als de publieke site werkelijk `app-v12.js`,
-  `config-v12.js` en versie 12 levert.
+- meldt pas KLAAR als de publieke site werkelijk `app-v13.js`,
+  `config-v13.js` en versie 13 levert.
 
-Controleer aanvullend `https://kruin.github.io/3b/controle-v12.html`.
+Controleer aanvullend `https://kruin.github.io/3b/controle-v13.html`.
 
 ## Belangrijk
 

@@ -1,9 +1,11 @@
-3B GitHub Pages versie 12
+3B GitHub Pages versie 13
 
-- Iedere dunne constructielijn toont Deel, V/A en exacte stipwaarde.
-- Config biedt twee weergaven: Bij elk lijntje en Vervang dichtstbijzijnde nummer.
-- In de vervangweergave verdwijnt het dichtstbijzijnde standaardtiental, terwijl
-  het exacte gekleurde label op het werkelijke lijnpunt staat.
-- De standaardweergave is Bij elk lijntje.
-- Balposities, balbrede looplijnen en lijnconstructie uit versie 11 blijven.
-- Assets zijn config-v12.js en app-v12.js.
+- Stiplabels tonen standaard alleen de exacte waarde, bijvoorbeeld 15.
+- Waardelabels staan op het werkelijke punt van de stiplijn.
+- Balmiddens liggen exact één straal binnen de betreffende band.
+- Dikke looplijnen stoppen aan de balomtrek; dunne lijnen beginnen daar.
+- Balweergave is config: wit/geel en met/zonder stippen.
+- De speelbal is over de eerste zichtbare afstootlijn versleepbaar.
+- Afstootlengte wordt in centimeters getoond en lokaal afzonderlijk opgeslagen
+  per tafel, systeem en stootbeeld.
+- Assets zijn config-v13.js en app-v13.js.

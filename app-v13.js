@@ -8,13 +8,14 @@
   };
   const $ = id => document.getElementById(id), copy = v => JSON.parse(JSON.stringify(v));
   function blank(){ const p={}; C.lines.forEach((l,i)=>p[l.key]=i===0?{from:{kind:"acquit",value:"Z"},to:{band:"west",value:null}}:{from:{band:"",value:null},to:{band:"",value:null}}); return p; }
-  function initial(){ const d={}; Object.keys(C.tables).forEach(t=>{d[t]={};C.patterns.forEach(n=>{d[t][n]=blank();Object.assign(d[t][n],copy(C.defaults[t]?.[n]||{}));});});return {version:6,model:"canonical-west-v2",data:d,ui:{language:C.defaultLanguage,tableMode:C.defaultTableMode,editTable:"groot",pattern:"VIJF",direction:C.defaultDirection,departure:C.defaultDeparture,correctionMode:C.shortenedFourCushionCorrection.defaultMode,valueStyle:C.drawing.valueLabels.defaultMode}}; }
-  function load(){try{const x=JSON.parse(localStorage.getItem(KEY));if([4,5,6].includes(x?.version)&&x.data){x.version=6;return x;}}catch(_){}return initial();}
+  function initial(){ const d={}; Object.keys(C.tables).forEach(t=>{d[t]={};C.patterns.forEach(n=>{d[t][n]=blank();Object.assign(d[t][n],copy(C.defaults[t]?.[n]||{}));});});return {version:7,model:"canonical-west-v2",data:d,departurePositions:{},ui:{language:C.defaultLanguage,tableMode:C.defaultTableMode,editTable:"groot",pattern:"VIJF",direction:C.defaultDirection,departure:C.defaultDeparture,correctionMode:C.shortenedFourCushionCorrection.defaultMode,valueStyle:C.drawing.valueLabels.defaultMode,ballColor:C.drawing.balls.defaultColor,ballMarking:C.drawing.balls.defaultMarking}}; }
+  function load(){try{const x=JSON.parse(localStorage.getItem(KEY));if([4,5,6,7].includes(x?.version)&&x.data){x.version=7;return x;}}catch(_){}return initial();}
   const state=load(); let ui=state.ui;
   function normalize(){
     const base=initial(); Object.keys(C.tables).forEach(t=>{state.data[t]??={};C.patterns.forEach(n=>{state.data[t][n]??=base.data[t][n];C.lines.forEach(l=>state.data[t][n][l.key]??=base.data[t][n][l.key]);});});
     ui.language=["en","nl"].includes(ui.language)?ui.language:"en"; ui.tableMode=["groot","klein","beide"].includes(ui.tableMode)?ui.tableMode:"groot"; ui.editTable=["groot","klein"].includes(ui.editTable)?ui.editTable:(ui.tableMode==="klein"?"klein":"groot");
     ui.pattern=C.patterns.includes(ui.pattern)?ui.pattern:"VIJF"; ui.direction=["west","oost"].includes(ui.direction)?ui.direction:"west"; ui.departure=["neus","kop"].includes(ui.departure)?ui.departure:"neus"; ui.correctionMode=C.shortenedFourCushionCorrection.modes.includes(ui.correctionMode)?ui.correctionMode:C.shortenedFourCushionCorrection.defaultMode; ui.valueStyle=C.drawing.valueLabels.modes.includes(ui.valueStyle)?ui.valueStyle:C.drawing.valueLabels.defaultMode;
+    ui.ballColor=C.drawing.balls.colors[ui.ballColor]?ui.ballColor:C.drawing.balls.defaultColor;ui.ballMarking=C.drawing.balls.markings.includes(ui.ballMarking)?ui.ballMarking:C.drawing.balls.defaultMarking;state.departurePositions??={};
   }
   function save(){state.ui=ui;localStorage.setItem(KEY,JSON.stringify(state));$("saveState").textContent=T[ui.language].saved;}
   function tr(k){return T[ui.language][k]||k;} function tableLabel(k){return C.tables[k].labels[ui.language];} function patternLabel(k){return C.patternLabels[k][ui.language];} function lineLabel(l){return l.labels[ui.language];}
@@ -22,7 +23,7 @@
   function activeLines(){return C.lines.slice(ui.departure==="kop"?1:0);} function data(t=ui.editTable){return state.data[t][ui.pattern];}
   function init(){normalize();bind();render();}
   function bind(){
-    [["languageSelect","language"],["tableMode","tableMode"],["editTable","editTable"],["patternSelect","pattern"],["noseDirection","direction"],["departureLine","departure"],["correctionMode","correctionMode"],["valueStyle","valueStyle"]].forEach(([id,key])=>$(id).addEventListener("change",e=>{ui[key]=e.target.value;if(key==="tableMode"&&ui.tableMode!=="beide")ui.editTable=ui.tableMode;save();render();}));
+    [["languageSelect","language"],["tableMode","tableMode"],["editTable","editTable"],["patternSelect","pattern"],["noseDirection","direction"],["departureLine","departure"],["correctionMode","correctionMode"],["valueStyle","valueStyle"],["ballColor","ballColor"],["ballMarking","ballMarking"]].forEach(([id,key])=>$(id).addEventListener("change",e=>{ui[key]=e.target.value;if(key==="tableMode"&&ui.tableMode!=="beide")ui.editTable=ui.tableMode;save();render();}));
     $("exportSvg").onclick=exportSvg;$("exportJson").onclick=exportJson;$("importJson").onchange=importJson;$("resetPattern").onclick=reset;
   }
   function render(){
@@ -33,11 +34,12 @@
     const dep=$("departureLine");dep.options[0].text=tr("nose");dep.options[1].text=ui.language==="nl"?"Verkorte 4-bander":"Shortened four-cushion";dep.value=ui.departure;
     const cm=$("correctionMode"),cl=ui.language==="nl"?["Advies","Aan","Uit"]:["Advice","On","Off"]; $("correctionLabel").textContent=ui.language==="nl"?"Correctie":"Correction"; [...cm.options].forEach((o,i)=>o.text=cl[i]);cm.value=ui.correctionMode;$("correctionControl").hidden=ui.departure!=="kop";
     const vs=$("valueStyle"),vl=ui.language==="nl"?["Bij elk lijntje","Vervang dichtstbijzijnde nummer"]:["At each guide","Replace nearest number"];$("valueStyleLabel").textContent=ui.language==="nl"?"Stipwaarden":"Diamond values";[...vs.options].forEach((o,i)=>o.text=vl[i]);vs.value=ui.valueStyle;
+    const bc=$("ballColor"),bm=$("ballMarking");$("ballColorLabel").textContent=ui.language==="nl"?"Bal":"Ball";$("ballMarkingLabel").textContent=ui.language==="nl"?"Markering":"Marking";bc.options[0].text=ui.language==="nl"?"Wit":"White";bc.options[1].text=ui.language==="nl"?"Geel":"Yellow";bm.options[0].text=ui.language==="nl"?"Met stippen":"Spotted";bm.options[1].text=ui.language==="nl"?"Zonder stippen":"Plain";bc.value=ui.ballColor;bm.value=ui.ballMarking;$("dragHelp").textContent=ui.language==="nl"?"Sleep de speelbal over de afstootlijn.":"Drag the cue ball along the departure line.";
     const ps=$("patternSelect");ps.replaceChildren();C.patterns.forEach(n=>ps.add(new Option(patternLabel(n),n)));ps.value=ui.pattern;
     $("exportJson").textContent=tr("myTables");$("helpText").textContent=tr("help");
     $("editorTitle").textContent=`${tableLabel(ui.editTable)} · ${patternLabel(ui.pattern)}`;
     const views=ui.tableMode==="beide"?["groot","klein"]:[ui.tableMode];$("drawingTitle").textContent=`${patternLabel(ui.pattern)} · ${ui.direction==="west"?tr("west"):tr("east")}`;
-    renderRows();renderCorrection();$("svgMount").innerHTML=views.map(drawTable).join("");
+    renderRows();renderCorrection();$("svgMount").innerHTML=views.map(drawTable).join("");bindDragBalls();
   }
   function renderRows(){
     const body=$("lineRows");body.replaceChildren();const d=data(), lines=activeLines();
@@ -83,10 +85,9 @@
     const table=C.tables[t],a=point(stip,t),b=point(other,t),dx=b.x-a.x,dy=b.y-a.y;
     const shown=ui.direction==="oost"?mirror(stip.band):stip.band;
     let u=0;
-    if(shown==="west")u=(0-a.x)/dx;else if(shown==="oost")u=(table.widthCm-a.x)/dx;
-    else if(shown==="noord")u=(0-a.y)/dy;else if(shown==="zuid")u=(table.heightCm-a.y)/dy;
-    const length=Math.hypot(dx,dy)||1,contact={x:a.x+u*dx,y:a.y+u*dy};
-    return {x:contact.x+dx/length*radiusCm,y:contact.y+dy/length*radiusCm};
+    if(shown==="west")u=(radiusCm-a.x)/dx;else if(shown==="oost")u=(table.widthCm-radiusCm-a.x)/dx;
+    else if(shown==="noord")u=(radiusCm-a.y)/dy;else if(shown==="zuid")u=(table.heightCm-radiusCm-a.y)/dy;
+    return {x:a.x+u*dx,y:a.y+u*dy};
   }
   function backwardGuide(z,toward,t){
     const {widthCm:w,heightCm:h,dotOffsetCm:d}=C.tables[t],dx=z.x-toward.x,dy=z.y-toward.y,candidates=[];
@@ -98,9 +99,15 @@
   const esc=v=>String(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   function formattedValue(value){const n=Number(value),text=Number.isFinite(n)?String(Math.round(n*1000)/1000):String(value);return ui.language==="nl"?text.replace(".",","):text;}
   function valueTag(p,text,color,cx,cy){
-    const dx=cx-p.x,dy=cy-p.y,length=Math.hypot(dx,dy)||1,x=p.x+dx/length*28,y=p.y+dy/length*28,width=Math.max(54,text.length*6.7+14);
+    const x=p.x,y=p.y,width=Math.max(26,text.length*6.7+12);
     return `<g class="value-tag"><rect x="${x-width/2}" y="${y-10}" width="${width}" height="20" rx="7" fill="#fffaf0" stroke="${color}" stroke-width="2"/><text x="${x}" y="${y+4}" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="800" fill="#2b2118">${esc(text)}</text></g>`;
   }
+  function edge(center,toward,radius){const dx=toward.x-center.x,dy=toward.y-center.y,length=Math.hypot(dx,dy)||1;return{x:center.x+dx/length*radius,y:center.y+dy/length*radius};}
+  function insetEntry(from,to,t,radius){const {widthCm:w,heightCm:h}=C.tables[t],dx=to.x-from.x,dy=to.y-from.y,values=[];if(dx)values.push((radius-from.x)/dx,(w-radius-from.x)/dx);if(dy)values.push((radius-from.y)/dy,(h-radius-from.y)/dy);const valid=values.filter(u=>u>=0&&u<=1).map(u=>({u,x:from.x+u*dx,y:from.y+u*dy})).filter(p=>p.x>=radius-.001&&p.x<=w-radius+.001&&p.y>=radius-.001&&p.y<=h-radius+.001).sort((a,b)=>a.u-b.u);return valid[0]||{x:from.x,y:from.y};}
+  function positionKey(t){return `${t}:${ui.pattern}:${ui.departure}`;}
+  function projectionFraction(p,a,b){const dx=b.x-a.x,dy=b.y-a.y,den=dx*dx+dy*dy||1;return Math.max(0,Math.min(1,(p.x-a.x+0)*(dx)/den+(p.y-a.y)*dy/den));}
+  function tagText(line,side,value){const cfg=C.drawing.valueLabels,parts=[];if(cfg.showPartName)parts.push(lineLabel(line));if(cfg.showPointType)parts.push(side);parts.push(value);return parts.join(cfg.showPartName?" · ":" ");}
+  function ballSvg(p,radius,classes="",attrs=""){const style=C.drawing.balls,colors=style.colors[ui.ballColor];let svg=`<circle class="${classes}" ${attrs} cx="${p.x}" cy="${p.y}" r="${radius}" fill="${colors.fill}" stroke="${style.outline}" stroke-width="${style.outlineWidthSvg}"/>`;if(ui.ballMarking==="spotted"){const sr=Math.max(1.3,radius*.18);svg+=`<circle pointer-events="none" cx="${p.x-radius*.28}" cy="${p.y-radius*.22}" r="${sr}" fill="${colors.spot}"/><circle pointer-events="none" cx="${p.x+radius*.3}" cy="${p.y+radius*.2}" r="${sr*.75}" fill="${colors.spot}"/>`;}return svg;}
   function suppressedDots(t){
     const hidden=new Set();if(ui.valueStyle!=="vervang_dichtstbijzijnde_nummer")return hidden;
     activeLines().forEach(l=>{const seg=data(t)[l.key];[seg.from,seg.to].forEach(p=>{if(p.kind==="acquit"||!complete(p)||!valid(p))return;const band=shownBand(p.band),max=(band==="west"||band==="oost")?80:40,nearest=Math.max(0,Math.min(max,Math.round(Number(p.value)/10)*10));hidden.add(`${band}:${nearest}`);});});
@@ -109,23 +116,38 @@
   function drawTable(t){
     const table=C.tables[t],W=510,H=850,fieldW=340,fieldH=680,scale=fieldW/table.widthCm,d=table.dotOffsetCm*scale,x=(W-fieldW)/2,y=90,wood=d+14,map=p=>({x:x+p.x*scale,y:y+p.y*scale}),segs=segments(t);let s=`<svg class="table-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(patternLabel(ui.pattern))} ${esc(tableLabel(t))}"><rect width="${W}" height="${H}" rx="18" fill="#f7f1e5"/><text x="${W/2}" y="28" text-anchor="middle" font-family="system-ui" font-size="20" font-weight="800" fill="#2b2118">${esc(patternLabel(ui.pattern))} · ${esc(tableLabel(t).toUpperCase())}</text><text x="${W/2}" y="49" text-anchor="middle" font-family="system-ui" font-size="11" fill="#6d5d4b">${table.widthCm} × ${table.heightCm} cm · 9.5 cm</text><rect x="${x-wood}" y="${y-wood}" width="${fieldW+2*wood}" height="${fieldH+2*wood}" rx="11" fill="#704725" stroke="#3a2516" stroke-width="3"/><rect x="${x}" y="${y}" width="${fieldW}" height="${fieldH}" fill="#176f4f" stroke="#e7c66e" stroke-width="3"/>`;
     s+=dots(t,map,suppressedDots(t));
-    segs.forEach(l=>{
+    segs.forEach((l,index)=>{
       const seg=data(t)[l.key],radiusCm=C.ballDiameterMm/20,stipA=point(seg.from,t),stipB=point(seg.to,t);
-      const ballA=seg.from.kind==="acquit"?stipA:bandBall(seg.from,seg.to,t,radiusCm),ballB=bandBall(seg.to,seg.from,t,radiusCm);
-      const guideA=seg.from.kind==="acquit"?backwardGuide(ballA,ballB,t):stipA;
+      const fixedA=seg.from.kind==="acquit"?stipA:bandBall(seg.from,seg.to,t,radiusCm),ballB=bandBall(seg.to,seg.from,t,radiusCm);
+      const guideA=seg.from.kind==="acquit"?backwardGuide(fixedA,ballB,t):stipA,isDeparture=index===0;
+      const startLimit=isDeparture?insetEntry(guideA,ballB,t,radiusCm):fixedA,startDistance=Math.hypot(ballB.x-startLimit.x,ballB.y-startLimit.y);
+      const defaultFraction=seg.from.kind==="acquit"?projectionFraction(fixedA,startLimit,ballB):0,key=positionKey(t);
+      const maxFraction=Math.max(0,1-(2*radiusCm+C.drawing.departureBall.minimumGapBallDiameters*radiusCm*2)/(startDistance||1));
+      const fraction=isDeparture?Math.max(0,Math.min(maxFraction,state.departurePositions[key]??defaultFraction)):0;
+      const ballA=isDeparture?{x:startLimit.x+(ballB.x-startLimit.x)*fraction,y:startLimit.y+(ballB.y-startLimit.y)*fraction}:fixedA;
       const A=map(ballA),B=map(ballB),GA=map(guideA),GB=map(stipB),ballRadius=radiusCm*scale,lineWidth=C.ballDiameterMm/10*scale,guideWidth=C.drawing.guideLineWidthSvg,mx=(A.x+B.x)/2,my=(A.y+B.y)/2;
+      const thinA=edge(A,GA,ballRadius),thickA=edge(A,B,ballRadius),thickB=edge(B,A,ballRadius),thinB=edge(B,GB,ballRadius);
       const fromValue=seg.from.kind==="acquit"?"Z":formattedValue(seg.from.value),toValue=formattedValue(seg.to.value);
-      const fromTag=`${lineLabel(l)} · V ${fromValue}`,toTag=`${lineLabel(l)} · A ${toValue}`;
-      s+=`<g data-part="${l.key}"><line x1="${GA.x}" y1="${GA.y}" x2="${A.x}" y2="${A.y}" stroke="${l.color}" stroke-width="${guideWidth}"/><line x1="${A.x}" y1="${A.y}" x2="${B.x}" y2="${B.y}" stroke="${l.color}" stroke-width="${lineWidth}" stroke-linecap="round"/><line x1="${B.x}" y1="${B.y}" x2="${GB.x}" y2="${GB.y}" stroke="${l.color}" stroke-width="${guideWidth}"/><circle cx="${A.x}" cy="${A.y}" r="${ballRadius}" fill="${l.color}"/><circle cx="${B.x}" cy="${B.y}" r="${ballRadius}" fill="${l.color}"/><text x="${mx}" y="${my-10}" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="800" fill="#fff6dd" stroke="#103d2c" stroke-width="3" paint-order="stroke fill">${esc(lineLabel(l))}</text>${valueTag(GA,fromTag,l.color,x+fieldW/2,y+fieldH/2)}${valueTag(GB,toTag,l.color,x+fieldW/2,y+fieldH/2)}</g>`;
+      const fromTag=tagText(l,"V",fromValue),toTag=tagText(l,"A",toValue),lengthCm=Math.max(0,startDistance*(1-fraction)-radiusCm*2);
+      const dragAttrs=isDeparture?`data-drag-table="${t}" data-x0="${map(startLimit).x}" data-y0="${map(startLimit).y}" data-x1="${B.x}" data-y1="${B.y}" data-max="${maxFraction}"`:"";
+      s+=`<g data-part="${l.key}"><line x1="${GA.x}" y1="${GA.y}" x2="${thinA.x}" y2="${thinA.y}" stroke="${l.color}" stroke-width="${guideWidth}"/><line x1="${thickA.x}" y1="${thickA.y}" x2="${thickB.x}" y2="${thickB.y}" stroke="${l.color}" stroke-width="${lineWidth}"/><line x1="${thinB.x}" y1="${thinB.y}" x2="${GB.x}" y2="${GB.y}" stroke="${l.color}" stroke-width="${guideWidth}"/>${ballSvg(A,ballRadius,isDeparture?"cue-ball":"",dragAttrs)}${ballSvg(B,ballRadius)}<text x="${mx}" y="${my-10}" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="800" fill="#fff6dd" stroke="#103d2c" stroke-width="3" paint-order="stroke fill">${esc(lineLabel(l))}</text>${isDeparture?`<text x="${mx}" y="${my+18}" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="800" fill="#fff6dd" stroke="#103d2c" stroke-width="3" paint-order="stroke fill">${ui.language==="nl"?"Afstoot":"Stroke"} ${Math.round(lengthCm)} cm</text>`:""}${valueTag(GA,fromTag,l.color,x+fieldW/2,y+fieldH/2)}${valueTag(GB,toTag,l.color,x+fieldW/2,y+fieldH/2)}</g>`;
     });
-    const z=map(point({kind:"acquit"},t));s+=`<circle cx="${z.x}" cy="${z.y}" r="5" fill="#fff" stroke="#2b2118" stroke-width="2"/><text x="${z.x+10}" y="${z.y+4}" font-family="system-ui" font-size="12" font-weight="800" fill="#fff" stroke="#103d2c" stroke-width="3" paint-order="stroke fill">Z</text><text x="${W/2}" y="${H-17}" text-anchor="middle" font-family="system-ui" font-size="11" fill="#6d5d4b">${segs.length===activeLines().length?tr("complete"):`${segs.length}/${activeLines().length} ${tr("lines")}`}</text></svg>`;return `<div class="drawing-card">${s}</div>`;
+    s+=`<text x="${W/2}" y="${H-17}" text-anchor="middle" font-family="system-ui" font-size="11" fill="#6d5d4b">${segs.length===activeLines().length?tr("complete"):`${segs.length}/${activeLines().length} ${tr("lines")}`}</text></svg>`;return `<div class="drawing-card">${s}</div>`;
+  }
+  function bindDragBalls(){
+    document.querySelectorAll(".cue-ball").forEach(ball=>ball.addEventListener("pointerdown",event=>{
+      event.preventDefault();const table=ball.dataset.dragTable;
+      const move=ev=>{const current=document.querySelector(`.cue-ball[data-drag-table="${table}"]`);if(!current)return;const svg=current.closest("svg"),matrix=svg.getScreenCTM();if(!matrix)return;const p=new DOMPoint(ev.clientX,ev.clientY).matrixTransform(matrix.inverse()),x0=Number(current.dataset.x0),y0=Number(current.dataset.y0),x1=Number(current.dataset.x1),y1=Number(current.dataset.y1),dx=x1-x0,dy=y1-y0,den=dx*dx+dy*dy||1,max=Number(current.dataset.max),fraction=Math.max(0,Math.min(max,((p.x-x0)*dx+(p.y-y0)*dy)/den));state.departurePositions[positionKey(table)]=fraction;localStorage.setItem(KEY,JSON.stringify(state));render();};
+      const up=()=>{document.removeEventListener("pointermove",move);document.removeEventListener("pointerup",up);save();};
+      document.addEventListener("pointermove",move);document.addEventListener("pointerup",up,{once:true});
+    }));
   }
   function displayPoint(b,v,t){return point({band:ui.direction==="oost"?mirror(b):b,value:v},t);}
   function dots(t,map,hidden){let c='<g fill="#fff8dc" stroke="#3b291c" stroke-width=".8">',l='<g fill="#fff8dc" stroke="#4b301d" stroke-width="3" paint-order="stroke fill" font-family="system-ui" font-size="14" font-weight="800">';["west","oost"].forEach(b=>{for(let v=0;v<=80;v+=10){const p=map(displayPoint(b,v,t));c+=`<circle cx="${p.x}" cy="${p.y}" r="4"/>`;if(!hidden.has(`${b}:${v}`))l+=`<text x="${p.x+(b==="west"?-13:13)}" y="${p.y+5}" text-anchor="${b==="west"?"end":"start"}">${v}</text>`;}});["noord","zuid"].forEach(b=>{for(let v=0;v<=40;v+=10){const p=map(displayPoint(b,v,t));c+=`<circle cx="${p.x}" cy="${p.y}" r="4"/>`;if(!hidden.has(`${b}:${v}`))l+=`<text x="${p.x}" y="${p.y+(b==="noord"?-13:23)}" text-anchor="middle">${v}</text>`;}});return c+'</g>'+l+'</g>';}
   function download(name,content,type){const blob=new Blob([content],{type}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);}
   function exportSvg(){const svgs=[...document.querySelectorAll(".table-svg")];svgs.forEach((s,i)=>download(`3B-${ui.tableMode==="beide"?(i?"small":"large"):ui.tableMode}-${ui.pattern}.svg`,new XMLSerializer().serializeToString(s),"image/svg+xml"));}
   function exportJson(){download(ui.language==="nl"?"3B-mijn-tafels.json":"3B-my-tables.json",JSON.stringify(state,null,2),"application/json");}
-  async function importJson(e){const f=e.target.files[0];if(!f)return;try{const x=JSON.parse(await f.text());if(!x?.data)throw Error("Invalid file");state.data=x.data;normalize();save();render();}catch(err){$("messages").textContent=err.message;}e.target.value="";}
-  function reset(){if(!confirm(`${tr("confirm")} ${patternLabel(ui.pattern)} · ${tableLabel(ui.editTable)}?`))return;state.data[ui.editTable][ui.pattern]=blank();save();render();}
+  async function importJson(e){const f=e.target.files[0];if(!f)return;try{const x=JSON.parse(await f.text());if(!x?.data)throw Error("Invalid file");state.data=x.data;state.departurePositions=x.departurePositions||{};if(x.ui)Object.assign(ui,x.ui);normalize();save();render();}catch(err){$("messages").textContent=err.message;}e.target.value="";}
+  function reset(){if(!confirm(`${tr("confirm")} ${patternLabel(ui.pattern)} · ${tableLabel(ui.editTable)}?`))return;state.data[ui.editTable][ui.pattern]=blank();delete state.departurePositions[`${ui.editTable}:${ui.pattern}:neus`];delete state.departurePositions[`${ui.editTable}:${ui.pattern}:kop`];save();render();}
   init();
 })();

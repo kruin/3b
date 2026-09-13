@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 5, release: "12",
+  version: 6, release: "13",
   defaultLanguage: "en", defaultTableMode: "groot", defaultDirection: "west", defaultDeparture: "neus",
   tables: {
     klein: { labels: { en: "Small", nl: "Klein" }, widthCm: 115, heightCm: 230, dotOffsetCm: 9.5 },
@@ -10,14 +10,30 @@ window.THREEB_START_CONFIG = {
     routeWidth: "scaled_ball_diameter",
     guideLineWidthSvg: 2,
     ballsAtCushion: true,
+    balls: {
+      defaultColor: "white",
+      colors: {
+        white: { fill: "#fffdf4", spot: "#d83a2f" },
+        yellow: { fill: "#f4d13d", spot: "#d83a2f" }
+      },
+      defaultMarking: "spotted",
+      markings: ["plain", "spotted"],
+      outline: "#3a2a1c",
+      outlineWidthSvg: 1.2
+    },
+    departureBall: {
+      draggable: true,
+      storage: "per_table_pattern_and_shot_view",
+      minimumGapBallDiameters: 0.25
+    },
     guideToDiamondLineAtDeparture: true,
     guideToDiamondLineAtArrival: true,
     arrows: false,
     valueLabels: {
       defaultMode: "bij_lijntje",
       modes: ["bij_lijntje", "vervang_dichtstbijzijnde_nummer"],
-      showPartName: true,
-      showPointType: true,
+      showPartName: false,
+      showPointType: false,
       suppressNearestTenInReplacementMode: true
     }
   },

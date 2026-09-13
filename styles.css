@@ -64,6 +64,9 @@ td input.invalid, td select.invalid { border-color: #b83434; background: #fff1ef
 .correction-advice { margin-top: 14px; padding: 11px 13px; border: 1px solid #d6c39b; border-radius: 10px; background: #fff4d8; color: #5b472d; font-size: 13px; font-weight: 700; }
 .correction-advice.active { border-color: #4e9a70; background: #e1f3e7; color: #185e39; }
 .correction-advice.off { background: #eee8de; color: #74685c; }
+.drag-help { margin: 5px 0 0; color: var(--muted); font-size: 12px; }
+.cue-ball { cursor: grab; touch-action: none; }
+.cue-ball:active { cursor: grabbing; }
 
 .drawing { position: sticky; top: 12px; }
 .drawing-heading { margin-bottom: 4px; }

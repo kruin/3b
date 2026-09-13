@@ -63,6 +63,17 @@ Voor iedere release:
 
 ## Wijzigingslog
 
+### 2026-09-13 — exacte ballen en versleepbare afstoot versie 13
+
+- Stiplabels tonen standaard uitsluitend de waarde en staan op de stiplijn.
+- Balmiddens worden berekend op één fysieke balradius binnen de band.
+- Dikke lijnen lopen van balomtrek tot balomtrek; dunne lijnen verbinden de
+  balomtrek met de stiplijn.
+- Balstijl is config: wit/geel en effen/met stippen.
+- De speelbal is versleepbaar over de eerste zichtbare afstootlijn.
+- De afstootlengte en balpositie worden per tafel, systeem en stootbeeld lokaal
+  bewaard zonder V/A te veranderen.
+
 ### 2026-09-13 — stipwaardelabels versie 12
 
 - Ieder V- en A-constructielijntje vermeldt deelnaam, V/A en stipwaarde.

@@ -1,4 +1,4 @@
-3B LINE CONFIGURATOR — VERSION 12
+3B LINE CONFIGURATOR — VERSION 13
 ================================
 
 Open index.html locally or use https://kruin.github.io/3b/.
@@ -35,6 +35,11 @@ Diamond values have two configured display modes. “At each guide” keeps the
 regular numbering and adds exact labels such as Head · A 19. “Replace nearest
 number” suppresses the nearest regular multiple of ten and shows the exact
 coloured V/A label at the actual line point.
+
+By default, a diamond-line label contains only the exact value, such as 15.
+Ball colour (white/yellow) and marking (plain/spotted) are configurable.
+The cue ball can be dragged along the first visible departure route. Its
+position and stroke length are saved per table, system and shot view.
 
 Publication
 -----------
