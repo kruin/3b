@@ -1,4 +1,4 @@
-3B LINE CONFIGURATOR — VERSION 13
+3B LINE CONFIGURATOR — VERSION 14
 ================================
 
 Open index.html locally or use https://kruin.github.io/3b/.
@@ -40,6 +40,12 @@ By default, a diamond-line label contains only the exact value, such as 15.
 Ball colour (white/yellow) and marking (plain/spotted) are configurable.
 The cue ball can be dragged along the first visible departure route. Its
 position and stroke length are saved per table, system and shot view.
+
+Terminology: LKL is the Pattern; FIVE, SIX etc. are Lines; Nose through Leg are
+Parts. Values use compact cycle buttons, so mobile does not open a numeric
+keyboard. Fixed rail directions mirror automatically with West/East.
+Line 1 is always the first departure line and supports dragging plus 1 cm
+precision buttons and desktop arrow keys.
 
 Publication
 -----------

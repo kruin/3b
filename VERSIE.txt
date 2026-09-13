@@ -1,11 +1,13 @@
-3B GitHub Pages versie 13
+3B GitHub Pages versie 14
 
-- Stiplabels tonen standaard alleen de exacte waarde, bijvoorbeeld 15.
-- Waardelabels staan op het werkelijke punt van de stiplijn.
-- Balmiddens liggen exact één straal binnen de betreffende band.
-- Dikke looplijnen stoppen aan de balomtrek; dunne lijnen beginnen daar.
-- Balweergave is config: wit/geel en met/zonder stippen.
-- De speelbal is over de eerste zichtbare afstootlijn versleepbaar.
-- Afstootlengte wordt in centimeters getoond en lokaal afzonderlijk opgeslagen
-  per tafel, systeem en stootbeeld.
-- Assets zijn config-v13.js en app-v13.js.
+- Terminologie: Patroon LKL; Lijnen VIJF, ZES enz.; Delen Neus t/m Been.
+- VIJF t/m ACHT zijn in config aan LKL gekoppeld.
+- Bandvolgorde ligt vast in config; alle N/Z/W/O-keuzevelden zijn verwijderd.
+- Waarden zijn compacte knoppen zonder mobiel toetsenbord.
+- LKL-waarden rouleren binnen configureerbare minimum- en maximumwaarden.
+- Bekend voorbeeld: VIJF Nek-V rouleert 13–18.
+- Buiten de LKL-range schakelt de status automatisch naar Vrij spel.
+- Lijn 1 is de eerste afstootlijn: Neus of bij Verkorte 4-bander Kop.
+- Speelbal is sleepbaar; −/+ en pijltjestoetsen corrigeren per 1 cm.
+- Tafel blijft op mobiel boven de compacte invoer zichtbaar.
+- Assets zijn config-v14.js en app-v14.js.

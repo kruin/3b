@@ -63,6 +63,19 @@ Voor iedere release:
 
 ## Wijzigingslog
 
+### 2026-09-13 — LKL, compacte bediening en Lijn 1 versie 14
+
+- Terminologie gecorrigeerd: LKL is Patroon; VIJF enz. zijn Lijnen; Neus enz.
+  zijn Delen.
+- VIJF t/m ACHT zijn aan LKL gekoppeld; HALFZES is als latere lijn genoteerd.
+- Bandvolgorde is vaste config en heeft geen on-screen keuzelijsten meer.
+- Waardeknoppen rouleren zonder schermtoetsenbord binnen config-min/max.
+- VIJF Nek-V heeft als eerste expliciete range 13–18.
+- Buiten LKL-ranges wordt de status Vrij spel.
+- Lijn 1 is de eerste afstootlijn en heeft sleepbediening plus stappen van 1 cm.
+- Desktop houdt de tafel sticky; mobiel toont de tafel vóór en tijdens de
+  compacte invoer.
+
 ### 2026-09-13 — exacte ballen en versleepbare afstoot versie 13
 
 - Stiplabels tonen standaard uitsluitend de waarde en staan op de stiplijn.
