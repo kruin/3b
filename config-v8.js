@@ -1,6 +1,6 @@
 window.TAFEL_STARTCONFIG = {
   version: 1,
-  release: "7",
+  release: "8",
   tables: {
     klein: { label: "Klein", widthCm: 115, heightCm: 230, dotOffsetCm: 9.5 },
     groot: { label: "Groot", widthCm: 142, heightCm: 284, dotOffsetCm: 9.5 }

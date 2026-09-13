@@ -3,6 +3,7 @@ setlocal EnableDelayedExpansion
 cd /d "%~dp0"
 
 set "DRIEBAND_REMOTE=https://github.com/kruin/drieband.git"
+set "DRIEBAND_PAGES=https://kruin.github.io/drieband"
 
 echo ============================================================
 echo DRIEBAND - PUBLICEREN NAAR GITHUB
@@ -31,22 +32,22 @@ if not exist "index.html" (
   goto :einde_fout
 )
 
-if not exist "app-v7.js" (
-  echo FOUT: app-v7.js ontbreekt. Dit is geen volledig versie-7-pakket.
+if not exist "app-v8.js" (
+  echo FOUT: app-v8.js ontbreekt. Dit is geen volledig versie-8-pakket.
   goto :einde_fout
 )
-if not exist "config-v7.js" (
-  echo FOUT: config-v7.js ontbreekt. Dit is geen volledig versie-7-pakket.
+if not exist "config-v8.js" (
+  echo FOUT: config-v8.js ontbreekt. Dit is geen volledig versie-8-pakket.
   goto :einde_fout
 )
-findstr /C:"app-v7.js" "index.html" >nul
+findstr /C:"app-v8.js" "index.html" >nul
 if errorlevel 1 (
-  echo FOUT: index.html verwijst niet naar app-v7.js.
+  echo FOUT: index.html verwijst niet naar app-v8.js.
   goto :einde_fout
 )
-findstr /C:"config-v7.js" "index.html" >nul
+findstr /C:"config-v8.js" "index.html" >nul
 if errorlevel 1 (
-  echo FOUT: index.html verwijst niet naar config-v7.js.
+  echo FOUT: index.html verwijst niet naar config-v8.js.
   goto :einde_fout
 )
 
@@ -115,7 +116,25 @@ if /i not "!LOKALE_COMMIT!"=="!REMOTE_COMMIT!" (
 )
 
 echo.
-echo KLAAR: de bestanden staan op branch main van kruin/drieband.
+echo GitHub Pages wordt gecontroleerd. Dit kan enkele minuten duren.
+set /a POGING=0
+
+:controle_pages
+set /a POGING+=1
+echo Controle !POGING!/24: online versiebestand...
+powershell -NoProfile -Command "$ProgressPreference='SilentlyContinue'; try { $v=(Invoke-WebRequest -UseBasicParsing -Uri '%DRIEBAND_PAGES%/VERSIE.txt?commit=!LOKALE_COMMIT!^&poging=!POGING!' -Headers @{'Cache-Control'='no-cache'}).Content.Trim(); if ($v.StartsWith('!APP_VERSIE!')) { exit 0 }; Write-Host ('Nog online: ' + $v.Substring(0,[Math]::Min(80,$v.Length))); exit 1 } catch { Write-Host ('Nog niet bereikbaar: ' + $_.Exception.Message); exit 1 }"
+if not errorlevel 1 goto :controle_index
+if !POGING! GEQ 24 goto :pages_fout
+timeout /t 10 /nobreak >nul
+goto :controle_pages
+
+:controle_index
+echo Online index.html wordt gecontroleerd...
+powershell -NoProfile -Command "$ProgressPreference='SilentlyContinue'; try { $h=(Invoke-WebRequest -UseBasicParsing -Uri '%DRIEBAND_PAGES%/?commit=!LOKALE_COMMIT!' -Headers @{'Cache-Control'='no-cache'}).Content; if ($h.Contains('app-v8.js') -and $h.Contains('config-v8.js')) { exit 0 }; Write-Host 'FOUT: online index.html verwijst niet naar beide versie-8-scripts.'; exit 1 } catch { Write-Host ('FOUT: online index.html kon niet worden gecontroleerd: ' + $_.Exception.Message); exit 1 }"
+if errorlevel 1 goto :pages_fout
+
+echo.
+echo KLAAR: Git en GitHub Pages bevatten de gecontroleerde versie.
 for /f "delims=" %%C in ('git rev-parse --short HEAD') do echo Gepushte commit: %%C
 echo Gepubliceerde versie: !APP_VERSIE!
 echo Nu kan bij GitHub Settings ^> Pages gekozen worden:
@@ -126,6 +145,21 @@ echo Daarna wordt de site: https://kruin.github.io/drieband/
 echo.
 pause
 exit /b 0
+
+:pages_fout
+echo.
+echo ============================================================
+echo PUBLICATIE NIET GESLAAGD
+echo ============================================================
+echo GitHub branch main is bijgewerkt, maar GitHub Pages toont niet de
+echo gecontroleerde versie !APP_VERSIE! met app-v8.js en config-v8.js.
+echo.
+echo Herstel via GitHub Settings ^> Pages:
+echo   1. Zet Branch tijdelijk op None en kies Save.
+echo   2. Wacht tot de oude site niet meer beschikbaar is.
+echo   3. Kies opnieuw main en /(root) en kies Save.
+echo   4. Start deze BAT daarna opnieuw voor een nieuwe controle.
+goto :einde_fout
 
 :git_fout
 echo.

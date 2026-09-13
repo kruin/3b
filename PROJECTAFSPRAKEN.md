@@ -119,3 +119,16 @@ Voor iedere release:
 - JSON-import blijft beschikbaar voor een bewust gekozen reservekop.
 - Releasebestanden hernoemd naar `config-v7.js`, `app-v7.js` en
   `controle-v7.html`.
+
+### 2026-09-13 — geverifieerde publicatie versie 8
+
+- BAT scheidt voortaan drie resultaten: lokale commit, remote `origin/main` en
+  daadwerkelijk door GitHub Pages geleverde bestanden.
+- `KLAAR` verschijnt uitsluitend wanneer online `VERSIE.txt` bij de lokale
+  release past én online `index.html` de versie-8-scripts laadt.
+- Online controle gebruikt de volledige commitcode als unieke queryparameter.
+- De BAT wacht maximaal vier minuten op de asynchrone Pages-deployment.
+- Bij een blijvend oude deployment verschijnt `PUBLICATIE NIET GESLAAGD` met
+  concrete herstelstappen; een geslaagde push wordt niet als sitesucces gemeld.
+- Releasebestanden hernoemd naar `config-v8.js`, `app-v8.js` en
+  `controle-v8.html`.

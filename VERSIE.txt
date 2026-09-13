@@ -1,10 +1,10 @@
-DRIEBAND GitHub Pages versie 7
+DRIEBAND GitHub Pages versie 8
 
 Kenmerken:
 - correcte horizontale spiegeling west/oost;
 - alle vier nummeringsassen spiegelen mee;
 - een canonieke westconfig; oost is alleen een gespiegelde view;
 - browserconfiguratie versie 3;
-- onveranderlijke assets `config-v7.js` en `app-v7.js`;
+- onveranderlijke assets `config-v8.js` en `app-v8.js`;
 - grotere, contrastrijke stippen en bandnummeringen.
 - schone canonieke browseropslag `drieband-canoniek-west-v1`.
