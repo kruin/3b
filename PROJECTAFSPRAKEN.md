@@ -91,8 +91,28 @@ Voor iedere release:
 - De app rekent vanuit de nieuwe fysieke balpositie beide stiplijnwaarden terug.
 - Beide waarden worden als één wijziging opgeslagen; de gebruiker hoeft ze niet apart in te voeren.
 - De speelbal is geen gedeeld bandpunt en blijft de lengtebediening van Lijn 1.
+
+### 2026-09-13 — Betrouwbaar slepen op mobiel versie 17
+
+- De zichtbare bal krijgt een grotere onzichtbare raakzone; de balmaat zelf verandert niet.
+- Een gestippelde halo geeft aan dat de bal sleepbaar is.
+- Een aanraking buiten de raakzone blijft een normale schermbeweging.
+- Vanaf pointer-down op de raakzone worden scrollen en tekstselectie tijdelijk geblokkeerd.
+- Pointer-up en pointer-cancel beëindigen de blokkering altijd.
+- De eerdere aanname dat Been vast op de tegenoverliggende lange band eindigt,
+  is vervallen in versie 18.
 - Desktop houdt de tafel sticky; mobiel toont de tafel vóór en tijdens de
   compacte invoer.
+
+### 2026-09-13 — Eén Been over twee banden versie 18
+
+- Been A is één doorlopende aankomstzone van midden Noord via de
+  noordoosthoek naar midden Oost.
+- In canonieke stipwaarden is dat Noord 20–40, gevolgd door Oost 0–40.
+- De gespiegeld-oostweergave gebruikt Noord 20–0, gevolgd door West 0–40.
+- Bij stappen of slepen wisselt de app bij de hoek automatisch van band.
+- Eén Been vervangt hiermee functioneel de vroegere linker- en
+  rechterbeenvarianten.
 
 ### 2026-09-13 — exacte ballen en versleepbare afstoot versie 13
 

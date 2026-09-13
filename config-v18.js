@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 9, release: "16",
+  version: 11, release: "18",
   terminology: {
     pattern: { key: "LKL", en: "long-short-long", nl: "lang-kort-lang" },
     line: { en: "Line", nl: "Lijn" },
@@ -40,7 +40,10 @@ window.THREEB_START_CONFIG = {
       axis: "along_cushion",
       updatesBothAdjacentValues: true,
       valuePrecision: 1,
-      keyboardStep: 1
+      keyboardStep: 1,
+      touchTargetRadiusBallRadii: 2.4,
+      showDragHalo: true,
+      lockPageScrollWhileDragging: true
     },
     guideToDiamondLineAtDeparture: true,
     guideToDiamondLineAtArrival: true,
@@ -92,6 +95,23 @@ window.THREEB_START_CONFIG = {
     neus:{from:"Z",to:"west"}, kop:{from:"west",to:"noord"},
     nek:{from:"noord",to:"oost"}, romp:{from:"oost",to:"zuid"},
     kruis:{from:"zuid",to:"west"}, been:{from:"west",to:"noord"}
+  },
+  partPointZones: {
+    been: {
+      to: {
+        type: "continuous_corner_zone",
+        canonicalPath: [
+          {band:"noord",minimum:20,maximum:40,direction:"toward_northeast_corner"},
+          {band:"oost",minimum:0,maximum:40,direction:"away_from_northeast_corner"}
+        ],
+        mirroredPath: [
+          {band:"noord",minimum:0,maximum:20,direction:"toward_northwest_corner"},
+          {band:"west",minimum:0,maximum:40,direction:"away_from_northwest_corner"}
+        ],
+        defaultPoint:{band:"noord",value:20},
+        switchBandAtCorner:true
+      }
+    }
   },
   lklValueRanges: {
     defaultOffset:{V:20,A:5}, wrap:true, integerStep:1,

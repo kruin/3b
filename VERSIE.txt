@@ -1,4 +1,4 @@
-3B GitHub Pages versie 16
+3B GitHub Pages versie 18
 
 - Terminologie: Patroon LKL; Lijnen VIJF, ZES enz.; Delen Neus t/m Been.
 - VIJF t/m ACHT zijn in config aan LKL gekoppeld.
@@ -18,4 +18,12 @@
 - Een gedeelde bandbal kan langs de band worden gesleept.
 - Bij slepen worden beide aangrenzende stipwaarden samen teruggerekend en opgeslagen.
 - De speelbal blijft afzonderlijk sleepbaar voor de lengte van Lijn 1.
-- Assets zijn config-v16.js en app-v16.js.
+- Sleepbare ballen hebben een grotere, onzichtbare mobiele raakzone.
+- Een gestippelde halo maakt duidelijk welke ballen sleepbaar zijn.
+- Paginascroll wordt alleen geblokkeerd vanaf het moment dat een balsleep begint.
+- Pointer-move en pointer-cancel worden expliciet afgehandeld.
+- Been A is één doorlopende hoekzone: Noord 20–40, daarna Oost 0–40.
+- Bij oostspiegeling wordt dit Noord 20–0, daarna West 0–40.
+- Slepen van de Been-eindbal wisselt bij de hoek automatisch van band.
+- Eén Been dekt daarmee de twee vroegere benen.
+- Assets zijn config-v18.js en app-v18.js.
