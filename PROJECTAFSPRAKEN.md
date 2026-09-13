@@ -63,6 +63,15 @@ Voor iedere release:
 
 ## Wijzigingslog
 
+### 2026-09-13 — stipwaardelabels versie 12
+
+- Ieder V- en A-constructielijntje vermeldt deelnaam, V/A en stipwaarde.
+- De labelweergave is config en on-screen selecteerbaar.
+- Stijl `bij_lijntje` behoudt alle standaardnummeringen.
+- Stijl `vervang_dichtstbijzijnde_nummer` onderdrukt per lijnpunt het
+  dichtstbijzijnde standaardtiental en toont daar het exacte gekleurde label.
+- Eén implementatie voorkomt verschillen tussen twee losse appversies.
+
 ### 2026-09-13 — bal- en constructielijnen versie 11
 
 - Pijlpunten verwijderd.

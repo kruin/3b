@@ -8,13 +8,13 @@
   };
   const $ = id => document.getElementById(id), copy = v => JSON.parse(JSON.stringify(v));
   function blank(){ const p={}; C.lines.forEach((l,i)=>p[l.key]=i===0?{from:{kind:"acquit",value:"Z"},to:{band:"west",value:null}}:{from:{band:"",value:null},to:{band:"",value:null}}); return p; }
-  function initial(){ const d={}; Object.keys(C.tables).forEach(t=>{d[t]={};C.patterns.forEach(n=>{d[t][n]=blank();Object.assign(d[t][n],copy(C.defaults[t]?.[n]||{}));});});return {version:5,model:"canonical-west-v2",data:d,ui:{language:C.defaultLanguage,tableMode:C.defaultTableMode,editTable:"groot",pattern:"VIJF",direction:C.defaultDirection,departure:C.defaultDeparture,correctionMode:C.shortenedFourCushionCorrection.defaultMode}}; }
-  function load(){try{const x=JSON.parse(localStorage.getItem(KEY));if([4,5].includes(x?.version)&&x.data){x.version=5;return x;}}catch(_){}return initial();}
+  function initial(){ const d={}; Object.keys(C.tables).forEach(t=>{d[t]={};C.patterns.forEach(n=>{d[t][n]=blank();Object.assign(d[t][n],copy(C.defaults[t]?.[n]||{}));});});return {version:6,model:"canonical-west-v2",data:d,ui:{language:C.defaultLanguage,tableMode:C.defaultTableMode,editTable:"groot",pattern:"VIJF",direction:C.defaultDirection,departure:C.defaultDeparture,correctionMode:C.shortenedFourCushionCorrection.defaultMode,valueStyle:C.drawing.valueLabels.defaultMode}}; }
+  function load(){try{const x=JSON.parse(localStorage.getItem(KEY));if([4,5,6].includes(x?.version)&&x.data){x.version=6;return x;}}catch(_){}return initial();}
   const state=load(); let ui=state.ui;
   function normalize(){
     const base=initial(); Object.keys(C.tables).forEach(t=>{state.data[t]??={};C.patterns.forEach(n=>{state.data[t][n]??=base.data[t][n];C.lines.forEach(l=>state.data[t][n][l.key]??=base.data[t][n][l.key]);});});
     ui.language=["en","nl"].includes(ui.language)?ui.language:"en"; ui.tableMode=["groot","klein","beide"].includes(ui.tableMode)?ui.tableMode:"groot"; ui.editTable=["groot","klein"].includes(ui.editTable)?ui.editTable:(ui.tableMode==="klein"?"klein":"groot");
-    ui.pattern=C.patterns.includes(ui.pattern)?ui.pattern:"VIJF"; ui.direction=["west","oost"].includes(ui.direction)?ui.direction:"west"; ui.departure=["neus","kop"].includes(ui.departure)?ui.departure:"neus"; ui.correctionMode=C.shortenedFourCushionCorrection.modes.includes(ui.correctionMode)?ui.correctionMode:C.shortenedFourCushionCorrection.defaultMode;
+    ui.pattern=C.patterns.includes(ui.pattern)?ui.pattern:"VIJF"; ui.direction=["west","oost"].includes(ui.direction)?ui.direction:"west"; ui.departure=["neus","kop"].includes(ui.departure)?ui.departure:"neus"; ui.correctionMode=C.shortenedFourCushionCorrection.modes.includes(ui.correctionMode)?ui.correctionMode:C.shortenedFourCushionCorrection.defaultMode; ui.valueStyle=C.drawing.valueLabels.modes.includes(ui.valueStyle)?ui.valueStyle:C.drawing.valueLabels.defaultMode;
   }
   function save(){state.ui=ui;localStorage.setItem(KEY,JSON.stringify(state));$("saveState").textContent=T[ui.language].saved;}
   function tr(k){return T[ui.language][k]||k;} function tableLabel(k){return C.tables[k].labels[ui.language];} function patternLabel(k){return C.patternLabels[k][ui.language];} function lineLabel(l){return l.labels[ui.language];}
@@ -22,7 +22,7 @@
   function activeLines(){return C.lines.slice(ui.departure==="kop"?1:0);} function data(t=ui.editTable){return state.data[t][ui.pattern];}
   function init(){normalize();bind();render();}
   function bind(){
-    [["languageSelect","language"],["tableMode","tableMode"],["editTable","editTable"],["patternSelect","pattern"],["noseDirection","direction"],["departureLine","departure"],["correctionMode","correctionMode"]].forEach(([id,key])=>$(id).addEventListener("change",e=>{ui[key]=e.target.value;if(key==="tableMode"&&ui.tableMode!=="beide")ui.editTable=ui.tableMode;save();render();}));
+    [["languageSelect","language"],["tableMode","tableMode"],["editTable","editTable"],["patternSelect","pattern"],["noseDirection","direction"],["departureLine","departure"],["correctionMode","correctionMode"],["valueStyle","valueStyle"]].forEach(([id,key])=>$(id).addEventListener("change",e=>{ui[key]=e.target.value;if(key==="tableMode"&&ui.tableMode!=="beide")ui.editTable=ui.tableMode;save();render();}));
     $("exportSvg").onclick=exportSvg;$("exportJson").onclick=exportJson;$("importJson").onchange=importJson;$("resetPattern").onclick=reset;
   }
   function render(){
@@ -32,6 +32,7 @@
     $("languageSelect").value=ui.language; const dir=$("noseDirection");dir.options[0].text=tr("west");dir.options[1].text=tr("east");dir.value=ui.direction;
     const dep=$("departureLine");dep.options[0].text=tr("nose");dep.options[1].text=ui.language==="nl"?"Verkorte 4-bander":"Shortened four-cushion";dep.value=ui.departure;
     const cm=$("correctionMode"),cl=ui.language==="nl"?["Advies","Aan","Uit"]:["Advice","On","Off"]; $("correctionLabel").textContent=ui.language==="nl"?"Correctie":"Correction"; [...cm.options].forEach((o,i)=>o.text=cl[i]);cm.value=ui.correctionMode;$("correctionControl").hidden=ui.departure!=="kop";
+    const vs=$("valueStyle"),vl=ui.language==="nl"?["Bij elk lijntje","Vervang dichtstbijzijnde nummer"]:["At each guide","Replace nearest number"];$("valueStyleLabel").textContent=ui.language==="nl"?"Stipwaarden":"Diamond values";[...vs.options].forEach((o,i)=>o.text=vl[i]);vs.value=ui.valueStyle;
     const ps=$("patternSelect");ps.replaceChildren();C.patterns.forEach(n=>ps.add(new Option(patternLabel(n),n)));ps.value=ui.pattern;
     $("exportJson").textContent=tr("myTables");$("helpText").textContent=tr("help");
     $("editorTitle").textContent=`${tableLabel(ui.editTable)} · ${patternLabel(ui.pattern)}`;
@@ -95,20 +96,32 @@
     return {x:z.x+u*dx,y:z.y+u*dy};
   }
   const esc=v=>String(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  function formattedValue(value){const n=Number(value),text=Number.isFinite(n)?String(Math.round(n*1000)/1000):String(value);return ui.language==="nl"?text.replace(".",","):text;}
+  function valueTag(p,text,color,cx,cy){
+    const dx=cx-p.x,dy=cy-p.y,length=Math.hypot(dx,dy)||1,x=p.x+dx/length*28,y=p.y+dy/length*28,width=Math.max(54,text.length*6.7+14);
+    return `<g class="value-tag"><rect x="${x-width/2}" y="${y-10}" width="${width}" height="20" rx="7" fill="#fffaf0" stroke="${color}" stroke-width="2"/><text x="${x}" y="${y+4}" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="800" fill="#2b2118">${esc(text)}</text></g>`;
+  }
+  function suppressedDots(t){
+    const hidden=new Set();if(ui.valueStyle!=="vervang_dichtstbijzijnde_nummer")return hidden;
+    activeLines().forEach(l=>{const seg=data(t)[l.key];[seg.from,seg.to].forEach(p=>{if(p.kind==="acquit"||!complete(p)||!valid(p))return;const band=shownBand(p.band),max=(band==="west"||band==="oost")?80:40,nearest=Math.max(0,Math.min(max,Math.round(Number(p.value)/10)*10));hidden.add(`${band}:${nearest}`);});});
+    return hidden;
+  }
   function drawTable(t){
     const table=C.tables[t],W=510,H=850,fieldW=340,fieldH=680,scale=fieldW/table.widthCm,d=table.dotOffsetCm*scale,x=(W-fieldW)/2,y=90,wood=d+14,map=p=>({x:x+p.x*scale,y:y+p.y*scale}),segs=segments(t);let s=`<svg class="table-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(patternLabel(ui.pattern))} ${esc(tableLabel(t))}"><rect width="${W}" height="${H}" rx="18" fill="#f7f1e5"/><text x="${W/2}" y="28" text-anchor="middle" font-family="system-ui" font-size="20" font-weight="800" fill="#2b2118">${esc(patternLabel(ui.pattern))} · ${esc(tableLabel(t).toUpperCase())}</text><text x="${W/2}" y="49" text-anchor="middle" font-family="system-ui" font-size="11" fill="#6d5d4b">${table.widthCm} × ${table.heightCm} cm · 9.5 cm</text><rect x="${x-wood}" y="${y-wood}" width="${fieldW+2*wood}" height="${fieldH+2*wood}" rx="11" fill="#704725" stroke="#3a2516" stroke-width="3"/><rect x="${x}" y="${y}" width="${fieldW}" height="${fieldH}" fill="#176f4f" stroke="#e7c66e" stroke-width="3"/>`;
-    s+=dots(t,map);
+    s+=dots(t,map,suppressedDots(t));
     segs.forEach(l=>{
       const seg=data(t)[l.key],radiusCm=C.ballDiameterMm/20,stipA=point(seg.from,t),stipB=point(seg.to,t);
       const ballA=seg.from.kind==="acquit"?stipA:bandBall(seg.from,seg.to,t,radiusCm),ballB=bandBall(seg.to,seg.from,t,radiusCm);
       const guideA=seg.from.kind==="acquit"?backwardGuide(ballA,ballB,t):stipA;
       const A=map(ballA),B=map(ballB),GA=map(guideA),GB=map(stipB),ballRadius=radiusCm*scale,lineWidth=C.ballDiameterMm/10*scale,guideWidth=C.drawing.guideLineWidthSvg,mx=(A.x+B.x)/2,my=(A.y+B.y)/2;
-      s+=`<g data-part="${l.key}"><line x1="${GA.x}" y1="${GA.y}" x2="${A.x}" y2="${A.y}" stroke="${l.color}" stroke-width="${guideWidth}"/><line x1="${A.x}" y1="${A.y}" x2="${B.x}" y2="${B.y}" stroke="${l.color}" stroke-width="${lineWidth}" stroke-linecap="round"/><line x1="${B.x}" y1="${B.y}" x2="${GB.x}" y2="${GB.y}" stroke="${l.color}" stroke-width="${guideWidth}"/><circle cx="${A.x}" cy="${A.y}" r="${ballRadius}" fill="${l.color}"/><circle cx="${B.x}" cy="${B.y}" r="${ballRadius}" fill="${l.color}"/><text x="${mx}" y="${my-10}" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="800" fill="#fff6dd" stroke="#103d2c" stroke-width="3" paint-order="stroke fill">${esc(lineLabel(l))}</text></g>`;
+      const fromValue=seg.from.kind==="acquit"?"Z":formattedValue(seg.from.value),toValue=formattedValue(seg.to.value);
+      const fromTag=`${lineLabel(l)} · V ${fromValue}`,toTag=`${lineLabel(l)} · A ${toValue}`;
+      s+=`<g data-part="${l.key}"><line x1="${GA.x}" y1="${GA.y}" x2="${A.x}" y2="${A.y}" stroke="${l.color}" stroke-width="${guideWidth}"/><line x1="${A.x}" y1="${A.y}" x2="${B.x}" y2="${B.y}" stroke="${l.color}" stroke-width="${lineWidth}" stroke-linecap="round"/><line x1="${B.x}" y1="${B.y}" x2="${GB.x}" y2="${GB.y}" stroke="${l.color}" stroke-width="${guideWidth}"/><circle cx="${A.x}" cy="${A.y}" r="${ballRadius}" fill="${l.color}"/><circle cx="${B.x}" cy="${B.y}" r="${ballRadius}" fill="${l.color}"/><text x="${mx}" y="${my-10}" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="800" fill="#fff6dd" stroke="#103d2c" stroke-width="3" paint-order="stroke fill">${esc(lineLabel(l))}</text>${valueTag(GA,fromTag,l.color,x+fieldW/2,y+fieldH/2)}${valueTag(GB,toTag,l.color,x+fieldW/2,y+fieldH/2)}</g>`;
     });
     const z=map(point({kind:"acquit"},t));s+=`<circle cx="${z.x}" cy="${z.y}" r="5" fill="#fff" stroke="#2b2118" stroke-width="2"/><text x="${z.x+10}" y="${z.y+4}" font-family="system-ui" font-size="12" font-weight="800" fill="#fff" stroke="#103d2c" stroke-width="3" paint-order="stroke fill">Z</text><text x="${W/2}" y="${H-17}" text-anchor="middle" font-family="system-ui" font-size="11" fill="#6d5d4b">${segs.length===activeLines().length?tr("complete"):`${segs.length}/${activeLines().length} ${tr("lines")}`}</text></svg>`;return `<div class="drawing-card">${s}</div>`;
   }
   function displayPoint(b,v,t){return point({band:ui.direction==="oost"?mirror(b):b,value:v},t);}
-  function dots(t,map){let c='<g fill="#fff8dc" stroke="#3b291c" stroke-width=".8">',l='<g fill="#fff8dc" stroke="#4b301d" stroke-width="3" paint-order="stroke fill" font-family="system-ui" font-size="14" font-weight="800">';["west","oost"].forEach(b=>{for(let v=0;v<=80;v+=10){const p=map(displayPoint(b,v,t));c+=`<circle cx="${p.x}" cy="${p.y}" r="4"/>`;l+=`<text x="${p.x+(b==="west"?-13:13)}" y="${p.y+5}" text-anchor="${b==="west"?"end":"start"}">${v}</text>`;}});["noord","zuid"].forEach(b=>{for(let v=0;v<=40;v+=10){const p=map(displayPoint(b,v,t));c+=`<circle cx="${p.x}" cy="${p.y}" r="4"/>`;l+=`<text x="${p.x}" y="${p.y+(b==="noord"?-13:23)}" text-anchor="middle">${v}</text>`;}});return c+'</g>'+l+'</g>';}
+  function dots(t,map,hidden){let c='<g fill="#fff8dc" stroke="#3b291c" stroke-width=".8">',l='<g fill="#fff8dc" stroke="#4b301d" stroke-width="3" paint-order="stroke fill" font-family="system-ui" font-size="14" font-weight="800">';["west","oost"].forEach(b=>{for(let v=0;v<=80;v+=10){const p=map(displayPoint(b,v,t));c+=`<circle cx="${p.x}" cy="${p.y}" r="4"/>`;if(!hidden.has(`${b}:${v}`))l+=`<text x="${p.x+(b==="west"?-13:13)}" y="${p.y+5}" text-anchor="${b==="west"?"end":"start"}">${v}</text>`;}});["noord","zuid"].forEach(b=>{for(let v=0;v<=40;v+=10){const p=map(displayPoint(b,v,t));c+=`<circle cx="${p.x}" cy="${p.y}" r="4"/>`;if(!hidden.has(`${b}:${v}`))l+=`<text x="${p.x}" y="${p.y+(b==="noord"?-13:23)}" text-anchor="middle">${v}</text>`;}});return c+'</g>'+l+'</g>';}
   function download(name,content,type){const blob=new Blob([content],{type}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);}
   function exportSvg(){const svgs=[...document.querySelectorAll(".table-svg")];svgs.forEach((s,i)=>download(`3B-${ui.tableMode==="beide"?(i?"small":"large"):ui.tableMode}-${ui.pattern}.svg`,new XMLSerializer().serializeToString(s),"image/svg+xml"));}
   function exportJson(){download(ui.language==="nl"?"3B-mijn-tafels.json":"3B-my-tables.json",JSON.stringify(state,null,2),"application/json");}

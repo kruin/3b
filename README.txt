@@ -1,4 +1,4 @@
-3B LINE CONFIGURATOR — VERSION 11
+3B LINE CONFIGURATOR — VERSION 12
 ================================
 
 Open index.html locally or use https://kruin.github.io/3b/.
@@ -30,6 +30,11 @@ Drawing style: no arrows; the thick route has the scaled 61.5 mm ball width.
 Filled balls sit against the cushion. Thin construction lines continue from
 each ball centre to V/A on the diamond lines. Nose also extends backwards from
 Z to the diamond line; the shortened route uses Head V for that guide.
+
+Diamond values have two configured display modes. “At each guide” keeps the
+regular numbering and adds exact labels such as Head · A 19. “Replace nearest
+number” suppresses the nearest regular multiple of ten and shows the exact
+coloured V/A label at the actual line point.
 
 Publication
 -----------

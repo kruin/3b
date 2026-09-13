@@ -1,10 +1,9 @@
-3B GitHub Pages versie 11
+3B GitHub Pages versie 12
 
-- Geen pijlpunten meer.
-- Dikke loop heeft de geschaalde baldiameter van 61,5 mm.
-- Volledig gevulde ballen liggen met hun middelpunt één balradius binnen de band.
-- Dunne constructielijnen verbinden ieder balmidden met V en A op de stiplijnen.
-- Neus krijgt vanuit Z een achterwaartse constructielijn tot de stiplijn.
-- Verkorte 4-bander gebruikt Kop-V als achterwaartse constructielijn.
-- Absolute Koplengtecorrectie met Aan, Uit en Advies blijft beschikbaar.
-- Assets zijn config-v11.js en app-v11.js.
+- Iedere dunne constructielijn toont Deel, V/A en exacte stipwaarde.
+- Config biedt twee weergaven: Bij elk lijntje en Vervang dichtstbijzijnde nummer.
+- In de vervangweergave verdwijnt het dichtstbijzijnde standaardtiental, terwijl
+  het exacte gekleurde label op het werkelijke lijnpunt staat.
+- De standaardweergave is Bij elk lijntje.
+- Balposities, balbrede looplijnen en lijnconstructie uit versie 11 blijven.
+- Assets zijn config-v12.js en app-v12.js.

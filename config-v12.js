@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 4, release: "11",
+  version: 5, release: "12",
   defaultLanguage: "en", defaultTableMode: "groot", defaultDirection: "west", defaultDeparture: "neus",
   tables: {
     klein: { labels: { en: "Small", nl: "Klein" }, widthCm: 115, heightCm: 230, dotOffsetCm: 9.5 },
@@ -12,7 +12,14 @@ window.THREEB_START_CONFIG = {
     ballsAtCushion: true,
     guideToDiamondLineAtDeparture: true,
     guideToDiamondLineAtArrival: true,
-    arrows: false
+    arrows: false,
+    valueLabels: {
+      defaultMode: "bij_lijntje",
+      modes: ["bij_lijntje", "vervang_dichtstbijzijnde_nummer"],
+      showPartName: true,
+      showPointType: true,
+      suppressNearestTenInReplacementMode: true
+    }
   },
   patterns: ["VIJF","ZES","ZEVEN","ACHT","NEGEN","TIEN","ELF","TWAALF"],
   patternLabels: {
