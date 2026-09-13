@@ -1,4 +1,4 @@
-3B GitHub Pages versie 15
+3B GitHub Pages versie 16
 
 - Terminologie: Patroon LKL; Lijnen VIJF, ZES enz.; Delen Neus t/m Been.
 - VIJF t/m ACHT zijn in config aan LKL gekoppeld.
@@ -14,4 +14,8 @@
 - VIJF+1 blijft parallel aan VIJF, komt één stip verder aan en start bij Z+1.
 - Parallelle varianten lopen configureerbaar van -4 tot +4.
 - HALFZES is een Waaierlijn tussen VIJF en ZES: vertrek Z blijft vast, de richting draait.
-- Assets zijn config-v15.js en app-v15.js.
+- De bal op een band is één gedeeld punt: A van de vorige én V van de volgende lijn.
+- Een gedeelde bandbal kan langs de band worden gesleept.
+- Bij slepen worden beide aangrenzende stipwaarden samen teruggerekend en opgeslagen.
+- De speelbal blijft afzonderlijk sleepbaar voor de lengte van Lijn 1.
+- Assets zijn config-v16.js en app-v16.js.

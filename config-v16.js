@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 8, release: "15",
+  version: 9, release: "16",
   terminology: {
     pattern: { key: "LKL", en: "long-short-long", nl: "lang-kort-lang" },
     line: { en: "Line", nl: "Lijn" },
@@ -34,6 +34,13 @@ window.THREEB_START_CONFIG = {
       precisionStepCm: 1,
       keyboardArrows: true,
       mobileButtons: true
+    },
+    junctionBalls: {
+      draggable: true,
+      axis: "along_cushion",
+      updatesBothAdjacentValues: true,
+      valuePrecision: 1,
+      keyboardStep: 1
     },
     guideToDiamondLineAtDeparture: true,
     guideToDiamondLineAtArrival: true,

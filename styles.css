@@ -83,6 +83,8 @@ td input.invalid, td select.invalid { border-color: #b83434; background: #fff1ef
 .drag-help { margin: 5px 0 0; color: var(--muted); font-size: 12px; }
 .cue-ball { cursor: grab; touch-action: none; }
 .cue-ball:active { cursor: grabbing; }
+.junction-ball { cursor: grab; touch-action: none; filter: drop-shadow(0 0 3px rgba(20,12,5,.45)); }
+.junction-ball:active { cursor: grabbing; }
 
 .drawing { position: sticky; top: 12px; }
 .drawing-heading { margin-bottom: 4px; }

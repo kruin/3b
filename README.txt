@@ -1,4 +1,4 @@
-3B LINE CONFIGURATOR — VERSION 15
+3B LINE CONFIGURATOR — VERSION 16
 ================================
 
 Open index.html locally or use https://kruin.github.io/3b/.
@@ -46,6 +46,11 @@ Parts. Values use compact cycle buttons, so mobile does not open a numeric
 keyboard. Fixed rail directions mirror automatically with West/East.
 Line 1 is always the first departure line and supports dragging plus 1 cm
 precision buttons and desktop arrow keys.
+
+Every cushion ball is one shared point: arrival A of the preceding part and
+departure V of the following part. Drag that ball along the cushion to
+recalculate and save both adjacent diamond values together. The cue ball keeps
+its separate function: dragging it changes the physical length of Line 1.
 
 Line 1 variants
 ---------------

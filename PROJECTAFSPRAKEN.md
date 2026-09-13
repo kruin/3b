@@ -82,6 +82,15 @@ Voor iedere release:
 - Een parallelstap is één stip: `VIJF+1` verschuift van W 50 naar W 60 en van Z naar Z+1.
 - De startpunten Z-4 t/m Z+4 liggen op de verticale middenlijn en zijn configureerbaar.
 - Parallelverschuiving en Waaier mogen nooit door één rekenregel worden afgehandeld.
+
+### 2026-09-13 — Configureren door bandballen te slepen versie 16
+
+- Een bandbal is per definitie één gedeeld punt van twee delen.
+- Voorbeeld: dezelfde bal is tegelijk `Kop A` en `Nek V`.
+- Slepen gebeurt uitsluitend langs de betreffende band.
+- De app rekent vanuit de nieuwe fysieke balpositie beide stiplijnwaarden terug.
+- Beide waarden worden als één wijziging opgeslagen; de gebruiker hoeft ze niet apart in te voeren.
+- De speelbal is geen gedeeld bandpunt en blijft de lengtebediening van Lijn 1.
 - Desktop houdt de tafel sticky; mobiel toont de tafel vóór en tijdens de
   compacte invoer.
 
