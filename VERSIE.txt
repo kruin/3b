@@ -1,4 +1,4 @@
-3B GitHub Pages versie 20
+3B GitHub Pages versie 21
 
 - Terminologie: Patroon LKL; Lijnen VIJF, ZES enz.; Delen Neus t/m Been.
 - VIJF t/m ACHT zijn in config aan LKL gekoppeld.
@@ -33,4 +33,7 @@
 - Groot vast bedieningspaneel met −10, −1, +1 en +10.
 - Gedeelde balstappen herberekenen A en V samen; Been A stapt over de hoekzone.
 - Direct slepen blijft daarnaast beschikbaar.
-- Assets zijn config-v20.js en app-v20.js.
+- De sleepzone van een gedeelde bandbal omvat bal, A-label en volgend V-label.
+- Tikken of slepen binnen de hele zone bedient dezelfde bal langs de band.
+- Labels onderscheppen geen aanrakingen meer.
+- Assets zijn config-v21.js en app-v21.js.

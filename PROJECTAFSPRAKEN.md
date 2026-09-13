@@ -129,6 +129,13 @@ Voor iedere release:
 - Bij een gedeelde bal wijzigen beide aangrenzende waarden als één geometrische stap.
 - Bij Been A lopen de stapknoppen over de geconfigureerde hoekzone en wisselen automatisch van band.
 
+### 2026-09-13 — Samengestelde klikzone versie 21
+
+- De klik- en sleepzone van een gedeelde bal omvat de bal, vorige A en volgende V.
+- Het gehele omkaderde gebied bedient één gedeeld fysiek balpunt.
+- SVG-teksten en waardelabels ontvangen zelf geen pointer-events en blokkeren de zone niet.
+- Slepen binnen de zone blijft beperkt tot de band van de geselecteerde bal.
+
 ### 2026-09-13 — exacte ballen en versleepbare afstoot versie 13
 
 - Stiplabels tonen standaard uitsluitend de waarde en staan op de stiplijn.

@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 13, release: "20",
+  version: 14, release: "21",
   terminology: {
     pattern: { key: "LKL", en: "long-short-long", nl: "lang-kort-lang" },
     line: { en: "Line", nl: "Lijn" },
@@ -48,6 +48,11 @@ window.THREEB_START_CONFIG = {
         enabled: true,
         steps: [-10,-1,1,10],
         selectByTap: true
+      },
+      clickZone: {
+        includes: ["ball","arrival_A","next_departure_V"],
+        paddingSvg: 18,
+        showOutline: true
       }
     },
     guideToDiamondLineAtDeparture: true,

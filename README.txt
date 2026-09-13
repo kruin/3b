@@ -1,4 +1,4 @@
-3B LINE CONFIGURATOR — VERSION 20
+3B LINE CONFIGURATOR — VERSION 21
 ================================
 
 Open index.html locally or use https://kruin.github.io/3b/.
@@ -62,6 +62,10 @@ only during that drag is page scrolling blocked.
 For reliable mobile editing, tap a cushion ball to open a fixed control panel
 with −10, −1, +1 and +10. Direct dragging remains available but is no longer
 required. Shared-ball steps recalculate both adjacent values together.
+
+The direct manipulation zone of a shared cushion ball includes the ball, its
+arrival A label and the following departure V label. Touching or dragging
+anywhere in that outlined zone operates the same ball along the cushion.
 
 Line 1 variants
 ---------------
