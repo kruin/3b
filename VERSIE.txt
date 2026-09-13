@@ -1,10 +1,10 @@
-3B GitHub Pages versie 9
+3B GitHub Pages versie 11
 
-- Engels standaard; Nederlands selecteerbaar.
-- Tafelkeuze Groot, Klein of Beide; richting West of gespiegeld Oost.
-- Vertrekkeuze Neus of Verkorte 4-bander.
-- Bij Verkorte 4-bander verdwijnt Neus en gebruikt Kop zijn eigen V en A.
-- Namen: Neus, Kop, Nek, Romp, Kruis, Been.
-- Speelvlakken visueel even groot; maat en 9,5 cm blijven tafelafhankelijk.
-- Stippen en nummeringen staan op het bruine hout.
-- Opslagruimte 3b-canonical-west-v2; assets config-v9.js en app-v9.js.
+- Geen pijlpunten meer.
+- Dikke loop heeft de geschaalde baldiameter van 61,5 mm.
+- Volledig gevulde ballen liggen met hun middelpunt één balradius binnen de band.
+- Dunne constructielijnen verbinden ieder balmidden met V en A op de stiplijnen.
+- Neus krijgt vanuit Z een achterwaartse constructielijn tot de stiplijn.
+- Verkorte 4-bander gebruikt Kop-V als achterwaartse constructielijn.
+- Absolute Koplengtecorrectie met Aan, Uit en Advies blijft beschikbaar.
+- Assets zijn config-v11.js en app-v11.js.

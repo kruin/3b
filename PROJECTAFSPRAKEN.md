@@ -63,6 +63,25 @@ Voor iedere release:
 
 ## Wijzigingslog
 
+### 2026-09-13 — bal- en constructielijnen versie 11
+
+- Pijlpunten verwijderd.
+- Dikke looplijn gebruikt de geschaalde baldiameter van 61,5 mm.
+- Ballen worden volledig gevuld en fysiek tegen de band geplaatst.
+- Dunne lijnen lopen van het balmidden naar V en A op de stiplijnen.
+- Neus wordt vanuit Z achterwaarts tot de stiplijn verlengd.
+- Bij Verkorte 4-bander levert Kop-V de achterwaartse constructielijn.
+
+### 2026-09-13 — absolute Koplengtecorrectie versie 10
+
+- Koplengte wordt absoluut in centimeters berekend uit V en A op de stiplijnen.
+- Indicatieve basis: 80% mee-effect bij 140 cm Koplengte.
+- Correctie: 2 procentpunt per 25 cm, begrensd op -10/+10 procentpunt.
+- On-screen standen: Advies, Aan en Uit; standaard is Advies.
+- Advies wijzigt niets; Aan bewaart het berekende effect als actieve waarde.
+- De correctie verandert de V/A-geometrie niet en blijft als indicatief gemerkt
+  zolang ervaringsgegevens ontbreken.
+
 ### 2026-09-13 — 3B versie 9
 
 - Project- en publicatienaam gewijzigd van `drieband` naar `3b`.
