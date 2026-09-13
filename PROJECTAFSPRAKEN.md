@@ -107,3 +107,15 @@ Voor iedere release:
 - Meer afstand tussen nummering en stiplijn toegepast.
 - Releasebestanden hernoemd naar `config-v6.js`, `app-v6.js` en
   `controle-v6.html`.
+
+### 2026-09-13 — schone online opslag versie 7
+
+- Vastgesteld via de gebruikersafbeelding dat GitHub Pages versie 6 laadde;
+  grote nummeringen en de oosttitel waren zichtbaar.
+- Verschil tussen schone lokale clone en online apparaten herleid tot de oude,
+  gedeelde browseropslagsleutel van versies 1–6.
+- Nieuwe blijvende opslagsleutel `drieband-canoniek-west-v1` ingevoerd.
+- Oude online toestand wordt niet meer automatisch geladen of gemigreerd.
+- JSON-import blijft beschikbaar voor een bewust gekozen reservekop.
+- Releasebestanden hernoemd naar `config-v7.js`, `app-v7.js` en
+  `controle-v7.html`.

@@ -35,7 +35,7 @@ en wordt bij de eerste commit direct gepubliceerd.
 
 1. Bewaar eerst eventueel lokaal ingevoerde configuraties via **Config**.
 2. Vervang in de repository de programmabestanden door de nieuwe versie.
-3. Controleer dat `index.html`, `styles.css`, `app-v6.js`, `config-v6.js` en
+3. Controleer dat `index.html`, `styles.css`, `app-v7.js`, `config-v7.js` en
    `VERSIE.txt` aanwezig zijn.
 4. Commit met een herkenbare omschrijving en push naar `main`.
 5. Wacht tot **Actions** en **Settings → Pages** de publicatie als geslaagd tonen.
@@ -43,7 +43,7 @@ en wordt bij de eerste commit direct gepubliceerd.
    JSON-export/import en SVG-export.
 7. Controleer onderaan de app of het zichtbare versienummer overeenkomt met
    `VERSIE.txt` uit het publicatiepakket.
-8. Open `/controle-v6.html`; daar moet geladen configuratieversie `6` staan.
+8. Open `/controle-v7.html`; daar moet geladen configuratieversie `7` staan.
 
 ## Belangrijk onderscheid
 

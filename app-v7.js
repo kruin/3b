@@ -2,7 +2,7 @@
   "use strict";
 
   const START = window.TAFEL_STARTCONFIG;
-  const STORAGE_KEY = "tafel-lijnconfig-v1";
+  const STORAGE_KEY = "drieband-canoniek-west-v1";
   const STATE_VERSION = 3;
   const bandOptions = ["west", "noord", "oost", "zuid"];
   const bandLabels = { west: "West", noord: "Noord", oost: "Oost", zuid: "Zuid" };
@@ -41,7 +41,7 @@
       const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
       if (saved?.data && [1, 2, STATE_VERSION].includes(saved.version)) return migrateState(saved);
     } catch (_) {}
-    return { version: STATE_VERSION, data: buildInitialData(), ui: { table: "groot", pattern: "VIJF", noseDirection: "west" } };
+    return { version: STATE_VERSION, storageModel: "canoniek-west-v1", data: buildInitialData(), ui: { table: "groot", pattern: "VIJF", noseDirection: "west" } };
   }
 
   function migrateState(saved) {
@@ -71,6 +71,7 @@
       });
     });
     state.ui ||= {};
+    state.storageModel = "canoniek-west-v1";
   }
 
   function saveState() {
@@ -334,7 +335,7 @@
       const imported = JSON.parse(await file.text());
       if (!imported?.data || ![1, 2, STATE_VERSION].includes(imported.version)) throw new Error("Onbekende configuratie-indeling");
       const migrated = migrateState(imported);
-      state.version = STATE_VERSION; state.data = migrated.data; state.ui = migrated.ui || state.ui; normalizeState();
+      state.version = STATE_VERSION; state.storageModel = "canoniek-west-v1"; state.data = migrated.data; state.ui = migrated.ui || state.ui; normalizeState();
       currentTable = state.ui.table || "groot"; currentPattern = state.ui.pattern || "VIJF"; noseDirection = state.ui.noseDirection || "west";
       el("patternSelect").value = currentPattern; el("noseDirection").value = noseDirection;
       saveState(); render();

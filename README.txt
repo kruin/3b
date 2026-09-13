@@ -33,6 +33,10 @@ Invoer wordt automatisch in de browser opgeslagen. Gebruik “Config” om een
 JSON-reservekop te downloaden en “Importeer” om die later terug te zetten.
 Gebruik “SVG” om de huidige tekening te downloaden.
 
+Versie 7 gebruikt de canonieke opslagruimte `drieband-canoniek-west-v1` en leest
+de oude automatische browsertoestand uit versies 1–6 niet in. Een gewenste oude
+reservekop kan alleen bewust via “Importeer” worden teruggezet.
+
 Let op: lokale browsergegevens zijn per apparaat en per browser gescheiden.
 Maak daarom geregeld een JSON-reservekop. Gebruik export en import om dezelfde
 configuratie op een ander apparaat te openen.

@@ -31,22 +31,22 @@ if not exist "index.html" (
   goto :einde_fout
 )
 
-if not exist "app-v6.js" (
-  echo FOUT: app-v6.js ontbreekt. Dit is geen volledig versie-6-pakket.
+if not exist "app-v7.js" (
+  echo FOUT: app-v7.js ontbreekt. Dit is geen volledig versie-7-pakket.
   goto :einde_fout
 )
-if not exist "config-v6.js" (
-  echo FOUT: config-v6.js ontbreekt. Dit is geen volledig versie-6-pakket.
+if not exist "config-v7.js" (
+  echo FOUT: config-v7.js ontbreekt. Dit is geen volledig versie-7-pakket.
   goto :einde_fout
 )
-findstr /C:"app-v6.js" "index.html" >nul
+findstr /C:"app-v7.js" "index.html" >nul
 if errorlevel 1 (
-  echo FOUT: index.html verwijst niet naar app-v6.js.
+  echo FOUT: index.html verwijst niet naar app-v7.js.
   goto :einde_fout
 )
-findstr /C:"config-v6.js" "index.html" >nul
+findstr /C:"config-v7.js" "index.html" >nul
 if errorlevel 1 (
-  echo FOUT: index.html verwijst niet naar config-v6.js.
+  echo FOUT: index.html verwijst niet naar config-v7.js.
   goto :einde_fout
 )
 
