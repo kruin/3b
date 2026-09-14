@@ -1,4 +1,9 @@
-3B GitHub Pages versie 22
+3B GitHub Pages versie 23
+
+Nieuw in versie 23:
+- Het standaard LKL-invoerscherm toont alleen Neus en Romp; Alle delen toont de rest.
+- Dubbelklik of dubbeltik op een bandbal opent een compacte A/V-editor.
+- Wijzigingen in die editor verplaatsen de gekoppelde bal direct in de tekening.
 
 - Terminologie: Patroon LKL; Lijnen VIJF, ZES enz.; Delen Neus t/m Been.
 - VIJF t/m ACHT zijn in config aan LKL gekoppeld.
@@ -39,4 +44,4 @@
 - Mobiele tweevingerbediening wordt direct boven de tafel stap voor stap uitgelegd.
 - Eerste vinger houdt bal+A+V-zone vast; tweede vinger sleept elders op het scherm.
 - Stapknoppen blijven genoemd als nauwkeurige afstelling.
-- Assets zijn config-v22.js en app-v22.js.
+- Assets zijn config-v23.js en app-v23.js.

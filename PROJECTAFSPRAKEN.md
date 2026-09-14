@@ -268,3 +268,8 @@ Voor iedere release:
   concrete herstelstappen; een geslaagde push wordt niet als sitesucces gemeld.
 - Releasebestanden hernoemd naar `config-v8.js`, `app-v8.js` en
   `controle-v8.html`.
+# Versie 23 — 2026-09-14
+
+- Standaard toont de LKL-configuratie alleen Neus en Romp; via `Alle delen` worden alle delen bewerkbaar.
+- Dubbelklik op desktop of dubbeltik op mobiel op een bandbal opent een compacte editor voor de gekoppelde A- en V-waarden.
+- Een wijziging in A of V wordt direct omgerekend naar dezelfde gedeelde balpositie en live getekend.

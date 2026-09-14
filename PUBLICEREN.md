@@ -20,10 +20,10 @@ Vervang de bestanden in de lokale clone en start `Publiceer_3B.bat`. De BAT:
 - controleert alle versie-14-bestanden vóór commit en push;
 - vergelijkt lokale commit en `origin/main`;
 - wacht maximaal tien minuten op GitHub Pages;
-- meldt pas KLAAR als de publieke site werkelijk `app-v22.js`,
-  `config-v22.js` en versie 22 levert.
+- meldt pas KLAAR als de publieke site werkelijk `app-v23.js`,
+  `config-v23.js` en versie 23 levert.
 
-Controleer aanvullend `https://kruin.github.io/3b/controle-v22.html`.
+Controleer aanvullend `https://kruin.github.io/3b/controle-v23.html`.
 
 ## Belangrijk
 

@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 15, release: "22",
+  version: 16, release: "23",
   terminology: {
     pattern: { key: "LKL", en: "long-short-long", nl: "lang-kort-lang" },
     line: { en: "Line", nl: "Lijn" },
@@ -7,6 +7,14 @@ window.THREEB_START_CONFIG = {
     firstLine: { en: "Line 1 · departure line", nl: "Lijn 1 · afstootlijn" }
   },
   defaultLanguage: "en", defaultTableMode: "groot", defaultDirection: "west", defaultDeparture: "neus",
+  editor: {
+    defaultMode: "basis",
+    modes: ["basis","alle"],
+    lklBasicParts: ["neus","romp"],
+    compactBallValueEditor: true,
+    liveUpdate: true,
+    openGesture: "double_click_or_double_tap"
+  },
   tables: {
     klein: { labels: { en: "Small", nl: "Klein" }, widthCm: 115, heightCm: 230, dotOffsetCm: 9.5 },
     groot: { labels: { en: "Large", nl: "Groot" }, widthCm: 142, heightCm: 284, dotOffsetCm: 9.5 }

@@ -47,6 +47,8 @@ select { padding: 8px 34px 8px 11px; }
 .drawing { grid-area: drawing; }
 .editor, .drawing { padding: 18px; }
 .section-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 15px; }
+.editor-heading-actions { display: flex; align-items: center; gap: 7px; }
+#toggleEditorParts { min-height: 34px; padding: 5px 9px; font-size: 12px; }
 .status-pill { border-radius: 999px; padding: 7px 11px; background: #eee5d6; color: #6b5947; font-size: 13px; font-weight: 800; }
 .status-pill.complete { background: #d9efdf; color: #185e39; }
 .table-wrap { overflow-x: auto; }
@@ -94,6 +96,10 @@ body.ball-dragging { overscroll-behavior: none; touch-action: none; user-select:
 .ball-nudge-panel[hidden] { display: none; }
 .ball-nudge-panel > div:first-child { display: grid; gap: 2px; font-size: 12px; }
 .ball-nudge-panel > div:first-child span { color: var(--muted); }
+.ball-value-editor { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 5px; }
+.ball-value-editor[hidden] { display: none; }
+.ball-value-editor label { display: grid; grid-template-columns: auto 68px; align-items: center; gap: 5px; padding: 3px 6px; border-radius: 8px; background: #eee5d6; color: var(--ink); font-size: 12px; font-weight: 800; }
+.ball-value-editor input { width: 68px; min-height: 34px; padding: 4px 6px; border: 1px solid #cfc2ae; border-radius: 7px; background: #fffdf8; }
 .nudge-actions { display: flex; gap: 5px; }
 .nudge-actions button { min-width: 46px; min-height: 44px; padding: 5px 8px; font-size: 16px; font-weight: 900; }
 .nudge-actions .nudge-close { min-width: 38px; color: var(--red); }
@@ -135,12 +141,15 @@ footer { padding: 0 24px 28px; text-align: center; color: #766959; font-size: 13
   .svg-mount svg { max-height: 58dvh; }
   .editor { padding: 9px; }
   .editor .section-heading { margin-bottom: 5px; }
+  .editor-heading-actions { align-items: flex-end; flex-direction: column-reverse; gap: 3px; }
+  #toggleEditorParts { min-height: 30px; padding: 3px 7px; }
   .editor h2 { font-size: 17px; }
   .line-name { min-width: 74px; }
   th { padding: 4px; }
   .help { font-size: 11px; }
   .ball-nudge-panel { position: fixed; right: 6px; bottom: max(6px,env(safe-area-inset-bottom)); left: 6px; flex-direction: column; align-items: stretch; padding: 8px; }
   .ball-nudge-panel > div:first-child { text-align: center; }
+  .ball-value-editor { justify-content: center; }
   .nudge-actions { display: grid; grid-template-columns: repeat(4,1fr) 38px; }
   .nudge-actions button { min-width: 0; min-height: 50px; }
 }
