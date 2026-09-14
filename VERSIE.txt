@@ -1,4 +1,15 @@
-3B GitHub Pages versie 27
+3B GitHub Pages versie 29
+
+Nieuw in versie 29:
+- Mobiel heeft een eigen vaste tafelstage op 100svh; browserbalken verschuiven het schema niet meer.
+- Bandballen en speelbal worden met één vinger en één vaste pointer bestuurd.
+- Tijdens slepen zijn scrollen, zoomen en overscroll binnen de tafel uitgeschakeld.
+- Desktopknop TEST MOBILE VIEW toont een mobiele testviewport; EXIT MOBILE VIEW sluit hem.
+
+Nieuw in versie 28:
+- De tafelstart wordt bij laden, refresh, pageshow en mobiele terugkeer opnieuw afgedwongen.
+- Een open popup wordt bij zo'n nieuwe start gesloten en de pagina springt naar boven.
+- Stylesheet-cacheversie 28 voorkomt dat mobiel de oude schermindeling vasthoudt.
 
 Nieuw in versie 27:
 - Iedere nieuwe start en refresh opent direct in tafelweergave op volledige viewport.
@@ -61,4 +72,4 @@ Nieuw in versie 23:
 - Mobiele tweevingerbediening wordt direct boven de tafel stap voor stap uitgelegd.
 - Eerste vinger houdt bal+A+V-zone vast; tweede vinger sleept elders op het scherm.
 - Stapknoppen blijven genoemd als nauwkeurige afstelling.
-- Assets zijn config-v27.js en app-v27.js.
+- Assets zijn config-v29.js, app-v29.js en styles.css?v=29.

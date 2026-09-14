@@ -291,3 +291,14 @@ Voor iedere release:
 - Deze startweergave wordt niet uit localStorage gelezen: refresh herstelt haar altijd.
 - Instellingen kunnen tijdelijk worden geopend; `Tafel` sluit ze weer.
 - Echte browser-fullscreen vereist vanwege browserbeveiliging een klik op `⛶`.
+# Versie 28 — 2026-09-14
+
+- `table-only` wordt niet alleen in HTML gezet, maar opnieuw afgedwongen bij init, `pageshow` en terugkeer naar een zichtbare mobiele pagina.
+- Iedere nieuwe schermstart sluit de bandbal-popup en scrollt naar het begin.
+- CSS krijgt per release een cacheparameter; de publicatie-BAT verifieert die parameter voortaan ook op GitHub Pages.
+# Versie 29 — 2026-09-14
+
+- Mobiel is geen responsieve afgeleide van desktop meer, maar een vaste tafelstage met `100svh` en `position: fixed`.
+- Eénvingersleep gebruikt uitsluitend de pointer waarmee het gebaar begon; een tweede vinger kan de bal niet meer overnemen.
+- Binnen de mobiele tafel zijn browserpan, zoom en overscroll uitgeschakeld.
+- Desktop biedt `TEST MOBILE VIEW`: een 390 × maximaal 844 px testkader met dezelfde popupindeling.
