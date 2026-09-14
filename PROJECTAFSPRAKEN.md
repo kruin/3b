@@ -307,3 +307,8 @@ Voor iedere release:
 - Geen bottom sheet: de bandbalbediening is een contextuele popup naast de gekozen bal.
 - De popup is maximaal 220 px breed, gebruikt compacte knoppen en wordt aan de vrije zijde van de bal geplaatst.
 - Bij iedere hertekening volgt de popup de actuele balpositie en blijft zij binnen de viewport.
+# Versie 31 — 2026-09-14
+
+- Modus `LKL` is de vaste startmodus en toont in de tafel alleen Neus en Romp.
+- Modus `Free play` toont alle ingevulde delen en activeert het vrije slepen van speelbal en bandballen.
+- De modus is een gebruikerskeuze en wordt niet meer impliciet gewijzigd door de validatie van waarden.

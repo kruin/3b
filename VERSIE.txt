@@ -1,4 +1,9 @@
-3B GitHub Pages versie 30
+3B GitHub Pages versie 31
+
+Nieuw in versie 31:
+- LKL is bij iedere start de standaardmodus en toont uitsluitend Neus en Romp.
+- Free play toont de volledige loop en is de enige modus waarin ballen vrij gesleept worden.
+- De modus verandert niet meer automatisch door waarden buiten de LKL-bandbreedte.
 
 Nieuw in versie 30:
 - Geen breed bedieningsscherm meer onderaan.
@@ -77,4 +82,4 @@ Nieuw in versie 23:
 - Mobiele tweevingerbediening wordt direct boven de tafel stap voor stap uitgelegd.
 - Eerste vinger houdt bal+A+V-zone vast; tweede vinger sleept elders op het scherm.
 - Stapknoppen blijven genoemd als nauwkeurige afstelling.
-- Assets zijn config-v30.js, app-v30.js en styles.css?v=30.
+- Assets zijn config-v31.js, app-v31.js en styles.css?v=31.
