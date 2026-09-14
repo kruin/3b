@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 14, release: "21",
+  version: 15, release: "22",
   terminology: {
     pattern: { key: "LKL", en: "long-short-long", nl: "lang-kort-lang" },
     line: { en: "Line", nl: "Lijn" },
@@ -53,6 +53,12 @@ window.THREEB_START_CONFIG = {
         includes: ["ball","arrival_A","next_departure_V"],
         paddingSvg: 18,
         showOutline: true
+      },
+      twoFingerMobileDrag: {
+        enabled: true,
+        firstFinger: "hold_ball_A_V_zone",
+        secondFinger: "drag_anywhere",
+        showInstructions: true
       }
     },
     guideToDiamondLineAtDeparture: true,

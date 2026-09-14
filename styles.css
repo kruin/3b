@@ -81,6 +81,7 @@ td input.invalid, td select.invalid { border-color: #b83434; background: #fff1ef
 .correction-advice.active { border-color: #4e9a70; background: #e1f3e7; color: #185e39; }
 .correction-advice.off { background: #eee8de; color: #74685c; }
 .drag-help { margin: 5px 0 0; color: var(--muted); font-size: 12px; }
+.touch-help { display: none; }
 .drag-hit { cursor: grab; touch-action: none; pointer-events: all; }
 .drag-hit:active { cursor: grabbing; }
 .ball-visible { pointer-events: none; }
@@ -129,6 +130,7 @@ footer { padding: 0 24px 28px; text-align: center; color: #766959; font-size: 13
   .drawing .section-heading { margin-bottom: 0; }
   .drawing .eyebrow { display: none; }
   .drawing h2 { font-size: 16px; }
+  .touch-help { display: block; max-width: 42rem; margin: 5px 0 0; padding: 6px 8px; border-left: 3px solid #d2a33a; background: #fff4d8; color: #59462e; font-size: 11px; line-height: 1.35; }
   .svg-mount { min-height: 0; }
   .svg-mount svg { max-height: 58dvh; }
   .editor { padding: 9px; }

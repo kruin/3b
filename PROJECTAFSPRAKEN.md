@@ -136,6 +136,14 @@ Voor iedere release:
 - SVG-teksten en waardelabels ontvangen zelf geen pointer-events en blokkeren de zone niet.
 - Slepen binnen de zone blijft beperkt tot de band van de geselecteerde bal.
 
+### 2026-09-14 — Tweevingerbediening uitgelegd versie 22
+
+- Mobiel: houd de samengestelde bal+A+V-zone met één vinger vast.
+- Sleep vervolgens met een tweede vinger op een vrije plaats van het scherm.
+- De geselecteerde bal beweegt langs zijn band; laat daarna beide vingers los.
+- Deze werkwijze staat compact en zichtbaar boven de mobiele tafel.
+- De stapknoppen blijven beschikbaar voor nauwkeurige correctie.
+
 ### 2026-09-13 — exacte ballen en versleepbare afstoot versie 13
 
 - Stiplabels tonen standaard uitsluitend de waarde en staan op de stiplijn.

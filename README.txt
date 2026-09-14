@@ -1,4 +1,4 @@
-3B LINE CONFIGURATOR — VERSION 21
+3B LINE CONFIGURATOR — VERSION 22
 ================================
 
 Open index.html locally or use https://kruin.github.io/3b/.
@@ -66,6 +66,10 @@ required. Shared-ball steps recalculate both adjacent values together.
 The direct manipulation zone of a shared cushion ball includes the ball, its
 arrival A label and the following departure V label. Touching or dragging
 anywhere in that outlined zone operates the same ball along the cushion.
+
+Mobile two-finger drag: keep one finger pressed on the ball+A+V zone, then
+drag with a second finger anywhere on the screen. Release both when ready.
+The fixed step buttons remain available for precise adjustment.
 
 Line 1 variants
 ---------------
