@@ -302,3 +302,8 @@ Voor iedere release:
 - Eénvingersleep gebruikt uitsluitend de pointer waarmee het gebaar begon; een tweede vinger kan de bal niet meer overnemen.
 - Binnen de mobiele tafel zijn browserpan, zoom en overscroll uitgeschakeld.
 - Desktop biedt `TEST MOBILE VIEW`: een 390 × maximaal 844 px testkader met dezelfde popupindeling.
+# Versie 30 — 2026-09-14
+
+- Geen bottom sheet: de bandbalbediening is een contextuele popup naast de gekozen bal.
+- De popup is maximaal 220 px breed, gebruikt compacte knoppen en wordt aan de vrije zijde van de bal geplaatst.
+- Bij iedere hertekening volgt de popup de actuele balpositie en blijft zij binnen de viewport.
