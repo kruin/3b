@@ -285,3 +285,9 @@ Voor iedere release:
 
 - Desktop en mobiel tonen geen vast editvenster; configuratie verloopt alleen via de popup van de bandbal.
 - Deze zichtbaarheid is een algemene CSS-regel en hangt niet af van schermbreedte of opgeslagen lokale staat.
+# Versie 27 — 2026-09-14
+
+- Elke paginalaad start met focus op de tafel en gebruikt de volledige viewport.
+- Deze startweergave wordt niet uit localStorage gelezen: refresh herstelt haar altijd.
+- Instellingen kunnen tijdelijk worden geopend; `Tafel` sluit ze weer.
+- Echte browser-fullscreen vereist vanwege browserbeveiliging een klik op `⛶`.

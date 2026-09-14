@@ -1,4 +1,9 @@
-3B GitHub Pages versie 26
+3B GitHub Pages versie 27
+
+Nieuw in versie 27:
+- Iedere nieuwe start en refresh opent direct in tafelweergave op volledige viewport.
+- Instellingen zijn bereikbaar via de compacte knop rechtsboven.
+- De knop ⛶ activeert na een gebruikersklik de echte browser-fullscreenstand.
 
 Nieuw in versie 26:
 - Op desktop en mobiel is het vaste editvenster altijd verborgen.
@@ -56,4 +61,4 @@ Nieuw in versie 23:
 - Mobiele tweevingerbediening wordt direct boven de tafel stap voor stap uitgelegd.
 - Eerste vinger houdt bal+A+V-zone vast; tweede vinger sleept elders op het scherm.
 - Stapknoppen blijven genoemd als nauwkeurige afstelling.
-- Assets zijn config-v26.js en app-v26.js.
+- Assets zijn config-v27.js en app-v27.js.

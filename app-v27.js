@@ -48,11 +48,15 @@
     $("parallelMinus").onclick=()=>adjustParallel(-1);$("parallelPlus").onclick=()=>adjustParallel(1);
     document.querySelectorAll("[data-nudge]").forEach(button=>button.onclick=()=>nudgeSelected(Number(button.dataset.nudge)));$("closeBallNudge").onclick=()=>{selectedBall=null;updateBallNudge();};
     $("toggleEditorParts").onclick=()=>{ui.editorMode=ui.editorMode==="basis"?"alle":"basis";save();render();};
+    $("toggleConfig").onclick=()=>{document.body.classList.toggle("table-only");updateViewButtons();};
+    $("fullscreenView").onclick=async()=>{try{if(!document.fullscreenElement)await document.documentElement.requestFullscreen();else await document.exitFullscreen();}catch(_){}};
+    document.addEventListener("fullscreenchange",updateViewButtons);
     $("ballEditA").addEventListener("input",event=>editSelectedValue("A",event.target.value));$("ballEditV").addEventListener("input",event=>editSelectedValue("V",event.target.value));
     $("svgMount").addEventListener("dblclick",event=>{const ball=event.target.closest?.(".junction-hit,.endpoint-hit");if(ball){event.preventDefault();openBallEditor(ball);}});
     $("svgMount").addEventListener("pointerdown",event=>{const ball=event.target.closest?.(".junction-hit,.endpoint-hit");if(!ball)return;selectBall(ball);if(event.pointerType==="touch")touchCandidate={key:ballKey(ball),ball,x:event.clientX,y:event.clientY};},true);
     $("svgMount").addEventListener("pointerup",event=>{if(event.pointerType!=="touch"||!touchCandidate)return;const candidate=touchCandidate;touchCandidate=null;if(Math.hypot(event.clientX-candidate.x,event.clientY-candidate.y)>12)return;const now=Date.now();if(lastBallTap.key===candidate.key&&now-lastBallTap.time<450){openBallEditor(candidate.ball);lastBallTap={key:"",time:0};}else lastBallTap={key:candidate.key,time:now};},true);
   }
+  function updateViewButtons(){const focused=document.body.classList.contains("table-only");$("toggleConfig").textContent=focused?(ui.language==="nl"?"⚙ Instellingen":"⚙ Settings"):(ui.language==="nl"?"← Tafel":"← Table");$("fullscreenView").textContent=document.fullscreenElement?"×":"⛶";}
   function render(){
     document.documentElement.lang=ui.language; document.querySelectorAll("[data-i18n]").forEach(e=>e.textContent=tr(e.dataset.i18n)); $("releaseVersion").textContent=C.release;
     const tm=$("tableMode");tm.options[0].text=tr("large");tm.options[1].text=tr("small");tm.options[2].text=tr("both");tm.value=ui.tableMode;
@@ -68,7 +72,7 @@
     $("exportJson").textContent=tr("myTables");$("helpText").textContent=tr("help");
     const pattern=C.patternByLine[ui.pattern]||(ui.language==="nl"?"Vrij spel":"Free play"),shownLine=lineOneName();$("editorTitle").textContent=`${pattern} · ${shownLine} · ${tableLabel(ui.editTable)}`;
     const views=ui.tableMode==="beide"?["groot","klein"]:[ui.tableMode];$("drawingTitle").textContent=`${pattern} · ${shownLine} · ${ui.direction==="west"?tr("west"):tr("east")}`;$("dragHelp").textContent=ui.language==="nl"?"Sleep een bandbal om A van de vorige en V van de volgende lijn samen te configureren. Sleep de speelbal voor de lengte van Lijn 1.":"Drag a cushion ball to configure the preceding A and following V together. Drag the cue ball to set Line 1 length.";$("touchHelp").textContent=ui.language==="nl"?"Mobiel: ① houd één vinger op de zone bal + A + V; ② houd vast; ③ sleep met een tweede vinger ergens over het scherm; ④ laat beide vingers los. Stel precies af met −10, −1, +1 en +10.":"Mobile: ① hold one finger on the ball + A + V zone; ② keep holding; ③ drag with a second finger anywhere on screen; ④ release both fingers. Fine-tune with −10, −1, +1 and +10.";
-    $("toggleEditorParts").textContent=ui.editorMode==="basis"?(ui.language==="nl"?"Alle delen":"All parts"):(ui.language==="nl"?"Alleen Neus en Romp":"Nose and Body only");
+    $("toggleEditorParts").textContent=ui.editorMode==="basis"?(ui.language==="nl"?"Alle delen":"All parts"):(ui.language==="nl"?"Alleen Neus en Romp":"Nose and Body only");updateViewButtons();
     renderRows();renderCorrection();renderVariantMessage();dragModels={};$("svgMount").innerHTML=views.map(drawTable).join("");bindDragBalls();bindJunctionBalls();bindEndpointBalls();updateStrokeOutput();updateBallNudge();
   }
   function ballKey(ball){return ball.classList.contains("endpoint-hit")?`e-${ball.dataset.endpointTable}-${ball.dataset.endpointPart}`:`j-${ball.dataset.junctionTable}-${ball.dataset.junctionIndex}`;}
