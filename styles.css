@@ -43,8 +43,8 @@ select { padding: 8px 34px 8px 11px; }
 .file-button input { position: absolute; width: 1px; height: 1px; opacity: 0; }
 
 .workspace { display: grid; grid-template-columns: minmax(420px, .72fr) minmax(480px, 1.28fr); grid-template-areas: "editor drawing"; gap: 16px; align-items: start; }
-.workspace.table-focus { grid-template-columns: minmax(0,1fr); grid-template-areas: "drawing"; }
-.workspace.table-focus .editor { display: none; }
+.workspace { grid-template-columns: minmax(0,1fr); grid-template-areas: "drawing"; }
+.workspace .editor { display: none; }
 .editor { grid-area: editor; }
 .drawing { grid-area: drawing; }
 .editor, .drawing { padding: 18px; }

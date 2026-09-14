@@ -1,4 +1,12 @@
-3B GitHub Pages versie 24
+3B GitHub Pages versie 26
+
+Nieuw in versie 26:
+- Op desktop en mobiel is het vaste editvenster altijd verborgen.
+- Alleen de compacte popup bij de gekozen bandbal wordt gebruikt.
+
+Nieuw in versie 25:
+- Alleen op mobiel verdwijnt het vaste editvenster en krijgt de tafel volledige focus.
+- Op desktop blijft de compacte LKL-editor met Neus en Romp zichtbaar.
 
 Nieuw in versie 24:
 - De vaste configuratie-editor is uit beeld; de tafel heeft altijd de focus.
@@ -48,4 +56,4 @@ Nieuw in versie 23:
 - Mobiele tweevingerbediening wordt direct boven de tafel stap voor stap uitgelegd.
 - Eerste vinger houdt bal+A+V-zone vast; tweede vinger sleept elders op het scherm.
 - Stapknoppen blijven genoemd als nauwkeurige afstelling.
-- Assets zijn config-v24.js en app-v24.js.
+- Assets zijn config-v26.js en app-v26.js.

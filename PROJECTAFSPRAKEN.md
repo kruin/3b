@@ -277,3 +277,11 @@ Voor iedere release:
 
 - Geen afzonderlijk zichtbaar editvenster: de tafel is het hoofdscherm.
 - Bewerken gebeurt uitsluitend via de compacte popup van de geselecteerde gedeelde bandbal.
+# Versie 25 — 2026-09-14
+
+- Het vaste editvenster verdwijnt uitsluitend op mobiel (maximaal 650 px breed).
+- Mobiel: tafel plus compacte bandbal-popup. Desktop: tafel plus compacte Neus/Romp-editor.
+# Versie 26 — 2026-09-14
+
+- Desktop en mobiel tonen geen vast editvenster; configuratie verloopt alleen via de popup van de bandbal.
+- Deze zichtbaarheid is een algemene CSS-regel en hangt niet af van schermbreedte of opgeslagen lokale staat.
