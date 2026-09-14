@@ -1,4 +1,8 @@
-3B GitHub Pages versie 23
+3B GitHub Pages versie 24
+
+Nieuw in versie 24:
+- De vaste configuratie-editor is uit beeld; de tafel heeft altijd de focus.
+- Waarden worden uitsluitend compact bij de gekozen gedeelde bandbal bewerkt.
 
 Nieuw in versie 23:
 - Het standaard LKL-invoerscherm toont alleen Neus en Romp; Alle delen toont de rest.
@@ -44,4 +48,4 @@ Nieuw in versie 23:
 - Mobiele tweevingerbediening wordt direct boven de tafel stap voor stap uitgelegd.
 - Eerste vinger houdt bal+A+V-zone vast; tweede vinger sleept elders op het scherm.
 - Stapknoppen blijven genoemd als nauwkeurige afstelling.
-- Assets zijn config-v23.js en app-v23.js.
+- Assets zijn config-v24.js en app-v24.js.

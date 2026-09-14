@@ -43,6 +43,8 @@ select { padding: 8px 34px 8px 11px; }
 .file-button input { position: absolute; width: 1px; height: 1px; opacity: 0; }
 
 .workspace { display: grid; grid-template-columns: minmax(420px, .72fr) minmax(480px, 1.28fr); grid-template-areas: "editor drawing"; gap: 16px; align-items: start; }
+.workspace.table-focus { grid-template-columns: minmax(0,1fr); grid-template-areas: "drawing"; }
+.workspace.table-focus .editor { display: none; }
 .editor { grid-area: editor; }
 .drawing { grid-area: drawing; }
 .editor, .drawing { padding: 18px; }
@@ -109,7 +111,7 @@ body.ball-dragging { overscroll-behavior: none; touch-action: none; user-select:
 .legend-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 5px rgba(23,105,210,.14); }
 .svg-mount { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; place-items: start center; min-height: 650px; }
 .drawing-card { width: 100%; display: grid; place-items: center; }
-.svg-mount svg { display: block; width: 100%; max-height: 75vh; }
+.svg-mount svg { display: block; width: 100%; max-height: 82vh; }
 .edit-table-control[hidden] { display: none; }
 .empty-note { color: #fce9bb; font-size: 13px; font-weight: 700; }
 

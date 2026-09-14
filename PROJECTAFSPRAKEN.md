@@ -273,3 +273,7 @@ Voor iedere release:
 - Standaard toont de LKL-configuratie alleen Neus en Romp; via `Alle delen` worden alle delen bewerkbaar.
 - Dubbelklik op desktop of dubbeltik op mobiel op een bandbal opent een compacte editor voor de gekoppelde A- en V-waarden.
 - Een wijziging in A of V wordt direct omgerekend naar dezelfde gedeelde balpositie en live getekend.
+# Versie 24 — 2026-09-14
+
+- Geen afzonderlijk zichtbaar editvenster: de tafel is het hoofdscherm.
+- Bewerken gebeurt uitsluitend via de compacte popup van de geselecteerde gedeelde bandbal.
