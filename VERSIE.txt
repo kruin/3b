@@ -1,4 +1,48 @@
-3B GitHub Pages versie 34
+3B GitHub Pages versie 40
+
+Nieuw in versie 40:
+- Algemene systeemuitleg blijft gemeenschappelijk voor Groot en Klein.
+- Toelichting bij een concrete LIJN, zoals VIJF, is verplicht tafelspecifiek.
+- Iedere lokale KruinLine-uitlegkaart bewaart daarom lijn, tafel en volledige snapshot.
+- De carrouselkop toont bij lijnuitleg bijvoorbeeld `VIJF · Groot` of `VIJF · Klein`, nooit `Groot + Klein`.
+- De scheiding is als bindende `scopeRules` in de uitlegconfig vastgelegd.
+
+Nieuw in versie 39:
+- De vaste uitgangspositie bij basis vijftig heet voortaan `Hoek` (`Corner`).
+- De afbeelding vermeldt expliciet `Speelbal · positie Hoek`.
+- De semantische naam `hoek` en de vertaalde labels staan in de uitlegconfig.
+
+Nieuw in versie 38:
+- Uitleg is één gemeenschappelijke carrousel voor Groot en Klein.
+- De vaste uitlegkaarten tonen Groot en Klein naast elkaar en worden niet per tafel gedupliceerd.
+- Op de kaart ‘basis vijftig’ ligt het middelpunt van de speelbal exact één baldiameter (61,5 mm) van de rechterband en één baldiameter van de zuidband.
+- Een aanwijslijn en het label Speelbal/Cue ball maken de balpositie ondubbelzinnig.
+- De exacte plaatsingsregel staat declaratief in de uitlegconfig.
+- Het commentaar maakt onderscheid tussen een zichtbare fysieke balpositie en
+  de ontbrekende stipreferentie: zonder lijn of projectieregel is niet
+  eenduidig vastgelegd bij welke stip de speelbal hoort.
+
+Nieuw in versie 37:
+- `Open_KruinLines.bat` maakt nu eerst een geldige `file:///`-URL.
+- Het fragment `#owner=kruin` wordt doorgegeven aan de browser en niet langer als onderdeel van de Windows-bestandsnaam behandeld.
+- Bij een startfout blijft het venster open en verschijnt een duidelijke foutmelding.
+- De publicatie-BAT controleert voortaan ook of de lokale KruinLines-starter de nieuwe URL-methode bevat.
+
+Nieuw in versie 36:
+- De uitlegzin over ‘basis vijftig’ heeft een eigen, rustige carrouselkaart.
+- Deze kaart toont geen lijnen en plaatst alleen de speelbal ongeveer rechtsonder op de tafel.
+- De toelichting ‘Ik noteer lijnen’ staat nu op een afzonderlijke volgende kaart met VIJF Neus en Romp.
+- Uitleg 0.1 telt daarmee vier afzonderlijk uitbreidbare kaarten.
+
+Nieuw in versie 35:
+- Uitleg 0.1 is opgezet als uitbreidbare carrousel met levels; Level 1 is LKL.
+- Kaart 1 legt uit waarom 3B lijnen vastlegt in plaats van losse stipregels.
+- Kaart 2 verklaart Aankomst, Vertrek, stippen en stiplijnen; de bandrand is geen meetlijn.
+- Kaart 3 introduceert SCHUIF: de volledige lijnopzet verschuift van VIJF naar ZES en later ook NUL en volgende lijnen.
+- De carrousel toont echte VIJF-tafelbeelden met Neus en Romp of alleen Neus.
+- Kruin kan lokaal de geselecteerde KruinLine als nieuwe uitlegkaart toevoegen en de uitbreidingen als uitleg-JSON downloaden.
+- Een toegevoegde uitlegkaart bewaart een momentopname van de KruinLine en blijft daardoor stabiel bij een volgende release.
+- Klanten zien alleen de gepubliceerde uitleg; de toevoegknoppen bestaan uitsluitend in lokale eigenaarsmodus.
 
 Nieuw in versie 34:
 - Delen Hiel, Voet en Teen volgen na Been en staan in de volledige instellingen.

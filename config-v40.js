@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 27, release: "34",
+  version: 33, release: "40",
   terminology: {
     pattern: { key: "LKL", en: "long-short-long", nl: "lang-kort-lang" },
     line: { en: "Line", nl: "Lijn" },
@@ -14,6 +14,77 @@ window.THREEB_START_CONFIG = {
     compactBallValueEditor: true,
     liveUpdate: true,
     openGesture: "double_click_or_double_tap"
+  },
+  explanation: {
+    version: "0.1",
+    defaultLevel: "LKL",
+    scopeRules: {
+      systemExplanation: "shared_large_and_small",
+      lineExplanation: "one_line_one_table",
+      requiredLineFields: ["line","table","snapshot"]
+    },
+    levels: [
+      {
+        key: "LKL",
+        order: 1,
+        tables: ["groot","klein"],
+        labels: { en: "Level 1 · LKL", nl: "Level 1 · LKL" },
+        description: {
+          en: "The first application of the line system.",
+          nl: "De eerste toepassing van het lijnensysteem."
+        },
+        slides: [
+          {
+            key: "why",
+            title: { en: "Why 3B?", nl: "Waarom deze app?" },
+            text: {
+              en: "Models based on ‘basic fifty’ use the Corner position. But in a diamond system, where exactly is the cue ball—at which diamond? Without a defined line or projection rule, that is not unambiguous.",
+              nl: "Modellen die gebruikmaken van ‘basis vijftig’ gebruiken de positie Hoek. Maar als je een stippensysteem hanteert: waar ligt de speelbal precies—bij welke stip? Zonder vastgelegde lijn of projectieregel is dat niet eenduidig."
+            },
+            image: {
+              source: "schematic",
+              line: "VIJF",
+              parts: [],
+              cornerBall: true,
+              cueBallPosition: {
+                key: "hoek",
+                labels: { en: "Corner", nl: "Hoek" },
+                reference: "inner_cushion_edges",
+                rightDistanceBallDiameters: 1,
+                southDistanceBallDiameters: 1
+              }
+            }
+          },
+          {
+            key: "checked-lines",
+            title: { en: "I record lines", nl: "Ik noteer lijnen" },
+            text: {
+              en: "I record complete lines I have played and checked repeatedly—not isolated diamonds.",
+              nl: "Ik noteer volledige lijnen die ik zelf heb gespeeld en meermalen heb gecontroleerd—geen losse stippen."
+            },
+            image: { source: "KruinLines", line: "VIJF", parts: ["neus","romp"] }
+          },
+          {
+            key: "av",
+            title: { en: "A and V belong to diamond lines", nl: "A en V horen bij de stiplijnen" },
+            text: {
+              en: "A is arrival and V is departure. Every value refers to a diamond and its diamond line. The cushion edge is visible, but is never the measuring line.",
+              nl: "A is aankomst en V is vertrek. Iedere waarde verwijst naar een stip en de bijbehorende stiplijn. De bandrand blijft zichtbaar, maar is nooit de meetlijn."
+            },
+            image: { source: "KruinLines", line: "VIJF", parts: ["neus","romp"], emphasize: "guides" }
+          },
+          {
+            key: "shift",
+            title: { en: "Shift names the next line", nl: "Schuif benoemt de volgende lijn" },
+            text: {
+              en: "SHIFT moves the complete line setup. FIVE can become SIX, and the same naming extends to ZERO and later lines. The line—not one diamond—is the unit.",
+              nl: "SCHUIF verplaatst de volledige lijnopzet. VIJF wordt zo ZES; dezelfde naamgeving geldt ook voor NUL en latere lijnen. De lijn—niet één stip—is de eenheid."
+            },
+            image: { source: "KruinLines", line: "VIJF", parts: ["neus"] }
+          }
+        ]
+      }
+    ]
   },
   tables: {
     klein: { labels: { en: "Small", nl: "Klein" }, widthCm: 115, heightCm: 230, dotOffsetCm: 9.5 },

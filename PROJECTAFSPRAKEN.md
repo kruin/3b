@@ -69,7 +69,63 @@ Voor iedere release:
    bestandsnamen van de JavaScript-assets, zodat GitHub Pages geen ouder script
    met dezelfde URL uit de CDN-cache kan blijven leveren.
 
+## Uitleg en levels
+
+- Uitleg is een uitbreidbare carrousel; inhoudsversie 0.1 begint met Level 1 LKL.
+- Een level legt een toepassing van het lijnensysteem uit en bevat geordende kaarten.
+- Tafelbeelden worden uit echte, opgeslagen KruinLines opgebouwd.
+- Kruin kan lokaal een gekozen KruinLine als momentopname aan Uitleg toevoegen.
+- Klanten kunnen de gepubliceerde uitleg bekijken, maar niet wijzigen.
+- Nieuwe levels en kaarten worden declaratief in `config-v35.js` toegevoegd.
+- Uitleg 0.1 behandelt: waarom lijnen in plaats van losse stippen, A/V op de
+  stiplijnen, en SCHUIF als verplaatsing en naamgeving van een volledige lijn.
+- De gepubliceerde uitleg is gemeenschappelijk voor Groot en Klein; vaste
+  uitlegkaarten tonen beide tafels binnen dezelfde kaart.
+- Uitleg bij een concrete LIJN is daarentegen altijd tafelspecifiek: iedere
+  kaart legt `lijn`, `tafel` en een onveranderlijke snapshot vast.
+- De schematische speelbal op de basis-vijftigkaart ligt met zijn middelpunt
+  één baldiameter van de binnenrand van de rechterband én één baldiameter van
+  de binnenrand van de zuidband.
+- Deze uitgangspositie heet `Hoek`; Engels: `Corner`.
+
 ## Wijzigingslog
+
+### 2026-09-15 — tafelspecifieke LIJN-uitleg versie 40
+
+- Algemene uitleg is gemeenschappelijk voor Groot en Klein.
+- Toelichting bij VIJF en andere concrete LIJNen hoort bij precies één tafel.
+- KruinLine-uitlegkaarten bewaren verplicht lijn, tafel en snapshot.
+- De zichtbare contextkop schakelt tussen `Groot + Klein` en `LIJN · Tafel`.
+
+### 2026-09-15 — gemeenschappelijke uitleg en exacte speelbal versie 38
+
+- Eén carrousel bedient Groot en Klein gezamenlijk.
+- Beide tafels staan naast elkaar op de vaste uitlegkaarten.
+- De speelbalpositie op ‘basis vijftig’ is niet langer een visuele schatting:
+  de afstand van het balmiddelpunt tot beide aangrenzende bandranden is 61,5 mm.
+- De speelbal heeft een zichtbare aanwijslijn en naam.
+
+### 2026-09-15 — lokale KruinLines-starter versie 37
+
+- Windows mag `#owner=kruin` niet als deel van de bestandsnaam ontvangen.
+- `Open_KruinLines.bat` zet het volledige lokale pad daarom via PowerShell om
+  naar een `file:///`-URL en voegt daarna pas het browserfragment toe.
+- De starter toont een foutmelding en pauzeert wanneer openen mislukt.
+
+### 2026-09-15 — Uitleg 0.1 en levels versie 35
+
+- Level 1 LKL bevat een tafelgerichte carrousel met drie eerste kaarten.
+- VIJF Neus en Romp vormen het basisbeeld; de SCHUIF-kaart toont Neus.
+- Lokale KruinLine-momentopnamen kunnen als uitbreidingskaart worden toegevoegd.
+- De hoofdtafel blijft het dominante beeld op desktop en mobiel.
+
+### 2026-09-15 — Basis-vijftigkaart apart versie 36
+
+- ‘Een globale regel als basis vijftig is niet precies genoeg’ vormt één
+  zelfstandige uitlegkaart.
+- Het beeld is een lege tafel met alleen de speelbal ongeveer rechtsonder.
+- De uitleg over zelf gespeelde, meermalen gecontroleerde lijnen volgt op een
+  aparte kaart met VIJF Neus en Romp.
 
 ### 2026-09-15 — KruinLines en MyLines versie 34
 

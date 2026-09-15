@@ -134,6 +134,24 @@ body.ball-dragging { overscroll-behavior: none; touch-action: none; user-select:
 .version-tools select { min-width: 0; width: 100%; }
 .version-tools div { display: flex; gap: 5px; }
 .publish-status { grid-column: 1/-1; margin: 0; color: #6f5a3d; font-size: 12px; font-weight: 800; }
+.explanation-tools { grid-column: 1/-1; display: grid; gap: 6px; padding-top: 8px; border-top: 1px solid var(--line); }
+.explanation-tools p { margin: 0; color: var(--muted); font-size: 12px; }
+.explanation-tools div { display: flex; flex-wrap: wrap; gap: 5px; }
+
+.explanation-carousel { position: absolute; inset: 0; z-index: 8; display: grid; grid-template-rows: auto minmax(0,1fr) auto auto; gap: 8px; padding: 10px; background: var(--paper); }
+.explanation-carousel[hidden] { display: none; }
+.explanation-carousel > header,.explanation-carousel > footer { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.explanation-carousel > header > div { display: grid; gap: 2px; }
+.explanation-carousel > header span { color: #9a711b; font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: .06em; }
+.explanation-carousel > header strong { font-size: clamp(17px,2.5vw,24px); }
+.explanation-carousel > header button { min-width: 42px; padding: 4px; color: var(--red); }
+.explanation-carousel > p { max-width: 54rem; margin: 0 auto; color: #4f4235; font-size: clamp(13px,1.6vw,17px); line-height: 1.45; text-align: center; }
+.explanation-carousel > footer { justify-content: center; }
+.explanation-carousel > footer span { min-width: 54px; text-align: center; font-weight: 900; }
+.explanation-visual { min-height: 0; display: grid; place-items: center; overflow: hidden; }
+.explanation-visual.common-tables { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
+.explanation-visual .drawing-card,.explanation-visual svg { width: 100%; height: 100%; max-height: 100%; }
+.explanation-visual .drag-hit,.explanation-visual .drag-halo,.explanation-visual .junction-click-zone { display: none; }
 
 .drawing { position: sticky; top: 12px; }
 .drawing-heading { margin-bottom: 4px; }
@@ -192,4 +210,7 @@ footer { padding: 0 24px 28px; text-align: center; color: #766959; font-size: 13
   .version-tools { grid-template-columns: 1fr; }
   .version-tools > strong { grid-column: auto; }
   .version-tools label { display: grid; gap: 3px; }
+  .explanation-carousel { padding: 6px; gap: 4px; }
+  .explanation-carousel > p { font-size: 12px; line-height: 1.3; }
+  .explanation-visual.common-tables { gap: 2px; }
 }
