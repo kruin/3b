@@ -1,4 +1,4 @@
-3B LINE CONFIGURATOR — VERSION 31
+3B LINE CONFIGURATOR — VERSION 33
 ================================
 
 Open index.html locally or use https://kruin.github.io/3b/.

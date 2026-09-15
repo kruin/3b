@@ -1,4 +1,14 @@
-3B GitHub Pages versie 31
+3B GitHub Pages versie 33
+
+Nieuw in versie 33:
+- LKL kan Kop, Nek, Kruis en Been stapsgewijs aan de hoofdtekening toevoegen.
+- Berekende waarden zijn rood, bewerkte waarden blauw en met OK goedgekeurde waarden groen.
+- Iedere regel in Instellingen en iedere balpopup heeft een OK-actie.
+
+Nieuw in versie 32:
+- Instellingen toont in iedere modus het volledige oude V-A-scherm met alle lijnen.
+- Het hoofdscherm blijft tafelgericht: LKL toont Neus en Romp; Free play toont alle lijnen.
+- Bal slepen is op het hoofdscherm weer rechtstreeks mogelijk in beide modi.
 
 Nieuw in versie 31:
 - LKL is bij iedere start de standaardmodus en toont uitsluitend Neus en Romp.
@@ -82,4 +92,4 @@ Nieuw in versie 23:
 - Mobiele tweevingerbediening wordt direct boven de tafel stap voor stap uitgelegd.
 - Eerste vinger houdt bal+A+V-zone vast; tweede vinger sleept elders op het scherm.
 - Stapknoppen blijven genoemd als nauwkeurige afstelling.
-- Assets zijn config-v31.js, app-v31.js en styles.css?v=31.
+- Assets zijn config-v33.js, app-v33.js en styles.css?v=33.

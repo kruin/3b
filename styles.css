@@ -44,7 +44,7 @@ select { padding: 8px 34px 8px 11px; }
 
 .workspace { display: grid; grid-template-columns: minmax(420px, .72fr) minmax(480px, 1.28fr); grid-template-areas: "editor drawing"; gap: 16px; align-items: start; }
 .workspace { grid-template-columns: minmax(0,1fr); grid-template-areas: "drawing"; }
-.workspace .editor { display: none; }
+body.table-only .workspace .editor { display: none; }
 .view-actions { display: flex; align-items: flex-start; gap: 6px; }
 .view-actions button { min-height: 36px; padding: 5px 10px; white-space: nowrap; }
 body.table-only { overflow: hidden; }
@@ -61,7 +61,7 @@ body.mobile-preview main { display: grid; place-items: center; background: #2b21
 body.mobile-preview .drawing { width: 390px; max-width: 100%; height: min(844px,100dvh); border: 3px solid #d9b864; }
 body.mobile-preview .svg-mount,body.mobile-preview .drawing-card { height: 100%; }
 body.mobile-preview .ball-nudge-panel { position: fixed; }
-body.mobile-preview .nudge-actions { display: grid; grid-template-columns: repeat(4,1fr) 38px; }
+body.mobile-preview .nudge-actions { display: grid; grid-template-columns: repeat(4,1fr) 34px 30px; }
 body.mobile-preview .nudge-actions button { min-width: 0; min-height: 50px; }
 .editor { grid-area: editor; }
 .drawing { grid-area: drawing; }
@@ -120,9 +120,13 @@ body.ball-dragging { overscroll-behavior: none; touch-action: none; user-select:
 .ball-value-editor[hidden] { display: none; }
 .ball-value-editor label { display: grid; grid-template-columns: auto 68px; align-items: center; gap: 5px; padding: 3px 6px; border-radius: 8px; background: #eee5d6; color: var(--ink); font-size: 12px; font-weight: 800; }
 .ball-value-editor input { width: 68px; min-height: 34px; padding: 4px 6px; border: 1px solid #cfc2ae; border-radius: 7px; background: #fffdf8; }
-.nudge-actions { display: grid; grid-template-columns: repeat(4,1fr) 30px; gap: 3px; }
+.nudge-actions { display: grid; grid-template-columns: repeat(4,1fr) 34px 30px; gap: 3px; }
 .nudge-actions button { min-width: 0; min-height: 34px; padding: 3px 4px; font-size: 13px; font-weight: 900; }
 .nudge-actions .nudge-close { min-width: 38px; color: var(--red); }
+.approve,.row-approve { color: #16834b; font-weight: 900; }
+.row-approve { min-height: 32px; padding: 3px 6px; }
+.value-legend { display: flex; gap: 12px; margin: -7px 0 9px; font-size: 12px; font-weight: 900; }
+.value-legend .calculated { color: #c62828; }.value-legend .edited { color: #1769d2; }.value-legend .approved { color: #16834b; }
 
 .drawing { position: sticky; top: 12px; }
 .drawing-heading { margin-bottom: 4px; }
@@ -176,6 +180,6 @@ footer { padding: 0 24px 28px; text-align: center; color: #766959; font-size: 13
   .ball-nudge-panel { position: fixed; padding: 6px; }
   .ball-nudge-panel > div:first-child { text-align: left; }
   .ball-value-editor { justify-content: center; }
-  .nudge-actions { display: grid; grid-template-columns: repeat(4,1fr) 30px; }
+  .nudge-actions { display: grid; grid-template-columns: repeat(4,1fr) 34px 30px; }
   .nudge-actions button { min-width: 0; min-height: 36px; }
 }

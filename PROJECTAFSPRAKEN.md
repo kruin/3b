@@ -312,3 +312,13 @@ Voor iedere release:
 - Modus `LKL` is de vaste startmodus en toont in de tafel alleen Neus en Romp.
 - Modus `Free play` toont alle ingevulde delen en activeert het vrije slepen van speelbal en bandballen.
 - De modus is een gebruikerskeuze en wordt niet meer impliciet gewijzigd door de validatie van waarden.
+# Versie 32 — 2026-09-15
+
+- `Instellingen` opent altijd de volledige klassieke V-A-editor: Neus, Kop, Nek, Romp, Kruis en Been.
+- Dit geldt voor LKL en Free play en staat los van wat op het hoofdscherm getekend wordt.
+- Op het hoofdscherm start slepen direct bij pointerdown op een bal in beide modi.
+# Versie 33 — 2026-09-15
+
+- LKL begint met Neus en Romp; `+ Kop`, `+ Nek`, `+ Kruis` en `+ Been` voegen delen toe. Na alle toevoegingen herstelt de knop de basis.
+- Waardestatus per punt: `calculated` rood, `edited` blauw, `approved` groen.
+- Handmatige stappen, invoer en balsleep leveren `edited`; afgeleide partnerwaarden leveren `calculated`; OK levert `approved`.
