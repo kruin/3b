@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 33, release: "40",
+  version: 34, release: "41",
   terminology: {
     pattern: { key: "LKL", en: "long-short-long", nl: "lang-kort-lang" },
     line: { en: "Line", nl: "Lijn" },
@@ -16,7 +16,7 @@ window.THREEB_START_CONFIG = {
     openGesture: "double_click_or_double_tap"
   },
   explanation: {
-    version: "0.1",
+    version: "0.2",
     defaultLevel: "LKL",
     scopeRules: {
       systemExplanation: "shared_large_and_small",

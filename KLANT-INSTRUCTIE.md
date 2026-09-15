@@ -23,3 +23,16 @@ ander apparaat te openen. Er is geen automatische synchronisatie.
   eigen browser en kunnen als JSON worden gedownload.
 - Een geïnstalleerde KruinLine mag in de werkkopie worden aangepast. Daardoor
   verandert de oorspronkelijke KruinLine niet.
+
+## Kruin: uitleg op mobiel bewerken
+
+1. Open `https://kruin.github.io/3b/#owner=kruin`.
+2. Kies **Instellingen** en daarna **Mobiele Uitlegeditor**.
+3. Kies een kaart of maak een nieuwe kaart.
+4. Vul level, soort, tafel, lijn, zichtbare delen, titels en teksten in.
+5. Kies **Voorbeeld** om de kaart in de carrousel te bekijken.
+6. Kies **Download uitleg-JSON** als reservekop en voor opname in een release.
+
+Deze eigenaarsweergave is een lokale werkmodus, geen accountbeveiliging. De
+statische website kan niets naar GitHub schrijven. Alleen een bewust
+gepubliceerde volgende release wijzigt de uitleg voor klanten.

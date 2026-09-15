@@ -1,5 +1,14 @@
 # Projectafspraken 3B
 
+### 2026-09-15 — mobiele Uitlegeditor versie 41
+
+- De Uitlegeditor is uitsluitend zichtbaar in de Kruin-eigenaarsmodus.
+- De editor werkt op mobiel en desktop en bewaart conceptkaarten alleen in de lokale browser.
+- Een conceptkaart bevat level, scope, tafel, lijn, zichtbare delen en Nederlandse en Engelse titel en tekst.
+- De editor kan kaarten toevoegen, wijzigen, verwijderen, vooraf bekijken en als één uitleg-JSON downloaden.
+- De statische app schrijft nooit rechtstreeks naar GitHub; opname in een openbare release blijft een bewuste publicatiestap.
+- De openbare klantweergave van de uitleg blijft alleen-lezen.
+
 Dit document wordt bij iedere functionele of technische projectwijziging
 bijgewerkt.
 

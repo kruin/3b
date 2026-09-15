@@ -1,4 +1,13 @@
-3B GitHub Pages versie 40
+3B GitHub Pages versie 41
+
+Nieuw in versie 41:
+- Mobiele Uitlegeditor voor Kruin toegevoegd.
+- Bestaande en nieuwe uitlegkaarten zijn lokaal te bewerken.
+- Per kaart zijn level, soort, tafel, lijn, zichtbare delen en Nederlandse en Engelse tekst instelbaar.
+- Kaarten kunnen worden toegevoegd, verwijderd, bewaard en direct in de carrousel bekeken.
+- De volledige werkuitleg kan als één versiegebonden uitleg-JSON worden gedownload.
+- De eigenaarsmodus werkt ook mobiel via `#owner=kruin`; hij schrijft nooit rechtstreeks naar GitHub.
+- De openbare klantweergave blijft alleen-lezen.
 
 Nieuw in versie 40:
 - Algemene systeemuitleg blijft gemeenschappelijk voor Groot en Klein.
