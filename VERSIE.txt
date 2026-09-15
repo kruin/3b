@@ -1,4 +1,15 @@
-3B GitHub Pages versie 33
+3B GitHub Pages versie 34
+
+Nieuw in versie 34:
+- Delen Hiel, Voet en Teen volgen na Been en staan in de volledige instellingen.
+- Na een waarde- of balwijziging verschijnt Freeze in de compacte balpopup.
+- In lokale Kruin-eigenaarsmodus bewaart Freeze de volledige gekozen lijn en tafel in KruinLines en als JSON-download.
+- Op GitHub Pages zijn KruinLines alleen leesbaar en installabel; installeren maakt een werkkopie en wijzigt KruinLines niet.
+- Klanten bewaren hun eigen Freezes afzonderlijk in MyLines.
+- Instellingen bevat Undo, Redo en Herstel per gekozen lijn en tafel.
+- `Open_KruinLines.bat` opent de uitsluitend lokale eigenaarsmodus.
+- Gepubliceerde VIJF-startconfiguraties voor Groot en Klein staan als alleen-lezen KruinLines klaar.
+- Stipwaardelabels noemen weer expliciet het deel en V/A.
 
 Nieuw in versie 33:
 - LKL kan Kop, Nek, Kruis en Been stapsgewijs aan de hoofdtekening toevoegen.

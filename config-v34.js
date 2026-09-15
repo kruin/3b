@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 26, release: "33",
+  version: 27, release: "34",
   terminology: {
     pattern: { key: "LKL", en: "long-short-long", nl: "lang-kort-lang" },
     line: { en: "Line", nl: "Lijn" },
@@ -112,13 +112,17 @@ window.THREEB_START_CONFIG = {
     {key:"nek",labels:{en:"Neck",nl:"Nek"},color:"#8654c7"},
     {key:"romp",labels:{en:"Body",nl:"Romp"},color:"#15966f"},
     {key:"kruis",labels:{en:"Cross",nl:"Kruis"},color:"#db3f64"},
-    {key:"been",labels:{en:"Leg",nl:"Been"},color:"#d5a21d"}
+    {key:"been",labels:{en:"Leg",nl:"Been"},color:"#d5a21d"},
+    {key:"hiel",labels:{en:"Heel",nl:"Hiel"},color:"#b7791f"},
+    {key:"voet",labels:{en:"Foot",nl:"Voet"},color:"#3aa6a0"},
+    {key:"teen",labels:{en:"Toe",nl:"Teen"},color:"#6b7fd7"}
   ],
   departureOptions: ["neus","kop"],
   fixedPartBands: {
     neus:{from:"Z",to:"west"}, kop:{from:"west",to:"noord"},
     nek:{from:"noord",to:"oost"}, romp:{from:"oost",to:"zuid"},
-    kruis:{from:"zuid",to:"west"}, been:{from:"west",to:"noord"}
+    kruis:{from:"zuid",to:"west"}, been:{from:"west",to:"noord"},
+    hiel:{from:"noord",to:"oost"}, voet:{from:"oost",to:"zuid"}, teen:{from:"zuid",to:"west"}
   },
   partPointZones: {
     been: {

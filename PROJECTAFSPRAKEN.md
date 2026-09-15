@@ -19,6 +19,14 @@ bijgewerkt.
 - `config.js` is de openbare startconfiguratie.
 - Gebruikersinvoer blijft lokaal in `localStorage` van apparaat en browser.
 - Overdracht en reservekop verlopen via JSON-export en JSON-import.
+- KruinLines is de gepubliceerde, alleen-lezen catalogus van Kruin.
+- Op GitHub Pages kan KruinLines door iedere gebruiker worden bekeken en als
+  werkkopie worden geïnstalleerd, maar nooit worden gewijzigd.
+- Alleen de lokale start via `Open_KruinLines.bat` activeert beheer: een Freeze
+  wordt dan lokaal aan KruinLines toegevoegd en direct als JSON gedownload.
+- Klanten bewaren hun eigen bevroren lijnen uitsluitend in MyLines.
+- Publicatie van een nieuwe KruinLine blijft een bewuste Git-publicatie; GitHub
+  Pages heeft geen veilige eigenaarslogin en schrijft nooit terug naar GitHub.
 - Klein en Groot hebben gescheiden configuraties.
 - VIJF t/m TWAALF zijn afzonderlijk selecteerbaar.
 - Neus vertrekt standaard uit Z; overige delen bestaan uit V en A.
@@ -35,7 +43,7 @@ bijgewerkt.
 - ZES t/m TWAALF zijn voorlopig leeg.
 - Geen effect-, fysica- of ervaringscorrecties zolang daarvoor geen geldige
   gegevens zijn vastgelegd.
-- Benamingen zijn: Neus, Kop, Nek, Romp, Kruis en Been.
+- Benamingen zijn: Neus, Kop, Nek, Romp, Kruis, Been, Hiel, Voet en Teen.
 - Engels is de standaardtaal; Nederlands is on-screen selecteerbaar.
 - De weergave kan Groot, Klein of Beide tonen. Bij Beide kiest de gebruiker
   expliciet welke tafel in het invoerscherm wordt bewerkt.
@@ -62,6 +70,19 @@ Voor iedere release:
    met dezelfde URL uit de CDN-cache kan blijven leveren.
 
 ## Wijzigingslog
+
+### 2026-09-15 — KruinLines en MyLines versie 34
+
+- KruinLines is op GitHub Pages zichtbaar en installabel, maar onveranderlijk.
+- De eigenaarsmodus werkt alleen bij een lokaal bestand met `#owner=kruin` en
+  wordt geopend met `Open_KruinLines.bat`; dezelfde parameter werkt online niet.
+- Freeze verschijnt pas na een wijziging en bewaart de volledige gekozen lijn
+  voor de gekozen tafel.
+- Freeze gaat in eigenaarsmodus naar KruinLines en voor klanten naar MyLines.
+- Undo en Redo bewaren maximaal vijftig momentopnamen.
+- Herstel zet uitsluitend de gekozen lijn op de gekozen tafel terug naar de
+  gepubliceerde startconfiguratie.
+- Hiel, Voet en Teen zijn na Been toegevoegd.
 
 ### 2026-09-13 — LKL, compacte bediening en Lijn 1 versie 14
 
