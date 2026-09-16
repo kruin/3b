@@ -1,5 +1,13 @@
 # Projectafspraken 3B
 
+### 2026-09-16 — ankerberekening Klein versie 52
+
+- De ankers zijn een complete Neus, Kop A en een complete Romp.
+- Zodra deze op Klein beschikbaar zijn, berekent de geometrie Kop V en Nek V/A.
+- De uitkomsten zijn afgeleid en krijgen daarom status `calculated` en de kleur Berekend.
+- De berekening vervangt alleen lege of eerder berekende waarden.
+- Handmatig bewerkte en goedgekeurde waarden hebben altijd voorrang.
+
 ### 2026-09-16 — foto’s en tekstinstructie versie 51
 
 - Iedere uitlegkaart kan een tafeltekening of foto gebruiken.

@@ -85,6 +85,16 @@ bewust in een volgende openbare release te laten opnemen.
 Een Freeze of JSON-download verandert de openbare standaard nog niet. Laat de
 gecontroleerde KruinLine bewust in de volgende bronconfiguratie opnemen.
 
+### Klein — ontbrekende waarden laten berekenen
+
+Voer op Klein een complete **Neus**, alleen **Kop A** en een complete **Romp**
+in. Bijvoorbeeld: Neus `Z–50`, Kop `A15` en Romp `20–38`. Zodra deze drie
+ankers compleet zijn, berekent 3B automatisch **Kop V** en **Nek V/A**.
+
+De afgeleide waarden staan in de kleur **Berekend**. Controleer ze aan de
+tafel en kies pas daarna **OK**. Een handmatig bewerkte of reeds goedgekeurde
+waarde wordt nooit door deze automatische berekening vervangen.
+
 ## Kruin — controleren en publiceren
 
 1. Start de Kruin-starter voor Windows of Mac en klik **Kruin**.

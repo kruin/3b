@@ -1,3 +1,11 @@
+3B GitHub Pages versie 52
+
+Nieuw in versie 52:
+- Op Klein kan 3B ontbrekende tussenwaarden geometrisch berekenen vanuit Neus, Kop A en Romp.
+- Bij bijvoorbeeld Neus Z–50, Kop A15 en Romp 20–38 worden Kop V en Nek V/A aangevuld.
+- Automatisch ingevulde waarden krijgen status en kleur `Berekend`.
+- Alleen lege of eerder berekende velden worden bijgewerkt; handmatig bewerkte en goedgekeurde waarden blijven staan.
+
 3B GitHub Pages versie 51
 
 Nieuw in versie 51:
