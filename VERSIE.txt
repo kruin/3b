@@ -1,3 +1,20 @@
+3B GitHub Pages versie 57
+
+Nieuw in versie 57:
+- Kruis V en A kunnen over de volledige fysieke band worden verschoven.
+- De voorlopige LKL-minimum- en maximumbeperkingen zijn voor alle lijnpunten uitgeschakeld.
+- Alleen de fysieke bandgrenzen blijven gelden: korte band 0–40 en lange band 0–80.
+- Inhoudelijke beperkingen kunnen later opnieuw worden vastgelegd.
+
+3B GitHub Pages versie 56
+
+Nieuw in versie 56:
+- Been A en Hiel V blijven één gedeelde bal wanneer Been rond de Noord/Oost-hoek loopt.
+- De Been-bal kan tijdens slepen en stappen van Noord naar Oost en terug wisselen.
+- Eén klik of tik op een bal opent direct de A/V-bediening; dubbelklikken is vervallen.
+- Klikken of tikken in een helft van een gekleurde lijn activeert de dichtstbijzijnde bal.
+- Ook de speelbal en de laatste eindbal zijn via een lijnhelft te activeren.
+
 3B GitHub Pages versie 55
 
 Nieuw in versie 55:

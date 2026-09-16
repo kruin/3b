@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 48, release: "55",
+  version: 50, release: "57",
   terminology: {
     pattern: { key: "LKL", en: "long-short-long", nl: "lang-kort-lang" },
     line: { en: "Line", nl: "Lijn" },
@@ -13,7 +13,7 @@ window.THREEB_START_CONFIG = {
     lklBasicParts: ["neus","romp"],
     compactBallValueEditor: true,
     liveUpdate: true,
-    openGesture: "double_click_or_double_tap"
+    openGesture: "single_click_or_tap"
   },
   explanation: {
     version: "0.3",
@@ -214,8 +214,10 @@ window.THREEB_START_CONFIG = {
     }
   },
   lklValueRanges: {
-    defaultOffset:{V:20,A:5}, wrap:true, integerStep:1,
-    overrides:{VIJF:{nek:{V:{minimum:13,maximum:18}}}}
+    restrictionsEnabled:false,
+    wrap:true,
+    integerStep:1,
+    overrides:{}
   },
   shortenedFourCushionCorrection: {
     status: "indicative_without_experience_data",

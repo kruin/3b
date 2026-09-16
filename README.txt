@@ -1,4 +1,4 @@
-3B LINE CONFIGURATOR — VERSION 55
+3B LINE CONFIGURATOR — VERSION 57
 ================================
 
 LEES EERST `START-HIER.md`.
@@ -17,7 +17,7 @@ Configuration
   the first visible part using Head's configured V and A.
 - Correction can be Advice, On or Off. It uses the absolute Head length in cm
   to calculate an indicative running-English percentage. It never changes V/A.
-- Parts: Nose, Head, Neck, Body, Cross and Leg.
+- Parts: Nose, Head, Neck, Body, Cross, Leg, Heel, Foot and Toe.
 - In Both mode, “Edit table” determines which table the form edits.
 
 Both playing fields are displayed at the same size. Physical dimensions remain
@@ -66,6 +66,11 @@ only during that drag is page scrolling blocked.
 For reliable mobile editing, tap a cushion ball to open a fixed control panel
 with −10, −1, +1 and +10. Direct dragging remains available but is no longer
 required. Shared-ball steps recalculate both adjacent values together.
+
+A single click or tap activates a ball; double-clicking is not required. A
+click in either half of a coloured route part activates the nearest of its two
+balls. The Been arrival can pass continuously around the North/East corner and
+remains connected to the Hiel departure.
 
 The direct manipulation zone of a shared cushion ball includes the ball, its
 arrival A label and the following departure V label. Touching or dragging

@@ -1,5 +1,21 @@
 # Projectafspraken 3B
 
+### 2026-09-16 — vrije puntbewerking versie 57
+
+- Kruin mag voorlopig alle lijnpunten over hun volledige fysieke band verschuiven.
+- Dit geldt ook voor beide waarden rond Kruis en voor alle patronen en tafels.
+- Er gelden geen inhoudelijke LKL-minima, maxima of standaardvensters.
+- Alleen de geometrische bandgrenzen blijven actief: 0–40 op de korte band en 0–80 op de lange band.
+- Eventuele inhoudelijke beperkingen worden pas later opnieuw ontworpen.
+
+### 2026-09-16 — Been-hoek en enkelklik versie 56
+
+- Been A en Hiel V vormen altijd één gedeelde fysieke bandbal, ook wanneer Been A tussen Noord en Oost wisselt.
+- De gezamenlijke bediening rekent beide bijbehorende lijnwaarden opnieuw uit.
+- Eén klik of tik activeert een bal en opent de waarden; dubbelklik en dubbeltik zijn niet meer nodig.
+- Iedere gekleurde lijn heeft een brede onzichtbare klikzone.
+- De helft waarop wordt geklikt bepaalt welke van de twee ballen wordt geactiveerd.
+
 ### 2026-09-16 — volledige lijnreeks NUL–TWAALF versie 55
 
 - Selecteerbare lijnen zijn NUL, EEN, TWEE, DRIE, VIER, VIJF, ZES, ZEVEN, ACHT, NEGEN, TIEN, ELF en TWAALF.

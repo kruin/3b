@@ -85,6 +85,17 @@ bewust in een volgende openbare release te laten opnemen.
 Een Freeze of JSON-download verandert de openbare standaard nog niet. Laat de
 gecontroleerde KruinLine bewust in de volgende bronconfiguratie opnemen.
 
+### Ballen activeren
+
+- Alle lijnpunten mogen voorlopig over de volledige fysieke band worden
+  verschoven: 0–40 op een korte band en 0–80 op een lange band. Dit geldt ook
+  voor Kruis. Inhoudelijke beperkingen worden later toegevoegd.
+- Eén klik of tik op een bal opent direct de bediening; dubbelklikken hoeft niet.
+- Klik of tik op de bovenste/onderste of eerste/tweede helft van een gekleurde
+  lijn: 3B activeert automatisch de dichtstbijzijnde van de twee ballen.
+- Bij **Been → Hiel** blijft dit één gedeelde bal wanneer Been A rond de hoek
+  tussen Noord en Oost beweegt.
+
 ### Ontbrekende waarden vanaf Neus laten berekenen
 
 Voer op Groot of Klein een complete **Neus**, alleen **Kop A** en een complete
