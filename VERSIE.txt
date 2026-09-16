@@ -1,4 +1,10 @@
-3B GitHub Pages versie 45
+3B GitHub Pages versie 46
+
+Nieuw in versie 46:
+- In de Kruin-eigenaarsmodus staat nu direct in de app de knop `Kruin · Uitleg bewerken`.
+- De knop opent op desktop en mobiel onmiddellijk de Uitlegeditor.
+- De knop wordt voor gewone klanten niet aangemaakt.
+- Tijdens `Klant mobiel testen` wordt de Kruin-knop verborgen.
 
 Nieuw in versie 45:
 - Twee openbare GitHub Pages-ingangen: Main op `/3b/` en Doc op `/3b/doc/`.

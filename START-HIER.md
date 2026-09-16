@@ -7,6 +7,8 @@ Pak een download altijd **volledig uit** voordat je een BAT-bestand start.
 
 - **Main:** `https://kruin.github.io/3b/` — de klantapp.
 - **Doc:** `https://kruin.github.io/3b/doc/` — uitleg voor klanten en Kruin.
+- **Kruin mobiel:** `https://kruin.github.io/3b/#owner=kruin` — toont in de app
+  de knop **Kruin · Uitleg bewerken**.
 
 GitHub Pages publiceert vanuit branch `main`, map `/(root)`. De map `doc/`
 wordt daardoor automatisch de tweede ingang; stel `/docs` niet als aparte
@@ -29,6 +31,22 @@ publicatiebron in.
 4. Klik **Bewaar kaart**. Dit bewaart de werkwijziging alleen in deze browser.
 5. Klik **Voorbeeld** om de kaart in de carrousel te controleren.
 6. Klik na het werk op **Download uitleg-JSON**.
+
+Op mobiel opent Kruin `https://kruin.github.io/3b/#owner=kruin` en kiest in de
+app **Kruin · Uitleg bewerken**. Deze knop bestaat niet in de klantmodus.
+
+### Kruin op mobiel — kort onthouden
+
+1. Open de Kruin-link, niet de gewone Main-link.
+2. Tik **Kruin · Uitleg bewerken**.
+3. Bewerk en bewaar de kaart.
+4. Bekijk **Voorbeeld**.
+5. Download vóór het afsluiten altijd de **uitleg-JSON**.
+6. Upload later die JSON samen met de nieuwste 3B-ZIP voor opname in de
+   volgende openbare versie.
+
+**Bewaar kaart is lokaal. Download JSON is een reservekop. Geen van beide is
+al een publicatie.**
 
 De uitleg-JSON is een reservekop en overdrachtsbestand. Downloaden publiceert
 niets. Geef dit bestand samen met de nieuwste 3B-ZIP aan ChatGPT om de kaarten

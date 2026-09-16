@@ -1,5 +1,11 @@
 # Projectafspraken 3B
 
+### 2026-09-16 — Kruin-editknop versie 46
+
+- De app toont `Kruin · Uitleg bewerken` uitsluitend wanneer de Kruin-eigenaarsmodus actief is.
+- De knop opent dezelfde Uitlegeditor op desktop en mobiel.
+- De openbare klantmodus en de klant-mobile-preview tonen de knop nooit.
+
 ### 2026-09-16 — Main en Doc versie 45
 
 - De openbare klantapp blijft op `/3b/` en heet Main.
