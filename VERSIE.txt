@@ -1,4 +1,11 @@
-3B GitHub Pages versie 46
+3B GitHub Pages versie 47
+
+Nieuw in versie 47:
+- Eén centrale knop `Kruin` vervangt de losse Kruin-editknoppen.
+- De Kruin-knop opent één menu voor uitleg, lijnen/stipwaarden, klant-mobile-test en documentatie.
+- Op Windows is er nog maar één beheeringang: `Kruin.bat`.
+- `Open_3B.bat`, `Open_KruinLines.bat` en `Edit_Uitleg.bat` zijn vervallen.
+- Gewone klanten en de klant-preview zien de Kruin-knop niet.
 
 Nieuw in versie 46:
 - In de Kruin-eigenaarsmodus staat nu direct in de app de knop `Kruin · Uitleg bewerken`.

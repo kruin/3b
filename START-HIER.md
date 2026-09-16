@@ -8,7 +8,7 @@ Pak een download altijd **volledig uit** voordat je een BAT-bestand start.
 - **Main:** `https://kruin.github.io/3b/` — de klantapp.
 - **Doc:** `https://kruin.github.io/3b/doc/` — uitleg voor klanten en Kruin.
 - **Kruin mobiel:** `https://kruin.github.io/3b/#owner=kruin` — toont in de app
-  de knop **Kruin · Uitleg bewerken**.
+  de knop **Kruin**.
 
 GitHub Pages publiceert vanuit branch `main`, map `/(root)`. De map `doc/`
 wordt daardoor automatisch de tweede ingang; stel `/docs` niet als aparte
@@ -18,27 +18,25 @@ publicatiebron in.
 
 | Bestand | Voor wie? | Doel |
 |---|---|---|
-| `Edit_Uitleg.bat` | Kruin | Opent meteen de editor voor cursus- en uitlegkaarten. |
-| `Open_KruinLines.bat` | Kruin | Opent het beheer van lijnen en standaard-stipwaarden. |
-| `Open_3B.bat` | Kruin/tester | Opent dezelfde alleen-lezen klantweergave als de openbare website. |
+| `Kruin.bat` | Kruin | Opent één Kruin-menu voor alle bewerkingen en controles. |
 | `Publiceer_3B.bat` | Kruin | Controleert, commit en publiceert een bewuste nieuwe release via GitHub. |
 
 ## Kruin — uitleg en cursus bewerken
 
-1. Dubbelklik op `Edit_Uitleg.bat`.
-2. Kies een bestaande kaart of klik **+ Nieuwe kaart**.
+1. Dubbelklik op `Kruin.bat` en klik **Kruin**.
+2. Kies **Uitleg bewerken** en daarna een bestaande of nieuwe kaart.
 3. Vul level, kaartsoort, tafel, lijn, zichtbare delen en beide talen in.
 4. Klik **Bewaar kaart**. Dit bewaart de werkwijziging alleen in deze browser.
 5. Klik **Voorbeeld** om de kaart in de carrousel te controleren.
 6. Klik na het werk op **Download uitleg-JSON**.
 
-Op mobiel opent Kruin `https://kruin.github.io/3b/#owner=kruin` en kiest in de
-app **Kruin · Uitleg bewerken**. Deze knop bestaat niet in de klantmodus.
+Op mobiel opent Kruin `https://kruin.github.io/3b/#owner=kruin`, tikt **Kruin**
+en kiest **Uitleg bewerken**. De Kruin-knop bestaat niet in de klantmodus.
 
 ### Kruin op mobiel — kort onthouden
 
 1. Open de Kruin-link, niet de gewone Main-link.
-2. Tik **Kruin · Uitleg bewerken**.
+2. Tik **Kruin** en daarna **Uitleg bewerken**.
 3. Bewerk en bewaar de kaart.
 4. Bekijk **Voorbeeld**.
 5. Download vóór het afsluiten altijd de **uitleg-JSON**.
@@ -61,7 +59,7 @@ bewust in een volgende openbare release te laten opnemen.
 
 ## Kruin — standaard-stipwaarden beheren
 
-1. Dubbelklik op `Open_KruinLines.bat`.
+1. Dubbelklik op `Kruin.bat`, klik **Kruin** en kies **Lijnen en stipwaarden bewerken**.
 2. Kies Groot of Klein en kies de lijn.
 3. Open zo nodig **Alle delen**.
 4. Wijzig A en V via een bandbal, de invoervelden of de stapknoppen.
@@ -73,14 +71,13 @@ gecontroleerde KruinLine bewust in de volgende bronconfiguratie opnemen.
 
 ## Kruin — controleren en publiceren
 
-1. Start `Open_3B.bat`.
-2. Controleer de gewone klantweergave zonder eigenaarsknoppen.
-3. Kies in de Kruin-werkomgeving **Klant mobiel testen** om de gepubliceerde
+1. Start `Kruin.bat` en klik **Kruin**.
+2. Kies **Klant mobiel testen** om de gepubliceerde
    klantinhoud in een mobiel scherm te bekijken. Conceptuitleg en
    eigenaarsfuncties zijn in deze preview verborgen.
-4. Controleer Groot, Klein, West, Oost, lijnen en uitleg.
-5. Kies **Stop klanttest** om terug te keren.
-6. Start pas daarna `Publiceer_3B.bat`.
+3. Controleer Groot, Klein, West, Oost, lijnen en uitleg.
+4. Kies **Stop klanttest** om terug te keren.
+5. Start pas daarna `Publiceer_3B.bat`.
 
 De publicatie-BAT controleert versie-assets, Git-remote, commit, GitHub Pages
 en de gepubliceerde release. Een fout wordt zichtbaar gemeld.

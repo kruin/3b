@@ -1,5 +1,12 @@
 # Projectafspraken 3B
 
+### 2026-09-16 — één Kruin-ingang versie 47
+
+- Kruin gebruikt één knop `Kruin` voor alle editfuncties.
+- Het Kruin-menu biedt uitleg, lijnen/stipwaarden, klant-mobile-test en documentatie.
+- Windows gebruikt uitsluitend `Kruin.bat` als lokale beheeringang.
+- Losse Open- en Edit-BAT-bestanden zijn vervallen.
+
 ### 2026-09-16 — Kruin-editknop versie 46
 
 - De app toont `Kruin · Uitleg bewerken` uitsluitend wanneer de Kruin-eigenaarsmodus actief is.
