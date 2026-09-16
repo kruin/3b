@@ -1,4 +1,26 @@
-3B GitHub Pages versie 41
+3B GitHub Pages versie 44
+
+Nieuw in versie 44:
+- `START-HIER.md` toegevoegd als centrale handleiding.
+- Afzonderlijke uitleg opgenomen voor Kruin, klanten en publicatiebeheer.
+- De drie BAT-bestanden en hun verschillende doelen worden direct uitgelegd.
+- Het verschil tussen lokaal bewaren, JSON downloaden, opnemen en publiceren is expliciet gemaakt.
+- De rol van `.gitignore` en de overdracht van uitleg- en KruinLine-JSON zijn verduidelijkt.
+- Mobiele preview opnieuw ingericht als echte klanttest.
+- De klanttest gebruikt gepubliceerde uitleg en verbergt Kruin-concepten en eigenaarsfuncties.
+- De knoppen heten voortaan `Klant mobiel testen` en `Stop klanttest`.
+
+Nieuw in versie 43:
+- Projectgerichte `.gitignore` toegevoegd.
+- Lokale Mijn-tafels-, MyLines-, KruinLines- en uitleg-JSON-exports worden niet gecommit.
+- Gedownloade SVG's, ZIP-pakketten, reservekopieën en editorbestanden worden niet gecommit.
+- BAT-starters, sitebroncode, documentatie en publicatiebestanden blijven onder Git-versiebeheer.
+
+Nieuw in versie 42:
+- Nieuwe `Edit_Uitleg.bat` opent op desktop rechtstreeks de Uitlegeditor.
+- `Open_KruinLines.bat` opent voortaan expliciet de lijn- en stipwaardenmodus.
+- `Open_3B.bat` gebruikt dezelfde robuuste file-URL-methode en blijft de gewone klantweergave openen.
+- De publicatiecontrole vereist en controleert alle drie de startbestanden.
 
 Nieuw in versie 41:
 - Mobiele Uitlegeditor voor Kruin toegevoegd.

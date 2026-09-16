@@ -2,7 +2,7 @@
 setlocal
 cd /d "%~dp0"
 set "THREEB_KRUIN_PAGE=%~dp0index.html"
-powershell -NoProfile -ExecutionPolicy Bypass -Command "$page=[System.Uri]::new($env:THREEB_KRUIN_PAGE).AbsoluteUri; Start-Process ($page + '#owner=kruin')"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$page=[System.Uri]::new($env:THREEB_KRUIN_PAGE).AbsoluteUri; Start-Process ($page + '#owner=kruin&edit=lijnen')"
 if errorlevel 1 (
   echo FOUT: de lokale KruinLines-pagina kon niet worden geopend.
   pause

@@ -1,0 +1,28 @@
+# 3B — lokale exports en reservekopieën
+/3B-mijn-tafels.json
+/3B-my-tables.json
+/3B-uitleg-*.json
+/KruinLines*.json
+/MyLines*.json
+/3B-*.svg
+
+# Lokale download- en releasepakketten
+/Download-3B-*.zip
+/*.zip
+
+# Tijdelijke werkmappen en bestanden
+/exports/
+/backups/
+*.tmp
+*.bak
+*~
+
+# Besturingssysteem en editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+
+# De openbare sitebestanden, BAT-starters en documentatie worden bewust
+# niet genegeerd en horen in Git.

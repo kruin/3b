@@ -1,5 +1,9 @@
-3B LINE CONFIGURATOR — VERSION 41
+3B LINE CONFIGURATOR — VERSION 44
 ================================
+
+LEES EERST `START-HIER.md`.
+Daar staat apart uitgelegd hoe Kruin uitleg en stipwaarden beheert, hoe klanten
+de app gebruiken, wat lokaal blijft en wanneer iets werkelijk gepubliceerd is.
 
 Open index.html locally or use https://kruin.github.io/3b/.
 English is the default language; Dutch is selectable on screen.

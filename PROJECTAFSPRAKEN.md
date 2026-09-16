@@ -1,5 +1,26 @@
 # Projectafspraken 3B
 
+### 2026-09-16 — centrale uitleg versie 44
+
+- `START-HIER.md` is de primaire bedienings- en workflowhandleiding.
+- De handleiding scheidt de rollen Kruin, klant en publicatiebeheer.
+- Iedere workflow benoemt expliciet wat lokaal blijft, wat een reservekop is en wat openbaar wordt.
+- README verwijst voortaan als eerste naar deze centrale handleiding.
+- De desktop mobiele preview simuleert de openbare klantmodus en toont geen Kruin-conceptuitleg.
+
+### 2026-09-15 — Git-uitsluitingen versie 43
+
+- Lokale JSON-exports, SVG-downloads, ZIP-pakketten en reservekopieën horen niet in Git.
+- De drie BAT-starters, openbare appbestanden, documentatie en publicatiecontrole horen wel in Git.
+- Gepubliceerde uitleg en KruinLines worden bewust in de versiebron opgenomen, niet als losse browserexport.
+
+### 2026-09-15 — desktopstart uitleg versie 42
+
+- `Edit_Uitleg.bat` is de primaire desktopingang voor het huidige uitlegwerk.
+- `Open_KruinLines.bat` blijft afzonderlijk beschikbaar voor lijn- en stipwaardenbeheer.
+- `Open_3B.bat` opent uitsluitend de gewone lokale klantweergave.
+- De uitlegingang activeert de lokale Kruin-eigenaarsmodus en opent de Uitlegeditor direct.
+
 ### 2026-09-15 — mobiele Uitlegeditor versie 41
 
 - De Uitlegeditor is uitsluitend zichtbaar in de Kruin-eigenaarsmodus.

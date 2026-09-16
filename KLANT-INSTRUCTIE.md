@@ -36,3 +36,10 @@ ander apparaat te openen. Er is geen automatische synchronisatie.
 Deze eigenaarsweergave is een lokale werkmodus, geen accountbeveiliging. De
 statische website kan niets naar GitHub schrijven. Alleen een bewust
 gepubliceerde volgende release wijzigt de uitleg voor klanten.
+
+## Kruin: uitleg op desktop bewerken
+
+Pak het pakket volledig uit en dubbelklik op `Edit_Uitleg.bat`. De lokale
+Kruin-modus wordt geopend en de Uitlegeditor verschijnt meteen. Gebruik
+`Open_KruinLines.bat` voor lijn- en stipwaarden en `Open_3B.bat` voor controle
+van de gewone klantweergave.
