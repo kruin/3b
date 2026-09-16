@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="3B-documentatie voor klanten en Kruin">
+  <title>3B — documentatie</title>
+  <style>
+    :root{--paper:#fffaf0;--cream:#f4efe4;--ink:#2b2118;--muted:#74685c;--green:#176f4f;--gold:#d9b864;--line:#ded3c2}
+    *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.55}
+    header{padding:28px clamp(18px,5vw,70px);background:#2b2118;color:#fff8e9}header p{margin:.2rem 0;color:#d8cfbf}h1{margin:0;font-size:clamp(30px,5vw,50px)}
+    nav{position:sticky;top:0;z-index:2;display:flex;gap:8px;overflow:auto;padding:10px clamp(12px,4vw,60px);background:rgba(255,250,240,.97);border-bottom:1px solid var(--line)}
+    a.button,nav a{display:inline-flex;align-items:center;min-height:42px;padding:8px 13px;border:1px solid #cfc2ae;border-radius:10px;background:white;color:var(--ink);font-weight:800;text-decoration:none;white-space:nowrap}
+    nav a:first-child{background:var(--green);border-color:var(--green);color:white}main{max-width:1000px;margin:auto;padding:24px clamp(14px,4vw,40px) 60px}
+    section{margin:0 0 22px;padding:clamp(16px,3vw,28px);border:1px solid #e5dac9;border-radius:16px;background:var(--paper)}h2{margin-top:0}h3{margin-bottom:.25rem;color:#5b472d}
+    table{width:100%;border-collapse:collapse}th,td{padding:10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--muted);font-size:.8rem;text-transform:uppercase}
+    code{padding:.12rem .35rem;border-radius:5px;background:#eee5d6}.note{padding:12px 14px;border-left:5px solid var(--gold);background:#fff4d8}.steps li{margin-bottom:.45rem}
+    footer{padding:24px;text-align:center;color:var(--muted)}@media(max-width:620px){table{display:block;overflow-x:auto}section{border-radius:12px}nav{padding-inline:8px}}
+  </style>
+</head>
+<body>
+<header><h1>3B — documentatie</h1><p id="3B-documentatie">Handleiding voor klanten en voor Kruin</p></header>
+<nav aria-label="Documentatie"><a href="../">← Main · 3B</a><a href="#klant">Klant</a><a href="#uitleg">Uitleg</a><a href="#lijnen">KruinLines</a><a href="#publiceren">Publiceren</a></nav>
+<main>
+  <section id="ingangen"><h2>Twee ingangen</h2><table><thead><tr><th>Ingang</th><th>Adres</th><th>Doel</th></tr></thead><tbody><tr><td><strong>Main</strong></td><td><a href="../">kruin.github.io/3b/</a></td><td>De openbare 3B-klantapp.</td></tr><tr><td><strong>Doc</strong></td><td><a href="./">kruin.github.io/3b/doc/</a></td><td>Deze uitleg voor klanten en Kruin.</td></tr></tbody></table></section>
+  <section id="klant"><h2>Voor klanten</h2><ol class="steps"><li>Open <a href="../">Main</a> en kies taal.</li><li>Kies Groot, Klein of Beide.</li><li>Kies lijn, richting en route.</li><li>Bekijk een gepubliceerde KruinLine of installeer hem als werkkopie.</li><li>Bewaar eigen aanpassingen in MyLines en download regelmatig Mijn tafels als JSON-reservekop.</li><li>Open <strong>Uitleg</strong> voor de gepubliceerde cursuskaarten.</li></ol><p class="note">Een geïnstalleerde KruinLine is een werkkopie. De gepubliceerde oorspronkelijke lijn verandert daardoor niet.</p></section>
+  <section id="begrippen"><h2>Belangrijkste begrippen</h2><table><tbody><tr><th>LKL</th><td>Patroon lang–kort–lang.</td></tr><tr><th>Lijn</th><td>Bijvoorbeeld VIJF, ZES of ZEVEN.</td></tr><tr><th>V</th><td>Vertrekwaarde op een stiplijn.</td></tr><tr><th>A</th><td>Aankomstwaarde op een stiplijn.</td></tr><tr><th>KruinLines</th><td>Door Kruin gepubliceerde, alleen-lezen lijnen.</td></tr><tr><th>MyLines</th><td>Eigen lijnen van de klant, lokaal in de browser.</td></tr></tbody></table></section>
+  <section id="uitleg"><h2>Voor Kruin — cursus en uitleg</h2><ol class="steps"><li>Pak het nieuwste downloadpakket volledig uit.</li><li>Start op Windows <code>Edit_Uitleg.bat</code>.</li><li>Kies een kaart of maak een nieuwe kaart.</li><li>Vul level, kaartsoort, tafel, lijn, zichtbare delen en beide talen in.</li><li>Kies <strong>Bewaar kaart</strong> en daarna <strong>Voorbeeld</strong>.</li><li>Download na het werk de uitleg-JSON.</li></ol><p class="note">Lokaal bewaren en JSON downloaden publiceren niets. De JSON moet bewust in een volgende bronversie worden verwerkt.</p></section>
+  <section id="lijnen"><h2>Voor Kruin — lijnen en stipwaarden</h2><ol class="steps"><li>Start <code>Open_KruinLines.bat</code>.</li><li>Kies tafel en lijn en open zo nodig Alle delen.</li><li>Wijzig A en V via de bandbal, invoervelden of stapknoppen.</li><li>Controleer de volledige lijn en keur gecontroleerde waarden goed met OK.</li><li>Kies Freeze en bewaar de KruinLine-JSON.</li></ol><p>Gebruik <code>Open_3B.bat</code> om de gewone klantweergave te controleren. Kies in de werkomgeving <strong>Klant mobiel testen</strong> voor de mobiele klant-preview.</p></section>
+  <section id="publiceren"><h2>Voor Kruin — publiceren</h2><ol class="steps"><li>Verwerk gecontroleerde uitleg- en KruinLine-JSON bewust in de bronconfiguratie.</li><li>Controleer Main, Doc, Groot, Klein, richtingen, lijnen, uitleg en mobiel.</li><li>Start <code>Publiceer_3B.bat</code>.</li><li>Wacht op de melding dat Git en beide GitHub Pages-ingangen gecontroleerd zijn.</li></ol><p><code>.gitignore</code> voorkomt dat lokale JSON-exports, SVG-downloads, ZIP's en reservekopieën per ongeluk worden gepubliceerd.</p></section>
+  <section id="toestanden"><h2>Wanneer is iets openbaar?</h2><table><thead><tr><th>Toestand</th><th>Betekenis</th></tr></thead><tbody><tr><td>Lokaal bewaard</td><td>Alleen in de huidige browser.</td></tr><tr><td>JSON gedownload</td><td>Reservekop; nog niet openbaar.</td></tr><tr><td>In bron opgenomen</td><td>Klaar voor een nieuwe release.</td></tr><tr><td>Gepubliceerd</td><td>Online via GitHub Pages.</td></tr></tbody></table></section>
+</main><footer>3B · Main + Doc</footer>
+</body></html>

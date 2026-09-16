@@ -1,4 +1,11 @@
-3B GitHub Pages versie 44
+3B GitHub Pages versie 45
+
+Nieuw in versie 45:
+- Twee openbare GitHub Pages-ingangen: Main op `/3b/` en Doc op `/3b/doc/`.
+- Main heeft een vaste Doc-knop.
+- Doc heeft navigatie terug naar Main en afzonderlijke uitleg voor klanten en Kruin.
+- Doc behandelt begrippen, cursusbeheer, KruinLines, stipwaarden, publicatie en lokale opslag.
+- De publicatiecontrole verifieert voortaan zowel Main als Doc.
 
 Nieuw in versie 44:
 - `START-HIER.md` toegevoegd als centrale handleiding.

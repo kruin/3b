@@ -3,6 +3,15 @@
 Deze map bevat zowel de openbare 3B-app als de lokale hulpmiddelen voor Kruin.
 Pak een download altijd **volledig uit** voordat je een BAT-bestand start.
 
+## Openbare ingangen
+
+- **Main:** `https://kruin.github.io/3b/` — de klantapp.
+- **Doc:** `https://kruin.github.io/3b/doc/` — uitleg voor klanten en Kruin.
+
+GitHub Pages publiceert vanuit branch `main`, map `/(root)`. De map `doc/`
+wordt daardoor automatisch de tweede ingang; stel `/docs` niet als aparte
+publicatiebron in.
+
 ## Welke startknop gebruik ik?
 
 | Bestand | Voor wie? | Doel |

@@ -1,5 +1,13 @@
 # Projectafspraken 3B
 
+### 2026-09-16 — Main en Doc versie 45
+
+- De openbare klantapp blijft op `/3b/` en heet Main.
+- De openbare documentatie staat op `/3b/doc/` en heet Doc.
+- Main en Doc linken wederzijds naar elkaar.
+- GitHub Pages blijft publiceren vanuit branch `main`, map `/(root)`.
+- De publicatiecontrole moet beide ingangen bevestigen.
+
 ### 2026-09-16 — centrale uitleg versie 44
 
 - `START-HIER.md` is de primaire bedienings- en workflowhandleiding.

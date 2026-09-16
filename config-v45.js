@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 37, release: "44",
+  version: 38, release: "45",
   terminology: {
     pattern: { key: "LKL", en: "long-short-long", nl: "lang-kort-lang" },
     line: { en: "Line", nl: "Lijn" },
