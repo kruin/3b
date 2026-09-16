@@ -1,5 +1,12 @@
 # Projectafspraken 3B
 
+### 2026-09-16 — macOS-starter versie 48
+
+- Windows gebruikt `Kruin.bat`.
+- macOS gebruikt `Kruin.command`.
+- Beide starters openen `Kruin.html`, die doorstuurt naar de Kruin-eigenaarsmodus.
+- Mobiele apparaten gebruiken de online Kruin-link.
+
 ### 2026-09-16 — één Kruin-ingang versie 47
 
 - Kruin gebruikt één knop `Kruin` voor alle editfuncties.

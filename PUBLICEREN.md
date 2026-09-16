@@ -20,8 +20,8 @@ Vervang de bestanden in de lokale clone en start `Publiceer_3B.bat`. De BAT:
 - controleert alle versie-14-bestanden vóór commit en push;
 - vergelijkt lokale commit en `origin/main`;
 - wacht maximaal tien minuten op GitHub Pages;
-- meldt pas KLAAR als Main werkelijk `app-v47.js`, `config-v47.js`,
-  `styles.css?v=47` en versie 47 levert én Doc bereikbaar is.
+- meldt pas KLAAR als Main werkelijk `app-v48.js`, `config-v48.js`,
+  `styles.css?v=48` en versie 48 levert én Doc bereikbaar is.
 
 `Kruin.bat` is de enige lokale beheeringang. De BAT opent een geldige
 `file:///.../index.html#owner=kruin`-URL; voeg het fragment niet handmatig aan
@@ -35,7 +35,7 @@ nieuwer zijn dan de in die appversie meegeleverde publicatie. De BAT vergelijkt
 daarna de lokale Git-commit met `origin/main` en controleert afzonderlijk of
 GitHub Pages precies dezelfde release-assets serveert.
 
-Controleer aanvullend `https://kruin.github.io/3b/controle-v47.html` en
+Controleer aanvullend `https://kruin.github.io/3b/controle-v48.html` en
 `https://kruin.github.io/3b/doc/`.
 
 ## Mobiele Uitlegeditor

@@ -1,4 +1,11 @@
-3B GitHub Pages versie 47
+3B GitHub Pages versie 48
+
+Nieuw in versie 48:
+- Lokale Kruin-starter voor macOS toegevoegd: `Kruin.command`.
+- Windows en macOS openen voortaan dezelfde gedeelde ingang `Kruin.html`.
+- `Kruin.bat` blijft de Windows-starter.
+- iPhone, iPad en Android gebruiken de online Kruin-link.
+- Handleidingen en publicatiecontrole controleren beide desktopstarters.
 
 Nieuw in versie 47:
 - Eén centrale knop `Kruin` vervangt de losse Kruin-editknoppen.

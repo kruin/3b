@@ -18,12 +18,13 @@ publicatiebron in.
 
 | Bestand | Voor wie? | Doel |
 |---|---|---|
-| `Kruin.bat` | Kruin | Opent één Kruin-menu voor alle bewerkingen en controles. |
+| `Kruin.bat` | Kruin op Windows | Opent één Kruin-menu voor alle bewerkingen en controles. |
+| `Kruin.command` | Kruin op Mac | Opent hetzelfde Kruin-menu op macOS. |
 | `Publiceer_3B.bat` | Kruin | Controleert, commit en publiceert een bewuste nieuwe release via GitHub. |
 
 ## Kruin — uitleg en cursus bewerken
 
-1. Dubbelklik op `Kruin.bat` en klik **Kruin**.
+1. Start `Kruin.bat` op Windows of `Kruin.command` op Mac en klik **Kruin**.
 2. Kies **Uitleg bewerken** en daarna een bestaande of nieuwe kaart.
 3. Vul level, kaartsoort, tafel, lijn, zichtbare delen en beide talen in.
 4. Klik **Bewaar kaart**. Dit bewaart de werkwijziging alleen in deze browser.
@@ -59,7 +60,7 @@ bewust in een volgende openbare release te laten opnemen.
 
 ## Kruin — standaard-stipwaarden beheren
 
-1. Dubbelklik op `Kruin.bat`, klik **Kruin** en kies **Lijnen en stipwaarden bewerken**.
+1. Start `Kruin.bat` op Windows of `Kruin.command` op Mac, klik **Kruin** en kies **Lijnen en stipwaarden bewerken**.
 2. Kies Groot of Klein en kies de lijn.
 3. Open zo nodig **Alle delen**.
 4. Wijzig A en V via een bandbal, de invoervelden of de stapknoppen.
@@ -71,7 +72,7 @@ gecontroleerde KruinLine bewust in de volgende bronconfiguratie opnemen.
 
 ## Kruin — controleren en publiceren
 
-1. Start `Kruin.bat` en klik **Kruin**.
+1. Start de Kruin-starter voor Windows of Mac en klik **Kruin**.
 2. Kies **Klant mobiel testen** om de gepubliceerde
    klantinhoud in een mobiel scherm te bekijken. Conceptuitleg en
    eigenaarsfuncties zijn in deze preview verborgen.
