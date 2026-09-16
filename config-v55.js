@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 45, release: "52",
+  version: 48, release: "55",
   terminology: {
     pattern: { key: "LKL", en: "long-short-long", nl: "lang-kort-lang" },
     line: { en: "Line", nl: "Lijn" },
@@ -151,7 +151,7 @@ window.THREEB_START_CONFIG = {
       suppressNearestTenInReplacementMode: true
     }
   },
-  shotLines: ["VIJF","ZES","ZEVEN","ACHT","NEGEN","TIEN","ELF","TWAALF"],
+  shotLines: ["NUL","EEN","TWEE","DRIE","VIER","VIJF","ZES","ZEVEN","ACHT","NEGEN","TIEN","ELF","TWAALF"],
   lineOneVariants: {
     defaultMode: "basis",
     modes: ["basis", "parallel", "waaier"],
@@ -172,8 +172,9 @@ window.THREEB_START_CONFIG = {
       ]
     }
   },
-  patternByLine: { VIJF:"LKL", ZES:"LKL", ZEVEN:"LKL", ACHT:"LKL" },
+  patternByLine: { NUL:"LKL", EEN:"LKL", TWEE:"LKL", DRIE:"LKL", VIER:"LKL", VIJF:"LKL", ZES:"LKL", ZEVEN:"LKL", ACHT:"LKL" },
   patternLabels: {
+    NUL:{en:"ZERO",nl:"NUL"}, EEN:{en:"ONE",nl:"EEN"}, TWEE:{en:"TWO",nl:"TWEE"}, DRIE:{en:"THREE",nl:"DRIE"}, VIER:{en:"FOUR",nl:"VIER"},
     VIJF:{en:"FIVE",nl:"VIJF"}, ZES:{en:"SIX",nl:"ZES"}, ZEVEN:{en:"SEVEN",nl:"ZEVEN"}, ACHT:{en:"EIGHT",nl:"ACHT"},
     NEGEN:{en:"NINE",nl:"NEGEN"}, TIEN:{en:"TEN",nl:"TIEN"}, ELF:{en:"ELEVEN",nl:"ELF"}, TWAALF:{en:"TWELVE",nl:"TWAALF"}
   },
@@ -238,16 +239,16 @@ window.THREEB_START_CONFIG = {
   defaults: {
     klein:{VIJF:{
       neus:{from:{kind:"acquit",value:"Z"},to:{band:"west",value:50}},
-      kop:{from:{band:"west",value:38},to:{band:"noord",value:19}},
-      nek:{from:{band:"noord",value:15},to:{band:"oost",value:30}},
+      kop:{from:{band:"west",value:35,status:"calculated"},to:{band:"noord",value:19}},
+      nek:{from:{band:"noord",value:13,status:"calculated"},to:{band:"oost",value:32,status:"calculated"}},
       romp:{from:{band:"oost",value:20},to:{band:"zuid",value:38}},
-      kruis:{from:{band:"zuid",value:36},to:{band:"west",value:10}},
+      kruis:{from:{band:"zuid",value:31,status:"calculated"},to:{band:"west",value:10}},
       been:{from:{band:"west",value:5},to:{band:"oost",value:70}}
     }},
     groot:{VIJF:{
       neus:{from:{kind:"acquit",value:"Z"},to:{band:"west",value:50}},
-      kop:{from:{band:"west",value:38},to:{band:"noord",value:19}},
-      nek:{from:{band:"noord",value:15},to:{band:"oost",value:30}},
+      kop:{from:{band:"west",value:38,status:"calculated"},to:{band:"noord",value:19}},
+      nek:{from:{band:"noord",value:14,status:"calculated"},to:{band:"oost",value:29,status:"calculated"}},
       romp:{from:{band:"oost",value:20},to:{band:"zuid",value:38}}
     }}
   }

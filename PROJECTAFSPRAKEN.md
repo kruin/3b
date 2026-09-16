@@ -1,5 +1,30 @@
 # Projectafspraken 3B
 
+### 2026-09-16 — volledige lijnreeks NUL–TWAALF versie 55
+
+- Selecteerbare lijnen zijn NUL, EEN, TWEE, DRIE, VIER, VIJF, ZES, ZEVEN, ACHT, NEGEN, TIEN, ELF en TWAALF.
+- Elke lijn bestaat op Groot en Klein uit Neus, Kop, Nek, Romp, Kruis, Been, Hiel, Voet en Teen.
+- De berekeningsketen en aansluitcontrole gelden voor alle dertien lijnen.
+- VIJF bevat de vastgelegde uitgangswaarden; de overige lijnen beginnen leeg totdat Kruin waarden invoert.
+
+### 2026-09-16 — volledige keten vanaf Neus versie 54
+
+- De geborgde volgorde is Neus → Kop → Nek → Romp → Kruis → Been → Hiel → Voet → Teen.
+- Berekening en aansluitcontrole beginnen beide bij Neus.
+- De ankerbrug met complete Neus, Kop A en complete Romp geldt voor alle lijnen en voor Groot en Klein.
+- Kleine en grote oude VIJF-standaarden worden alleen bij herkenning van de exacte oude waarden gemigreerd.
+- Afgeleide correcties blijven rood `calculated` totdat Kruin ze met OK goedkeurt.
+
+### 2026-09-16 — algemene aansluitketen versie 53
+
+- De vaste volgorde is Romp → Kruis → Been → Hiel → Voet → Teen.
+- De A van ieder deel en de V van het volgende deel verwijzen naar dezelfde fysieke bandbal.
+- Deze ketenregel geldt voor NUL tot en met TWAALF.
+- De regel geldt op Groot en Klein en ook na importeren of installeren van een lijn.
+- Lege en berekende waarden mogen automatisch worden afgeleid; handmatig goedgekeurde waarden niet.
+- Een volledig handmatig paar dat geometrisch niet aansluit wordt zichtbaar gemeld.
+- De eerdere standaard `Klein · VIJF · Kruis V36` wordt gemigreerd naar `V31` met status `calculated`; Been V5–A70 sluit daarop aan.
+
 ### 2026-09-16 — ankerberekening Klein versie 52
 
 - De ankers zijn een complete Neus, Kop A en een complete Romp.
@@ -115,7 +140,7 @@ bijgewerkt.
 - Publicatie van een nieuwe KruinLine blijft een bewuste Git-publicatie; GitHub
   Pages heeft geen veilige eigenaarslogin en schrijft nooit terug naar GitHub.
 - Klein en Groot hebben gescheiden configuraties.
-- VIJF t/m TWAALF zijn afzonderlijk selecteerbaar.
+- NUL t/m TWAALF zijn afzonderlijk selecteerbaar.
 - Neus vertrekt standaard uit Z; overige delen bestaan uit V en A.
 - Bekende stipwaarden: west/oost 0–80 en noord/zuid 0–40.
 - Bij spiegelen van neuslijn west naar oost spiegelen ook alle vier zichtbare
@@ -127,7 +152,7 @@ bijgewerkt.
 ## Geldige huidige scope
 
 - VIJF bevat de vastgelegde startwaarden.
-- ZES t/m TWAALF zijn voorlopig leeg.
+- NUL t/m VIER en ZES t/m TWAALF zijn voorlopig leeg.
 - Geen effect-, fysica- of ervaringscorrecties zolang daarvoor geen geldige
   gegevens zijn vastgelegd.
 - Benamingen zijn: Neus, Kop, Nek, Romp, Kruis, Been, Hiel, Voet en Teen.

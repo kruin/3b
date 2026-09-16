@@ -1,3 +1,31 @@
+3B GitHub Pages versie 55
+
+Nieuw in versie 55:
+- De selecteerbare lijnreeks loopt nu volledig van NUL tot en met TWAALF.
+- NUL, EEN, TWEE, DRIE en VIER zijn met Nederlandse en Engelse labels toegevoegd.
+- Iedere lijn krijgt op Groot en Klein de volledige keten Neus tot en met Teen.
+- De automatische berekening, importcontrole en aansluitwaarschuwing gelden voor alle dertien lijnen.
+
+3B GitHub Pages versie 54
+
+Nieuw in versie 54:
+- Eén aansluitketen is geborgd vanaf Neus tot en met Teen.
+- De keten is Neus → Kop → Nek → Romp → Kruis → Been → Hiel → Voet → Teen.
+- De brugberekening vanuit Neus, Kop A en Romp geldt voor alle lijnen en beide tafels.
+- Ook de aansluitcontrole begint voortaan bij Neus.
+- Oude VIJF-standaarden worden gemigreerd naar de geometrisch aangesloten berekende waarden.
+
+3B GitHub Pages versie 53
+
+Nieuw in versie 53:
+- De aansluitketen loopt door van Romp via Kruis, Been, Hiel en Voet naar Teen.
+- Iedere overgang koppelt de vorige A geometrisch aan de volgende V.
+- De keten geldt voor alle lijnen VIJF tot en met TWAALF, op Groot en Klein.
+- Nieuwe invoer, geïmporteerde tabellen en geïnstalleerde KruinLines/MyLines worden gecontroleerd.
+- Ontbrekende afleidbare waarden worden rood als `Berekend` ingevuld.
+- Niet-aansluitende volledig handmatige waarden leveren een zichtbare ketenwaarschuwing op.
+- De oude standaard Klein · VIJF is gecorrigeerd van Kruis V36 naar berekend Kruis V31.
+
 3B GitHub Pages versie 52
 
 Nieuw in versie 52:

@@ -85,15 +85,29 @@ bewust in een volgende openbare release te laten opnemen.
 Een Freeze of JSON-download verandert de openbare standaard nog niet. Laat de
 gecontroleerde KruinLine bewust in de volgende bronconfiguratie opnemen.
 
-### Klein — ontbrekende waarden laten berekenen
+### Ontbrekende waarden vanaf Neus laten berekenen
 
-Voer op Klein een complete **Neus**, alleen **Kop A** en een complete **Romp**
-in. Bijvoorbeeld: Neus `Z–50`, Kop `A15` en Romp `20–38`. Zodra deze drie
-ankers compleet zijn, berekent 3B automatisch **Kop V** en **Nek V/A**.
+Voer op Groot of Klein een complete **Neus**, alleen **Kop A** en een complete
+**Romp** in. Bijvoorbeeld: Neus `Z–50`, Kop `A15` en Romp `20–38`. Zodra deze
+drie ankers compleet zijn, berekent 3B automatisch **Kop V** en **Nek V/A**.
+Deze regel geldt voor iedere lijn van NUL tot en met TWAALF.
 
 De afgeleide waarden staan in de kleur **Berekend**. Controleer ze aan de
 tafel en kies pas daarna **OK**. Een handmatig bewerkte of reeds goedgekeurde
 waarde wordt nooit door deze automatische berekening vervangen.
+
+### Aansluitketen vanaf Neus — alle lijnen en tafels
+
+Voor iedere lijn van **NUL tot en met TWAALF**, op **Groot en Klein**, gebruikt
+3B de volgorde **Neus → Kop → Nek → Romp → Kruis → Been → Hiel → Voet → Teen**.
+De A van het ene deel en de V van het volgende deel moeten naar dezelfde
+fysieke bandbal leiden.
+
+Als de vorige lijn compleet is en A van de volgende lijn bekend is, vult 3B de
+ontbrekende V rood als **Berekend** in. Dit wordt als keten verder doorgegeven.
+Ook een geïmporteerde of geïnstalleerde lijn wordt gecontroleerd. Bij twee
+volledig handmatige waarden die niet aansluiten verschijnt een waarschuwing;
+gebruik dan de gedeelde bandbal om het paar samen te corrigeren.
 
 ## Kruin — controleren en publiceren
 
