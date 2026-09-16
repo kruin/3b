@@ -31,6 +31,21 @@ publicatiebron in.
 5. Klik **Voorbeeld** om de kaart in de carrousel te controleren.
 6. Klik na het werk op **Download uitleg-JSON**.
 
+### Foto’s bij uitlegkaarten
+
+1. Kies in de Uitlegeditor bij **Foto of tafeltekening** voor **Foto**.
+2. Kies een foto op telefoon/computer, of vul een bestaand pad zoals
+   `media/fotos/voorbeeld.webp` in.
+3. De editor verkleint een lokale foto automatisch tot maximaal 1600 pixels.
+4. Vul bijschrift en beschrijving in het Nederlands en Engels in.
+5. Gebruik **Kopieer foto** om dezelfde foto ook op een andere kaart te tonen.
+6. Gebruik **Verplaats foto** om hem van de huidige naar een andere kaart te verplaatsen.
+7. Controleer **Voorbeeld** en download daarna de uitleg-JSON.
+
+Boven iedere uitlegkaart staat **Instructie voor carrouseltekst**. Deze past
+zich aan het gekozen type, de tafel en de lijn aan. Klik **Kopieer instructie**
+en stuur de tekst samen met je ruwe notities en foto’s aan ChatGPT.
+
 Op mobiel opent Kruin `https://kruin.github.io/3b/#owner=kruin`, tikt **Kruin**
 en kiest **Uitleg bewerken**. De Kruin-knop bestaat niet in de klantmodus.
 
@@ -83,6 +98,11 @@ gecontroleerde KruinLine bewust in de volgende bronconfiguratie opnemen.
 De publicatie-BAT controleert versie-assets, Git-remote, commit, GitHub Pages
 en de gepubliceerde release. Een fout wordt zichtbaar gemeld.
 
+Ontbreekt de verborgen map `.git`, bijvoorbeeld nadat je opnieuw vanuit een
+ZIP begint? Dan kloont `Publiceer_3B.bat` eerst `kruin/3b` naar een tijdelijke
+map en zet alleen de Git-geschiedenis terug in de huidige projectmap. De BAT
+behoudt jouw actuele 3B-bestanden en publiceert pas nadat dit herstel gelukt is.
+
 ## Wat doet `.gitignore`?
 
 Git bewaart de openbare app, documentatie en BAT-starters. Lokale werkexports
@@ -110,3 +130,10 @@ de app kunnen zij ook niet rechtstreeks naar GitHub publiceren.
 | JSON gedownload | Er is een reservekop; de openbare app is niet veranderd. |
 | In bronconfiguratie opgenomen | De inhoud zit klaar in een nieuwe release. |
 | Gepubliceerd | De gecontroleerde release staat via GitHub Pages online. |
+
+## Probleem: VIJF toont toch HALFZES
+
+Vanaf versie 49 wordt deze oude mobiele instelling automatisch hersteld naar
+**VIJF · Basis**. Kies je later opnieuw een basislijn zoals VIJF of ZES, dan
+wordt Lijn 1 eveneens op Basis gezet. HALFZES verschijnt alleen wanneer je
+bewust **Lijn 1 → Waaier → HALFZES** kiest.

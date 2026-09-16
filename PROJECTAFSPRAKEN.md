@@ -1,5 +1,26 @@
 # Projectafspraken 3B
 
+### 2026-09-16 — foto’s en tekstinstructie versie 51
+
+- Iedere uitlegkaart kan een tafeltekening of foto gebruiken.
+- Een lokale foto wordt voor opslag tot maximaal 1600 pixels verkleind en als WebP bewaard.
+- Foto’s kunnen tussen uitlegkaarten worden gekopieerd of verplaatst.
+- Bijschrift en toegankelijke beschrijving worden afzonderlijk in Nederlands en Engels opgeslagen.
+- De Uitlegeditor toont bij iedere kaart de vaste, op scope aangepaste instructie voor carrouseltekst.
+
+### 2026-09-16 — automatisch Git-herstel versie 50
+
+- Als `.git` ontbreekt, kloont de publicatie-BAT eerst `kruin/3b` naar een tijdelijke map.
+- Alleen de gekloonde Git-geschiedenis wordt in de actuele werkmap geplaatst.
+- De actuele releasebestanden worden niet door de GitHub-versie vervangen.
+- Zonder geslaagde clone vindt geen commit of publicatie plaats.
+
+### 2026-09-16 — basislijn herstelt basisstand versie 49
+
+- Een expliciete keuze van VIJF, ZES enzovoort zet Lijn 1 op `basis`.
+- HALFZES hoort uitsluitend bij een bewuste Waaier-keuze.
+- Bestaande lokale instellingen met de oude vastgelopen HALFZES-toestand worden eenmalig naar Basis gemigreerd.
+
 ### 2026-09-16 — macOS-starter versie 48
 
 - Windows gebruikt `Kruin.bat`.

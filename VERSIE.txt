@@ -1,4 +1,27 @@
-3B GitHub Pages versie 48
+3B GitHub Pages versie 51
+
+Nieuw in versie 51:
+- Uitlegkaarten kunnen een bestaande foto of een automatisch verkleinde lokale foto tonen.
+- Foto’s kunnen naar een andere uitlegkaart worden gekopieerd of verplaatst.
+- Eén foto kan zonder een tweede upload door meerdere kaarten worden gebruikt.
+- Iedere nieuwe uitlegkaart toont de vaste, kopieerbare instructie voor carrouseltekst.
+- Foto’s ondersteunen Nederlandse en Engelse bijschriften en beschrijvingen.
+
+3B GitHub Pages versie 50
+
+Nieuw in versie 50:
+- `Publiceer_3B.bat` herstelt een ontbrekende lokale `.git` automatisch.
+- De BAT kloont eerst `kruin/3b` naar een tijdelijke map en neemt alleen de Git-geschiedenis over.
+- De actuele 3B-releasebestanden in de werkmap worden daarbij niet vervangen.
+- Bij een mislukte clone stopt de publicatie met een duidelijke foutmelding.
+
+3B GitHub Pages versie 49
+
+Nieuw in versie 49:
+- Vastgelopen mobiele HALFZES-weergave wordt eenmalig teruggezet naar Basis VIJF.
+- Het opnieuw kiezen van VIJF, ZES of een andere basislijn zet Lijn 1 automatisch op Basis.
+- Een oude Waaier- of parallelinstelling kan daardoor niet ongemerkt onder een basislijnnaam blijven staan.
+- HALFZES verschijnt alleen na een bewuste keuze voor `Lijn 1 → Waaier → HALFZES`.
 
 Nieuw in versie 48:
 - Lokale Kruin-starter voor macOS toegevoegd: `Kruin.command`.
