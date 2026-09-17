@@ -1,3 +1,12 @@
+3B GitHub Pages versie 68
+
+Nieuw in versie 68:
+- Spoor VIER tot en met ACHT heeft een vaste Lijn 1 vanaf Z.
+- Vaste aankomsten: VIER 40, VIJF 50, HALFZES 55, ZES 60, ZEVEN 70 en ACHT 80.
+- HALFZES staat centraal tussen VIJF en ZES in de Spoorkeuze.
+- De vaste eerste lijn kan in editmodus niet worden verschoven; de vervolglijnen blijven bewerkbaar.
+- Kwart voor ZES en Tien voor ZEVEN zijn gereserveerd voor later en hebben nog geen verzonnen waarde.
+
 3B GitHub Pages versie 67
 
 Nieuw in versie 67:

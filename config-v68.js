@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 60, release: "67",
+  version: 61, release: "68",
   userAccess: {
     defaultAddressForm: "jij",
     addressForms: ["jij", "u"],
