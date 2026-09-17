@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 61, release: "68",
+  version: 64, release: "71",
   userAccess: {
     defaultAddressForm: "jij",
     addressForms: ["jij", "u"],
@@ -43,7 +43,7 @@ window.THREEB_START_CONFIG = {
     openGesture: "single_click_or_tap"
   },
   explanation: {
-    version: "0.3",
+    version: "0.4",
     defaultLevel: "LKL",
     scopeRules: {
       systemExplanation: "shared_large_and_small",
@@ -55,12 +55,30 @@ window.THREEB_START_CONFIG = {
         key: "LKL",
         order: 1,
         tables: ["groot","klein"],
-        labels: { en: "Level 1 · LKL", nl: "Level 1 · LKL" },
+        labels: { en: "Lesson 1 · Body", nl: "Les 1 · Romp" },
         description: {
-          en: "The first application of the line system.",
-          nl: "De eerste toepassing van het lijnensysteem."
+          en: "Play the Body tracks first and compare your own stroke with Kruin's reference.",
+          nl: "Speel eerst de Rompsporen en vergelijk je eigen afstoot met de Kruinreferentie."
         },
         slides: [
+          {
+            key: "body-user-as-is",
+            title: { en: "First: your own stroke", nl: "Eerst: je eigen afstoot" },
+            text: {
+              en: "Choose Body FOUR, FIVE, SIX, SEVEN or EIGHT and play it with your own stroke as it is now. Record in the app where the Body finishes—every time, or occasionally. This is your result, not yet the Kruin reference.",
+              nl: "Kies Romp VIER, VIJF, ZES, ZEVEN of ACHT en voer die uit met je eigen afstoot zoals die nu is. Noteer in de app waar de Romp eindigt—telkens, of zo nu en dan. Dit is jouw resultaat, nog niet de Kruinreferentie."
+            },
+            image: { source: "KruinLines", line: "VIJF", parts: ["romp"], role: "user-as-is", recordBodyEnd: "every-time-or-occasionally" }
+          },
+          {
+            key: "body-kruin-reference",
+            title: { en: "Kruin track as reference", nl: "Kruinspoor als referentie" },
+            text: {
+              en: "For a Kruin track, use maximum English, the mid-high contact tangent shown as the shadow line, and finishing zone M at the centre of the table. This defines Kruin track FIVE, SIX, SEVEN or EIGHT.",
+              nl: "Voor een Kruinspoor gelden: maximaal effect, de raaklijn middenhoog als schaduwlijn en eindzone M in het midden van de tafel. Dit bepaalt Kruinspoor VIJF, ZES, ZEVEN of ACHT."
+            },
+            image: { source: "KruinLines", line: "VIJF", parts: ["romp"], role: "kruin-reference", effect: "maximum", contactTangent: "mid-high", showShadowLine: true, endZone: "M", endZonePosition: "table-centre" }
+          },
           {
             key: "why",
             title: { en: "Why 3B?", nl: "Waarom deze app?" },
@@ -266,19 +284,30 @@ window.THREEB_START_CONFIG = {
     effectLimitsPercent: { minimum: 65, maximum: 100 }
   },
   defaults: {
-    klein:{VIJF:{
+    klein:{
+    VIER:{romp:{from:{band:"oost",value:5},to:{band:"zuid",value:70}}},
+    VIJF:{
       neus:{from:{kind:"acquit",value:"Z"},to:{band:"west",value:50}},
       kop:{from:{band:"west",value:35,status:"calculated"},to:{band:"noord",value:19}},
       nek:{from:{band:"noord",value:13,status:"calculated"},to:{band:"oost",value:32,status:"calculated"}},
       romp:{from:{band:"oost",value:20},to:{band:"zuid",value:38}},
       kruis:{from:{band:"zuid",value:31,status:"calculated"},to:{band:"west",value:10}},
       been:{from:{band:"west",value:5},to:{band:"oost",value:70}}
-    }},
-    groot:{VIJF:{
+    },
+    ZES:{romp:{from:{band:"oost",value:30},to:{band:"zuid",value:30}}},
+    ZEVEN:{romp:{from:{band:"oost",value:35},to:{band:"zuid",value:20}}},
+    ACHT:{romp:{from:{band:"oost",value:43},to:{band:"zuid",value:19}}}
+    },
+    groot:{
+    VIJF:{
       neus:{from:{kind:"acquit",value:"Z"},to:{band:"west",value:50}},
       kop:{from:{band:"west",value:38,status:"calculated"},to:{band:"noord",value:19}},
       nek:{from:{band:"noord",value:14,status:"calculated"},to:{band:"oost",value:29,status:"calculated"}},
-      romp:{from:{band:"oost",value:20},to:{band:"zuid",value:38}}
-    }}
+      romp:{from:{band:"oost",value:20},to:{band:"zuid",value:36}}
+    },
+    ZES:{romp:{from:{band:"oost",value:30},to:{band:"zuid",value:28}}},
+    ZEVEN:{romp:{from:{band:"oost",value:37},to:{band:"zuid",value:22}}},
+    ACHT:{romp:{from:{band:"oost",value:48},to:{band:"zuid",value:18}}}
+    }
   }
 };

@@ -1,3 +1,29 @@
+3B GitHub Pages versie 71
+
+Nieuw in versie 71:
+- De cursus begint met Les 1 · Romp.
+- De gebruiker speelt Romp VIER tot en met ACHT eerst met de eigen afstoot zoals die nu is en observeert het werkelijke eindpunt.
+- De cursus vraagt de gebruiker dit Romp-eindpunt in de app te noteren: telkens, of zo nu en dan.
+- De Kruinreferentie is afzonderlijk vastgelegd: maximaal effect, raaklijn middenhoog als schaduwlijn en eindzone M in het midden van de tafel.
+- Deze referentie-uitvoering heet Kruinspoor VIJF, Kruinspoor ZES, Kruinspoor ZEVEN of Kruinspoor ACHT.
+- De eigen uitvoering wordt niet automatisch als Kruinspoor aangemerkt.
+
+3B GitHub Pages versie 70
+
+Nieuw in versie 70:
+- De afzonderlijke configuraties heten correct Romp VIER, Romp VIJF, Romp ZES, Romp ZEVEN en Romp ACHT.
+- De centrale keuze en tafeltitel gebruiken voortaan deze Romp-benaming.
+- De Romp-waarden en vervolgketen uit versie 69 blijven ongewijzigd.
+
+3B GitHub Pages versie 69
+
+Nieuw in versie 69:
+- Vaste Kruin-configuratie op Klein: Romp VIER 5–70, Romp VIJF 20–38, Romp ZES 30–30, Romp ZEVEN 35–20 en Romp ACHT 43–19.
+- Vaste Kruin-configuratie op Groot: Romp VIJF 20–36, Romp ZES 30–28, Romp ZEVEN 37–22 en Romp ACHT 48–18.
+- Groot · VIER blijft ongewijzigd omdat daarvoor nog geen waarde is opgegeven.
+- Bestaande lokale Kruin-gegevens krijgen de nieuwe Romp-ankers eenmalig als goedgekeurde waarden.
+- De rest van de keten wordt aansluitend opnieuw berekend waar het benodigde volgende aankomstanker al bekend is; ontbrekende waarden worden niet gegokt.
+
 3B GitHub Pages versie 68
 
 Nieuw in versie 68:
