@@ -1,3 +1,11 @@
+3B GitHub Pages versie 73
+
+Nieuw in versie 73:
+- De centrale keuze en tafeltitel tonen weer uitsluitend VIER, VIJF, HALFZES, ZES, ZEVEN of ACHT.
+- Een spoor heet dus VIJF, niet Romp VIJF.
+- Les 1 toont binnen het gekozen spoor de twee onderdelen Neus + Romp volgens Kruin.
+- De opdracht blijft: stoot de Neus af en noteer de aankomstlijn van de Romp.
+
 3B GitHub Pages versie 72
 
 Nieuw in versie 72:
