@@ -47,6 +47,10 @@ select { padding: 8px 34px 8px 11px; }
 body.table-only .workspace .editor { display: none; }
 .view-actions { display: flex; align-items: flex-start; gap: 6px; }
 .view-actions button { min-height: 36px; padding: 5px 10px; white-space: nowrap; }
+.central-line-select { display:flex; gap:6px; align-items:center; overflow-x:auto; overscroll-behavior-inline:contain; scrollbar-width:thin; padding:6px 4px 10px; margin:0 auto; max-width:100%; }
+.central-line-select button { flex:0 0 auto; min-width:58px; min-height:38px; padding:6px 10px; border:2px solid #9c876e; border-radius:999px; background:#fffaf0; color:#2b2118; font-weight:800; }
+.central-line-select button.active { border-color:#176f4f; background:#176f4f; color:#fff; box-shadow:0 0 0 2px #fffaf0,0 0 0 4px #176f4f; }
+.central-line-select button:focus-visible { outline:3px solid #e7c66e; outline-offset:2px; }
 .doc-link { display: inline-grid; place-items: center; min-height: 36px; padding: 5px 10px; border: 1px solid #cfc2ae; border-radius: 10px; background: #fffdf8; color: var(--ink); font-weight: 800; text-decoration: none; pointer-events: auto; }
 .doc-link:hover { border-color: #9b8060; background: #fff7e9; }
 .owner-action { border-color: #b88a25; background: #fff1bf; color: #5d4308; }
@@ -68,6 +72,7 @@ body.table-only .drawing { position: relative; top: auto; overflow: hidden; bord
 body.table-only .drawing-heading { position: absolute; top: 6px; right: 6px; left: 6px; z-index: 7; align-items: flex-start; pointer-events: none; }
 body.table-only .drawing-heading > div:first-child { display: none; }
 body.table-only .view-actions { margin-left: auto; pointer-events: auto; }
+body.table-only .central-line-select { position:absolute; z-index:8; top:7px; left:50%; transform:translateX(-50%); width:min(62vw,760px); pointer-events:auto; padding:2px 5px 8px; }
 body.table-only .svg-mount { width: 100%; height: 100%; min-height: 0; }
 body.table-only .svg-mount svg { width: 100%; height: 100%; max-height: 100dvh; }
 body.mobile-preview main { display: grid; place-items: center; background: #2b2118; }

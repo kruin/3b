@@ -1,3 +1,20 @@
+3B GitHub Pages versie 62
+
+Nieuw in versie 62:
+- De keuze NUL tot en met TWAALF staat centraal en blijft zichtbaar boven de tafel.
+- Iedere lijn is een afzonderlijke knop; de actieve lijn is duidelijk gemarkeerd.
+- De keuze is onbeperkt herhaalbaar: wisselen en terugkeren kan direct.
+- Op mobiel schuift de knoppenrij horizontaal en centreert de gekozen lijn.
+
+3B GitHub Pages versie 61
+
+Nieuw in versie 61:
+- Minimale sessieregistratie toegevoegd: uitsluitend starttijd en sessieduur.
+- De duur wordt tijdens een zichtbare sessie iedere 30 seconden bijgewerkt.
+- Mijn tafels, lijnkeuzes, foto’s, e-mailadressen en barbonkeuzes worden niet in sessies opgeslagen.
+- Sessieregistratie werkt pas nadat de beheerder de afzonderlijke databasefunctie configureert.
+- Een korte privacyuitleg staat zichtbaar onderaan de app.
+
 3B GitHub Pages versie 59
 
 Nieuw in versie 59:

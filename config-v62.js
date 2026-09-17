@@ -1,5 +1,32 @@
 window.THREEB_START_CONFIG = {
-  version: 52, release: "59",
+  version: 55, release: "62",
+  userAccess: {
+    defaultAddressForm: "jij",
+    addressForms: ["jij", "u"],
+    requireEmailForEditing: true,
+    supabase: {
+      url: "",
+      anonKey: "",
+      table: "user_tables",
+      mollieFunction: "create-mollie-payment",
+      sessionFunction: "record_app_session"
+    },
+    sessionTracking: {
+      enabled: true,
+      heartbeatSeconds: 30
+    },
+    storageModes: ["account", "lokaal"],
+    defaultStorageMode: "account",
+    barTab: {
+      enabled: true,
+      currency: "EUR",
+      items: [
+        { key: "nul", labels: { nl: "€0 · graag gedaan", en: "€0 · no thanks" }, amount: "0.00" },
+        { key: "spa_rood", labels: { nl: "Spa rood", en: "Sparkling water" }, amount: "2.50" },
+        { key: "bitterballen", labels: { nl: "Bitterballen", en: "Bitterballen" }, amount: "8.00" }
+      ]
+    }
+  },
   terminology: {
     pattern: { key: "LKL", en: "long-short-long", nl: "lang-kort-lang" },
     line: { en: "Line", nl: "Lijn" },
