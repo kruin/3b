@@ -80,10 +80,10 @@ bewust in een volgende openbare release te laten opnemen.
 3. Open zo nodig **Alle delen**.
 4. Wijzig A en V via een bandbal, de invoervelden of de stapknoppen.
 5. Controleer de volledige lijn en keur gecontroleerde waarden goed met **OK**.
-6. Klik **Freeze** om een lokale KruinLine en JSON-bestand te maken.
+6. Download regelmatig **Mijn tafels** als volledige JSON-reservekop.
 
-Een Freeze of JSON-download verandert de openbare standaard nog niet. Laat de
-gecontroleerde KruinLine bewust in de volgende bronconfiguratie opnemen.
+Lokaal bewaren of een JSON downloaden verandert de openbare standaard niet.
+Laat gecontroleerde waarden bewust in de volgende bronconfiguratie opnemen.
 
 ### Ballen activeren
 
@@ -142,7 +142,7 @@ behoudt jouw actuele 3B-bestanden en publiceert pas nadat dit herstel gelukt is.
 
 Git bewaart de openbare app, documentatie en BAT-starters. Lokale werkexports
 worden niet per ongeluk gepubliceerd. Genegeerd worden onder meer Mijn tafels,
-MyLines, lokale KruinLines, uitleg-JSON, SVG-downloads, ZIP's en reservekopieën.
+uitleg-JSON, SVG-downloads, ZIP's en reservekopieën.
 
 Een JSON die openbaar moet worden, moet eerst bewust in de bronconfiguratie
 worden verwerkt. Alleen het losse bestand in de projectmap zetten is niet
@@ -151,8 +151,8 @@ voldoende.
 ## Klant — 3B gebruiken
 
 Klanten openen `https://kruin.github.io/3b/`. Zij kunnen een tafel, lijn,
-richting en route kiezen, een KruinLine als werkkopie installeren, hun eigen
-MyLines bewaren, Mijn tafels downloaden en de gepubliceerde uitleg bekijken.
+richting en route kiezen, waarden lokaal aanpassen, Mijn tafels downloaden en
+de gepubliceerde uitleg bekijken.
 
 Klanten kunnen gepubliceerde KruinLines en uitlegkaarten niet wijzigen. Vanuit
 de app kunnen zij ook niet rechtstreeks naar GitHub publiceren.

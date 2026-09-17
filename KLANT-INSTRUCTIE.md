@@ -15,14 +15,13 @@ de eigen V- en A-waarden van Kop.
 De invoer blijft uitsluitend in deze browser. Download regelmatig **My tables /
 Mijn tafels** als JSON-reservekop. Gebruik Import om die op hetzelfde of een
 ander apparaat te openen. Er is geen automatische synchronisatie.
-# KruinLines en MyLines
+# KruinLines en eigen wijzigingen
 
-- **KruinLines** bevat de door Kruin gepubliceerde lijnen. U kunt ze bekijken
-  en installeren als werkkopie, maar de catalogus zelf niet wijzigen.
-- Na een eigen wijziging gebruikt u **MyLines**. Deze gegevens blijven in uw
-  eigen browser en kunnen als JSON worden gedownload.
-- Een geïnstalleerde KruinLine mag in de werkkopie worden aangepast. Daardoor
-  verandert de oorspronkelijke KruinLine niet.
+- **KruinLines** bevat de door Kruin gepubliceerde uitgangslijnen.
+- Eigen wijzigingen worden automatisch in de huidige browser bewaard.
+- Download regelmatig **Mijn tafels** als volledige JSON-reservekop en gebruik
+  **Import** om die reservekop terug te zetten.
+- De gepubliceerde KruinLine verandert niet door eigen wijzigingen.
 
 ## Kruin: uitleg op mobiel bewerken
 

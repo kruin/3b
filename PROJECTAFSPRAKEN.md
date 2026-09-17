@@ -1,5 +1,14 @@
 # Projectafspraken 3B
 
+### 2026-09-17 — eenvoudiger bewaren versie 59
+
+- Freeze en MyLines zijn volledig uit de actieve app verwijderd.
+- Ook Installeren voor KruinLines is verwijderd; de gepubliceerde uitgangslijn is al aanwezig.
+- Eigen wijzigingen worden automatisch in de browser bewaard.
+- Mijn tafels is de enige volledige JSON-reservekop en kan via Import worden teruggezet.
+- SVG en uitleg-snapshots blijven voor beelden beschikbaar.
+- KruinLines blijft intern de alleen-lezen bron voor gepubliceerde lijnen en uitlegbeelden.
+
 ### 2026-09-17 — rechte lijnstukken rond gedeelde ballen versie 58
 
 - De fout was algemeen en niet specifiek voor Kruis.
@@ -156,11 +165,10 @@ bijgewerkt.
 - Gebruikersinvoer blijft lokaal in `localStorage` van apparaat en browser.
 - Overdracht en reservekop verlopen via JSON-export en JSON-import.
 - KruinLines is de gepubliceerde, alleen-lezen catalogus van Kruin.
-- Op GitHub Pages kan KruinLines door iedere gebruiker worden bekeken en als
-  werkkopie worden geïnstalleerd, maar nooit worden gewijzigd.
-- Alleen de lokale start via `Open_KruinLines.bat` activeert beheer: een Freeze
-  wordt dan lokaal aan KruinLines toegevoegd en direct als JSON gedownload.
-- Klanten bewaren hun eigen bevroren lijnen uitsluitend in MyLines.
+- KruinLines levert de meegeleverde uitgangslijnen en uitlegbeelden, maar heeft
+  geen aparte installatie- of bevriesbediening meer.
+- Eigen wijzigingen worden automatisch lokaal bewaard; Mijn tafels is de
+  volledige JSON-reservekop.
 - Publicatie van een nieuwe KruinLine blijft een bewuste Git-publicatie; GitHub
   Pages heeft geen veilige eigenaarslogin en schrijft nooit terug naar GitHub.
 - Klein en Groot hebben gescheiden configuraties.

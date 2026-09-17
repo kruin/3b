@@ -1,3 +1,12 @@
+3B GitHub Pages versie 59
+
+Nieuw in versie 59:
+- Freeze en MyLines zijn uit de bediening en gegevensstructuur verwijderd.
+- De knop Installeren voor KruinLines is verwijderd; de meegeleverde lijn staat al als uitgangspunt in de tafel.
+- Oude lokale Freeze- en MyLines-verzamelingen worden niet meer geladen.
+- Wijzigingen worden automatisch lokaal bewaard; Mijn tafels blijft de volledige JSON-reservekop.
+- Undo, Redo, Herstel, SVG en uitleg-snapshots blijven beschikbaar.
+
 3B GitHub Pages versie 58
 
 Nieuw in versie 58:
