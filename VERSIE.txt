@@ -1,3 +1,13 @@
+3B GitHub Pages versie 67
+
+Nieuw in versie 67:
+- Eén vaste editwerkwijze zichtbaar boven de tafel: Spoor kiezen, lijnhelft aanraken en schuiven, Klaar · bewaar.
+- Eerste lijnhelft activeert V; tweede lijnhelft activeert A; de middenzone blijft inactief.
+- Lijn verlaten bewaart een lokale tussenstand zonder deze automatisch goed te keuren.
+- Klaar · bewaar keurt alle handmatig bewerkte waarden in het huidige Spoor op de huidige tafel goed.
+- Berekende rode waarden blijven rood totdat zij handmatig zijn gecontroleerd.
+- De volledige werkwijze staat in EDIT-WERKWIJZE.md.
+
 3B GitHub Pages versie 66
 
 Nieuw in versie 66:
