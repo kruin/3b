@@ -1,5 +1,13 @@
 # Projectafspraken 3B
 
+### 2026-09-17 — rechte lijnstukken rond gedeelde ballen versie 58
+
+- De fout was algemeen en niet specifiek voor Kruis.
+- Een lijnstuk wordt visueel als één rechte as berekend vanuit het werkelijk gedeelde balmiddelpunt naar het gekozen A-punt.
+- De V-hulplijn wordt vanuit diezelfde as teruggeprojecteerd naar de stiplijn.
+- De dikke lijn en beide dunne hulplijnen moeten per lijnstuk exact collineair zijn.
+- Dit geldt voor alle opeenvolgende delen en voor beide tafels en richtingen.
+
 ### 2026-09-16 — vrije puntbewerking versie 57
 
 - Kruin mag voorlopig alle lijnpunten over hun volledige fysieke band verschuiven.

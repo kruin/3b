@@ -1,3 +1,11 @@
+3B GitHub Pages versie 58
+
+Nieuw in versie 58:
+- Een algemene tekenfout bij gedeelde ballen is hersteld.
+- Ieder lijnstuk loopt nu vanaf het werkelijk gedeelde balmiddelpunt als één rechte lijn door naar zijn V- en A-stiplijn.
+- Dunne hulplijn, dikke speelweg en aansluitbal liggen daardoor exact in elkaars verlengde.
+- De correctie geldt voor alle overgangen, waaronder Romp–Kruis en Kruis–Been.
+
 3B GitHub Pages versie 57
 
 Nieuw in versie 57:

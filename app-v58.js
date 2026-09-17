@@ -191,6 +191,12 @@
     else if(shown==="noord")u=(radiusCm-a.y)/dy;else if(shown==="zuid")u=(table.heightCm-radiusCm-a.y)/dy;
     return {x:a.x+u*dx,y:a.y+u*dy};
   }
+  function bandBallFromAnchor(stip,anchor,t,radiusCm){
+    const table=C.tables[t],a=point(stip,t),dx=anchor.x-a.x,dy=anchor.y-a.y,shown=ui.direction==="oost"?mirror(stip.band):stip.band;let u=0;
+    if(shown==="west")u=(radiusCm-a.x)/dx;else if(shown==="oost")u=(table.widthCm-radiusCm-a.x)/dx;
+    else if(shown==="noord")u=(radiusCm-a.y)/dy;else if(shown==="zuid")u=(table.heightCm-radiusCm-a.y)/dy;
+    return{x:a.x+u*dx,y:a.y+u*dy};
+  }
   function canonicalPoint(p,t){const w=C.tables[t].widthCm;return ui.direction==="oost"?{x:w-p.x,y:p.y}:p;}
   function diamondValueThroughBall(band,ballDisplay,anchorDisplay,t){const {widthCm:w,heightCm:h,dotOffsetCm:d}=C.tables[t],ball=canonicalPoint(ballDisplay,t),anchor=canonicalPoint(anchorDisplay,t),dx=anchor.x-ball.x,dy=anchor.y-ball.y;let u,q;if(band==="west"||band==="oost"){const target=band==="west"?-d:w+d;if(Math.abs(dx)<1e-9)return null;u=(target-ball.x)/dx;q={x:target,y:ball.y+u*dy};}else{const target=band==="noord"?-d:h+d;if(Math.abs(dy)<1e-9)return null;u=(target-ball.y)/dy;q={x:ball.x+u*dx,y:target};}let value;if(band==="west")value=(1-q.y/h)*80;if(band==="oost")value=q.y/h*80;if(band==="noord")value=q.x/w*40;if(band==="zuid")value=(1-q.x/w)*40;const maximum=(band==="west"||band==="oost")?80:40,precision=C.drawing.junctionBalls.valuePrecision??1;return Math.max(0,Math.min(maximum,Math.round(value/precision)*precision));}
   function calculatedTarget(pointData){return pointData&&(pointData.value===null||pointData.value===""||pointData.status==="calculated");}
@@ -229,9 +235,9 @@
     const table=C.tables[t],W=510,H=850,fieldW=340,fieldH=680,scale=fieldW/table.widthCm,d=table.dotOffsetCm*scale,x=(W-fieldW)/2,y=90,wood=d+14,map=p=>({x:x+p.x*scale,y:y+p.y*scale}),segs=segments(t);let s=`<svg class="table-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(lineOneName())} ${esc(tableLabel(t))}"><rect width="${W}" height="${H}" rx="18" fill="#f7f1e5"/><text x="${W/2}" y="28" text-anchor="middle" font-family="system-ui" font-size="20" font-weight="800" fill="#2b2118">${esc(lineOneName())} · ${esc(tableLabel(t).toUpperCase())}</text><text x="${W/2}" y="49" text-anchor="middle" font-family="system-ui" font-size="11" fill="#6d5d4b">${table.widthCm} × ${table.heightCm} cm · 9.5 cm</text><rect x="${x-wood}" y="${y-wood}" width="${fieldW+2*wood}" height="${fieldH+2*wood}" rx="11" fill="#704725" stroke="#3a2516" stroke-width="3"/><rect x="${x}" y="${y}" width="${fieldW}" height="${fieldH}" fill="#176f4f" stroke="#e7c66e" stroke-width="3"/>`;
     s+=dots(t,map,suppressedDots(t));
     drawingTableContext=t;const active=activeLines(),visibleKeys=explanationParts||new Set(ui.playRange==="lkl"?["neus","romp",...ui.lklExtraParts]:active.map(line=>line.key)),junctionCenters={};segs.forEach(l=>{const index=active.findIndex(x=>x.key===l.key),showLine=visibleKeys.has(l.key);
-      const seg=variantSegment(t,l,index);if(!complete(seg.from)||!complete(seg.to)||!valid(seg.from)||!valid(seg.to))return;const radiusCm=C.ballDiameterMm/20,stipA=point(seg.from,t),stipB=point(seg.to,t);
-      const fixedA=junctionCenters[index]||(seg.from.kind==="acquit"?stipA:bandBall(seg.from,seg.to,t,radiusCm)),ballB=bandBall(seg.to,seg.from,t,radiusCm);junctionCenters[index+1]=ballB;
-      const guideA=seg.from.kind==="acquit"?backwardGuide(fixedA,ballB,t):stipA,isDeparture=index===0;
+      const seg=variantSegment(t,l,index);if(!complete(seg.from)||!complete(seg.to)||!valid(seg.from)||!valid(seg.to))return;const radiusCm=C.ballDiameterMm/20,stipA=point(seg.from,t),stipB=point(seg.to,t),sharedA=junctionCenters[index];
+      const fixedA=sharedA||(seg.from.kind==="acquit"?stipA:bandBall(seg.from,seg.to,t,radiusCm)),ballB=sharedA?bandBallFromAnchor(seg.to,fixedA,t,radiusCm):bandBall(seg.to,seg.from,t,radiusCm);junctionCenters[index+1]=ballB;
+      const guideA=seg.from.kind==="acquit"||sharedA?backwardGuide(fixedA,ballB,t):stipA,isDeparture=index===0;
       const startLimit=isDeparture?insetEntry(guideA,ballB,t,radiusCm):fixedA,startDistance=Math.hypot(ballB.x-startLimit.x,ballB.y-startLimit.y);
       const defaultFraction=seg.from.kind==="acquit"?projectionFraction(fixedA,startLimit,ballB):0,key=positionKey(t);
       const maxFraction=Math.max(0,1-(2*radiusCm+C.drawing.departureBall.minimumGapBallDiameters*radiusCm*2)/(startDistance||1));

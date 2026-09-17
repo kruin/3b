@@ -3,16 +3,16 @@ setlocal EnableDelayedExpansion
 cd /d "%~dp0"
 set "REMOTE=https://github.com/kruin/3b.git"
 set "PAGES=https://kruin.github.io/3b"
-set "RELEASE=57"
+set "RELEASE=58"
 set "GIT_RECOVERY="
 echo ============================================================
 echo 3B - PUBLICEREN EN CONTROLEREN
 echo ============================================================
 where git >nul 2>nul || (echo FOUT: Git ontbreekt.& goto :fout)
-for %%F in (index.html doc\index.html styles.css app-v57.js config-v57.js VERSIE.txt START-HIER.md .gitignore Kruin.html Kruin.bat Kruin.command) do if not exist "%%F" (echo FOUT: %%F ontbreekt.& goto :fout)
-findstr /C:"app-v57.js" index.html >nul || (echo FOUT: index.html laadt app-v57.js niet.& goto :fout)
-findstr /C:"config-v57.js" index.html >nul || (echo FOUT: index.html laadt config-v57.js niet.& goto :fout)
-findstr /C:"styles.css?v=57" index.html >nul || (echo FOUT: index.html gebruikt niet de nieuwe stylesheetversie.& goto :fout)
+for %%F in (index.html doc\index.html styles.css app-v58.js config-v58.js VERSIE.txt START-HIER.md .gitignore Kruin.html Kruin.bat Kruin.command) do if not exist "%%F" (echo FOUT: %%F ontbreekt.& goto :fout)
+findstr /C:"app-v58.js" index.html >nul || (echo FOUT: index.html laadt app-v58.js niet.& goto :fout)
+findstr /C:"config-v58.js" index.html >nul || (echo FOUT: index.html laadt config-v58.js niet.& goto :fout)
+findstr /C:"styles.css?v=58" index.html >nul || (echo FOUT: index.html gebruikt niet de nieuwe stylesheetversie.& goto :fout)
 findstr /C:"3B-documentatie" doc\index.html >nul || (echo FOUT: Doc heeft niet de verwachte ingang.& goto :fout)
 findstr /C:"Kruin.html" Kruin.bat >nul || (echo FOUT: Kruin.bat opent de gedeelde Kruin-ingang niet.& goto :fout)
 findstr /C:"Kruin.html" Kruin.command >nul || (echo FOUT: Kruin.command opent de gedeelde Kruin-ingang niet.& goto :fout)
@@ -51,7 +51,7 @@ set /a TRY=0
 :poll
 set /a TRY+=1
 echo Controle !TRY!/60
-powershell -NoProfile -Command "$ProgressPreference='SilentlyContinue'; try {$v=(Invoke-WebRequest -UseBasicParsing -Uri '%PAGES%/VERSIE.txt?c=!LOCAL!^&n=!TRY!' -Headers @{'Cache-Control'='no-cache'}).Content; $h=(Invoke-WebRequest -UseBasicParsing -Uri '%PAGES%/?c=!LOCAL!^&n=!TRY!' -Headers @{'Cache-Control'='no-cache'}).Content; $d=(Invoke-WebRequest -UseBasicParsing -Uri '%PAGES%/doc/?c=!LOCAL!^&n=!TRY!' -Headers @{'Cache-Control'='no-cache'}).Content; if($v -match 'versie %RELEASE%' -and $h.Contains('app-v57.js') -and $h.Contains('config-v57.js') -and $h.Contains('styles.css?v=57') -and $d.Contains('3B-documentatie')){exit 0};exit 1}catch{exit 1}"
+powershell -NoProfile -Command "$ProgressPreference='SilentlyContinue'; try {$v=(Invoke-WebRequest -UseBasicParsing -Uri '%PAGES%/VERSIE.txt?c=!LOCAL!^&n=!TRY!' -Headers @{'Cache-Control'='no-cache'}).Content; $h=(Invoke-WebRequest -UseBasicParsing -Uri '%PAGES%/?c=!LOCAL!^&n=!TRY!' -Headers @{'Cache-Control'='no-cache'}).Content; $d=(Invoke-WebRequest -UseBasicParsing -Uri '%PAGES%/doc/?c=!LOCAL!^&n=!TRY!' -Headers @{'Cache-Control'='no-cache'}).Content; if($v -match 'versie %RELEASE%' -and $h.Contains('app-v58.js') -and $h.Contains('config-v58.js') -and $h.Contains('styles.css?v=58') -and $d.Contains('3B-documentatie')){exit 0};exit 1}catch{exit 1}"
 if not errorlevel 1 goto :klaar
 if !TRY! GEQ 60 (echo PUBLICATIE NIET GESLAAGD: Git is bijgewerkt, Pages toont versie %RELEASE% nog niet.& goto :fout)
 timeout /t 10 /nobreak >nul
