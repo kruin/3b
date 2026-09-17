@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 64, release: "71",
+  version: 65, release: "72",
   userAccess: {
     defaultAddressForm: "jij",
     addressForms: ["jij", "u"],
@@ -43,7 +43,7 @@ window.THREEB_START_CONFIG = {
     openGesture: "single_click_or_tap"
   },
   explanation: {
-    version: "0.4",
+    version: "0.5",
     defaultLevel: "LKL",
     scopeRules: {
       systemExplanation: "shared_large_and_small",
@@ -65,10 +65,10 @@ window.THREEB_START_CONFIG = {
             key: "body-user-as-is",
             title: { en: "First: your own stroke", nl: "Eerst: je eigen afstoot" },
             text: {
-              en: "Choose Body FOUR, FIVE, SIX, SEVEN or EIGHT and play it with your own stroke as it is now. Record in the app where the Body finishes—every time, or occasionally. This is your result, not yet the Kruin reference.",
-              nl: "Kies Romp VIER, VIJF, ZES, ZEVEN of ACHT en voer die uit met je eigen afstoot zoals die nu is. Noteer in de app waar de Romp eindigt—telkens, of zo nu en dan. Dit is jouw resultaat, nog niet de Kruinreferentie."
+              en: "Use the Kruin image of Nose + Body. Play the Nose with your own current delivery and record the Body's arrival line in the app. Further instructions on assessing that arrival line will follow later.",
+              nl: "Gebruik het Kruinbeeld van Neus + Romp. Stoot de Neus af met je huidige eigen afstoot en noteer in de app de aankomstlijn van de Romp. Verdere instructie over het beoordelen van die aankomstlijn volgt later."
             },
-            image: { source: "KruinLines", line: "VIJF", parts: ["romp"], role: "user-as-is", recordBodyEnd: "every-time-or-occasionally" }
+            image: { source: "KruinLines", line: "VIJF", parts: ["neus","romp"], role: "user-as-is", recordBodyArrivalLine: true }
           },
           {
             key: "body-kruin-reference",
@@ -77,7 +77,7 @@ window.THREEB_START_CONFIG = {
               en: "For a Kruin track, use maximum English, the mid-high contact tangent shown as the shadow line, and finishing zone M at the centre of the table. This defines Kruin track FIVE, SIX, SEVEN or EIGHT.",
               nl: "Voor een Kruinspoor gelden: maximaal effect, de raaklijn middenhoog als schaduwlijn en eindzone M in het midden van de tafel. Dit bepaalt Kruinspoor VIJF, ZES, ZEVEN of ACHT."
             },
-            image: { source: "KruinLines", line: "VIJF", parts: ["romp"], role: "kruin-reference", effect: "maximum", contactTangent: "mid-high", showShadowLine: true, endZone: "M", endZonePosition: "table-centre" }
+            image: { source: "KruinLines", line: "VIJF", parts: ["neus","romp"], role: "kruin-reference", effect: "maximum", contactTangent: "mid-high", showShadowLine: true, endZone: "M", endZonePosition: "table-centre" }
           },
           {
             key: "why",

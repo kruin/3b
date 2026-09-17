@@ -1,6 +1,6 @@
 # Sessieregistratie installeren
 
-Versie 71 registreert uitsluitend:
+Versie 72 registreert uitsluitend:
 
 - `started_at`: start van de sessie;
 - `duration_seconds`: verstreken sessieduur.
@@ -11,8 +11,8 @@ De willekeurige technische `id` is alleen nodig om dezelfde sessie bij te werken
 
 1. Maak een Supabase-project.
 2. Open de SQL Editor en voer `supabase-session-schema.sql` uit.
-3. Vul in `config-v71.js` bij `userAccess.supabase` alleen de project-URL en publieke anon key in.
-4. Publiceer versie 71.
+3. Vul in `config-v72.js` bij `userAccess.supabase` alleen de project-URL en publieke anon key in.
+4. Publiceer versie 72.
 
 Zonder URL en anon key blijft 3B normaal werken en wordt niets verzonden.
 
