@@ -1,3 +1,12 @@
+3B GitHub Pages versie 66
+
+Nieuw in versie 66:
+- Fout hersteld: de tafelvullende standaardweergave is nu ook editmodus; echt browser-fullscreen is niet langer vereist.
+- VIJF, ZES enzovoort heten voortaan Spoor VIJF, Spoor ZES enzovoort.
+- De delen heten zichtbaar Lijn 1 · Neus tot en met Lijn 9 · Teen.
+- Romp is daarmee Lijn 4 · Romp en activeert de schuif in de tafelvullende weergave.
+- Verouderde instructies met −10 en +10 zijn bijgewerkt naar uitsluitend −1 en +1.
+
 3B GitHub Pages versie 65
 
 Nieuw in versie 65:
