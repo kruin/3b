@@ -1,3 +1,30 @@
+3B GitHub Pages versie 65
+
+Nieuw in versie 65:
+- Fullscreen is voortaan de editmodus.
+- Het zwevende editvenster is volledig verwijderd.
+- Aanwijzer of vinger op een lijnhelft activeert automatisch de dichtstbijzijnde bal.
+- Een neutrale zone van 6% rond het exacte lijnmidden activeert niets.
+- Bij het verlaten van een lijn wordt de actuele waarde lokaal genoteerd.
+- Een andere aangeraakte lijnhelft neemt de schuifbediening direct over.
+- Onderaan staan alleen −1, +1 en Bewaar.
+
+3B GitHub Pages versie 64
+
+Nieuw in versie 64:
+- De LKL-schuifbediening heeft alleen nog −1 en +1.
+- De overbodige stappen −10 en +10 zijn verwijderd.
+- Voor grotere verplaatsingen blijft rechtstreeks slepen langs de band beschikbaar.
+
+3B GitHub Pages versie 63
+
+Nieuw in versie 63:
+- Tafel eerst: één compacte centrale keuzelijst in plaats van lijnknoppen naast elkaar.
+- De centrale keuze bevat voorlopig VIER, VIJF, ZES, ZEVEN en ACHT.
+- Klik/tik op een leeg tafelvlak schakelt fullscreen in of uit.
+- Iedere klik/tik op een lijnhelft activeert de dichtstbijzijnde bal.
+- Het numerieke A/V-editvenster is verwijderd; lijnpunten worden uitsluitend geschoven.
+
 3B GitHub Pages versie 62
 
 Nieuw in versie 62:
