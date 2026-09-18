@@ -1,9 +1,9 @@
 window.THREEB_START_CONFIG = {
-  version: 69, release: "76",
+  version: 70, release: "77",
   userDisplay: {
     defaultLineOpacity: 0.58,
     defaultArrowMode: "request",
-    defaultArrowScale: 0.55,
+    defaultArrowScale: 0.35,
     lineOpacityRange: { minimum: 0.3, maximum: 1, step: 0.05 },
     arrowScaleRange: { minimum: 0.35, maximum: 1.2, step: 0.05 }
   },
@@ -44,7 +44,7 @@ window.THREEB_START_CONFIG = {
   editor: {
     defaultMode: "basis",
     modes: ["basis","alle"],
-    lklBasicParts: ["neus","romp"],
+    lklBasicParts: ["kop","romp","been"],
     compactBallValueEditor: true,
     liveUpdate: true,
     openGesture: "single_click_or_tap"

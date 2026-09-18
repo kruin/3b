@@ -1,3 +1,12 @@
+3B GitHub Pages versie 77
+
+Nieuw in versie 77:
+- De actieve pijl blijft op de bewust gekozen lijn staan en verhuist niet door aanwijzerbeweging.
+- De pijlkop is nog kleiner; V- en A-stipwaarden zijn vergroot naar 18 pixels.
+- Standaard zijn uitsluitend Kop, Romp en Been handmatig aanpasbaar.
+- Neus blijft vast behalve de afstootlengte; Nek, Kruis, Hiel, Voet en Teen lopen berekend mee.
+- Lijn 5 · Kruis wordt na iedere wijziging geometrisch op 45° gezet; de aankomst wordt uit het vertrek berekend.
+
 3B GitHub Pages versie 76
 
 Nieuw in versie 76:
