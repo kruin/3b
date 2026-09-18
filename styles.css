@@ -270,8 +270,8 @@ footer { padding: 0 24px 28px; text-align: center; color: #766959; font-size: 13
 }
 body.fixed-track .junction-hit[data-junction-index="0"]{pointer-events:none}
 .table-svg g[data-part] > line:not(.segment-hit){opacity:var(--route-opacity,.58)}
-body.show-user-arrow .table-svg g[data-part="neus"] > line:nth-of-type(2){marker-end:url(#activeArrow);opacity:1}
+body.show-user-arrow .table-svg g.active-line > line:nth-of-type(2){marker-end:url(#activeArrow);opacity:1}
 .marker-defs{position:absolute;width:0;height:0;overflow:hidden}
 .user-settings{position:fixed;z-index:1200;right:16px;top:70px;width:min(330px,calc(100vw - 32px));padding:16px;border:2px solid #176f4f;border-radius:14px;background:#fffaf0;box-shadow:0 12px 35px #0004;color:#2b2118}
 .user-settings header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.user-settings label{display:grid;grid-template-columns:8rem 1fr;gap:10px;align-items:center;margin:12px 0}.user-settings p{font-size:.9rem;margin-bottom:0}
-@media(max-width:760px){.table-svg g[data-part="neus"] > line:nth-of-type(2){marker-end:url(#activeArrow);opacity:1}.user-settings{top:10px}}
+@media(max-width:760px){.table-svg g.active-line > line:nth-of-type(2){marker-end:url(#activeArrow);opacity:1}.user-settings{top:10px}}

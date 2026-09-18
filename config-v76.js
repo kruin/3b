@@ -1,11 +1,11 @@
 window.THREEB_START_CONFIG = {
-  version: 68, release: "75",
+  version: 69, release: "76",
   userDisplay: {
     defaultLineOpacity: 0.58,
     defaultArrowMode: "request",
-    defaultArrowScale: 1.3,
+    defaultArrowScale: 0.55,
     lineOpacityRange: { minimum: 0.3, maximum: 1, step: 0.05 },
-    arrowScaleRange: { minimum: 1, maximum: 2, step: 0.1 }
+    arrowScaleRange: { minimum: 0.35, maximum: 1.2, step: 0.05 }
   },
   userAccess: {
     defaultAddressForm: "jij",

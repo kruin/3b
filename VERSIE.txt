@@ -1,3 +1,11 @@
+3B GitHub Pages versie 76
+
+Nieuw in versie 76:
+- De pijl hoort bij het lijnstuk dat de gebruiker aanraakt om te verschuiven; nooit standaard bij Neus.
+- Bij aanraken of aanwijzen verhuist de pijl meteen naar die actieve lijn en wijst van V naar A.
+- De standaard pijlkop is veel kleiner en blijft instelbaar.
+- De stipwaarden met V en A zijn groter en hebben ruimere, beter leesbare kaders.
+
 3B GitHub Pages versie 75
 
 Nieuw in versie 75:
