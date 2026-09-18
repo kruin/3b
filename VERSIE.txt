@@ -1,3 +1,13 @@
+3B GitHub Pages versie 75
+
+Nieuw in versie 75:
+- Neus blijft vast op Z naar de vaste spoorwaarde; alleen de afstootlengte langs Neus kan veranderen.
+- Lijnen zijn standaard minder prominent en de gebruiker kan de lijnsterkte instellen.
+- De Neus krijgt een richtingspijl van V naar A; V en A worden bij de waarden getoond.
+- Op desktop staat de pijl op verzoek of altijd; op mobiel is hij altijd zichtbaar.
+- De gebruiker kan de pijlgrootte instellen voor betere leesbaarheid.
+- Gebruikersinstellingen staan in een eigen Weergave-scherm, los van Kruin-beheer.
+
 3B GitHub Pages versie 74
 
 Nieuw in versie 74:
