@@ -1,3 +1,11 @@
+3B GitHub Pages versie 78
+
+Nieuw in versie 78:
+- Correctie: Kruis A wordt niet uit Kruis V berekend.
+- Romp A bepaalt eerst de werkelijk gedeelde bandbal.
+- Vanuit die bandbal bepaalt de vaste hoek van 45° zowel Kruis V als Kruis A.
+- Been en de verdere keten sluiten daarna aan op het berekende Kruis.
+
 3B GitHub Pages versie 77
 
 Nieuw in versie 77:
