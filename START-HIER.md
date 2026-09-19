@@ -69,8 +69,8 @@ bewust in een volgende openbare release te laten opnemen.
 ### Gemeenschappelijk of tafelspecifiek?
 
 - **Gemeenschappelijk — Groot + Klein:** algemene uitleg over het systeem.
-- **Lijn + één tafel:** uitleg over een concrete lijn, bijvoorbeeld VIJF op
-  Groot of VIJF op Klein. Zo'n kaart hoort altijd bij één tafel en bewaart een
+- **Spoor + één tafel:** uitleg over een concreet spoor, bijvoorbeeld Spoor VIJF op
+  Groot of Spoor VIJF op Klein. Zo'n kaart hoort altijd bij één tafel en bewaart een
   momentopname van de betreffende KruinLine.
 
 ## Kruin — standaard-stipwaarden beheren

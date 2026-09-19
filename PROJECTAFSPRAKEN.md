@@ -35,10 +35,17 @@
 
 ### 2026-09-16 — volledige lijnreeks NUL–TWAALF versie 55
 
-- Selecteerbare lijnen zijn NUL, EEN, TWEE, DRIE, VIER, VIJF, ZES, ZEVEN, ACHT, NEGEN, TIEN, ELF en TWAALF.
+- Selecteerbare sporen zijn Spoor NUL, EEN, TWEE, DRIE, VIER, VIJF, ZES, ZEVEN, ACHT, NEGEN, TIEN, ELF en TWAALF.
 - Elke lijn bestaat op Groot en Klein uit Neus, Kop, Nek, Romp, Kruis, Been, Hiel, Voet en Teen.
 - De berekeningsketen en aansluitcontrole gelden voor alle dertien lijnen.
-- VIJF bevat de vastgelegde uitgangswaarden; de overige lijnen beginnen leeg totdat Kruin waarden invoert.
+- Spoor VIJF bevat de vastgelegde uitgangswaarden; de overige sporen beginnen leeg totdat Kruin waarden invoert.
+- Spoor VIJF is volledig gespecificeerd: Neus V–W50 vast; Romp Klein O20–Z38 en Groot O20–Z36; Kruis 45° uit Romp A; Been A vast O10 en Been V afgeleid uit Kruis A.
+- Ieder lijnstuk staat standaard op `+` (mee). Slaat de loop een tussenband over, dan staat het lijnstuk op `-` (contra). Been in Spoor VIJF is daarom contra: West → Oost.
+- Loop is een ketenstand: na een bandoverslag blijft `-` contra actief tot een volgende bandoverslag de stand opnieuw wisselt. Hiel blijft in Spoor VIJF daarom contra.
+- Hiel volgt voorlopig de spiegelregel `hoek van inval = hoek van uitval` vanaf Been A op Oost naar Noord.
+- Regels worden benoemd en in Uitleg herhaald. De eerste regels zijn `Dir`, `Loop`, `BiBu`, de hoekregel en de rijregel voor Klein.
+- Voorlopige BiBu-regel: begint de loop buiten op `V-1`, dan ligt Romp A binnen. Exacte waarden volgen later.
+- Op Klein wordt de LKL-reeks `V-2` tot `V+2` op Zuid voorgesteld als vijf aankomstballen naast elkaar.
 
 ### 2026-09-16 — volledige keten vanaf Neus versie 54
 

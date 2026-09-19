@@ -1,3 +1,44 @@
+3B GitHub Pages versie 83
+
+Nieuw in versie 83:
+- Hiel volgt op Been en wordt voor Klein en Groot berekend met hoek van inval = hoek van uitval.
+- De loopstand is nu een keten: start `+`; een bandoverslag wisselt de stand; daarna blijft de stand behouden tot een volgende bandoverslag.
+- In Spoor VIJF zijn Been en Hiel daarom beide `-` (contra).
+- Regel `Dir` legt de bandvolgorde vast.
+- Voorlopige regel `BiBu` toegevoegd: start buiten op V-1 betekent Romp A binnen.
+- Voor Klein is de LKL-reeks V-2 tot V+2 als vijf naast elkaar liggende aankomstballen op Zuid opgenomen.
+- Dir, Loop, hoekregel, BiBu en de rijregel staan ook als uitlegkaarten in de app.
+
+3B GitHub Pages versie 82
+
+Nieuw in versie 82:
+- Spoor VIJF heeft een volledige, expliciete specificatie voor Klein en Groot.
+- Neus ligt vast op V–W50.
+- Romp gebruikt Kruins standaard: Klein O20–Z38; Groot O20–Z36.
+- Kruis wordt uit Romp A onder 45 graden afgeleid.
+- Been eindigt op beide tafels vast op O10; Been V wordt uit Kruis A afgeleid.
+- Ieder lijnstuk heeft een loopteken: standaard `+` (mee), bij overslaan van een tussenband `-` (contra).
+- Been van Spoor VIJF staat daarom op `-` (contra), omdat het van West rechtstreeks naar Oost loopt.
+
+3B GitHub Pages versie 81
+
+Nieuw in versie 81:
+- VIJF, ZES enzovoort heten centraal configureerbaar `Spoor`; standaard dus Spoor VIJF.
+- De afzonderlijke delen blijven eenduidig Lijn 1 Neus, Lijn 2 Kop enzovoort.
+- Stiplijn is vastgelegd als de lijn langs één band die de stippen van die band verbindt; iedere band heeft een eigen stiplijn.
+- Spoor VIJF gebruikt voorlopig de vaste bandreeks V → W → N → O → Z → W → O → N.
+- Andere sporen behouden hun bestaande route totdat hun bandreeks is vastgelegd.
+- Kruins uitleg staat in eigen lokale opslag en heeft een afzonderlijke uitlegkopie voor export en import.
+- Mijn tafels en een nieuwe release overschrijven deze lokale uitleg niet.
+
+3B GitHub Pages versie 80
+
+Nieuw in versie 80:
+- Herstelrelease: de wijzigingen van versie 79 zijn volledig teruggedraaid.
+- De vaste Kop- en Nek-ankers uit versie 79 zijn verwijderd.
+- De aangepaste verkorte-vierbanderlogica uit versie 79 is verwijderd.
+- Uitvoerlijnen en berekeningen werken weer precies zoals in versie 78.
+
 3B GitHub Pages versie 78
 
 Nieuw in versie 78:

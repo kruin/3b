@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 71, release: "78",
+  version: 75, release: "83",
   userDisplay: {
     defaultLineOpacity: 0.58,
     defaultArrowMode: "request",
@@ -36,9 +36,21 @@ window.THREEB_START_CONFIG = {
   },
   terminology: {
     pattern: { key: "LKL", en: "long-short-long", nl: "lang-kort-lang" },
+    trackName: {
+      default: "spoor",
+      choices: {
+        spoor: { singular: { en: "Track", nl: "Spoor" }, plural: { en: "Tracks", nl: "Sporen" } },
+        lijn: { singular: { en: "Line", nl: "Lijn" }, plural: { en: "Lines", nl: "Lijnen" } },
+        patroon: { singular: { en: "Pattern", nl: "Patroon" }, plural: { en: "Patterns", nl: "Patronen" } }
+      }
+    },
     line: { en: "Line", nl: "Lijn" },
     part: { en: "Part", nl: "Deel" },
-    firstLine: { en: "Line 1 · departure line", nl: "Lijn 1 · afstootlijn" }
+    firstLine: { en: "Line 1 · departure line", nl: "Lijn 1 · afstootlijn" },
+    diamondLine: {
+      en: "Diamond line: the measuring line along one cushion that connects its diamonds. Every cushion has its own diamond line.",
+      nl: "Stiplijn: de meetlijn langs één band die de stippen van die band verbindt. Iedere band heeft een eigen stiplijn."
+    }
   },
   defaultLanguage: "en", defaultTableMode: "groot", defaultDirection: "west", defaultDeparture: "neus",
   editor: {
@@ -62,15 +74,15 @@ window.THREEB_START_CONFIG = {
         key: "LKL",
         order: 1,
         tables: ["groot","klein"],
-        labels: { en: "Lesson 1 · FIVE", nl: "Les 1 · VIJF" },
+        labels: { en: "Lesson 1 · Track FIVE", nl: "Les 1 · Spoor VIJF" },
         description: {
-          en: "FIVE only: Nose + Body, using the Kruin image.",
-          nl: "Alleen VIJF: Neus + Romp, volgens het Kruinbeeld."
+          en: "Track FIVE only: Line 1 Nose + Line 4 Body, using the Kruin image.",
+          nl: "Alleen Spoor VIJF: Lijn 1 Neus + Lijn 4 Romp, volgens het Kruinbeeld."
         },
         slides: [
           {
             key: "body-user-as-is",
-            title: { en: "FIVE · your own stroke", nl: "VIJF · je eigen afstoot" },
+            title: { en: "Track FIVE · your own stroke", nl: "Spoor VIJF · je eigen afstoot" },
             text: {
               en: "Use the Kruin image of Nose + Body. Play the Nose with your own current delivery and record the Body's arrival line in the app. Further instructions on assessing that arrival line will follow later.",
               nl: "Gebruik het Kruinbeeld van Neus + Romp. Stoot de Neus af met je huidige eigen afstoot en noteer in de app de aankomstlijn van de Romp. Verdere instructie over het beoordelen van die aankomstlijn volgt later."
@@ -79,12 +91,66 @@ window.THREEB_START_CONFIG = {
           },
           {
             key: "body-kruin-reference",
-            title: { en: "FIVE · Kruin reference", nl: "VIJF · Kruinreferentie" },
+            title: { en: "Track FIVE · Kruin reference", nl: "Spoor VIJF · Kruinreferentie" },
             text: {
-              en: "For a Kruin track, use maximum English, the mid-high contact tangent shown as the shadow line, and finishing zone M at the centre of the table. This defines Kruin track FIVE, SIX, SEVEN or EIGHT.",
+              en: "For a Kruin track, use maximum English, the mid-high contact tangent shown as the shadow line, and finishing zone M at the centre of the table. This defines Kruin Track FIVE, SIX, SEVEN or EIGHT.",
               nl: "Voor een Kruinspoor gelden: maximaal effect, de raaklijn middenhoog als schaduwlijn en eindzone M in het midden van de tafel. Dit bepaalt Kruinspoor VIJF, ZES, ZEVEN of ACHT."
             },
             image: { source: "KruinLines", line: "VIJF", parts: ["neus","romp"], role: "kruin-reference", effect: "maximum", contactTangent: "mid-high", showShadowLine: true, endZone: "M", endZonePosition: "table-centre" }
+          },
+          {
+            key: "diamond-lines",
+            title: { en: "Every cushion has its own diamond line", nl: "Iedere band heeft een eigen stiplijn" },
+            text: {
+              en: "A diamond line is the measuring line along one cushion that connects its diamonds. The four cushions therefore have four separate diamond lines. V and A always refer to one of these lines, never to the cushion edge.",
+              nl: "Een stiplijn is de meetlijn langs één band die de stippen van die band verbindt. De vier banden hebben dus vier afzonderlijke stiplijnen. V en A verwijzen altijd naar zo'n stiplijn, nooit naar de bandrand."
+            },
+            image: { source: "KruinLines", line: "VIJF", parts: ["neus","romp"], emphasize: "guides" }
+          },
+          {
+            key: "running-or-reverse",
+            title: { en: "+ running · − reverse", nl: "+ mee · − contra" },
+            text: {
+              en: "A line is + (running) by default. If its route skips an intermediate cushion, it is marked − (reverse). In Track FIVE, Leg runs directly from West to East and is therefore −.",
+              nl: "Een lijn staat standaard op + (mee). Slaat de loop een tussenband over, dan krijgt de lijn − (contra). In Spoor VIJF loopt Been rechtstreeks van West naar Oost en staat daarom op −."
+            },
+            image: { source: "KruinLines", line: "VIJF", parts: ["kruis","been"] }
+          },
+          {
+            key: "rule-direction",
+            title: { en: "Rule · Dir", nl: "Regel · Dir" },
+            text: {
+              en: "Dir records the cushion order. For Track FIVE it is V–W–N–E–S–W–E–N. Every A names the next cushion in the route.",
+              nl: "Dir noteert de bandvolgorde. Voor Spoor VIJF is dit V–W–N–O–Z–W–O–N. Iedere A noemt de volgende band in de loop."
+            },
+            image: { source: "KruinLines", line: "VIJF", parts: ["neus","kop","nek","romp","kruis","been","hiel"] }
+          },
+          {
+            key: "rule-reflection",
+            title: { en: "Rule · incidence equals reflection", nl: "Regel · hoek van inval is hoek van uitval" },
+            text: {
+              en: "For now Heel is derived by reflecting Leg at the East cushion: the angle of incidence equals the angle of reflection. Heel remains reverse until a later cushion skip changes the state.",
+              nl: "Hiel wordt voorlopig afgeleid door Been op de Oostband te spiegelen: hoek van inval is hoek van uitval. Hiel blijft contra totdat een latere bandoverslag de stand verandert."
+            },
+            image: { source: "KruinLines", line: "VIJF", parts: ["been","hiel"] }
+          },
+          {
+            key: "rule-bibu",
+            title: { en: "Rule · In/Out", nl: "Regel · BiBu" },
+            text: {
+              en: "In/Out describes the relation between departure and Body arrival. Preliminary rule: if the route starts outside at V−1, Body A is inside. Exact values will follow later.",
+              nl: "BiBu beschrijft de relatie tussen vertrek en Romp A. Voorlopige regel: begint de loop buiten op V−1, dan ligt Romp A binnen. Exacte waarden volgen later."
+            },
+            image: { source: "KruinLines", line: "VIJF", parts: ["neus","romp"] }
+          },
+          {
+            key: "rule-small-arrival-row",
+            title: { en: "Rule · Small arrival row", nl: "Regel · rij op Klein" },
+            text: {
+              en: "On the Small table, LSL departures V−2 through V+2 appear at the South cushion as a row of five adjacent balls.",
+              nl: "Op Klein ogen de LKL-vertrekken V−2 tot en met V+2 bij aankomst op Zuid als een rij van vijf ballen naast elkaar."
+            },
+            image: { source: "KruinLines", line: "VIJF", parts: ["romp"], tables: ["klein"], showArrivalSeries: true, offsets: [-2,-1,0,1,2] }
           },
           {
             key: "why",
@@ -121,7 +187,7 @@ window.THREEB_START_CONFIG = {
             title: { en: "A and V belong to diamond lines", nl: "A en V horen bij de stiplijnen" },
             text: {
               en: "A is arrival and V is departure. Every value refers to a diamond and its diamond line. The cushion edge is visible, but is never the measuring line.",
-              nl: "A is aankomst en V is vertrek. Iedere waarde verwijst naar een stip en de bijbehorende stiplijn. De bandrand blijft zichtbaar, maar is nooit de meetlijn."
+              nl: "A is aankomst en V is vertrek. Iedere waarde verwijst naar een stip en de bijbehorende stiplijn. Een stiplijn loopt langs één band en verbindt de stippen van die band; iedere band heeft een eigen stiplijn. De bandrand blijft zichtbaar, maar is nooit de meetlijn."
             },
             image: { source: "KruinLines", line: "VIJF", parts: ["neus","romp"], emphasize: "guides" }
           },
@@ -130,7 +196,7 @@ window.THREEB_START_CONFIG = {
             title: { en: "Shift names the next line", nl: "Schuif benoemt de volgende lijn" },
             text: {
               en: "SHIFT moves the complete line setup. FIVE can become SIX, and the same naming extends to ZERO and later lines. The line—not one diamond—is the unit.",
-              nl: "SCHUIF verplaatst de volledige lijnopzet. VIJF wordt zo ZES; dezelfde naamgeving geldt ook voor NUL en latere lijnen. De lijn—niet één stip—is de eenheid."
+              nl: "SCHUIF verplaatst de volledige spooropzet. Spoor VIJF wordt zo Spoor ZES; dezelfde naamgeving geldt ook voor Spoor NUL en latere sporen. Het spoor—niet één stip of lijnstuk—is de eenheid."
             },
             image: { source: "KruinLines", line: "VIJF", parts: ["neus"] }
           }
@@ -204,6 +270,84 @@ window.THREEB_START_CONFIG = {
     }
   },
   shotLines: ["NUL","EEN","TWEE","DRIE","VIER","VIJF","ZES","ZEVEN","ACHT","NEGEN","TIEN","ELF","TWAALF"],
+  trackRoutes: {
+    VIJF: {
+      startLabel: "V",
+      arrivals: ["west","noord","oost","zuid","west","oost","noord"],
+      rule: "each_arrival_selects_the_next_cushion"
+    }
+  },
+  trackSpecs: {
+    VIJF: {
+      complete: true,
+      tables: ["klein","groot"],
+      loop: {
+        default: "+",
+        defaultMeaning: "mee",
+        skippedCushion: "-",
+        skippedCushionMeaning: "contra",
+        rule: "use_contra_when_from_and_to_skip_an_intermediate_cushion"
+      },
+      parts: {
+        neus: {
+          fixed: true,
+          from: { kind: "acquit", value: "V" },
+          to: { band: "west", value: 50 }
+        },
+        romp: {
+          source: "Kruin",
+          defaultByTable: {
+            klein: { from: { band: "oost", value: 20 }, to: { band: "zuid", value: 38 } },
+            groot: { from: { band: "oost", value: 20 }, to: { band: "zuid", value: 36 } }
+          }
+        },
+        kruis: {
+          fixedAngleDegrees: 45,
+          rule: "derive_from_body_arrival"
+        },
+        been: {
+          to: { band: "oost", value: 10, fixed: true },
+          from: { band: "west", rule: "derive_from_cross_arrival" },
+          loop: "-"
+        },
+        hiel: {
+          from: { band: "oost", rule: "shared_with_leg_arrival" },
+          to: { band: "noord", rule: "angle_of_incidence_equals_angle_of_reflection" },
+          loop: "-"
+        }
+      }
+    }
+  },
+  rules: {
+    Dir: {
+      labels: { en: "Direction", nl: "Richting" },
+      rule: "each_arrival_names_the_next_cushion",
+      five: ["V","W","N","O","Z","W","O","N"]
+    },
+    Loop: {
+      labels: { en: "Running / reverse", nl: "Mee / contra" },
+      initial: "+",
+      toggleOnSkippedCushion: true,
+      persistUntilNextSkippedCushion: true,
+      note: "not_yet_relevant_beyond_LKL"
+    },
+    Reflection: {
+      labels: { en: "Angle of incidence equals angle of reflection", nl: "Hoek van inval is hoek van uitval" },
+      appliesTo: ["hiel"],
+      status: "provisional"
+    },
+    BiBu: {
+      labels: { en: "In/Out", nl: "BiBu" },
+      preliminary: { whenDeparture: "outside_V_minus_1", bodyArrival: "inside" },
+      exactValues: "later"
+    },
+    SmallLklArrivalRow: {
+      table: "klein",
+      departureOffsets: [-2,-1,0,1,2],
+      arrivalBand: "zuid",
+      appearance: "adjacent_ball_row"
+    }
+  },
   lineOneVariants: {
     defaultMode: "basis",
     modes: ["basis", "parallel", "waaier"],
@@ -212,13 +356,13 @@ window.THREEB_START_CONFIG = {
       maximumOffset: 4,
       defaultOffset: 0,
       longRailUnitsPerStep: 10,
-      startLabel: "Z",
+      startLabel: "V",
       startAxis: "vertical_centerline",
       rule: "translate_line_one_without_rotation"
     },
     fan: {
-      rule: "rotate_line_one_around_Z",
-      startPoint: "Z",
+      rule: "rotate_line_one_around_V",
+      startPoint: "V",
       entries: [
         { key: "HALFZES", labels: { en: "FIVE-AND-A-HALF", nl: "HALFZES" }, between: ["VIJF", "ZES"], fraction: 0.5 }
       ]
@@ -243,7 +387,7 @@ window.THREEB_START_CONFIG = {
   ],
   departureOptions: ["neus","kop"],
   fixedPartBands: {
-    neus:{from:"Z",to:"west"}, kop:{from:"west",to:"noord"},
+    neus:{from:"V",to:"west"}, kop:{from:"west",to:"noord"},
     nek:{from:"noord",to:"oost"}, romp:{from:"oost",to:"zuid"},
     kruis:{from:"zuid",to:"west"}, been:{from:"west",to:"noord"},
     hiel:{from:"noord",to:"oost"}, voet:{from:"oost",to:"zuid"}, teen:{from:"zuid",to:"west"}
@@ -294,12 +438,12 @@ window.THREEB_START_CONFIG = {
     klein:{
     VIER:{romp:{from:{band:"oost",value:5},to:{band:"zuid",value:70}}},
     VIJF:{
-      neus:{from:{kind:"acquit",value:"Z"},to:{band:"west",value:50}},
+      neus:{from:{kind:"acquit",value:"V"},to:{band:"west",value:50}},
       kop:{from:{band:"west",value:35,status:"calculated"},to:{band:"noord",value:19}},
       nek:{from:{band:"noord",value:13,status:"calculated"},to:{band:"oost",value:32,status:"calculated"}},
       romp:{from:{band:"oost",value:20},to:{band:"zuid",value:38}},
       kruis:{from:{band:"zuid",value:31,status:"calculated"},to:{band:"west",value:10}},
-      been:{from:{band:"west",value:5},to:{band:"oost",value:70}}
+      been:{from:{band:"west",value:null,status:"calculated"},to:{band:"oost",value:10,status:"approved"}}
     },
     ZES:{romp:{from:{band:"oost",value:30},to:{band:"zuid",value:30}}},
     ZEVEN:{romp:{from:{band:"oost",value:35},to:{band:"zuid",value:20}}},
@@ -307,10 +451,11 @@ window.THREEB_START_CONFIG = {
     },
     groot:{
     VIJF:{
-      neus:{from:{kind:"acquit",value:"Z"},to:{band:"west",value:50}},
+      neus:{from:{kind:"acquit",value:"V"},to:{band:"west",value:50}},
       kop:{from:{band:"west",value:38,status:"calculated"},to:{band:"noord",value:19}},
       nek:{from:{band:"noord",value:14,status:"calculated"},to:{band:"oost",value:29,status:"calculated"}},
-      romp:{from:{band:"oost",value:20},to:{band:"zuid",value:36}}
+      romp:{from:{band:"oost",value:20},to:{band:"zuid",value:36}},
+      been:{from:{band:"west",value:null,status:"calculated"},to:{band:"oost",value:10,status:"approved"}}
     },
     ZES:{romp:{from:{band:"oost",value:30},to:{band:"zuid",value:28}}},
     ZEVEN:{romp:{from:{band:"oost",value:37},to:{band:"zuid",value:22}}},

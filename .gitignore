@@ -24,3 +24,7 @@ Desktop.ini
 
 # De openbare sitebestanden, BAT-starters en documentatie worden bewust
 # niet genegeerd en horen in Git.
+
+# Kruins lokaal aangepaste uitleg is werkmateriaal en mag niet door een
+# release of publicatie worden overschreven.
+uitleg-lokaal/*.json

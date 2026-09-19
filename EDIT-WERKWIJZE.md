@@ -26,7 +26,7 @@
 Lijn 1 begint altijd op Z en eindigt op de vaste spoorwaarde:
 
 - Spoor VIER: Z → 40
-- Spoor VIJF: Z → 50
+- Spoor VIJF: V → W50
 - Spoor HALFZES: Z → 55
 - Spoor ZES: Z → 60
 - Spoor ZEVEN: Z → 70
