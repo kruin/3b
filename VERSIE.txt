@@ -1,9 +1,26 @@
+3B GitHub Pages versie 95
+
+Nieuw in versie 95:
+- De keuze Lijn voor lijn behoudt het huidige spoor en begint opnieuw bij Neus.
+- Het centrale menu bevat Terug naar basisspoor, bijvoorbeeld VIJF+2 naar VIJF.
+- Ook Terug naar basisspoor zet de geselecteerde lijn terug op Neus.
+- De cursuskaart Les · −S+ bekijken legt beide handelingen expliciet uit.
+- De actuele beheersheet heet 3B-sporenbeheer-v95-lijnreset-basisspoor.xlsx en reist lokaal mee in de ZIP.
+
+3B GitHub Pages versie 94
+
+Nieuw in versie 94:
+- Een klik of tik op de tafel sluit ieder open keuzemenu direct.
+- Deze eerste tafelklik sluit alleen het menu en start niet tegelijk fullscreen of een lijnactie.
+- De focus gaat daarna terug naar de tafel.
+- De actuele beheersheet heet 3B-sporenbeheer-v94-focus-op-tafel.xlsx en reist lokaal mee in de ZIP.
+
 3B GitHub Pages versie 93
 
 Nieuw in versie 93:
 - De compacte ☰-menuknop staat nu exact midden op de tafel.
 - De vaste min-, plus- en spoor-/lijnbediening uit versie 92 blijft verder ongewijzigd.
-- De actuele beheersheet heet 3B-sporenbeheer-v93-menuknop-midden.xlsx en reist lokaal mee in de ZIP.
+- De actuele beheersheet heet 3B-sporenbeheer-v93-menuknop-midden.xlsx en reist lokaal mee in die ZIP.
 
 3B GitHub Pages versie 92
 

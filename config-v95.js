@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 85, release: "93",
+  version: 87, release: "95",
   userDisplay: {
     defaultLineOpacity: 0.58,
     defaultArrowMode: "request",
@@ -130,10 +130,19 @@ window.THREEB_START_CONFIG = {
             key: "lesson-minus-start-plus-display",
             title: { en: "Lesson · View −S+", nl: "Les · −S+ bekijken" },
             text: {
-              en: "Choose Static · whole track to see the complete chosen ± track. Choose Line by line to compare one part at a time. The complete thin base track always remains fixed. In table view, − stays on the left and + on the right. Tap the centre to switch between Track and Line. Open the compact menu only when you want to change the series or view.",
-              nl: "Kies Statisch · heel spoor om het volledige gekozen ±spoor te zien. Kies Lijn voor lijn om één deel tegelijk te vergelijken. Het volledige dunne basisspoor blijft altijd vast staan. In tafelbeeld blijft − links en + rechts. Tik in het midden om tussen Spoor en Lijn te wisselen. Open het compacte menu alleen om de reeks of weergave te veranderen."
+              en: "Choose Static · whole track to see the complete chosen ± track. Line by line retains the current track but starts again at Nose. The complete thin base track always remains fixed. In table view, − stays on the left and + on the right. Tap the centre to switch between Track and Line. The central menu also has Back to base track, for example FIVE+2 → FIVE.",
+              nl: "Kies Statisch · heel spoor om het volledige gekozen ±spoor te zien. Lijn voor lijn behoudt het huidige spoor, maar begint opnieuw bij Neus. Het volledige dunne basisspoor blijft altijd vast staan. In tafelbeeld blijft − links en + rechts. Tik in het midden om tussen Spoor en Lijn te wisselen. In het centrale menu staat ook Terug naar basisspoor, bijvoorbeeld VIJF+2 → VIJF."
             },
             image: { source: "KruinLines", line: "VIJF", parts: ["neus","kop","nek","romp","kruis","been","hiel"], role: "parallel-display-modes" }
+          },
+          {
+            key: "lesson-line-by-line-reset",
+            title: { en: "Lesson · Restart and base track", nl: "Les · Herstart en basisspoor" },
+            text: {
+              en: "When you choose Line by line, the current track remains selected and the comparison restarts at Nose. Use Back to base track in the central menu only when you also want to remove the −/+ offset, for example FIVE+2 → FIVE. That action also restarts at Nose.",
+              nl: "Wanneer je Lijn voor lijn kiest, blijft het huidige spoor geselecteerd en begint de vergelijking opnieuw bij Neus. Gebruik Terug naar basisspoor in het centrale menu alleen wanneer ook de −/+ verschuiving weg moet, bijvoorbeeld VIJF+2 → VIJF. Ook die actie begint opnieuw bij Neus."
+            },
+            image: { source: "KruinLines", line: "VIJF", parts: ["neus","kop","nek","romp"], role: "line-reset-base-track" }
           },
           {
             key: "diamond-lines",
