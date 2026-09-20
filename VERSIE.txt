@@ -1,3 +1,40 @@
+3B GitHub Pages versie 99
+
+Nieuw in versie 99:
+- De barbontekst is luchtig en vrijblijvend: van helemaal niks tot een rondje bitterballen.
+- De keuzes zijn €0, Spa rood voor straks en Rondje bitterballen!
+- Bij €0 sluit de barbon stil: geen melding, registratie of betaalactie.
+- Vaste do-no-harm-regel: geen schuldgevoel, druk, verborgen registratie of automatische betaling.
+- De actuele beheersheet heet 3B-sporenbeheer-v99-luchtige-barbon.xlsx en reist lokaal mee in de ZIP.
+
+3B GitHub Pages versie 98
+
+Nieuw in versie 98:
+- De tafel heeft een vaste vrijwillige duimknop 👍.
+- De barbon opent uitsluitend na een bewuste klik of tik op 👍 en nooit automatisch.
+- €0 geeft alleen een bedankmelding; Spa rood en Bitterballen vragen daarna pas om betaling.
+- Een betaalkeuze gebruikt de geconfigureerde Mollie-functie; zonder configuratie volgt geen omleiding.
+- De actuele beheersheet heet 3B-sporenbeheer-v98-barbon-na-duimpje.xlsx en reist lokaal mee in de ZIP.
+
+3B GitHub Pages versie 97
+
+Nieuw in versie 97:
+- De cursus begint met Wat past nu bij mij? en een zelfinschatting zonder toets.
+- Route 1: Ik zoek mijn eigen VIJF.
+- Route 2: Ik kan mijn aankomst noteren.
+- Route 3: Ik wil sporen vergelijken.
+- Mijn inschatting laat de gebruiker op ieder moment van cursusroute wisselen.
+- Alle bestaande standaardkaarten zijn beschikbaar; Kruins lokale aangepaste kaarten blijven behouden.
+- De actuele beheersheet heet 3B-sporenbeheer-v97-cursus-zelfinschatting.xlsx en reist lokaal mee in de ZIP.
+
+3B GitHub Pages versie 96
+
+Nieuw in versie 96:
+- Het centrale menu bevat nu Tafel: Groot, Klein of Vergelijkend.
+- Vergelijkend toont Groot en Klein samen naast elkaar in dezelfde tafelviewport.
+- Na een tafelkeuze sluit het menu en gaat de focus terug naar de tafel.
+- De actuele beheersheet heet 3B-sporenbeheer-v96-tafelkeuze-centraal.xlsx en reist lokaal mee in de ZIP.
+
 3B GitHub Pages versie 95
 
 Nieuw in versie 95:

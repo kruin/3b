@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 87, release: "95",
+  version: 91, release: "99",
   userDisplay: {
     defaultLineOpacity: 0.58,
     defaultArrowMode: "request",
@@ -28,9 +28,9 @@ window.THREEB_START_CONFIG = {
       enabled: true,
       currency: "EUR",
       items: [
-        { key: "nul", labels: { nl: "€0 · graag gedaan", en: "€0 · no thanks" }, amount: "0.00" },
-        { key: "spa_rood", labels: { nl: "Spa rood", en: "Sparkling water" }, amount: "2.50" },
-        { key: "bitterballen", labels: { nl: "Bitterballen", en: "Bitterballen" }, amount: "8.00" }
+        { key: "nul", labels: { nl: "€0", en: "€0" }, amount: "0.00" },
+        { key: "spa_rood", labels: { nl: "Spa rood voor straks", en: "Sparkling water for later" }, amount: "2.50" },
+        { key: "bitterballen", labels: { nl: "Rondje bitterballen!", en: "A round of bitterballen!" }, amount: "8.00" }
       ]
     }
   },

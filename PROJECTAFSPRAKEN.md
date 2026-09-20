@@ -568,7 +568,14 @@ Voor iedere release:
 # Tijdelijke LKL-bronketen
 
 - Zolang patroon LKL niet stabiel is, wordt iedere waarde-aanpassing uit de chat in dezelfde release verwerkt in de centrale sheet én de Kruin-configuratie.
-- Iedere nieuwe release-ZIP bevat de actuele sheet met dezelfde versienaam als de ZIP: `config-input/3B-sporenbeheer-v95-lijnreset-basisspoor.xlsx`.
+- Iedere nieuwe release-ZIP bevat de actuele sheet met dezelfde versienaam als de ZIP: `config-input/3B-sporenbeheer-v99-luchtige-barbon.xlsx`.
+- Do no harm bij de barbon: de toon blijft grappig en vrijblijvend, zonder schuldgevoel of druk.
+- De keuze €0 sluit stil en veroorzaakt geen melding, registratie, opslag of betaalactie.
+- De barbon mag nooit automatisch verschijnen. Alleen een bewuste klik of tik van de gebruiker op 👍 opent haar.
+- Een betaalroute begint pas na een tweede bewuste keuze voor een betaald barbon-item.
+- De cursus begint met de zelfinschatting van de gebruiker en gebruikt geen toets of opgelegd niveau.
+- De gebruiker kan altijd via Mijn inschatting wisselen tussen eigen VIJF zoeken, aankomst noteren en sporen vergelijken.
+- Het centrale menu bevat de tafelkeuze Groot, Klein en Vergelijkend; Vergelijkend toont beide tafels samen.
 - Bij keuze voor Lijn voor lijn blijft het huidige spoor staan, maar de lijnkeuze begint opnieuw bij Neus.
 - Het centrale menu bevat altijd een expliciete actie Terug naar basisspoor; die actie begint eveneens opnieuw bij Neus.
 - Vaste UI-regel: zodra een gebruiker op de tafel klikt of tikt, sluit ieder open menu en krijgt de tafel de focus. Diezelfde eerste klik voert geen tweede actie uit.

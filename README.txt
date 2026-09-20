@@ -1,8 +1,8 @@
-3B LINE CONFIGURATOR — VERSION 95
+3B LINE CONFIGURATOR — VERSION 99
 ================================
 
 TIJDELIJK TIJDENS ONTWIKKELING VAN LKL
-De actuele centrale invoersheet staat in config-input/3B-sporenbeheer-v95-lijnreset-basisspoor.xlsx.
+De actuele centrale invoersheet staat in config-input/3B-sporenbeheer-v99-luchtige-barbon.xlsx.
 Waarde-aanpassingen uit de chat worden zowel in deze sheet als in de
 Kruin-configuratie verwerkt. De sheet wordt niet naar GitHub gepubliceerd.
 Dit is uitsluitend de beheerwerkwijze van Kruin; gewone gebruikers werken
@@ -15,7 +15,7 @@ de app gebruiken, wat lokaal blijft en wanneer iets werkelijk gepubliceerd is.
 Open index.html locally or use https://kruin.github.io/3b/.
 English is the default language; Dutch is selectable on screen.
 
-Table focus in version 95
+Table focus in version 97
 -------------------------
 In the focused table view, minus is fixed at the left edge and plus at the
 right edge. The current Track or Line is shown in the compact centre button.
@@ -27,6 +27,22 @@ Clicking or tapping the table closes an open menu first and returns focus to
 the table; that same click does not also trigger fullscreen or a line action.
 Selecting Line by line keeps the current track and restarts at Nose. The
 central menu provides Back to base track and also restarts at Nose.
+The central menu also selects Large, Small or Compare. Compare keeps both
+tables side by side in the same focused table viewport.
+
+Course self-assessment
+----------------------
+The course starts from what the user believes fits now: finding an own FIVE,
+recording an arrival, or comparing tracks. This is not a test. My assessment
+can be used at any time to change route without changing table data.
+
+Voluntary bar tab
+-----------------
+The bar tab is never shown automatically. Only an explicit tap on 👍 opens it.
+Choosing €0 records no payment. Paid choices call the configured payment
+function only after the user selects that item.
+The €0 choice closes silently and causes no message, registration or payment
+call. Bar-tab copy must remain light, optional and free of pressure.
 
 Configuration
 -------------
