@@ -1,8 +1,8 @@
-3B LINE CONFIGURATOR — VERSION 87
+3B LINE CONFIGURATOR — VERSION 93
 ================================
 
 TIJDELIJK TIJDENS ONTWIKKELING VAN LKL
-De actuele centrale invoersheet staat in config-input/3B-sporenbeheer-v91-bibu-omgekeerd.xlsx.
+De actuele centrale invoersheet staat in config-input/3B-sporenbeheer-v93-menuknop-midden.xlsx.
 Waarde-aanpassingen uit de chat worden zowel in deze sheet als in de
 Kruin-configuratie verwerkt. De sheet wordt niet naar GitHub gepubliceerd.
 Dit is uitsluitend de beheerwerkwijze van Kruin; gewone gebruikers werken
@@ -14,6 +14,15 @@ de app gebruiken, wat lokaal blijft en wanneer iets werkelijk gepubliceerd is.
 
 Open index.html locally or use https://kruin.github.io/3b/.
 English is the default language; Dutch is selectable on screen.
+
+Table focus in version 93
+-------------------------
+In the focused table view, minus is fixed at the left edge and plus at the
+right edge. The current Track or Line is shown in the compact centre button.
+With −S+ and Line by line selected, tap the centre button to switch the fixed
+minus/plus controls between Track and Line. The full selection menu is closed
+by default and opens only through the menu button.
+The menu button itself is positioned in the exact centre of the table.
 
 Configuration
 -------------

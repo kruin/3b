@@ -568,7 +568,7 @@ Voor iedere release:
 # Tijdelijke LKL-bronketen
 
 - Zolang patroon LKL niet stabiel is, wordt iedere waarde-aanpassing uit de chat in dezelfde release verwerkt in de centrale sheet én de Kruin-configuratie.
-- Iedere nieuwe release-ZIP bevat de actuele sheet met dezelfde versienaam als de ZIP: `config-input/3B-sporenbeheer-v91-bibu-omgekeerd.xlsx`.
+- Iedere nieuwe release-ZIP bevat de actuele sheet met dezelfde versienaam als de ZIP: `config-input/3B-sporenbeheer-v93-menuknop-midden.xlsx`.
 - `config-input/*.xlsx` staat in `.gitignore`: de sheet reist lokaal mee, maar wordt niet naar GitHub gepubliceerd.
 - Een release mag pas worden opgeleverd nadat sheet en configuratie op dezelfde representatieve waarden zijn gecontroleerd.
 - Deze keten is uitsluitend voor Kruin/beheer. De gewone gebruiker ziet en beheert geen sheet of configuratiebestand en gebruikt alleen de gepubliceerde app.

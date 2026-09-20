@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 83, release: "91",
+  version: 85, release: "93",
   userDisplay: {
     defaultLineOpacity: 0.58,
     defaultArrowMode: "request",
@@ -125,6 +125,15 @@ window.THREEB_START_CONFIG = {
               nl: "Kies −S+ voor parallelle sporen. BiBu keert de zijde om: S+ begint binnen en A-Romp komt buiten aan, waardoor de Zuidwaarde daalt. S− werkt omgekeerd. Romp, Nek en Kop worden daarna parallel aan het basisspoor teruggerekend."
             },
             image: { source: "KruinLines", line: "VIJF", parts: ["neus","kop","nek","romp","kruis","been","hiel"] }
+          },
+          {
+            key: "lesson-minus-start-plus-display",
+            title: { en: "Lesson · View −S+", nl: "Les · −S+ bekijken" },
+            text: {
+              en: "Choose Static · whole track to see the complete chosen ± track. Choose Line by line to compare one part at a time. The complete thin base track always remains fixed. In table view, − stays on the left and + on the right. Tap the centre to switch between Track and Line. Open the compact menu only when you want to change the series or view.",
+              nl: "Kies Statisch · heel spoor om het volledige gekozen ±spoor te zien. Kies Lijn voor lijn om één deel tegelijk te vergelijken. Het volledige dunne basisspoor blijft altijd vast staan. In tafelbeeld blijft − links en + rechts. Tik in het midden om tussen Spoor en Lijn te wisselen. Open het compacte menu alleen om de reeks of weergave te veranderen."
+            },
+            image: { source: "KruinLines", line: "VIJF", parts: ["neus","kop","nek","romp","kruis","been","hiel"], role: "parallel-display-modes" }
           },
           {
             key: "diamond-lines",

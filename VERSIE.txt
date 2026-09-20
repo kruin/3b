@@ -1,13 +1,21 @@
-3B GitHub Pages versie 91
+3B GitHub Pages versie 93
 
-Nieuw in versie 91:
-- De parallelberekening volgt nu de gecorrigeerde BiBu-regel.
-- S+1 begint binnen en A-Romp komt op Zuid buiten aan; de Zuidwaarde daalt één stap.
-- S−1 begint buiten en A-Romp komt binnen aan; de Zuidwaarde stijgt één stap.
-- Klein gebruikt één balbreedte per stap; Groot anderhalve balbreedte.
-- Kop, Nek, Romp, Kruis, Been en Hiel zijn opnieuw berekend vanuit de gecorrigeerde A-Romp.
-- De regeltekst in de cursus en beheersheet is aangepast.
-- De actuele beheersheet heet 3B-sporenbeheer-v91-bibu-omgekeerd.xlsx en reist lokaal mee in de ZIP.
+Nieuw in versie 93:
+- De compacte ☰-menuknop staat nu exact midden op de tafel.
+- De vaste min-, plus- en spoor-/lijnbediening uit versie 92 blijft verder ongewijzigd.
+- De actuele beheersheet heet 3B-sporenbeheer-v93-menuknop-midden.xlsx en reist lokaal mee in de ZIP.
+
+3B GitHub Pages versie 92
+
+Nieuw in versie 92:
+- De tafel heeft één vaste bediening: min links, de actuele keuze middenboven en plus rechts.
+- De knoppen blijven bij herhaald tikken op exact dezelfde positie, op mobiel en desktop.
+- Het uitgebreide keuzemenu is in tafelbeeld standaard gesloten en opent met de compacte menuknop.
+- Bij −S+ is er keuze tussen Statisch · heel spoor en Lijn voor lijn.
+- Het dunne basisspoor blijft in beide standen volledig zichtbaar en onbeweeglijk.
+- In Lijn voor lijn wisselt een tik op de middenknop tussen Spoor en Lijn; de vaste min/plus bedient de gekozen reeks.
+- De cursus bevat een eigen kaart over deze twee −S+-weergaven en de vaste tafelbediening.
+- De actuele beheersheet heet 3B-sporenbeheer-v92-statisch-lijnvoorlijn.xlsx en reist lokaal mee in die ZIP.
 
 3B GitHub Pages versie 86
 
