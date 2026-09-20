@@ -1,5 +1,12 @@
-3B LINE CONFIGURATOR — VERSION 59
+3B LINE CONFIGURATOR — VERSION 87
 ================================
+
+TIJDELIJK TIJDENS ONTWIKKELING VAN LKL
+De actuele centrale invoersheet staat in config-input/3B-sporenbeheer-v91-bibu-omgekeerd.xlsx.
+Waarde-aanpassingen uit de chat worden zowel in deze sheet als in de
+Kruin-configuratie verwerkt. De sheet wordt niet naar GitHub gepubliceerd.
+Dit is uitsluitend de beheerwerkwijze van Kruin; gewone gebruikers werken
+alleen in de gepubliceerde app en krijgen de sheet niet te zien.
 
 LEES EERST `START-HIER.md`.
 Daar staat apart uitgelegd hoe Kruin uitleg en stipwaarden beheert, hoe klanten

@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 75, release: "83",
+  version: 83, release: "91",
   userDisplay: {
     defaultLineOpacity: 0.58,
     defaultArrowMode: "request",
@@ -61,6 +61,16 @@ window.THREEB_START_CONFIG = {
     liveUpdate: true,
     openGesture: "single_click_or_tap"
   },
+  courseCases: [
+    {
+      key: "case-five-minus-one-start", ownerOnly: true, scope: "lijn_tafel", level: "Kruin-cases", table: "klein", line: "VIJF",
+      title: { en: "Case 1 · choose the track", nl: "Case 1 · kies het spoor" },
+      text: { en: "Ball 2 is at this course position. Which track do you play?", nl: "Bal 2 ligt op deze cursuspositie. Welk spoor speel je?" },
+      answer: { en: "Track FIVE−1.", nl: "Spoor VIJF−1." },
+      case: { targetBall: 2, position: { kind: "parallelStart", baseTrack: "VIJF", offset: -1 } },
+      image: { source: "KruinLines", line: "VIJF", parts: [], tables: ["klein"], casePositionOnly: true }
+    }
+  ],
   explanation: {
     version: "0.6",
     defaultLevel: "LKL",
@@ -99,6 +109,24 @@ window.THREEB_START_CONFIG = {
             image: { source: "KruinLines", line: "VIJF", parts: ["neus","romp"], role: "kruin-reference", effect: "maximum", contactTangent: "mid-high", showShadowLine: true, endZone: "M", endZonePosition: "table-centre" }
           },
           {
+            key: "lesson-waaier",
+            title: { en: "Lesson · Fan", nl: "Les · Waaier" },
+            text: {
+              en: "Choose Fan for the whole and HALF tracks. A HALF track lies exactly midway between its two neighbouring tracks for every known value.",
+              nl: "Kies Waaier voor de hele en HALFsporen. Een HALFspoor ligt voor iedere bekende waarde exact midden tussen de twee buursporen."
+            },
+            image: { source: "KruinLines", line: "VIJF", parts: ["neus","romp","kruis"] }
+          },
+          {
+            key: "lesson-minus-start-plus",
+            title: { en: "Lesson · −S+", nl: "Les · −S+" },
+            text: {
+              en: "Choose −S+ for parallel tracks. In/Out reverses the side: S+ starts inside and Body A arrives outside, so its South value decreases. S− works inversely. Body, Neck and Head are then calculated backwards parallel to the base track.",
+              nl: "Kies −S+ voor parallelle sporen. BiBu keert de zijde om: S+ begint binnen en A-Romp komt buiten aan, waardoor de Zuidwaarde daalt. S− werkt omgekeerd. Romp, Nek en Kop worden daarna parallel aan het basisspoor teruggerekend."
+            },
+            image: { source: "KruinLines", line: "VIJF", parts: ["neus","kop","nek","romp","kruis","been","hiel"] }
+          },
+          {
             key: "diamond-lines",
             title: { en: "Every cushion has its own diamond line", nl: "Iedere band heeft een eigen stiplijn" },
             text: {
@@ -120,8 +148,8 @@ window.THREEB_START_CONFIG = {
             key: "rule-direction",
             title: { en: "Rule · Dir", nl: "Regel · Dir" },
             text: {
-              en: "Dir records the cushion order. For Track FIVE it is V–W–N–E–S–W–E–N. Every A names the next cushion in the route.",
-              nl: "Dir noteert de bandvolgorde. Voor Spoor VIJF is dit V–W–N–O–Z–W–O–N. Iedere A noemt de volgende band in de loop."
+              en: "Dir records the cushion order. For every LSL Track ZERO through EIGHT it is S–W–N–E–S–W–E–N. Every A names the next cushion in the route.",
+              nl: "Dir noteert de bandvolgorde. Voor ieder LKL-spoor NUL tot en met ACHT is dit S–W–N–O–Z–W–O–N. Iedere A noemt de volgende band in de loop."
             },
             image: { source: "KruinLines", line: "VIJF", parts: ["neus","kop","nek","romp","kruis","been","hiel"] }
           },
@@ -129,8 +157,8 @@ window.THREEB_START_CONFIG = {
             key: "rule-reflection",
             title: { en: "Rule · incidence equals reflection", nl: "Regel · hoek van inval is hoek van uitval" },
             text: {
-              en: "For now Heel is derived by reflecting Leg at the East cushion: the angle of incidence equals the angle of reflection. Heel remains reverse until a later cushion skip changes the state.",
-              nl: "Hiel wordt voorlopig afgeleid door Been op de Oostband te spiegelen: hoek van inval is hoek van uitval. Hiel blijft contra totdat een latere bandoverslag de stand verandert."
+              en: "For every LSL track, Heel is provisionally derived by reflecting Leg at the East cushion: the angle of incidence equals the angle of reflection. Heel remains reverse until a later cushion skip changes the state.",
+              nl: "Voor ieder LKL-spoor wordt Hiel voorlopig afgeleid door Been op de Oostband te spiegelen: hoek van inval is hoek van uitval. Hiel blijft contra totdat een latere bandoverslag de stand verandert."
             },
             image: { source: "KruinLines", line: "VIJF", parts: ["been","hiel"] }
           },
@@ -138,8 +166,8 @@ window.THREEB_START_CONFIG = {
             key: "rule-bibu",
             title: { en: "Rule · In/Out", nl: "Regel · BiBu" },
             text: {
-              en: "In/Out describes the relation between departure and Body arrival. Preliminary rule: if the route starts outside at V−1, Body A is inside. Exact values will follow later.",
-              nl: "BiBu beschrijft de relatie tussen vertrek en Romp A. Voorlopige regel: begint de loop buiten op V−1, dan ligt Romp A binnen. Exacte waarden volgen later."
+              en: "In/Out describes the relation between departure and Body arrival. S+1 starts inside and arrives outside on the South cushion; S−1 starts outside and arrives inside.",
+              nl: "BiBu beschrijft de relatie tussen start en Romp A. S+1 begint binnen (Bi) en komt op de Zuidband buiten (Bu) aan; S−1 begint buiten en komt binnen aan."
             },
             image: { source: "KruinLines", line: "VIJF", parts: ["neus","romp"] }
           },
@@ -147,10 +175,28 @@ window.THREEB_START_CONFIG = {
             key: "rule-small-arrival-row",
             title: { en: "Rule · Small arrival row", nl: "Regel · rij op Klein" },
             text: {
-              en: "On the Small table, LSL departures V−2 through V+2 appear at the South cushion as a row of five adjacent balls.",
-              nl: "Op Klein ogen de LKL-vertrekken V−2 tot en met V+2 bij aankomst op Zuid als een rij van vijf ballen naast elkaar."
+              en: "On the Small table, LSL starts S−2 through S+2 appear at the South cushion as a row of five adjacent balls.",
+              nl: "Op Klein ogen de LKL-starten S−2 tot en met S+2 bij aankomst op Zuid als een rij van vijf ballen naast elkaar."
             },
             image: { source: "KruinLines", line: "VIJF", parts: ["romp"], tables: ["klein"], showArrivalSeries: true, offsets: [-2,-1,0,1,2] }
+          },
+          {
+            key: "head-neck-experience-anchors",
+            title: { en: "Experience anchors · Head and Neck", nl: "Ervaringsankers · Kop en Nek" },
+            text: {
+              en: "Small Head A: FOUR N28, FIVE N19, SIX N10. Large Head A / Neck A: FOUR N25 / E10, FIVE N15 / E20, SIX N10 / E30. Head A is also the starting anchor for the shortened four-cushion route.",
+              nl: "Klein Kop A: VIER N28, VIJF N19, ZES N10. Groot Kop A / Nek A: VIER N25 / O10, VIJF N15 / O20, ZES N10 / O30. Kop A is ook het uitgangsanker voor de verkorte vierbander."
+            },
+            image: { source: "KruinLines", line: "VIJF", parts: ["kop","nek"], tables: ["groot","klein"] }
+          },
+          {
+            key: "rule-position-to-line",
+            title: { en: "Rule · Position to line", nl: "Regel · Positie naar lijn" },
+            text: {
+              en: "Starting from a known position on the current line, determine which next line must be played. First application: Body A determines Cross, departing at 45 degrees. More position-to-line relations will be added later.",
+              nl: "Ga uit van een bekende positie op de huidige lijn en bepaal welke volgende lijn gespeeld moet worden. Eerste toepassing: Romp A bepaalt Kruis, dat onder 45 graden vertrekt. Meer positie-naar-lijnrelaties volgen later."
+            },
+            image: { source: "KruinLines", line: "VIJF", parts: ["romp","kruis"] }
           },
           {
             key: "why",
@@ -271,11 +317,41 @@ window.THREEB_START_CONFIG = {
   },
   shotLines: ["NUL","EEN","TWEE","DRIE","VIER","VIJF","ZES","ZEVEN","ACHT","NEGEN","TIEN","ELF","TWAALF"],
   trackRoutes: {
+    NUL: { startLabel: "S", arrivals: ["west","noord","oost","zuid","west","oost","noord"], rule: "each_arrival_selects_the_next_cushion" },
+    EEN: { startLabel: "S", arrivals: ["west","noord","oost","zuid","west","oost","noord"], rule: "each_arrival_selects_the_next_cushion" },
+    TWEE: { startLabel: "S", arrivals: ["west","noord","oost","zuid","west","oost","noord"], rule: "each_arrival_selects_the_next_cushion" },
+    DRIE: { startLabel: "S", arrivals: ["west","noord","oost","zuid","west","oost","noord"], rule: "each_arrival_selects_the_next_cushion" },
+    VIER: { startLabel: "S", arrivals: ["west","noord","oost","zuid","west","oost","noord"], rule: "each_arrival_selects_the_next_cushion" },
     VIJF: {
-      startLabel: "V",
+      startLabel: "S",
       arrivals: ["west","noord","oost","zuid","west","oost","noord"],
       rule: "each_arrival_selects_the_next_cushion"
-    }
+    },
+    ZES: { startLabel: "S", arrivals: ["west","noord","oost","zuid","west","oost","noord"], rule: "each_arrival_selects_the_next_cushion" },
+    ZEVEN: { startLabel: "S", arrivals: ["west","noord","oost","zuid","west","oost","noord"], rule: "each_arrival_selects_the_next_cushion" },
+    ACHT: { startLabel: "S", arrivals: ["west","noord","oost","zuid","west","oost","noord"], rule: "each_arrival_selects_the_next_cushion" }
+  },
+  lklTrackRules: {
+    appliesTo: ["NUL","EEN","TWEE","DRIE","VIER","VIJF","ZES","ZEVEN","ACHT"],
+    noseArrivalByTrack: { NUL:0, EEN:10, TWEE:20, DRIE:30, VIER:40, VIJF:50, ZES:60, ZEVEN:70, ACHT:80 },
+    route: ["S","W","N","O","Z","W","O","N"],
+    cross: { fixedAngleDegrees:45, rule:"derive_from_body_arrival" },
+    leg: { to:{band:"oost",value:10,fixed:true}, from:{band:"west",rule:"derive_from_cross_arrival"} },
+    heel: { from:{band:"oost",rule:"shared_with_leg_arrival"}, to:{band:"noord",rule:"angle_of_incidence_equals_angle_of_reflection"} },
+    experienceAnchors: {
+      klein: {
+        VIER: { headArrival:{band:"noord",value:28} },
+        VIJF: { headArrival:{band:"noord",value:19} },
+        ZES: { headArrival:{band:"noord",value:10} }
+      },
+      groot: {
+        VIER: { headArrival:{band:"noord",value:25}, neckArrival:{band:"oost",value:10} },
+        VIJF: { headArrival:{band:"noord",value:15}, neckArrival:{band:"oost",value:20} },
+        ZES: { headArrival:{band:"noord",value:10}, neckArrival:{band:"oost",value:30} }
+      },
+      shortenedFourCushion: "use_head_arrival_as_starting_anchor"
+    },
+    loop: { initial:"+", toggleOnSkippedCushion:true, persistUntilNextSkippedCushion:true }
   },
   trackSpecs: {
     VIJF: {
@@ -291,7 +367,7 @@ window.THREEB_START_CONFIG = {
       parts: {
         neus: {
           fixed: true,
-          from: { kind: "acquit", value: "V" },
+          from: { kind: "acquit", value: "S" },
           to: { band: "west", value: 50 }
         },
         romp: {
@@ -322,7 +398,7 @@ window.THREEB_START_CONFIG = {
     Dir: {
       labels: { en: "Direction", nl: "Richting" },
       rule: "each_arrival_names_the_next_cushion",
-      five: ["V","W","N","O","Z","W","O","N"]
+      five: ["S","W","N","O","Z","W","O","N"]
     },
     Loop: {
       labels: { en: "Running / reverse", nl: "Mee / contra" },
@@ -336,10 +412,19 @@ window.THREEB_START_CONFIG = {
       appliesTo: ["hiel"],
       status: "provisional"
     },
+    PositionToLine: {
+      labels: { en: "Position to line", nl: "Positie naar lijn" },
+      rule: "a_known_position_on_the_current_line_determines_the_next_line_to_play",
+      applications: [
+        { from:{part:"romp",point:"A"}, to:{part:"kruis",departureAngleDegrees:45} }
+      ],
+      status: "extend_in_explanation_later"
+    },
     BiBu: {
       labels: { en: "In/Out", nl: "BiBu" },
-      preliminary: { whenDeparture: "outside_V_minus_1", bodyArrival: "inside" },
-      exactValues: "later"
+      relation: "opposite_sides",
+      plus: { departure:"inside", bodyArrival:"outside", southDiamondDirection:"minus" },
+      minus: { departure:"outside", bodyArrival:"inside", southDiamondDirection:"plus" }
     },
     SmallLklArrivalRow: {
       table: "klein",
@@ -352,19 +437,34 @@ window.THREEB_START_CONFIG = {
     defaultMode: "basis",
     modes: ["basis", "parallel", "waaier"],
     parallel: {
-      minimumOffset: -4,
-      maximumOffset: 4,
+      minimumOffset: -2,
+      maximumOffset: 3,
       defaultOffset: 0,
       longRailUnitsPerStep: 10,
-      startLabel: "V",
+      startLabel: "S",
       startAxis: "vertical_centerline",
-      rule: "translate_line_one_without_rotation"
+      arrivalConstraint: { band:"west", minimum:0, maximum:80 },
+      bodyArrivalByTable: {
+        klein: { band:"zuid", ballWidthsPerStep:1, ballDiameterCm:6.15, diamondUnitsPerStep:6.15/115*40, offsetSign:-1 },
+        groot: { band:"zuid", ballWidthsPerStep:1.5, ballDiameterCm:6.15, diamondUnitsPerStep:1.5*6.15/142*40, offsetSign:-1 }
+      },
+      backwardFromBodyArrival: {
+        parts: ["romp","nek","kop"],
+        rule: "keep_each_part_parallel_to_its_base_track"
+      },
+      rule: "BiBu: plus_start_inside_body_A_outside_so_south_value_decreases; minus_is_inverse; then_body_neck_head_recalculate_backward"
     },
     fan: {
-      rule: "rotate_line_one_around_V",
-      startPoint: "V",
+      rule: "every_known_value_is_midpoint_of_adjacent_tracks",
       entries: [
-        { key: "HALFZES", labels: { en: "FIVE-AND-A-HALF", nl: "HALFZES" }, between: ["VIJF", "ZES"], fraction: 0.5 }
+        { key:"HALFEEN", between:["NUL","EEN"], noseArrival:5, fraction:0.5 },
+        { key:"HALFTWEE", between:["EEN","TWEE"], noseArrival:15, fraction:0.5 },
+        { key:"HALFDRIE", between:["TWEE","DRIE"], noseArrival:25, fraction:0.5 },
+        { key:"HALFVIER", between:["DRIE","VIER"], noseArrival:35, fraction:0.5 },
+        { key:"HALFVIJF", between:["VIER","VIJF"], noseArrival:45, fraction:0.5 },
+        { key:"HALFZES", between:["VIJF","ZES"], noseArrival:55, fraction:0.5 },
+        { key:"HALFZEVEN", between:["ZES","ZEVEN"], noseArrival:65, fraction:0.5 },
+        { key:"HALFACHT", between:["ZEVEN","ACHT"], noseArrival:75, fraction:0.5 }
       ]
     }
   },
@@ -438,7 +538,7 @@ window.THREEB_START_CONFIG = {
     klein:{
     VIER:{romp:{from:{band:"oost",value:5},to:{band:"zuid",value:70}}},
     VIJF:{
-      neus:{from:{kind:"acquit",value:"V"},to:{band:"west",value:50}},
+      neus:{from:{kind:"acquit",value:"S"},to:{band:"west",value:50}},
       kop:{from:{band:"west",value:35,status:"calculated"},to:{band:"noord",value:19}},
       nek:{from:{band:"noord",value:13,status:"calculated"},to:{band:"oost",value:32,status:"calculated"}},
       romp:{from:{band:"oost",value:20},to:{band:"zuid",value:38}},
@@ -451,7 +551,7 @@ window.THREEB_START_CONFIG = {
     },
     groot:{
     VIJF:{
-      neus:{from:{kind:"acquit",value:"V"},to:{band:"west",value:50}},
+      neus:{from:{kind:"acquit",value:"S"},to:{band:"west",value:50}},
       kop:{from:{band:"west",value:38,status:"calculated"},to:{band:"noord",value:19}},
       nek:{from:{band:"noord",value:14,status:"calculated"},to:{band:"oost",value:29,status:"calculated"}},
       romp:{from:{band:"oost",value:20},to:{band:"zuid",value:36}},

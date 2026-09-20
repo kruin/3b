@@ -1,3 +1,48 @@
+3B GitHub Pages versie 91
+
+Nieuw in versie 91:
+- De parallelberekening volgt nu de gecorrigeerde BiBu-regel.
+- S+1 begint binnen en A-Romp komt op Zuid buiten aan; de Zuidwaarde daalt één stap.
+- S−1 begint buiten en A-Romp komt binnen aan; de Zuidwaarde stijgt één stap.
+- Klein gebruikt één balbreedte per stap; Groot anderhalve balbreedte.
+- Kop, Nek, Romp, Kruis, Been en Hiel zijn opnieuw berekend vanuit de gecorrigeerde A-Romp.
+- De regeltekst in de cursus en beheersheet is aangepast.
+- De actuele beheersheet heet 3B-sporenbeheer-v91-bibu-omgekeerd.xlsx en reist lokaal mee in de ZIP.
+
+3B GitHub Pages versie 86
+
+Nieuw in versie 86:
+- HALFsporen HALFEEN tot en met HALFACHT zijn centraal selecteerbaar.
+- Iedere bekende HALFwaarde is exact het gemiddelde van de twee buursporen.
+- Parallelsporen met geldige Neus-aankomst op West zijn centraal selecteerbaar.
+- Neus A verschuift 10 stipwaarden per parallelstap.
+- Romp A verschuift op Klein één balbreedte per stap en op Groot anderhalve balbreedte.
+- Kruis, Been en Hiel worden vanaf de verschoven Romp opnieuw berekend.
+- Parallelle Kop- en Nekwaarden blijven leeg totdat daarvoor een regel is vastgelegd.
+
+3B GitHub Pages versie 85
+
+Nieuw in versie 85:
+- Nieuwe algemene regel `Positie naar lijn`.
+- Een bekende positie op de huidige lijn bepaalt welke volgende lijn gespeeld wordt.
+- Eerste toepassing: Romp A bepaalt Kruis, dat onder 45 graden vertrekt.
+- De regel staat in de configuratie, de zichtbare regelsamenvatting en een eigen uitlegkaart.
+- De uitlegkaart is voorbereid om later meer positie-naar-lijnrelaties toe te voegen.
+
+3B GitHub Pages versie 84
+
+Nieuw in versie 84:
+- De volledige LKL-regelstructuur geldt nu voor Spoor NUL tot en met ACHT.
+- Neus staat vast op de spoorwaarde W0, W10, W20, W30, W40, W50, W60, W70 of W80.
+- Dir is steeds V–W–N–O–Z–W–O–N.
+- Zodra Romp volledig is, volgen Kruis 45°, Been naar O10 en Hiel volgens de spiegelregel automatisch.
+- Been en Hiel blijven `-` contra op alle LKL-sporen.
+- Bestaande lokale sporen worden naar deze gemeenschappelijke structuur gemigreerd.
+- Ontbrekende Rompwaarden worden niet verzonnen; daardoor blijft Groot VIER en blijven NUL–DRIE voorlopig onvolledig.
+- Ervaringsankers Kop A: Klein VIER N28, VIJF N19, ZES N10; Groot VIER N25, VIJF N15, ZES N10.
+- Ervaringsankers Nek A op Groot: VIER O10, VIJF O20, ZES O30.
+- De Kop-A-ankers zijn tevens het uitgangspunt voor de verkorte vierbander.
+
 3B GitHub Pages versie 83
 
 Nieuw in versie 83:

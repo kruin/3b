@@ -28,3 +28,7 @@ Desktop.ini
 # Kruins lokaal aangepaste uitleg is werkmateriaal en mag niet door een
 # release of publicatie worden overschreven.
 uitleg-lokaal/*.json
+
+# Tijdelijke centrale invoersheet zolang het patroon LKL nog niet stabiel is.
+# De sheet reist mee in de download-ZIP, maar wordt niet naar GitHub gepubliceerd.
+config-input/*.xlsx

@@ -46,6 +46,11 @@
 - Regels worden benoemd en in Uitleg herhaald. De eerste regels zijn `Dir`, `Loop`, `BiBu`, de hoekregel en de rijregel voor Klein.
 - Voorlopige BiBu-regel: begint de loop buiten op `V-1`, dan ligt Romp A binnen. Exacte waarden volgen later.
 - Op Klein wordt de LKL-reeks `V-2` tot `V+2` op Zuid voorgesteld als vijf aankomstballen naast elkaar.
+- Ervaringsankers Klein Kop A: VIER N28, VIJF N19, ZES N10.
+- Ervaringsankers Groot Kop A / Nek A: VIER N25/O10, VIJF N15/O20, ZES N10/O30.
+- Kop A vormt met dezelfde waarde het uitgangspunt voor de verkorte vierbander.
+- Regel `Positie naar lijn`: een bekende positie op de huidige lijn bepaalt welke volgende lijn gespeeld wordt.
+- Eerste toepassing: Romp A bepaalt Kruis; Kruis vertrekt onder 45°. Verdere positie-naar-lijnrelaties worden later in Uitleg uitgewerkt.
 
 ### 2026-09-16 — volledige keten vanaf Neus versie 54
 
@@ -550,3 +555,20 @@ Voor iedere release:
 - LKL begint met Neus en Romp; `+ Kop`, `+ Nek`, `+ Kruis` en `+ Been` voegen delen toe. Na alle toevoegingen herstelt de knop de basis.
 - Waardestatus per punt: `calculated` rood, `edited` blauw, `approved` groen.
 - Handmatige stappen, invoer en balsleep leveren `edited`; afgeleide partnerwaarden leveren `calculated`; OK levert `approved`.
+# Versie 86 · HALF- en parallelsporen
+
+- HALFsporen HALFEEN t/m HALFACHT liggen per bekende V- en A-waarde exact midden tussen de twee buursporen.
+- Neus A is daarom 5, 15, 25, 35, 45, 55, 65 of 75.
+- Parallel Neus A verschuift 10 stipwaarden per stap en blijft op de Westband tussen 0 en 80.
+- Toegestane verschuivingen worden begrensd door minimaal −2, maximaal +3 en de fysieke Westband.
+- Romp A verschuift op Klein per stap één balbreedte: 6,15 / 115 × 40 = 2,139 stipwaarde op Zuid.
+- Romp A verschuift op Groot per stap anderhalve balbreedte: 1,5 × 6,15 / 142 × 40 = 2,599 stipwaarde op Zuid.
+- Vanaf de verschoven Romp worden Kruis 45°, Been naar O10 en Hiel volgens de hoekregel opnieuw berekend.
+- Voor parallelle Kop en Nek is nog geen regel vastgelegd; deze waarden blijven leeg.
+# Tijdelijke LKL-bronketen
+
+- Zolang patroon LKL niet stabiel is, wordt iedere waarde-aanpassing uit de chat in dezelfde release verwerkt in de centrale sheet én de Kruin-configuratie.
+- Iedere nieuwe release-ZIP bevat de actuele sheet met dezelfde versienaam als de ZIP: `config-input/3B-sporenbeheer-v91-bibu-omgekeerd.xlsx`.
+- `config-input/*.xlsx` staat in `.gitignore`: de sheet reist lokaal mee, maar wordt niet naar GitHub gepubliceerd.
+- Een release mag pas worden opgeleverd nadat sheet en configuratie op dezelfde representatieve waarden zijn gecontroleerd.
+- Deze keten is uitsluitend voor Kruin/beheer. De gewone gebruiker ziet en beheert geen sheet of configuratiebestand en gebruikt alleen de gepubliceerde app.
