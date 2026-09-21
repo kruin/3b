@@ -1,3 +1,13 @@
+3B GitHub Pages versie 104
+
+Nieuw in versie 104:
+- Kruin-Romp blijft de vaste referentie: Klein O20–Z38 en Groot O20–Z36.
+- Een gebruiker kan een eigen Romp dynamisch op de tafel instellen, bijvoorbeeld O22–Z36.
+- De eerste lijnhelft activeert V; de tweede lijnhelft activeert A.
+- De mobiele −1/+1-bediening toont steeds duidelijk Romp V of Romp A met de actuele waarde.
+- Klaar · bewaar bewaart de gebruikerswaarde zonder de Kruinreferentie te wijzigen.
+- De actuele beheerbron heet 3B-sporenbeheer-v104.json; een Excel-sheet is niet meer nodig.
+
 3B GitHub Pages versie 99
 
 Nieuw in versie 99:

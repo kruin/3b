@@ -54,6 +54,10 @@ body.table-only .workspace .editor { display: none; }
 .central-track-controls .central-line-select { margin:0 0 4px; }
 .table-stepper { display:none; }
 .thumb-up { position:fixed; z-index:9; right:max(12px,env(safe-area-inset-right)); bottom:max(12px,env(safe-area-inset-bottom)); width:48px; height:48px; padding:0; border:2px solid #d5b35a; border-radius:999px; background:rgba(255,250,236,.94); box-shadow:0 3px 12px rgba(43,33,24,.25); font-size:24px; touch-action:manipulation; }
+.table-start-cue { position:fixed; z-index:15; top:50%; left:50%; transform:translate(-50%,-50%); min-width:150px; min-height:58px; padding:10px 20px; border:3px solid #fff4d8; border-radius:999px; background:#176f4f; color:#fff; box-shadow:0 10px 34px rgba(0,0,0,.34); font-size:clamp(22px,5vw,34px); font-weight:950; letter-spacing:.02em; }
+.table-start-cue[hidden] { display:none; }
+body.first-course-focus .table-stepper,body.first-course-focus .thumb-up,body.awaiting-table-start .table-stepper,body.awaiting-table-start .thumb-up { display:none!important; }
+body.awaiting-table-start .svg-mount { filter:saturate(.8) brightness(.92); }
 .bar-tab { position:fixed; inset:0; z-index:40; display:grid; place-items:center; padding:16px; background:rgba(28,21,15,.68); }
 .bar-tab[hidden] { display:none; }
 .bar-card { position:relative; width:min(92vw,440px); max-height:90svh; overflow:auto; padding:18px; border:3px solid #d5b35a; border-radius:20px; background:#fffaf0; color:#2b2118; box-shadow:0 18px 50px rgba(0,0,0,.36); text-align:center; }
@@ -166,6 +170,7 @@ td input.invalid, td select.invalid { border-color: #b83434; background: #fff1ef
 body.ball-dragging { overscroll-behavior: none; touch-action: none; user-select: none; }
 .ball-nudge-panel { position: fixed; z-index: 19; left:50%; bottom:max(12px,env(safe-area-inset-bottom)); transform:translateX(-50%); display:flex; width:max-content; flex-direction:row; align-items:center; gap:6px; margin:0; padding:6px; border:0; border-radius:999px; background:rgba(43,33,24,.9); box-shadow:0 8px 24px rgba(0,0,0,.28); }
 .ball-nudge-panel[hidden] { display: none; }
+.ball-nudge-panel output { min-width:86px; padding:0 8px; color:#fffaf0; font-size:13px; font-weight:900; text-align:center; }
 .ball-value-editor { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 5px; }
 .ball-value-editor[hidden] { display: none; }
 .ball-value-editor label { display: grid; grid-template-columns: auto 68px; align-items: center; gap: 5px; padding: 3px 6px; border-radius: 8px; background: #eee5d6; color: var(--ink); font-size: 12px; font-weight: 800; }

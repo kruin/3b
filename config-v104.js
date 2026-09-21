@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 91, release: "99",
+  version: 96, release: "104",
   userDisplay: {
     defaultLineOpacity: 0.58,
     defaultArrowMode: "request",
@@ -90,6 +90,19 @@ window.THREEB_START_CONFIG = {
           nl: "Alleen Spoor VIJF: Lijn 1 Neus + Lijn 4 Romp, volgens het Kruinbeeld."
         },
         slides: [
+          {
+            key: "find-target-track",
+            title: { en: "1 · Which track is my target ball on?", nl: "1 · Op welk spoor ligt mijn doelbal?" },
+            text: {
+              en: "First look only at ball 2: which LKL track is it on? More than one track may fit. Choose one or more candidates and compare them. For the longer lines, make the ball arrive rolling at the first cushion. The short Nose is a later detail.",
+              nl: "Kijk eerst alleen naar bal 2: op welk LKL-spoor ligt mijn doelbal? Er kunnen meerdere sporen passen. Kies één of meer kandidaten en vergelijk ze. Speel de langere lijnen zo dat de bal rollend bij de eerste band aankomt. De korte Neus is een later detail."
+            },
+            image: {
+              source: "KruinLines", line: "VIJF", parts: ["neus","romp"], tables: ["klein"],
+              targetBall: { number: 2, position: { kind: "parallelStart", baseTrack: "VIJF", offset: -1 } },
+              allowMultipleTracks: true
+            }
+          },
           {
             key: "body-user-as-is",
             title: { en: "Track FIVE · your own stroke", nl: "Spoor VIJF · je eigen afstoot" },

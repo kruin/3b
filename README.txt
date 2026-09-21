@@ -1,12 +1,12 @@
-3B LINE CONFIGURATOR — VERSION 99
+3B LINE CONFIGURATOR — VERSION 104
 ================================
 
 TIJDELIJK TIJDENS ONTWIKKELING VAN LKL
-De actuele centrale invoersheet staat in config-input/3B-sporenbeheer-v99-luchtige-barbon.xlsx.
-Waarde-aanpassingen uit de chat worden zowel in deze sheet als in de
-Kruin-configuratie verwerkt. De sheet wordt niet naar GitHub gepubliceerd.
+De actuele centrale configuratie staat in config-input/3B-sporenbeheer-v104.json.
+Waarde-aanpassingen uit de chat worden zowel in deze JSON als in de
+Kruin-configuratie verwerkt. De JSON wordt niet naar GitHub gepubliceerd.
 Dit is uitsluitend de beheerwerkwijze van Kruin; gewone gebruikers werken
-alleen in de gepubliceerde app en krijgen de sheet niet te zien.
+alleen in de gepubliceerde app en krijgen deze beheer-JSON niet te zien.
 
 LEES EERST `START-HIER.md`.
 Daar staat apart uitgelegd hoe Kruin uitleg en stipwaarden beheert, hoe klanten
@@ -43,6 +43,12 @@ Choosing €0 records no payment. Paid choices call the configured payment
 function only after the user selects that item.
 The €0 choice closes silently and causes no message, registration or payment
 call. Bar-tab copy must remain light, optional and free of pressure.
+
+Quiet entry focus
+-----------------
+A new user first sees the course and self-assessment without table controls.
+A returning user first sees one Start! arrow on the table. Normal controls are
+revealed only after Start or a first table tap.
 
 Configuration
 -------------

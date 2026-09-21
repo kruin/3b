@@ -567,8 +567,10 @@ Voor iedere release:
 - Voor parallelle Kop en Nek is nog geen regel vastgelegd; deze waarden blijven leeg.
 # Tijdelijke LKL-bronketen
 
-- Zolang patroon LKL niet stabiel is, wordt iedere waarde-aanpassing uit de chat in dezelfde release verwerkt in de centrale sheet én de Kruin-configuratie.
-- Iedere nieuwe release-ZIP bevat de actuele sheet met dezelfde versienaam als de ZIP: `config-input/3B-sporenbeheer-v99-luchtige-barbon.xlsx`.
+- Zolang patroon LKL niet stabiel is, wordt iedere waarde-aanpassing uit de chat in dezelfde release verwerkt in de centrale beheer-JSON én de Kruin-configuratie.
+- Iedere nieuwe release-ZIP bevat de actuele JSON met dezelfde releaseversie: `config-input/3B-sporenbeheer-v104.json`.
+- Onboardingregel: een nieuwe gebruiker krijgt eerst uitsluitend de cursus; tafelknoppen en duimpje blijven verborgen.
+- Een terugkerende gebruiker krijgt eerst één Start-aanwijzer op de tafel; pas daarna verschijnen de gewone bedieningselementen.
 - Do no harm bij de barbon: de toon blijft grappig en vrijblijvend, zonder schuldgevoel of druk.
 - De keuze €0 sluit stil en veroorzaakt geen melding, registratie, opslag of betaalactie.
 - De barbon mag nooit automatisch verschijnen. Alleen een bewuste klik of tik van de gebruiker op 👍 opent haar.
@@ -579,6 +581,6 @@ Voor iedere release:
 - Bij keuze voor Lijn voor lijn blijft het huidige spoor staan, maar de lijnkeuze begint opnieuw bij Neus.
 - Het centrale menu bevat altijd een expliciete actie Terug naar basisspoor; die actie begint eveneens opnieuw bij Neus.
 - Vaste UI-regel: zodra een gebruiker op de tafel klikt of tikt, sluit ieder open menu en krijgt de tafel de focus. Diezelfde eerste klik voert geen tweede actie uit.
-- `config-input/*.xlsx` staat in `.gitignore`: de sheet reist lokaal mee, maar wordt niet naar GitHub gepubliceerd.
-- Een release mag pas worden opgeleverd nadat sheet en configuratie op dezelfde representatieve waarden zijn gecontroleerd.
-- Deze keten is uitsluitend voor Kruin/beheer. De gewone gebruiker ziet en beheert geen sheet of configuratiebestand en gebruikt alleen de gepubliceerde app.
+- `config-input/*.json` staat in `.gitignore`: de beheer-JSON reist lokaal mee, maar wordt niet naar GitHub gepubliceerd.
+- Een release mag pas worden opgeleverd nadat beheer-JSON en configuratie op dezelfde representatieve waarden zijn gecontroleerd.
+- Deze keten is uitsluitend voor Kruin/beheer. De gewone gebruiker ziet en beheert geen beheer-JSON of configuratiebestand en gebruikt alleen de gepubliceerde app.

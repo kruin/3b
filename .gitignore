@@ -29,6 +29,6 @@ Desktop.ini
 # release of publicatie worden overschreven.
 uitleg-lokaal/*.json
 
-# Tijdelijke centrale invoersheet zolang het patroon LKL nog niet stabiel is.
-# De sheet reist mee in de download-ZIP, maar wordt niet naar GitHub gepubliceerd.
-config-input/*.xlsx
+# Tijdelijke centrale Kruin-config zolang het patroon LKL nog niet stabiel is.
+# De JSON reist mee in de download-ZIP, maar wordt niet naar GitHub gepubliceerd.
+config-input/*.json
