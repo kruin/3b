@@ -1,5 +1,14 @@
 # 3B — start hier
 
+Gebruik voor de actuele openbare werkwijze:
+
+- `HANDLEIDING-GEBRUIKER.md` voor cursus, tafelbediening, eigen waarden en reservekoppen;
+- de private repository `kruin/3b-kruin-beheer` voor de Kruin-handleiding,
+  bronwaarden, uitlegbeheer en publicatie-instructies.
+
+Beide handleidingen vermelden de geldige releaseversie en worden bij iedere
+functionele wijziging bijgewerkt, maar alleen de gebruikershandleiding is openbaar.
+
 Deze map bevat zowel de openbare 3B-app als de lokale hulpmiddelen voor Kruin.
 Pak een download altijd **volledig uit** voordat je een BAT-bestand start.
 

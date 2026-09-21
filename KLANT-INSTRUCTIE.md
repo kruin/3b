@@ -1,5 +1,8 @@
 # 3B gebruiken
 
+> Actuele hoofdhandleiding: `HANDLEIDING-GEBRUIKER.md`.
+> Dit bestand blijft alleen bestaan voor oude verwijzingen.
+
 Open `https://kruin.github.io/3b/` op mobiel, tablet of desktop.
 
 1. Kies Language/Taal.

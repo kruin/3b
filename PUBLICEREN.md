@@ -1,5 +1,8 @@
 # 3B publiceren via GitHub Pages
 
+> De actuele beheerhandleiding staat uitsluitend in de private repository
+> `kruin/3b-kruin-beheer`. Dit bestand beschrijft alleen de openbare publicatie.
+
 Repository: `https://github.com/kruin/3b`  
 Website: `https://kruin.github.io/3b/`
 
@@ -22,8 +25,8 @@ Vervang de bestanden in de lokale clone en start `Publiceer_3B.bat`. De BAT:
 - controleert alle releasebestanden vóór commit en push;
 - vergelijkt lokale commit en `origin/main`;
 - wacht maximaal tien minuten op GitHub Pages;
-- meldt pas KLAAR als Main werkelijk `app-v104.js`, `config-v104.js`,
-  `styles.css?v=104` en versie 104 levert én Doc bereikbaar is.
+- meldt pas KLAAR als Main werkelijk `app-v106.js`, `config-v106.js`,
+  `styles.css?v=106` en versie 106 levert én Doc bereikbaar is.
 
 `Kruin.bat` is de enige lokale beheeringang. De BAT opent een geldige
 `file:///.../index.html#owner=kruin`-URL; voeg het fragment niet handmatig aan
@@ -37,7 +40,7 @@ nieuwer zijn dan de in die appversie meegeleverde publicatie. De BAT vergelijkt
 daarna de lokale Git-commit met `origin/main` en controleert afzonderlijk of
 GitHub Pages precies dezelfde release-assets serveert.
 
-Controleer aanvullend `https://kruin.github.io/3b/controle-v104.html` en
+Controleer aanvullend `https://kruin.github.io/3b/controle-v106.html` en
 `https://kruin.github.io/3b/doc/`.
 
 ## Mobiele Uitlegeditor

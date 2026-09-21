@@ -32,3 +32,7 @@ uitleg-lokaal/*.json
 # Tijdelijke centrale Kruin-config zolang het patroon LKL nog niet stabiel is.
 # De JSON reist mee in de download-ZIP, maar wordt niet naar GitHub gepubliceerd.
 config-input/*.json
+
+# Privé Kruinbeheer hoort uitsluitend in kruin/3b-kruin-beheer.
+/HANDLEIDING-KRUIN.md
+/config-input/

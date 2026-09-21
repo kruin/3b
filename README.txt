@@ -1,16 +1,14 @@
-3B LINE CONFIGURATOR — VERSION 104
+3B LINE CONFIGURATOR — VERSION 106
 ================================
 
-TIJDELIJK TIJDENS ONTWIKKELING VAN LKL
-De actuele centrale configuratie staat in config-input/3B-sporenbeheer-v104.json.
-Waarde-aanpassingen uit de chat worden zowel in deze JSON als in de
-Kruin-configuratie verwerkt. De JSON wordt niet naar GitHub gepubliceerd.
-Dit is uitsluitend de beheerwerkwijze van Kruin; gewone gebruikers werken
-alleen in de gepubliceerde app en krijgen deze beheer-JSON niet te zien.
+De private Kruinbron staat niet in dit openbare pakket. Kruinwaarden,
+beheeruitleg en de Kruin-handleiding staan uitsluitend in de private repository
+`https://github.com/kruin/3b-kruin-beheer`.
 
 LEES EERST `START-HIER.md`.
 Daar staat apart uitgelegd hoe Kruin uitleg en stipwaarden beheert, hoe klanten
 de app gebruiken, wat lokaal blijft en wanneer iets werkelijk gepubliceerd is.
+De actuele openbare handleiding is `HANDLEIDING-GEBRUIKER.md`.
 
 Open index.html locally or use https://kruin.github.io/3b/.
 English is the default language; Dutch is selectable on screen.

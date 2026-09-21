@@ -1,5 +1,14 @@
 # Projectafspraken 3B
 
+## Handleidingen
+
+- De openbare release bevat uitsluitend `HANDLEIDING-GEBRUIKER.md`.
+- De private repository `kruin/3b-kruin-beheer` bevat `HANDLEIDING-KRUIN.md`.
+- Beide noemen de actuele releaseversie en worden bij iedere functionele wijziging gecontroleerd.
+- De gebruikershandleiding bevat alleen werkende gebruikersfuncties.
+- De Kruin-handleiding scheidt lokaal beheer, openbare configuratie en publicatie.
+- `Publiceer_3B.bat` controleert de gebruikershandleiding; de private beheerstarter controleert de Kruin-handleiding.
+
 ### 2026-09-17 — eenvoudiger bewaren versie 59
 
 - Freeze en MyLines zijn volledig uit de actieve app verwijderd.
@@ -567,8 +576,8 @@ Voor iedere release:
 - Voor parallelle Kop en Nek is nog geen regel vastgelegd; deze waarden blijven leeg.
 # Tijdelijke LKL-bronketen
 
-- Zolang patroon LKL niet stabiel is, wordt iedere waarde-aanpassing uit de chat in dezelfde release verwerkt in de centrale beheer-JSON én de Kruin-configuratie.
-- Iedere nieuwe release-ZIP bevat de actuele JSON met dezelfde releaseversie: `config-input/3B-sporenbeheer-v104.json`.
+- Zolang patroon LKL niet stabiel is, wordt iedere waarde-aanpassing eerst verwerkt in `kruinwaarden.json` van de private beheerrepository en daarna bewust in een openbare release.
+- De openbare release-ZIP bevat nooit de private beheer-JSON.
 - Onboardingregel: een nieuwe gebruiker krijgt eerst uitsluitend de cursus; tafelknoppen en duimpje blijven verborgen.
 - Een terugkerende gebruiker krijgt eerst één Start-aanwijzer op de tafel; pas daarna verschijnen de gewone bedieningselementen.
 - Do no harm bij de barbon: de toon blijft grappig en vrijblijvend, zonder schuldgevoel of druk.
@@ -581,6 +590,6 @@ Voor iedere release:
 - Bij keuze voor Lijn voor lijn blijft het huidige spoor staan, maar de lijnkeuze begint opnieuw bij Neus.
 - Het centrale menu bevat altijd een expliciete actie Terug naar basisspoor; die actie begint eveneens opnieuw bij Neus.
 - Vaste UI-regel: zodra een gebruiker op de tafel klikt of tikt, sluit ieder open menu en krijgt de tafel de focus. Diezelfde eerste klik voert geen tweede actie uit.
-- `config-input/*.json` staat in `.gitignore`: de beheer-JSON reist lokaal mee, maar wordt niet naar GitHub gepubliceerd.
-- Een release mag pas worden opgeleverd nadat beheer-JSON en configuratie op dezelfde representatieve waarden zijn gecontroleerd.
-- Deze keten is uitsluitend voor Kruin/beheer. De gewone gebruiker ziet en beheert geen beheer-JSON of configuratiebestand en gebruikt alleen de gepubliceerde app.
+- `Publiceer_3B.bat` verwijdert oude gevolgde beheerbestanden uit de openbare Git-index.
+- Een release mag pas worden opgeleverd nadat private beheer-JSON en openbare configuratie op de gekozen publicatiewaarden zijn gecontroleerd.
+- De gewone gebruiker ziet en beheert geen beheer-JSON en gebruikt alleen de gepubliceerde app.

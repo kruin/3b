@@ -3,16 +3,17 @@ setlocal EnableDelayedExpansion
 cd /d "%~dp0"
 set "REMOTE=https://github.com/kruin/3b.git"
 set "PAGES=https://kruin.github.io/3b"
-set "RELEASE=104"
+set "RELEASE=106"
 set "GIT_RECOVERY="
 echo ============================================================
 echo 3B - PUBLICEREN EN CONTROLEREN
 echo ============================================================
 where git >nul 2>nul || (echo FOUT: Git ontbreekt.& goto :fout)
-for %%F in (index.html doc\index.html styles.css app-v104.js config-v104.js VERSIE.txt START-HIER.md EDIT-WERKWIJZE.md .gitignore Kruin.html Kruin.bat Kruin.command SESSIES-INSTALLEREN.md supabase-session-schema.sql uitleg-lokaal\BEWAAR-UITLEG-HIER.txt config-input\3B-sporenbeheer-v104.json) do if not exist "%%F" (echo FOUT: %%F ontbreekt.& goto :fout)
-findstr /C:"app-v104.js" index.html >nul || (echo FOUT: index.html laadt app-v104.js niet.& goto :fout)
-findstr /C:"config-v104.js" index.html >nul || (echo FOUT: index.html laadt config-v104.js niet.& goto :fout)
-findstr /C:"styles.css?v=104" index.html >nul || (echo FOUT: index.html gebruikt niet de nieuwe stylesheetversie.& goto :fout)
+for %%F in (index.html doc\index.html styles.css app-v106.js config-v106.js VERSIE.txt START-HIER.md HANDLEIDING-GEBRUIKER.md EDIT-WERKWIJZE.md .gitignore Kruin.html Kruin.bat Kruin.command SESSIES-INSTALLEREN.md supabase-session-schema.sql uitleg-lokaal\BEWAAR-UITLEG-HIER.txt) do if not exist "%%F" (echo FOUT: %%F ontbreekt.& goto :fout)
+findstr /C:"Geldig voor versie 106" HANDLEIDING-GEBRUIKER.md >nul || (echo FOUT: gebruikershandleiding hoort niet bij versie 106.& goto :fout)
+findstr /C:"app-v106.js" index.html >nul || (echo FOUT: index.html laadt app-v106.js niet.& goto :fout)
+findstr /C:"config-v106.js" index.html >nul || (echo FOUT: index.html laadt config-v106.js niet.& goto :fout)
+findstr /C:"styles.css?v=106" index.html >nul || (echo FOUT: index.html gebruikt niet de nieuwe stylesheetversie.& goto :fout)
 findstr /C:"3B-documentatie" doc\index.html >nul || (echo FOUT: Doc heeft niet de verwachte ingang.& goto :fout)
 findstr /C:"Kruin.html" Kruin.bat >nul || (echo FOUT: Kruin.bat opent de gedeelde Kruin-ingang niet.& goto :fout)
 findstr /C:"Kruin.html" Kruin.command >nul || (echo FOUT: Kruin.command opent de gedeelde Kruin-ingang niet.& goto :fout)
@@ -33,13 +34,13 @@ echo Git-geschiedenis hersteld. De huidige 3B-bestanden zijn behouden.
 for /f "delims=" %%G in ('git rev-parse --show-toplevel') do set "ROOT=%%G"
 for %%G in ("!ROOT!") do set "ROOT=%%~fG"
 if /i not "!ROOT!"=="%CD%" (echo FOUT: start de BAT in de hoofdmap van de repository.& goto :fout)
-git check-ignore -q config-input\3B-sporenbeheer-v104.json || (echo FOUT: de lokale beheer-JSON is niet door .gitignore beschermd.& goto :fout)
 git branch -M main || goto :gitfout
 git remote get-url origin >nul 2>nul
 if errorlevel 1 (git remote add origin "%REMOTE%" || goto :gitfout) else (
   for /f "delims=" %%R in ('git remote get-url origin') do set "FOUND=%%R"
   if /i not "!FOUND!"=="%REMOTE%" (echo FOUT: origin is !FOUND! maar moet %REMOTE% zijn.& goto :fout)
 )
+git rm -r --cached --ignore-unmatch HANDLEIDING-KRUIN.md config-input >nul 2>nul
 git add . || goto :gitfout
 git diff --cached --quiet
 if errorlevel 1 git commit -m "Publish 3B version %RELEASE%" || goto :gitfout
@@ -52,7 +53,7 @@ set /a TRY=0
 :poll
 set /a TRY+=1
 echo Controle !TRY!/60
-powershell -NoProfile -Command "$ProgressPreference='SilentlyContinue'; try {$v=(Invoke-WebRequest -UseBasicParsing -Uri '%PAGES%/VERSIE.txt?c=!LOCAL!^&n=!TRY!' -Headers @{'Cache-Control'='no-cache'}).Content; $h=(Invoke-WebRequest -UseBasicParsing -Uri '%PAGES%/?c=!LOCAL!^&n=!TRY!' -Headers @{'Cache-Control'='no-cache'}).Content; $d=(Invoke-WebRequest -UseBasicParsing -Uri '%PAGES%/doc/?c=!LOCAL!^&n=!TRY!' -Headers @{'Cache-Control'='no-cache'}).Content; if($v -match 'versie %RELEASE%' -and $h.Contains('app-v104.js') -and $h.Contains('config-v104.js') -and $h.Contains('styles.css?v=104') -and $d.Contains('3B-documentatie')){exit 0};exit 1}catch{exit 1}"
+powershell -NoProfile -Command "$ProgressPreference='SilentlyContinue'; try {$v=(Invoke-WebRequest -UseBasicParsing -Uri '%PAGES%/VERSIE.txt?c=!LOCAL!^&n=!TRY!' -Headers @{'Cache-Control'='no-cache'}).Content; $h=(Invoke-WebRequest -UseBasicParsing -Uri '%PAGES%/?c=!LOCAL!^&n=!TRY!' -Headers @{'Cache-Control'='no-cache'}).Content; $d=(Invoke-WebRequest -UseBasicParsing -Uri '%PAGES%/doc/?c=!LOCAL!^&n=!TRY!' -Headers @{'Cache-Control'='no-cache'}).Content; if($v -match 'versie %RELEASE%' -and $h.Contains('app-v106.js') -and $h.Contains('config-v106.js') -and $h.Contains('styles.css?v=106') -and $d.Contains('3B-documentatie')){exit 0};exit 1}catch{exit 1}"
 if not errorlevel 1 goto :klaar
 if !TRY! GEQ 60 (echo PUBLICATIE NIET GESLAAGD: Git is bijgewerkt, Pages toont versie %RELEASE% nog niet.& goto :fout)
 timeout /t 10 /nobreak >nul
