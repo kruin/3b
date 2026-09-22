@@ -1,11 +1,11 @@
-3B GitHub Pages versie 108
+3B GitHub Pages versie 110
 
-Nieuw in versie 108:
-- Nieuwe weergave Aankomsten voor −S+ én Waaier.
-- Kies per lijn Neus, Kop, Nek, Romp enzovoort en vergelijk de aankomstballen.
-- Waaier toont het basisspoor, de HALF-stand en het volgende spoor.
-- Klein · Romp borgt S−2 tot en met S+2 als exact aansluitende ballen op band 4 (Zuid).
-- De cursus bevat nu `Alle ballen verzamelen!` met deze ervaringsregel.
+Nieuw in versie 110:
+- Aankomstenweergave begint standaard bij Romp.
+- Alleen de gekozen basislijn wordt getekend; overige basislijnen blijven weg.
+- Alle S−, S en S+ aankomstballen staan werkelijk tegen de aankomstband.
+- Afhankelijk van de geometrie liggen zij naast elkaar, over elkaar of uit elkaar.
+- Klein · VIJF · Romp toont de basisromp en de exact aansluitende aankomstballen op Zuid.
 
 3B GitHub Pages versie 99
 

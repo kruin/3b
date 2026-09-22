@@ -1,6 +1,6 @@
 # 3B — handleiding voor de gebruiker
 
-Geldig voor versie 108.
+Geldig voor versie 110.
 
 ## Aankomsten vergelijken
 
@@ -8,6 +8,11 @@ Kies centraal **−S+** of **Waaier** en daarna bij **Weergave** de keuze
 **Aankomsten**. Stap met de lijnbediening door Neus, Kop, Nek, Romp en de
 volgende lijnen. Bij −S+ verschijnen de aankomstballen van de parallelsporen.
 Bij Waaier verschijnen het basisspoor, de HALF-stand en het volgende spoor.
+
+De Aankomstenweergave toont uitsluitend de gekozen **basislijn** plus de
+aankomstballen van de bijbehorende vergelijkingsstanden. Zij staan werkelijk
+tegen de aankomstband en kunnen naast elkaar liggen, elkaar overlappen of uit
+elkaar liggen. De weergave begint standaard bij **Romp**.
 
 Op Klein vormen de Romp-aankomsten S−2 tot en met S+2 op band 4 (Zuid) een
 rij exact aansluitende ballen: **Alle ballen verzamelen!**
@@ -27,6 +32,13 @@ maar nog niet geactiveerd; gebruik voorlopig lokale opslag en een JSON-reserveko
 
 - **Spoor**: de volledige baan, bijvoorbeeld Spoor VIJF.
 - **Lijn**: één gekleurd deel van een spoor.
+- **Basisspoor**: het hele spoor zonder HALF- of −/+verschuiving, bijvoorbeeld VIJF.
+- **Waaier**: de overgang van een basisspoor naar het volgende spoor.
+- **Waaierstand**: één gekozen stand in de Waaier, bijvoorbeeld VIJF, HALFZES of ZES.
+- **HALF-stand**: de middelste waaierstand, precies tussen twee buursporen.
+- **−S+-reeks**: de verzameling parallelstanden rond één basisspoor.
+- **Parallelstand**: één stand uit de −S+-reeks, bijvoorbeeld VIJF−1 of VIJF+2.
+- **Aankomstenweergave**: toont voor de gekozen lijn waar de bal in iedere waaier- of parallelstand aankomt.
 - **V**: vertrekwaarde van een lijn.
 - **A**: aankomstwaarde van een lijn.
 - **Stiplijn**: de meetlijn langs een band die de stippen verbindt. De bandrand is niet de meetlijn.
@@ -62,7 +74,7 @@ De Kruinreferentie is `O20 → Z38`. Vind je zelf `O22 → Z36`:
 3. kies **Klaar · bewaar**.
 
 Je eigen `22–36` blijft lokaal bewaard. Kruins `20–38` blijft intact.
-Vanaf versie 108 krijgt een met **Klaar · bewaar** bevestigde waarde expliciet
+Vanaf versie 110 krijgt een met **Klaar · bewaar** bevestigde waarde expliciet
 de herkomst *eigen gebruiker*. Een volgende release kan haar daardoor van een
 oude foutieve berekening onderscheiden.
 
@@ -77,10 +89,12 @@ JSON later terug te zetten. Browseropslag is apparaat- en browsergebonden.
 
 ## 6. Waaier en −S+
 
-- Waaier bevat de hele en HALFsporen.
-- −S+ bevat parallelle sporen rond het basisspoor.
+- De **Waaier** bevat het basisspoor, de HALF-stand en het volgende spoor.
+- Iedere keuze daarbinnen heet een **waaierstand**.
+- De **−S+-reeks** bevat parallelstanden rond het basisspoor.
 - De dunne lijn toont het basisspoor als vaste referentie.
 - Statisch toont het hele spoor; Lijn voor lijn vergelijkt één lijn tegelijk.
+- Aankomsten toont alleen de gekozen basislijn plus de aankomstballen van alle vergelijkingsstanden.
 - Terug naar basisspoor verwijdert de −/+verschuiving.
 
 ## 7. Cursus, duimpje en privacy

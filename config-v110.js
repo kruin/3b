@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 98, release: "108",
+  version: 98, release: "110",
   userDisplay: {
     defaultLineOpacity: 0.58,
     defaultArrowMode: "request",
@@ -47,6 +47,15 @@ window.THREEB_START_CONFIG = {
     line: { en: "Line", nl: "Lijn" },
     part: { en: "Part", nl: "Deel" },
     firstLine: { en: "Line 1 · departure line", nl: "Lijn 1 · afstootlijn" },
+    glossary: {
+      baseTrack: { en:"Base track", nl:"Basisspoor" },
+      fan: { en:"Fan", nl:"Waaier" },
+      fanPosition: { en:"Fan position", nl:"Waaierstand" },
+      halfPosition: { en:"HALF position", nl:"HALF-stand" },
+      parallelSeries: { en:"−S+ series", nl:"−S+-reeks" },
+      parallelPosition: { en:"Parallel position", nl:"Parallelstand" },
+      arrivalsView: { en:"Arrivals view", nl:"Aankomstenweergave" }
+    },
     diamondLine: {
       en: "Diamond line: the measuring line along one cushion that connects its diamonds. Every cushion has its own diamond line.",
       nl: "Stiplijn: de meetlijn langs één band die de stippen van die band verbindt. Iedere band heeft een eigen stiplijn."
@@ -126,7 +135,7 @@ window.THREEB_START_CONFIG = {
             title: { en: "Lesson · Fan", nl: "Les · Waaier" },
             text: {
               en: "Choose Fan for the whole and HALF tracks. A HALF track lies exactly midway between its two neighbouring tracks for every known value.",
-              nl: "Kies Waaier voor de hele en HALFsporen. Een HALFspoor ligt voor iedere bekende waarde exact midden tussen de twee buursporen."
+              nl: "Kies Waaier om door de waaierstanden te gaan: basisspoor, HALF-stand en volgend spoor. De HALF-stand ligt voor iedere bekende waarde exact midden tussen de twee buursporen."
             },
             image: { source: "KruinLines", line: "VIJF", parts: ["neus","romp","kruis"] }
           },
@@ -135,7 +144,7 @@ window.THREEB_START_CONFIG = {
             title: { en: "Lesson · −S+", nl: "Les · −S+" },
             text: {
               en: "Choose −S+ for parallel tracks. In/Out reverses the side: S+ starts inside and Body A arrives outside, so its South value decreases. S− works inversely. Body, Neck and Head are then calculated backwards parallel to the base track.",
-              nl: "Kies −S+ voor parallelle sporen. BiBu keert de zijde om: S+ begint binnen en A-Romp komt buiten aan, waardoor de Zuidwaarde daalt. S− werkt omgekeerd. Romp, Nek en Kop worden daarna parallel aan het basisspoor teruggerekend."
+              nl: "Kies de −S+-reeks voor parallelstanden rond het basisspoor. BiBu keert de zijde om: S+ begint binnen en A-Romp komt buiten aan, waardoor de Zuidwaarde daalt. S− werkt omgekeerd. Romp, Nek en Kop worden daarna parallel aan het basisspoor teruggerekend."
             },
             image: { source: "KruinLines", line: "VIJF", parts: ["neus","kop","nek","romp","kruis","been","hiel"] }
           },
@@ -206,8 +215,8 @@ window.THREEB_START_CONFIG = {
             key: "rule-small-arrival-row",
             title: { en: "All balls together!", nl: "Alle ballen verzamelen!" },
             text: {
-              en: "Choose −S+ and Arrivals. On the Small table, the Body arrivals for S−2 through S+2 form a row of five exactly adjacent balls on cushion 4 (South). Step through Nose, Head, Neck, Body and the following lines to compare every arrival.",
-              nl: "Kies −S+ en Aankomsten. Op Klein vormen de Romp-aankomsten van S−2 tot en met S+2 op band 4 (Zuid) een rij van vijf ballen die precies naast elkaar liggen. Stap door Neus, Kop, Nek, Romp en de volgende lijnen om iedere aankomst te vergelijken."
+              en: "Choose −S+ and Arrivals. Only the base Body line is shown, with every S−2 through S+2 arrival ball physically against cushion 4 (South). On the Small table they form a row of five exactly adjacent balls. For other lines or tables, the balls may touch, overlap or lie apart.",
+              nl: "Kies −S+ en Aankomsten. Je ziet alleen de basisromp met op Romp A alle aankomstballen van S−2 tot en met S+2 werkelijk tegen band 4 (Zuid). Op Klein vormen zij een rij van vijf ballen die precies naast elkaar liggen. Bij andere lijnen of tafels kunnen de ballen naast elkaar liggen, overlappen of uit elkaar liggen."
             },
             image: { source: "KruinLines", line: "VIJF", parts: ["romp"], tables: ["klein"], showArrivalSeries: true, offsets: [-2,-1,0,1,2] }
           },

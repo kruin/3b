@@ -12,10 +12,19 @@ functionele wijziging bijgewerkt, maar alleen de gebruikershandleiding is openba
 Deze map bevat zowel de openbare 3B-app als de lokale hulpmiddelen voor Kruin.
 Pak een download altijd **volledig uit** voordat je een BAT-bestand start.
 
+## Vaste terminologie
+
+- **Spoor** is de volledige baan; **lijn** is één gekleurd deel daarvan.
+- **Waaier** is de overgang van een basisspoor naar het volgende spoor.
+- Een **waaierstand** is bijvoorbeeld VIJF, HALFZES of ZES; HALFZES is de
+  **HALF-stand**.
+- De **−S+-reeks** bestaat uit **parallelstanden**, zoals VIJF−1 en VIJF+2.
+- De **Aankomstenweergave** toont per gekozen lijn de eindposities van de bal.
+
 ## Openbare ingangen
 
-- **Main:** `https://kruin.github.io/3b/` — de klantapp.
-- **Doc:** `https://kruin.github.io/3b/doc/` — uitleg voor klanten en Kruin.
+- **Main:** `https://kruin.github.io/3b/` — de gebruikersapp.
+- **Doc:** `https://kruin.github.io/3b/doc/` — uitleg voor gebruikers en Kruin.
 - **Kruin mobiel:** `https://kruin.github.io/3b/#owner=kruin` — toont in de app
   de knop **Kruin**.
 

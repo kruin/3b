@@ -4,6 +4,10 @@
 
 - **Spoor**: de volledige baan, bijvoorbeeld Spoor VIJF of Spoor ZES.
 - **Lijn**: één gekleurd deel binnen het Spoor, bijvoorbeeld Lijn 4 · Romp.
+- **Waaier**: overgang van een basisspoor naar het volgende spoor.
+- **Waaierstand**: één stand daarvan; HALFZES is de HALF-stand tussen VIJF en ZES.
+- **−S+-reeks**: alle parallelstanden rond een basisspoor.
+- **Parallelstand**: bijvoorbeeld VIJF−1 of VIJF+2.
 - **V**: vertrekbal van een lijn.
 - **A**: aankomstbal van een lijn. Bij aansluitende lijnen is deze bal tevens V van de volgende lijn.
 
