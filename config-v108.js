@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 98, release: "107",
+  version: 98, release: "108",
   userDisplay: {
     defaultLineOpacity: 0.58,
     defaultArrowMode: "request",
@@ -204,10 +204,10 @@ window.THREEB_START_CONFIG = {
           },
           {
             key: "rule-small-arrival-row",
-            title: { en: "Rule · Small arrival row", nl: "Regel · rij op Klein" },
+            title: { en: "All balls together!", nl: "Alle ballen verzamelen!" },
             text: {
-              en: "On the Small table, LSL starts S−2 through S+2 appear at the South cushion as a row of five adjacent balls.",
-              nl: "Op Klein ogen de LKL-starten S−2 tot en met S+2 bij aankomst op Zuid als een rij van vijf ballen naast elkaar."
+              en: "Choose −S+ and Arrivals. On the Small table, the Body arrivals for S−2 through S+2 form a row of five exactly adjacent balls on cushion 4 (South). Step through Nose, Head, Neck, Body and the following lines to compare every arrival.",
+              nl: "Kies −S+ en Aankomsten. Op Klein vormen de Romp-aankomsten van S−2 tot en met S+2 op band 4 (Zuid) een rij van vijf ballen die precies naast elkaar liggen. Stap door Neus, Kop, Nek, Romp en de volgende lijnen om iedere aankomst te vergelijken."
             },
             image: { source: "KruinLines", line: "VIJF", parts: ["romp"], tables: ["klein"], showArrivalSeries: true, offsets: [-2,-1,0,1,2] }
           },

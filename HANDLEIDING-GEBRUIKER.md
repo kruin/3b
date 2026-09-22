@@ -1,6 +1,16 @@
 # 3B — handleiding voor de gebruiker
 
-Geldig voor versie 107.
+Geldig voor versie 108.
+
+## Aankomsten vergelijken
+
+Kies centraal **−S+** of **Waaier** en daarna bij **Weergave** de keuze
+**Aankomsten**. Stap met de lijnbediening door Neus, Kop, Nek, Romp en de
+volgende lijnen. Bij −S+ verschijnen de aankomstballen van de parallelsporen.
+Bij Waaier verschijnen het basisspoor, de HALF-stand en het volgende spoor.
+
+Op Klein vormen de Romp-aankomsten S−2 tot en met S+2 op band 4 (Zuid) een
+rij exact aansluitende ballen: **Alle ballen verzamelen!**
 
 ## 1. Beginnen
 
@@ -52,7 +62,7 @@ De Kruinreferentie is `O20 → Z38`. Vind je zelf `O22 → Z36`:
 3. kies **Klaar · bewaar**.
 
 Je eigen `22–36` blijft lokaal bewaard. Kruins `20–38` blijft intact.
-Vanaf versie 107 krijgt een met **Klaar · bewaar** bevestigde waarde expliciet
+Vanaf versie 108 krijgt een met **Klaar · bewaar** bevestigde waarde expliciet
 de herkomst *eigen gebruiker*. Een volgende release kan haar daardoor van een
 oude foutieve berekening onderscheiden.
 
