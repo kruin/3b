@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 98, release: "106",
+  version: 98, release: "107",
   userDisplay: {
     defaultLineOpacity: 0.58,
     defaultArrowMode: "request",
@@ -583,8 +583,8 @@ window.THREEB_START_CONFIG = {
     groot:{
     VIJF:{
       neus:{from:{kind:"acquit",value:"S"},to:{band:"west",value:50}},
-      kop:{from:{band:"west",value:38,status:"calculated"},to:{band:"noord",value:19}},
-      nek:{from:{band:"noord",value:14,status:"calculated"},to:{band:"oost",value:29,status:"calculated"}},
+      kop:{from:{band:"west",value:null,status:"calculated"},to:{band:"noord",value:15,status:"approved"}},
+      nek:{from:{band:"noord",value:null,status:"calculated"},to:{band:"oost",value:20,status:"approved"}},
       romp:{from:{band:"oost",value:20},to:{band:"zuid",value:36}},
       been:{from:{band:"west",value:null,status:"calculated"},to:{band:"oost",value:10,status:"approved"}}
     },
