@@ -36,3 +36,6 @@ config-input/*.json
 # Privé Kruinbeheer hoort uitsluitend in kruin/3b-kruin-beheer.
 /HANDLEIDING-KRUIN.md
 /config-input/
+/Kruinconfig-3B-v*.xlsx
+/Genereer_Kruinconfig.ps1
+/Bekijk_Kruinconfig.bat

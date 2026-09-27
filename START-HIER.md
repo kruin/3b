@@ -20,6 +20,10 @@ Pak een download altijd **volledig uit** voordat je een BAT-bestand start.
   **HALF-stand**.
 - De **−S+-reeks** bestaat uit **parallelstanden**, zoals VIJF−1 en VIJF+2.
 - De **Aankomstenweergave** toont per gekozen lijn de eindposities van de bal.
+- **Kruinneus** is Kruins referentie per spoor; **Gebruikersneus** is de lokale
+  aanpassing van de gebruiker. Bal 1 hoort rollend op band 1 aan te komen.
+- Neus, Kop en Nek introduceren de volledige baan; doelroutes worden alleen
+  vanaf Romp (3 banden) aangeboden.
 
 ## Openbare ingangen
 
@@ -92,6 +96,29 @@ bewust in een volgende openbare release te laten opnemen.
   momentopname van de betreffende KruinLine.
 
 ## Kruin — standaard-stipwaarden beheren
+
+### On-screen menu beheren
+
+Het private Excel bevat het blad **On-screen menu**. Kruin beheert daar per
+bedieningsgroep de zone (`top`, `left`, `right`, `bottom`), de volgorde en de
+zichtbaarheid. `Veilige afstand` bepaalt de vrije ruimte tussen bediening en
+tafel. De app gebruikt uitsluitend deze configuratie en plaatst geen knop in
+de tafel- of stipwaardezone.
+
+Dezelfde private Excel bevat op het blad **Kruinconfig** ook de HALF-standen
+en de geldige `−S+`-standen. Een regel zoals `VIJF+1` kan daar rechtstreeks
+worden aangepast; na `Bekijk_Kruinconfig.bat` gebruikt de lokale app die
+waarden.
+
+De standaardwaarden worden beheerd in de private Excel
+`Kruinconfig-3B-v140.xlsx`. Na opslaan zet `Bekijk_Kruinconfig.bat` deze om
+naar `kruinwaarden-generated-v140.js` in de lokale openbare 3B-map en opent de
+app meteen voor controle. De Excel zelf hoort nooit in de openbare repository.
+
+De online app ziet de wijziging nadat de gegenereerde configuratie met
+`Publiceer_3B.bat` is gepubliceerd. Rechtstreeks lezen uit de private repository
+is bewust niet mogelijk: daarvoor zou de browser een geheim GitHub-token nodig
+hebben.
 
 1. Start `Kruin.bat` op Windows of `Kruin.command` op Mac, klik **Kruin** en kies **Lijnen en stipwaarden bewerken**.
 2. Kies Groot of Klein en kies de lijn.

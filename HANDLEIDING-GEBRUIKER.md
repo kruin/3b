@@ -1,6 +1,19 @@
 # 3B — handleiding voor de gebruiker
 
-Geldig voor versie 110.
+Geldig voor versie 140.
+
+Op tafel staat één verplaatsbaar paneel met **Spoor**, **☰** en **Lijn**.
+Sleep het paneel wanneer het iets bedekt. Tik erop om het tafelmenu te openen.
+Tik kort op **S** om alle Waaier-Neuzen of −S+-parallelsporen als dunne
+referentielijnen te tonen; de actieve route blijft breed en gelabeld.
+
+In de tafelweergave schaalt de volledige tafel binnen de vrije middenzone. De
+banden en stipwaarden blijven daardoor zichtbaar tussen de bediening boven,
+links, rechts en onder.
+
+De meegeleverde Kruinreferenties worden door Kruin in een private Excel beheerd.
+De openbare app ontvangt uitsluitend de waarden die nodig zijn om de sporen te
+tekenen. Persoonlijke gebruikerswaarden blijven daarvan gescheiden en privé.
 
 ## Aankomsten vergelijken
 
@@ -45,12 +58,73 @@ maar nog niet geactiveerd; gebruik voorlopig lokale opslag en een JSON-reserveko
 - **Kruinreferentie**: de meegeleverde uitgangswaarde. Een eigen aanpassing verandert deze niet.
 
 De lijnvolgorde is Neus, Kop, Nek, Romp, Kruis, Been, Hiel, Voet en Teen.
+Been had door de vorm ook Staart kunnen heten; de vaste naam blijft Been.
+
+Neus, Kop en Nek vormen de aanloop onder drie banden. Zij worden in de cursus
+wel geïntroduceerd, maar niet als doelroute aangeboden. De routekeuze voor de
+doelbal begint bij Romp (3 banden) en loopt verder via Kruis, Been, Hiel, Voet
+en Teen.
+
+## Kruinneus en Gebruikersneus
+
+Kruin configureert per tafel en spoor een **Kruinneus** als referentie. De
+gebruiker kan deze lokaal aanpassen; die aanpassing heet **Gebruikersneus**.
+De Kruinreferentie wordt daardoor niet gewijzigd of gepubliceerd.
+
+Laat bal 1 rollend aankomen op band 1. Strookt bal 1 niet met het gekozen spoor
+van de doelbal, verander de richting van de Neus voorzichtig en speel meerdere
+pogingen. Bij een korte Neus is de benodigde correctie doorgaans klein, terwijl
+de gevolgen groot kunnen zijn. Bij een langere Neus kan een grotere correctie
+nodig zijn. De cursus schrijft geen universele waarde voor: **speel en meet**.
+
+Met **Herstel Kruinneus** wordt alleen de Neus van het huidige spoor en de
+zichtbare tafel(s) teruggezet. Andere lokale lijnwaarden blijven behouden.
+
+## Berekend vervolg na een aanpassing
+
+### Verplichte eerste stap: Romp
+
+Per spoor en per tafel moet de gebruiker eerst **V-Romp én A-Romp** aanpassen.
+Klein en Groot hebben ieder een eigen Romp-kalibratie. Totdat beide waarden
+zijn aangeleverd en het voorstel is aanvaard, blijft de rest van de tafel
+alleen-lezen. Pas daarna zijn Neus en andere lijnpunten aanpasbaar.
+
+De basisweergave toont daarom Neus en Romp. Vanuit die twee basislijnen
+berekent 3B Kop en Nek, behalve waar de actuele Kruinconfiguratie daarvoor
+expliciete handmatige waarden bevat. Vervolgens wordt ook Kruis en het verdere
+spoor berekend.
+
+Een bandbal is gedeeld: de aankomst van de ene lijn is het vertrek van de
+volgende. Daarom beïnvloedt bijvoorbeeld **A-Kop +1** ook V-Nek en het verdere
+verloop van het spoor. Na iedere wijziging toont 3B een **voorgesteld berekend
+verloop** met alle afgeleide waarden vanaf die plaats.
+
+- **Stem in · bewaar verloop** keurt de handmatige wijziging en het getoonde
+  berekende vervolg samen goed.
+- **Verwerp** herstelt de toestand van vóór de wijziging.
+- De berekening gebruikt altijd de regels en ankers uit de actuele
+  Kruinconfiguratie. Een toekomstige Kruinconfiguratie gebruikt automatisch
+  dezelfde voorstel- en instemmingsstap.
 
 ## 3. Tafel kiezen
 
 Open het centrale menu op de tafel en kies Groot, Klein of Vergelijkend, het
 gewenste spoor en de reeks Waaier of −S+. Na een keuze sluit het menu zodra je
 de tafel aanraakt. Tik op een leeg tafeldeel voor fullscreen.
+
+### On-screen bediening
+
+De bediening staat in vier gereserveerde zones rond de tafel:
+
+- boven: huidig spoor of huidige lijn;
+- links: vorige keuze;
+- rechts: volgende keuze;
+- onder: menu, schuifbediening en bewaren.
+
+De middenzone is uitsluitend voor tafel, ballen, lijnen en stipwaarden. Knoppen
+mogen deze zone niet overlappen. Wanneer een ondermenu of het berekende verloop
+meer ruimte nodig heeft, wordt de tafelruimte kleiner; de bediening wordt nooit
+over een stipwaarde gelegd.
 
 ## 4. Een lijn aanpassen
 
@@ -74,7 +148,7 @@ De Kruinreferentie is `O20 → Z38`. Vind je zelf `O22 → Z36`:
 3. kies **Klaar · bewaar**.
 
 Je eigen `22–36` blijft lokaal bewaard. Kruins `20–38` blijft intact.
-Vanaf versie 110 krijgt een met **Klaar · bewaar** bevestigde waarde expliciet
+Vanaf versie 140 krijgt een met **Klaar · bewaar** bevestigde waarde expliciet
 de herkomst *eigen gebruiker*. Een volgende release kan haar daardoor van een
 oude foutieve berekening onderscheiden.
 

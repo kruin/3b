@@ -1,11 +1,141 @@
-3B GitHub Pages versie 110
+3B GitHub Pages versie 140
 
-Nieuw in versie 110:
-- Aankomstenweergave begint standaard bij Romp.
-- Alleen de gekozen basislijn wordt getekend; overige basislijnen blijven weg.
-- Alle S−, S en S+ aankomstballen staan werkelijk tegen de aankomstband.
-- Afhankelijk van de geometrie liggen zij naast elkaar, over elkaar of uit elkaar.
-- Klein · VIJF · Romp toont de basisromp en de exact aansluitende aankomstballen op Zuid.
+Nieuw in versie 140:
+
+- Schone vervolgversie op v139; tafel-, bal- en schuifwerking zijn ongewijzigd.
+- De klikzones van Spoor en Lijn in het groene paneel overlappen niet meer.
+- Spoor −/+ bedient uitsluitend Spoor; Lijn −/+ bedient uitsluitend Lijn.
+- Klikken op opschrift of waarde voert geen actie uit; alleen de menuknop opent het menu.
+- Het paneel wordt binnen de getekende tafel gehouden.
+
+- De paneelknoppen zijn nooit meer dood aan het begin of einde van een reeks.
+- Spoor − vanaf VIER gaat naar het laatste beschikbare spoor; Spoor + vanaf het laatste spoor gaat naar VIER.
+- Lijn − vanaf Neus gaat naar de laatste lijn; Lijn + vanaf de laatste lijn gaat naar Neus.
+- De balschuif is ongewijzigd ten opzichte van v138.
+
+- De tafelbediening gebruikt weer één gewone klik/tik per knop; de foutgevoelige dubbele pointer-afhandeling uit v137 is verwijderd.
+- Spoor −/+, Lijn −/+ en de centrale menuknop hebben ieder één eenduidige actie.
+- De barbon blijft boven de tafel staan en verbergt tijdens openen het groene tafelpaneel.
+- Deze versie blijft een testversie totdat de bediening op het doelapparaat is bevestigd.
+
+- Alle vier paneelknoppen voeren hun stap nu direct op `pointerdown` uit; muis, touch en pen gebruiken dezelfde route.
+- Een volgende synthetische klik wordt onderschept en kan de menulaag niet openen.
+- Het paneel zelf begint nooit te slepen wanneer de aanraking op een knop start.
+- De barbon staat nu boven alle tafelbediening en verbergt paneel, menu en schuifbediening zolang hij open is.
+- Alleen de volledige ZIP wordt geleverd; geen EXE-installer.
+
+- Runtimecrash hersteld: het tijdelijke DOM-label `lineLabel` overschreef de gelijknamige tekstfunctie.
+- Daardoor tekent de tafel weer volledig.
+- Het paneel verkort `Lijn 7 · Hiel` nu werkelijk tot `Hiel` en analoog voor alle andere lijnen.
+- De groene compacte paneelconfiguratie, ruimere tikzones en geïsoleerde −/+-knoppen blijven behouden.
+- Alleen de volledige ZIP wordt geleverd; geen EXE-installer.
+
+- Hersteluitgave: v134 werd bij Kruin niet werkelijk geopend; de schermafbeelding toonde nog v133.
+- De stylesheet gebruikt nu een eigen v140-cachecode in plaats van de oude vaste v132-code.
+- Kruin.html opent `index.html?v=135#owner=kruin` zodat de actuele ingang herkenbaar is.
+- Boven iedere tafel staat zichtbaar `v140`; ontbreekt dit, dan is een oude map geopend.
+- Alleen de volledige ZIP wordt geleverd; geen EXE-installer.
+
+- Het tafelpaneel toont bij Lijn alleen de naam, bijvoorbeeld `Romp`; `Lijn 4 ·` is verwijderd.
+- Het paneel is compacter en gebruikt standaard de groene tafelkleur.
+- Paneelbreedte, padding, kleuren, knopmaat, lettermaat en extra tikruimte staan in `tablePanel.appearance`.
+- De zichtbare −/+-knoppen zijn kleiner, maar hun aanraakgebied is rondom groter.
+- Pointer- en klikgebeurtenissen van −/+ stoppen voortaan bij de knop: zij openen het menu niet meer.
+
+- Op tafel staat één verplaatsbaar paneel met twee vaste regels: `− Spoor +` en `− Lijn +`.
+- De labels Spoor en Lijn staan elk op een eigen regel boven hun bediening; −/+ zijn groter gemaakt.
+- Aanraken van een lijn of bandbal werkt de Lijn bij en laat het paneel automatisch uitwijken.
+- Tikken op het paneel opent het menu op dezelfde, eveneens verplaatsbare tafelpositie.
+- Tikken op S toont of verbergt het reeksoverzicht.
+- Het standaardoverzicht toont van ieder spoor alleen Neus en Romp; de actieve Romp is breed.
+- Via Focus bij S zijn ook Noordband (Kop + Nek), actieve lijn, alle lijnen en aankomsten beschikbaar.
+- Dezelfde focusprofielen zijn configureerbaar per cursuskaart.
+- HALF-standen worden in de Waaier meegenomen volgens `seriesOverview.includeHalfPositions`.
+- In Waaierstand én −S+-reeks kiezen de vaste −/+ knoppen de vorige of volgende lijn.
+- Paneelpositie, automatisch uitwijken en overzichtslagen staan in de centrale configuratie.
+
+- Structurele klikfout hersteld: een oudere algemene CSS-regel maakte ook de nieuwe lijnselectiezone onaanraakbaar.
+- De brede, transparante selectiezone van Kop, Romp en Been heeft nu expliciet voorrang.
+- Een lijnklik activeert daardoor werkelijk de lijn en toont V en A; de tafelachtergrond krijgt deze klik niet meer.
+
+- Een klik op elk zichtbaar onderdeel van Kop, Romp of Been activeert nu betrouwbaar de schuifmodus.
+- Dit geldt voor de dikke lijn, dunne hulplijn, lijnnaam en de directe omgeving van de lijn.
+- Klikken op een getekende lijn kan fullscreen niet meer aan- of uitschakelen.
+- Fullscreen reageert uitsluitend nog op lege tafelruimte.
+
+- Klikken of tikken op Kop, Romp of Been maakt uitsluitend die lijn actief.
+- De actieve lijn toont een afzonderlijke vertrekbal V en aankomstbal A.
+- Een lijnklik selecteert alleen en verandert nooit een stipwaarde.
+- Schuiven begint uitsluitend door daarna V of A vast te pakken.
+- Bij keuze van een andere lijn verdwijnen de V/A-ballen van de vorige lijn.
+- In Vergelijkend verschijnen de sleepballen alleen op de werkelijk aangeklikte tafel.
+- Neus blijft per definitie vast; alleen de afstootlengte blijft instelbaar.
+
+- In Lijn voor lijn heeft Kop, Romp en Been altijd een afzonderlijke sleepbal voor Vertrek en Aankomst.
+- Ook een nog onvolledige lijn toont beide sleepballen; slepen maakt de ontbrekende waarden aan.
+- Romp wordt voltooid door verplicht zowel Vertrek Romp als Aankomst Romp te slepen en daarna te bewaren.
+- HALF- en −S+-varianten bewaren hun gebruikersaanpassingen afzonderlijk per tafel en stand.
+- Voor nauwkeurig testen kan iedere sleepbal daarna ook met −1 en +1 worden bijgesteld.
+- De volledige tafel past nu altijd tussen de vier menu-zones; breedte kan de onderkant niet meer buiten beeld duwen.
+
+- Private Excel bevat HALF-standen en alle geldige −S+-varianten per tafel.
+- Variantregels zoals VIJF+1 worden door de app als Kruinbron gebruikt.
+- On-screen bediening is verdeeld over Boven, Links, Rechts en Onder.
+- De middenzone blijft vrij voor tafel, ballen, lijnen en stipwaarden.
+- Knoppen en geopende menu's verkleinen zo nodig de tafelruimte en bedekken nooit waarden.
+- Kruin configureert per bedieningsgroep zone, volgorde en zichtbaarheid.
+- De veilige afstand tussen bediening en tafel is eveneens configureerbaar.
+- Undo en Herstel scherm staan voortaan in de documentstroom boven de tafel, niet over de tekening.
+
+Nieuw in versie 140:
+- V-Romp en A-Romp zijn samen een verplichte eerste gebruikersinstelling.
+- De verplichting geldt afzonderlijk per spoor en per tafel: Klein en Groot worden apart bewaard.
+- Vóór goedkeuring van beide Rompwaarden is de rest van de tafel alleen-lezen.
+- De basisweergave toont Neus en Romp; Kop en Nek worden daarna berekend, tenzij Kruin ze handmatig configureert.
+- Pas na Stem in · bewaar verloop worden Neus en andere lijnpunten aanpasbaar.
+
+Nieuw in versie 140:
+- Een wijziging aan een gedeelde bal toont vóór bewaren het volledige berekende vervolg.
+- Bijvoorbeeld A-Kop +1 rekent vanaf V-Nek de volgende spoorwaarden opnieuw uit.
+- De gebruiker kiest Stem in · bewaar verloop of Verwerp.
+- Alleen na instemming krijgen de voorgestelde waarden de status goedgekeurd.
+- De berekening gebruikt de actuele Kruinconfiguratie en werkt ook met toekomstige configuratieregels.
+- Gebruikersneus wordt niet langer door de algemene LKL-berekening teruggezet naar Kruinneus.
+
+Nieuw in versie 140:
+- De cursus introduceert de volledige naamreeks Neus tot en met Teen; Been had ook Staart mogen heten.
+- Neus, Kop en Nek blijven als aanloop zichtbaar, maar doelroutes worden alleen vanaf Romp (3+) aangeboden.
+- Kruin configureert per spoor de Kruinneus; de gebruiker kan lokaal een Gebruikersneus bewaren.
+- De uitvoeringsregel is: laat bal 1 rollend aankomen op band 1.
+- De cursus schrijft geen universele correctie voor, maar laat de gebruiker spelen en meten.
+- Korte-Neuscorrecties zijn klein maar kunnen grote gevolgen hebben; een langere Neus kan meer correctie vragen.
+- Herstel Kruinneus zet alleen de Neus van het gekozen spoor terug en bewaart de overige gebruikerswaarden.
+
+Nieuw in versie 140:
+- Iedere zichtbare tafel heeft eigen knoppen Undo en Herstel scherm.
+- De geschiedenis begint bij entree van het huidige tafelscherm en gaat niet verder terug.
+- Eén volledig sleepgebaar telt als één Undo-stap; −1 en +1 ieder als één stap.
+- Groot en Klein hebben in Vergelijkend elk een onafhankelijke geschiedenis.
+- Herstel scherm keert terug naar de entreepositie en kan daarna met Undo ongedaan worden gemaakt.
+- Herstel Kruinbasis blijft een afzonderlijke centrale handeling.
+- Kruin-ervaringswaarden zijn voortaan beginwaarden, geen blokkade tijdens direct schuiven.
+- Tijdens bewerking worden Aankomst en Vertrek van de gedeelde bal beide beschermd tegen automatische terugzetting.
+- Vertrek Romp kan daardoor afwijken van de standaardwaarde en blijft na Klaar · bewaar behouden.
+- Bij een volgende lokale start blijven bewust bewaarde Kruin-aanpassingen staan.
+- Noord-bandballen blijven aanraakbaar: zichtbare lijnen onderscheppen geen pointer-events meer.
+- Na aanraken of slepen van een bandbal wordt de daaropvolgende tafelklik onderdrukt.
+- Daardoor wisselt de app niet meer onbedoeld tussen gewone en grote tafelweergave.
+- Structureel hersteld: een gedeelde bal blijft aanraakbaar wanneer de vorige lijn verborgen is.
+- Voorbeeld: Aankomst Nek = Vertrek Romp wordt nu bediend op de zichtbare beginbal van Romp.
+- De aanraakzone hoort voortaan bij de zichtbare bal, niet bij één specifieke lijn.
+- Hersteld: aanraken van de bandbal tekent de tafel niet meer opnieuw voordat het slepen begint.
+- Het waardenvenster verschijnt tijdens het schuiven en blijft na loslaten zichtbaar.
+- Een gedeelde bandbal toont één venster met Aankomst en Vertrek.
+- Het venster staat haaks op de bal, net buiten de ingestelde houtrand.
+- West staat links, Noord erboven, Oost rechts en Zuid eronder.
+- De lijnen blijven naar hun echte, afzonderlijke stipwaarden lopen.
+- Alleen de bandbal is aanraakbaar om te schuiven; de lijnen niet.
+- De private Excelbron uit versie 111 blijft ongewijzigd bruikbaar.
 
 3B GitHub Pages versie 99
 

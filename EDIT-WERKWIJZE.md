@@ -1,5 +1,66 @@
 # Eenduidige werkwijze voor lijnen aanpassen
 
+Alle lijnen van **Kop tot en met Teen** gebruiken dezelfde bediening: selecteer
+meteen de gewenste bal aan de band. Er is geen voorafgaande lijnselectie en er
+verschijnt geen afzonderlijk V/A-editvenster. De gekozen bal krijgt een oranje
+ring en kan direct worden gesleept.
+
+Een bal tussen twee lijnstukken is één gedeelde bal: de aankomst van het vorige
+lijnstuk én het vertrek van het volgende. Beide waarden worden samen aangepast.
+Neus valt hier niet onder; Neus is de bijzondere afstootlijn.
+
+## Alleen de bal
+
+1. Tik of klik rechtstreeks op de gewenste bal aan de band.
+2. Houd vast en sleep de bal langs de band.
+3. Laat los om de tussenstand lokaal te bewaren.
+4. Tik een andere bal aan om daar verder te werken.
+5. Kies **Klaar · bewaar** wanneer het spoor gereed is.
+
+Getekende lijnen zijn alleen beeld en kunnen niet worden geselecteerd. Een
+balklik activeert ook nooit fullscreen; alleen lege tafelruimte doet dat.
+
+## Tafelpaneel en reeksoverzicht
+
+Het verplaatsbare paneel toont twee regels: **− Spoor +** en **− Lijn +**.
+Spoor en Lijn hebben elk een eigen opschrift boven hun regel. De grotere
+−/+-knoppen blijven daardoor direct zichtbaar naast de actuele tekst.
+Bij Lijn staat alleen de naam, bijvoorbeeld **Romp**; de nummering blijft bij
+de getekende lijn op tafel. De tikzone rond −/+ is groter dan het zichtbare
+knopje. Een tik op −/+ verandert uitsluitend Spoor of Lijn en opent nooit het menu.
+Sleep het paneel als het een relevante tafelpositie bedekt. Bij aanraken van
+een lijn of bandbal wijkt het paneel automatisch uit en wordt de betreffende
+lijnnaam onder de knop getoond. Tik op het paneel om het tafelmenu te openen.
+
+Tik kort op **S** om het reeksoverzicht aan of uit te zetten. Standaard toont
+dit van ieder spoor alleen **Neus en Romp**; de actieve Romp is breed. Kies in
+het menu **Focus bij S** voor Noordband (Kop + Nek), actieve lijn, alle lijnen
+of aankomsten. Dezelfde focusprofielen kunnen door cursuskaarten worden gebruikt.
+In Waaierstand én −S+-reeks kiezen `−` en `+` de vorige of volgende lijn.
+
+Neus is niet verplaatsbaar. Alleen de afstootlengte van Neus kan veranderen.
+
+## Een lijn volledig met slepen instellen
+
+Kies bij voorkeur eerst **Groot** of **Klein** en daarna **Lijn voor lijn**.
+Alle werkelijke bandballen van het spoor blijven zichtbaar en aanraakbaar.
+
+Bij Romp zijn beide handelingen verplicht: sleep **V-Romp** en **A-Romp**. De
+volgorde maakt niet uit. Controleer eventueel met −1/+1 en kies vervolgens
+**Klaar · bewaar**. Daarna stelt 3B het berekende vervolg voor.
+
+Een HALF- of −S+-stand wordt afzonderlijk bewaard. Een aanpassing aan VIJF+1
+wijzigt dus niet stilzwijgend de basis VIJF.
+
+## Undo en herstel per tafelscherm
+
+- Iedere zichtbare tafel heeft een eigen **Undo** en **Herstel scherm**.
+- De geschiedenis begint bij binnenkomst in het huidige scherm.
+- Eén sleepgebaar is één Undo-stap; iedere `−1` of `+1` is één stap.
+- **Herstel scherm** keert terug naar de entreepositie en is zelf weer ongedaan te maken met Undo.
+- In Vergelijkend hebben Groot en Klein elk een eigen geschiedenis.
+- **Herstel Kruinbasis** staat in het centrale menu en vraagt eerst bevestiging.
+
 ## Begrippen
 
 - **Spoor**: de volledige baan, bijvoorbeeld Spoor VIJF of Spoor ZES.
@@ -14,16 +75,10 @@
 ## Aanpassen
 
 1. Kies boven de tafel het gewenste **Spoor**.
-2. Raak de gewenste lijnhelft aan:
-   - eerste helft: activeert de V-bal;
-   - tweede helft: activeert de A-bal;
-   - middelste 6%: blijft inactief om twijfel te voorkomen.
-3. Verplaats de actieve bal:
-   - sleep hem langs de band voor een grotere wijziging; of
-   - gebruik `−1` en `+1` voor nauwkeurig afstellen.
-4. Zodra de aanwijzer of vinger de lijn verlaat, wordt de tussenstand lokaal genoteerd.
-5. Raak een andere lijnhelft aan om meteen die bal te activeren.
-6. Kies **Klaar · bewaar** wanneer het huidige Spoor op deze tafel gereed is.
+2. Raak rechtstreeks de gewenste bandbal aan.
+3. Sleep hem langs de band, of gebruik daarna `−1` en `+1` voor nauwkeurig afstellen.
+4. Laat de bal los om de tussenstand lokaal te noteren.
+5. Kies **Klaar · bewaar** wanneer het huidige Spoor op deze tafel gereed is.
 
 ## Vaste eerste lijn per Spoor
 

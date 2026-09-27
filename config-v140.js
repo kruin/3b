@@ -1,11 +1,82 @@
 window.THREEB_START_CONFIG = {
-  version: 98, release: "110",
+  version: 100, release: "111", publicRelease: "140",
   userDisplay: {
     defaultLineOpacity: 0.58,
     defaultArrowMode: "request",
     defaultArrowScale: 0.35,
     lineOpacityRange: { minimum: 0.3, maximum: 1, step: 0.05 },
     arrowScaleRange: { minimum: 0.35, maximum: 1.2, step: 0.05 }
+  },
+  onscreenMenu: {
+    safeGapPx: 10,
+    zones: ["top", "left", "right", "bottom"],
+    groups: {
+      track: { zone: "top", order: 10, visible: true },
+      previous: { zone: "left", order: 10, visible: true },
+      next: { zone: "right", order: 10, visible: true },
+      menuToggle: { zone: "bottom", order: 10, visible: true },
+      edit: { zone: "bottom", order: 20, visible: true },
+      menuPanel: { zone: "bottom", order: 30, visible: true }
+    }
+  },
+  tablePanel: {
+    draggable: true,
+    autoAvoidTouchedLine: true,
+    defaultX: 0,
+    defaultY: 0,
+    maximumOffsetXPercent: 38,
+    maximumOffsetYPercent: 36,
+    appearance: {
+      background: "#167555",
+      foreground: "#fff8e8",
+      border: "#f4cf66",
+      minimumWidthPx: 132,
+      paddingHorizontalPx: 6,
+      paddingVerticalPx: 5,
+      controlSizePx: 31,
+      hitSlopPx: 6,
+      labelFontPx: 10,
+      valueFontPx: 13
+    }
+  },
+  seriesOverview: {
+    toggleOnStartBall: true,
+    showFanNoses: true,
+    showParallelTracks: true,
+    includeHalfPositions: true,
+    inactiveOpacity: 0.34,
+    inactiveWidthSvg: 1.6,
+    activeWidthSvg: 5,
+    defaultFocus: "basis",
+    allowUserFocusChoice: true,
+    allowCourseOverride: true,
+    focusProfiles: {
+      basis: {
+        labels: { nl: "Neus + Romp", en: "Nose + Body" },
+        parts: ["neus", "romp"], activeWideParts: ["romp"], showArrivals: false
+      },
+      noord: {
+        labels: { nl: "Noordband · Kop + Nek", en: "North cushion · Head + Neck" },
+        parts: ["kop", "nek"], activeWideParts: ["kop", "nek"], showArrivals: false
+      },
+      actieveLijn: {
+        labels: { nl: "Actieve lijn", en: "Active line" },
+        parts: ["$active"], activeWideParts: ["$active"], showArrivals: false
+      },
+      alleLijnen: {
+        labels: { nl: "Alle lijnen", en: "All lines" },
+        parts: ["$all"], activeWideParts: ["$active"], showArrivals: false
+      },
+      aankomsten: {
+        labels: { nl: "Neus + Romp · aankomsten", en: "Nose + Body · arrivals" },
+        parts: ["neus", "romp"], activeWideParts: ["romp"], showArrivals: true
+      }
+    },
+    courseFocusProfiles: {
+      les1: "basis",
+      noordband: "noord",
+      aankomsten: "aankomsten"
+    }
   },
   userAccess: {
     defaultAddressForm: "jij",
@@ -65,7 +136,7 @@ window.THREEB_START_CONFIG = {
   editor: {
     defaultMode: "basis",
     modes: ["basis","alle"],
-    lklBasicParts: ["kop","romp","been"],
+    lklBasicParts: ["neus","romp"],
     compactBallValueEditor: true,
     liveUpdate: true,
     openGesture: "single_click_or_tap"
@@ -81,7 +152,7 @@ window.THREEB_START_CONFIG = {
     }
   ],
   explanation: {
-    version: "0.6",
+    version: "0.7",
     defaultLevel: "LKL",
     scopeRules: {
       systemExplanation: "shared_large_and_small",
@@ -100,14 +171,32 @@ window.THREEB_START_CONFIG = {
         },
         slides: [
           {
+            key: "route-names-three-minus-plus",
+            title: { en: "The complete route", nl: "De volledige balbaan" },
+            text: {
+              en: "The route is named Nose, Head, Neck, Body, Cross, Leg, Heel, Foot and Toe. Leg could also have been called Tail. Nose, Head and Neck introduce the run-up below three cushions. Route choices for the target ball start at Body: three cushions or more.",
+              nl: "De balbaan heet Neus, Kop, Nek, Romp, Kruis, Been, Hiel, Voet en Teen. Been had ook Staart mogen heten. Neus, Kop en Nek introduceren de aanloop onder drie banden. De routekeuze voor de doelbal begint bij Romp: drie banden of meer."
+            },
+            image: { source: "KruinLines", line: "VIJF", parts: ["neus","kop","nek","romp","kruis","been","hiel","voet","teen"], tables: ["klein"] }
+          },
+          {
+            key: "nose-reference-and-user",
+            title: { en: "Kruin Nose and User Nose", nl: "Kruinneus en Gebruikersneus" },
+            text: {
+              en: "Kruin configures a reference Nose for every track. Make ball 1 arrive rolling at cushion 1. If ball 1 does not align with the target-ball track, cautiously change the Nose direction, play several attempts and record your local User Nose. A short Nose usually needs only a small correction, but that small correction can have large consequences. A longer Nose may require a larger correction. Do not assume: measure.",
+              nl: "Kruin configureert per spoor een Kruinneus als referentie. Laat bal 1 rollend aankomen op band 1. Strookt bal 1 niet met het spoor van de doelbal, verander dan voorzichtig de richting van de Neus, speel meerdere pogingen en bewaar lokaal de Gebruikersneus. Een korte Neus vraagt meestal slechts een kleine correctie, maar die kleine correctie kan grote gevolgen hebben. Bij een langere Neus kan een grotere correctie nodig zijn. Neem niets aan: meet."
+            },
+            image: { source: "KruinLines", line: "VIJF", parts: ["neus"], tables: ["klein"] }
+          },
+          {
             key: "find-target-track",
             title: { en: "1 · Which track is my target ball on?", nl: "1 · Op welk spoor ligt mijn doelbal?" },
             text: {
-              en: "First look only at ball 2: which LKL track is it on? More than one track may fit. Choose one or more candidates and compare them. For the longer lines, make the ball arrive rolling at the first cushion. The short Nose is a later detail.",
-              nl: "Kijk eerst alleen naar bal 2: op welk LKL-spoor ligt mijn doelbal? Er kunnen meerdere sporen passen. Kies één of meer kandidaten en vergelijk ze. Speel de langere lijnen zo dat de bal rollend bij de eerste band aankomt. De korte Neus is een later detail."
+              en: "First look only at ball 2: which 3+ route is it on? Only Body (3 cushions) and the later route parts are offered. More than one track may fit. Choose one or more candidates and compare them.",
+              nl: "Kijk eerst alleen naar bal 2: op welke 3+-route ligt mijn doelbal? Alleen Romp (3 banden) en de volgende delen worden aangeboden. Er kunnen meerdere sporen passen. Kies één of meer kandidaten en vergelijk ze."
             },
             image: {
-              source: "KruinLines", line: "VIJF", parts: ["neus","romp"], tables: ["klein"],
+              source: "KruinLines", line: "VIJF", parts: ["neus","romp"], tables: ["klein"], focusProfile: "les1",
               targetBall: { number: 2, position: { kind: "parallelStart", baseTrack: "VIJF", offset: -1 } },
               allowMultipleTracks: true
             }
@@ -119,7 +208,7 @@ window.THREEB_START_CONFIG = {
               en: "Use the Kruin image of Nose + Body. Play the Nose with your own current delivery and record the Body's arrival line in the app. Further instructions on assessing that arrival line will follow later.",
               nl: "Gebruik het Kruinbeeld van Neus + Romp. Stoot de Neus af met je huidige eigen afstoot en noteer in de app de aankomstlijn van de Romp. Verdere instructie over het beoordelen van die aankomstlijn volgt later."
             },
-            image: { source: "KruinLines", line: "VIJF", parts: ["neus","romp"], role: "user-as-is", recordBodyArrivalLine: true }
+            image: { source: "KruinLines", line: "VIJF", parts: ["neus","romp"], focusProfile: "les1", role: "user-as-is", recordBodyArrivalLine: true }
           },
           {
             key: "body-kruin-reference",
@@ -128,7 +217,7 @@ window.THREEB_START_CONFIG = {
               en: "For a Kruin track, use maximum English, the mid-high contact tangent shown as the shadow line, and finishing zone M at the centre of the table. This defines Kruin Track FIVE, SIX, SEVEN or EIGHT.",
               nl: "Voor een Kruinspoor gelden: maximaal effect, de raaklijn middenhoog als schaduwlijn en eindzone M in het midden van de tafel. Dit bepaalt Kruinspoor VIJF, ZES, ZEVEN of ACHT."
             },
-            image: { source: "KruinLines", line: "VIJF", parts: ["neus","romp"], role: "kruin-reference", effect: "maximum", contactTangent: "mid-high", showShadowLine: true, endZone: "M", endZonePosition: "table-centre" }
+            image: { source: "KruinLines", line: "VIJF", parts: ["neus","romp"], focusProfile: "les1", role: "kruin-reference", effect: "maximum", contactTangent: "mid-high", showShadowLine: true, endZone: "M", endZonePosition: "table-centre" }
           },
           {
             key: "lesson-waaier",
@@ -333,9 +422,16 @@ window.THREEB_START_CONFIG = {
         selectByTap: true
       },
       clickZone: {
-        includes: ["ball","arrival_A","next_departure_V"],
-        paddingSvg: 18,
+        includes: ["ball"],
+        paddingSvg: 0,
         showOutline: true
+      },
+      valueWindow: {
+        outsideWoodGapSvg: 3,
+        widthSvg: 100,
+        heightSvg: 54,
+        cornerRadiusSvg: 9,
+        fontSizeSvg: 13
       },
       twoFingerMobileDrag: {
         enabled: true,

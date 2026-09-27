@@ -570,13 +570,13 @@ Voor iedere release:
 - Neus A is daarom 5, 15, 25, 35, 45, 55, 65 of 75.
 - Parallel Neus A verschuift 10 stipwaarden per stap en blijft op de Westband tussen 0 en 80.
 - Toegestane verschuivingen worden begrensd door minimaal −2, maximaal +3 en de fysieke Westband.
-- Romp A verschuift op Klein per stap één balbreedte: 6,15 / 115 × 40 = 2,139 stipwaarde op Zuid.
+- Romp A verschuift op Klein per stap één balbreedte: 6,15 / 115 × 40 = 2,140 stipwaarde op Zuid.
 - Romp A verschuift op Groot per stap anderhalve balbreedte: 1,5 × 6,15 / 142 × 40 = 2,599 stipwaarde op Zuid.
 - Vanaf de verschoven Romp worden Kruis 45°, Been naar O10 en Hiel volgens de hoekregel opnieuw berekend.
 - Voor parallelle Kop en Nek is nog geen regel vastgelegd; deze waarden blijven leeg.
 # Tijdelijke LKL-bronketen
 
-- Zolang patroon LKL niet stabiel is, wordt iedere waarde-aanpassing eerst verwerkt in `kruinwaarden.json` van de private beheerrepository en daarna bewust in een openbare release.
+- Zolang patroon LKL niet stabiel is, wordt iedere waarde-aanpassing eerst verwerkt in `Kruinconfig-3B-v140.xlsx` van de private beheerrepository. `Bekijk_Kruinconfig.bat` genereert daarna de openbare tekenconfig voor controle en publicatie.
 - De openbare release-ZIP bevat nooit de private beheer-JSON.
 - Onboardingregel: een nieuwe gebruiker krijgt eerst uitsluitend de cursus; tafelknoppen en duimpje blijven verborgen.
 - Een terugkerende gebruiker krijgt eerst één Start-aanwijzer op de tafel; pas daarna verschijnen de gewone bedieningselementen.
