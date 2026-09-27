@@ -1,6 +1,6 @@
 # 3B — handleiding voor de gebruiker
 
-Geldig voor versie 142.
+Geldig voor versie 143.
 
 Op tafel staat één verplaatsbaar paneel met **Spoor**, **☰** en **Lijn**.
 Sleep het paneel wanneer het iets bedekt. Tik erop om het tafelmenu te openen.
@@ -150,7 +150,7 @@ De Kruinreferentie is `O20 → Z38`. Vind je zelf `O22 → Z36`:
 3. kies **Klaar · bewaar**.
 
 Je eigen `22–36` blijft lokaal bewaard. Kruins `20–38` blijft intact.
-Vanaf versie 142 krijgt een met **Klaar · bewaar** bevestigde waarde expliciet
+Vanaf versie 143 krijgt een met **Klaar · bewaar** bevestigde waarde expliciet
 de herkomst *eigen gebruiker*. Een volgende release kan haar daardoor van een
 oude foutieve berekening onderscheiden.
 

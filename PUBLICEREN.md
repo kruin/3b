@@ -19,7 +19,7 @@ Website: `https://kruin.github.io/3b/`
 
 Vervang de bestanden in de lokale clone en start `Publiceer_3B.bat`. De BAT:
 
-- controleert dat `kruinwaarden-generated-v142.js` uit de private Excel aanwezig is;
+- controleert dat `kruinwaarden-generated-v143.js` uit de private Excel aanwezig is;
 
 - kloont bij een ontbrekende `.git` eerst `kruin/3b` naar een tijdelijke map
   en herstelt alleen de Git-geschiedenis; de actuele releasebestanden blijven staan;
@@ -27,8 +27,8 @@ Vervang de bestanden in de lokale clone en start `Publiceer_3B.bat`. De BAT:
 - controleert alle releasebestanden vóór commit en push;
 - vergelijkt lokale commit en `origin/main`;
 - wacht maximaal tien minuten op GitHub Pages;
-- meldt pas KLAAR als Main werkelijk `app-v142.js`, `config-v142.js`,
-  `styles.css?v=111` en versie 142 levert én Doc bereikbaar is.
+- meldt pas KLAAR als Main werkelijk `app-v143.js`, `config-v143.js`,
+  `styles.css?v=111` en versie 143 levert én Doc bereikbaar is.
 
 `Kruin.bat` is de enige lokale beheeringang. De BAT opent een geldige
 `file:///.../index.html#owner=kruin`-URL; voeg het fragment niet handmatig aan
@@ -42,7 +42,7 @@ nieuwer zijn dan de in die appversie meegeleverde publicatie. De BAT vergelijkt
 daarna de lokale Git-commit met `origin/main` en controleert afzonderlijk of
 GitHub Pages precies dezelfde release-assets serveert.
 
-Controleer aanvullend `https://kruin.github.io/3b/controle-v142.html` en
+Controleer aanvullend `https://kruin.github.io/3b/controle-v143.html` en
 `https://kruin.github.io/3b/doc/`.
 
 ## Mobiele Uitlegeditor

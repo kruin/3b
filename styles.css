@@ -389,7 +389,7 @@ body.table-only .onscreen-table .drawing-card>svg{display:block;width:auto;heigh
 body.table-only.compare-tables .onscreen-table .svg-mount{grid-template-columns:repeat(2,minmax(0,1fr));overflow:hidden}
 body.table-only.compare-tables .onscreen-table .drawing-card{min-width:0;max-width:100%}
 
-/* v142: de tafel gebruikt het volledige viewport; bediening zweeft erboven. */
+/* v143: de tafel gebruikt het volledige viewport; bediening zweeft erboven. */
 body.table-only .onscreen-layout{
   width:100vw;
   height:100dvh;
