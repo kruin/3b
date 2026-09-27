@@ -111,8 +111,8 @@ worden aangepast; na `Bekijk_Kruinconfig.bat` gebruikt de lokale app die
 waarden.
 
 De standaardwaarden worden beheerd in de private Excel
-`Kruinconfig-3B-v140.xlsx`. Na opslaan zet `Bekijk_Kruinconfig.bat` deze om
-naar `kruinwaarden-generated-v140.js` in de lokale openbare 3B-map en opent de
+`Kruinconfig-3B-v142.xlsx`. Na opslaan zet `Bekijk_Kruinconfig.bat` deze om
+naar `kruinwaarden-generated-v142.js` in de lokale openbare 3B-map en opent de
 app meteen voor controle. De Excel zelf hoort nooit in de openbare repository.
 
 De online app ziet de wijziging nadat de gegenereerde configuratie met

@@ -1,6 +1,6 @@
 # 3B — handleiding voor de gebruiker
 
-Geldig voor versie 140.
+Geldig voor versie 142.
 
 Op tafel staat één verplaatsbaar paneel met **Spoor**, **☰** en **Lijn**.
 Sleep het paneel wanneer het iets bedekt. Tik erop om het tafelmenu te openen.
@@ -112,6 +112,8 @@ Open het centrale menu op de tafel en kies Groot, Klein of Vergelijkend, het
 gewenste spoor en de reeks Waaier of −S+. Na een keuze sluit het menu zodra je
 de tafel aanraakt. Tik op een leeg tafeldeel voor fullscreen.
 
+Op een echte telefoon gebruikt de tafel automatisch het volledige zichtbare scherm. Op desktop kunt u dezelfde smalle weergave controleren met **Klant mobiel testen** rechtsboven; dezelfde knop sluit de test weer.
+
 ### On-screen bediening
 
 De bediening staat in vier gereserveerde zones rond de tafel:
@@ -148,7 +150,7 @@ De Kruinreferentie is `O20 → Z38`. Vind je zelf `O22 → Z36`:
 3. kies **Klaar · bewaar**.
 
 Je eigen `22–36` blijft lokaal bewaard. Kruins `20–38` blijft intact.
-Vanaf versie 140 krijgt een met **Klaar · bewaar** bevestigde waarde expliciet
+Vanaf versie 142 krijgt een met **Klaar · bewaar** bevestigde waarde expliciet
 de herkomst *eigen gebruiker*. Een volgende release kan haar daardoor van een
 oude foutieve berekening onderscheiden.
 

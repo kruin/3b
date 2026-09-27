@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 100, release: "111", publicRelease: "140",
+  version: 100, release: "111", publicRelease: "142",
   userDisplay: {
     defaultLineOpacity: 0.58,
     defaultArrowMode: "request",
@@ -83,6 +83,9 @@ window.THREEB_START_CONFIG = {
     addressForms: ["jij", "u"],
     requireEmailForEditing: true,
     supabase: {
+      paymentEnabled: false,
+      paymentUrl: "",
+      paymentAnonKey: "",
       url: "",
       anonKey: "",
       table: "user_tables",

@@ -1,6 +1,20 @@
-3B GitHub Pages versie 140
+3B GitHub Pages versie 142
 
-Nieuw in versie 140:
+Nieuw in versie 142:
+
+- V140 blijft de geaccepteerde inhoudelijke werkbasis; spoorwaarden en tafelbediening zijn behouden.
+- Op mobiel gebruikt de tafel opnieuw de volledige viewportbreedte en -hoogte.
+- De lege zijstroken voor inmiddels verplaatste knoppen zijn verwijderd.
+- De bedieningslagen zweven boven de tafel en verkleinen de tafel niet meer.
+- Op desktop staat de knop `Klant mobiel testen` opnieuw zichtbaar boven de tafel.
+- De betaalvoorbereiding uit v141 blijft aanwezig, maar blokkeert publicatie niet zolang zij nog niet is geconfigureerd.
+
+- V140 is de geaccepteerde werkbasis; tafelbediening en Kruinwaarden zijn niet gewijzigd.
+- De bestaande barbon kan nu veilig met Mollie worden geactiveerd via een Supabase Edge Function.
+- Alleen een duimpje opent de barbon; `€0` sluit zonder verdere reactie.
+- Bedragen worden uitsluitend server-side bepaald: Spa rood €2,50 en Bitterballen €8,00.
+- De geheime Mollie-key blijft uitsluitend in Supabase en komt niet in GitHub of de browser.
+- `Activeer_Betalen.bat` vult alleen de publieke Supabase-projectgegevens in.
 
 - Schone vervolgversie op v139; tafel-, bal- en schuifwerking zijn ongewijzigd.
 - De klikzones van Spoor en Lijn in het groene paneel overlappen niet meer.
@@ -31,9 +45,9 @@ Nieuw in versie 140:
 - Alleen de volledige ZIP wordt geleverd; geen EXE-installer.
 
 - Hersteluitgave: v134 werd bij Kruin niet werkelijk geopend; de schermafbeelding toonde nog v133.
-- De stylesheet gebruikt nu een eigen v140-cachecode in plaats van de oude vaste v132-code.
-- Kruin.html opent `index.html?v=135#owner=kruin` zodat de actuele ingang herkenbaar is.
-- Boven iedere tafel staat zichtbaar `v140`; ontbreekt dit, dan is een oude map geopend.
+- De stylesheet gebruikt nu een eigen v142-cachecode in plaats van de oude vaste v132-code.
+- Kruin.html opent `index.html?v=141#owner=kruin` zodat de actuele ingang herkenbaar is.
+- Boven iedere tafel staat zichtbaar `v142`; ontbreekt dit, dan is een oude map geopend.
 - Alleen de volledige ZIP wordt geleverd; geen EXE-installer.
 
 - Het tafelpaneel toont bij Lijn alleen de naam, bijvoorbeeld `Romp`; `Lijn 4 ·` is verwijderd.
@@ -87,14 +101,14 @@ Nieuw in versie 140:
 - De veilige afstand tussen bediening en tafel is eveneens configureerbaar.
 - Undo en Herstel scherm staan voortaan in de documentstroom boven de tafel, niet over de tekening.
 
-Nieuw in versie 140:
+Nieuw in versie 142:
 - V-Romp en A-Romp zijn samen een verplichte eerste gebruikersinstelling.
 - De verplichting geldt afzonderlijk per spoor en per tafel: Klein en Groot worden apart bewaard.
 - Vóór goedkeuring van beide Rompwaarden is de rest van de tafel alleen-lezen.
 - De basisweergave toont Neus en Romp; Kop en Nek worden daarna berekend, tenzij Kruin ze handmatig configureert.
 - Pas na Stem in · bewaar verloop worden Neus en andere lijnpunten aanpasbaar.
 
-Nieuw in versie 140:
+Nieuw in versie 142:
 - Een wijziging aan een gedeelde bal toont vóór bewaren het volledige berekende vervolg.
 - Bijvoorbeeld A-Kop +1 rekent vanaf V-Nek de volgende spoorwaarden opnieuw uit.
 - De gebruiker kiest Stem in · bewaar verloop of Verwerp.
@@ -102,7 +116,7 @@ Nieuw in versie 140:
 - De berekening gebruikt de actuele Kruinconfiguratie en werkt ook met toekomstige configuratieregels.
 - Gebruikersneus wordt niet langer door de algemene LKL-berekening teruggezet naar Kruinneus.
 
-Nieuw in versie 140:
+Nieuw in versie 142:
 - De cursus introduceert de volledige naamreeks Neus tot en met Teen; Been had ook Staart mogen heten.
 - Neus, Kop en Nek blijven als aanloop zichtbaar, maar doelroutes worden alleen vanaf Romp (3+) aangeboden.
 - Kruin configureert per spoor de Kruinneus; de gebruiker kan lokaal een Gebruikersneus bewaren.
@@ -111,7 +125,7 @@ Nieuw in versie 140:
 - Korte-Neuscorrecties zijn klein maar kunnen grote gevolgen hebben; een langere Neus kan meer correctie vragen.
 - Herstel Kruinneus zet alleen de Neus van het gekozen spoor terug en bewaart de overige gebruikerswaarden.
 
-Nieuw in versie 140:
+Nieuw in versie 142:
 - Iedere zichtbare tafel heeft eigen knoppen Undo en Herstel scherm.
 - De geschiedenis begint bij entree van het huidige tafelscherm en gaat niet verder terug.
 - Eén volledig sleepgebaar telt als één Undo-stap; −1 en +1 ieder als één stap.
