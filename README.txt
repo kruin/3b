@@ -1,4 +1,4 @@
-3B LINE CONFIGURATOR — VERSION 132
+3B LINE CONFIGURATOR — VERSION 140
 ================================
 
 De private Kruinbron staat niet in dit openbare pakket. Kruinwaarden,

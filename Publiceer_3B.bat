@@ -3,7 +3,7 @@ setlocal EnableDelayedExpansion
 cd /d "%~dp0"
 set "REMOTE=https://github.com/kruin/3b.git"
 set "PAGES=https://kruin.github.io/3b"
-set "RELEASE=132"
+set "RELEASE=140"
 set "GIT_RECOVERY="
 echo ============================================================
 echo 3B - PUBLICEREN EN CONTROLEREN
