@@ -390,7 +390,7 @@ body.table-only .onscreen-table .drawing-card>svg{display:block;width:auto;heigh
 body.table-only.compare-tables .onscreen-table .svg-mount{grid-template-columns:repeat(2,minmax(0,1fr));overflow:hidden}
 body.table-only.compare-tables .onscreen-table .drawing-card{min-width:0;max-width:100%}
 
-/* v144: de tafel gebruikt het volledige viewport; bediening zweeft erboven. */
+/* v145: de tafel gebruikt het volledige viewport; bediening zweeft erboven. */
 body.table-only .onscreen-layout{
   width:100vw;
   height:100dvh;
@@ -417,3 +417,29 @@ body.table-only .onscreen-control-edit{position:absolute;left:50%;bottom:max(8px
   html,body,body.table-only main,body.table-only .workspace,body.table-only .drawing{width:100%;height:100dvh}
   body.table-only .drawing{padding:0}
 }
+
+/* v145: mobiele bediening ligt op de houten banden; het laken blijft vrij. */
+.band-controls{display:none}
+body.table-only .band-controls{display:block;position:fixed;inset:0;z-index:70;pointer-events:none;color:#fff8e8;font-family:system-ui,sans-serif}
+body.table-only .onscreen-control-menuToggle{display:none!important}
+body.table-only .table-history-actions{display:none}
+body.table-only .band-controls button,body.table-only .band-controls .band-step{pointer-events:auto;touch-action:manipulation}
+body.table-only .band-step,body.table-only .band-side,body.table-only .band-corner{position:fixed;transform:translate(-50%,-50%);margin:0;border:1px solid rgba(255,241,194,.76);background:rgba(79,45,21,.88);color:#fff8e8;box-shadow:0 2px 8px #0005}
+body.table-only .band-step{display:grid;gap:0;min-width:128px;padding:1px 4px;border-radius:9px;text-align:center}
+body.table-only .band-step small{font-size:8px;font-weight:850;line-height:1}
+body.table-only .band-step span{display:grid;grid-template-columns:32px minmax(54px,1fr) 32px;align-items:center;gap:2px}
+body.table-only .band-step button{min-width:32px;min-height:30px;padding:0;border:0;background:transparent;color:inherit;font-size:21px;font-weight:950}
+body.table-only .band-step output{font-size:13px;font-weight:950;white-space:nowrap}
+body.table-only .band-step button:disabled{opacity:.28}
+body.table-only .band-side{min-width:58px;min-height:38px;padding:4px 7px;border-radius:9px;font-size:11px;font-weight:900}
+body.table-only .band-left{transform:translate(-50%,-50%) rotate(-90deg)}
+body.table-only .band-right{transform:translate(-50%,-50%) rotate(90deg)}
+body.table-only .band-corner{min-width:38px;min-height:38px;padding:3px 6px;border-radius:50%;font-size:18px;font-weight:900}
+body.table-only .band-reset,body.table-only .band-save{min-width:52px;border-radius:9px;font-size:10px}
+body.table-only .band-save{background:rgba(15,111,78,.94)}
+body.table-only .band-corner:disabled{opacity:.3}
+body.table-only .band-feedback{position:fixed;z-index:74;left:50%;top:50%;transform:translate(-50%,-50%);max-width:72vw;padding:7px 11px;border:1px solid #f4cf66;border-radius:9px;background:rgba(22,117,85,.9);color:#fff8e8;font-size:15px;font-weight:950;text-align:center;pointer-events:none}
+body.table-only .band-feedback[hidden]{display:none}
+body.table-only .central-track-controls{z-index:80;top:50%;transform:translate(-50%,-50%);width:min(92vw,480px);max-height:72dvh}
+body.table-only .ball-nudge-panel{z-index:82}
+@media(min-width:761px){body.table-only:not(.mobile-preview) .band-controls{display:none}body.table-only:not(.mobile-preview) .onscreen-control-menuToggle{display:flex!important}}

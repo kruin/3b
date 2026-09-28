@@ -1,15 +1,23 @@
 # 3B — handleiding voor de gebruiker
 
-Geldig voor versie 144.
+Geldig voor versie 145.
 
-Op tafel staat één verplaatsbaar paneel met **Spoor**, **☰** en **Lijn**.
-Sleep het paneel wanneer het iets bedekt. Tik erop om het tafelmenu te openen.
-Tik kort op **S** om alle Waaier-Neuzen of −S+-parallelsporen als dunne
-referentielijnen te tonen; de actieve route blijft breed en gelabeld.
+Op mobiel vult de tafel het volledige appvenster. De bediening staat op de
+houten banden; het groene laken blijft vrij:
 
-In de tafelweergave schaalt de volledige tafel binnen de vrije middenzone. De
-banden en stipwaarden blijven daardoor zichtbaar tussen de bediening boven,
-links, rechts en onder.
+- boven: `− Spoor +`;
+- onder: `− Lijn +`;
+- links: wissel tussen Waaier en −S+;
+- rechts: wissel tussen Groot, Klein en Vergelijk;
+- linkerboven: Undo;
+- rechterboven: menu;
+- linkeronder: Herstel, na bevestiging;
+- rechteronder: Bewaar.
+
+Tik op het groene laken om een geopend menu te sluiten. Deze tik zet fullscreen
+niet aan of uit. Raak voor het verschuiven de betreffende bandbal aan. Tik kort
+op **S** om alle Waaier-Neuzen of −S+-parallelsporen als dunne referentielijnen
+te tonen; de actieve route blijft breed en gelabeld.
 
 De meegeleverde Kruinreferenties worden door Kruin in een private Excel beheerd.
 De openbare app ontvangt uitsluitend de waarden die nodig zijn om de sporen te
@@ -150,7 +158,7 @@ De Kruinreferentie is `O20 → Z38`. Vind je zelf `O22 → Z36`:
 3. kies **Klaar · bewaar**.
 
 Je eigen `22–36` blijft lokaal bewaard. Kruins `20–38` blijft intact.
-Vanaf versie 144 krijgt een met **Klaar · bewaar** bevestigde waarde expliciet
+Vanaf versie 145 krijgt een met **Klaar · bewaar** bevestigde waarde expliciet
 de herkomst *eigen gebruiker*. Een volgende release kan haar daardoor van een
 oude foutieve berekening onderscheiden.
 

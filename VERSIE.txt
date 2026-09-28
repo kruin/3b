@@ -1,6 +1,13 @@
-3B GitHub Pages versie 144
+3B GitHub Pages versie 145
 
-Versie 144 is één schone, zelfstandige release.
+Versie 145 is één schone, zelfstandige release.
+
+- Op mobiel vult de tafel het volledige appvenster; een tik op het laken wisselt fullscreen niet meer.
+- Spoorbediening staat midden op de bovenste houten band.
+- Lijnbediening staat midden op de onderste houten band.
+- Waaier/−S+ staat op de linkerband; Groot/Klein/Vergelijk op de rechterband.
+- Undo, menu, Herstel en Bewaar staan in de vier houten hoeken.
+- Het groene laken blijft vrij van permanente menu's.
 
 - Het spoorpaneel klapt bij minimum of maximum niet meer rond.
 - De Waaier loopt uitsluitend van VIER via de HALF-standen naar ACHT.
@@ -8,13 +15,13 @@ Versie 144 is één schone, zelfstandige release.
 - VIJF loopt van VIJF−2 tot en met VIJF+3; aan beide grenzen blijft de selectie staan.
 - Grensknoppen worden zichtbaar uitgeschakeld.
 
-- Openbare app: `3B-openbare-app-v144`.
-- Private beheerbron: `3B-private-Kruinconfig-v144`.
-- Kruinwaarden: `Kruinconfig-3B-v144.xlsx` naar `kruinwaarden-generated-v144.js`.
+- Openbare app: `3B-openbare-app-v145`.
+- Private beheerbron: `3B-private-Kruinconfig-v145`.
+- Kruinwaarden: `Kruinconfig-3B-v145.xlsx` naar `kruinwaarden-generated-v145.js`.
 - Mobiele tafel gebruikt de volledige beschikbare schermruimte.
 - Desktop bevat opnieuw `Klant mobiel testen`.
 - Barbon en veilige Mollie/Supabase-betaalvoorbereiding zijn aanwezig.
 - Betalen blijft uit totdat `Activeer_Betalen.bat` bewust wordt uitgevoerd.
 - Openbare publicatie blijft mogelijk wanneer betalen nog niet is geactiveerd.
 
-Oudere releases hoeven niet te worden samengevoegd met versie 144.
+Oudere releases hoeven niet te worden samengevoegd met versie 145.
