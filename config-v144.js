@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 100, release: "111", publicRelease: "143",
+  version: 100, release: "111", publicRelease: "144",
   userDisplay: {
     defaultLineOpacity: 0.58,
     defaultArrowMode: "request",
@@ -472,6 +472,7 @@ window.THREEB_START_CONFIG = {
   },
   lklTrackRules: {
     appliesTo: ["NUL","EEN","TWEE","DRIE","VIER","VIJF","ZES","ZEVEN","ACHT"],
+    panelTracks: ["VIER","VIJF","ZES","ZEVEN","ACHT"],
     noseArrivalByTrack: { NUL:0, EEN:10, TWEE:20, DRIE:30, VIER:40, VIJF:50, ZES:60, ZEVEN:70, ACHT:80 },
     route: ["S","W","N","O","Z","W","O","N"],
     cross: { fixedAngleDegrees:45, rule:"derive_from_body_arrival" },

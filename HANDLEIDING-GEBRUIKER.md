@@ -1,6 +1,6 @@
 # 3B — handleiding voor de gebruiker
 
-Geldig voor versie 143.
+Geldig voor versie 144.
 
 Op tafel staat één verplaatsbaar paneel met **Spoor**, **☰** en **Lijn**.
 Sleep het paneel wanneer het iets bedekt. Tik erop om het tafelmenu te openen.
@@ -150,7 +150,7 @@ De Kruinreferentie is `O20 → Z38`. Vind je zelf `O22 → Z36`:
 3. kies **Klaar · bewaar**.
 
 Je eigen `22–36` blijft lokaal bewaard. Kruins `20–38` blijft intact.
-Vanaf versie 143 krijgt een met **Klaar · bewaar** bevestigde waarde expliciet
+Vanaf versie 144 krijgt een met **Klaar · bewaar** bevestigde waarde expliciet
 de herkomst *eigen gebruiker*. Een volgende release kan haar daardoor van een
 oude foutieve berekening onderscheiden.
 
@@ -168,6 +168,9 @@ JSON later terug te zetten. Browseropslag is apparaat- en browsergebonden.
 - De **Waaier** bevat het basisspoor, de HALF-stand en het volgende spoor.
 - Iedere keuze daarbinnen heet een **waaierstand**.
 - De **−S+-reeks** bevat parallelstanden rond het basisspoor.
+- De paneelknoppen klappen niet rond: vóór VIER en na ACHT blijft de Waaier staan.
+- Binnen −S+ blijven −/+ bij hetzelfde basisspoor. VIJF loopt bijvoorbeeld van
+  VIJF−2 tot VIJF+3; aan een grens wordt de betreffende knop uitgeschakeld.
 - De dunne lijn toont het basisspoor als vaste referentie.
 - Statisch toont het hele spoor; Lijn voor lijn vergelijkt één lijn tegelijk.
 - Aankomsten toont alleen de gekozen basislijn plus de aankomstballen van alle vergelijkingsstanden.

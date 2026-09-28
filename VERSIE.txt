@@ -1,14 +1,20 @@
-3B GitHub Pages versie 143
+3B GitHub Pages versie 144
 
-Versie 143 is één schone, zelfstandige release.
+Versie 144 is één schone, zelfstandige release.
 
-- Openbare app: `3B-openbare-app-v143`.
-- Private beheerbron: `3B-private-Kruinconfig-v143`.
-- Kruinwaarden: `Kruinconfig-3B-v143.xlsx` naar `kruinwaarden-generated-v143.js`.
+- Het spoorpaneel klapt bij minimum of maximum niet meer rond.
+- De Waaier loopt uitsluitend van VIER via de HALF-standen naar ACHT.
+- In de −S+-reeks blijven −/+ binnen het gekozen basisspoor.
+- VIJF loopt van VIJF−2 tot en met VIJF+3; aan beide grenzen blijft de selectie staan.
+- Grensknoppen worden zichtbaar uitgeschakeld.
+
+- Openbare app: `3B-openbare-app-v144`.
+- Private beheerbron: `3B-private-Kruinconfig-v144`.
+- Kruinwaarden: `Kruinconfig-3B-v144.xlsx` naar `kruinwaarden-generated-v144.js`.
 - Mobiele tafel gebruikt de volledige beschikbare schermruimte.
 - Desktop bevat opnieuw `Klant mobiel testen`.
 - Barbon en veilige Mollie/Supabase-betaalvoorbereiding zijn aanwezig.
 - Betalen blijft uit totdat `Activeer_Betalen.bat` bewust wordt uitgevoerd.
 - Openbare publicatie blijft mogelijk wanneer betalen nog niet is geactiveerd.
 
-Oudere releases hoeven niet te worden samengevoegd met versie 143.
+Oudere releases hoeven niet te worden samengevoegd met versie 144.

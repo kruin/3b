@@ -36,7 +36,10 @@ Tik kort op **S** om het reeksoverzicht aan of uit te zetten. Standaard toont
 dit van ieder spoor alleen **Neus en Romp**; de actieve Romp is breed. Kies in
 het menu **Focus bij S** voor Noordband (Kop + Nek), actieve lijn, alle lijnen
 of aankomsten. Dezelfde focusprofielen kunnen door cursuskaarten worden gebruikt.
-In Waaierstand én −S+-reeks kiezen `−` en `+` de vorige of volgende lijn.
+In de Waaier kiezen `−` en `+` de vorige of volgende stand tussen VIER en ACHT,
+inclusief de HALF-standen. De bediening klapt bij VIER of ACHT niet rond.
+In de −S+-reeks blijven `−` en `+` binnen het gekozen basisspoor. Aan de laagste
+of hoogste parallelstand blijft de keuze staan en wordt de grensknop uitgeschakeld.
 
 Neus is niet verplaatsbaar. Alleen de afstootlengte van Neus kan veranderen.
 

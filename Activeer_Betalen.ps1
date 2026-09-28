@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
-$configPath = Join-Path $PSScriptRoot "config-v143.js"
-if (-not (Test-Path -LiteralPath $configPath)) { throw "config-v143.js ontbreekt." }
+$configPath = Join-Path $PSScriptRoot "config-v144.js"
+if (-not (Test-Path -LiteralPath $configPath)) { throw "config-v144.js ontbreekt." }
 
 $url = (Read-Host "Supabase Project URL, bijvoorbeeld https://abc.supabase.co").Trim()
 $anonKey = (Read-Host "Supabase public anon key").Trim()
