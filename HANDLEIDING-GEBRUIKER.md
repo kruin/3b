@@ -1,9 +1,19 @@
 # 3B — handleiding voor de gebruiker
 
-Geldig voor versie 145.
+Geldig voor versie 149.
 
-Op mobiel vult de tafel het volledige appvenster. De bediening staat op de
-houten banden; het groene laken blijft vrij:
+Open **U-config** om de persoonlijke tafelweergave te wijzigen. V/A-labels
+kunnen klein, alleen bij de actieve bal of uit worden getoond. De bal en de
+lijnen van en naar de stiplijn blijven zichtbaar. U-config wijzigt geen
+Kruinwaarden.
+
+De tafel staat Oost–West op desktop en in mobiel landschap. In mobiel portret
+staat zij Noord–Zuid. De richting verandert alleen de schermweergave; de
+spoorwaarden en sleepberekeningen blijven gelijk.
+
+De tafel vult het volledige appvenster. Mobiel portret toont haar rechtop.
+Mobiel landschap en desktop tonen dezelfde tafel dwars. De bediening staat op
+de zichtbare houten banden; het groene laken blijft vrij:
 
 - boven: `− Spoor +`;
 - onder: `− Lijn +`;
@@ -18,6 +28,9 @@ Tik op het groene laken om een geopend menu te sluiten. Deze tik zet fullscreen
 niet aan of uit. Raak voor het verschuiven de betreffende bandbal aan. Tik kort
 op **S** om alle Waaier-Neuzen of −S+-parallelsporen als dunne referentielijnen
 te tonen; de actieve route blijft breed en gelabeld.
+
+Bij draaien van het toestel verhuist de bediening automatisch naar de nieuwe
+zichtbare boven-, onder-, linker- en rechterband. De teksten blijven rechtop.
 
 De meegeleverde Kruinreferenties worden door Kruin in een private Excel beheerd.
 De openbare app ontvangt uitsluitend de waarden die nodig zijn om de sporen te
@@ -158,7 +171,7 @@ De Kruinreferentie is `O20 → Z38`. Vind je zelf `O22 → Z36`:
 3. kies **Klaar · bewaar**.
 
 Je eigen `22–36` blijft lokaal bewaard. Kruins `20–38` blijft intact.
-Vanaf versie 145 krijgt een met **Klaar · bewaar** bevestigde waarde expliciet
+Vanaf versie 149 krijgt een met **Klaar · bewaar** bevestigde waarde expliciet
 de herkomst *eigen gebruiker*. Een volgende release kan haar daardoor van een
 oude foutieve berekening onderscheiden.
 

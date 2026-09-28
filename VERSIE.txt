@@ -1,8 +1,29 @@
-3B GitHub Pages versie 145
+3B GitHub Pages versie 149
 
-Versie 145 is één schone, zelfstandige release.
+Versie 149 is één schone, zelfstandige release.
 
-- Op mobiel vult de tafel het volledige appvenster; een tik op het laken wisselt fullscreen niet meer.
+- V/A-labels zijn standaard klein en ondergeschikt aan bal en hulplijnen.
+- De bal wordt boven de labels getekend en blijft daardoor altijd duidelijk zichtbaar.
+- De aparte U-config biedt: Klein, Alleen actieve bal of Uit, plus labelgrootte.
+- U-config is lokaal per gebruiker en verandert geen Kruinwaarden.
+
+- De V- en A-getallen worden opnieuw bij iedere zichtbare lijn getekend.
+- De dunne V/A-hulplijnen naar de echte stiplijn zijn weer duidelijk zichtbaar.
+- V/A-labels worden binnen de houtrand gehouden en verdwijnen daardoor niet bij fullscreen of Oost–West-weergave.
+
+- De gedraaide tafel wordt op haar werkelijk zichtbare midden gecentreerd; de grote lege strook boven de tafel is weg.
+- Het oude groene middenpaneel is definitief verborgen; alleen de bediening op de houten banden blijft staan.
+- De Kruin-config bevat de schakelaar `tableOrientation.eastWest`: desktop en mobiel landschap staan Oost–West; mobiel portret blijft Noord–Zuid.
+- Smalle resterende zijstroken houden de houtkleur, zodat de tafelverhouding niet wordt vervormd.
+
+- Mobiel portret toont de tafel rechtop.
+- Mobiel landschap en desktop tonen dezelfde tafel dwars.
+- De tafel wordt alleen visueel gedraaid; lijnen, ballen en sleepberekeningen blijven ongewijzigd.
+- Teksten en HTML-bandknoppen blijven rechtop staan.
+- De witte buitenruimte en tafeltitel zijn verwijderd; houtkleur vult resterende schermruimte.
+- De gekleurde bediening past zich aan de zichtbare houtbreedte aan.
+
+- De tafel vult het volledige appvenster; een tik op het laken wisselt fullscreen niet meer.
 - Spoorbediening staat midden op de bovenste houten band.
 - Lijnbediening staat midden op de onderste houten band.
 - Waaier/−S+ staat op de linkerband; Groot/Klein/Vergelijk op de rechterband.
@@ -15,13 +36,12 @@ Versie 145 is één schone, zelfstandige release.
 - VIJF loopt van VIJF−2 tot en met VIJF+3; aan beide grenzen blijft de selectie staan.
 - Grensknoppen worden zichtbaar uitgeschakeld.
 
-- Openbare app: `3B-openbare-app-v145`.
-- Private beheerbron: `3B-private-Kruinconfig-v145`.
-- Kruinwaarden: `Kruinconfig-3B-v145.xlsx` naar `kruinwaarden-generated-v145.js`.
+- Openbare app: `3B-openbare-app-v149`.
+- Private beheerbron: `3B-private-Kruinconfig-v149`.
+- Kruinwaarden: `Kruinconfig-3B-v149.xlsx` naar `kruinwaarden-generated-v149.js`.
 - Mobiele tafel gebruikt de volledige beschikbare schermruimte.
-- Desktop bevat opnieuw `Klant mobiel testen`.
 - Barbon en veilige Mollie/Supabase-betaalvoorbereiding zijn aanwezig.
 - Betalen blijft uit totdat `Activeer_Betalen.bat` bewust wordt uitgevoerd.
 - Openbare publicatie blijft mogelijk wanneer betalen nog niet is geactiveerd.
 
-Oudere releases hoeven niet te worden samengevoegd met versie 145.
+Oudere releases hoeven niet te worden samengevoegd met versie 149.

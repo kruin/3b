@@ -347,6 +347,8 @@ footer { padding: 0 24px 28px; text-align: center; color: #766959; font-size: 13
 }
 body.fixed-track .junction-hit[data-junction-index="0"]{pointer-events:none}
 .table-svg g[data-part] > line:not(.segment-hit){opacity:var(--route-opacity,.58)}
+.table-svg g[data-part] > line.value-guide{opacity:.88}
+.table-svg .value-tag{pointer-events:none}
 body.show-user-arrow .table-svg g.active-line > line:nth-of-type(2){marker-end:url(#activeArrow);opacity:1}
 .marker-defs{position:absolute;width:0;height:0;overflow:hidden}
 .user-settings{position:fixed;z-index:1200;right:16px;top:70px;width:min(330px,calc(100vw - 32px));padding:16px;border:2px solid #176f4f;border-radius:14px;background:#fffaf0;box-shadow:0 12px 35px #0004;color:#2b2118}
@@ -390,7 +392,7 @@ body.table-only .onscreen-table .drawing-card>svg{display:block;width:auto;heigh
 body.table-only.compare-tables .onscreen-table .svg-mount{grid-template-columns:repeat(2,minmax(0,1fr));overflow:hidden}
 body.table-only.compare-tables .onscreen-table .drawing-card{min-width:0;max-width:100%}
 
-/* v145: de tafel gebruikt het volledige viewport; bediening zweeft erboven. */
+/* v149: de tafel gebruikt het volledige viewport; bediening zweeft erboven. */
 body.table-only .onscreen-layout{
   width:100vw;
   height:100dvh;
@@ -418,7 +420,7 @@ body.table-only .onscreen-control-edit{position:absolute;left:50%;bottom:max(8px
   body.table-only .drawing{padding:0}
 }
 
-/* v145: mobiele bediening ligt op de houten banden; het laken blijft vrij. */
+/* v149: mobiele bediening ligt op de houten banden; het laken blijft vrij. */
 .band-controls{display:none}
 body.table-only .band-controls{display:block;position:fixed;inset:0;z-index:70;pointer-events:none;color:#fff8e8;font-family:system-ui,sans-serif}
 body.table-only .onscreen-control-menuToggle{display:none!important}
@@ -443,3 +445,24 @@ body.table-only .band-feedback[hidden]{display:none}
 body.table-only .central-track-controls{z-index:80;top:50%;transform:translate(-50%,-50%);width:min(92vw,480px);max-height:72dvh}
 body.table-only .ball-nudge-panel{z-index:82}
 @media(min-width:761px){body.table-only:not(.mobile-preview) .band-controls{display:none}body.table-only:not(.mobile-preview) .onscreen-control-menuToggle{display:flex!important}}
+
+/* v149: dezelfde bandbediening op mobiel en desktop; desktop en landschap draaien de tafel. */
+html,body,body.table-only,body.table-only main,body.table-only .drawing,body.table-only .onscreen-table{background:#704725}
+body.table-only .band-controls{display:block!important}
+body.table-only .onscreen-control-menuToggle{display:none!important}
+body.table-only .view-actions{display:none!important}
+body.table-only .drawing-card{display:grid;place-items:center!important}
+body.table-only .drawing-card{position:relative}
+body.table-only .table-svg{display:block;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);transform-box:fill-box;transform-origin:center;transition:none}
+body.table-only.table-landscape .table-svg{transform:translate(-50%,-50%) rotate(90deg)}
+body.table-only.table-landscape .table-svg text{transform-box:fill-box;transform-origin:center;transform:rotate(-90deg)}
+body.table-only .retired-floating-panel{display:none!important;visibility:hidden!important;pointer-events:none!important}
+body.table-only .band-step,body.table-only .band-side,body.table-only .band-corner{border:0;box-shadow:none;background:#8b5b32}
+body.table-only .band-step{height:var(--screen-band,36px);min-height:0;box-sizing:border-box;border-radius:0;padding:0 3px}
+body.table-only .band-step small{font-size:7px}
+body.table-only .band-step span{height:100%;grid-template-columns:30px minmax(50px,1fr) 30px}
+body.table-only .band-step button{min-width:30px;min-height:0;height:100%}
+body.table-only .band-side{height:var(--screen-band,36px);min-height:0;border-radius:0;box-sizing:border-box}
+body.table-only .band-corner{width:var(--screen-band,36px);height:var(--screen-band,36px);min-width:0;min-height:0;border-radius:0;padding:0;font-size:16px}
+body.table-only .band-reset,body.table-only .band-save{font-size:8px}
+body.table-only .band-save{background:#176f4f}

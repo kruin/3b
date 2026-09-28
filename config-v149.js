@@ -1,9 +1,14 @@
 window.THREEB_START_CONFIG = {
-  version: 100, release: "111", publicRelease: "145",
+  version: 100, release: "111", publicRelease: "149",
   userDisplay: {
     defaultLineOpacity: 0.58,
     defaultArrowMode: "request",
     defaultArrowScale: 0.35,
+    defaultValueLabelMode: "small",
+    valueLabelModes: ["small", "active", "off"],
+    defaultValueLabelScale: 0.75,
+    valueLabelScaleRange: { minimum: 0.65, maximum: 1, step: 0.05 },
+    valueLabelBaseFontPx: 12,
     lineOpacityRange: { minimum: 0.3, maximum: 1, step: 0.05 },
     arrowScaleRange: { minimum: 0.35, maximum: 1.2, step: 0.05 }
   },
@@ -17,6 +22,14 @@ window.THREEB_START_CONFIG = {
       menuToggle: { zone: "bottom", order: 10, visible: true },
       edit: { zone: "bottom", order: 20, visible: true },
       menuPanel: { zone: "bottom", order: 30, visible: true }
+    }
+  },
+  tableOrientation: {
+    label: "Oost–West",
+    eastWest: {
+      desktop: true,
+      mobileLandscape: true,
+      mobilePortrait: false
     }
   },
   tablePanel: {
@@ -450,7 +463,7 @@ window.THREEB_START_CONFIG = {
       defaultMode: "bij_lijntje",
       modes: ["bij_lijntje", "vervang_dichtstbijzijnde_nummer"],
       showPartName: false,
-      showPointType: false,
+      showPointType: true,
       suppressNearestTenInReplacementMode: true
     }
   },
