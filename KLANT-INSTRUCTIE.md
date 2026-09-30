@@ -15,15 +15,13 @@ De normale route begint met Neus vanuit Z. Bij **Shortened four-cushion /
 Verkorte 4-bander** verdwijnt Neus en begint de weergave met Kop, op basis van
 de eigen V- en A-waarden van Kop.
 
-De invoer blijft uitsluitend in deze browser. Download regelmatig **My tables /
-Mijn tafels** als JSON-reservekop. Gebruik Import om die op hetzelfde of een
-ander apparaat te openen. Er is geen automatische synchronisatie.
+Bevestigde invoer wordt via het account in de database bewaard. JSON-import en
+-export staan niet in de gebruikersinterface.
 # KruinLines en eigen wijzigingen
 
 - **KruinLines** bevat de door Kruin gepubliceerde uitgangslijnen.
-- Eigen wijzigingen worden automatisch in de huidige browser bewaard.
-- Download regelmatig **Mijn tafels** als volledige JSON-reservekop en gebruik
-  **Import** om die reservekop terug te zetten.
+- Eigen wijzigingen worden via het account in de database bewaard.
+- De gebruiker hoeft geen JSON-bestanden te beheren.
 - De gepubliceerde KruinLine verandert niet door eigen wijzigingen.
 
 ## Kruin: uitleg op mobiel bewerken

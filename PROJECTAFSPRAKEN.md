@@ -48,7 +48,7 @@
 - Elke lijn bestaat op Groot en Klein uit Neus, Kop, Nek, Romp, Kruis, Been, Hiel, Voet en Teen.
 - De berekeningsketen en aansluitcontrole gelden voor alle dertien lijnen.
 - Spoor VIJF bevat de vastgelegde uitgangswaarden; de overige sporen beginnen leeg totdat Kruin waarden invoert.
-- Spoor VIJF is volledig gespecificeerd: Neus V–W50 vast; Romp Klein O20–Z38 en Groot O20–Z36; Kruis 45° uit Romp A; Been A vast O10 en Been V afgeleid uit Kruis A.
+- Spoor VIJF is volledig gespecificeerd: Neus S–W50 vast; Romp Klein O20–Z38 en Groot O20–Z36; Kruis standaard 45° uit Romp A; Been A vast O10 en Been V afgeleid uit Kruis A. De Kruishoek is per tafel en spoor configureerbaar.
 - Ieder lijnstuk staat standaard op `+` (mee). Slaat de loop een tussenband over, dan staat het lijnstuk op `-` (contra). Been in Spoor VIJF is daarom contra: West → Oost.
 - Loop is een ketenstand: na een bandoverslag blijft `-` contra actief tot een volgende bandoverslag de stand opnieuw wisselt. Hiel blijft in Spoor VIJF daarom contra.
 - Hiel volgt voorlopig de spiegelregel `hoek van inval = hoek van uitval` vanaf Been A op Oost naar Noord.
@@ -209,6 +209,9 @@ bijgewerkt.
 - Geen effect-, fysica- of ervaringscorrecties zolang daarvoor geen geldige
   gegevens zijn vastgelegd.
 - Benamingen zijn: Neus, Kop, Nek, Romp, Kruis, Been, Hiel, Voet en Teen.
+- In de cursus heten Been en Hiel samen **de Uitloop**; de afzonderlijke lijnnamen blijven Been en Hiel.
+- Spoor VIER wijkt af van VIJF: Romp loopt Oost → West; Kruis vertrekt uit A-Romp op West en loopt `− contra` naar Zuid. Daarna volgt de Uitloop.
+- Algemene loopregel: een lijn tussen tegenoverliggende banden slaat een band over, verandert daarmee het Karkas en schakelt mee/contra. De stand blijft actief tot een volgende bandoverslag.
 - Engels is de standaardtaal; Nederlands is on-screen selecteerbaar.
 - De weergave kan Groot, Klein of Beide tonen. Bij Beide kiest de gebruiker
   expliciet welke tafel in het invoerscherm wordt bewerkt.
@@ -576,7 +579,7 @@ Voor iedere release:
 - Voor parallelle Kop en Nek is nog geen regel vastgelegd; deze waarden blijven leeg.
 # Tijdelijke LKL-bronketen
 
-- Zolang patroon LKL niet stabiel is, wordt iedere waarde-aanpassing eerst verwerkt in `Kruinconfig-3B-v149.xlsx` van de private beheerrepository. `Bekijk_Kruinconfig.bat` genereert daarna de openbare tekenconfig voor controle en publicatie.
+- Zolang patroon LKL niet stabiel is, wordt iedere waarde-aanpassing eerst verwerkt in `Kruinconfig-3B-v165.xlsx` van de private beheerrepository. `Bekijk_Kruinconfig.bat` genereert daarna de openbare tekenconfig voor controle en publicatie.
 - De openbare release-ZIP bevat nooit de private beheer-JSON.
 - Onboardingregel: een nieuwe gebruiker krijgt eerst uitsluitend de cursus; tafelknoppen en duimpje blijven verborgen.
 - Een terugkerende gebruiker krijgt eerst één Start-aanwijzer op de tafel; pas daarna verschijnen de gewone bedieningselementen.

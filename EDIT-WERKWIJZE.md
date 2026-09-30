@@ -38,7 +38,7 @@ het menu **Focus bij S** voor Noordband (Kop + Nek), actieve lijn, alle lijnen
 of aankomsten. Dezelfde focusprofielen kunnen door cursuskaarten worden gebruikt.
 In de Waaier kiezen `−` en `+` de vorige of volgende stand tussen VIER en ACHT,
 inclusief de HALF-standen. De bediening klapt bij VIER of ACHT niet rond.
-In de −S+-reeks blijven `−` en `+` binnen het gekozen basisspoor. Aan de laagste
+In Parallel (P) blijven `−` en `+` binnen het gekozen basisspoor. Aan de laagste
 of hoogste parallelstand blijft de keuze staan en wordt de grensknop uitgeschakeld.
 
 Neus is niet verplaatsbaar. Alleen de afstootlengte van Neus kan veranderen.
@@ -52,7 +52,7 @@ Bij Romp zijn beide handelingen verplicht: sleep **V-Romp** en **A-Romp**. De
 volgorde maakt niet uit. Controleer eventueel met −1/+1 en kies vervolgens
 **Klaar · bewaar**. Daarna stelt 3B het berekende vervolg voor.
 
-Een HALF- of −S+-stand wordt afzonderlijk bewaard. Een aanpassing aan VIJF+1
+Een HALF- of Parallel-stand wordt afzonderlijk bewaard. Een aanpassing aan VIJF+1
 wijzigt dus niet stilzwijgend de basis VIJF.
 
 ## Undo en herstel per tafelscherm
@@ -70,7 +70,7 @@ wijzigt dus niet stilzwijgend de basis VIJF.
 - **Lijn**: één gekleurd deel binnen het Spoor, bijvoorbeeld Lijn 4 · Romp.
 - **Waaier**: overgang van een basisspoor naar het volgende spoor.
 - **Waaierstand**: één stand daarvan; HALFZES is de HALF-stand tussen VIJF en ZES.
-- **−S+-reeks**: alle parallelstanden rond een basisspoor.
+- **Parallel (P)**: alle parallelstanden rond een basisspoor.
 - **Parallelstand**: bijvoorbeeld VIJF−1 of VIJF+2.
 - **V**: vertrekbal van een lijn.
 - **A**: aankomstbal van een lijn. Bij aansluitende lijnen is deze bal tevens V van de volgende lijn.
@@ -114,3 +114,18 @@ Deze eerste lijn wordt altijd getoond en is niet verschuifbaar. De lijnen vanaf 
 7. Hiel
 8. Voet
 9. Teen
+# Lijnvenster en Karkas
+
+- **Spoor** is VIER, VIJF, ZES enzovoort.
+- **Lijn** is Neus, Kop, Nek, Romp, Kruis, Been, Hiel, Voet of Teen.
+- **Patroon** benoemt de baanvorm, bijvoorbeeld LKL.
+- **Karkas** (*Framework*) is de combinatie Neus + Romp van het gekozen spoor.
+
+Klik of tik op een gekleurde lijn om het centrale lijnvenster te openen. De
+rand van het venster gebruikt dezelfde kleur als de lijn. Kies daar vertrekband,
+vertrekwaarde, aankomstband en aankomstwaarde en druk op **Klaar · bewaar**.
+Bij Neus zijn richting en spoorwaarde vast; daar kan uitsluitend de
+afstootlengte worden gewijzigd.
+
+Met **Karkas** toont de tafel uitsluitend Neus en Romp van het actuele spoor.
+De knop werkt opnieuw om naar het volledige spoor terug te keren.

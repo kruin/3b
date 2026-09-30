@@ -1,11 +1,11 @@
 window.THREEB_START_CONFIG = {
-  version: 100, release: "111", publicRelease: "149",
+  version: 101, release: "169", publicRelease: "169",
   userDisplay: {
     defaultLineOpacity: 0.58,
     defaultArrowMode: "request",
     defaultArrowScale: 0.35,
-    defaultValueLabelMode: "small",
-    valueLabelModes: ["small", "active", "off"],
+    defaultValueLabelMode: "on",
+    valueLabelModes: ["on", "off"],
     defaultValueLabelScale: 0.75,
     valueLabelScaleRange: { minimum: 0.65, maximum: 1, step: 0.05 },
     valueLabelBaseFontPx: 12,
@@ -13,6 +13,7 @@ window.THREEB_START_CONFIG = {
     arrowScaleRange: { minimum: 0.35, maximum: 1.2, step: 0.05 }
   },
   onscreenMenu: {
+    menuButtonPosition: "corner", // "corner" of "central"
     safeGapPx: 10,
     zones: ["top", "left", "right", "bottom"],
     groups: {
@@ -25,9 +26,11 @@ window.THREEB_START_CONFIG = {
     }
   },
   tableOrientation: {
-    label: "Oost–West",
+    label: "Canoniek rechtop",
+    canonicalAxes: { north: "top", south: "bottom", west: "left", east: "right" },
+    allowVisualRotation: false,
     eastWest: {
-      desktop: true,
+      desktop: false,
       mobileLandscape: true,
       mobilePortrait: false
     }
@@ -109,7 +112,7 @@ window.THREEB_START_CONFIG = {
       enabled: true,
       heartbeatSeconds: 30
     },
-    storageModes: ["account", "lokaal"],
+    storageModes: ["account"],
     defaultStorageMode: "account",
     barTab: {
       enabled: true,
@@ -139,7 +142,7 @@ window.THREEB_START_CONFIG = {
       fan: { en:"Fan", nl:"Waaier" },
       fanPosition: { en:"Fan position", nl:"Waaierstand" },
       halfPosition: { en:"HALF position", nl:"HALF-stand" },
-      parallelSeries: { en:"−S+ series", nl:"−S+-reeks" },
+      parallelSeries: { en:"Parallel (P)", nl:"Parallel (P)" },
       parallelPosition: { en:"Parallel position", nl:"Parallelstand" },
       arrivalsView: { en:"Arrivals view", nl:"Aankomstenweergave" }
     },
@@ -148,7 +151,7 @@ window.THREEB_START_CONFIG = {
       nl: "Stiplijn: de meetlijn langs één band die de stippen van die band verbindt. Iedere band heeft een eigen stiplijn."
     }
   },
-  defaultLanguage: "en", defaultTableMode: "groot", defaultDirection: "west", defaultDeparture: "neus",
+  defaultLanguage: "nl", defaultTableMode: "groot", defaultDirection: "west", defaultDeparture: "neus",
   editor: {
     defaultMode: "basis",
     modes: ["basis","alle"],
@@ -190,8 +193,8 @@ window.THREEB_START_CONFIG = {
             key: "route-names-three-minus-plus",
             title: { en: "The complete route", nl: "De volledige balbaan" },
             text: {
-              en: "The route is named Nose, Head, Neck, Body, Cross, Leg, Heel, Foot and Toe. Leg could also have been called Tail. Nose, Head and Neck introduce the run-up below three cushions. Route choices for the target ball start at Body: three cushions or more.",
-              nl: "De balbaan heet Neus, Kop, Nek, Romp, Kruis, Been, Hiel, Voet en Teen. Been had ook Staart mogen heten. Neus, Kop en Nek introduceren de aanloop onder drie banden. De routekeuze voor de doelbal begint bij Romp: drie banden of meer."
+              en: "The route is named Nose, Head, Neck, Body, Cross, Leg, Heel, Foot and Toe. Leg could also have been called Tail. In this course, Leg and Heel together are called the Run-out. Nose, Head and Neck introduce the run-up below three cushions. Route choices for the target ball start at Body: three cushions or more.",
+              nl: "De balbaan heet Neus, Kop, Nek, Romp, Kruis, Been, Hiel, Voet en Teen. Been had ook Staart mogen heten. In de cursus heten Been en Hiel samen de Uitloop. Neus, Kop en Nek introduceren de aanloop onder drie banden. De routekeuze voor de doelbal begint bij Romp: drie banden of meer."
             },
             image: { source: "KruinLines", line: "VIJF", parts: ["neus","kop","nek","romp","kruis","been","hiel","voet","teen"], tables: ["klein"] }
           },
@@ -236,6 +239,15 @@ window.THREEB_START_CONFIG = {
             image: { source: "KruinLines", line: "VIJF", parts: ["neus","romp"], focusProfile: "les1", role: "kruin-reference", effect: "maximum", contactTangent: "mid-high", showShadowLine: true, endZone: "M", endZonePosition: "table-centre" }
           },
           {
+            key: "standard-shot-middle-and-extension",
+            title: { en: "First the middle, then the Run-out", nl: "Eerst het midden, daarna de Uitloop" },
+            text: {
+              en: "The standard stroke is based on letting ball 1 roll out toward the middle of the table. That middle zone is the first reference. In a later phase, the route was extended through Leg to Heel A using manual table tests and Kruin configuration. In this course, Leg and Heel together are called the Run-out. Treat the Run-out as a tested extension, not as the original middle reference.",
+              nl: "De standaardstoot is gebaseerd op het uitrollen van bal 1 naar de middenzone van het biljart. Die middenzone is het eerste ijkpunt. In een latere fase is de baan met handmatige tests en Kruinconfig via Been doorgetrokken naar A-Hiel. Been en Hiel heten in deze cursus samen de Uitloop. Beschouw de Uitloop als een geteste uitbreiding, niet als het oorspronkelijke midden-ijkpunt."
+            },
+            image: { source: "KruinLines", line: "VIJF", parts: ["neus","romp","kruis","been","hiel"], focusProfile: "les1", role: "middle-reference-and-tested-extension", endZone: "M", testedExtension: ["been","hiel.to"] }
+          },
+          {
             key: "lesson-waaier",
             title: { en: "Lesson · Fan", nl: "Les · Waaier" },
             text: {
@@ -246,16 +258,16 @@ window.THREEB_START_CONFIG = {
           },
           {
             key: "lesson-minus-start-plus",
-            title: { en: "Lesson · −S+", nl: "Les · −S+" },
+            title: { en: "Lesson · Parallel (P)", nl: "Les · Parallel (P)" },
             text: {
-              en: "Choose −S+ for parallel tracks. In/Out reverses the side: S+ starts inside and Body A arrives outside, so its South value decreases. S− works inversely. Body, Neck and Head are then calculated backwards parallel to the base track.",
-              nl: "Kies de −S+-reeks voor parallelstanden rond het basisspoor. BiBu keert de zijde om: S+ begint binnen en A-Romp komt buiten aan, waardoor de Zuidwaarde daalt. S− werkt omgekeerd. Romp, Nek en Kop worden daarna parallel aan het basisspoor teruggerekend."
+              en: "Choose Parallel (P) for parallel tracks. In/Out reverses the side: S+ starts inside and Body A arrives outside, so its South value decreases. S− works inversely. Body, Neck and Head are then calculated backwards parallel to the base track.",
+              nl: "Kies Parallel (P) voor parallelstanden rond het basisspoor. BiBu keert de zijde om: S+ begint binnen en A-Romp komt buiten aan, waardoor de Zuidwaarde daalt. S− werkt omgekeerd. Romp, Nek en Kop worden daarna parallel aan het basisspoor teruggerekend."
             },
             image: { source: "KruinLines", line: "VIJF", parts: ["neus","kop","nek","romp","kruis","been","hiel"] }
           },
           {
             key: "lesson-minus-start-plus-display",
-            title: { en: "Lesson · View −S+", nl: "Les · −S+ bekijken" },
+            title: { en: "Lesson · View Parallel (P)", nl: "Les · Parallel (P) bekijken" },
             text: {
               en: "Choose Static · whole track to see the complete chosen ± track. Line by line retains the current track but starts again at Nose. The complete thin base track always remains fixed. In table view, − stays on the left and + on the right. Tap the centre to switch between Track and Line. The central menu also has Back to base track, for example FIVE+2 → FIVE.",
               nl: "Kies Statisch · heel spoor om het volledige gekozen ±spoor te zien. Lijn voor lijn behoudt het huidige spoor, maar begint opnieuw bij Neus. Het volledige dunne basisspoor blijft altijd vast staan. In tafelbeeld blijft − links en + rechts. Tik in het midden om tussen Spoor en Lijn te wisselen. In het centrale menu staat ook Terug naar basisspoor, bijvoorbeeld VIJF+2 → VIJF."
@@ -284,8 +296,8 @@ window.THREEB_START_CONFIG = {
             key: "running-or-reverse",
             title: { en: "+ running · − reverse", nl: "+ mee · − contra" },
             text: {
-              en: "A line is + (running) by default. If its route skips an intermediate cushion, it is marked − (reverse). In Track FIVE, Leg runs directly from West to East and is therefore −.",
-              nl: "Een lijn staat standaard op + (mee). Slaat de loop een tussenband over, dan krijgt de lijn − (contra). In Spoor VIJF loopt Been rechtstreeks van West naar Oost en staat daarom op −."
+              en: "A line starts as + (running). If the ball and therefore the line skip a cushion, the framework changes and the state switches to − (reverse). That state continues until another cushion is skipped. In Track FOUR, Body East–West causes the switch; Cross West–South remains reverse. In Track FIVE, the first switch occurs at Leg West–East.",
+              nl: "Een lijn begint op + (mee). Slaan de bal en dus de lijn een band over, dan verandert het Karkas en schakelt de loop naar − (contra). Die stand blijft gelden tot een volgende bandoverslag. Bij VIER veroorzaakt Romp Oost–West de omschakeling; Kruis West–Zuid blijft contra. Bij VIJF gebeurt de eerste omschakeling bij Been West–Oost."
             },
             image: { source: "KruinLines", line: "VIJF", parts: ["kruis","been"] }
           },
@@ -293,10 +305,19 @@ window.THREEB_START_CONFIG = {
             key: "rule-direction",
             title: { en: "Rule · Dir", nl: "Regel · Dir" },
             text: {
-              en: "Dir records the cushion order. For every LSL Track ZERO through EIGHT it is S–W–N–E–S–W–E–N. Every A names the next cushion in the route.",
-              nl: "Dir noteert de bandvolgorde. Voor ieder LKL-spoor NUL tot en met ACHT is dit S–W–N–O–Z–W–O–N. Iedere A noemt de volgende band in de loop."
+              en: "Dir records the cushion order. Every A names the next cushion, but the order can differ by track. Track FIVE uses S–W–N–E–S–W–E–N. Track FOUR uses S–W–N–E–W–S–E–N.",
+              nl: "Dir noteert de bandvolgorde. Iedere A noemt de volgende band, maar de volgorde kan per spoor verschillen. Spoor VIJF gebruikt S–W–N–O–Z–W–O–N. Spoor VIER gebruikt S–W–N–O–W–Z–O–N."
             },
             image: { source: "KruinLines", line: "VIJF", parts: ["neus","kop","nek","romp","kruis","been","hiel"] }
+          },
+          {
+            key: "track-four-body-cross",
+            title: { en: "Track FOUR · East to West", nl: "Spoor VIER · Oost naar West" },
+            text: {
+              en: "In Track FOUR, Body runs directly from East to West. At the same ball on the West cushion, Cross takes over and runs with reverse English toward the South cushion. After Cross, the Run-out follows: Leg + Heel. The configured Cross angle determines the exact South arrival.",
+              nl: "In Spoor VIER loopt Romp rechtstreeks van Oost naar West. Op dezelfde bal aan de Westband neemt Kruis over en loopt met contra-effect naar de Zuidband. Na Kruis volgt de Uitloop: Been + Hiel. De geconfigureerde Kruishoek bepaalt de precieze aankomst op Zuid."
+            },
+            image: { source: "KruinLines", line: "VIER", parts: ["romp","kruis","been","hiel"], tables: ["klein","groot"], focusProfile: "actieveLijn", emphasize: "romp-kruis", loop: "-" }
           },
           {
             key: "rule-reflection",
@@ -320,8 +341,8 @@ window.THREEB_START_CONFIG = {
             key: "rule-small-arrival-row",
             title: { en: "All balls together!", nl: "Alle ballen verzamelen!" },
             text: {
-              en: "Choose −S+ and Arrivals. Only the base Body line is shown, with every S−2 through S+2 arrival ball physically against cushion 4 (South). On the Small table they form a row of five exactly adjacent balls. For other lines or tables, the balls may touch, overlap or lie apart.",
-              nl: "Kies −S+ en Aankomsten. Je ziet alleen de basisromp met op Romp A alle aankomstballen van S−2 tot en met S+2 werkelijk tegen band 4 (Zuid). Op Klein vormen zij een rij van vijf ballen die precies naast elkaar liggen. Bij andere lijnen of tafels kunnen de ballen naast elkaar liggen, overlappen of uit elkaar liggen."
+              en: "Choose Parallel (P) and Arrivals. Only the base Body line is shown, with every S−2 through S+2 arrival ball physically against cushion 4 (South). On the Small table they form a row of five exactly adjacent balls. For other lines or tables, the balls may touch, overlap or lie apart.",
+              nl: "Kies Parallel (P) en Aankomsten. Je ziet alleen de basisromp met op Romp A alle aankomstballen van S−2 tot en met S+2 werkelijk tegen band 4 (Zuid). Op Klein vormen zij een rij van vijf ballen die precies naast elkaar liggen. Bij andere lijnen of tafels kunnen de ballen naast elkaar liggen, overlappen of uit elkaar liggen."
             },
             image: { source: "KruinLines", line: "VIJF", parts: ["romp"], tables: ["klein"], showArrivalSeries: true, offsets: [-2,-1,0,1,2] }
           },
@@ -473,7 +494,7 @@ window.THREEB_START_CONFIG = {
     EEN: { startLabel: "S", arrivals: ["west","noord","oost","zuid","west","oost","noord"], rule: "each_arrival_selects_the_next_cushion" },
     TWEE: { startLabel: "S", arrivals: ["west","noord","oost","zuid","west","oost","noord"], rule: "each_arrival_selects_the_next_cushion" },
     DRIE: { startLabel: "S", arrivals: ["west","noord","oost","zuid","west","oost","noord"], rule: "each_arrival_selects_the_next_cushion" },
-    VIER: { startLabel: "S", arrivals: ["west","noord","oost","zuid","west","oost","noord"], rule: "each_arrival_selects_the_next_cushion" },
+    VIER: { startLabel: "S", arrivals: ["west","noord","oost","west","zuid","oost","noord"], rule: "each_arrival_selects_the_next_cushion", note: "body_east_to_west_then_cross_reverse_west_to_south" },
     VIJF: {
       startLabel: "S",
       arrivals: ["west","noord","oost","zuid","west","oost","noord"],
@@ -488,8 +509,9 @@ window.THREEB_START_CONFIG = {
     panelTracks: ["VIER","VIJF","ZES","ZEVEN","ACHT"],
     noseArrivalByTrack: { NUL:0, EEN:10, TWEE:20, DRIE:30, VIER:40, VIJF:50, ZES:60, ZEVEN:70, ACHT:80 },
     route: ["S","W","N","O","Z","W","O","N"],
-    cross: { fixedAngleDegrees:45, rule:"derive_from_body_arrival" },
-    leg: { to:{band:"oost",value:10,fixed:true}, from:{band:"west",rule:"derive_from_cross_arrival"} },
+    routeByTrack: { VIER:["S","W","N","O","W","Z","O","N"] },
+    cross: { defaultAngleDegrees:45, defaultArrivalBand:"west", defaultLoop:"+", configurablePerTableAndTrack:true, rule:"depart_from_body_arrival_and_follow_configured_angle_to_configured_arrival_band" },
+    leg: { to:{band:"oost",value:10,fixed:true}, from:{rule:"derive_from_cross_arrival"} },
     heel: { from:{band:"oost",rule:"shared_with_leg_arrival"}, to:{band:"noord",rule:"angle_of_incidence_equals_angle_of_reflection"} },
     experienceAnchors: {
       klein: {
@@ -531,7 +553,8 @@ window.THREEB_START_CONFIG = {
           }
         },
         kruis: {
-          fixedAngleDegrees: 45,
+          defaultAngleDegrees: 45,
+          configurablePerTableAndTrack: true,
           rule: "derive_from_body_arrival"
         },
         been: {
@@ -558,7 +581,9 @@ window.THREEB_START_CONFIG = {
       initial: "+",
       toggleOnSkippedCushion: true,
       persistUntilNextSkippedCushion: true,
-      note: "not_yet_relevant_beyond_LKL"
+      skippedCushionPairs: [["west","oost"],["oost","west"],["noord","zuid"],["zuid","noord"]],
+      skeletonConsequence: "a_skipped_cushion_changes_the_framework_and_switches_running_reverse_state",
+      note: "Track FOUR Body east_to_west switches to reverse; Cross west_to_south inherits reverse"
     },
     Reflection: {
       labels: { en: "Angle of incidence equals angle of reflection", nl: "Hoek van inval is hoek van uitval" },
@@ -569,7 +594,7 @@ window.THREEB_START_CONFIG = {
       labels: { en: "Position to line", nl: "Positie naar lijn" },
       rule: "a_known_position_on_the_current_line_determines_the_next_line_to_play",
       applications: [
-        { from:{part:"romp",point:"A"}, to:{part:"kruis",departureAngleDegrees:45} }
+        { from:{part:"romp",point:"A"}, to:{part:"kruis",departureAngleSource:"Kruinconfig.crossAngleDeg",defaultDegrees:45} }
       ],
       status: "extend_in_explanation_later"
     },

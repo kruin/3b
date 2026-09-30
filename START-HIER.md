@@ -18,7 +18,7 @@ Pak een download altijd **volledig uit** voordat je een BAT-bestand start.
 - **Waaier** is de overgang van een basisspoor naar het volgende spoor.
 - Een **waaierstand** is bijvoorbeeld VIJF, HALFZES of ZES; HALFZES is de
   **HALF-stand**.
-- De **−S+-reeks** bestaat uit **parallelstanden**, zoals VIJF−1 en VIJF+2.
+- **Parallel (P)** bestaat uit **parallelstanden**, zoals VIJF−1 en VIJF+2.
 - De **Aankomstenweergave** toont per gekozen lijn de eindposities van de bal.
 - **Kruinneus** is Kruins referentie per spoor; **Gebruikersneus** is de lokale
   aanpassing van de gebruiker. Bal 1 hoort rollend op band 1 aan te komen.
@@ -106,13 +106,13 @@ tafel. De app gebruikt uitsluitend deze configuratie en plaatst geen knop in
 de tafel- of stipwaardezone.
 
 Dezelfde private Excel bevat op het blad **Kruinconfig** ook de HALF-standen
-en de geldige `−S+`-standen. Een regel zoals `VIJF+1` kan daar rechtstreeks
+en de geldige Parallel-standen. Een regel zoals `VIJF+1` kan daar rechtstreeks
 worden aangepast; na `Bekijk_Kruinconfig.bat` gebruikt de lokale app die
 waarden.
 
 De standaardwaarden worden beheerd in de private Excel
-`Kruinconfig-3B-v149.xlsx`. Na opslaan zet `Bekijk_Kruinconfig.bat` deze om
-naar `kruinwaarden-generated-v149.js` in de lokale openbare 3B-map en opent de
+`Kruinconfig-3B-v165.xlsx`. Na opslaan zet `Bekijk_Kruinconfig.bat` deze om
+naar `kruinwaarden-generated-v169.js` in de lokale openbare 3B-map en opent de
 app meteen voor controle. De Excel zelf hoort nooit in de openbare repository.
 
 De online app ziet de wijziging nadat de gegenereerde configuratie met

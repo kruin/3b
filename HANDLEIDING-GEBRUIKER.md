@@ -1,6 +1,6 @@
 # 3B — handleiding voor de gebruiker
 
-Geldig voor versie 149.
+Geldig voor versie 169.
 
 Open **U-config** om de persoonlijke tafelweergave te wijzigen. V/A-labels
 kunnen klein, alleen bij de actieve bal of uit worden getoond. De bal en de
@@ -17,7 +17,7 @@ de zichtbare houten banden; het groene laken blijft vrij:
 
 - boven: `− Spoor +`;
 - onder: `− Lijn +`;
-- links: wissel tussen Waaier en −S+;
+- links: wissel tussen Waaier en Parallel (P);
 - rechts: wissel tussen Groot, Klein en Vergelijk;
 - linkerboven: Undo;
 - rechterboven: menu;
@@ -26,7 +26,7 @@ de zichtbare houten banden; het groene laken blijft vrij:
 
 Tik op het groene laken om een geopend menu te sluiten. Deze tik zet fullscreen
 niet aan of uit. Raak voor het verschuiven de betreffende bandbal aan. Tik kort
-op **S** om alle Waaier-Neuzen of −S+-parallelsporen als dunne referentielijnen
+op **S** om alle Waaier-Neuzen of Parallel-sporen als dunne referentielijnen
 te tonen; de actieve route blijft breed en gelabeld.
 
 Bij draaien van het toestel verhuist de bediening automatisch naar de nieuwe
@@ -38,9 +38,9 @@ tekenen. Persoonlijke gebruikerswaarden blijven daarvan gescheiden en privé.
 
 ## Aankomsten vergelijken
 
-Kies centraal **−S+** of **Waaier** en daarna bij **Weergave** de keuze
+Kies centraal **Parallel (P)** of **Waaier** en daarna bij **Weergave** de keuze
 **Aankomsten**. Stap met de lijnbediening door Neus, Kop, Nek, Romp en de
-volgende lijnen. Bij −S+ verschijnen de aankomstballen van de parallelsporen.
+volgende lijnen. Bij Parallel (P) verschijnen de aankomstballen van de parallelsporen.
 Bij Waaier verschijnen het basisspoor, de HALF-stand en het volgende spoor.
 
 De Aankomstenweergave toont uitsluitend de gekozen **basislijn** plus de
@@ -59,8 +59,8 @@ sporen bruikbaar zijn. Bij langere lijnen moet de speelbal rollend bij de
 eerste band aankomen.
 
 Een terugkerende gebruiker ziet **Start! →**. Tik of klik daarop om de tafel te
-gebruiken. Kijken is openbaar. E-mailaanmelding en accountopslag zijn voorbereid,
-maar nog niet geactiveerd; gebruik voorlopig lokale opslag en een JSON-reservekop.
+gebruiken. Kijken is openbaar. Beheer en gebruikersopslag lopen via account en
+database. JSON-import en -export staan daarom niet meer in de gebruikersinterface.
 
 ## 2. Begrippen
 
@@ -70,8 +70,8 @@ maar nog niet geactiveerd; gebruik voorlopig lokale opslag en een JSON-reserveko
 - **Waaier**: de overgang van een basisspoor naar het volgende spoor.
 - **Waaierstand**: één gekozen stand in de Waaier, bijvoorbeeld VIJF, HALFZES of ZES.
 - **HALF-stand**: de middelste waaierstand, precies tussen twee buursporen.
-- **−S+-reeks**: de verzameling parallelstanden rond één basisspoor.
-- **Parallelstand**: één stand uit de −S+-reeks, bijvoorbeeld VIJF−1 of VIJF+2.
+- **Parallel (P)**: de verzameling parallelstanden rond één basisspoor.
+- **Parallelstand**: één stand uit Parallel (P), bijvoorbeeld VIJF−1 of VIJF+2.
 - **Aankomstenweergave**: toont voor de gekozen lijn waar de bal in iedere waaier- of parallelstand aankomt.
 - **V**: vertrekwaarde van een lijn.
 - **A**: aankomstwaarde van een lijn.
@@ -80,6 +80,27 @@ maar nog niet geactiveerd; gebruik voorlopig lokale opslag en een JSON-reserveko
 
 De lijnvolgorde is Neus, Kop, Nek, Romp, Kruis, Been, Hiel, Voet en Teen.
 Been had door de vorm ook Staart kunnen heten; de vaste naam blijft Been.
+In de cursus heten **Been en Hiel samen de Uitloop**.
+
+De standaardstoot is eerst geijkt op het uitrollen van bal 1 naar de middenzone
+van het biljart. De Uitloop is later toegevoegd door de baan met handmatige
+tafeltests en Kruinconfig via Been naar A-Hiel door te trekken. De Uitloop is
+dus een geteste uitbreiding van het spoor; de middenzone blijft het eerste
+ijkpunt.
+
+### Spoor VIER
+
+Bij Spoor VIER loopt Romp van **Oost naar West**. Kruis vertrekt uit dezelfde
+bal aan de Westband en loopt met `− contra` naar de Zuidband. Daarna volgt de
+Uitloop: Been + Hiel. De Kruishoek bepaalt de precieze aankomst van Kruis op
+Zuid. De bandvolgorde van VIER wijkt hierdoor bewust af van die van VIJF.
+
+Algemene regel: wanneer bal en lijn een band overslaan, ontstaat een ander
+Karkas en schakelt de loopstand van mee naar contra, of bij een volgende
+bandoverslag weer terug. De berekende stand blijft voor de volgende lijnen
+gelden. Daarom schakelt VIER al bij Romp `Oost → West`; Kruis `West → Zuid`
+erft de contra-stand. Bij VIJF volgt deze omschakeling pas bij Been
+`West → Oost`.
 
 Neus, Kop en Nek vormen de aanloop onder drie banden. Zij worden in de cursus
 wel geïntroduceerd, maar niet als doelroute aangeboden. De routekeuze voor de
@@ -130,7 +151,7 @@ verloop** met alle afgeleide waarden vanaf die plaats.
 ## 3. Tafel kiezen
 
 Open het centrale menu op de tafel en kies Groot, Klein of Vergelijkend, het
-gewenste spoor en de reeks Waaier of −S+. Na een keuze sluit het menu zodra je
+gewenste spoor en de reeks Waaier of Parallel (P). Na een keuze sluit het menu zodra je
 de tafel aanraakt. Tik op een leeg tafeldeel voor fullscreen.
 
 Op een echte telefoon gebruikt de tafel automatisch het volledige zichtbare scherm. Op desktop kunt u dezelfde smalle weergave controleren met **Klant mobiel testen** rechtsboven; dezelfde knop sluit de test weer.
@@ -171,7 +192,7 @@ De Kruinreferentie is `O20 → Z38`. Vind je zelf `O22 → Z36`:
 3. kies **Klaar · bewaar**.
 
 Je eigen `22–36` blijft lokaal bewaard. Kruins `20–38` blijft intact.
-Vanaf versie 149 krijgt een met **Klaar · bewaar** bevestigde waarde expliciet
+Vanaf versie 151 krijgt een met **Klaar · bewaar** bevestigde waarde expliciet
 de herkomst *eigen gebruiker*. Een volgende release kan haar daardoor van een
 oude foutieve berekening onderscheiden.
 
@@ -181,16 +202,16 @@ oude foutieve berekening onderscheiden.
 - **Bewerkt**: handmatig gewijzigd.
 - **Goedgekeurd**: met **Klaar · bewaar** bevestigd.
 
-Maak regelmatig een reservekop via **Mijn tafels**. Gebruik **Import** om deze
-JSON later terug te zetten. Browseropslag is apparaat- en browsergebonden.
+Bevestigde wijzigingen worden via het account in de database bewaard. De
+gebruikersinterface bevat geen afzonderlijke JSON-reservekop of JSON-import meer.
 
-## 6. Waaier en −S+
+## 6. Waaier en Parallel (P)
 
 - De **Waaier** bevat het basisspoor, de HALF-stand en het volgende spoor.
 - Iedere keuze daarbinnen heet een **waaierstand**.
-- De **−S+-reeks** bevat parallelstanden rond het basisspoor.
+- **Parallel (P)** bevat parallelstanden rond het basisspoor.
 - De paneelknoppen klappen niet rond: vóór VIER en na ACHT blijft de Waaier staan.
-- Binnen −S+ blijven −/+ bij hetzelfde basisspoor. VIJF loopt bijvoorbeeld van
+- Binnen Parallel (P) blijven −/+ bij hetzelfde basisspoor. VIJF loopt bijvoorbeeld van
   VIJF−2 tot VIJF+3; aan een grens wordt de betreffende knop uitgeschakeld.
 - De dunne lijn toont het basisspoor als vaste referentie.
 - Statisch toont het hele spoor; Lijn voor lijn vergelijkt één lijn tegelijk.
@@ -212,3 +233,23 @@ sessielengte. Persoonlijke tafelwaarden blijven privé.
 - Waarde reageert niet: raak duidelijk de eerste of tweede lijnhelft aan.
 - Oude waarde: gebruik **Herstel lijn + tafel** of importeer je reservekop.
 - Gebruikers publiceren niet; meld publicatieproblemen aan Kruin.
+# Karkas van een spoor
+
+Het **Karkas** (*Framework*) bestaat uit Neus en Romp. Deze twee lijnen vormen
+de eerste herkenbare basis van een LKL-spoor. Kies eerst het spoor en daarna
+**Karkas** om alleen die twee lijnen te tonen.
+
+Een spoor is bijvoorbeeld VIJF of ZES. Een lijn is een onderdeel van dat spoor.
+LKL heet het patroon: de opeenvolging lang–kort–lang.
+
+Tik op een lijn om haar waarden in het gekleurde lijnvenster te bekijken of te
+wijzigen. Neus is de uitzondering: de Neus zelf ligt vast; alleen de
+afstootlengte kan worden aangepast.
+
+3B versie 169 · menu, posities en Nek
+- Instellingen opent met muis en touch en blijft boven de bandbediening.
+- Focus heet Start; vertreklabels gebruiken P/P+1/P−2 of W/W+2.
+- Positiekleuren: Karkas oker, Kruin groen, Berekend rood, Bewerkt blauw.
+- Kop/Nek wordt na het toepassen van variantankers opnieuw aangesloten.
+- Eerder berekende opgeslagen varianten worden hersteld; eigen wijzigingen blijven behouden.
+- Private Excel/ODS-bronwaarden uit v165 zijn ongewijzigd meegeleverd.

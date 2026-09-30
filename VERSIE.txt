@@ -1,6 +1,50 @@
-3B GitHub Pages versie 149
+3B GitHub Pages versie 169
 
-Versie 149 is één schone, zelfstandige release.
+Versie 169 — herstel menu en aansluitingen
+- De schone v169 is de basis; de Neus van iedere Parallel-stand wordt als één lijnvector verschoven en blijft daardoor parallel.
+- In Aankomsten volgt de dikke Neus altijd het gekozen basis-, HALF- of Parallel-spoor; hij valt niet meer terug op het onderste basisspoor.
+- De reeksnaam `−S+` is vervangen door `Parallel (P)` in app, cursus en documentatie.
+- Nederlands is de standaard- en terugvaltaal; Engels blijft kiesbaar.
+- Taal, aanspreekvorm, richting, vertrek, correctie, stippelwaarden, balkleur, balmarkering, speelbereik en U-config staan in het zichtbare menu onder Instellingen.
+- Gebruikersbeheer blijft account/database; JSON-import en -export zijn uit de gebruikersinterface verwijderd.
+- `Regressiecontrole_3B.bat` en de publicatiestarter controleren voortaan menu, config, taal, opslag, benaming, Neus-paralleliteit en versieaansluitingen.
+- Alle actieve release-, cache-, handleiding- en publicatieverwijzingen wijzen naar v169.
+- Oude inspectiebestanden van v160/v163 en Python-cache zijn niet opgenomen.
+
+Versie 164
+- De bovenste bedieningsrij is horizontaal schuifbaar op smalle schermen.
+- Spoor ZES is hersteld: Kop A staat op Noord 10; op Groot staat ook Nek A op Oost 30.
+
+3B GitHub Pages versie 164
+
+Versie 164
+- Alle basissporen worden voortaan altijd in Basisstand berekend; een lokaal actieve HALF- of parallelstand kan de berekende Nek niet meer in een tijdelijke variant opsluiten.
+- De gele actieve lijn van het serie-overzicht gebruikt exact dezelfde V/A-geometrie als de gewone lijn en valt daardoor op de lijn zelf.
+
+Versie 162
+- Spoor ZES en andere sporen tekenen de berekende Nek zodra Kop zichtbaar is en de brug naar Romp compleet is.
+- Zichtbare LKL-lijnen vormen altijd een aaneengesloten reeks; een oude lokale schermstatus kan Kop of Nek niet meer overslaan.
+- De Spoor/Lijn-menubalk ligt nu gegarandeerd boven alle tafel-, lijn- en balaanraaklagen en blijft klikbaar.
+
+Versie 161
+- De bandroute is nu per spoor configureerbaar bij Kruis.
+- Spoor VIER: Romp Oost → West; Kruis vertrekt uit dezelfde Westbal en loopt `− contra` naar Zuid.
+- Been vertrekt automatisch uit A-Kruis, ook wanneer die aankomst niet op West ligt.
+- De cursus vergelijkt de afwijkende route van VIER met VIJF en plaatst daarna de Uitloop: Been + Hiel.
+- XLSX en ODS bevatten de nieuwe kolommen Kruis A band en Kruis loop override.
+- In de onscreen editor kan VIER · Romp als Oost 10 → West 10 worden ingevoerd en bewaard.
+- Bandoverslag wordt algemeen herkend aan tegenoverliggende banden en schakelt de blijvende mee/contra-stand.
+
+Historiek
+
+Versie 160
+- De LKL-berekening blijft hard gefaseerd: Karkas, Kop A, Kop/Nek en daarna pas de staart.
+- Kruis gebruikt vanuit Romp A de hoek uit de Kruinconfig.
+- De Kruishoek is per tafel en spoor configureerbaar in XLSX/ODS; standaard 45 graden.
+- Handmatige Kruiswaarden blijven leidend.
+- De cursus benoemt de middenzone als eerste ijkpunt en de Uitloop (Been + Hiel) als later handmatig geteste uitbreiding.
+
+Versie 150 is één schone, zelfstandige release.
 
 - V/A-labels zijn standaard klein en ondergeschikt aan bal en hulplijnen.
 - De bal wordt boven de labels getekend en blijft daardoor altijd duidelijk zichtbaar.
@@ -26,22 +70,108 @@ Versie 149 is één schone, zelfstandige release.
 - De tafel vult het volledige appvenster; een tik op het laken wisselt fullscreen niet meer.
 - Spoorbediening staat midden op de bovenste houten band.
 - Lijnbediening staat midden op de onderste houten band.
-- Waaier/−S+ staat op de linkerband; Groot/Klein/Vergelijk op de rechterband.
+- Waaier/Parallel (P) staat op de linkerband; Groot/Klein/Vergelijk op de rechterband.
 - Undo, menu, Herstel en Bewaar staan in de vier houten hoeken.
 - Het groene laken blijft vrij van permanente menu's.
 
 - Het spoorpaneel klapt bij minimum of maximum niet meer rond.
 - De Waaier loopt uitsluitend van VIER via de HALF-standen naar ACHT.
-- In de −S+-reeks blijven −/+ binnen het gekozen basisspoor.
+- In Parallel (P) blijven −/+ binnen het gekozen basisspoor.
 - VIJF loopt van VIJF−2 tot en met VIJF+3; aan beide grenzen blijft de selectie staan.
 - Grensknoppen worden zichtbaar uitgeschakeld.
 
-- Openbare app: `3B-openbare-app-v149`.
-- Private beheerbron: `3B-private-Kruinconfig-v149`.
-- Kruinwaarden: `Kruinconfig-3B-v149.xlsx` naar `kruinwaarden-generated-v149.js`.
+- Openbare app: `3B-openbare-app-v169`.
+- Private beheerbron: `3B-private-Kruinconfig-v169`.
+- Kruinwaarden: de laatst opgeslagen `Kruinconfig-3B-v165.xlsx` of `.ods` naar `kruinwaarden-generated-v169.js`.
 - Mobiele tafel gebruikt de volledige beschikbare schermruimte.
 - Barbon en veilige Mollie/Supabase-betaalvoorbereiding zijn aanwezig.
 - Betalen blijft uit totdat `Activeer_Betalen.bat` bewust wordt uitgevoerd.
 - Openbare publicatie blijft mogelijk wanneer betalen nog niet is geactiveerd.
 
-Oudere releases hoeven niet te worden samengevoegd met versie 149.
+Oudere releases hoeven niet te worden samengevoegd met versie 151.
+Versie 151
+
+- Centraal gekleurd lijnvenster na klik of tik op een lijn.
+- Vertrekband/-waarde en aankomstband/-waarde per actuele lijn.
+- Neus blijft vast; alleen de afstootlengte is daar instelbaar.
+- Karkas/Framework-weergave per spoor met alleen Neus en Romp.
+- Terminologie: spoor = VIJF/ZES; lijn = Neus/Romp; patroon = LKL.
+3B versie 152
+
+- De transparante lijnkliklaag ligt nu boven de tekenlagen; klikken of tikken
+  op een zichtbare lijn opent het centrale lijnvenster.
+- Spoor en Lijn staan samen in één verplaatsbaar tafelmenu.
+- Karkas is rechtstreeks zichtbaar in dat tafelmenu.
+- Karkas toont Neus en Romp; beide blijven aanklikbaar.
+- Het lijnvenster en de overige geopende panelen blijven versleepbaar.
+3B versie 153
+
+- Gewijzigde lijnwaarden worden in de actieve spoorroute bewaard en direct
+  opnieuw getekend. Dit geldt ook voor VIER en de overige sporen.
+- De lijneditor gebruikt alleen Vertrek en Aankomst, volledige bandnamen en
+  compacte min/getal/plus-bediening.
+- Typen en min/plus veranderen de tafel onmiddellijk; Bewaar bevestigt.
+- Er is exact één menuknop. `onscreenMenu.menuButtonPosition` kiest `corner`
+  (standaard) of `central`.
+- Het complete Spoor/Lijn/Karkas-paneel kan vanaf de achtergrond én de knoppen
+  worden versleept. Slepen voert de knopactie niet uit.
+3B versie 154
+
+- Herstelt de vertrouwde Spoor/Lijn-balk.
+- Karkas staat niet meer in deze balk, maar in het geopende menu bij Waaier
+  en Parallel (P).
+- De tekst Karkas sluiten verschijnt uitsluitend wanneer Karkas actief is.
+- Slepen begint alleen op het greepje; hierdoor werken alle min- en plusknoppen
+  weer normaal.
+- Er is één zichtbare menuknop. De config kiest hoek of centraal.
+3B versie 155
+
+- Herstelt de onbedoeld verborgen Bewaar-knop in het lijnvenster.
+- Vertrek en Aankomst hebben elk een schuifregelaar naast min/getal/plus.
+- Schuiven, typen en min/plus tekenen de nieuwe waarde direct op tafel.
+- Bewaar keurt de actuele waarden goed en sluit het venster.
+- Dezelfde bediening is bruikbaar voor Kruinconfig en later voor de gebruiker.
+3B versie 156
+
+- Bij Neus wordt het V/A-bewerkingsblok werkelijk verborgen.
+- De vaste Neus wordt expliciet getoond, bijvoorbeeld S naar West 50 voor
+  VIJF.
+- Oude waarden van de eerder geopende lijn kunnen niet meer bij Neus blijven
+  staan.
+- Alleen de afstootlengte van Neus blijft instelbaar.
+3B versie 157
+
+- Structurele oriëntatieborging: Noord is altijd boven, Zuid onder, West links
+  en Oost rechts.
+- Desktop, mobiel, fullscreen, resize en apparaatrotatie wijzigen alleen de
+  schaal van de tafel.
+- De tafel-SVG wordt nooit meer met CSS 90 graden gedraaid.
+- Teken-, aanraak-, sleep-, band- en stipcoördinaten gebruiken daardoor steeds
+  hetzelfde assenstelsel.
+3B versie 158
+
+- De oude tweede menuknop is volledig uit de HTML verwijderd. Alleen de
+  configureerbare band/centrale menuknop wordt nog aangemaakt.
+- Iedere lijn wordt uit haar eigen Vertrek- en Aankomststiplijn geconstrueerd.
+- Romp Oost 20 naar Zuid 38 gebruikt dus exact die twee stiplijnpunten.
+- Een voorgaande lijn mag het vertrekpunt van de volgende lijn niet langer
+  geometrisch verschuiven.
+- Aansluiting blijft een ketencontrole; zij vervangt geen ingevoerde waarde.
+3B versie 159
+
+- De LKL-berekening heeft drie harde fasen.
+- Fase 1: Karkas compleet (Neus en beide Rompwaarden).
+- Fase 2: handmatig/geconfigureerd Kopanker op Noord compleet.
+- Fase 3: eerst Kop V en Nek berekenen; daarna pas Kruis, Been, Hiel en het
+  verdere verloop.
+- Een latere fase start niet wanneer een verplicht anker ontbreekt.
+- Handmatig ingevoerde of goedgekeurde waarden blijven leidend.
+- VIJF Klein gebruikt S-West 50, Romp Oost 20-Zuid 38 en Kop A Noord 19.
+
+3B versie 169 · menu, posities en Nek
+- Instellingen opent met muis en touch en blijft boven de bandbediening.
+- Focus heet Start; vertreklabels gebruiken P/P+1/P−2 of W/W+2.
+- Positiekleuren: Karkas oker, Kruin groen, Berekend rood, Bewerkt blauw.
+- Kop/Nek wordt na het toepassen van variantankers opnieuw aangesloten.
+- Eerder berekende opgeslagen varianten worden hersteld; eigen wijzigingen blijven behouden.
+- Private Excel/ODS-bronwaarden uit v165 zijn ongewijzigd meegeleverd.
