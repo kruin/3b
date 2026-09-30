@@ -77,6 +77,20 @@ function parallel(a, b) {
       if (!(await page.locator('.position-legend').textContent()).includes('Kruin')) throw new Error('Positiekleuren ontbreken.');
       await page.locator("#bandMenu").click();
       await page.screenshot({path:`/tmp/3b-${viewport.width}.png`});
+      await page.locator("#parallelDisplaySelect").selectOption("line");
+      if(!(await page.locator("#lineEditor").isVisible()))throw new Error("Config opent niet in Lijn voor lijn.");
+      await page.locator("#bandLinePlus").click();
+      if((await page.locator("#lineEditor").getAttribute("data-part"))!=="kop")throw new Error("Config volgt de lijnkeuze niet.");
+      await page.locator("#lineToValue").fill("18");
+      await page.locator("#lineToValue").dispatchEvent("input");
+      if((await page.locator("#lineToValue").getAttribute("data-position-origin"))!=="edited")throw new Error("Config-edit krijgt niet de kleur Bewerkt.");
+      await page.locator("#bandLinePlus").click();
+      await page.locator("#bandLineMinus").click();
+      if((await page.locator("#lineToValue").inputValue())!=="18")throw new Error("Config-edit verdwijnt na lijnwisseling.");
+      await page.screenshot({path:`/tmp/3b-config-${viewport.width}.png`});
+      await page.locator("#bandMenu").click();
+      await page.locator("#parallelDisplaySelect").selectOption("whole");
+      if(await page.locator("#lineEditor").isVisible())throw new Error("Automatisch configvenster blijft open buiten Lijn voor lijn.");
       if (pageErrors.length) throw new Error(`Schermfout: ${pageErrors.join(" | ")}`);
       await page.close();
     }

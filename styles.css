@@ -506,7 +506,7 @@ body.table-only .band-corner{width:var(--screen-band,36px);height:var(--screen-b
 body.table-only .band-reset,body.table-only .band-save{font-size:8px}
 body.table-only .band-save{background:#176f4f}
 
-/* v169: de bovenste bedieningsrij kan horizontaal schuiven op smalle schermen. */
+/* v170: de bovenste bedieningsrij kan horizontaal schuiven op smalle schermen. */
 body.table-only .central-track-controls {
   overflow-x: auto;
   overflow-y: auto;
@@ -545,3 +545,6 @@ body.table-only .central-track-controls{z-index:2201;pointer-events:auto}
 .value-legend .framework{color:#a36b00}
 
 .menu-settings-grid [hidden]{display:none!important}
+
+/* Config van de gekozen lijn blijft toegankelijk boven de bandbediening. */
+.line-editor{z-index:2100}

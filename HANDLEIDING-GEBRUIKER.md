@@ -1,6 +1,6 @@
 # 3B — handleiding voor de gebruiker
 
-Geldig voor versie 169.
+Geldig voor versie 170.
 
 Open **U-config** om de persoonlijke tafelweergave te wijzigen. V/A-labels
 kunnen klein, alleen bij de actieve bal of uit worden getoond. De bal en de
@@ -246,10 +246,12 @@ Tik op een lijn om haar waarden in het gekleurde lijnvenster te bekijken of te
 wijzigen. Neus is de uitzondering: de Neus zelf ligt vast; alleen de
 afstootlengte kan worden aangepast.
 
-3B versie 169 · menu, posities en Nek
+3B versie 170 · menu, posities en Nek
 - Instellingen opent met muis en touch en blijft boven de bandbediening.
 - Focus heet Start; vertreklabels gebruiken P/P+1/P−2 of W/W+2.
 - Positiekleuren: Karkas oker, Kruin groen, Berekend rood, Bewerkt blauw.
 - Kop/Nek wordt na het toepassen van variantankers opnieuw aangesloten.
 - Eerder berekende opgeslagen varianten worden hersteld; eigen wijzigingen blijven behouden.
 - Private Excel/ODS-bronwaarden uit v165 zijn ongewijzigd meegeleverd.
+
+Versie 170: Lijn voor lijn toont automatisch de config van de gekozen lijn. Min/plus voor Lijn wisselt het configvenster mee. Bestaande bewerkingen worden geladen; gewijzigde waarden krijgen hun positiekleur. Neus toont alleen de afstootlengte.

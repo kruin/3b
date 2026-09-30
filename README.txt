@@ -1,4 +1,4 @@
-3B LIJNCONFIGURATOR - VERSIE 169
+3B LIJNCONFIGURATOR - VERSIE 170
 ================================
 
 Dit is de openbare appmap. Gebruik geen bestanden uit v139 tot en met v142 in
@@ -16,8 +16,8 @@ PUBLICEREN
 
 PRIVATE KRUINWAARDEN
 - Bewerk nooit een Excelbestand in deze openbare map.
-- Gebruik de naastliggende map 3B-private-Kruinconfig-v169.
-- Bekijk_Kruinconfig genereert vandaar kruinwaarden-generated-v169.js.
+- Gebruik de naastliggende map 3B-private-Kruinconfig-v170.
+- Bekijk_Kruinconfig genereert vandaar kruinwaarden-generated-v170.js.
 
 BETALEN
 - Lees BETALEN-ACTIVEREN.md.

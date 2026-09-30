@@ -112,7 +112,7 @@ waarden.
 
 De standaardwaarden worden beheerd in de private Excel
 `Kruinconfig-3B-v165.xlsx`. Na opslaan zet `Bekijk_Kruinconfig.bat` deze om
-naar `kruinwaarden-generated-v169.js` in de lokale openbare 3B-map en opent de
+naar `kruinwaarden-generated-v170.js` in de lokale openbare 3B-map en opent de
 app meteen voor controle. De Excel zelf hoort nooit in de openbare repository.
 
 De online app ziet de wijziging nadat de gegenereerde configuratie met

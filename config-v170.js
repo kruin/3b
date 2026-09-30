@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 101, release: "169", publicRelease: "169",
+  version: 101, release: "170", publicRelease: "170",
   userDisplay: {
     defaultLineOpacity: 0.58,
     defaultArrowMode: "request",
