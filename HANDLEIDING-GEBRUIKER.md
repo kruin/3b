@@ -1,3 +1,12 @@
+## De tafel: uitleg en aanleg
+
+**Uitleg** laat je begrijpen wat je ziet, meet en berekent.
+**Aanleg** laat je die waarden voor jouw tafel instellen en bewaren.
+Het Karkas leidt beide: eerst Neus en Romp, daarna de verbinding Kop/Nek.
+De pijlen leiden je door de uitleg; Aanleg · mijn tafel instellen brengt je
+naar de configureerbare tafel. De Neus-, Romp- en Kop-knoppen openen
+rechtstreeks het betreffende deel van de aanleg.
+
 # 3B — handleiding voor de gebruiker
 
 ## Bal zoekt spoor — de cursus bij je oefentafel
@@ -39,7 +48,28 @@ van de gekozen cursusroute en laat je notities staan. **Mijn inschatting** kiest
 een andere route. Nieuwe cursusteksten verschijnen ook bij een oudere gekozen
 Kruinbasis; die basiswaarden worden daardoor niet vervangen.
 
-## Mijn tafel: downloaden en terugladen (nieuw in v175)
+## Zien, gaan kijken en meten
+
+**V (vertrek) en A (aankomst) zijn punten op de stiplijnen.** De voortgaande
+lijn loopt V → A. Bij de Romp van VIJF ligt V op de Oost-stiplijn en A op de
+Zuid-stiplijn. Raakpunten op banden zijn afzonderlijke plaatsen. S is de
+startpositie van de speelbal op de Neus.
+
+Volg de lijnen van de voortgaande bal. Bij VIJF zie je de Neus: noteer S en
+Aneus (50 bij de basis-VIJF) op de stiplijn, niet het raakpunt op de band.
+Ga voor de Romp gericht kijken: plaats lichte ijkjes op de rand van Oost,
+speel en kijk welk ijkje omvalt. Volg vervolgens de uitgaande lijn naar het
+punt op de Zuid-stiplijn. Het ijkje toont de raakzone; de uitgaande richting
+bepaalt samen daarmee de Romplijn. Noteer de lijn tussen de stiplijnen.
+
+Het meetbeeld toont precies één bal op de Oostband, berekend met dezelfde
+balbreedtecorrectie als de tafel. De bal raakt de band met zijn zijkant;
+zijn middelpunt ligt op de uitgaande Romplijn. Raakpunt en stipwaarde zijn
+verschillende plaatsen. De getekende ijkjes zijn schematisch, geen nieuwe
+bandnummering. In deze oefening blijft Romp V een vaste referentie. Een
+werkelijk afwijkend vertrek is een afzonderlijke waarneming.
+
+## Mijn tafel: downloaden en terugladen (nieuw in v177)
 
 Open Menu → Instellingen → Mijn tafel.
 
@@ -55,7 +85,7 @@ Bij terugladen hoef je dus geen oude basis handmatig op te zoeken: het bestand
 herstelt zijn eigen basis, decimalen en tafelnaam, ook na een nieuwe Kruinpublicatie.
 
 De bestandsnaam bevat de tafelnaam, exacte Kruinbasis en appversie, bijvoorbeeld
-`3B-mijn-tafel--kruin-v175-<inhoudscode>--app-v175.xlsx`.
+`3B-mijn-tafel--kruin-v177-<inhoudscode>--app-v177.xlsx`.
 Het basis-ID in het bestand is leidend wanneer je het bestand zelf hernoemt.
 
 **Een andere tafel of nieuw laken:** selecteer een andere Kruinbasis en klik
@@ -76,7 +106,7 @@ Download daarnaast een tafelbestand om je wijzigingen mee te nemen naar een
 andere browser of computer. In de private Kruineditor schrijft Bewaar nog steeds
 naar Kruinconfig.sqlite3.
 
-Geldig voor versie 175.
+Geldig voor versie 177.
 
 Open **U-config** om de persoonlijke tafelweergave te wijzigen. V/A-labels
 kunnen klein, alleen bij de actieve bal of uit worden getoond. De bal en de
@@ -318,7 +348,7 @@ Tik op een lijn om haar waarden in het gekleurde lijnvenster te bekijken of te
 wijzigen. Neus is de uitzondering: de Neus zelf ligt vast; alleen de
 afstootlengte kan worden aangepast.
 
-3B versie 175 · menu, posities en Nek
+3B versie 177 · menu, posities en Nek
 - Instellingen opent met muis en touch en blijft boven de bandbediening.
 - Focus heet Start; vertreklabels gebruiken P/P+1/P−2 of W/W+2.
 - Positiekleuren: Karkas oker, Kruin groen, Berekend rood, Bewerkt blauw.
@@ -330,8 +360,43 @@ Versie 171: Lijn voor lijn toont automatisch de config van de gekozen lijn. Min/
 
 Versie 171: Parallel-bounds vanuit basisspoor; VIJF+2/+3 beschikbaar. Neus en bandbal hersteld bij oude schermstanden. Klein VIJF en alle Parallel-standen dezelfde Neuslengte: 83 cm. Veranderen van de lengte werkt door in de Parallel-standen. Klik in Lijn voor lijn op Spoor of Lijn voor config. Hele balk versleepbaar. Selectiemenu met ×. Start activeert gekozen overzicht.
 
-## v175 — spoorreeksen en waarden
+## v177 — spoorreeksen en waarden
 
 Het spoormenu bevat NUL tot ACHT met hun geldige Parallelstanden. VIJF loopt tot +3, VIER tot +4, DRIE tot +5 enzovoort. Aankomsten volgt de actuele lijnwaarden op alle banden, ook voor de negatieve standen.
 
 De lijneditor heeft een scrollvenster met het volledige actuele spooroverzicht en de typen karkas, berekend en aangepast. Vanuit de lokale Kruinconfig-editor bewaart de knop Bewaar het volledige getoonde overzicht in de private beheerbron. Open deze beheerfunctie via Bekijk_Kruinconfig in de private map.
+
+## Het Karkas is leidend
+
+Eerst Neus en Romp vastleggen; Kop en Nek verbinden dit Karkas.
+De extra meetstap is Kop A op Noord. Daarna volgt de berekende Nek V.
+
+## Kop A meten, daarna Nek V berekenen
+
+Bij VIJF meet je Kop A op Noord bij voorkeur met ijkjes. De bekende Neus en
+gemeten Romp leveren geen exacte Kop A. Zonder eigen meetgegevens kun je
+**Geen eigen meting · schat Kop A** kiezen. De app gebruikt een geometrische
+spiegeling van de Neus, met inval = uitval, en markeert de uitkomst als
+**bij benadering berekend**. Het is een vertrekpunt om op de tafel te controleren. Kruin mat op zijn tafels: Klein 19,
+Groot 15. Dit zijn stiplijnwaarden van de inkomende Koplijn, geen nummers op de
+raakplek aan de band. Meet voor een andere tafel opnieuw.
+
+De bekende Neus en gemeten Kop A bepalen de Koplijn en balpositie op Noord.
+Vanuit dezelfde balpositie vertrekt de Nek naar Nek A op Oost. Nek A is
+gemeten of afgeleid uit de Romp. De uitgaande Neklijn terug verlengd naar
+de Noord-stiplijn bepaalt Nek V. Kop A en Nek V zijn verschillende
+stiplijnpunten bij één gedeelde bal; stel hun waarden niet aan elkaar gelijk.
+
+## Herkomst bij elke lijnwaarde
+
+Groen: eigen meting of Kruinwaarde (Kop A: Kruinmeting).
+Rood: berekend, bij benadering berekend, of berekend uit een schatting.
+Blauw: ge-edit. Oker: configuratie/Karkas.
+Naast kleur staat de herkomst ook in tekst bij tafelwaarden, lijneditor,
+actieve waarde en cursuswaarden. Een groene Kruinwaarde is een referentie
+uit de gekozen basis, geen meting van jouw eigen tafel.
+
+Bij Kop A kies je Gebruik mijn meting, Geen eigen meting · schat Kop A,
+of Gebruik Kruinmeting. De gekozen herkomst blijft na verversen en in het
+volledige gebruikersbestand behouden. Een gewone edit krijgt de blauwe
+herkomst ge-edit, ook wanneer de vorige waarde gemeten was.

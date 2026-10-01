@@ -506,7 +506,7 @@ body.table-only .band-corner{width:var(--screen-band,36px);height:var(--screen-b
 body.table-only .band-reset,body.table-only .band-save{font-size:8px}
 body.table-only .band-save{background:#176f4f}
 
-/* v175: de bovenste bedieningsrij kan horizontaal schuiven op smalle schermen. */
+/* v177: de bovenste bedieningsrij kan horizontaal schuiven op smalle schermen. */
 body.table-only .central-track-controls {
   overflow-x: auto;
   overflow-y: auto;
@@ -575,3 +575,17 @@ body.table-only .explanation-carousel .table-svg{position:static!important;inset
 .explanation-visual.common-tables{grid-template-columns:repeat(2,minmax(0,1fr))}
 .course-interactions{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-height:36vh;overflow:auto;border-top:1px solid #d9c8ac;padding-top:8px}.course-interactions[hidden]{display:none}.course-interactions p{flex-basis:100%;text-align:center;margin:0;font-size:14px}.course-interactions button[aria-pressed=true]{background:#176f4f;color:white}.course-attempts{display:grid;grid-template-columns:minmax(120px,1fr) minmax(130px,1fr);gap:6px;max-width:620px;width:100%}.course-attempts label{display:flex;gap:8px;align-items:center}.course-attempts input{min-width:0;width:100%;max-width:150px}.course-check{display:flex;align-items:center;gap:8px;flex-basis:100%;justify-content:center}.course-check input{width:22px;height:22px}
 @media(max-width:600px){.explanation-carousel{padding:8px;gap:7px;grid-template-rows:auto minmax(160px,1fr) auto auto auto}.explanation-carousel .explanation-visual{min-height:160px}.explanation-carousel>header strong{font-size:18px}.explanation-carousel .course-header-actions{gap:4px;max-width:180px}.explanation-carousel>p{font-size:14px;line-height:1.35}.course-attempts{grid-template-columns:1fr 1fr}.course-attempts label{font-size:12px}.course-attempts button{font-size:12px;padding:5px}.course-interactions{max-height:31vh}.course-table-choice select{min-width:75px}.explanation-carousel>header #changeCourseAssessment{font-size:12px}.explanation-carousel>header #restartCourse{font-size:12px}}
+
+/* Explicit measuring points in the course, independent of hover. */
+#explanationVisual .course-measurement .course-stip-point{pointer-events:none}
+
+.course-head-measure{display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:center}.course-head-measure label{display:flex;gap:6px;align-items:center}.course-head-measure input{width:7rem}.course-origin-legend{justify-content:center;flex-wrap:wrap;margin:5px 0;gap:12px;font-size:12px}#courseHeadSource{margin:5px 0;font-weight:800}
+
+.point-origin{display:block;font-size:11px;font-weight:750;text-align:center;line-height:1.25;margin-top:2px}.line-editor legend{font-size:13px}
+
+/* Track navigation stays usable while the line editor is open. */
+body.table-only .band-controls{z-index:2200}
+
+.course-head-measure button{font-size:12px;min-height:32px;padding:5px 8px}.course-head-measure label{font-size:13px}#courseHeadSource{font-size:13px}
+
+@media(max-width:600px){.course-interactions{max-height:23dvh}.explanation-carousel>#explanationText{max-height:24dvh;overflow:auto}}

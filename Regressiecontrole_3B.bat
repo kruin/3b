@@ -6,17 +6,17 @@ where node >nul 2>nul || (
   pause
   exit /b 1
 )
-node tafelbestandcontrole-v175.js
+node tafelbestandcontrole-v177.js
 if errorlevel 1 (
   pause
   exit /b 1
 )
-node geometriecontrole-v175.js
+node geometriecontrole-v177.js
 if errorlevel 1 (
   pause
   exit /b 1
 )
-node regressiecontrole-v175.js
+node regressiecontrole-v177.js
 if errorlevel 1 (
   pause
   exit /b 1
@@ -25,13 +25,13 @@ node -e "require.resolve('playwright')" >nul 2>nul
 if errorlevel 1 (
   echo LET OP: UI-browsertest overgeslagen; Playwright is niet geinstalleerd.
 ) else (
-  node cursuscontrole-v175.js
+  node cursuscontrole-v177.js
   if errorlevel 1 (pause & exit /b 1)
-  node opstartcontrole-v175.js
+  node opstartcontrole-v177.js
   if errorlevel 1 (pause & exit /b 1)
-  node ui-regressie-v175.js
+  node ui-regressie-v177.js
   if errorlevel 1 (pause & exit /b 1)
-  node tafelbestand-ui-controle-v175.js
+  node tafelbestand-ui-controle-v177.js
   if errorlevel 1 (
     pause
     exit /b 1

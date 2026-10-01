@@ -23,14 +23,31 @@ const root=__dirname,server=http.createServer((req,res)=>{const file=path.resolv
   await page.getByRole('button',{name:'Ja, op de Romp',exact:true}).click();
   await page.locator('#nextExplanation').click();await page.getByRole('button',{name:'Naar de Neus · lengte instellen',exact:true}).click();
   await page.waitForSelector('#lineEditor',{state:'visible'});assert(await page.locator('#noseLengthEditor').isVisible());assert(!(await page.locator('#lineEditorValues').isVisible()));
-  await page.locator('#closeLineEditor').click();await reopen();assert((await page.locator('#explanationTitle').textContent()).includes('speelbal'));
-  await page.locator('#nextExplanation').click();await page.locator('#nextExplanation').click();
+  await page.locator('#closeLineEditor').click();await reopen();assert((await page.locator('#explanationTitle').textContent()).includes('S en Aneus'));
+  await page.locator('#nextExplanation').click();
+  assert.equal(await page.locator('#explanationVisual .ball-visible').count(),1);
+  assert.equal(await page.locator('#explanationVisual .course-measuring-mark').count(),5);
+  const measure=await page.locator('.course-measurement').evaluate(el=>({r:Number(el.dataset.radiusCm),x:Number(el.dataset.centerXCm),y:Number(el.dataset.centerYCm),table:el.dataset.table,width:window.THREEB_START_CONFIG.tables[el.dataset.table].widthCm}));
+  assert(Math.abs(measure.width-measure.x-measure.r)<1e-9,'De ene bal raakt de Oostband');
+  await page.screenshot({path:'/tmp/3b176-ijkjes-'+viewport.width+'.png'});
+  await page.locator('#nextExplanation').click();
   await page.locator('#courseAttempt1').fill('36.1256789');await page.getByRole('button',{name:'Toon poging 1 op mijn tafel',exact:true}).click();
   const data=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)).data.klein.VIJF.romp,key);assert.equal(data.to.value,36.1256789);assert.equal(data.from.value,20);
-  await reopen();assert((await page.locator('#explanationTitle').textContent()).includes('Romplijn vast'));
+  await reopen();assert((await page.locator('#explanationTitle').textContent()).includes('voortgaande Romplijn'));
   await page.locator('#nextExplanation').click();await page.locator('#courseAttempt2').fill('36.25');await page.locator('#courseAttempt3').fill('36.5');
   await page.reload();await page.waitForSelector('.table-svg');await reopen();assert((await page.locator('#explanationTitle').textContent()).includes('herhaal'));
   assert.equal(await page.locator('#courseAttempt1').inputValue(),'36.1256789');assert.equal(await page.locator('#courseAttempt3').inputValue(),'36.5');
+  await page.locator('#nextExplanation').click();assert((await page.locator('#explanationTitle').textContent()).includes('Kop A ·'));
+  assert((await page.locator('#explanationText').textContent()).includes('Klein 19, Groot 15'));
+  await page.getByRole('button',{name:'Geen eigen meting · schat Kop A',exact:true}).click();assert((await page.locator('#courseHeadSource').textContent()).includes('bij benadering berekend'));
+  await page.reload();await page.waitForSelector('.table-svg');await reopen();assert((await page.locator('#courseHeadSource').textContent()).includes('bij benadering berekend'));
+  await page.locator('#courseHeadInput').fill('18.1256789');await page.getByRole('button',{name:'Gebruik mijn meting',exact:true}).click();assert((await page.locator('#courseHeadSource').textContent()).includes('eigen meting'));
+  await page.getByRole('button',{name:'Gebruik Kruinmeting',exact:true}).click();assert((await page.locator('#courseHeadSource').textContent()).includes('Kruinmeting'));
+  const footerBox=await page.locator('#explanationFooter').boundingBox();assert(footerBox.y+footerBox.height<=viewport.height+1,'Cursusnavigatie valt buiten het scherm');
+  await page.screenshot({path:'/tmp/3b177-kopa-'+viewport.width+'.png'});
+  await page.getByRole('button',{name:'Naar de Kop · gemeten A invullen',exact:true}).click();await page.waitForSelector('#lineEditor',{state:'visible'});await page.locator('#closeLineEditor').click();await reopen();
+  await page.locator('#nextExplanation').click();assert((await page.locator('#courseBridgeValues').textContent()).includes('berekend'));
+  await page.screenshot({path:'/tmp/3b177-nek-'+viewport.width+'.png'});
   await page.locator('#nextExplanation').click();assert(await page.locator('#completeCourseLesson').isDisabled());await page.locator('#courseCanRepeat').check();await page.locator('#completeCourseLesson').click();assert((await page.locator('#courseCompletionStatus').textContent()).includes('Les 1 bewaard'));
   await page.getByRole('button',{name:'Verder · VIJF+1 en VIJF−1',exact:true}).click();assert((await page.locator('#explanationLevel').textContent()).includes('Les 2'));
   assert((await page.locator('#explanationVisual .table-svg').getAttribute('aria-label')).includes('VIJF+1'));
@@ -48,6 +65,6 @@ const root=__dirname,server=http.createServer((req,res)=>{const file=path.resolv
   if(!(await page.locator('#explanationCarousel').isVisible()))await reopen();assert((await page.locator('#explanationLevel').textContent()).includes('Bal zoekt spoor'),'Oudere basis krijgt de actuele cursus');
   assert.deepStrictEqual(errors,[]);await page.close();
  }
- console.log('CURSUSCONTROLE OK: desktop/mobiel, twee lijnen zonder overliggende bediening, doelbalfeedback, vaste Neus, drie exacte Rompnotities, V ongewijzigd, les bewaren/hervatten, Parallel voor Waaier en juiste VIER-tekening.');
+ console.log('CURSUSCONTROLE OK: desktop/mobiel, meetbeeld met vijf ijkjes en één bal tegen Oost, twee lijnen zonder overliggende bediening, doelbalfeedback, vaste Neus, drie exacte Rompnotities, V ongewijzigd, les bewaren/hervatten, Parallel voor Waaier en juiste VIER-tekening.');
  }finally{await browser.close();server.close();}
 })().catch(error=>{console.error(error);server.close();process.exitCode=1;});

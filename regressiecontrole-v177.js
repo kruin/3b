@@ -4,9 +4,9 @@ const fs = require("fs");
 const vm = require("vm");
 
 const read = file => fs.readFileSync(file, "utf8");
-const app = read("app-v175.js");
-const configText = read("config-v175.js");
-const kruinText = read("kruinwaarden-generated-v175.js");
+const app = read("app-v177.js");
+const configText = read("config-v177.js");
+const kruinText = read("kruinwaarden-generated-v177.js");
 const html = read("index.html");
 const css = read("styles.css");
 const errors = [];
@@ -50,7 +50,7 @@ for (const id of menuControlIds) {
 check(app.includes('["addressForm","addressForm"]'), "Aanspreekvorm reageert niet op wijzigingen.");
 check(app.includes("ensureSettingsMenuUi();ensureOnscreenMenuLayout()"), "Instellingenmenu wordt niet vóór de tafelopmaak opgebouwd.");
 
-for (const ref of ["styles.css?v=175", "config-v175.js", "kruinwaarden-generated-v175.js", "app-v175.js"]) {
+for (const ref of ["styles.css?v=177", "config-v177.js", "kruinwaarden-generated-v177.js", "app-v177.js"]) {
   check(html.includes(ref), `Versieverwijzing ontbreekt of wijkt af: ${ref}.`);
 }
 

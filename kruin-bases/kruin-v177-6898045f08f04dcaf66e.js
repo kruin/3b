@@ -1,5 +1,6 @@
+globalThis.THREEB_BASES.push((()=>{const window={};
 window.THREEB_START_CONFIG = {
-  version: 101, release: "175", publicRelease: "175",
+  version: 101, release: "177", publicRelease: "177",
   userDisplay: {
     defaultLineOpacity: 0.58,
     defaultArrowMode: "request",
@@ -171,7 +172,7 @@ window.THREEB_START_CONFIG = {
     }
   ],
   explanation: {
-  "version": "0.8",
+  "version": "1.0",
   "defaultLevel": "LKL",
   "scopeRules": {
     "systemExplanation": "shared_large_and_small",
@@ -202,12 +203,12 @@ window.THREEB_START_CONFIG = {
         {
           "key": "lesson-five-goal",
           "title": {
-            "nl": "Bal zoekt spoor · doe ’n stoot",
-            "en": "Ball seeks track · give it a shot"
+            "nl": "De tafel · uitleg en aanleg",
+            "en": "The table · explanation and setup"
           },
           "text": {
-            "nl": "3B is je oefentafel voor drieband. De lijnen geven een vertrekpunt; op jouw tafel ontdek je wat werkt. Speel VIJF met je eigen afstoot en leg de Romplijn vast. Neus gaat naar band 1. Romp is het baanstuk na band 3. Eerst deze twee lijnen.",
-            "en": "3B is your practice table for three-cushion billiards. The lines give you a starting point; discover what works on your own table. Play FIVE with your own stroke and record the Body line. Nose leads to cushion 1. Body is the section after cushion 3. Start with these two lines."
+            "nl": "Deze tafel heeft twee functies. Uitleg: volg de voortgaande bal en begrijp wat je ziet, meet of berekent. Aanleg: stel jouw tafel in met die waarden en bewaar ze. Het Karkas is in beide leidend: eerst Neus en Romp. Daarna verbinden Kop en Nek die lijnen. Bij elke waarde staat de herkomst. Gebruik de pijlen voor uitleg; kies Aanleg om je eigen tafel in te stellen. Speel op de echte tafel, kijk en stel bij.",
+            "en": "This table has two functions. Explanation: follow the moving ball and understand what you see, measure or calculate. Setup: configure and save your own table with those values. The framework leads both: establish Nose and Body first, then connect them with Head and Neck. Every value states its origin. Use the arrows for explanation; choose Setup to configure your own table. Play on the real table, observe and adjust."
           },
           "image": {
             "source": "KruinLines",
@@ -226,8 +227,8 @@ window.THREEB_START_CONFIG = {
             "en": "The framework · Body first, then Nose"
           },
           "text": {
-            "nl": "Het Karkas bestaat uit Neus en Romp. Deze twee lijnen geven het spoor zijn structuur. Zoek eerst de doelbal op de Romp. Kijk daarna waar de speelbal op de Neus ligt. De tussenlijnen komen later. Stipwaarden lees je op de stiplijn langs de band, niet op de bandrand.",
-            "en": "The framework consists of Nose and Body. These two lines give the track its structure. First locate the target ball on the Body. Then find the cue ball on the Nose. The connecting lines come later. Read diamond values on the diamond line along the cushion, not on its edge."
+            "nl": "Het Karkas is leidend: Neus en Romp. Zoek eerst de doelbal op de Romp, daarna de speelbal op de Neus. Leg deze twee lijnen vast. Kop en Nek verbinden vervolgens het Karkas; daarvoor gebruiken we gemeten Kop A en berekenen we daarna Nek V. Zonder eigen meting kun je Kop A bij benadering laten berekenen. V en A zijn punten op de stiplijnen. Bij de Romp van VIJF: V op Oost → A op Zuid. Raakpunten liggen op de banden. S is de startpositie van de speelbal. Uitleg laat zien hoe dit samenhangt; bij Aanleg leg je de waarden voor jouw tafel vast.",
+            "en": "The framework leads: Nose and Body. Find the target ball on the Body, then the cue ball on the Nose. Establish these two lines first. Head and Neck then connect the framework: measure Head A before calculating Neck V. V and A are diamond-line points. For the Body of FIVE: V on East → A on South. Contact points lie on cushions. S is the cue ball starting position."
           },
           "image": {
             "source": "KruinLines",
@@ -274,12 +275,12 @@ window.THREEB_START_CONFIG = {
         {
           "key": "lesson-cue-start",
           "title": {
-            "nl": "2 · waar ligt mijn speelbal?",
-            "en": "2 · where is my cue ball?"
+            "nl": "2 · zien · S en Aneus",
+            "en": "2 · see · S and Nose A"
           },
           "text": {
-            "nl": "De speelbal is de witte bal op de Neus. Zijn middelpunt ligt op de blauwe lijn naar band 1. De getoonde afstootlengte bepaalt zijn plaats langs die lijn. Kies Naar de Neus om de lengte op jouw tafel in te stellen. De Neusrichting blijft vast.",
-            "en": "The cue ball is the white ball on the Nose. Its centre lies on the blue line to cushion 1. The displayed stroke length determines its place along that line. Choose Open Nose to set the length on your table. The Nose direction remains fixed."
+            "nl": "Je ziet de Neus vanaf je speelplek. Noteer S: de vaste startpositie voor deze oefening. Noteer Aneus: bij de basis-VIJF 50 op de West-stiplijn. Je richt naar dat stiplijnpunt; noteer niet het raakpunt op de band. De speelbal ligt met zijn middelpunt op de Neus. Naar de Neus stelt alleen de afstootlengte in.",
+            "en": "You can see the Nose from your playing position. Record S, the fixed starting position for this exercise, and Nose A: 50 on the West diamond line for the base FIVE. Aim at that diamond-line point; do not record the cushion contact point. Open Nose changes only the stroke length."
           },
           "image": {
             "source": "KruinLines",
@@ -295,43 +296,44 @@ window.THREEB_START_CONFIG = {
         {
           "key": "lesson-roll-at-first",
           "title": {
-            "nl": "3 · speel en kijk",
-            "en": "3 · play and observe"
+            "nl": "3 · ga kijken · ijkjes op Oost",
+            "en": "3 · observe · markers on East"
           },
           "text": {
-            "nl": "Leg de speelbal op de gekozen plek en speel langs de Neus met je huidige eigen afstoot. Laat de bal rollend aankomen op band 1. Kijk vervolgens naar de Romp: waar vertrekt dat baanstuk en waar komt het aan? Noteer wat je werkelijk speelt. Laken, ballen en afstoot kunnen de echte loop beïnvloeden.",
-            "en": "Place the cue ball at the chosen position and play along the Nose using your current stroke. Let it reach cushion 1 rolling. Then observe the Body: where does it depart and where does it arrive? Record the route you actually play."
+            "nl": "Speel langs de Neus en laat de bal rollend aankomen op band 1. Plaats voor een volgende poging lichte ijkjes op de rand van de Oostband. Kijk welk ijkje omvalt. Dat maakt de raakzone zichtbaar. Volg daarna de voortgaande bal naar Zuid: naar welke stipwaarde op de Zuid-stiplijn loopt de Romp? De ijkjes in het lesbeeld zijn schematisch; ze krijgen geen stipwaarde op de bandrand.",
+            "en": "Play along the Nose, reaching cushion 1 rolling. Before another attempt, place light markers on the edge of the East cushion. Observe which marker falls. This reveals the contact zone. Then follow the outgoing ball towards the South diamond line. The pictured markers are schematic and have no diamond values on the cushion edge."
           },
           "image": {
             "source": "KruinLines",
             "line": "VIJF",
             "parts": [
-              "neus",
               "romp"
             ],
-            "courseTable": true
+            "courseTable": true,
+            "measurement": "east-body",
+            "emphasize": "guides"
           },
           "action": "table"
         },
         {
           "key": "lesson-record-body",
           "title": {
-            "nl": "4 · leg mijn Romplijn vast",
-            "en": "4 · record my Body line"
+            "nl": "4 · noteer de voortgaande Romplijn",
+            "en": "4 · record the outgoing Body line"
           },
           "text": {
-            "nl": "De getoonde Romp V blijft het vertrekpunt. Noteer de aankomst van je eerste poging als Romp A: band én stipwaarde op de stiplijn. Met Toon poging op mijn tafel maak je jouw genoteerde Romplijn zichtbaar. Naar de Romp opent de gewone lijneditor.",
-            "en": "The displayed Body V remains the departure point. Record the arrival of your first attempt as Body A: cushion and diamond-line value. Show attempt on my table displays your recorded Body line. Open Body opens the normal line editor."
+            "nl": "V en A zijn stiplijnpunten: Romp V op Oost en Romp A op Zuid. Noteer de voortgaande lijn V → A. De ene getoonde bal raakt Oost; zijn middelpunt ligt op die lijn. Het raakpunt ligt aan de zijkant van de bal, niet op de stiplijn. Het omgevallen ijkje toont de raakzone. Volg ook de uitgaande richting om V en A op de stiplijnen te bepalen. In deze oefening blijft de getoonde V vast en noteer je A.",
+            "en": "V and A are diamond-line points: Body V on East and Body A on South. Record the outgoing line V → A. The single pictured ball touches East and its centre lies on that line. Contact occurs at its side, not on the diamond line. A fallen marker reveals the contact zone; also follow the outgoing direction to locate V and A on the diamond lines. In this exercise V remains fixed and you record A."
           },
           "image": {
             "source": "KruinLines",
             "line": "VIJF",
             "parts": [
-              "neus",
               "romp"
             ],
             "courseTable": true,
-            "emphasize": "guides"
+            "emphasize": "guides",
+            "measurement": "east-body"
           },
           "practice": "record",
           "action": "body"
@@ -339,33 +341,79 @@ window.THREEB_START_CONFIG = {
         {
           "key": "lesson-repeat-body",
           "title": {
-            "nl": "5 · herhaal en vergelijk",
-            "en": "5 · repeat and compare"
+            "nl": "5 · herhaal, kijk en vergelijk",
+            "en": "5 · repeat, observe and compare"
           },
           "text": {
-            "nl": "Speel drie pogingen vanuit dezelfde startpositie. Houd je afstoot zo gelijk mogelijk. Noteer per poging Romp A en vergelijk de volledige lijnen vanuit hetzelfde vertrekpunt. Kies zelf welke waarneming je op je tafel wilt gebruiken.",
-            "en": "Play three attempts from the same starting position. Keep your stroke as consistent as possible. Record Body A for each attempt and compare the complete lines from the same departure point. Choose which observation to use on your table."
+            "nl": "Speel drie pogingen vanuit dezelfde S en met zo gelijk mogelijke afstoot. Kijk telkens welk ijkje op Oost omvalt en volg de uitgaande richting naar de Zuid-stiplijn. Noteer per poging Romp A vanuit dezelfde Romp V. Vergelijk de hele lijnen. Wijkt het gemeten vertrek af van de vaste referentie, noteer dat apart; maak van de referentie geen gemeten feit.",
+            "en": "Play three attempts from the same S with a consistent stroke. Observe the fallen East marker and the outgoing direction towards the South diamond line. Record Body A from the same reference V. If the observed departure differs from that reference, make a separate note; the reference is not a measurement."
+          },
+          "image": {
+            "source": "KruinLines",
+            "line": "VIJF",
+            "parts": [
+              "romp"
+            ],
+            "courseTable": true,
+            "measurement": "east-body",
+            "emphasize": "guides"
+          },
+          "practice": "repeat"
+        },
+        {
+          "key": "lesson-head-measure",
+          "title": {
+            "nl": "6 · Kop A · meten of benaderen",
+            "en": "6 · Head A · measure or approximate"
+          },
+          "text": {
+            "nl": "Het Karkas blijft leidend. Kop A op Noord meet je bij voorkeur met ijkjes; je ziet deze passage niet betrouwbaar vanaf je speelplek. Kruin mat VIJF: Klein 19, Groot 15. Vul je eigen stiplijnwaarde in. Zonder eigen meetgegevens kun je kiezen voor een benadering: de app schat Kop A met spiegeling van de bekende Neus (inval = uitval). Dat is een geometrisch uitgangspunt; laken en afstoot kunnen afwijken. Gemeten en geschat blijven herkenbaar.",
+            "en": "The framework leads. Prefer measuring Head A at North with markers; you cannot reliably observe this passage from your playing position. Kruin measured FIVE: Small 19, Large 15. Enter your own diamond-line value. Without measurements you may choose an approximation: the app estimates Head A by reflecting the known Nose (equal incidence and reflection angles). This is a geometric starting point; cloth and stroke may differ. Measurements and estimates stay distinct."
           },
           "image": {
             "source": "KruinLines",
             "line": "VIJF",
             "parts": [
               "neus",
+              "kop"
+            ],
+            "courseTable": true,
+            "emphasize": "guides"
+          },
+          "action": "head"
+        },
+        {
+          "key": "lesson-neck-departure",
+          "title": {
+            "nl": "7 · daarna berekenen we Nek V",
+            "en": "7 · then calculate Neck V"
+          },
+          "text": {
+            "nl": "1. De bekende Neus bepaalt de balpositie op West. 2. Met gemeten Kop A (of de gekozen benadering) construeren we de Koplijn en de bal op Noord. 3. De Neklijn vertrekt vanuit diezelfde bal naar Nek A op Oost. Nek A is een meetgegeven of wordt afgeleid uit de gemeten Romp. 4. Verleng de uitgaande Neklijn terug naar de Noord-stiplijn: daar ligt de berekende Nek V. Kop A en Nek V liggen beide op de Noord-stiplijn. Hun waarden hoeven niet gelijk te zijn: de richtingen verschillen. Er is één gedeelde bal op Noord.",
+            "en": "1. The known Nose determines the ball position at West. 2. Measured Head A (or the chosen approximation) defines the Head line and the ball at North. 3. The Neck leaves that same ball towards Neck A at East. Neck A is measured or derived from the measured Body. 4. Extend the outgoing Neck back to the North diamond line to obtain calculated Neck V. Head A and Neck V are both North diamond-line points, but need not have equal values because the directions differ. They share one ball at North."
+          },
+          "image": {
+            "source": "KruinLines",
+            "line": "VIJF",
+            "parts": [
+              "kop",
+              "nek",
               "romp"
             ],
-            "courseTable": true
-          },
-          "practice": "repeat"
+            "courseTable": true,
+            "emphasize": "guides",
+            "bridgeValues": true
+          }
         },
         {
           "key": "lesson-five-finish",
           "title": {
-            "nl": "6 · wat kan ik nu?",
-            "en": "6 · what can I do now?"
+            "nl": "8 · wat kan ik nu zien en meten?",
+            "en": "8 · what can I see and measure?"
           },
           "text": {
-            "nl": "Ik kan de startpositie aanwijzen, mijn stoot herhalen en mijn gespeelde Romplijn terugvinden. Controleer je drie notities en geef aan of dat lukt. Bewaar je les. Download daarna via Mijn tafel als je je tafel en notities wilt meenemen naar een andere browser of computer.",
-            "en": "I can identify the starting position, repeat my stroke and find my recorded Body line. Review your three notes and indicate whether you can do this. Save the lesson. Download through My table to take your table and notes to another browser or computer."
+            "nl": "Ik kan S en Aneus op de stiplijn aanwijzen, een passage op Oost met ijkjes zichtbaar maken en de voortgaande Romplijn naar de Zuid-stiplijn volgen. Ik onderscheid een raakplek op de band van een stipwaarde. Controleer je drie notities en bevestig of je dit kunt. Bewaar Les 1; download via Mijn tafel om je notities mee te nemen. Kop A meet ik bij voorkeur; zonder meetgegevens kan ik een benadering kiezen; Nek V wordt daarna berekend. De Kruinmetingen zijn referenties voor de Kruintafels.",
+            "en": "I can identify S and Nose A on the diamond line, reveal the East passage with markers, and follow the outgoing Body line towards the South diamond line. I distinguish cushion contact from a diamond-line value. Review your notes and confirm whether you can do this. Save Lesson 1."
           },
           "image": {
             "source": "KruinLines",
@@ -1384,3 +1432,5 @@ window.THREEB_START_CONFIG = {
     }
   }
 };
+
+return {id:"kruin-v177-6898045f08f04dcaf66e",label:"Kruin v177 · Kruinconfig",config:window.THREEB_START_CONFIG,values:{"onscreenMenu":{"groups":{"edit":{"order":20,"visible":true,"zone":"bottom"},"menuPanel":{"order":30,"visible":true,"zone":"bottom"},"menuToggle":{"order":10,"visible":true,"zone":"bottom"},"next":{"order":10,"visible":true,"zone":"right"},"previous":{"order":10,"visible":true,"zone":"left"},"track":{"order":10,"visible":true,"zone":"top"}},"safeGapPx":10,"zones":["top","left","right","bottom"]},"release":177,"savedSpoorValues":[],"source":"Kruinconfig-3B-v177.ods","tracks":{"groot":{"ACHT":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":80},"rompA":{"band":"zuid","value":18},"rompV":{"band":"oost","value":48}},"ACHT-1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":70},"rompA":{"band":"zuid","value":20.599},"rompV":{"band":"oost","value":44}},"ACHT-2":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":60},"rompA":{"band":"zuid","value":23.197},"rompV":{"band":"oost","value":39}},"DRIE":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":30}},"DRIE+1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":40}},"DRIE+2":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":50}},"DRIE+3":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":60}},"DRIE-1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":20}},"DRIE-2":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":10}},"EEN":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":10}},"EEN+1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":20}},"EEN+2":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":30}},"EEN+3":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":40}},"EEN-1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":0}},"HALFACHT":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":75},"rompA":{"band":"zuid","value":20},"rompV":{"band":"oost","value":42.5}},"HALFDRIE":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":25}},"HALFEEN":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":5}},"HALFTWEE":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":15}},"HALFVIER":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":35}},"HALFVIJF":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":20},"nekA":{"band":"oost","value":15},"neusA":{"band":"west","value":45}},"HALFZES":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":12.5},"nekA":{"band":"oost","value":25},"neusA":{"band":"west","value":55},"rompA":{"band":"zuid","value":32},"rompV":{"band":"oost","value":25}},"HALFZEVEN":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":65},"rompA":{"band":"zuid","value":25},"rompV":{"band":"oost","value":33.5}},"NUL":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":0}},"NUL+1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":10}},"NUL+2":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":20}},"NUL+3":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":30}},"TWEE":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":20}},"TWEE+1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":30}},"TWEE+2":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":40}},"TWEE+3":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":50}},"TWEE-1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":10}},"TWEE-2":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":0}},"VIER":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"zuid","crossLoopOverride":"-","kopA":{"band":"noord","value":25},"nekA":{"band":"oost","value":10},"neusA":{"band":"west","value":40}},"VIER+1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":50}},"VIER+2":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":60}},"VIER+3":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":70}},"VIER-1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":30}},"VIER-2":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":20}},"VIJF":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":15},"nekA":{"band":"oost","value":20},"neusA":{"band":"west","value":50},"rompA":{"band":"zuid","value":36},"rompV":{"band":"oost","value":20}},"VIJF+1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":6},"nekA":{"band":"oost","value":32},"neusA":{"band":"west","value":60},"rompA":{"band":"zuid","value":33.401},"rompV":{"band":"oost","value":24}},"VIJF+2":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":5},"nekA":{"band":"oost","value":36},"neusA":{"band":"west","value":70},"rompA":{"band":"zuid","value":30.803},"rompV":{"band":"oost","value":28}},"VIJF+3":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":5},"nekA":{"band":"oost","value":41},"neusA":{"band":"west","value":80},"rompA":{"band":"zuid","value":28.204},"rompV":{"band":"oost","value":33}},"VIJF-1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":10},"nekA":{"band":"oost","value":24},"neusA":{"band":"west","value":40},"rompA":{"band":"zuid","value":38.599},"rompV":{"band":"oost","value":16}},"VIJF-2":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":16},"nekA":{"band":"oost","value":20},"neusA":{"band":"west","value":30},"rompA":{"band":"zuid","value":41.197},"rompV":{"band":"oost","value":12}},"ZES":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":10},"nekA":{"band":"oost","value":30},"neusA":{"band":"west","value":60},"rompA":{"band":"zuid","value":28},"rompV":{"band":"oost","value":30}},"ZES+1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":4},"nekA":{"band":"oost","value":43},"neusA":{"band":"west","value":70},"rompA":{"band":"zuid","value":25.401},"rompV":{"band":"oost","value":34}},"ZES+2":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":4},"nekA":{"band":"oost","value":48},"neusA":{"band":"west","value":80},"rompA":{"band":"zuid","value":22.803},"rompV":{"band":"oost","value":39}},"ZES-1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":5},"nekA":{"band":"oost","value":35},"neusA":{"band":"west","value":50},"rompA":{"band":"zuid","value":30.599},"rompV":{"band":"oost","value":26}},"ZES-2":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":11},"nekA":{"band":"oost","value":30},"neusA":{"band":"west","value":40},"rompA":{"band":"zuid","value":33.197},"rompV":{"band":"oost","value":21}},"ZEVEN":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":70},"rompA":{"band":"zuid","value":22},"rompV":{"band":"oost","value":37}},"ZEVEN+1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":80},"rompA":{"band":"zuid","value":19.401},"rompV":{"band":"oost","value":42}},"ZEVEN-1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":60},"rompA":{"band":"zuid","value":24.599},"rompV":{"band":"oost","value":32}},"ZEVEN-2":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":50},"rompA":{"band":"zuid","value":27.197},"rompV":{"band":"oost","value":27}}},"klein":{"ACHT":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":2},"neusA":{"band":"west","value":80},"rompA":{"band":"zuid","value":19},"rompV":{"band":"oost","value":43}},"ACHT-1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":70},"rompA":{"band":"zuid","value":21.14},"rompV":{"band":"oost","value":39}},"ACHT-2":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":60},"rompA":{"band":"zuid","value":23.278},"rompV":{"band":"oost","value":35}},"DRIE":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":30}},"DRIE+1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":40}},"DRIE+2":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":50}},"DRIE+3":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":60}},"DRIE-1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":20}},"DRIE-2":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":10}},"EEN":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":10}},"EEN+1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":20}},"EEN+2":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":30}},"EEN+3":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":40}},"EEN-1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":0}},"HALFACHT":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":75},"rompA":{"band":"zuid","value":19.5},"rompV":{"band":"oost","value":39}},"HALFDRIE":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":25}},"HALFEEN":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":5}},"HALFTWEE":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":15}},"HALFVIER":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":35}},"HALFVIJF":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":23.5},"neusA":{"band":"west","value":45},"rompA":{"band":"zuid","value":54},"rompV":{"band":"oost","value":12.5}},"HALFZES":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":14.5},"neusA":{"band":"west","value":55},"rompA":{"band":"zuid","value":34},"rompV":{"band":"oost","value":25}},"HALFZEVEN":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":65},"rompA":{"band":"zuid","value":25},"rompV":{"band":"oost","value":32.5}},"NUL":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":0}},"NUL+1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":10}},"NUL+2":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":20}},"NUL+3":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":30}},"TWEE":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":20}},"TWEE+1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":30}},"TWEE+2":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":40}},"TWEE+3":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":50}},"TWEE-1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":10}},"TWEE-2":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":0}},"VIER":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"zuid","crossLoopOverride":"-","kopA":{"band":"noord","value":28},"neusA":{"band":"west","value":40},"rompA":{"band":"west","value":10},"rompV":{"band":"oost","value":10}},"VIER+1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":25},"nekA":{"band":"oost","value":14},"neusA":{"band":"west","value":50},"rompA":{"band":"zuid","value":67.861},"rompV":{"band":"oost","value":7}},"VIER+2":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":20},"nekA":{"band":"oost","value":17},"neusA":{"band":"west","value":60},"rompA":{"band":"zuid","value":65.722},"rompV":{"band":"oost","value":10}},"VIER+3":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":17},"nekA":{"band":"oost","value":19},"neusA":{"band":"west","value":70},"rompA":{"band":"zuid","value":63.583},"rompV":{"band":"oost","value":12}},"VIER-1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":32},"nekA":{"band":"oost","value":10},"neusA":{"band":"west","value":30},"rompA":{"band":"zuid","value":72.14},"rompV":{"band":"oost","value":3}},"VIER-2":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":36},"nekA":{"band":"oost","value":7},"neusA":{"band":"west","value":20},"rompA":{"band":"zuid","value":74.278},"rompV":{"band":"oost","value":0}},"VIJF":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":19},"neusA":{"band":"west","value":50},"rompA":{"band":"zuid","value":38},"rompV":{"band":"oost","value":20}},"VIJF+1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":17},"nekA":{"band":"oost","value":35},"neusA":{"band":"west","value":60},"rompA":{"band":"zuid","value":35.861},"rompV":{"band":"oost","value":23}},"VIJF+2":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":13},"nekA":{"band":"oost","value":39},"neusA":{"band":"west","value":70},"rompA":{"band":"zuid","value":33.722},"rompV":{"band":"oost","value":27}},"VIJF+3":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":11},"nekA":{"band":"oost","value":42},"neusA":{"band":"west","value":80},"rompA":{"band":"zuid","value":31.583},"rompV":{"band":"oost","value":30}},"VIJF-1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":22},"nekA":{"band":"oost","value":29},"neusA":{"band":"west","value":40},"rompA":{"band":"zuid","value":40.14},"rompV":{"band":"oost","value":17}},"VIJF-2":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":25},"nekA":{"band":"oost","value":25},"neusA":{"band":"west","value":30},"rompA":{"band":"zuid","value":42.278},"rompV":{"band":"oost","value":13}},"ZES":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":10},"neusA":{"band":"west","value":60},"rompA":{"band":"zuid","value":30},"rompV":{"band":"oost","value":30}},"ZES+1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":7},"nekA":{"band":"oost","value":45},"neusA":{"band":"west","value":70},"rompA":{"band":"zuid","value":27.861},"rompV":{"band":"oost","value":33}},"ZES+2":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":5},"nekA":{"band":"oost","value":49},"neusA":{"band":"west","value":80},"rompA":{"band":"zuid","value":25.722},"rompV":{"band":"oost","value":37}},"ZES-1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":12},"nekA":{"band":"oost","value":39},"neusA":{"band":"west","value":50},"rompA":{"band":"zuid","value":32.14},"rompV":{"band":"oost","value":27}},"ZES-2":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":16},"nekA":{"band":"oost","value":35},"neusA":{"band":"west","value":40},"rompA":{"band":"zuid","value":34.278},"rompV":{"band":"oost","value":23}},"ZEVEN":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","kopA":{"band":"noord","value":5},"neusA":{"band":"west","value":70},"rompA":{"band":"zuid","value":23},"rompV":{"band":"oost","value":35}},"ZEVEN+1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":80},"rompA":{"band":"zuid","value":17.861},"rompV":{"band":"oost","value":39}},"ZEVEN-1":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":60},"rompA":{"band":"zuid","value":22.14},"rompV":{"band":"oost","value":31}},"ZEVEN-2":{"beenA":{"band":"oost","value":10},"crossAngleDeg":45.0,"crossArrivalBand":"west","neusA":{"band":"west","value":50},"rompA":{"band":"zuid","value":24.278},"rompV":{"band":"oost","value":26}}}}}};})());

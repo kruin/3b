@@ -1,9 +1,11 @@
-3B — versie 175
-Cursus: Bal zoekt spoor. App: 3B — oefentafel voor drieband.
-Les 1: Karkas (Neus en Romp), eerst doelbal dan speelbal; drie Rompnotities en zelfcontrole.
-Les 2: Parallel — VIJF+1 en VIJF−1; Waaier volgt in de verdieping.
-Lesbeelden zonder overliggende tafelbediening, volledige tafels op desktop/mobiel.
-VIER gebruikt zijn eigen tekening. Cursus hervat de gekozen kaart.
-Nieuwe uitleg verschijnt ook bij oude Kruinbases; die waarden blijven behouden.
-Alle gebruikersformaten en gepubliceerde basisversies blijven beschikbaar.
-
+3B — versie 177
+Cursus: Bal zoekt spoor.
+VIJF: Kop A bij voorkeur meten; zonder eigen meetgegevens kan de gebruiker
+een geometrische benadering kiezen.
+Kruinmetingen: Klein 19, Groot 15; eigen tafel opnieuw meten.
+Daarna Nek V berekend via gedeelde balpositie op Noord en uitgaande Neklijn.
+Kop A en Nek V zijn stiplijnpunten, geen identieke stipwaarde.
+Tafelgerichte cursuskaarten en toegang tot de Kop-editor.
+Kleuren en tekstlabels tonen herkomst: gemeten/Kruin, berekend, ge-edit, Karkas.
+De tafel heeft twee functies: Uitleg en Aanleg (jouw configuratie).
+Bij elke lijnwaarde staat de herkomst naast de kleur.

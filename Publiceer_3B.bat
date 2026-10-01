@@ -3,28 +3,28 @@ setlocal EnableDelayedExpansion
 cd /d "%~dp0"
 set "REMOTE=https://github.com/kruin/3b.git"
 set "PAGES=https://kruin.github.io/3b"
-set "RELEASE=175"
+set "RELEASE=177"
 set "GIT_RECOVERY="
 echo ============================================================
 echo 3B - PUBLICEREN EN CONTROLEREN
 echo ============================================================
 where git >nul 2>nul || (echo FOUT: Git ontbreekt.& goto :fout)
-for %%F in (index.html doc\index.html styles.css cursuscontrole-v175.js tafelbestanden-v175.js tafelbestandcontrole-v175.js tafelbestand-ui-controle-v175.js basis-catalogus-v175.js beheer-basisarchief-v175.js vendor\xlsx.full.min.js vendor\sql-asm.js app-v175.js config-v175.js kruinwaarden-generated-v175.js regressiecontrole-v175.js ui-regressie-v175.js Regressiecontrole_3B.bat VERSIE.txt START-HIER.md HANDLEIDING-GEBRUIKER.md EDIT-WERKWIJZE.md .gitignore Kruin.html Kruin.bat Kruin.command SESSIES-INSTALLEREN.md supabase-session-schema.sql BETALEN-ACTIVEREN.md Activeer_Betalen.bat Activeer_Betalen.ps1 supabase\config.toml supabase\functions\create-mollie-payment\index.ts uitleg-lokaal\BEWAAR-UITLEG-HIER.txt) do if not exist "%%F" (echo FOUT: %%F ontbreekt.& goto :fout)
+for %%F in (index.html doc\index.html styles.css cursuscontrole-v177.js tafelbestanden-v177.js tafelbestandcontrole-v177.js tafelbestand-ui-controle-v177.js basis-catalogus-v177.js beheer-basisarchief-v177.js vendor\xlsx.full.min.js vendor\sql-asm.js app-v177.js config-v177.js kruinwaarden-generated-v177.js regressiecontrole-v177.js ui-regressie-v177.js Regressiecontrole_3B.bat VERSIE.txt START-HIER.md HANDLEIDING-GEBRUIKER.md EDIT-WERKWIJZE.md .gitignore Kruin.html Kruin.bat Kruin.command SESSIES-INSTALLEREN.md supabase-session-schema.sql BETALEN-ACTIVEREN.md Activeer_Betalen.bat Activeer_Betalen.ps1 supabase\config.toml supabase\functions\create-mollie-payment\index.ts uitleg-lokaal\BEWAAR-UITLEG-HIER.txt) do if not exist "%%F" (echo FOUT: %%F ontbreekt.& goto :fout)
 where node >nul 2>nul || (echo FOUT: Node.js ontbreekt; regressiecontrole kan niet draaien.& goto :fout)
-node regressiecontrole-v175.js || goto :fout
+node regressiecontrole-v177.js || goto :fout
 node -e "require.resolve('playwright')" >nul 2>nul
 if errorlevel 1 (
   echo LET OP: UI-browsertest overgeslagen; Playwright is niet geinstalleerd.
 ) else (
-  node ui-regressie-v175.js || goto :fout
-  node cursuscontrole-v175.js || goto :fout
+  node ui-regressie-v177.js || goto :fout
+  node cursuscontrole-v177.js || goto :fout
 )
-findstr /C:"Geldig voor versie 175" HANDLEIDING-GEBRUIKER.md >nul || (echo FOUT: gebruikershandleiding hoort niet bij versie 175.& goto :fout)
-findstr /C:"app-v175.js" index.html >nul || (echo FOUT: index.html laadt app-v175.js niet.& goto :fout)
-findstr /C:"config-v175.js" index.html >nul || (echo FOUT: index.html laadt config-v175.js niet.& goto :fout)
-findstr /C:"kruinwaarden-generated-v175.js" index.html >nul || (echo FOUT: index.html laadt de gegenereerde Kruinwaarden niet.& goto :fout)
-findstr /C:"styles.css?v=175" index.html >nul || (echo FOUT: index.html gebruikt niet de nieuwe stylesheetversie.& goto :fout)
-findstr /C:"paymentEnabled: true" config-v175.js >nul || echo LET OP: betalen is nog niet geactiveerd; de rest van v175 kan wel worden gepubliceerd.
+findstr /C:"Geldig voor versie 177" HANDLEIDING-GEBRUIKER.md >nul || (echo FOUT: gebruikershandleiding hoort niet bij versie 177.& goto :fout)
+findstr /C:"app-v177.js" index.html >nul || (echo FOUT: index.html laadt app-v177.js niet.& goto :fout)
+findstr /C:"config-v177.js" index.html >nul || (echo FOUT: index.html laadt config-v177.js niet.& goto :fout)
+findstr /C:"kruinwaarden-generated-v177.js" index.html >nul || (echo FOUT: index.html laadt de gegenereerde Kruinwaarden niet.& goto :fout)
+findstr /C:"styles.css?v=177" index.html >nul || (echo FOUT: index.html gebruikt niet de nieuwe stylesheetversie.& goto :fout)
+findstr /C:"paymentEnabled: true" config-v177.js >nul || echo LET OP: betalen is nog niet geactiveerd; de rest van v177 kan wel worden gepubliceerd.
 findstr /C:"3B-documentatie" doc\index.html >nul || (echo FOUT: Doc heeft niet de verwachte ingang.& goto :fout)
 findstr /C:"Kruin.html" Kruin.bat >nul || (echo FOUT: Kruin.bat opent de gedeelde Kruin-ingang niet.& goto :fout)
 findstr /C:"Kruin.html" Kruin.command >nul || (echo FOUT: Kruin.command opent de gedeelde Kruin-ingang niet.& goto :fout)
@@ -56,8 +56,8 @@ git ls-tree --name-only HEAD kruin-bases | findstr /C:"kruin-bases" >nul
 if not errorlevel 1 (
   git restore --source=HEAD --worktree -- kruin-bases || goto :gitfout
 )
-node beheer-basisarchief-v175.js || goto :gitfout
-node tafelbestandcontrole-v175.js || goto :fout
+node beheer-basisarchief-v177.js || goto :gitfout
+node tafelbestandcontrole-v177.js || goto :fout
 git rm -r --cached --ignore-unmatch HANDLEIDING-KRUIN.md config-input >nul 2>nul
 git add . || goto :gitfout
 git diff --cached --quiet
@@ -71,7 +71,7 @@ set /a TRY=0
 :poll
 set /a TRY+=1
 echo Controle !TRY!/60
-powershell -NoProfile -Command "$ProgressPreference='SilentlyContinue'; try {$v=(Invoke-WebRequest -UseBasicParsing -Uri '%PAGES%/VERSIE.txt?c=!LOCAL!^&n=!TRY!' -Headers @{'Cache-Control'='no-cache'}).Content; $h=(Invoke-WebRequest -UseBasicParsing -Uri '%PAGES%/?c=!LOCAL!^&n=!TRY!' -Headers @{'Cache-Control'='no-cache'}).Content; $k=(Invoke-WebRequest -UseBasicParsing -Uri '%PAGES%/kruinwaarden-generated-v175.js?c=!LOCAL!^&n=!TRY!' -Headers @{'Cache-Control'='no-cache'}).Content; $d=(Invoke-WebRequest -UseBasicParsing -Uri '%PAGES%/doc/?c=!LOCAL!^&n=!TRY!' -Headers @{'Cache-Control'='no-cache'}).Content; if($v -match 'versie %RELEASE%' -and $h.Contains('app-v175.js') -and $h.Contains('config-v175.js') -and $h.Contains('kruinwaarden-generated-v175.js') -and $h.Contains('styles.css?v=175') -and $k.Contains('THREEB_KRUIN_VALUES') -and $d.Contains('3B-documentatie')){exit 0};exit 1}catch{exit 1}"
+powershell -NoProfile -Command "$ProgressPreference='SilentlyContinue'; try {$v=(Invoke-WebRequest -UseBasicParsing -Uri '%PAGES%/VERSIE.txt?c=!LOCAL!^&n=!TRY!' -Headers @{'Cache-Control'='no-cache'}).Content; $h=(Invoke-WebRequest -UseBasicParsing -Uri '%PAGES%/?c=!LOCAL!^&n=!TRY!' -Headers @{'Cache-Control'='no-cache'}).Content; $k=(Invoke-WebRequest -UseBasicParsing -Uri '%PAGES%/kruinwaarden-generated-v177.js?c=!LOCAL!^&n=!TRY!' -Headers @{'Cache-Control'='no-cache'}).Content; $d=(Invoke-WebRequest -UseBasicParsing -Uri '%PAGES%/doc/?c=!LOCAL!^&n=!TRY!' -Headers @{'Cache-Control'='no-cache'}).Content; if($v -match 'versie %RELEASE%' -and $h.Contains('app-v177.js') -and $h.Contains('config-v177.js') -and $h.Contains('kruinwaarden-generated-v177.js') -and $h.Contains('styles.css?v=177') -and $k.Contains('THREEB_KRUIN_VALUES') -and $d.Contains('3B-documentatie')){exit 0};exit 1}catch{exit 1}"
 if not errorlevel 1 goto :klaar
 if !TRY! GEQ 60 (echo PUBLICATIE NIET GESLAAGD: Git is bijgewerkt, Pages toont versie %RELEASE% nog niet.& goto :fout)
 timeout /t 10 /nobreak >nul
