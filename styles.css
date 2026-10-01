@@ -506,7 +506,7 @@ body.table-only .band-corner{width:var(--screen-band,36px);height:var(--screen-b
 body.table-only .band-reset,body.table-only .band-save{font-size:8px}
 body.table-only .band-save{background:#176f4f}
 
-/* v170: de bovenste bedieningsrij kan horizontaal schuiven op smalle schermen. */
+/* v173: de bovenste bedieningsrij kan horizontaal schuiven op smalle schermen. */
 body.table-only .central-track-controls {
   overflow-x: auto;
   overflow-y: auto;
@@ -548,3 +548,18 @@ body.table-only .central-track-controls{z-index:2201;pointer-events:auto}
 
 /* Config van de gekozen lijn blijft toegankelijk boven de bandbediening. */
 .line-editor{z-index:2100}
+
+.selection-menu-header{display:flex;flex-basis:100%;width:100%;justify-content:space-between;align-items:center;cursor:move}
+.selection-menu-header button{font-size:22px;min-width:36px}
+body.table-only .band-core{touch-action:none;cursor:move}
+#bandTrackValue,#bandLineValue{cursor:pointer;pointer-events:auto}
+#seriesStartToggle{border:0;padding:2px;background:transparent;font-weight:900;color:inherit}
+
+.selection-menu-header{position:sticky;top:0;z-index:2;background:#fffaf0;padding:4px;border-bottom:1px solid #dfcfb5}
+
+/* Actuele waarden blijven leesbaar en scrollbaar op smalle schermen. */
+.line-editor{width:min(720px,calc(100vw - 18px));max-height:calc(100dvh - 20px);overflow:auto}
+.spoor-values-title{font-size:15px;margin:12px 0 6px}.spoor-values{max-height:32dvh;overflow:auto;border:1px solid #bbb;background:#fff;overscroll-behavior:contain;touch-action:pan-x pan-y}
+.spoor-values table{border-collapse:collapse;font-size:12px;width:100%;min-width:550px}.spoor-values th,.spoor-values td{padding:5px;text-align:left;border-bottom:1px solid #ddd;white-space:nowrap}.spoor-values h3{margin:8px;padding:4px}.spoor-values p{margin:6px}.spoor-login{margin-top:8px}.line-editor footer{position:sticky;bottom:0;background:#fff;padding:6px}.line-editor #spoorSaveStatus{font-size:13px}
+
+.table-file-tools{grid-column:1/-1;display:grid;gap:.6rem;padding:.75rem;border:1px solid #987c55;border-radius:8px;min-width:0}.table-file-tools label{display:grid;gap:.25rem}.table-file-tools input,.table-file-tools select{width:100%;min-width:0}.table-file-tools p{font-size:.8rem;overflow-wrap:anywhere;margin:0}

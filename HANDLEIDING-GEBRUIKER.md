@@ -1,6 +1,43 @@
 # 3B — handleiding voor de gebruiker
 
-Geldig voor versie 170.
+## Mijn tafel: downloaden en terugladen (nieuw in v173)
+
+Open Menu → Instellingen → Mijn tafel.
+
+1. Vul eventueel een **Tafelnaam** in. Leeg laten mag.
+2. Controleer de actieve **Kruinbasis**. De basisnaam en unieke versie staan in het menu.
+3. Kies XLSX, ODS, SQLite of CSV en klik **Download mijn aanpassingen**.
+4. Gebruik **Terugladen** om het bestand later te openen.
+
+Alle afwijkende waarden worden bewaard: basissporen, parallel- en waaierstanden,
+bandkeuzes, startposities en afstootlengtes. Groot en Klein blijven apart.
+Het bestand bevat ook de oorspronkelijke basis en volledige tafelstand.
+Bij terugladen hoef je dus geen oude basis handmatig op te zoeken: het bestand
+herstelt zijn eigen basis, decimalen en tafelnaam, ook na een nieuwe Kruinpublicatie.
+
+De bestandsnaam bevat de tafelnaam, exacte Kruinbasis en appversie, bijvoorbeeld
+`3B-mijn-tafel--kruin-v173-<inhoudscode>--app-v173.xlsx`.
+Het basis-ID in het bestand is leidend wanneer je het bestand zelf hernoemt.
+
+**Een andere tafel of nieuw laken:** selecteer een andere Kruinbasis en klik
+**Gebruik deze basis**. Dat begint met de waarden van die basis. Download je
+huidige aanpassingen eerst als je ze wilt bewaren. De tafelnaam blijft behouden.
+Een nieuwe publicatie wisselt een bestaande gebruikersbasis nooit automatisch.
+
+XLSX opent in Excel/Numbers; ODS in LibreOffice/OpenOffice. CSV gebruikt komma's
+als kolomscheiding en een punt in numerieke waarden. SQLite is een echte database.
+De regels `Aanpassing` bevatten de verschillen ten opzichte van de gekozen basis.
+In de spreadsheet/CSV kan een numerieke `Waarde` worden aangepast bij type `getal`.
+Andere waarden hebben type `json`. Laat de regels `Tafelbestand` en de kolom `Pad`
+intact: zij bewaren de exacte oorspronkelijke tafel. De optionele naam stel je
+via de app in voordat je downloadt.
+
+**Bewaar** in de openbare lijneditor bewaart lokaal in deze browser.
+Download daarnaast een tafelbestand om je wijzigingen mee te nemen naar een
+andere browser of computer. In de private Kruineditor schrijft Bewaar nog steeds
+naar Kruinconfig.sqlite3.
+
+Geldig voor versie 173.
 
 Open **U-config** om de persoonlijke tafelweergave te wijzigen. V/A-labels
 kunnen klein, alleen bij de actieve bal of uit worden getoond. De bal en de
@@ -246,7 +283,7 @@ Tik op een lijn om haar waarden in het gekleurde lijnvenster te bekijken of te
 wijzigen. Neus is de uitzondering: de Neus zelf ligt vast; alleen de
 afstootlengte kan worden aangepast.
 
-3B versie 170 · menu, posities en Nek
+3B versie 173 · menu, posities en Nek
 - Instellingen opent met muis en touch en blijft boven de bandbediening.
 - Focus heet Start; vertreklabels gebruiken P/P+1/P−2 of W/W+2.
 - Positiekleuren: Karkas oker, Kruin groen, Berekend rood, Bewerkt blauw.
@@ -254,4 +291,12 @@ afstootlengte kan worden aangepast.
 - Eerder berekende opgeslagen varianten worden hersteld; eigen wijzigingen blijven behouden.
 - Private Excel/ODS-bronwaarden uit v165 zijn ongewijzigd meegeleverd.
 
-Versie 170: Lijn voor lijn toont automatisch de config van de gekozen lijn. Min/plus voor Lijn wisselt het configvenster mee. Bestaande bewerkingen worden geladen; gewijzigde waarden krijgen hun positiekleur. Neus toont alleen de afstootlengte.
+Versie 171: Lijn voor lijn toont automatisch de config van de gekozen lijn. Min/plus voor Lijn wisselt het configvenster mee. Bestaande bewerkingen worden geladen; gewijzigde waarden krijgen hun positiekleur. Neus toont alleen de afstootlengte.
+
+Versie 171: Parallel-bounds vanuit basisspoor; VIJF+2/+3 beschikbaar. Neus en bandbal hersteld bij oude schermstanden. Klein VIJF en alle Parallel-standen dezelfde Neuslengte: 83 cm. Veranderen van de lengte werkt door in de Parallel-standen. Klik in Lijn voor lijn op Spoor of Lijn voor config. Hele balk versleepbaar. Selectiemenu met ×. Start activeert gekozen overzicht.
+
+## v173 — spoorreeksen en waarden
+
+Het spoormenu bevat NUL tot ACHT met hun geldige Parallelstanden. VIJF loopt tot +3, VIER tot +4, DRIE tot +5 enzovoort. Aankomsten volgt de actuele lijnwaarden op alle banden, ook voor de negatieve standen.
+
+De lijneditor heeft een scrollvenster met het volledige actuele spooroverzicht en de typen karkas, berekend en aangepast. Vanuit de lokale Kruinconfig-editor bewaart de knop Bewaar het volledige getoonde overzicht in de private beheerbron. Open deze beheerfunctie via Bekijk_Kruinconfig in de private map.

@@ -19,7 +19,7 @@ Website: `https://kruin.github.io/3b/`
 
 Vervang de bestanden in de lokale clone en start `Publiceer_3B.bat`. De BAT:
 
-- controleert dat `kruinwaarden-generated-v170.js` uit de private Excel aanwezig is;
+- controleert dat `kruinwaarden-generated-v173.js` uit de private Excel aanwezig is;
 
 - kloont bij een ontbrekende `.git` eerst `kruin/3b` naar een tijdelijke map
   en herstelt alleen de Git-geschiedenis; de actuele releasebestanden blijven staan;
@@ -27,8 +27,8 @@ Vervang de bestanden in de lokale clone en start `Publiceer_3B.bat`. De BAT:
 - controleert alle releasebestanden vóór commit en push;
 - vergelijkt lokale commit en `origin/main`;
 - wacht maximaal tien minuten op GitHub Pages;
-- meldt pas KLAAR als Main werkelijk `app-v170.js`, `config-v170.js`,
-  `styles.css?v=170` en versie 170 levert én Doc bereikbaar is.
+- meldt pas KLAAR als Main werkelijk `app-v173.js`, `config-v173.js`,
+  `styles.css?v=173` en versie 173 levert én Doc bereikbaar is.
 
 `Kruin.bat` is de enige lokale beheeringang. De BAT opent een geldige
 `file:///.../index.html#owner=kruin`-URL; voeg het fragment niet handmatig aan
@@ -42,7 +42,7 @@ nieuwer zijn dan de in die appversie meegeleverde publicatie. De BAT vergelijkt
 daarna de lokale Git-commit met `origin/main` en controleert afzonderlijk of
 GitHub Pages precies dezelfde release-assets serveert.
 
-Controleer aanvullend `https://kruin.github.io/3b/controle-v170.html` en
+Controleer aanvullend `https://kruin.github.io/3b/controle-v173.html` en
 `https://kruin.github.io/3b/doc/`.
 
 ## Mobiele Uitlegeditor
@@ -59,3 +59,7 @@ invoer niet en stuurt deze niet naar GitHub. Maak via **My tables/Mijn tafels**
 een JSON-reservekop om configuraties tussen apparaten over te brengen.
 
 De app is volledig statisch (HTML, CSS en JavaScript) en GitHub Pages-compatibel.
+
+## Basisarchief bewaren
+
+Publiceer_3B behoudt de map `kruin-bases` en herstelt eerder gepubliceerde bases uit Git. Verwijder die map niet bij updates. De catalogus en alle gearchiveerde JS/SQLite-bases horen bij de openbare app. De actuele werkdatabase en XLSX/ODS blijven privé.

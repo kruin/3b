@@ -78,7 +78,8 @@ function parallel(a, b) {
       await page.locator("#bandMenu").click();
       await page.screenshot({path:`/tmp/3b-${viewport.width}.png`});
       await page.locator("#parallelDisplaySelect").selectOption("line");
-      if(!(await page.locator("#lineEditor").isVisible()))throw new Error("Config opent niet in Lijn voor lijn.");
+      await page.locator("#bandTrackValue").click();
+      if(!(await page.locator("#lineEditor").isVisible()))throw new Error("Klik op Spoor opent config niet.");
       await page.locator("#bandLinePlus").click();
       if((await page.locator("#lineEditor").getAttribute("data-part"))!=="kop")throw new Error("Config volgt de lijnkeuze niet.");
       await page.locator("#lineToValue").fill("18");
@@ -91,11 +92,55 @@ function parallel(a, b) {
       await page.locator("#bandMenu").click();
       await page.locator("#parallelDisplaySelect").selectOption("whole");
       if(await page.locator("#lineEditor").isVisible())throw new Error("Automatisch configvenster blijft open buiten Lijn voor lijn.");
+      for(const key of ["VIJF+2","VIJF+3"]){
+        await page.locator("#bandMenu").click();await page.locator("#centralLineSelect").selectOption(key);
+        if((await page.locator("#bandTrackValue").textContent())!==key)throw new Error(`${key} valt terug naar een ander spoor.`);
+        if((await page.locator('g[data-part="neus"] .route-line').count())!==1)throw new Error(`${key}: Neus ontbreekt.`);
+        if((await page.locator('g[data-part="neus"] .junction-ball').count())!==1)throw new Error(`${key}: bandbal ontbreekt.`);
+      }
+      await page.locator("#bandMenu").click();await page.locator("#centralTableMode").selectOption("klein");
+      for(const [key,expected] of [["VIJF",83],["VIJF+1",83],["VIJF+2",83],["VIJF+3",83]]){
+        await page.locator("#bandMenu").click();await page.locator("#centralLineSelect").selectOption(key);
+        await page.locator("#bandMenu").click();await page.locator("#parallelDisplaySelect").selectOption("line");
+        await page.locator("#bandLineValue").click();
+        if(Number(await page.locator("#noseLengthValue").inputValue())!==expected)throw new Error(`${key}: verkeerde afstootlengte op Klein.`);
+        await page.locator("#closeLineEditor").click();
+      }
+      await page.locator("#bandLineValue").click();await page.locator("#noseLengthValue").fill("85");await page.locator("#noseLengthValue").dispatchEvent("input");await page.locator("#closeLineEditor").click();
+      await page.locator("#bandMenu").click();await page.locator("#centralLineSelect").selectOption("VIJF");await page.locator("#bandLineValue").click();
+      if(Number(await page.locator("#noseLengthValue").inputValue())!==85)throw new Error('Gewijzigde Neuslengte werkt niet door naar het basisspoor.');
+      await page.locator("#noseLengthValue").fill("83");await page.locator("#noseLengthValue").dispatchEvent("input");await page.locator("#closeLineEditor").click();
+      await page.locator("#bandMenu").click();await page.locator("#seriesFocusSelect").selectOption("noord");
+      if(!(await page.locator(".series-overview line[data-focus-part=kop]").count()))throw new Error("Start-focus toont geen overzicht.");
+      await page.locator("#bandMenu").click();
+      await page.locator(".selection-menu-header strong").scrollIntoViewIfNeeded();
+      const oldMenu=await page.locator(".central-track-controls").boundingBox(),titleBox=await page.locator(".selection-menu-header strong").boundingBox();
+      await page.mouse.move(titleBox.x+titleBox.width/2,titleBox.y+titleBox.height/2);await page.mouse.down();await page.mouse.move(titleBox.x+titleBox.width/2+10,titleBox.y+titleBox.height/2+20,{steps:6});await page.mouse.up();
+      const newMenu=await page.locator(".central-track-controls").boundingBox();if(Math.abs(newMenu.y-oldMenu.y)<5)throw new Error("Selectiemenu is niet schuifbaar.");
+      await page.waitForFunction(()=>Date.now()>Number(document.querySelector('.central-track-controls').dataset.suppressClickUntil||0));
+      await page.locator("#closeSelectionMenu").click();
+      if(await page.locator(".central-track-controls").isVisible())throw new Error("× sluit het menu niet.");
+      const bar=await page.locator("#bandCore").boundingBox();const lineBefore=await page.locator("#bandLineValue").textContent();
+      const dragTarget=await page.locator("#bandLinePlus").boundingBox();
+      await page.mouse.move(dragTarget.x+dragTarget.width/2,dragTarget.y+dragTarget.height/2);await page.mouse.down();await page.mouse.move(dragTarget.x+dragTarget.width/2+12,dragTarget.y+dragTarget.height/2+70,{steps:8});await page.mouse.up();
+      const movedBar=await page.locator("#bandCore").boundingBox();if(movedBar.y<bar.y+20)throw new Error("De hele balk is niet versleepbaar vanaf een knop.");
+      if((await page.locator("#bandLineValue").textContent())!==lineBefore)throw new Error("Slepen voert een klikactie uit.");
+      await page.evaluate(()=>{
+        const key='3b-canonical-west-v2',state=JSON.parse(localStorage.getItem(key));
+        Object.assign(state.ui,{departure:'kop',pattern:'VIJF',lineOneMode:'parallel',parallelOffset:1,trackFamily:'parallel',tableMode:'klein',editTable:'klein',parallelDisplay:'whole'});
+        state.appliedMigrations=state.appliedMigrations.filter(x=>x!=='nose-presentation-v173');
+        state.variantData??={};state.variantData.klein??={};state.variantData.klein['VIJF+1']=JSON.parse(JSON.stringify(state.data.klein.VIJF));
+        state.variantData.klein['VIJF+1'].neus.to.value=null;
+        localStorage.setItem(key,JSON.stringify(state));
+      });
+      await page.reload({waitUntil:'domcontentloaded'});
+      if(!(await page.locator('g[data-part="neus"] .route-line').count()))throw new Error('Oud opgeslagen scherm mist nog steeds Neus.');
+      if(!(await page.locator('g[data-part="neus"] .junction-ball').count()))throw new Error('Oud opgeslagen scherm mist nog steeds de bandbal.');
       if (pageErrors.length) throw new Error(`Schermfout: ${pageErrors.join(" | ")}`);
       await page.close();
     }
     console.log("UI-REGRESSIECONTROLE OK");
-    console.log("Desktop, mobiel, menuvelden, Nederlands, JSON-verwijdering en VIJF → VIJF+1 zijn getest.");
+    console.log("Desktop/mobiel: menuvelden, config-edits, VIJF+2/+3, Neus/bandbal, gelijke Neuslengte Klein 83 cm, Start-focus, × en versleepbare menu’s zijn getest.");
   } finally {
     await browser.close();
     server.close();

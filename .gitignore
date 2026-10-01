@@ -39,3 +39,9 @@ config-input/*.json
 /Kruinconfig-3B-v*.xlsx
 /Genereer_Kruinconfig.ps1
 /Bekijk_Kruinconfig.bat
+
+# Persoonlijke tafelbestanden
+/3B-*--kruin-*--app-v*.xlsx
+/3B-*--kruin-*--app-v*.ods
+/3B-*--kruin-*--app-v*.csv
+/3B-*--kruin-*--app-v*.sqlite3
