@@ -16,8 +16,8 @@ PUBLICEREN
 
 PRIVATE KRUINWAARDEN
 - Bewerk nooit een Excelbestand in deze openbare map.
-- Gebruik de naastliggende map 3B-private-Kruinconfig-v174.
-- Bekijk_Kruinconfig genereert vandaar kruinwaarden-generated-v174.js.
+- Gebruik de naastliggende map 3B-private-Kruinconfig-v175.
+- Bekijk_Kruinconfig genereert vandaar kruinwaarden-generated-v175.js.
 
 BETALEN
 - Lees BETALEN-ACTIVEREN.md.

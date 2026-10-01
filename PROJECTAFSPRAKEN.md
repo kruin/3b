@@ -579,7 +579,7 @@ Voor iedere release:
 - Voor parallelle Kop en Nek is nog geen regel vastgelegd; deze waarden blijven leeg.
 # Tijdelijke LKL-bronketen
 
-- Zolang patroon LKL niet stabiel is, wordt iedere waarde-aanpassing eerst verwerkt in `Kruinconfig-3B-v174.xlsx` van de private beheerrepository. `Bekijk_Kruinconfig.bat` genereert daarna de openbare tekenconfig voor controle en publicatie.
+- Zolang patroon LKL niet stabiel is, wordt iedere waarde-aanpassing eerst verwerkt in `Kruinconfig-3B-v175.xlsx` van de private beheerrepository. `Bekijk_Kruinconfig.bat` genereert daarna de openbare tekenconfig voor controle en publicatie.
 - De openbare release-ZIP bevat nooit de private beheer-JSON.
 - Onboardingregel: een nieuwe gebruiker krijgt eerst uitsluitend de cursus; tafelknoppen en duimpje blijven verborgen.
 - Een terugkerende gebruiker krijgt eerst één Start-aanwijzer op de tafel; pas daarna verschijnen de gewone bedieningselementen.

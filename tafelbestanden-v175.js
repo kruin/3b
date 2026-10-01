@@ -20,6 +20,7 @@ window.ThreeBFiles = (() => {
     const text = JSON.stringify(payload), result = [header];
     for (let i = 0; i < text.length; i += 28000) result.push(['Tafelbestand', String(i / 28000), 'json-deel', text.slice(i, i + 28000), '']);
     for (const row of differences(payload.basis.baseline, tracked(payload.state))) result.push(['Aanpassing', ...row]);
+    for(const [key,note] of Object.entries(payload.state.coursePractice||{})) for(const [index,value] of (note.attempts||[]).entries()) if(value!==null) result.push(['Lesnotitie',JSON.stringify(['coursePractice',key,'attempts',String(index)]),'getal',value,`V ${note.from?.band} ${note.from?.value} → A ${note.band}`]);
     return result;
   }
   function validate(payload) {
@@ -51,16 +52,17 @@ window.ThreeBFiles = (() => {
     if (!chunks.length || chunks.some((row,i) => Number(row[1]) !== i)) throw Error('De oorspronkelijke tafelbasis is onvolledig.');
     const payload = JSON.parse(chunks.map(row => row[3]).join(''));
     validate(payload);
-    for (const row of input.slice(1).filter(row => row[0] === 'Aanpassing')) {
+    for (const row of input.slice(1).filter(row => ['Aanpassing','Lesnotitie'].includes(row[0]))) {
       const path = JSON.parse(row[1]);
-      if (!Array.isArray(path) || !path.length || !['data','variantData','departurePositions','strokeLengthsCm','bandOverrides'].includes(path[0]) || path.some(key => typeof key !== 'string' || forbidden.has(key))) throw Error('Ongeldig pad bij een aanpassing.');
+      if (!Array.isArray(path) || !path.length || !['data','variantData','departurePositions','strokeLengthsCm','bandOverrides','coursePractice'].includes(path[0]) || path.some(key => typeof key !== 'string' || forbidden.has(key))) throw Error('Ongeldig pad bij een aanpassing.');
       let target = payload.state;
       for (const key of path.slice(0,-1)) { if (!target[key] || typeof target[key] !== 'object') target[key] = {}; target = target[key]; }
-      const key = path.at(-1);
+      const key = path.at(-1),oldValue=target[key];
       if (row[2] === 'verwijderd') delete target[key];
       else if (row[2] === 'getal') { if (row[3] === '' || !Number.isFinite(Number(row[3]))) throw Error('Een aangepaste waarde is geen getal.'); target[key] = Number(row[3]); }
       else if (row[2] === 'json') target[key] = JSON.parse(row[3]);
       else throw Error('Onbekend waardetype.');
+      if(row[0]==='Lesnotitie' && oldValue!==target[key] && payload.state.coursePractice?.[path[1]])payload.state.coursePractice[path[1]].complete=false;
     }
     return validate(payload);
   }
@@ -85,7 +87,7 @@ window.ThreeBFiles = (() => {
     window.XLSX.utils.book_append_sheet(book, sheet, 'Aanpassingen');
     window.XLSX.utils.book_append_sheet(book, window.XLSX.utils.aoa_to_sheet([
       ['3B tafelbestand', ''], ['Tafelnaam (optioneel)', payload.tableName], ['Kruinbasis',payload.basis.id], ['Basisnaam',payload.basis.label],
-      ['Appversie',174], ['Groot en Klein','Apart bewaard'], ['Terugladen','Gebruik Menu > Instellingen > Mijn tafel > Terugladen.'],
+      ['Appversie',175], ['Groot en Klein','Apart bewaard'], ['Terugladen','Gebruik Menu > Instellingen > Mijn tafel > Terugladen.'],
       ['Bewerken','Bij Aanpassing: getal = numeriek; json = JSON-waarde. Bewaar de Tafelbestand-regels.']
     ]), 'Toelichting');
     return window.XLSX.write(book, {bookType:format,type:'array'});
@@ -106,7 +108,7 @@ window.ThreeBFiles = (() => {
   }
   function filename(payload, format) {
     const slug = (payload.tableName || 'mijn-tafel').normalize('NFKD').replace(/[^a-zA-Z0-9_-]+/g,'-').replace(/^-|-$/g,'').slice(0,60) || 'mijn-tafel';
-    return `3B-${slug}--${payload.basis.id}--app-v174.${format}`;
+    return `3B-${slug}--${payload.basis.id}--app-v175.${format}`;
   }
   return {encode, decode, rows, fromRows, differences, tracked, validate, filename};
 })();

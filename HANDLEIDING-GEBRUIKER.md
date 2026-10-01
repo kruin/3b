@@ -1,6 +1,45 @@
 # 3B — handleiding voor de gebruiker
 
-## Mijn tafel: downloaden en terugladen (nieuw in v174)
+## Bal zoekt spoor — de cursus bij je oefentafel
+
+3B is een oefentafel voor drieband. **Bal zoekt spoor** is de begeleide cursus.
+De lijnen geven een vertrekpunt; op je echte tafel ontdek je wat werkt.
+Afstoot, laken en ballen kunnen de werkelijk gespeelde baan beïnvloeden.
+
+Les 1 begint met het **Karkas: Neus en Romp**. Zoek eerst de doelbal op de Romp,
+dan de speelbal op de Neus. De tussenlijnen volgen in de verdieping.
+
+De cursus heeft vier routes:
+
+- **Les 1 · mijn eigen VIJF:** Karkas begrijpen, doelbal herkennen, startpositie
+  instellen, spelen, drie Romplijnen noteren en vergelijken.
+- **Mijn Romplijn vastleggen:** direct naar startpositie en notities.
+- **Les 2 · VIJF+1 en VIJF−1:** eerst Parallel, daarna de andere mogelijkheden.
+- **Verdieping:** Waaier, HALF-standen, verdere lijnen en referentieregels.
+
+Kies Groot of Klein in de cursus. Elk lesbeeld past geheel in het beeldvak.
+De echte tafelbediening verschijnt weer wanneer je naar je oefentafel gaat.
+**Naar de Neus** opent de afstootlengte; de Neusrichting blijft vast.
+**Naar de Romp** opent de gewone lijneditor.
+
+Bij de Rompnotities blijft de genoteerde V het vertrekpunt. Vul voor elke poging
+A in op de aangegeven band/stiplijn. **Toon poging op mijn tafel** zet de gekozen
+waarneming als eigen Romp A; V blijft ongewijzigd. Decimalen blijven behouden.
+Er wordt geen gemiddelde of automatische kwaliteitsnorm aan de pogingen opgelegd.
+
+Bij de laatste kaart controleer je zelf wat je kunt. Na de doelbalvraag, drie
+notities en je eigen bevestiging kun je **Bewaar Les 1** gebruiken.
+Lesnotities worden per Kruinbasis en tafelmaat lokaal bewaard. Zij reizen ook mee
+in het volledige gebruikersbestand via **Mijn tafel**. De regels **Lesnotitie**
+bevatten de afzonderlijke A-waarden; wijzig je zo’n waarde in het bestand, dan
+vervalt de eerdere lesbevestiging bij terugladen.
+
+**Cursus** hervat de laatst gekozen kaart. **Opnieuw** gaat naar de eerste kaart
+van de gekozen cursusroute en laat je notities staan. **Mijn inschatting** kiest
+een andere route. Nieuwe cursusteksten verschijnen ook bij een oudere gekozen
+Kruinbasis; die basiswaarden worden daardoor niet vervangen.
+
+## Mijn tafel: downloaden en terugladen (nieuw in v175)
 
 Open Menu → Instellingen → Mijn tafel.
 
@@ -16,7 +55,7 @@ Bij terugladen hoef je dus geen oude basis handmatig op te zoeken: het bestand
 herstelt zijn eigen basis, decimalen en tafelnaam, ook na een nieuwe Kruinpublicatie.
 
 De bestandsnaam bevat de tafelnaam, exacte Kruinbasis en appversie, bijvoorbeeld
-`3B-mijn-tafel--kruin-v174-<inhoudscode>--app-v174.xlsx`.
+`3B-mijn-tafel--kruin-v175-<inhoudscode>--app-v175.xlsx`.
 Het basis-ID in het bestand is leidend wanneer je het bestand zelf hernoemt.
 
 **Een andere tafel of nieuw laken:** selecteer een andere Kruinbasis en klik
@@ -37,7 +76,7 @@ Download daarnaast een tafelbestand om je wijzigingen mee te nemen naar een
 andere browser of computer. In de private Kruineditor schrijft Bewaar nog steeds
 naar Kruinconfig.sqlite3.
 
-Geldig voor versie 174.
+Geldig voor versie 175.
 
 Open **U-config** om de persoonlijke tafelweergave te wijzigen. V/A-labels
 kunnen klein, alleen bij de actieve bal of uit worden getoond. De bal en de
@@ -146,15 +185,11 @@ en Teen.
 
 ## Kruinneus en Gebruikersneus
 
-Kruin configureert per tafel en spoor een **Kruinneus** als referentie. De
-gebruiker kan deze lokaal aanpassen; die aanpassing heet **Gebruikersneus**.
-De Kruinreferentie wordt daardoor niet gewijzigd of gepubliceerd.
-
-Laat bal 1 rollend aankomen op band 1. Strookt bal 1 niet met het gekozen spoor
-van de doelbal, verander de richting van de Neus voorzichtig en speel meerdere
-pogingen. Bij een korte Neus is de benodigde correctie doorgaans klein, terwijl
-de gevolgen groot kunnen zijn. Bij een langere Neus kan een grotere correctie
-nodig zijn. De cursus schrijft geen universele waarde voor: **speel en meet**.
+Kruin configureert per tafel en spoor een **Kruinneus** als referentie.
+In de gewone Neuseditor blijft de richting vast. Je verandert de afstootlengte
+om de speelbal langs deze lijn te plaatsen. Speel meerdere pogingen en leg je
+waargenomen Romplijn vast. De cursus geeft geen universele stootwaarde:
+**speel, kijk en stel bij**.
 
 Met **Herstel Kruinneus** wordt alleen de Neus van het huidige spoor en de
 zichtbare tafel(s) teruggezet. Andere lokale lijnwaarden blijven behouden.
@@ -283,7 +318,7 @@ Tik op een lijn om haar waarden in het gekleurde lijnvenster te bekijken of te
 wijzigen. Neus is de uitzondering: de Neus zelf ligt vast; alleen de
 afstootlengte kan worden aangepast.
 
-3B versie 174 · menu, posities en Nek
+3B versie 175 · menu, posities en Nek
 - Instellingen opent met muis en touch en blijft boven de bandbediening.
 - Focus heet Start; vertreklabels gebruiken P/P+1/P−2 of W/W+2.
 - Positiekleuren: Karkas oker, Kruin groen, Berekend rood, Bewerkt blauw.
@@ -295,7 +330,7 @@ Versie 171: Lijn voor lijn toont automatisch de config van de gekozen lijn. Min/
 
 Versie 171: Parallel-bounds vanuit basisspoor; VIJF+2/+3 beschikbaar. Neus en bandbal hersteld bij oude schermstanden. Klein VIJF en alle Parallel-standen dezelfde Neuslengte: 83 cm. Veranderen van de lengte werkt door in de Parallel-standen. Klik in Lijn voor lijn op Spoor of Lijn voor config. Hele balk versleepbaar. Selectiemenu met ×. Start activeert gekozen overzicht.
 
-## v174 — spoorreeksen en waarden
+## v175 — spoorreeksen en waarden
 
 Het spoormenu bevat NUL tot ACHT met hun geldige Parallelstanden. VIJF loopt tot +3, VIER tot +4, DRIE tot +5 enzovoort. Aankomsten volgt de actuele lijnwaarden op alle banden, ook voor de negatieve standen.
 

@@ -128,7 +128,7 @@ function parallel(a, b) {
       await page.evaluate(()=>{
         const key='3b-canonical-west-v2',state=JSON.parse(localStorage.getItem(key));
         Object.assign(state.ui,{departure:'kop',pattern:'VIJF',lineOneMode:'parallel',parallelOffset:1,trackFamily:'parallel',tableMode:'klein',editTable:'klein',parallelDisplay:'whole'});
-        state.appliedMigrations=state.appliedMigrations.filter(x=>x!=='nose-presentation-v174');
+        state.appliedMigrations=state.appliedMigrations.filter(x=>x!=='nose-presentation-v175');
         state.variantData??={};state.variantData.klein??={};state.variantData.klein['VIJF+1']=JSON.parse(JSON.stringify(state.data.klein.VIJF));
         state.variantData.klein['VIJF+1'].neus.to.value=null;
         localStorage.setItem(key,JSON.stringify(state));
