@@ -1,19 +1,24 @@
-3B — versie 173
+3B — versie 174
+Herstel eerste opstart: de tafel wacht niet meer op een externe dienst.
+Externe diensten laden alleen wanneer zij zijn ingesteld, asynchroon na het tekenen van de tafel.
+Tabbladicoon toegevoegd. Alle tafelbestanden en oude bases uit v173 behouden.
+
+3B — versie 174
 
 Gebruikersbestanden XLSX/ODS/SQLite/CSV, optionele tafelnaam, vaste oorspronkelijke Kruinbasis, kiesbare tafelbases en onveranderlijke publicatiearchieven.
 Decimalen en lege waarden blijven behouden. Openbare Bewaar werkt lokaal; private Bewaar blijft naar Kruinconfig.sqlite3 schrijven.
 
-3B GitHub Pages versie 173
+3B GitHub Pages versie 174
 
 Versie 171 — herstel menu en aansluitingen
-- De schone v173 is de basis; de Neus van iedere Parallel-stand wordt als één lijnvector verschoven en blijft daardoor parallel.
+- De schone v174 is de basis; de Neus van iedere Parallel-stand wordt als één lijnvector verschoven en blijft daardoor parallel.
 - In Aankomsten volgt de dikke Neus altijd het gekozen basis-, HALF- of Parallel-spoor; hij valt niet meer terug op het onderste basisspoor.
 - De reeksnaam `−S+` is vervangen door `Parallel (P)` in app, cursus en documentatie.
 - Nederlands is de standaard- en terugvaltaal; Engels blijft kiesbaar.
 - Taal, aanspreekvorm, richting, vertrek, correctie, stippelwaarden, balkleur, balmarkering, speelbereik en U-config staan in het zichtbare menu onder Instellingen.
 - Gebruikersbeheer blijft account/database; JSON-import en -export zijn uit de gebruikersinterface verwijderd.
 - `Regressiecontrole_3B.bat` en de publicatiestarter controleren voortaan menu, config, taal, opslag, benaming, Neus-paralleliteit en versieaansluitingen.
-- Alle actieve release-, cache-, handleiding- en publicatieverwijzingen wijzen naar v173.
+- Alle actieve release-, cache-, handleiding- en publicatieverwijzingen wijzen naar v174.
 - Oude inspectiebestanden van v160/v163 en Python-cache zijn niet opgenomen.
 
 Versie 164
@@ -85,9 +90,9 @@ Versie 150 is één schone, zelfstandige release.
 - VIJF loopt van VIJF−2 tot en met VIJF+3; aan beide grenzen blijft de selectie staan.
 - Grensknoppen worden zichtbaar uitgeschakeld.
 
-- Openbare app: `3B-openbare-app-v173`.
-- Private beheerbron: `3B-private-Kruinconfig-v173`.
-- Kruinwaarden: de laatst opgeslagen `Kruinconfig-3B-v173.xlsx` of `.ods` naar `kruinwaarden-generated-v173.js`.
+- Openbare app: `3B-openbare-app-v174`.
+- Private beheerbron: `3B-private-Kruinconfig-v174`.
+- Kruinwaarden: de laatst opgeslagen `Kruinconfig-3B-v174.xlsx` of `.ods` naar `kruinwaarden-generated-v174.js`.
 - Mobiele tafel gebruikt de volledige beschikbare schermruimte.
 - Barbon en veilige Mollie/Supabase-betaalvoorbereiding zijn aanwezig.
 - Betalen blijft uit totdat `Activeer_Betalen.bat` bewust wordt uitgevoerd.
@@ -173,7 +178,7 @@ Versie 151
 - Handmatig ingevoerde of goedgekeurde waarden blijven leidend.
 - VIJF Klein gebruikt S-West 50, Romp Oost 20-Zuid 38 en Kop A Noord 19.
 
-3B versie 173 · menu, posities en Nek
+3B versie 174 · menu, posities en Nek
 - Instellingen opent met muis en touch en blijft boven de bandbediening.
 - Focus heet Start; vertreklabels gebruiken P/P+1/P−2 of W/W+2.
 - Positiekleuren: Karkas oker, Kruin groen, Berekend rood, Bewerkt blauw.
