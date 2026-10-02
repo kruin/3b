@@ -87,7 +87,7 @@ window.ThreeBFiles = (() => {
     window.XLSX.utils.book_append_sheet(book, sheet, 'Aanpassingen');
     window.XLSX.utils.book_append_sheet(book, window.XLSX.utils.aoa_to_sheet([
       ['3B tafelbestand', ''], ['Tafelnaam (optioneel)', payload.tableName], ['Kruinbasis',payload.basis.id], ['Basisnaam',payload.basis.label],
-      ['Appversie',177], ['Groot en Klein','Apart bewaard'], ['Terugladen','Gebruik Menu > Instellingen > Mijn tafel > Terugladen.'],
+      ['Appversie',178], ['Groot en Klein','Apart bewaard'], ['Terugladen','Gebruik Menu > Instellingen > Mijn tafel > Terugladen.'],
       ['Bewerken','Bij Aanpassing: getal = numeriek; json = JSON-waarde. Bewaar de Tafelbestand-regels.']
     ]), 'Toelichting');
     return window.XLSX.write(book, {bookType:format,type:'array'});
@@ -108,7 +108,7 @@ window.ThreeBFiles = (() => {
   }
   function filename(payload, format) {
     const slug = (payload.tableName || 'mijn-tafel').normalize('NFKD').replace(/[^a-zA-Z0-9_-]+/g,'-').replace(/^-|-$/g,'').slice(0,60) || 'mijn-tafel';
-    return `3B-${slug}--${payload.basis.id}--app-v177.${format}`;
+    return `3B-${slug}--${payload.basis.id}--app-v178.${format}`;
   }
   return {encode, decode, rows, fromRows, differences, tracked, validate, filename};
 })();

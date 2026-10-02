@@ -506,7 +506,7 @@ body.table-only .band-corner{width:var(--screen-band,36px);height:var(--screen-b
 body.table-only .band-reset,body.table-only .band-save{font-size:8px}
 body.table-only .band-save{background:#176f4f}
 
-/* v177: de bovenste bedieningsrij kan horizontaal schuiven op smalle schermen. */
+/* v178: de bovenste bedieningsrij kan horizontaal schuiven op smalle schermen. */
 body.table-only .central-track-controls {
   overflow-x: auto;
   overflow-y: auto;
@@ -589,3 +589,10 @@ body.table-only .band-controls{z-index:2200}
 .course-head-measure button{font-size:12px;min-height:32px;padding:5px 8px}.course-head-measure label{font-size:13px}#courseHeadSource{font-size:13px}
 
 @media(max-width:600px){.course-interactions{max-height:23dvh}.explanation-carousel>#explanationText{max-height:24dvh;overflow:auto}}
+
+/* Korte begripsuitleg, bereikbaar met muis, touch en toetsenbord. */
+.course-term{display:inline!important;padding:0!important;min-width:0!important;min-height:0!important;margin:0;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;font:inherit!important;color:inherit!important;line-height:inherit!important;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.course-term:focus-visible{outline:2px solid #1769d2;outline-offset:3px}
+.course-glossary{box-sizing:border-box;width:min(560px,calc(100vw - 24px));max-height:calc(100dvh - 32px);padding:20px;border:2px solid #9a711b;border-radius:14px;background:#fffaf0;color:#302617;overflow:auto}
+.course-glossary::backdrop{background:rgb(0 0 0 / .45)}
+.course-glossary header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}.course-glossary h2{font-size:22px;margin:0}.course-glossary p{line-height:1.55}.course-glossary header button{min-width:44px;min-height:44px;font-size:22px}.course-glossary nav{display:flex;flex-wrap:wrap;gap:6px}.course-glossary nav button{padding:8px;min-height:40px}.course-glossary nav button[aria-pressed="true"]{background:#176f4f;color:#fff}.course-origin-legend .framework{color:#a36b00}

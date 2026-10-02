@@ -1,7 +1,7 @@
 /* Na herstel van Git worden ook alle vroeger gepubliceerde bases meegenomen. */
 'use strict';
 const fs=require('fs'),path=require('path'),vm=require('vm');
-const root=__dirname,file=path.join(root,'basis-catalogus-v177.js');
+const root=__dirname,file=path.join(root,'basis-catalogus-v178.js');
 const context={};context.window=context;context.globalThis=context;
 vm.runInNewContext(fs.readFileSync(file,'utf8'),context);
 const defaultId=context.THREEB_DEFAULT_BASIS;

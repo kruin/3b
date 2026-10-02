@@ -18,6 +18,24 @@ const root=__dirname,server=http.createServer((req,res)=>{const file=path.resolv
   assert.equal(await page.locator('#explanationVisual g[data-part]').count(),2);
   assert.equal(await page.locator('#explanationVisual .series-overview').count(),0);
   const layout=await page.locator('#explanationVisual .table-svg').evaluate(svg=>{const a=svg.getBoundingClientRect(),v=svg.closest('.explanation-visual').getBoundingClientRect();return a.left>=v.left-1&&a.right<=v.right+1&&a.top>=v.top-1&&a.bottom<=v.bottom+1;});assert(layout,'Lesbeeld valt buiten het beeldvak');
+  // Begripsuitleg houdt lespositie, notities en tafelwaarden intact.
+  const beforeGlossary=await page.evaluate(key=>localStorage.getItem(key),key);
+  const positionBefore=await page.locator('#explanationPosition').textContent();
+  await page.locator('#explanationText [data-course-term="neus"]').click();
+  assert(await page.locator('#courseGlossary').isVisible());
+  assert.equal(await page.locator('#courseGlossaryTitle').textContent(),'Neus');
+  await page.locator('#courseGlossaryTerms').getByRole('button',{name:'A · aankomst',exact:true}).click();
+  assert((await page.locator('#courseGlossaryText').textContent()).includes('niet het raakpunt'));
+  await page.locator('#courseGlossaryTerms').getByRole('button',{name:'Nek',exact:true}).click();
+  assert((await page.locator('#courseGlossaryText').textContent()).includes('verschillende stipwaarden'));
+  const termBox=await page.locator('#courseGlossary').boundingBox();
+  assert(termBox.x>=0&&termBox.y>=0&&termBox.x+termBox.width<=viewport.width+1&&termBox.y+termBox.height<=viewport.height+1);
+  await page.screenshot({path:'/tmp/3b178-glossary-'+viewport.width+'.png'});
+  await page.keyboard.press('Escape');assert(!(await page.locator('#courseGlossary').isVisible()));
+  assert.equal(await page.locator('#explanationPosition').textContent(),positionBefore);
+  assert.equal(await page.evaluate(key=>localStorage.getItem(key),key),beforeGlossary);
+  assert.equal(await page.evaluate(()=>document.activeElement?.dataset.courseTerm),'neus');
+  await page.locator('#openCourseGlossary').click();await page.locator('#closeCourseGlossary').click();
   const controls=await page.locator('#bandMenu').evaluate(el=>getComputedStyle(el).visibility);assert.equal(controls,'hidden');
   await page.locator('#nextExplanation').click();assert((await page.locator('#explanationTitle').textContent()).includes('Karkas'));await page.locator('#nextExplanation').click();await page.getByRole('button',{name:'Nee, naast de Romp',exact:true}).click();assert((await page.locator('#courseFeedback').textContent()).includes('middelpunt'));
   await page.getByRole('button',{name:'Ja, op de Romp',exact:true}).click();
@@ -44,10 +62,10 @@ const root=__dirname,server=http.createServer((req,res)=>{const file=path.resolv
   await page.locator('#courseHeadInput').fill('18.1256789');await page.getByRole('button',{name:'Gebruik mijn meting',exact:true}).click();assert((await page.locator('#courseHeadSource').textContent()).includes('eigen meting'));
   await page.getByRole('button',{name:'Gebruik Kruinmeting',exact:true}).click();assert((await page.locator('#courseHeadSource').textContent()).includes('Kruinmeting'));
   const footerBox=await page.locator('#explanationFooter').boundingBox();assert(footerBox.y+footerBox.height<=viewport.height+1,'Cursusnavigatie valt buiten het scherm');
-  await page.screenshot({path:'/tmp/3b177-kopa-'+viewport.width+'.png'});
+  await page.screenshot({path:'/tmp/3b178-kopa-'+viewport.width+'.png'});
   await page.getByRole('button',{name:'Naar de Kop · gemeten A invullen',exact:true}).click();await page.waitForSelector('#lineEditor',{state:'visible'});await page.locator('#closeLineEditor').click();await reopen();
   await page.locator('#nextExplanation').click();assert((await page.locator('#courseBridgeValues').textContent()).includes('berekend'));
-  await page.screenshot({path:'/tmp/3b177-nek-'+viewport.width+'.png'});
+  await page.screenshot({path:'/tmp/3b178-nek-'+viewport.width+'.png'});
   await page.locator('#nextExplanation').click();assert(await page.locator('#completeCourseLesson').isDisabled());await page.locator('#courseCanRepeat').check();await page.locator('#completeCourseLesson').click();assert((await page.locator('#courseCompletionStatus').textContent()).includes('Les 1 bewaard'));
   await page.getByRole('button',{name:'Verder · VIJF+1 en VIJF−1',exact:true}).click();assert((await page.locator('#explanationLevel').textContent()).includes('Les 2'));
   assert((await page.locator('#explanationVisual .table-svg').getAttribute('aria-label')).includes('VIJF+1'));
@@ -63,8 +81,9 @@ const root=__dirname,server=http.createServer((req,res)=>{const file=path.resolv
   await page.locator('#tableBasisSelect').selectOption(oldId);page.once('dialog',dialog=>dialog.accept());await page.locator('#chooseTableBasis').click();
   await page.waitForFunction(({key,id})=>JSON.parse(localStorage.getItem(key))?.basis?.id===id,{key,id:oldId});await page.waitForSelector('.table-svg');
   if(!(await page.locator('#explanationCarousel').isVisible()))await reopen();assert((await page.locator('#explanationLevel').textContent()).includes('Bal zoekt spoor'),'Oudere basis krijgt de actuele cursus');
+  await page.locator('#openCourseGlossary').click();assert(await page.locator('#courseGlossary').isVisible(),'Oudere basis krijgt actuele begripsuitleg');await page.locator('#closeCourseGlossary').click();
   assert.deepStrictEqual(errors,[]);await page.close();
  }
- console.log('CURSUSCONTROLE OK: desktop/mobiel, meetbeeld met vijf ijkjes en één bal tegen Oost, twee lijnen zonder overliggende bediening, doelbalfeedback, vaste Neus, drie exacte Rompnotities, V ongewijzigd, les bewaren/hervatten, Parallel voor Waaier en juiste VIER-tekening.');
+ console.log('CURSUSCONTROLE OK: begripsuitleg, focusterugkeer, lespositie/waarden onveranderd, oudere basis, desktop/mobiel, meetbeeld met vijf ijkjes en één bal tegen Oost, twee lijnen zonder overliggende bediening, doelbalfeedback, vaste Neus, drie exacte Rompnotities, V ongewijzigd, les bewaren/hervatten, Parallel voor Waaier en juiste VIER-tekening.');
  }finally{await browser.close();server.close();}
 })().catch(error=>{console.error(error);server.close();process.exitCode=1;});

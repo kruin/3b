@@ -3,7 +3,7 @@ const fs=require('fs'),vm=require('vm'),assert=require('assert');
 const context={window:{XLSX:require('./vendor/xlsx.full.min.js'),initSqlJs:require('./vendor/sql-asm.js')},TextDecoder};
 context.globalThis=context.window;
 vm.createContext(context);
-for(const file of ['basis-catalogus-v177.js','tafelbestanden-v177.js'])vm.runInContext(fs.readFileSync(__dirname+'/'+file,'utf8'),context);
+for(const file of ['basis-catalogus-v178.js','tafelbestanden-v178.js'])vm.runInContext(fs.readFileSync(__dirname+'/'+file,'utf8'),context);
 const api=context.window.ThreeBFiles,copy=x=>JSON.parse(JSON.stringify(x)),basis=copy(context.window.THREEB_BASES.find(b=>b.id===context.window.THREEB_DEFAULT_BASIS));
 const line={from:{band:'oost',value:20,status:'approved'},to:{band:'zuid',value:38,status:'approved'}};
 const state={data:{klein:{VIJF:{romp:copy(line)}},groot:{VIJF:{romp:copy(line)}}},variantData:{},departurePositions:{},strokeLengthsCm:{},bandOverrides:{},ui:{language:'nl'}};

@@ -9,8 +9,8 @@ const server=http.createServer((req,res)=>{
  const name=new URL(req.url,'http://localhost').pathname.slice(1)||'index.html',file=path.resolve(root,name);
  if(!file.startsWith(root+path.sep)||!fs.existsSync(file)){res.writeHead(404).end();return;}
  let bytes=fs.readFileSync(file);
- if(upgraded&&name==='basis-catalogus-v177.js')bytes=Buffer.from(bytes.toString()+`\nconst testBasis=JSON.parse(JSON.stringify(THREEB_BASES.at(-1)));testBasis.id='kruin-test-nieuw-laken';testBasis.label='Nieuw laken';testBasis.values.tracks.klein.VIJF.rompA.value=31;THREEB_BASES.push(testBasis);THREEB_DEFAULT_BASIS=testBasis.id;`);
- if(upgraded&&name==='kruinwaarden-generated-v177.js')bytes=Buffer.from(bytes.toString()+`\nTHREEB_KRUIN_VALUES.tracks.klein.VIJF.rompA.value=31;`);
+ if(upgraded&&name==='basis-catalogus-v178.js')bytes=Buffer.from(bytes.toString()+`\nconst testBasis=JSON.parse(JSON.stringify(THREEB_BASES.at(-1)));testBasis.id='kruin-test-nieuw-laken';testBasis.label='Nieuw laken';testBasis.values.tracks.klein.VIJF.rompA.value=31;THREEB_BASES.push(testBasis);THREEB_DEFAULT_BASIS=testBasis.id;`);
+ if(upgraded&&name==='kruinwaarden-generated-v178.js')bytes=Buffer.from(bytes.toString()+`\nTHREEB_KRUIN_VALUES.tracks.klein.VIJF.rompA.value=31;`);
  res.setHeader('Content-Type',name.endsWith('.js')?'text/javascript':name.endsWith('.html')?'text/html':name.endsWith('.css')?'text/css':'application/octet-stream');res.end(bytes);
 });
 (async()=>{

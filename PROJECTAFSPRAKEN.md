@@ -579,7 +579,7 @@ Voor iedere release:
 - Voor parallelle Kop en Nek is nog geen regel vastgelegd; deze waarden blijven leeg.
 # Tijdelijke LKL-bronketen
 
-- Zolang patroon LKL niet stabiel is, wordt iedere waarde-aanpassing eerst verwerkt in `Kruinconfig-3B-v177.xlsx` van de private beheerrepository. `Bekijk_Kruinconfig.bat` genereert daarna de openbare tekenconfig voor controle en publicatie.
+- Zolang patroon LKL niet stabiel is, wordt iedere waarde-aanpassing eerst verwerkt in `Kruinconfig-3B-v178.xlsx` van de private beheerrepository. `Bekijk_Kruinconfig.bat` genereert daarna de openbare tekenconfig voor controle en publicatie.
 - De openbare release-ZIP bevat nooit de private beheer-JSON.
 - Onboardingregel: een nieuwe gebruiker krijgt eerst uitsluitend de cursus; tafelknoppen en duimpje blijven verborgen.
 - Een terugkerende gebruiker krijgt eerst één Start-aanwijzer op de tafel; pas daarna verschijnen de gewone bedieningselementen.
@@ -596,3 +596,12 @@ Voor iedere release:
 - `Publiceer_3B.bat` verwijdert oude gevolgde beheerbestanden uit de openbare Git-index.
 - Een release mag pas worden opgeleverd nadat private beheer-JSON en openbare configuratie op de gekozen publicatiewaarden zijn gecontroleerd.
 - De gewone gebruiker ziet en beheert geen beheer-JSON en gebruikt alleen de gepubliceerde app.
+
+
+### 2026-10-02 — begripsuitleg v178
+
+- Korte uitleg staat achter onderstreepte begrippen in de cursus en de knop Begrippen.
+- De actuele cursus levert de begrippen, ook als de gebruiker een oudere Kruinbasis kiest.
+- Openen/sluiten verandert geen lespositie, tafelwaarden of lesnotities.
+- V/A zijn stiplijnpunten; de gedeelde fysieke bandbal betekent geen gelijke stipwaarde.
+- Beide tafelfuncties en alle herkomstlabels uit v177 blijven onderdeel van de cursus.
