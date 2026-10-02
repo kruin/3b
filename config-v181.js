@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 101, release: "178", publicRelease: "178",
+  version: 101, release: "181", publicRelease: "181",
   userDisplay: {
     defaultLineOpacity: 0.58,
     defaultArrowMode: "request",
@@ -170,130 +170,220 @@ window.THREEB_START_CONFIG = {
       image: { source: "KruinLines", line: "VIJF", parts: [], tables: ["klein"], casePositionOnly: true }
     }
   ],
-  explanation: {
-  "version": "1.1",
-  "glossary": {
-  "neus": {
-    "title": {
-      "nl": "Neus",
-      "en": "Nose"
+  patternResearch: {
+  "definition": "nieuw karkas = nieuw patroon",
+  "entries": [
+    {
+      "key": "NEUS_BEEN",
+      "name": "Neus–Been",
+      "status": "te meten",
+      "playable": false,
+      "inheritsLkl": false,
+      "framework": [
+        "neus",
+        "been"
+      ],
+      "measurementOrder": [
+        "karkas",
+        "ijkpunten",
+        "kop",
+        "nek",
+        "romp",
+        "kruis"
+      ],
+      "checks": [
+        "passage bal 2",
+        "passeerkant",
+        "vrije ruimte"
+      ],
+      "reuseOldCoordinates": false
     },
-    "text": {
-      "nl": "De eerste lijn: van startpositie S naar het aankomstpunt op de eerste stiplijn. Bij basis-VIJF richt je naar West 50. In deze oefening verander je alleen de afstootlengte.",
-      "en": "The first line runs from starting position S towards the arrival point on the first diamond line. Base FIVE aims at West 50. This exercise changes only stroke length."
-    }
-  },
-  "stiplijn": {
-    "title": {
-      "nl": "Stiplijn",
-      "en": "Diamond line"
+    {
+      "key": "KKL",
+      "status": "te meten",
+      "playable": false
     },
-    "text": {
-      "nl": "De meetlijn die de stippen langs één band verbindt. Iedere band heeft een eigen stiplijn. V en A liggen op deze meetlijnen; het raakpunt van de bal ligt op de bandrand.",
-      "en": "The measuring line connecting the diamonds along one cushion. Each cushion has its own diamond line. V and A lie on these lines; the ball contacts the cushion edge."
+    {
+      "key": "KLK",
+      "status": "te meten",
+      "playable": false
     }
-  },
-  "karkas": {
-    "title": {
-      "nl": "Karkas",
-      "en": "Framework"
-    },
-    "text": {
-      "nl": "Neus en Romp vormen samen het Karkas van dit spoor. Zoek eerst de doelbal op de Romp en daarna de speelbal op de Neus. Kop en Nek verbinden deze twee lijnen zodra Kop A bekend is.",
-      "en": "Nose and Body form the framework of this track. Find the target ball on the Body first, then the cue ball on the Nose. Head and Neck connect these lines once Head A is known."
-    }
-  },
-  "kop": {
-    "title": {
-      "nl": "Kop",
-      "en": "Head"
-    },
-    "text": {
-      "nl": "De lijn na de Neus. Bij basis-VIJF loopt hij van West naar Noord. Kop A meet je bij voorkeur met ijkjes. Kruin mat op zijn tafels Klein 19 en Groot 15. Bekende Neus en Romp bepalen Kop A niet eenduidig; een gekozen geometrische schatting blijft een benadering.",
-      "en": "The line after the Nose, from West to North in base FIVE. Prefer measuring Head A with markers. Kruin measured Small 19 and Large 15 on his tables. Known Nose and Body do not uniquely determine Head A; an explicitly chosen geometric estimate remains approximate."
-    }
-  },
-  "nek": {
-    "title": {
-      "nl": "Nek",
-      "en": "Neck"
-    },
-    "text": {
-      "nl": "De lijn van de gedeelde Noordbal naar Oost. De app construeert de bal op Noord met de Koplijn en Kop A. Hij verlengt de uitgaande Neklijn terug naar de Noord-stiplijn: daar ligt Nek V. Kop A en Nek V kunnen verschillende stipwaarden hebben, hoewel de balpositie dezelfde is.",
-      "en": "The line from the shared North ball to East. The app constructs the North ball from the Head line and Head A, then extends the outgoing Neck back to the North diamond line to locate Neck V. Head A and Neck V can differ despite sharing one ball position."
-    }
-  },
-  "romp": {
-    "title": {
-      "nl": "Romp",
-      "en": "Body"
-    },
-    "text": {
-      "nl": "De lijn waarop je in Les 1 de doelbal zoekt. Bij VIJF loopt Romp van Oost naar Zuid. Romp V blijft in de oefening vast; je noteert je eigen Romp A. Een referentiewaarde wordt daardoor geen eigen meting.",
-      "en": "The line on which you find the target ball in Lesson 1. In FIVE it runs from East to South. Body V stays fixed in this exercise while you record your own Body A. A reference value is not thereby your own measurement."
-    }
-  },
-  "v": {
-    "title": {
-      "nl": "V · vertrek",
-      "en": "V · departure"
-    },
-    "text": {
-      "nl": "V is het vertrekpunt van een lijn op een stiplijn. Verleng de uitgaande lijn terug naar die stiplijn om V te vinden. De aankomst van de vorige lijn en dit vertrek delen één fysieke bandbal; hun stiplijnwaarden hoeven niet gelijk te zijn.",
-      "en": "V is the departure point of a line on a diamond line. Extend the outgoing line back to locate V. The previous arrival and this departure share one physical cushion ball; their diamond values need not match."
-    }
-  },
-  "a": {
-    "title": {
-      "nl": "A · aankomst",
-      "en": "A · arrival"
-    },
-    "text": {
-      "nl": "A is het aankomstpunt van een lijn op een stiplijn: verleng de lijn in de looprichting. Het is niet het raakpunt op de bandrand. Bij de volgende lijn bepaalt dezelfde bandbal het vertrek, met een eigen V-punt op de stiplijn.",
-      "en": "A is the arrival point on a diamond line, found by extending the line in its direction of travel. It is not the contact point on the cushion edge. The same cushion ball determines the next departure with its own V point."
-    }
-  },
-  "s": {
-    "title": {
-      "nl": "S · start",
-      "en": "S · start"
-    },
-    "text": {
-      "nl": "S is de startpositie van de speelbal op de Neus. Noteer deze positie zodat je de stoot kunt herhalen. S is geen aankomstpunt op een band.",
-      "en": "S is the cue ball starting position on the Nose. Record it so you can repeat the stroke. It is not a cushion arrival point."
-    }
-  },
-  "ijkjes": {
-    "title": {
-      "nl": "Ijkjes",
-      "en": "Markers"
-    },
-    "text": {
-      "nl": "Lichte markeringen maken een passage langs de band zichtbaar. Een omgevallen ijkje toont de raakzone. Bepaal vervolgens de lijnrichting en het punt op de stiplijn; de raakzone zelf heeft geen stiplijnwaarde.",
-      "en": "Light markers reveal a passage along the cushion. A fallen marker indicates the contact zone. Then determine the line direction and its diamond-line point; the contact zone itself is not a diamond value."
-    }
-  },
-  "spoor": {
-    "title": {
-      "nl": "Spoor",
-      "en": "Track"
-    },
-    "text": {
-      "nl": "Het volledige verloop, bijvoorbeeld VIJF of VIJF+1. Neus, Kop, Nek en Romp zijn afzonderlijke lijnen binnen dat spoor.",
-      "en": "The complete route, such as FIVE or FIVE+1. Nose, Head, Neck and Body are individual lines within it."
-    }
-  },
-  "herkomst": {
-    "title": {
-      "nl": "Herkomst",
-      "en": "Origin"
-    },
-    "text": {
-      "nl": "Oker: configuratie / Karkas. Groen: Kruinwaarde, Kruinmeting of eigen meting; het tekstlabel onderscheidt ze. Rood: berekend, bij benadering berekend of berekend uit schatting. Blauw: ge-edit. Gebruik kleur én tekst om de getoonde waarde te beoordelen.",
-      "en": "Ochre: configuration / framework. Green: Kruin value, Kruin measurement or own measurement, distinguished by text. Red: calculated, approximately calculated or calculated from estimate. Blue: edited. Use both colour and text to assess each value."
-    }
-  }
+  ]
 },
+  explanation: {
+  "version": "1.2",
+  "glossary": {
+    "neus": {
+      "title": {
+        "nl": "Neus",
+        "en": "Nose"
+      },
+      "text": {
+        "nl": "De eerste lijn: van startpositie S naar het aankomstpunt op de eerste stiplijn. Bij basis-VIJF richt je naar West 50. In deze oefening verander je alleen de afstootlengte.",
+        "en": "The first line runs from starting position S towards the arrival point on the first diamond line. Base FIVE aims at West 50. This exercise changes only stroke length."
+      }
+    },
+    "stiplijn": {
+      "title": {
+        "nl": "Stiplijn",
+        "en": "Diamond line"
+      },
+      "text": {
+        "nl": "De meetlijn die de stippen langs één band verbindt. Iedere band heeft een eigen stiplijn. V en A liggen op deze meetlijnen; het raakpunt van de bal ligt op de bandrand.",
+        "en": "The measuring line connecting the diamonds along one cushion. Each cushion has its own diamond line. V and A lie on these lines; the ball contacts the cushion edge."
+      }
+    },
+    "karkas": {
+      "title": {
+        "nl": "Karkas",
+        "en": "Framework"
+      },
+      "text": {
+        "nl": "De gemeten ankerlijnen van een patroon. Bij LKL zijn dat Neus en Romp. Binnen 3B geldt als projectregel: nieuw karkas = nieuw patroon. Neus–Been wordt afzonderlijk uitgewerkt; daarvoor gelden de oude LKL-waarden niet vanzelf.",
+        "en": "The measured anchor lines of a pattern. LKL uses Nose and Body. The 3B project rule is: new framework = new pattern. Nose–Leg is a separate planned pattern; old LKL values do not automatically apply."
+      }
+    },
+    "kop": {
+      "title": {
+        "nl": "Kop",
+        "en": "Head"
+      },
+      "text": {
+        "nl": "De lijn na de Neus. Bij basis-VIJF loopt hij van West naar Noord. Kop A meet je bij voorkeur met ijkjes. Kruin mat op zijn tafels Klein 19 en Groot 15. Bekende Neus en Romp bepalen Kop A niet eenduidig; een gekozen geometrische schatting blijft een benadering.",
+        "en": "The line after the Nose, from West to North in base FIVE. Prefer measuring Head A with markers. Kruin measured Small 19 and Large 15 on his tables. Known Nose and Body do not uniquely determine Head A; an explicitly chosen geometric estimate remains approximate."
+      }
+    },
+    "nek": {
+      "title": {
+        "nl": "Nek",
+        "en": "Neck"
+      },
+      "text": {
+        "nl": "De lijn van de gedeelde Noordbal naar Oost. De app construeert de bal op Noord met de Koplijn en Kop A. Hij verlengt de uitgaande Neklijn terug naar de Noord-stiplijn: daar ligt Nek V. Kop A en Nek V kunnen verschillende stipwaarden hebben, hoewel de balpositie dezelfde is.",
+        "en": "The line from the shared North ball to East. The app constructs the North ball from the Head line and Head A, then extends the outgoing Neck back to the North diamond line to locate Neck V. Head A and Neck V can differ despite sharing one ball position."
+      }
+    },
+    "romp": {
+      "title": {
+        "nl": "Romp",
+        "en": "Body"
+      },
+      "text": {
+        "nl": "De lijn waarop je in Les 1 de doelbal zoekt. Bij VIJF loopt Romp van Oost naar Zuid. Romp V blijft in de oefening vast; je noteert je eigen Romp A. Een referentiewaarde wordt daardoor geen eigen meting.",
+        "en": "The line on which you find the target ball in Lesson 1. In FIVE it runs from East to South. Body V stays fixed in this exercise while you record your own Body A. A reference value is not thereby your own measurement."
+      }
+    },
+    "v": {
+      "title": {
+        "nl": "V · vertrek",
+        "en": "V · departure"
+      },
+      "text": {
+        "nl": "V is het vertrekpunt van een lijn op een stiplijn. Verleng de uitgaande lijn terug naar die stiplijn om V te vinden. De aankomst van de vorige lijn en dit vertrek delen één fysieke bandbal; hun stiplijnwaarden hoeven niet gelijk te zijn.",
+        "en": "V is the departure point of a line on a diamond line. Extend the outgoing line back to locate V. The previous arrival and this departure share one physical cushion ball; their diamond values need not match."
+      }
+    },
+    "a": {
+      "title": {
+        "nl": "A · aankomst",
+        "en": "A · arrival"
+      },
+      "text": {
+        "nl": "A is het aankomstpunt van een lijn op een stiplijn: verleng de lijn in de looprichting. Het is niet het raakpunt op de bandrand. Bij de volgende lijn bepaalt dezelfde bandbal het vertrek, met een eigen V-punt op de stiplijn.",
+        "en": "A is the arrival point on a diamond line, found by extending the line in its direction of travel. It is not the contact point on the cushion edge. The same cushion ball determines the next departure with its own V point."
+      }
+    },
+    "s": {
+      "title": {
+        "nl": "S · start",
+        "en": "S · start"
+      },
+      "text": {
+        "nl": "S is de startpositie van de speelbal op de Neus. Noteer deze positie zodat je de stoot kunt herhalen. S is geen aankomstpunt op een band.",
+        "en": "S is the cue ball starting position on the Nose. Record it so you can repeat the stroke. It is not a cushion arrival point."
+      }
+    },
+    "ijkjes": {
+      "title": {
+        "nl": "Ijkjes",
+        "en": "Markers"
+      },
+      "text": {
+        "nl": "Lichte markeringen maken een passage langs de band zichtbaar. Een omgevallen ijkje toont de raakzone. Bepaal vervolgens de lijnrichting en het punt op de stiplijn; de raakzone zelf heeft geen stiplijnwaarde.",
+        "en": "Light markers reveal a passage along the cushion. A fallen marker indicates the contact zone. Then determine the line direction and its diamond-line point; the contact zone itself is not a diamond value."
+      }
+    },
+    "spoor": {
+      "title": {
+        "nl": "Spoor",
+        "en": "Track"
+      },
+      "text": {
+        "nl": "Het volledige verloop, bijvoorbeeld VIJF of VIJF+1. Neus, Kop, Nek en Romp zijn afzonderlijke lijnen binnen dat spoor.",
+        "en": "The complete route, such as FIVE or FIVE+1. Nose, Head, Neck and Body are individual lines within it."
+      }
+    },
+    "herkomst": {
+      "title": {
+        "nl": "Herkomst",
+        "en": "Origin"
+      },
+      "text": {
+        "nl": "Oker: configuratie / Karkas. Groen: Kruinwaarde, Kruinmeting of eigen meting; het tekstlabel onderscheidt ze. Rood: berekend, bij benadering berekend of berekend uit schatting. Blauw: ge-edit. Gebruik kleur én tekst om de getoonde waarde te beoordelen.",
+        "en": "Ochre: configuration / framework. Green: Kruin value, Kruin measurement or own measurement, distinguished by text. Red: calculated, approximately calculated or calculated from estimate. Blue: edited. Use both colour and text to assess each value."
+      }
+    },
+    "patroon": {
+      "title": {
+        "nl": "Patroon",
+        "en": "Pattern"
+      },
+      "text": {
+        "nl": "Een eigen karkas, bandroute, ijkpunten en bijbehorende stootwijze. Een ander gemeten karkas wordt in 3B een afzonderlijk patroon, ook als de bandvolgorde gelijk blijft. Een spoor is een concrete baan binnen zo’n patroon.",
+        "en": "A framework, cushion route, measurement anchors and associated stroke conditions. In 3B, a different measured framework defines a separate pattern even if the cushion sequence is unchanged. A track is a particular route within a pattern."
+      }
+    },
+    "kruis": {
+      "title": {
+        "nl": "Kruis",
+        "en": "Cross"
+      },
+      "text": {
+        "nl": "De lijn na Romp. In LKL berekent de app Kruis standaard met 45° vanuit de bandbal van Romp A. Bij aankomst op West wordt A bij 46° hoger/noordelijker en bij 44° lager/zuidelijker, voor hetzelfde anker. Handmatige waarden blijven aanpasbaar.",
+        "en": "The line after Body. LKL provisionally calculates Cross at 45° from the Body A cushion ball. For a West arrival and the same anchor, 46° moves A up/north and 44° down/south. Manual coordinates remain editable."
+      }
+    },
+    "contra": {
+      "title": {
+        "nl": "Contra / kerend effect",
+        "en": "Reverse English"
+      },
+      "text": {
+        "nl": "Als de loop één band overslaat, keert de effectstand. Vanuit mee wordt dat contra, ook wel kerend effect. De stand blijft tot de volgende bandoverslag. Zonder overslag blijft de bestaande stand behouden. Een handmatige override blijft mogelijk.",
+        "en": "When the route skips one cushion, the effect state reverses. Running becomes reverse and remains so until the next skip. Without a skip, the existing state is retained. A manual override remains possible."
+      }
+    },
+    "been": {
+      "title": {
+        "nl": "Been",
+        "en": "Leg"
+      },
+      "text": {
+        "nl": "De lijn na Kruis. Bij LKL is Been een optioneel vervolg; de gewone stoot kan al eerder eindigen. Neus–Been is een afzonderlijk patroon in voorbereiding, met Been als gemeten karkasanker.",
+        "en": "The line after Cross. In LKL, Leg is optional continuation; the usual stroke may finish earlier. Nose–Leg is a separate planned pattern with Leg as a measured framework anchor."
+      }
+    },
+    "hiel": {
+      "title": {
+        "nl": "Hiel",
+        "en": "Heel"
+      },
+      "text": {
+        "nl": "De lijn na Been. Vooral Hiel kan buiten het bruikbare speeltraject liggen doordat de bal te ver moet doorrollen. De getekende geometrie garandeert niet dat de stoot Hiel werkelijk bereikt.",
+        "en": "The line after Leg. Heel in particular may lie beyond a usable stroke because the ball must travel too far. Drawn geometry does not guarantee that the stroke actually reaches Heel."
+      }
+    }
+  },
   "defaultLevel": "LKL",
   "scopeRules": {
     "systemExplanation": "shared_large_and_small",
@@ -688,8 +778,8 @@ window.THREEB_START_CONFIG = {
             "nl": "De volledige balbaan"
           },
           "text": {
-            "en": "The route is named Nose, Head, Neck, Body, Cross, Leg, Heel, Foot and Toe. Leg could also have been called Tail. In this course, Leg and Heel together are called the Run-out. Nose, Head and Neck introduce the run-up below three cushions. Route choices for the target ball start at Body: three cushions or more.",
-            "nl": "De balbaan heet Neus, Kop, Nek, Romp, Kruis, Been, Hiel, Voet en Teen. Been had ook Staart mogen heten. In de cursus heten Been en Hiel samen de Uitloop. Neus, Kop en Nek introduceren de aanloop onder drie banden. De routekeuze voor de doelbal begint bij Romp: drie banden of meer."
+            "nl": "De balbaan heet Neus, Kop, Nek, Romp, Kruis, Been, Hiel, Voet en Teen. LKL gebruikt Neus–Romp als karkas. Het bruikbare traject bepaalt waar de stoot eindigt; Been en vooral Hiel zijn optioneel vervolg en vallen vaak buiten de praktische scope. Het afzonderlijke patroon Neus–Been wordt later vanuit eigen metingen opgebouwd.",
+            "en": "The route is named Nose, Head, Neck, Body, Cross, Leg, Heel, Foot and Toe. LKL uses the Nose–Body framework. The usable stroke determines its endpoint; Leg and especially Heel are optional continuation and often outside practical scope. The separate Nose–Leg pattern will be built from its own measurements."
           },
           "image": {
             "source": "KruinLines",
@@ -699,16 +789,15 @@ window.THREEB_START_CONFIG = {
               "kop",
               "nek",
               "romp",
-              "kruis",
-              "been",
-              "hiel",
-              "voet",
-              "teen"
+              "kruis"
             ],
             "tables": [
               "klein"
             ]
-          }
+          },
+          "sourceRefs": [
+            "afspraken-20261002"
+          ]
         },
         {
           "key": "nose-reference-and-user",
@@ -717,8 +806,8 @@ window.THREEB_START_CONFIG = {
             "en": "The fixed Nose and my start position"
           },
           "text": {
-            "nl": "De Kruinbasis geeft de Neus als referentielijn. In de Neuseditor verandert alleen de afstootlengte: daarmee plaats je de speelbal langs de vaste lijn. Vergelijk je eigen Romplijn met de referentie door herhaalde pogingen te noteren.",
-            "en": "The Kruin basis supplies the reference Nose line. The Nose editor changes only the stroke length, placing the cue ball along the fixed line. Compare your own Body line with the reference by recording repeated attempts."
+            "nl": "In deze oefening is de Kruin-Neus de vaste referentie en verander je de afstootlengte. Bij Aanleg zijn de lijnwaarden aanpasbaar: een handmatige afwijking krijgt de herkomst ge-edit en blijft behouden. Voor een stootwijze met een ander gemeten karkas gebruiken we een afzonderlijk patroon.",
+            "en": "In this exercise the Kruin Nose is fixed and you change stroke length. During setup, coordinates are editable: a manual deviation is labelled edited and preserved. Stroke conditions requiring a different measured framework use a separate pattern."
           },
           "image": {
             "source": "KruinLines",
@@ -729,7 +818,10 @@ window.THREEB_START_CONFIG = {
             "tables": [
               "klein"
             ]
-          }
+          },
+          "sourceRefs": [
+            "afspraken-20261002"
+          ]
         },
         {
           "key": "find-target-track",
@@ -818,8 +910,8 @@ window.THREEB_START_CONFIG = {
             "nl": "Eerst het midden, daarna de Uitloop"
           },
           "text": {
-            "en": "The standard stroke is based on letting ball 1 roll out toward the middle of the table. That middle zone is the first reference. In a later phase, the route was extended through Leg to Heel A using manual table tests and Kruin configuration. In this course, Leg and Heel together are called the Run-out. Treat the Run-out as a tested extension, not as the original middle reference.",
-            "nl": "De standaardstoot is gebaseerd op het uitrollen van bal 1 naar de middenzone van het biljart. Die middenzone is het eerste ijkpunt. In een latere fase is de baan met handmatige tests en Kruinconfig via Been doorgetrokken naar A-Hiel. Been en Hiel heten in deze cursus samen de Uitloop. Beschouw de Uitloop als een geteste uitbreiding, niet als het oorspronkelijke midden-ijkpunt."
+            "nl": "De middenzone blijft het eerste praktische ijkpunt van de gewone LKL-stoot. Een geometrische tekening kan verder lopen, maar Been en vooral Hiel vragen vaak te veel uitloop. Toon ze alleen voor onderzoek of uitleg; de tekening is geen voorspelling van de reikwijdte bij een bepaalde snelheid. Voor een karkas Neus–Been maken we een afzonderlijk patroon met eigen meetgegevens.",
+            "en": "The middle remains the first practical reference for the usual LKL stroke. A geometric drawing can continue, but Leg and especially Heel may require too much travel. Show them for research or explanation; geometry does not predict reach at a given speed. A Nose–Leg framework requires a separate pattern with its own measurements."
           },
           "image": {
             "source": "KruinLines",
@@ -827,17 +919,120 @@ window.THREEB_START_CONFIG = {
             "parts": [
               "neus",
               "romp",
-              "kruis",
-              "been",
-              "hiel"
+              "kruis"
             ],
             "focusProfile": "les1",
-            "role": "middle-reference-and-tested-extension",
-            "endZone": "M",
-            "testedExtension": [
-              "been",
-              "hiel.to"
-            ]
+            "role": "middle-reference-optional-continuation",
+            "endZone": "M"
+          },
+          "sourceRefs": [
+            "afspraken-20261002"
+          ]
+        },
+        {
+          "key": "lkl-scope-runout",
+          "title": {
+            "nl": "LKL · bruikbaar traject en vervolg",
+            "en": "LKL · usable stroke and continuation"
+          },
+          "text": {
+            "nl": "LKL houdt zijn eigen karkas Neus–Romp. Begin met Neus en Romp; voeg Kop, Nek en Kruis toe voor uitleg en controle. Been en vooral Hiel kunnen buiten het bereik van de gewone stoot vallen. Gebruik + Been en + Hiel alleen als optioneel vervolg. De bestaande waarden blijven bewaard.",
+            "en": "LKL retains its own Nose–Body framework. Start with Nose and Body; add Head, Neck and Cross for explanation and checking. Leg and especially Heel can be beyond the usual stroke. Use + Leg and + Heel only as optional continuation. Existing values are retained."
+          },
+          "sourceRefs": [
+            "afspraken-20261002"
+          ],
+          "image": {
+            "source": "text",
+            "caption": {
+              "nl": "Uitleg en meetafspraak",
+              "en": "Explanation and measurement agreement"
+            }
+          }
+        },
+        {
+          "key": "cross-angle-arrival",
+          "title": {
+            "nl": "Kruis · 44°, 45° en 46°",
+            "en": "Cross · 44°, 45° and 46°"
+          },
+          "text": {
+            "nl": "Bij hetzelfde Romp-anker en aankomst op West: 44° geeft een lagere/zuidelijkere A, 45° is de basis en 46° een hogere/noordelijkere A. De hoek wordt vanaf de horizontale richting gemeten. V wordt opnieuw berekend via dezelfde bandbal; A en V zijn stiplijnpunten. De extra aankomstbandkeuze is voorlopig een test voor VIJF P+1, P+2, P+3 en VIER P, P+1, P+2, P−1, P−2. Kruisloop wordt uit de route bepaald en blijft overschrijfbaar.",
+            "en": "With the same Body anchor and a West arrival: 44° lowers A southward, 45° is the baseline, and 46° raises A northward. The angle is measured from horizontal. V is recalculated through the same cushion ball; A and V are diamond-line points. The extra arrival-band choice is provisionally a test for FIVE P+1/+2/+3 and FOUR P, P+1/+2/−1/−2. Cross state follows the route and remains overridable."
+          },
+          "sourceRefs": [
+            "kruisgeometrie",
+            "afspraken-20261002"
+          ],
+          "image": {
+            "source": "text",
+            "caption": {
+              "nl": "Uitleg en meetafspraak",
+              "en": "Explanation and measurement agreement"
+            }
+          }
+        },
+        {
+          "key": "new-framework-new-pattern",
+          "title": {
+            "nl": "Nieuw karkas = nieuw patroon",
+            "en": "New framework = new pattern"
+          },
+          "text": {
+            "nl": "Dit is de afspraak binnen 3B. Een stootwijze die een ander gemeten karkas oplevert, krijgt een nieuw patroon, ook als de bandvolgorde gelijk blijft. Oude A/V-waarden van de eerste lijnen kunnen dan niet zomaar worden overgenomen. KKL, KLK en Neus–Been worden afzonderlijk uitgewerkt; zij zijn nog niet als speelbaar patroon toegevoegd.",
+            "en": "This is the 3B project convention. Stroke conditions producing a different measured framework define a new pattern even with the same cushion order. Old A/V values of the first lines cannot be carried over automatically. KKL, KLK and Nose–Leg will be developed separately and are not playable patterns yet."
+          },
+          "sourceRefs": [
+            "afspraken-20261002"
+          ],
+          "image": {
+            "source": "text",
+            "caption": {
+              "nl": "Uitleg en meetafspraak",
+              "en": "Explanation and measurement agreement"
+            }
+          }
+        },
+        {
+          "key": "nose-leg-measurement-order",
+          "title": {
+            "nl": "Neus–Been · eerst het karkas meten",
+            "en": "Nose–Leg · measure the framework first"
+          },
+          "text": {
+            "nl": "Nieuw patroon in voorbereiding, buiten LKL. Meet eerst Neus en Been als karkas en noteer startpositie, afstootlengte, stootwijze, effect en concrete bandroute. Meet daarna de benodigde ijkpunten, waaronder Kop A. Vul Kop, Nek, Romp en Kruis in of bereken ze waar genoeg gegevens beschikbaar zijn. Snelheid kan een andere meetreeks vragen; de app voorspelt die verandering nog niet. Ontbrekende waarden blijven onbekend.",
+            "en": "Separate planned pattern outside LKL. Measure Nose and Leg as the framework and record starting position, stroke length, stroke conditions, effect and actual cushion route. Then measure required anchors, including Head A. Enter or derive Head, Neck, Body and Cross where sufficient data exists. Speed may require a different measurement series; the app does not predict those changes. Missing values remain unknown."
+          },
+          "sourceRefs": [
+            "afspraken-20261002"
+          ],
+          "image": {
+            "source": "text",
+            "caption": {
+              "nl": "Uitleg en meetafspraak",
+              "en": "Explanation and measurement agreement"
+            }
+          }
+        },
+        {
+          "key": "exact-pass-ball-two",
+          "title": {
+            "nl": "Bal 2 exact passeren",
+            "en": "Precisely pass ball 2"
+          },
+          "text": {
+            "nl": "Bij losse driebanders moet de speelbal bal 2 nogal eens exact passeren. Alleen een juiste aankomst bij Been is dan onvoldoende. Noteer de positie van bal 2, op welk trajectdeel je passeert, de passeerkant en de gewenste vrije ruimte. Controleer de passage op de echte tafel, naast het karkas en de tussenliggende aankomsten. Dit is een meet- en controlepunt; er is nog geen automatische botsings- of snelheidscontrole.",
+            "en": "Some shots require the cue ball to pass ball 2 precisely. A correct Leg arrival alone is insufficient. Record ball 2 position, the route segment, passing side and required clearance. Check the passage on the actual table alongside the framework and intermediate arrivals. This is a measurement checkpoint; automatic collision or speed checks are not implemented."
+          },
+          "sourceRefs": [
+            "afspraken-20261002"
+          ],
+          "image": {
+            "source": "text",
+            "caption": {
+              "nl": "Uitleg en meetafspraak",
+              "en": "Explanation and measurement agreement"
+            }
           }
         },
         {
@@ -958,17 +1153,20 @@ window.THREEB_START_CONFIG = {
             "nl": "+ mee · − contra"
           },
           "text": {
-            "en": "A line starts as + (running). If the ball and therefore the line skip a cushion, the framework changes and the state switches to − (reverse). That state continues until another cushion is skipped. In Track FOUR, Body East–West causes the switch; Cross West–South remains reverse. In Track FIVE, the first switch occurs at Leg West–East.",
-            "nl": "Een lijn begint op + (mee). Slaan de bal en dus de lijn een band over, dan verandert het Karkas en schakelt de loop naar − (contra). Die stand blijft gelden tot een volgende bandoverslag. Bij VIER veroorzaakt Romp Oost–West de omschakeling; Kruis West–Zuid blijft contra. Bij VIJF gebeurt de eerste omschakeling bij Been West–Oost."
+            "nl": "De loop begint met + (mee). Eén band overslaan keert de effectstand: vanuit mee naar − (contra), ook kerend effect genoemd. Contra blijft tot een volgende bandoverslag; zonder overslag blijft de bestaande stand. We nemen geen regels op voor twee of meer banden tegelijk overslaan. Bij VIER geeft Romp Oost–West de overslag; Kruis West–Zuid behoudt contra. Kruisloop volgt automatisch de bandroute, maar is bewust overschrijfbaar.",
+            "en": "The state starts at + (running). Skipping one cushion reverses it: running becomes − (reverse). Reverse remains until the next skip; without a skip the state is retained. No rules are defined for skipping two or more cushions at once. In FOUR, Body East–West makes the skip and Cross West–South retains reverse. Cross state follows the route automatically but can be deliberately overridden."
           },
           "image": {
             "source": "KruinLines",
             "line": "VIJF",
             "parts": [
-              "kruis",
-              "been"
+              "romp",
+              "kruis"
             ]
-          }
+          },
+          "sourceRefs": [
+            "afspraken-20261002"
+          ]
         },
         {
           "key": "rule-direction",
@@ -1001,17 +1199,15 @@ window.THREEB_START_CONFIG = {
             "nl": "Spoor VIER · Oost naar West"
           },
           "text": {
-            "en": "In Track FOUR, Body runs directly from East to West. At the same ball on the West cushion, Cross takes over and runs with reverse English toward the South cushion. After Cross, the Run-out follows: Leg + Heel. The configured Cross angle determines the exact South arrival.",
-            "nl": "In Spoor VIER loopt Romp rechtstreeks van Oost naar West. Op dezelfde bal aan de Westband neemt Kruis over en loopt met contra-effect naar de Zuidband. Na Kruis volgt de Uitloop: Been + Hiel. De geconfigureerde Kruishoek bepaalt de precieze aankomst op Zuid."
+            "nl": "Bij VIER loopt Romp van Oost naar West: één band wordt overgeslagen. Kruis vertrekt vanaf dezelfde West-bandbal en loopt naar Zuid met behoud van contra. De Kruishoek bepaalt de aankomst op Zuid. Been en Hiel horen hier bij het optionele vervolg, niet bij een verplichte uitloop.",
+            "en": "In FOUR, Body runs East–West, skipping one cushion. Cross leaves from the same West cushion ball towards South and retains reverse. The Cross angle sets its South arrival. Leg and Heel are optional continuation, not required run-out."
           },
           "image": {
             "source": "KruinLines",
             "line": "VIER",
             "parts": [
               "romp",
-              "kruis",
-              "been",
-              "hiel"
+              "kruis"
             ],
             "tables": [
               "klein",
@@ -1020,7 +1216,10 @@ window.THREEB_START_CONFIG = {
             "focusProfile": "actieveLijn",
             "emphasize": "romp-kruis",
             "loop": "-"
-          }
+          },
+          "sourceRefs": [
+            "afspraken-20261002"
+          ]
         },
         {
           "key": "rule-reflection",
@@ -1029,8 +1228,8 @@ window.THREEB_START_CONFIG = {
             "nl": "Regel · hoek van inval is hoek van uitval"
           },
           "text": {
-            "en": "For every LSL track, Heel is provisionally derived by reflecting Leg at the East cushion: the angle of incidence equals the angle of reflection. Heel remains reverse until a later cushion skip changes the state.",
-            "nl": "Voor ieder LKL-spoor wordt Hiel voorlopig afgeleid door Been op de Oostband te spiegelen: hoek van inval is hoek van uitval. Hiel blijft contra totdat een latere bandoverslag de stand verandert."
+            "nl": "Wanneer je Been en Hiel als vervolg onderzoekt, gebruikt de app voorlopig geometrische spiegeling op Oost: hoek van inval = hoek van uitval. Dat is een tekenregel, geen bewijs dat de echte bal Hiel bereikt. Meet het vervolg apart als je het nodig hebt. Een Neus–Been-karkas wordt een nieuw patroon buiten LKL.",
+            "en": "When researching Leg and Heel continuation, the app provisionally uses geometric reflection on East: incidence equals reflection. This drawing rule does not prove that the actual ball reaches Heel. Measure the continuation separately when needed. A Nose–Leg framework becomes a new pattern outside LKL."
           },
           "image": {
             "source": "KruinLines",
@@ -1039,7 +1238,10 @@ window.THREEB_START_CONFIG = {
               "been",
               "hiel"
             ]
-          }
+          },
+          "sourceRefs": [
+            "afspraken-20261002"
+          ]
         },
         {
           "key": "rule-bibu",
@@ -1225,6 +1427,149 @@ window.THREEB_START_CONFIG = {
   "tagline": {
     "nl": "Een spoor om te proberen. Jouw tafel geeft antwoord.",
     "en": "A track to try. Your table gives the answer."
+  },
+  "release": 181,
+  "updated": "2026-10-02",
+  "previousCards": {
+    "route-names-three-minus-plus": {
+      "title": {
+        "en": "The complete route",
+        "nl": "De volledige balbaan"
+      },
+      "text": {
+        "en": "The route is named Nose, Head, Neck, Body, Cross, Leg, Heel, Foot and Toe. Leg could also have been called Tail. In this course, Leg and Heel together are called the Run-out. Nose, Head and Neck introduce the run-up below three cushions. Route choices for the target ball start at Body: three cushions or more.",
+        "nl": "De balbaan heet Neus, Kop, Nek, Romp, Kruis, Been, Hiel, Voet en Teen. Been had ook Staart mogen heten. In de cursus heten Been en Hiel samen de Uitloop. Neus, Kop en Nek introduceren de aanloop onder drie banden. De routekeuze voor de doelbal begint bij Romp: drie banden of meer."
+      },
+      "image": {
+        "source": "KruinLines",
+        "line": "VIJF",
+        "parts": [
+          "neus",
+          "kop",
+          "nek",
+          "romp",
+          "kruis",
+          "been",
+          "hiel",
+          "voet",
+          "teen"
+        ],
+        "tables": [
+          "klein"
+        ]
+      }
+    },
+    "nose-reference-and-user": {
+      "title": {
+        "nl": "De vaste Neus en mijn startpositie",
+        "en": "The fixed Nose and my start position"
+      },
+      "text": {
+        "nl": "De Kruinbasis geeft de Neus als referentielijn. In de Neuseditor verandert alleen de afstootlengte: daarmee plaats je de speelbal langs de vaste lijn. Vergelijk je eigen Romplijn met de referentie door herhaalde pogingen te noteren.",
+        "en": "The Kruin basis supplies the reference Nose line. The Nose editor changes only the stroke length, placing the cue ball along the fixed line. Compare your own Body line with the reference by recording repeated attempts."
+      },
+      "image": {
+        "source": "KruinLines",
+        "line": "VIJF",
+        "parts": [
+          "neus"
+        ],
+        "tables": [
+          "klein"
+        ]
+      }
+    },
+    "standard-shot-middle-and-extension": {
+      "title": {
+        "en": "First the middle, then the Run-out",
+        "nl": "Eerst het midden, daarna de Uitloop"
+      },
+      "text": {
+        "en": "The standard stroke is based on letting ball 1 roll out toward the middle of the table. That middle zone is the first reference. In a later phase, the route was extended through Leg to Heel A using manual table tests and Kruin configuration. In this course, Leg and Heel together are called the Run-out. Treat the Run-out as a tested extension, not as the original middle reference.",
+        "nl": "De standaardstoot is gebaseerd op het uitrollen van bal 1 naar de middenzone van het biljart. Die middenzone is het eerste ijkpunt. In een latere fase is de baan met handmatige tests en Kruinconfig via Been doorgetrokken naar A-Hiel. Been en Hiel heten in deze cursus samen de Uitloop. Beschouw de Uitloop als een geteste uitbreiding, niet als het oorspronkelijke midden-ijkpunt."
+      },
+      "image": {
+        "source": "KruinLines",
+        "line": "VIJF",
+        "parts": [
+          "neus",
+          "romp",
+          "kruis",
+          "been",
+          "hiel"
+        ],
+        "focusProfile": "les1",
+        "role": "middle-reference-and-tested-extension",
+        "endZone": "M",
+        "testedExtension": [
+          "been",
+          "hiel.to"
+        ]
+      }
+    },
+    "running-or-reverse": {
+      "title": {
+        "en": "+ running · − reverse",
+        "nl": "+ mee · − contra"
+      },
+      "text": {
+        "en": "A line starts as + (running). If the ball and therefore the line skip a cushion, the framework changes and the state switches to − (reverse). That state continues until another cushion is skipped. In Track FOUR, Body East–West causes the switch; Cross West–South remains reverse. In Track FIVE, the first switch occurs at Leg West–East.",
+        "nl": "Een lijn begint op + (mee). Slaan de bal en dus de lijn een band over, dan verandert het Karkas en schakelt de loop naar − (contra). Die stand blijft gelden tot een volgende bandoverslag. Bij VIER veroorzaakt Romp Oost–West de omschakeling; Kruis West–Zuid blijft contra. Bij VIJF gebeurt de eerste omschakeling bij Been West–Oost."
+      },
+      "image": {
+        "source": "KruinLines",
+        "line": "VIJF",
+        "parts": [
+          "kruis",
+          "been"
+        ]
+      }
+    },
+    "track-four-body-cross": {
+      "title": {
+        "en": "Track FOUR · East to West",
+        "nl": "Spoor VIER · Oost naar West"
+      },
+      "text": {
+        "en": "In Track FOUR, Body runs directly from East to West. At the same ball on the West cushion, Cross takes over and runs with reverse English toward the South cushion. After Cross, the Run-out follows: Leg + Heel. The configured Cross angle determines the exact South arrival.",
+        "nl": "In Spoor VIER loopt Romp rechtstreeks van Oost naar West. Op dezelfde bal aan de Westband neemt Kruis over en loopt met contra-effect naar de Zuidband. Na Kruis volgt de Uitloop: Been + Hiel. De geconfigureerde Kruishoek bepaalt de precieze aankomst op Zuid."
+      },
+      "image": {
+        "source": "KruinLines",
+        "line": "VIER",
+        "parts": [
+          "romp",
+          "kruis",
+          "been",
+          "hiel"
+        ],
+        "tables": [
+          "klein",
+          "groot"
+        ],
+        "focusProfile": "actieveLijn",
+        "emphasize": "romp-kruis",
+        "loop": "-"
+      }
+    },
+    "rule-reflection": {
+      "title": {
+        "en": "Rule · incidence equals reflection",
+        "nl": "Regel · hoek van inval is hoek van uitval"
+      },
+      "text": {
+        "en": "For every LSL track, Heel is provisionally derived by reflecting Leg at the East cushion: the angle of incidence equals the angle of reflection. Heel remains reverse until a later cushion skip changes the state.",
+        "nl": "Voor ieder LKL-spoor wordt Hiel voorlopig afgeleid door Been op de Oostband te spiegelen: hoek van inval is hoek van uitval. Hiel blijft contra totdat een latere bandoverslag de stand verandert."
+      },
+      "image": {
+        "source": "KruinLines",
+        "line": "VIJF",
+        "parts": [
+          "been",
+          "hiel"
+        ]
+      }
+    }
   }
 },
   tables: {

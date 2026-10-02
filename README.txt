@@ -15,9 +15,9 @@ PUBLICEREN
   https://kruin.github.io/3b/.
 
 PRIVATE KRUINWAARDEN
-- Bewerk nooit een Excelbestand in deze openbare map.
-- Gebruik de naastliggende map 3B-private-Kruinconfig-v178.
-- Bekijk_Kruinconfig genereert vandaar kruinwaarden-generated-v178.js.
+- Beheer Kruinwaarden via Bekijk_Kruinconfig in de private map; SQLite is de bron.
+- Gebruik de naastliggende map 3B-private-Kruinconfig-v181.
+- Bekijk_Kruinconfig genereert vandaar kruinwaarden-generated-v181.js.
 
 BETALEN
 - Lees BETALEN-ACTIVEREN.md.

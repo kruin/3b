@@ -506,7 +506,7 @@ body.table-only .band-corner{width:var(--screen-band,36px);height:var(--screen-b
 body.table-only .band-reset,body.table-only .band-save{font-size:8px}
 body.table-only .band-save{background:#176f4f}
 
-/* v178: de bovenste bedieningsrij kan horizontaal schuiven op smalle schermen. */
+/* v181: de bovenste bedieningsrij kan horizontaal schuiven op smalle schermen. */
 body.table-only .central-track-controls {
   overflow-x: auto;
   overflow-y: auto;

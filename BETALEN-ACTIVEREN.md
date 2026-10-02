@@ -1,4 +1,4 @@
-# Betalen activeren · 3B v178
+# Betalen activeren · 3B v181
 
 Betalen verschijnt uitsluitend nadat de gebruiker een duimpje geeft. `€0` sluit de barbon stil; alleen **Spa rood** en **Bitterballen** openen Mollie.
 
@@ -12,7 +12,7 @@ Betalen verschijnt uitsluitend nadat de gebruiker een duimpje geeft. `€0` slui
    - `PAYMENT_RETURN_URL`: `https://kruin.github.io/3b/`.
 5. Deploy de functie.
 
-Voer de geheime Mollie-key uitsluitend rechtstreeks in Supabase in. Zet hem nooit in `config-v178.js`, GitHub, een ZIP of een chatbericht.
+Voer de geheime Mollie-key uitsluitend rechtstreeks in Supabase in. Zet hem nooit in `config-v181.js`, GitHub, een ZIP of een chatbericht.
 
 ## Eenmalig in de openbare 3B-map
 

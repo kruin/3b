@@ -1,19 +1,10 @@
-3B — versie 178
-Nieuwe korte begripsuitleg via onderstreepte termen en de knop Begrippen.
-Muis, touch en toetsenbord; sluiten met × of Escape.
-Dezelfde lespositie, tafelwaarden en notities blijven behouden.
-Actuele begripsuitleg werkt ook met oudere tafelbases.
-Karkas is toegevoegd aan de zichtbare cursuskleurenlegenda.
-Complete openbare app en private Kruinconfig met XLSX, ODS en SQLite.
-
-Behoud uit v177:
-Cursus: Bal zoekt spoor.
-VIJF: Kop A bij voorkeur meten; zonder eigen meetgegevens kan de gebruiker
-een geometrische benadering kiezen.
-Kruinmetingen: Klein 19, Groot 15; eigen tafel opnieuw meten.
-Daarna Nek V berekend via gedeelde balpositie op Noord en uitgaande Neklijn.
-Kop A en Nek V zijn stiplijnpunten, geen identieke stipwaarde.
-Tafelgerichte cursuskaarten en toegang tot de Kop-editor.
-Kleuren en tekstlabels tonen herkomst: gemeten/Kruin, berekend, ge-edit, Karkas.
-De tafel heeft twee functies: Uitleg en Aanleg (jouw configuratie).
-Bij elke lijnwaarde staat de herkomst naast de kleur.
+3B — versie 181
+Cursus 1.2: nieuw karkas = nieuw patroon; Neus–Been apart meetplan buiten LKL.
+Eerst karkas, daarna ijkpunten en Kop/Nek/Romp/Kruis. Bal 2 exact passeren als
+extra meetcontrole. Been en Hiel als optioneel vervolg; geen verplichte uitloop.
+Projectgeheugen, bronnenoverzicht en volledige cursus meegeleverd.
+Kruishoek uitgelegd; automatische coördinaten op 0,001 stip. Kruisloop blijft
+routeafhankelijk en handmatig aanpasbaar met herkomstlabel in het beheerblad.
+Extra aankomstbandkeuze voorlopig alleen op geselecteerde Parallelstanden.
+Eigen cursusteksten behouden; oude ongewijzigde kaarten bijgewerkt.
+Bestaande SQLite-/gebruikerswerkwijze en historische v172–v180-bases behouden.
