@@ -1,6 +1,6 @@
-# 3B · projectgeheugen v192
+# 3B · projectgeheugen v193
 
-Vastgelegd: 8 oktober 2026. App v192; cursus 1.2. Deze actuele afspraken zijn
+Vastgelegd: 8 oktober 2026. App v193; cursus 1.2. Deze actuele afspraken zijn
 leidend boven oudere voorstellen. Geen nieuwe Neus–Been-metingen zijn aangeleverd.
 
 ## Actuele voorrangsregel — P0 leidt automatische lijnen
@@ -123,7 +123,7 @@ verschillende stootwijzen als meetreeksen; exacte passage van bal 2.
 Een eindpunt/doelband per stoot en automatische passagecontrole zijn voorstellen,
 geen al geïmplementeerde functies. Echte browsertest van deze release staat open.
 
-## v192 — versienummer én versie-inhoud verplicht gelijk
+## v193 — versienummer én versie-inhoud verplicht gelijk
 
 De actuele release komt uit de openbare config. De regressietest vergelijkt
 dit nummer met de bestandsnamen, interne config- en Kruinwaardenrelease,

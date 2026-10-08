@@ -1,6 +1,6 @@
-# 3B · bronnen en afspraken v192
+# 3B · bronnen en afspraken v193
 
-App v192 · cursus 1.2 · bijgewerkt 2 oktober 2026.
+App v193 · cursus 1.2 · bijgewerkt 2 oktober 2026.
 
 ## Projectafspraken van 2 oktober 2026
 
@@ -20,7 +20,7 @@ De nieuwste correctie gaat vóór oudere voorstellen.
 
 ## Kruisgeometrie
 
-Primaire technische bron: `app-v192.js`, functies
+Primaire technische bron: `app-v193.js`, functies
 `applyConfiguredCrossFromBody`, `diamondValueThroughBall`, `point` en `bandBall`.
 De constructie gebruikt tan(hoek) vanaf horizontaal; West wordt genummerd van
 0 onder naar 80 boven in de basisrichting. Bij een gelijk Romp-anker stijgt
@@ -44,13 +44,13 @@ meetdataset. De cursusillustraties van LKL tonen geen getest Neus–Been-spoor.
 
 ## Versiebestanden en controle
 
-- Config en cursus: `../config-v192.js` (cursus 1.2).
-- Geometrie en gebruikersbediening: `../app-v192.js`.
-- Publicatiebronwaarden: `../kruinwaarden-generated-v192.js`.
+- Config en cursus: `../config-v193.js` (cursus 1.2).
+- Geometrie en gebruikersbediening: `../app-v193.js`.
+- Publicatiebronwaarden: `../kruinwaarden-generated-v193.js`.
 - Private bron: `Kruinconfig.sqlite3`, `Kruin_database.py` en `SQLite-beheer.html`.
-- Projectgeheugen: `projectgeheugen.md` en `PROJECTGEHEUGEN-v192.md` in de ZIP.
-- Volledige cursus in tekst: `CURSUS-v192.md` in de ZIP.
-- Controles en beperkingen: `CONTROLE-v192.txt` in de ZIP.
+- Projectgeheugen: `projectgeheugen.md` en `PROJECTGEHEUGEN-v193.md` in de ZIP.
+- Volledige cursus in tekst: `CURSUS-v193.md` in de ZIP.
+- Controles en beperkingen: `CONTROLE-v193.txt` in de ZIP.
 - De aangeleverde afbeelding van het Kruisbeheer staat ongewijzigd in de
   private map `bronnen/Kruisbeheer-v180.png` als historische UI-bron.
 

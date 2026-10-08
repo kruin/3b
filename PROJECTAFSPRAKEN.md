@@ -579,7 +579,7 @@ Voor iedere release:
 - Voor parallelle Kop en Nek is nog geen regel vastgelegd; deze waarden blijven leeg.
 # Tijdelijke LKL-bronketen
 
-- Vanaf v192 worden waarde-aanpassingen rechtstreeks verwerkt in `Kruinconfig.sqlite3` van de private beheerrepository. `Bekijk_Kruinconfig.bat` opent het beheerblad en genereert de openbare tekenconfig voor controle en publicatie.
+- Vanaf v193 worden waarde-aanpassingen rechtstreeks verwerkt in `Kruinconfig.sqlite3` van de private beheerrepository. `Bekijk_Kruinconfig.bat` opent het beheerblad en genereert de openbare tekenconfig voor controle en publicatie.
 - De openbare release-ZIP bevat nooit de private beheer-JSON.
 - Onboardingregel: een nieuwe gebruiker krijgt eerst uitsluitend de cursus; tafelknoppen en duimpje blijven verborgen.
 - Een terugkerende gebruiker krijgt eerst één Start-aanwijzer op de tafel; pas daarna verschijnen de gewone bedieningselementen.
@@ -598,7 +598,7 @@ Voor iedere release:
 - De gewone gebruiker ziet en beheert geen beheer-JSON en gebruikt alleen de gepubliceerde app.
 
 
-### 2026-10-02 — begripsuitleg v192
+### 2026-10-02 — begripsuitleg v193
 
 - Korte uitleg staat achter onderstreepte begrippen in de cursus en de knop Begrippen.
 - De actuele cursus levert de begrippen, ook als de gebruiker een oudere Kruinbasis kiest.
@@ -607,7 +607,7 @@ Voor iedere release:
 - Beide tafelfuncties en alle herkomstlabels uit v177 blijven onderdeel van de cursus.
 
 
-### 2026-10-02 — zelfstandig SQLite-beheer v192
+### 2026-10-02 — zelfstandig SQLite-beheer v193
 
 - SQLite bevat alle private basiswaarden en menugegevens. Geen spreadsheet in de actieve werkwijze.
 - Beheerblad en tafel schrijven dezelfde losse lijnpunten.

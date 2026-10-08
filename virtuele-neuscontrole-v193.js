@@ -1,9 +1,9 @@
 'use strict';
 const fs=require('fs'),vm=require('vm'),assert=require('assert');
 const root=__dirname,ctx={window:{}};vm.createContext(ctx);
-vm.runInContext(fs.readFileSync(root+'/config-v192.js','utf8'),ctx);
+vm.runInContext(fs.readFileSync(root+'/config-v193.js','utf8'),ctx);
 const C=ctx.window.THREEB_START_CONFIG,half=C.lineOneVariants.fan.entries.find(x=>x.key==='HALFNEGEN');
-assert.equal(C.release,'192');
+assert.equal(C.release,'193');
 assert.deepStrictEqual(Array.from(C.lklTrackRules.panelTracks).slice(-2),['ACHT','NEGEN']);
 assert.equal(C.lklTrackRules.noseArrivalByTrack.NEGEN,90);
 assert(half&&half.virtual&&half.noseArrival===85);

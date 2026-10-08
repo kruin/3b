@@ -1,8 +1,8 @@
 'use strict';
 const fs=require('fs'),vm=require('vm'),assert=require('assert');
 const ctx={window:{},location:{hash:''},URLSearchParams,localStorage:{getItem:()=>null,setItem:()=>{}},document:{getElementById:()=>({textContent:''}),body:{classList:{contains:()=>false}}}};
-vm.createContext(ctx);for(const f of ['config-v192.js','kruinwaarden-generated-v192.js'])vm.runInContext(fs.readFileSync(__dirname+'/'+f,'utf8'),ctx);
-vm.runInContext(fs.readFileSync(__dirname+'/app-v192.js','utf8').replace('  init();','  window.test={normalize,applyAllAutomaticCalculations,baseTrackReferenceSvg,ui,state,bandBall};'),ctx);
+vm.createContext(ctx);for(const f of ['config-v193.js','kruinwaarden-generated-v193.js'])vm.runInContext(fs.readFileSync(__dirname+'/'+f,'utf8'),ctx);
+vm.runInContext(fs.readFileSync(__dirname+'/app-v193.js','utf8').replace('  init();','  window.test={normalize,applyAllAutomaticCalculations,baseTrackReferenceSvg,ui,state,bandBall};'),ctx);
 const t=ctx.window.test;t.normalize();t.applyAllAutomaticCalculations();t.ui.pattern='VIJF';t.ui.trackFamily='parallel';t.ui.lineOneMode='basis';
 for(const table of ['klein','groot'])for(const dir of ['west','oost']){
  t.ui.direction=dir;const r=t.state.data[table].VIJF;

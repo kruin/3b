@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 102, release: "192", publicRelease: "192",
+  version: 102, release: "193", publicRelease: "193",
   userDisplay: {
     defaultLineOpacity: 0.58,
     defaultArrowMode: "request",
@@ -1430,7 +1430,7 @@ window.THREEB_START_CONFIG = {
     "nl": "Een spoor om te proberen. Jouw tafel geeft antwoord.",
     "en": "A track to try. Your table gives the answer."
   },
-  "release": 192,
+  "release": 193,
   "updated": "2026-10-08",
   "previousCards": {
     "route-names-three-minus-plus": {

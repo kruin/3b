@@ -506,7 +506,7 @@ body.table-only .band-corner{width:var(--screen-band,36px);height:var(--screen-b
 body.table-only .band-reset,body.table-only .band-save{font-size:8px}
 body.table-only .band-save{background:#176f4f}
 
-/* v192: de bovenste bedieningsrij kan horizontaal schuiven op smalle schermen. */
+/* v193: de bovenste bedieningsrij kan horizontaal schuiven op smalle schermen. */
 body.table-only .central-track-controls {
   overflow-x: auto;
   overflow-y: auto;
@@ -515,6 +515,10 @@ body.table-only .central-track-controls {
   touch-action: pan-x pan-y;
 }
 body.table-only .central-track-controls > * { flex-shrink: 0; }
+body.table-only .virtual-nine-shortcuts{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;flex-basis:100%;width:100%;box-sizing:border-box;padding:7px;border:1px solid #d7b85e;border-radius:10px;background:#fff3cc}
+body.table-only .virtual-nine-shortcuts strong{font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:#694c00}
+body.table-only .virtual-nine-shortcuts button{min-height:36px;padding:6px 12px;border:1px solid #b99122;border-radius:8px;background:#fffdf6;color:#2b2118;font-weight:900}
+body.table-only .virtual-nine-shortcuts button:hover,body.table-only .virtual-nine-shortcuts button:focus-visible{background:#ffe7a1;outline:2px solid #7a5a00;outline-offset:1px}
 body.table-only .menu-settings{flex-basis:100%;width:100%;border-top:1px solid rgba(112,71,37,.28);padding-top:6px}
 body.table-only .menu-settings>summary{cursor:pointer;font-weight:900;text-align:center;color:#2b2118;list-style-position:inside}
 body.table-only .menu-settings-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:7px;width:100%;padding-top:7px;align-items:end}
@@ -597,7 +601,7 @@ body.table-only .band-controls{z-index:2200}
 .course-glossary::backdrop{background:rgb(0 0 0 / .45)}
 .course-glossary header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}.course-glossary h2{font-size:22px;margin:0}.course-glossary p{line-height:1.55}.course-glossary header button{min-width:44px;min-height:44px;font-size:22px}.course-glossary nav{display:flex;flex-wrap:wrap;gap:6px}.course-glossary nav button{padding:8px;min-height:40px}.course-glossary nav button[aria-pressed="true"]{background:#176f4f;color:#fff}.course-origin-legend .framework{color:#a36b00}
 
-/* v192: herkomst bij stiplijnen, rustige aanraakvlakken en zichtbare waarden. */
+/* v193: herkomst bij stiplijnen, rustige aanraakvlakken en zichtbare waarden. */
 .table-svg .junction-click-zone{fill:transparent;stroke:none}
 .table-svg .drag-halo{opacity:0}
 .table-svg .junction-hit:hover,.table-svg .junction-hit:focus,.table-svg .junction-hit.selected,.table-svg .endpoint-hit:hover,.table-svg .endpoint-hit:focus,.table-svg .cue-hit:hover,.table-svg .cue-hit:focus{fill:transparent;stroke:#ffcf63;stroke-width:2;stroke-dasharray:4 3;outline:none}
