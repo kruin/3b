@@ -3,7 +3,7 @@ const executablePath=process.env.CHROMIUM_PATH||chromium.executablePath();
 if(!fs.existsSync(executablePath)){console.log('SQLITE-BROWSERCONTROLE OVERGESLAGEN: Chromium ontbreekt.');process.exit(0);}
 (async()=>{
  const temp=fs.mkdtempSync(path.join(os.tmpdir(),'3b-sqlite-ui-'));fs.cpSync(path.dirname(__dirname),temp,{recursive:true});
- const privateDir=path.join(temp,'3B-private-Kruinconfig-v181'),publicDir=path.join(temp,'3B-openbare-app-v181'),python=process.platform==='win32'?'python':'python3';
+ const privateDir=path.join(temp,'3B-private-Kruinconfig-v192'),publicDir=path.join(temp,'3B-openbare-app-v192'),python=process.platform==='win32'?'python':'python3';
  const child=cp.spawn(python,[path.join(privateDir,'Kruinconfig_server.py'),publicDir,'--no-browser']);
  const base=await new Promise((resolve,reject)=>{let output='';child.stdout.on('data',data=>{output+=data;const m=output.match(/Kruinconfig-editor: (http:\/\/[^/]+)/);if(m)resolve(m[1]);});child.on('error',reject);child.on('exit',code=>reject(Error('Server exit '+code)));});
  const browser=await chromium.launch({executablePath,args:['--no-sandbox','--disable-dev-shm-usage']});

@@ -1,10 +1,9 @@
-3B — versie 181
-Cursus 1.2: nieuw karkas = nieuw patroon; Neus–Been apart meetplan buiten LKL.
-Eerst karkas, daarna ijkpunten en Kop/Nek/Romp/Kruis. Bal 2 exact passeren als
-extra meetcontrole. Been en Hiel als optioneel vervolg; geen verplichte uitloop.
-Projectgeheugen, bronnenoverzicht en volledige cursus meegeleverd.
-Kruishoek uitgelegd; automatische coördinaten op 0,001 stip. Kruisloop blijft
-routeafhankelijk en handmatig aanpasbaar met herkomstlabel in het beheerblad.
-Extra aankomstbandkeuze voorlopig alleen op geselecteerde Parallelstanden.
-Eigen cursusteksten behouden; oude ongewijzigde kaarten bijgewerkt.
-Bestaande SQLite-/gebruikerswerkwijze en historische v172–v180-bases behouden.
+3B — versie 192
+Parallel wordt als één keten vooruit opgebouwd vanaf VIJF Neus S–50.
+Romp VIJF blijft V20–A38 op Klein en V20–A36 op Groot.
+Neus, Kop, Nek en Romp van P−2 tot en met P+3 blijven exact evenwijdig aan
+hun eigen VIJF-deel; iedere aansluiting gebruikt één gedeelde bal.
+P0 heeft dezelfde smalle middenlijn als de overige P-standen, boven op de
+brede actieve lijn. Sessie-undo, Verwerp experiment en grensbewaking blijven.
+Bandbalmiddens liggen via config op 3,0 cm van de band; de 61,5-mm-bal
+overlapt de bandtekening 0,75 mm en laat daardoor geen haarlijn zien.

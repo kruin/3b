@@ -16,8 +16,8 @@ PUBLICEREN
 
 PRIVATE KRUINWAARDEN
 - Beheer Kruinwaarden via Bekijk_Kruinconfig in de private map; SQLite is de bron.
-- Gebruik de naastliggende map 3B-private-Kruinconfig-v181.
-- Bekijk_Kruinconfig genereert vandaar kruinwaarden-generated-v181.js.
+- Gebruik de naastliggende map 3B-private-Kruinconfig-v192.
+- Bekijk_Kruinconfig genereert vandaar kruinwaarden-generated-v192.js.
 
 BETALEN
 - Lees BETALEN-ACTIVEREN.md.

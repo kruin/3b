@@ -1,0 +1,19 @@
+'use strict';
+const fs=require('fs'),path=require('path'),http=require('http'),assert=require('assert'),{chromium}=require('playwright');
+const root=__dirname,executablePath=process.env.CHROMIUM_PATH||chromium.executablePath();
+if(!fs.existsSync(executablePath)){console.log('VIRTUELE-NEUS UI OVERGESLAGEN: Chromium ontbreekt.');process.exit(0);}
+const server=http.createServer((req,res)=>{const name=new URL(req.url,'http://x').pathname.slice(1)||'index.html',file=path.resolve(root,name);if(!file.startsWith(root+path.sep)||!fs.existsSync(file)){res.writeHead(404).end();return;}res.setHeader('Content-Type',name.endsWith('.js')?'text/javascript':name.endsWith('.html')?'text/html':name.endsWith('.css')?'text/css':'application/octet-stream');res.end(fs.readFileSync(file));});
+const choose=(page,id,value)=>page.locator(id).evaluate((el,value)=>{el.value=value;el.dispatchEvent(new Event('change',{bubbles:true}));},value);
+(async()=>{await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));const browser=await chromium.launch({executablePath,args:['--no-sandbox','--disable-dev-shm-usage']});try{
+ for(const viewport of [{width:1280,height:900},{width:390,height:844}])for(const table of ['klein','groot'])for(const direction of ['west','oost']){
+  const page=await browser.newPage({viewport,isMobile:viewport.width<500,hasTouch:viewport.width<500}),errors=[];page.on('pageerror',e=>errors.push(e.message));
+  await page.goto(`http://127.0.0.1:${server.address().port}/#owner=kruin`);await page.waitForSelector('.table-svg');
+  await choose(page,'#centralTableMode',table);await choose(page,'#noseDirection',direction);await choose(page,'#trackFamilySelect','waaier');
+  let options=await page.locator('#centralLineSelect option').evaluateAll(xs=>xs.map(x=>x.value));assert(options.includes('HALFNEGEN')&&options.includes('NEGEN'));
+  for(const [key,value] of [['HALFNEGEN','85'],['NEGEN','90']]){await choose(page,'#centralLineSelect',key);await page.waitForTimeout(30);assert.equal(await page.locator('.table-svg g[data-part="neus"]').count(),1);assert.equal(await page.locator('.table-svg g[data-part]:not([data-part="neus"])').count(),0);const labels=await page.locator('.table-svg .value-tag text').allTextContents();assert(labels.some(x=>x.includes(value)),`${table}/${direction}/${key}: A${value} ontbreekt`);}
+  await choose(page,'#trackFamilySelect','parallel');options=await page.locator('#centralLineSelect option').evaluateAll(xs=>xs.map(x=>x.value));assert(options.includes('NEGEN-2')&&options.includes('NEGEN-1')&&options.includes('NEGEN'));assert(!options.includes('NEGEN+1'));
+  const vectors=[];for(const [key,value] of [['NEGEN-2','70'],['NEGEN-1','80'],['NEGEN','90']]){await choose(page,'#centralLineSelect',key);await page.waitForTimeout(30);assert.equal(await page.locator('.table-svg g[data-part="neus"]').count(),1);assert.equal(await page.locator('.table-svg g[data-part]:not([data-part="neus"])').count(),0);const labels=await page.locator('.table-svg .value-tag text').allTextContents();assert(labels.some(x=>x.includes(value)),`${table}/${direction}/${key}: A${value} ontbreekt`);vectors.push(await page.locator('.table-svg g[data-part="neus"] .route-line').evaluate(el=>({dx:Number(el.getAttribute('x2'))-Number(el.getAttribute('x1')),dy:Number(el.getAttribute('y2'))-Number(el.getAttribute('y1'))})));}
+  const cross=(a,b)=>Math.abs(a.dx*b.dy-a.dy*b.dx)/(Math.hypot(a.dx,a.dy)*Math.hypot(b.dx,b.dy));assert(cross(vectors[0],vectors[1])<1e-9&&cross(vectors[1],vectors[2])<1e-9,'NEGEN-familie is niet parallel');assert.deepStrictEqual(errors,[]);await page.close();
+ }
+ console.log('VIRTUELE-NEUS UI OK: desktop/mobiel, Klein/Groot, West/Oost; HALF NEGEN A85 en NEGEN−2/−1/P0 A70/80/90, uitsluitend Neus, exact parallel en geen NEGEN+1.');
+}finally{await browser.close();server.close();}})().catch(e=>{console.error(e);server.close();process.exitCode=1;});

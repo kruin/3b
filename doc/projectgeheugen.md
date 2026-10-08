@@ -1,7 +1,17 @@
-# 3B · projectgeheugen v181
+# 3B · projectgeheugen v192
 
-Vastgelegd: 2 oktober 2026. App v181; cursus 1.2. Deze actuele afspraken zijn
+Vastgelegd: 8 oktober 2026. App v192; cursus 1.2. Deze actuele afspraken zijn
 leidend boven oudere voorstellen. Geen nieuwe Neus–Been-metingen zijn aangeleverd.
+
+## Actuele voorrangsregel — P0 leidt automatische lijnen
+
+P0, bijvoorbeeld VIJF, bevat het karkas en de basisrichting per lijn. Voor elk
+overeenkomstig segment van P−2, P−1, P+1, P+2 en P+3 geldt: ontbreekt een
+gemeten of ge-edite waarde, dan wordt dat segment parallel aan hetzelfde
+segment van P0 geconstrueerd. Een gemeten of ge-edite lijn blijft leidend en
+wordt niet door de parallelberekening vervangen. De huidige automatische Nek
+wordt dynamisch uit Kop en Romp geconstrueerd; aanwezige handmatige Nekwaarden
+blijven, net als bij de andere lijnen, behouden.
 
 ## Patroon, spoor en karkas
 
@@ -60,7 +70,7 @@ een override wordt in het beheerblad als Ge-edit aangeduid.
 
 A en V liggen op stiplijnen. Twee aansluitende lijnen delen één fysieke bandbal,
 maar hun A/V-getallen hoeven niet gelijk te zijn. Neus A standaard West,
-Kop A Noord, Nek A Oost, Romp A Zuid of West; Kruis A doorgaans West/Zuid;
+Kop A Noord, de berekende Nek loopt Noord–Oost, Romp A Zuid of West; Kruis A doorgaans West/Zuid;
 Been A standaard Oost. Automatische V-banden volgen de vorige aankomstband.
 Alle handmatige waarden blijven bewerkbaar en behouden bij herberekenen.
 Auto laat opnieuw berekenen met voldoende bekende ankers.
@@ -69,7 +79,8 @@ Nummering start bij 0 en loopt met de bal mee (lange band 0–80, korte 0–40).
 SQLite bewaart één basisrichting; spiegeling gebeurt in de app.
 Kruin mat Kop A bij VIJF: Klein 19, Groot 15. Dit zijn tafelgebonden referenties,
 geen algemene wet. Kop A bij voorkeur meten; een gekozen benadering blijft
-herkenbaar. Nek V wordt vanuit de gedeelde bandbal berekend.
+herkenbaar. Bij de huidige automatische waarden volgt de Nek dynamisch uit de
+gedeelde Noord- en Oostbal; gemeten of ge-edite Nekwaarden blijven leidend.
 
 Herkomst: oker configuratie/karkas; groen Kruinwaarde/Kruinmeting/eigen meting;
 rood berekend/benadering; blauw Ge-edit. Labels onderscheiden de categorieën.
@@ -83,9 +94,42 @@ v179/v180-database door die vóór starten in de nieuwe private map te zetten;
 bewaar de oude map als reservekopie. Publicatie is een afzonderlijke handeling.
 De v172–v180-bases blijven onveranderd beschikbaar.
 
+
+## Versie-ZIP in de private GitHub-repo
+
+Bewaar de complete versie-ZIP in de map boven de uitgepakte openbare/private
+mappen. Start Publiceer_KruinBeheer.bat (Mac: .command) in de private map.
+De starter zoekt een ZIP met het huidige versienummer in de bovenliggende map.
+Als er meerdere zijn, kiest hij de laatst gewijzigde. Hij controleert de ZIP
+en neemt die op in `versies/` in `kruin/3b-kruin-beheer`.
+
+De starter houdt slechts één nieuwste versie-ZIP in de huidige repo-inhoud.
+Oudere versie-ZIP’s worden uit Git verwijderd; lokale bestanden blijven staan.
+Een reeds aanwezige nieuwere repo-versie wordt behouden. Als er geen passende
+ZIP in de bovenliggende map staat, blijft de nieuwste bestaande repo-ZIP staan;
+zonder enig archief gaat de beheerpublicatie gewoon verder zonder ZIP.
+Een beschadigde nieuwe ZIP stopt de publicatie vóór het opschonen.
+
+Git-geschiedenis wordt niet herschreven: oude ZIP’s blijven in eerdere commits
+terug te vinden. De openbare repo krijgt de complete versie-ZIP niet.
+De meegeleverde helper Bewaar_versiezip.py en controle Versiezipcontrole.py
+regelen en testen dit voor beide starters. Het private SQLite-bestand wordt
+zoals voorheen meegenomen.
+
 ## Nog uit te werken
 
 Eerste meetspoor voor KKL/KLK/Neus–Been; bijbehorende bandroute en ijkpunten;
 verschillende stootwijzen als meetreeksen; exacte passage van bal 2.
 Een eindpunt/doelband per stoot en automatische passagecontrole zijn voorstellen,
 geen al geïmplementeerde functies. Echte browsertest van deze release staat open.
+
+## v192 — versienummer én versie-inhoud verplicht gelijk
+
+De actuele release komt uit de openbare config. De regressietest vergelijkt
+dit nummer met de bestandsnamen, interne config- en Kruinwaardenrelease,
+HTML- en stylesheetverwijzingen, VERSIE.txt, documentatie, controlepagina,
+openbare publicatie-BAT en aanwezige private beheerbestanden. De private
+Windows- en Mac-publicatiestarters draaien bovendien `Versiecontrole.py`
+voordat Git of het versie-ZIP wordt gewijzigd. Iedere operationele verwijzing
+naar een andere release stopt de publicatie; historische vermeldingen in de
+documentatie en oude basisarchieven blijven toegestaan.

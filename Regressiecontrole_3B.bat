@@ -6,25 +6,25 @@ where node >nul 2>nul || (
   pause
   exit /b 1
 )
-node cursus-inhoudcontrole-v181.js
+node cursus-inhoudcontrole-v192.js
 if errorlevel 1 (pause & exit /b 1)
-node sqlite-appcontrole-v181.js
+node sqlite-appcontrole-v192.js
 if errorlevel 1 (pause & exit /b 1)
-if exist "..\3B-private-Kruinconfig-v181\SQLite-beheer.html" (
-  node beheerbladcontrole-v181.js
+if exist "..\3B-private-Kruinconfig-v192\SQLite-beheer.html" (
+  node beheerbladcontrole-v192.js
   if errorlevel 1 (pause & exit /b 1)
 )
-node tafelbestandcontrole-v181.js
+node tafelbestandcontrole-v192.js
 if errorlevel 1 (
   pause
   exit /b 1
 )
-node geometriecontrole-v181.js
+node geometriecontrole-v192.js
 if errorlevel 1 (
   pause
   exit /b 1
 )
-node regressiecontrole-v181.js
+node regressiecontrole-v192.js
 if errorlevel 1 (
   pause
   exit /b 1
@@ -33,17 +33,19 @@ node -e "require.resolve('playwright')" >nul 2>nul
 if errorlevel 1 (
   echo LET OP: UI-browsertest overgeslagen; Playwright is niet geinstalleerd.
 ) else (
-  if exist "..\3B-private-Kruinconfig-v181\SQLite-beheer.html" (
-    node sqlite-beheer-ui-v181.js
+  if exist "..\3B-private-Kruinconfig-v192\SQLite-beheer.html" (
+    node sqlite-beheer-ui-v192.js
     if errorlevel 1 (pause & exit /b 1)
   )
-  node cursuscontrole-v181.js
+  node cursuscontrole-v192.js
   if errorlevel 1 (pause & exit /b 1)
-  node opstartcontrole-v181.js
+  node opstartcontrole-v192.js
   if errorlevel 1 (pause & exit /b 1)
-  node ui-regressie-v181.js
+  node ui-regressie-v192.js
   if errorlevel 1 (pause & exit /b 1)
-  node tafelbestand-ui-controle-v181.js
+  node sessieherstelcontrole-v192.js
+  if errorlevel 1 (pause & exit /b 1)
+  node tafelbestand-ui-controle-v192.js
   if errorlevel 1 (
     pause
     exit /b 1

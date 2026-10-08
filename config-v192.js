@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 101, release: "181", publicRelease: "181",
+  version: 102, release: "192", publicRelease: "192",
   userDisplay: {
     defaultLineOpacity: 0.58,
     defaultArrowMode: "request",
@@ -62,7 +62,9 @@ window.THREEB_START_CONFIG = {
     includeHalfPositions: true,
     inactiveOpacity: 0.34,
     inactiveWidthSvg: 1.6,
-    activeWidthSvg: 5,
+    /* P0 is dezelfde smalle middenlijn als P+1, P+2 en P+3. De brede
+       gekleurde lijn blijft eronder staan als de actieve gespeelde lijn. */
+    activeWidthSvg: 1.6,
     defaultFocus: "basis",
     allowUserFocusChoice: true,
     allowCourseOverride: true,
@@ -73,7 +75,7 @@ window.THREEB_START_CONFIG = {
       },
       noord: {
         labels: { nl: "Noordband · Kop + Nek", en: "North cushion · Head + Neck" },
-        parts: ["kop", "nek"], activeWideParts: ["kop", "nek"], showArrivals: false
+        parts: ["kop", "nek"], activeWideParts: ["kop", "nek"], showArrivals: true
       },
       actieveLijn: {
         labels: { nl: "Actieve lijn", en: "Active line" },
@@ -259,8 +261,8 @@ window.THREEB_START_CONFIG = {
         "en": "Neck"
       },
       "text": {
-        "nl": "De lijn van de gedeelde Noordbal naar Oost. De app construeert de bal op Noord met de Koplijn en Kop A. Hij verlengt de uitgaande Neklijn terug naar de Noord-stiplijn: daar ligt Nek V. Kop A en Nek V kunnen verschillende stipwaarden hebben, hoewel de balpositie dezelfde is.",
-        "en": "The line from the shared North ball to East. The app constructs the North ball from the Head line and Head A, then extends the outgoing Neck back to the North diamond line to locate Neck V. Head A and Neck V can differ despite sharing one ball position."
+        "nl": "De lijn van de gedeelde Noordbal naar de gedeelde Oostbal. Bij de huidige berekende Nekwaarden bepalen Kop en Kop A de Noordbal en bepaalt de bekende Romp de Oostbal. De app trekt de Nek dynamisch door beide ballen en verlengt hem naar de stiplijnen voor Nek V en Nek A. Kop A en Nek V kunnen verschillende stipwaarden hebben, hoewel ze bij dezelfde Noordbal horen.",
+        "en": "The line from the shared North ball to the shared East ball. With the current calculated Neck values, Head and Head A determine the North ball while the known Body determines the East ball. The app dynamically draws the Neck through both balls and extends it to the diamond lines for Neck V and Neck A. Head A and Neck V can differ despite belonging to the same North ball."
       }
     },
     "romp": {
@@ -1428,8 +1430,8 @@ window.THREEB_START_CONFIG = {
     "nl": "Een spoor om te proberen. Jouw tafel geeft antwoord.",
     "en": "A track to try. Your table gives the answer."
   },
-  "release": 181,
-  "updated": "2026-10-02",
+  "release": 192,
+  "updated": "2026-10-08",
   "previousCards": {
     "route-names-three-minus-plus": {
       "title": {
@@ -1604,6 +1606,9 @@ window.THREEB_START_CONFIG = {
     junctionBalls: {
       draggable: true,
       axis: "along_cushion",
+      /* Middellijn van een bandbal. 3,0 cm is net minder dan de straal
+         van een 61,5-mm-bal, zodat de tekening geen haarlijn langs de band toont. */
+      bandCenterLineInsetCm: 3,
       updatesBothAdjacentValues: true,
       valuePrecision: 1,
       keyboardStep: 1,
@@ -1659,12 +1664,19 @@ window.THREEB_START_CONFIG = {
     },
     ZES: { startLabel: "S", arrivals: ["west","noord","oost","zuid","west","oost","noord"], rule: "each_arrival_selects_the_next_cushion" },
     ZEVEN: { startLabel: "S", arrivals: ["west","noord","oost","zuid","west","oost","noord"], rule: "each_arrival_selects_the_next_cushion" },
-    ACHT: { startLabel: "S", arrivals: ["west","noord","oost","zuid","west","oost","noord"], rule: "each_arrival_selects_the_next_cushion" }
+    ACHT: { startLabel: "S", arrivals: ["west","noord","oost","zuid","west","oost","noord"], rule: "each_arrival_selects_the_next_cushion" },
+    NEGEN: { startLabel: "S", arrivals: ["west","noord","oost","zuid","west","oost","noord"], virtualNoseOnly: true, rule: "virtual_nose_only_until_measured_karkas_exists" }
   },
   lklTrackRules: {
     appliesTo: ["NUL","EEN","TWEE","DRIE","VIER","VIJF","ZES","ZEVEN","ACHT"],
-    panelTracks: ["NUL","EEN","TWEE","DRIE","VIER","VIJF","ZES","ZEVEN","ACHT"],
-    noseArrivalByTrack: { NUL:0, EEN:10, TWEE:20, DRIE:30, VIER:40, VIJF:50, ZES:60, ZEVEN:70, ACHT:80 },
+    panelTracks: ["NUL","EEN","TWEE","DRIE","VIER","VIJF","ZES","ZEVEN","ACHT","NEGEN"],
+    noseArrivalByTrack: { NUL:0, EEN:10, TWEE:20, DRIE:30, VIER:40, VIJF:50, ZES:60, ZEVEN:70, ACHT:80, NEGEN:90 },
+    virtualNoseTracks: {
+      NEGEN:{band:"west",value:90,family:"NEGEN",offset:0},
+      "NEGEN-1":{band:"west",value:80,family:"NEGEN",offset:-1},
+      "NEGEN-2":{band:"west",value:70,family:"NEGEN",offset:-2},
+      HALFNEGEN:{band:"west",value:85,between:["ACHT","NEGEN"]}
+    },
     route: ["S","W","N","O","Z","W","O","N"],
     routeByTrack: { VIER:["S","W","N","O","W","Z","O","N"] },
     cross: { defaultAngleDegrees:45, defaultArrivalBand:"west", defaultLoop:"+", configurablePerTableAndTrack:true, rule:"depart_from_body_arrival_and_follow_configured_angle_to_configured_arrival_band" },
@@ -1779,15 +1791,18 @@ window.THREEB_START_CONFIG = {
       startLabel: "S",
       startAxis: "vertical_centerline",
       arrivalConstraint: { band:"west", minimum:0, maximum:80 },
-      bodyArrivalByTable: {
+      legacyBodyArrivalByTable: {
         klein: { band:"zuid", ballWidthsPerStep:1, ballDiameterCm:6.15, diamondUnitsPerStep:6.15/115*40, offsetSign:-1 },
         groot: { band:"zuid", ballWidthsPerStep:1.5, ballDiameterCm:6.15, diamondUnitsPerStep:1.5*6.15/142*40, offsetSign:-1 }
       },
-      backwardFromBodyArrival: {
-        parts: ["romp","nek","kop"],
-        rule: "keep_each_part_parallel_to_its_base_track"
+      forwardFromNose: {
+        baseNose: "S-50",
+        baseBodyByTable: { klein:"V20-A38", groot:"V20-A36" },
+        parts: ["neus","kop","nek","romp"],
+        sharedJunctionBall: true,
+        rule: "start_at_shifted_nose_and_keep_each_part_parallel_to_its_VIJF_part"
       },
-      rule: "BiBu: plus_start_inside_body_A_outside_so_south_value_decreases; minus_is_inverse; then_body_neck_head_recalculate_backward"
+      rule: "P0_is_VIJF; calculate_forward_from_S-50; every_junction_is_one_ball_on_the_configured_band_center_line"
     },
     fan: {
       rule: "every_known_value_is_midpoint_of_adjacent_tracks",
@@ -1799,7 +1814,9 @@ window.THREEB_START_CONFIG = {
         { key:"HALFVIJF", between:["VIER","VIJF"], noseArrival:45, fraction:0.5 },
         { key:"HALFZES", between:["VIJF","ZES"], noseArrival:55, fraction:0.5 },
         { key:"HALFZEVEN", between:["ZES","ZEVEN"], noseArrival:65, fraction:0.5 },
-        { key:"HALFACHT", between:["ZEVEN","ACHT"], noseArrival:75, fraction:0.5 }
+        { key:"HALFACHT", between:["ZEVEN","ACHT"], noseArrival:75, fraction:0.5 },
+        { key:"HALFNEGEN", between:["ACHT","NEGEN"], noseArrival:85, fraction:0.5, virtual:true,
+          labels:{en:"HALF NINE · virtual nose",nl:"HALF NEGEN · virtuele Neus"} }
       ]
     }
   },
@@ -1882,7 +1899,8 @@ window.THREEB_START_CONFIG = {
     },
     ZES:{romp:{from:{band:"oost",value:30},to:{band:"zuid",value:30}}},
     ZEVEN:{romp:{from:{band:"oost",value:35},to:{band:"zuid",value:20}}},
-    ACHT:{romp:{from:{band:"oost",value:43},to:{band:"zuid",value:19}}}
+    ACHT:{romp:{from:{band:"oost",value:43},to:{band:"zuid",value:19}}},
+    NEGEN:{neus:{from:{kind:"acquit",value:"S"},to:{band:"west",value:90,status:"calculated",source:"automatic",calculationBasis:"virtual_nose",virtual:true}}}
     },
     groot:{
     VIJF:{
@@ -1894,7 +1912,8 @@ window.THREEB_START_CONFIG = {
     },
     ZES:{romp:{from:{band:"oost",value:30},to:{band:"zuid",value:28}}},
     ZEVEN:{romp:{from:{band:"oost",value:37},to:{band:"zuid",value:22}}},
-    ACHT:{romp:{from:{band:"oost",value:48},to:{band:"zuid",value:18}}}
+    ACHT:{romp:{from:{band:"oost",value:48},to:{band:"zuid",value:18}}},
+    NEGEN:{neus:{from:{kind:"acquit",value:"S"},to:{band:"west",value:90,status:"calculated",source:"automatic",calculationBasis:"virtual_nose",virtual:true}}}
     }
   }
 };

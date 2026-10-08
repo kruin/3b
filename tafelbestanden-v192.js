@@ -108,7 +108,7 @@ window.ThreeBFiles = (() => {
   }
   function filename(payload, format) {
     const slug = (payload.tableName || 'mijn-tafel').normalize('NFKD').replace(/[^a-zA-Z0-9_-]+/g,'-').replace(/^-|-$/g,'').slice(0,60) || 'mijn-tafel';
-    return `3B-${slug}--${payload.basis.id}--app-v181.${format}`;
+    return `3B-${slug}--${payload.basis.id}--app-v192.${format}`;
   }
   return {encode, decode, rows, fromRows, differences, tracked, validate, filename};
 })();

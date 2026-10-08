@@ -45,8 +45,9 @@ const root=__dirname,server=http.createServer((req,res)=>{const file=path.resolv
   await page.locator('#nextExplanation').click();
   assert.equal(await page.locator('#explanationVisual .ball-visible').count(),1);
   assert.equal(await page.locator('#explanationVisual .course-measuring-mark').count(),5);
-  const measure=await page.locator('.course-measurement').evaluate(el=>({r:Number(el.dataset.radiusCm),x:Number(el.dataset.centerXCm),y:Number(el.dataset.centerYCm),table:el.dataset.table,width:window.THREEB_START_CONFIG.tables[el.dataset.table].widthCm}));
-  assert(Math.abs(measure.width-measure.x-measure.r)<1e-9,'De ene bal raakt de Oostband');
+  const measure=await page.locator('.course-measurement').evaluate(el=>({r:Number(el.dataset.radiusCm),x:Number(el.dataset.centerXCm),y:Number(el.dataset.centerYCm),table:el.dataset.table,width:window.THREEB_START_CONFIG.tables[el.dataset.table].widthCm,inset:window.THREEB_START_CONFIG.drawing.junctionBalls.bandCenterLineInsetCm}));
+  assert(Math.abs(measure.width-measure.x-measure.inset)<1e-9,'Het balmiddelpunt ligt op de ingestelde Oost-bandlijn');
+  assert(measure.r>measure.inset,'De brede bal overlapt de getekende band licht');
   await page.screenshot({path:'/tmp/3b176-ijkjes-'+viewport.width+'.png'});
   await page.locator('#nextExplanation').click();
   await page.locator('#courseAttempt1').fill('36.1256789');await page.getByRole('button',{name:'Toon poging 1 op mijn tafel',exact:true}).click();

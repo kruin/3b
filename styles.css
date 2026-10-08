@@ -178,7 +178,7 @@ td input.invalid, td select.invalid { border-color: #b83434; background: #fff1ef
 .junction-click-zone { fill: rgba(255,243,176,.08); stroke: rgba(210,163,58,.5); stroke-width: 1.5; stroke-dasharray: 5 4; }
 .ball-value-window { pointer-events:none; }
 .ball-value-window rect { fill:#fffaf0; stroke:#6e5127; stroke-width:2; filter:drop-shadow(0 3px 5px rgba(20,12,5,.28)); }
-.ball-value-window text { fill:#2b2118; }
+
 .table-svg text,.value-tag { pointer-events: none; }
 .table-svg g[data-part] > line { pointer-events:none; }
 .base-track-reference { pointer-events:none; fill:none; stroke:#fff4bf; stroke-width:2; stroke-linecap:round; opacity:.58; }
@@ -414,7 +414,7 @@ body.table-only .svg-mount,body.table-only .svg-mount svg{width:100%;height:100%
 body.table-only.compare-tables .onscreen-table{overflow:auto}
 @media(max-width:760px){.onscreen-layout{grid-template-columns:48px minmax(0,1fr) 48px;gap:4px}.onscreen-table{padding:6px}.onscreen-bottom{flex-wrap:wrap}.onscreen-control-edit,.onscreen-control-menuPanel{flex-basis:100%}}
 
-.series-overview,.series-overview-active{fill:none;pointer-events:none}.series-overview line{stroke:#fff3c7;stroke-linecap:butt;vector-effect:non-scaling-stroke}.series-overview-active line{stroke:#ffd86b;stroke-linecap:round;vector-effect:non-scaling-stroke}.series-overview .focus-arrival{fill:#fffdf4;stroke:#15966f;stroke-width:1.5;vector-effect:non-scaling-stroke}.series-overview-active .focus-arrival{fill:#fffdf4;stroke:#ffd86b;stroke-width:2.5;vector-effect:non-scaling-stroke}
+.series-overview,.series-overview-active{fill:none;pointer-events:none}.series-overview line{stroke-linecap:butt;vector-effect:non-scaling-stroke}.series-overview-active line{stroke:#ffd86b;stroke-linecap:round;vector-effect:non-scaling-stroke}.series-overview .focus-arrival{fill:#fffdf4;stroke-width:1.5;vector-effect:non-scaling-stroke}.series-overview-active .focus-arrival{fill:#fffdf4;stroke:#ffd86b;stroke-width:2.5;vector-effect:non-scaling-stroke}
 
 /* De tafel schaalt binnen zowel de beschikbare breedte als hoogte. */
 body.table-only .onscreen-table{display:grid;place-items:stretch center}
@@ -506,7 +506,7 @@ body.table-only .band-corner{width:var(--screen-band,36px);height:var(--screen-b
 body.table-only .band-reset,body.table-only .band-save{font-size:8px}
 body.table-only .band-save{background:#176f4f}
 
-/* v181: de bovenste bedieningsrij kan horizontaal schuiven op smalle schermen. */
+/* v192: de bovenste bedieningsrij kan horizontaal schuiven op smalle schermen. */
 body.table-only .central-track-controls {
   overflow-x: auto;
   overflow-y: auto;
@@ -596,3 +596,29 @@ body.table-only .band-controls{z-index:2200}
 .course-glossary{box-sizing:border-box;width:min(560px,calc(100vw - 24px));max-height:calc(100dvh - 32px);padding:20px;border:2px solid #9a711b;border-radius:14px;background:#fffaf0;color:#302617;overflow:auto}
 .course-glossary::backdrop{background:rgb(0 0 0 / .45)}
 .course-glossary header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}.course-glossary h2{font-size:22px;margin:0}.course-glossary p{line-height:1.55}.course-glossary header button{min-width:44px;min-height:44px;font-size:22px}.course-glossary nav{display:flex;flex-wrap:wrap;gap:6px}.course-glossary nav button{padding:8px;min-height:40px}.course-glossary nav button[aria-pressed="true"]{background:#176f4f;color:#fff}.course-origin-legend .framework{color:#a36b00}
+
+/* v192: herkomst bij stiplijnen, rustige aanraakvlakken en zichtbare waarden. */
+.table-svg .junction-click-zone{fill:transparent;stroke:none}
+.table-svg .drag-halo{opacity:0}
+.table-svg .junction-hit:hover,.table-svg .junction-hit:focus,.table-svg .junction-hit.selected,.table-svg .endpoint-hit:hover,.table-svg .endpoint-hit:focus,.table-svg .cue-hit:hover,.table-svg .cue-hit:focus{fill:transparent;stroke:#ffcf63;stroke-width:2;stroke-dasharray:4 3;outline:none}
+.table-svg .stip-hit{pointer-events:all;cursor:help;stroke:none;outline:none}
+.table-svg .stip-hit:hover,.table-svg .stip-hit:focus{stroke:#fff4bf;stroke-width:2}
+.table-svg .value-tag{pointer-events:none}
+
+.table-origin-legend{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 12px;background:#fffaf0;padding:7px 9px;font-size:12px;font-weight:800}
+.table-origin-legend small{flex-basis:100%;text-align:center;color:#534536;font-weight:500}
+
+body.table-only .table-origin-legend{position:absolute;z-index:2;top:6px;left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100% - 110px);padding:4px 7px;font-size:10px;gap:3px 9px;border-radius:6px;box-shadow:0 1px 4px #0004;pointer-events:none}
+body.table-only .table-origin-legend small{display:none}
+.explanation-visual .table-origin-legend{display:none}
+
+.experiment-toolbar{position:fixed;z-index:2400;left:8px;bottom:8px;max-width:calc(100vw - 16px);box-sizing:border-box;padding:6px 8px;border:1px solid #876238;border-radius:10px;background:#fffaf0ed;color:#2b2118;box-shadow:0 2px 10px #0003}.experiment-toolbar div{display:flex;gap:4px;flex-wrap:wrap}.experiment-toolbar button{font-size:12px;min-height:32px;padding:4px 8px}.experiment-toolbar p{font-size:11px;line-height:1.3;margin:4px 0 0;max-width:420px}.experiment-toolbar button:disabled{opacity:.4}body.course-open .experiment-toolbar{display:none}.line-editor{z-index:2300;top:76px;transform:translateX(-50%);max-height:calc(100dvh - 180px)}
+body:has(.ball-nudge-panel:not([hidden])) .experiment-toolbar{bottom:82px}
+@media(max-width:600px){body:has(.ball-nudge-panel:not([hidden])) .experiment-toolbar{bottom:106px}.experiment-toolbar p{max-width:330px}}
+.experiment-toolbar{bottom:92px}
+body:has(.ball-nudge-panel:not([hidden])) .experiment-toolbar{bottom:150px}
+@media(max-width:600px){body:has(.ball-nudge-panel:not([hidden])) .experiment-toolbar{bottom:180px}}
+.experiment-toolbar.in-line-editor{position:static;z-index:auto;max-width:none;margin:8px 0 0;box-shadow:none}
+body.table-menu-open .experiment-toolbar,
+body.bar-tab-open .experiment-toolbar,
+body:has(.user-settings:not([hidden])) .experiment-toolbar{display:none}
