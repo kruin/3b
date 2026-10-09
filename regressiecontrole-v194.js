@@ -5,9 +5,9 @@ const path = require("path");
 const vm = require("vm");
 
 const read = file => fs.readFileSync(file, "utf8");
-const app = read("app-v193.js");
-const configText = read("config-v193.js");
-const kruinText = read("kruinwaarden-generated-v193.js");
+const app = read("app-v194.js");
+const configText = read("config-v194.js");
+const kruinText = read("kruinwaarden-generated-v194.js");
 const html = read("index.html");
 const css = read("styles.css");
 const errors = [];
@@ -135,7 +135,7 @@ for (const id of menuControlIds) {
 check(app.includes('["addressForm","addressForm"]'), "Aanspreekvorm reageert niet op wijzigingen.");
 check(app.includes("ensureSettingsMenuUi();ensureOnscreenMenuLayout()"), "Instellingenmenu wordt niet vóór de tafelopmaak opgebouwd.");
 
-for (const ref of ["styles.css?v=193", "config-v193.js", "kruinwaarden-generated-v193.js", "app-v193.js"]) {
+for (const ref of ["styles.css?v=194", "config-v194.js", "kruinwaarden-generated-v194.js", "app-v194.js"]) {
   check(html.includes(ref), `Versieverwijzing ontbreekt of wijkt af: ${ref}.`);
 }
 
@@ -162,6 +162,11 @@ for (const table of Object.keys(C?.tables || {})) {
   }
 }
 
+check(C.lklTrackRules.appliesTo.includes("NEGEN") && C.patternByLine.NEGEN==="LKL", "NEGEN ontbreekt in de gewone LKL-keten.");
+check(app.includes('document.querySelector(".central-track-controls").append(bar)'), "Undo moet binnen het sluitbare menu starten.");
+check(app.includes('menu.append(bar)'), "Undo moet na de lijneditor terug naar het menu.");
+check(app.includes("event.key==='Escape'"), "Escape moet het menu kunnen sluiten.");
+check(C.speedProfiles.lkl.cushions===5 && C.speedProfiles.lkl.runOut.fraction===.5, "LKL-snelheid: 5 banden plus uitloop tot midden lijn 6.");
 if (errors.length) {
   console.error("REGRESSIECONTROLE MISLUKT");
   errors.forEach(error => console.error(`- ${error}`));

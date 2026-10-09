@@ -1,5 +1,5 @@
 window.THREEB_START_CONFIG = {
-  version: 102, release: "193", publicRelease: "193",
+  version: 102, release: "194", publicRelease: "194",
   userDisplay: {
     defaultLineOpacity: 0.58,
     defaultArrowMode: "request",
@@ -1430,7 +1430,7 @@ window.THREEB_START_CONFIG = {
     "nl": "Een spoor om te proberen. Jouw tafel geeft antwoord.",
     "en": "A track to try. Your table gives the answer."
   },
-  "release": 193,
+  "release": 194,
   "updated": "2026-10-08",
   "previousCards": {
     "route-names-three-minus-plus": {
@@ -1665,10 +1665,14 @@ window.THREEB_START_CONFIG = {
     ZES: { startLabel: "S", arrivals: ["west","noord","oost","zuid","west","oost","noord"], rule: "each_arrival_selects_the_next_cushion" },
     ZEVEN: { startLabel: "S", arrivals: ["west","noord","oost","zuid","west","oost","noord"], rule: "each_arrival_selects_the_next_cushion" },
     ACHT: { startLabel: "S", arrivals: ["west","noord","oost","zuid","west","oost","noord"], rule: "each_arrival_selects_the_next_cushion" },
-    NEGEN: { startLabel: "S", arrivals: ["west","noord","oost","zuid","west","oost","noord"], virtualNoseOnly: true, rule: "virtual_nose_only_until_measured_karkas_exists" }
+    NEGEN: { startLabel: "S", arrivals: ["west","noord","oost","zuid","west","oost","noord"], rule: "each_arrival_selects_the_next_cushion" }
+  },
+  speedProfiles: {
+    lkl:{cushions:5,runOut:{line:"been",fraction:0.5},framework:["neus","romp"],labels:{nl:"5 banden + uitloop tot midden lijn 6",en:"5 cushions + run-out to mid-line 6"}},
+    lklSix:{cushions:6,optionalCushions:7,framework:["neus","been"],labels:{nl:"LKL-zesbander · 6 (of 7) banden",en:"LKL six-cushion · 6 (or 7) cushions"},status:"voorstel",defaultsFrom:"existing_leg_measurements",bodyIsFramework:false}
   },
   lklTrackRules: {
-    appliesTo: ["NUL","EEN","TWEE","DRIE","VIER","VIJF","ZES","ZEVEN","ACHT"],
+    appliesTo: ["NUL","EEN","TWEE","DRIE","VIER","VIJF","ZES","ZEVEN","ACHT","NEGEN"],
     panelTracks: ["NUL","EEN","TWEE","DRIE","VIER","VIJF","ZES","ZEVEN","ACHT","NEGEN"],
     noseArrivalByTrack: { NUL:0, EEN:10, TWEE:20, DRIE:30, VIER:40, VIJF:50, ZES:60, ZEVEN:70, ACHT:80, NEGEN:90 },
     virtualNoseTracks: {
@@ -1815,12 +1819,12 @@ window.THREEB_START_CONFIG = {
         { key:"HALFZES", between:["VIJF","ZES"], noseArrival:55, fraction:0.5 },
         { key:"HALFZEVEN", between:["ZES","ZEVEN"], noseArrival:65, fraction:0.5 },
         { key:"HALFACHT", between:["ZEVEN","ACHT"], noseArrival:75, fraction:0.5 },
-        { key:"HALFNEGEN", between:["ACHT","NEGEN"], noseArrival:85, fraction:0.5, virtual:true,
-          labels:{en:"HALF NINE · virtual nose",nl:"HALF NEGEN · virtuele Neus"} }
+        { key:"HALFNEGEN", between:["ACHT","NEGEN"], noseArrival:85, fraction:0.5,
+          labels:{en:"HALF NINE",nl:"HALF NEGEN"} }
       ]
     }
   },
-  patternByLine: { NUL:"LKL", EEN:"LKL", TWEE:"LKL", DRIE:"LKL", VIER:"LKL", VIJF:"LKL", ZES:"LKL", ZEVEN:"LKL", ACHT:"LKL" },
+  patternByLine: { NUL:"LKL", EEN:"LKL", TWEE:"LKL", DRIE:"LKL", VIER:"LKL", VIJF:"LKL", ZES:"LKL", ZEVEN:"LKL", ACHT:"LKL", NEGEN:"LKL" },
   patternLabels: {
     NUL:{en:"ZERO",nl:"NUL"}, EEN:{en:"ONE",nl:"EEN"}, TWEE:{en:"TWO",nl:"TWEE"}, DRIE:{en:"THREE",nl:"DRIE"}, VIER:{en:"FOUR",nl:"VIER"},
     VIJF:{en:"FIVE",nl:"VIJF"}, ZES:{en:"SIX",nl:"ZES"}, ZEVEN:{en:"SEVEN",nl:"ZEVEN"}, ACHT:{en:"EIGHT",nl:"ACHT"},

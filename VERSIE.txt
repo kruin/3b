@@ -1,11 +1,6 @@
-3B — versie 193
-Parallel wordt als één keten vooruit opgebouwd vanaf VIJF Neus S–50.
-Romp VIJF blijft V20–A38 op Klein en V20–A36 op Groot.
-Neus, Kop, Nek en Romp van P−2 tot en met P+3 blijven exact evenwijdig aan
-hun eigen VIJF-deel; iedere aansluiting gebruikt één gedeelde bal.
-P0 heeft dezelfde smalle middenlijn als de overige P-standen, boven op de
-brede actieve lijn. Sessie-undo, Verwerp experiment en grensbewaking blijven.
-Bandbalmiddens liggen via config op 3,0 cm van de band; de 61,5-mm-bal
-overlapt de bandtekening 0,75 mm en laat daardoor geen haarlijn zien.
-HALF NEGEN A85 en NEGEN A90 staan direct als vaste knoppen bovenaan het
-tafelmenu; de publieke gebruikersroute wordt apart op desktop en mobiel getest.
+3B — versie 194
+Menuherstel: Undo start binnen het sluitbare menu; ×, Escape en tafeltik sluiten.
+NEGEN en HALF NEGEN hebben de gewone LKL-keten tot Hiel, met gedeelde bandballen.
+Nieuwe NEGEN-beginwaarden zijn als berekende benadering gemarkeerd.
+Snelheid gewone LKL: 5 banden + uitloop tot midden lijn 6.
+LKL-zesbander: apart voorstel Neus–Been, 6 (of 7) banden; zie WIJZIGINGEN-v194.md.

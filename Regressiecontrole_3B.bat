@@ -6,25 +6,29 @@ where node >nul 2>nul || (
   pause
   exit /b 1
 )
-node cursus-inhoudcontrole-v193.js
+node cursus-inhoudcontrole-v194.js
 if errorlevel 1 (pause & exit /b 1)
-node sqlite-appcontrole-v193.js
+node sqlite-appcontrole-v194.js
 if errorlevel 1 (pause & exit /b 1)
-if exist "..\3B-private-Kruinconfig-v193\SQLite-beheer.html" (
-  node beheerbladcontrole-v193.js
+if exist "..\3B-private-Kruinconfig-v194\SQLite-beheer.html" (
+  node beheerbladcontrole-v194.js
   if errorlevel 1 (pause & exit /b 1)
 )
-node tafelbestandcontrole-v193.js
+node tafelbestandcontrole-v194.js
 if errorlevel 1 (
   pause
   exit /b 1
 )
-node geometriecontrole-v193.js
+node geometriecontrole-v194.js
 if errorlevel 1 (
   pause
   exit /b 1
 )
-node regressiecontrole-v193.js
+node virtuele-neuscontrole-v194.js
+if errorlevel 1 (pause & exit /b 1)
+node menu-negencontrole-v194.js
+if errorlevel 1 (pause & exit /b 1)
+node regressiecontrole-v194.js
 if errorlevel 1 (
   pause
   exit /b 1
@@ -33,21 +37,21 @@ node -e "require.resolve('playwright')" >nul 2>nul
 if errorlevel 1 (
   echo LET OP: UI-browsertest overgeslagen; Playwright is niet geinstalleerd.
 ) else (
-  if exist "..\3B-private-Kruinconfig-v193\SQLite-beheer.html" (
-    node sqlite-beheer-ui-v193.js
+  if exist "..\3B-private-Kruinconfig-v194\SQLite-beheer.html" (
+    node sqlite-beheer-ui-v194.js
     if errorlevel 1 (pause & exit /b 1)
   )
-  node cursuscontrole-v193.js
+  node cursuscontrole-v194.js
   if errorlevel 1 (pause & exit /b 1)
-  node opstartcontrole-v193.js
+  node opstartcontrole-v194.js
   if errorlevel 1 (pause & exit /b 1)
-  node zichtbare-negenbediening-v193.js
+  node zichtbare-negenbediening-v194.js
   if errorlevel 1 (pause & exit /b 1)
-  node ui-regressie-v193.js
+  node ui-regressie-v194.js
   if errorlevel 1 (pause & exit /b 1)
-  node sessieherstelcontrole-v193.js
+  node sessieherstelcontrole-v194.js
   if errorlevel 1 (pause & exit /b 1)
-  node tafelbestand-ui-controle-v193.js
+  node tafelbestand-ui-controle-v194.js
   if errorlevel 1 (
     pause
     exit /b 1

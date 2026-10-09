@@ -1,6 +1,6 @@
 'use strict';const fs=require('fs'),vm=require('vm'),assert=require('assert');
-const root=__dirname;const config=fs.readFileSync(root+'/config-v193.js','utf8'),source=fs.readFileSync(root+'/kruinwaarden-generated-v193.js','utf8');
-let app=fs.readFileSync(root+'/app-v193.js','utf8').replace('  init();','  window.test={state,ui,normalize,applyCurrentKruinSources,applyAllAutomaticCalculations,applySavedKruinSnapshots,spoorSnapshot,bandBall,data,originLabel,statusColor,displayedSegment,applyAutomaticCalculations,followAutomaticBands,noseArrivalLocked};');
+const root=__dirname;const config=fs.readFileSync(root+'/config-v194.js','utf8'),source=fs.readFileSync(root+'/kruinwaarden-generated-v194.js','utf8');
+let app=fs.readFileSync(root+'/app-v194.js','utf8').replace('  init();','  window.test={state,ui,normalize,applyCurrentKruinSources,applyAllAutomaticCalculations,applySavedKruinSnapshots,spoorSnapshot,bandBall,data,originLabel,statusColor,displayedSegment,applyAutomaticCalculations,followAutomaticBands,noseArrivalLocked};');
 function run(privateMode,old,snapshot){
  const ctx={window:{},location:{hash:privateMode?'#owner=kruin':'',search:''},URLSearchParams,localStorage:{getItem:()=>old?JSON.stringify(old):null,setItem:()=>{}},document:{getElementById:()=>({textContent:''}),body:{classList:{contains:()=>false}}}};
  vm.createContext(ctx);vm.runInContext(config,ctx);vm.runInContext(source,ctx);

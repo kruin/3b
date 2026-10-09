@@ -1,8 +1,8 @@
 'use strict';
 const fs=require('fs'),vm=require('vm'),assert=require('assert');
 const ctx={window:{},location:{hash:'#owner=kruin'},URLSearchParams,localStorage:{getItem:()=>null,setItem:()=>{}},document:{getElementById:()=>({textContent:''}),body:{classList:{contains:()=>false}},querySelectorAll:()=>[]}};
-vm.createContext(ctx);for(const f of ['config-v193.js','kruinwaarden-generated-v193.js'])vm.runInContext(fs.readFileSync(__dirname+'/'+f,'utf8'),ctx);
-vm.runInContext(fs.readFileSync(__dirname+'/app-v193.js','utf8').replace('  function render(){','  function render(){return;').replace('  init();','  window.test={normalize,applyAllAutomaticCalculations,ui,state,data,bandBall,drawTable,chooseCentralTrack,applyAutomaticCalculations,valueTag,ballValueWindow,labelStackShift,bindValueLabelHover,originLabel,applyKruinSource,updateJunction};'),ctx);
+vm.createContext(ctx);for(const f of ['config-v194.js','kruinwaarden-generated-v194.js'])vm.runInContext(fs.readFileSync(__dirname+'/'+f,'utf8'),ctx);
+vm.runInContext(fs.readFileSync(__dirname+'/app-v194.js','utf8').replace('  function render(){','  function render(){return;').replace('  init();','  window.test={normalize,applyAllAutomaticCalculations,ui,state,data,bandBall,drawTable,chooseCentralTrack,applyAutomaticCalculations,valueTag,ballValueWindow,labelStackShift,bindValueLabelHover,originLabel,applyKruinSource,updateJunction};'),ctx);
 const t=ctx.window.test;t.normalize();t.applyAllAutomaticCalculations();t.ui.trackFamily='parallel';t.ui.playRange='alles';
 for(const table of ['klein','groot'])for(const direction of ['west','oost'])for(const key of ['VIJF','VIJF+1','VIJF+2','VIJF+3','VIJF-1','VIJF-2']){
  t.ui.direction=direction;t.chooseCentralTrack(key);t.applyAutomaticCalculations(table);const r=t.data(table);
