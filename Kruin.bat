@@ -1,4 +1,6 @@
 @echo off
+set "PYTHONUTF8=1"
+set "PYTHONIOENCODING=utf-8"
 setlocal
 cd /d "%~dp0"
 set "THREEB_KRUIN_PAGE=%~dp0Kruin.html"

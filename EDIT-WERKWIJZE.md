@@ -1,4 +1,4 @@
-# Actuele werkwijze v194
+# Actuele werkwijze v205
 
 Voor Kruinbeheer: start Bekijk_Kruinconfig in de private map. Het SQLite-beheerblad
 is de ingang; Kruinconfig.sqlite3 bevat de losse waarden en menu-indeling.

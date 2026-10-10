@@ -1,6 +1,6 @@
-# 3B · projectgeheugen v194
+# 3B · projectgeheugen v205
 
-Vastgelegd: 8 oktober 2026. App v194; cursus 1.2. Deze actuele afspraken zijn
+Vastgelegd: 8 oktober 2026. App v205; cursus 1.2. Deze actuele afspraken zijn
 leidend boven oudere voorstellen. Geen nieuwe Neus–Been-metingen zijn aangeleverd.
 
 ## Actuele voorrangsregel — P0 leidt automatische lijnen
@@ -123,7 +123,7 @@ verschillende stootwijzen als meetreeksen; exacte passage van bal 2.
 Een eindpunt/doelband per stoot en automatische passagecontrole zijn voorstellen,
 geen al geïmplementeerde functies. Echte browsertest van deze release staat open.
 
-## v194 — versienummer én versie-inhoud verplicht gelijk
+## v205 — versienummer én versie-inhoud verplicht gelijk
 
 De actuele release komt uit de openbare config. De regressietest vergelijkt
 dit nummer met de bestandsnamen, interne config- en Kruinwaardenrelease,
@@ -135,7 +135,7 @@ naar een andere release stopt de publicatie; historische vermeldingen in de
 documentatie en oude basisarchieven blijven toegestaan.
 
 
-# 3B v194 — menuherstel en volledige NEGEN
+# 3B v205 — menuherstel en volledige NEGEN
 
 Het undo-menu staat bij starten dicht. Open ☰ voor Undo, Opnieuw, Verwerp
 experiment en Sessiestart. Sluit met ×, Escape of een tik op de tafel.

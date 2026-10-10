@@ -1,3 +1,32 @@
+# v205 — handmatige waarden en overrides op de tafel
+
+SQLite-beheer toont alleen vastgelegde Kruinwaarden, metingen en eigen edits.
+Berekende uitkomsten, parallelverschuivingen en ongeijkte proefwaarden worden
+niet in het waardenoverzicht getoond. Een handmatige nul blijft zichtbaar.
+Het overzicht is alleen-lezen. Instellingen (zoals uitloop en Neuscorrectie)
+blijven in het beheerblad te bewaren; dit wijzigt geen lijnpunten.
+
+Tik op een lijn of op de lijnnaam op de tafel. Vertrek V en aankomst A kunnen
+worden overschreven, inclusief berekende punten. Bij de Neus blijft V het
+acquit; A en afstootlengte zijn bewerkbaar. Na een sleepactie opent hetzelfde
+editvenster. In lijn-voor-lijn zijn aparte V/A-sleepgrepen beschikbaar.
+
+Auto V / Auto A verwijdert die override en herstelt het oorspronkelijke punt
+of de automatische berekening. De oorspronkelijke puntgegevens worden bij
+een override bewaard, ook bij SQLite-opslag en opnieuw openen.
+Bewaar in database schrijft vanuit de private tafel naar SQLite. Op de
+openbare tafel is dit Bewaar lokaal. Sluiten sluit de voorvertoning; Undo
+herstelt een eerdere werkstand. Na Auto ook bewaren om SQLite bij te werken.
+
+Kruin-beheer: pak de volledige ZIP uit, start Bekijk_Kruinconfig.bat in de
+private map en kies Bewerk op de tafel. Herlaad het beheerblad na tafelopslag.
+Alle historische bases blijven ongewijzigd. Geen externe publicatie uitgevoerd.
+De geïntegreerde browserinstaller uit v197 blijft aanwezig.
+
+---
+
+Voor v205: zie [WIJZIGINGEN-v205.md](WIJZIGINGEN-v205.md). Publiceer_3B.bat bereidt Node/Playwright/Chromium automatisch voor.
+
 ## De tafel: uitleg en aanleg
 
 **Uitleg** laat je begrijpen wat je ziet, meet en berekent.
@@ -69,7 +98,7 @@ verschillende plaatsen. De getekende ijkjes zijn schematisch, geen nieuwe
 bandnummering. In deze oefening blijft Romp V een vaste referentie. Een
 werkelijk afwijkend vertrek is een afzonderlijke waarneming.
 
-## Mijn tafel: downloaden en terugladen (nieuw in v194)
+## Mijn tafel: downloaden en terugladen (nieuw in v205)
 
 Open Menu → Instellingen → Mijn tafel.
 
@@ -85,7 +114,7 @@ Bij terugladen hoef je dus geen oude basis handmatig op te zoeken: het bestand
 herstelt zijn eigen basis, decimalen en tafelnaam, ook na een nieuwe Kruinpublicatie.
 
 De bestandsnaam bevat de tafelnaam, exacte Kruinbasis en appversie, bijvoorbeeld
-`3B-mijn-tafel--kruin-v194-<inhoudscode>--app-v194.xlsx`.
+`3B-mijn-tafel--kruin-v205-<inhoudscode>--app-v205.xlsx`.
 Het basis-ID in het bestand is leidend wanneer je het bestand zelf hernoemt.
 
 **Een andere tafel of nieuw laken:** selecteer een andere Kruinbasis en klik
@@ -106,7 +135,7 @@ Download daarnaast een tafelbestand om je wijzigingen mee te nemen naar een
 andere browser of computer. In de private Kruineditor schrijft Bewaar nog steeds
 naar Kruinconfig.sqlite3.
 
-Geldig voor versie 194.
+Geldig voor versie 205.
 
 Open **U-config** om de persoonlijke tafelweergave te wijzigen. V/A-labels
 kunnen klein, alleen bij de actieve bal of uit worden getoond. De bal en de
@@ -348,7 +377,7 @@ Tik op een lijn om haar waarden in het gekleurde lijnvenster te bekijken of te
 wijzigen. Neus is de uitzondering: de Neus zelf ligt vast; alleen de
 afstootlengte kan worden aangepast.
 
-3B versie 194 · menu, posities en Nek
+3B versie 205 · menu, posities en Nek
 - Instellingen opent met muis en touch en blijft boven de bandbediening.
 - Focus heet Start; vertreklabels gebruiken P/P+1/P−2 of W/W+2.
 - Positiekleuren: Karkas oker, Kruin groen, Berekend rood, Bewerkt blauw.
@@ -360,7 +389,7 @@ Versie 171: Lijn voor lijn toont automatisch de config van de gekozen lijn. Min/
 
 Versie 171: Parallel-bounds vanuit basisspoor; VIJF+2/+3 beschikbaar. Neus en bandbal hersteld bij oude schermstanden. Klein VIJF en alle Parallel-standen dezelfde Neuslengte: 83 cm. Veranderen van de lengte werkt door in de Parallel-standen. Klik in Lijn voor lijn op Spoor of Lijn voor config. Hele balk versleepbaar. Selectiemenu met ×. Start activeert gekozen overzicht.
 
-## v194 — spoorreeksen en waarden
+## v205 — spoorreeksen en waarden
 
 Het spoormenu bevat NUL tot ACHT met hun geldige Parallelstanden. VIJF loopt tot +3, VIER tot +4, DRIE tot +5 enzovoort. Aankomsten volgt de actuele lijnwaarden op alle banden, ook voor de negatieve standen.
 
@@ -402,7 +431,7 @@ volledige gebruikersbestand behouden. Een gewone edit krijgt de blauwe
 herkomst ge-edit, ook wanneer de vorige waarde gemeten was.
 
 
-## Begripsuitleg in de cursus (v194)
+## Begripsuitleg in de cursus (v205)
 
 Onderstreepte termen, zoals Neus, Stiplijn, Karkas, Kop, Nek, Romp, S, V en A,
 openen korte uitleg. Met Begrippen kun je deze uitleg ook rechtstreeks openen.
@@ -440,3 +469,67 @@ voor alle bewerkbare V- en A-punten, op beide tafels en in beide richtingen.
 private beheer legt alleen **Bewaar in database** de getoonde waarden vast in
 SQLite. Undo na zo'n databasebewaring herstelt eerst de werkstand; gebruik daarna
 opnieuw **Bewaar in database** om ook SQLite op die herstelde stand te zetten.
+
+
+# 3B v205 — parallelkeuze, 6–7 banden en basisweergave
+
+Tik op de spoornaam (bijvoorbeeld VIJF) of open ☰. Het menu bevat een directe
+keuze **Parallelstand · ± kiezen**: VIJF−2, VIJF−1, VIJF, VIJF+1, VIJF+2 en
+VIJF+3. Een keuze schakelt naar Parallel. De bestaande Waaierkeuze blijft beschikbaar.
+
+**Patroon** staat rechtstreeks in het menu: **LKL**, **6–7 banden** en **Vrij spel**.
+6 en 7 vormen één gezamenlijk patroon. Het eigen basisspoor heet intern ZESZEVEN,
+met karkas **Neus + Been**. De zeven getekende delen lopen van Neus tot en met Hiel,
+gevolgd door een gereflecteerde uitloop van standaard **10 cm**. Wijzig de uitloop
+in het tafelmenu (lokale voorkeur) of in SQLite-beheer (gedeelde patroonconfiguratie).
+De lengte is centimeters op de tafel, onafhankelijk van schermmaat en spiegeling.
+
+Het nieuwe patroon gebruikt **eigen proefankers**, alle met herkomst **Benadering**:
+Neus A50 West, Kop A15 Noord, Nek A25 Oost, Romp A35 Zuid, Kruis A55 West,
+Been A10 Oost. Vertrekpunten worden verbonden via dezelfde bandbal; Hiel volgt
+uit geometrische reflectie van Been. Deze proefankers zijn **geen metingen** en geen
+voorspelling van de baan bij een bepaalde snelheid. Vervang ze door eigen metingen.
+Er worden geen oude LKL-metingen of vaste 45°-Kruisregels op dit patroon toegepast.
+
+SQLite heeft een eigen tabel **patronen** met LKL / sixSeven / vrij en uitloop_cm.
+Het beheerblad heeft dezelfde drie patroonkeuzes. Het nieuwe spoor is onafhankelijk
+van LKL en beschikbaar voor Klein/Groot en iedere tafelbasis. Een bestaande database
+wordt bij openen uitgebreid; opnieuw openen verandert de gegevens niet. Eigen edits
+worden behouden. Vrij spel heeft bewerkbare, aanvankelijk onbekende TIEN/ELF/TWAALF.
+
+**Toon basis (VIJF etc.)** staat standaard **uit** op de oefentafel.
+**Toon basis in cursus** staat standaard **aan**. Beide voorkeuren worden afzonderlijk
+bewaard; de cursus heeft daarnaast een eigen Toon basis-schakelaar.
+
+Het undo-menu blijft bij starten gesloten. Bestaande NEGEN/HALF NEGEN-bediening en
+LKL-patroonlengte blijven aanwezig: vijf bandcontacten plus half Been; na contra
+één extra volledige lijn/band en kwart van de volgende lijn. VIER eindigt op kwart Been.
+
+Een browsercontrole ontdekte dat een verborgen cursusfooter in landscape tikken kon
+onderscheppen. Verborgen cursusbediening wordt nu ook daadwerkelijk niet getoond.
+Karkas voor 6–7 tekent daadwerkelijk Neus én Been, zonder de oude CSS-beperking tot Romp.
+
+Tests starten met **Installeer_Browsertests_3B** (Windows/Mac; Node.js en Python nodig).
+Dit installeert Playwright/Chromium en voert de controles uit. Een ontbrekende browser
+is een fout; browsercontroles worden niet stilzwijgend overgeslagen.
+
+
+## Bandballen · V/A
+
+Kies Menu → Weergave → Bandballen · V/A. Deze weergave toont bandballen met
+korte V/A-lijnen, zonder de volledige banen of uitlooplijnen. Iedere korte lijn
+begint op de stiplijn, loopt door het balmiddelpunt en gaat standaard 5 cm verder.
+De V/A-waarde staat leesbaar op het stuk tussen stiplijn en bal. De speelbal
+in het veld wordt in deze weergave weggelaten. Patroonlengte en herkomst blijven
+leidend: geen aankomstbal voorbij het einde van het patroon.
+
+Tik op een korte lijn of bandbal om de lijneditor te openen. Onder Bandballen
+kun je de verlenging voorbij het balmiddelpunt voor V en A apart instellen
+(0–30 cm). Dit wordt direct lokaal bewaard per tafel, spoor/stand en lijn.
+Bij Neus is alleen A een bandpunt. De configuratie wijzigt geen spoorwaarden.
+De bandballen blijven sleepbaar; na slepen opent de normale override-editor.
+Kies Heel spoor om de normale banen weer te zien.
+
+De extra rij Sporen / HALF NEGEN / NEGEN is verwijderd. Beide sporen blijven
+beschikbaar in de gewone spoorkeuze. Het keuzemenu ligt boven de bandbediening;
+de knop Parallel (P) kan geen menuveld meer bedekken.

@@ -45,3 +45,10 @@ config-input/*.json
 /3B-*--kruin-*--app-v*.ods
 /3B-*--kruin-*--app-v*.csv
 /3B-*--kruin-*--app-v*.sqlite3
+
+# Lokale testinstallatie
+/node_modules/
+/test-results/
+/playwright-report/
+
+node_modules/

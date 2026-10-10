@@ -1,6 +1,2 @@
-3B — versie 194
-Menuherstel: Undo start binnen het sluitbare menu; ×, Escape en tafeltik sluiten.
-NEGEN en HALF NEGEN hebben de gewone LKL-keten tot Hiel, met gedeelde bandballen.
-Nieuwe NEGEN-beginwaarden zijn als berekende benadering gemarkeerd.
-Snelheid gewone LKL: 5 banden + uitloop tot midden lijn 6.
-LKL-zesbander: apart voorstel Neus–Been, 6 (of 7) banden; zie WIJZIGINGEN-v194.md.
+3B — versie 205
+Bandballen · V/A, aparte verlenging per lijn/kant, vereenvoudigd menu en menulaag boven bandbediening.
