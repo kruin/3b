@@ -506,7 +506,7 @@ body.table-only .band-corner{width:var(--screen-band,36px);height:var(--screen-b
 body.table-only .band-reset,body.table-only .band-save{font-size:8px}
 body.table-only .band-save{background:#176f4f}
 
-/* v205: de bovenste bedieningsrij kan horizontaal schuiven op smalle schermen. */
+/* v206: de bovenste bedieningsrij kan horizontaal schuiven op smalle schermen. */
 body.table-only .central-track-controls {
   overflow-x: auto;
   overflow-y: auto;
@@ -601,7 +601,7 @@ body.table-only .band-controls{z-index:2200}
 .course-glossary::backdrop{background:rgb(0 0 0 / .45)}
 .course-glossary header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}.course-glossary h2{font-size:22px;margin:0}.course-glossary p{line-height:1.55}.course-glossary header button{min-width:44px;min-height:44px;font-size:22px}.course-glossary nav{display:flex;flex-wrap:wrap;gap:6px}.course-glossary nav button{padding:8px;min-height:40px}.course-glossary nav button[aria-pressed="true"]{background:#176f4f;color:#fff}.course-origin-legend .framework{color:#a36b00}
 
-/* v205: herkomst bij stiplijnen, rustige aanraakvlakken en zichtbare waarden. */
+/* v206: herkomst bij stiplijnen, rustige aanraakvlakken en zichtbare waarden. */
 .table-svg .junction-click-zone{fill:transparent;stroke:none}
 .table-svg .drag-halo{opacity:0}
 .table-svg .junction-hit:hover,.table-svg .junction-hit:focus,.table-svg .junction-hit.selected,.table-svg .endpoint-hit:hover,.table-svg .endpoint-hit:focus,.table-svg .cue-hit:hover,.table-svg .cue-hit:focus{fill:transparent;stroke:#ffcf63;stroke-width:2;stroke-dasharray:4 3;outline:none}
@@ -627,14 +627,14 @@ body.table-menu-open .experiment-toolbar,
 body.bar-tab-open .experiment-toolbar,
 body:has(.user-settings:not([hidden])) .experiment-toolbar{display:none}
 
-/* v205: herstelbediening hoort bij het sluitbare menu of de lijneditor. */
+/* v206: herstelbediening hoort bij het sluitbare menu of de lijneditor. */
 .central-track-controls > .experiment-toolbar{position:static;display:block;z-index:auto;left:auto;bottom:auto;max-width:none;width:100%;margin:6px 0 0;box-shadow:none}
 body.table-menu-open .central-track-controls > .experiment-toolbar{display:block}
 
-/* v205: hoekknoppen blijven aanraakbaar wanneer de balk op een smalle tafel overlapt. */
+/* v206: hoekknoppen blijven aanraakbaar wanneer de balk op een smalle tafel overlapt. */
 body.table-only .band-corner{z-index:2002}
 
-/* v205: direct bereikbare keuzes en basisinstelling. */
+/* v206: direct bereikbare keuzes en basisinstelling. */
 .basis-display-settings{display:grid;gap:8px;padding:8px 0}.basis-display-settings label{display:flex;align-items:center;gap:8px}.basis-display-settings input[type=number]{width:70px}.basis-display-settings input[type=checkbox]{width:20px;height:20px}.pattern-runout{pointer-events:none}
 
 /* Verborgen cursusbediening mag in landscape geen touch onderscheppen. */

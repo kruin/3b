@@ -1,9 +1,9 @@
 {
   "name": "drieband-browsertests",
-  "version": "0.205.0",
+  "version": "0.206.0",
   "private": true,
   "scripts": {
-    "test": "node controleer-alles-v205.js"
+    "test": "node controleer-alles-v206.js"
   },
   "devDependencies": {
     "playwright": "1.62.1"
