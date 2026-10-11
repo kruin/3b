@@ -678,3 +678,9 @@ body.table-only #bandDock #bandCore{min-width:0;grid-template-columns:1fr 1fr}
 body.table-only .band-controls>.band-side,body.table-only .band-controls>.band-corner{touch-action:none}
 
 body.table-only #bandDock button{touch-action:none}
+
+/* v208-r2: Patroon, Spoor en Lijn. */
+body.table-only #bandDock{width:min(330px,94vw)}
+body.table-only #bandDock #bandCore{grid-template-columns:1fr 1fr 1fr}
+body.table-only #bandDock.dock-central #bandMenu{margin-right:auto}
+body.table-only #bandPatternSelect{width:100%;min-width:0;min-height:30px;padding:0 2px;font-size:12px;background:#8b5b32;color:#fff8e8;border:0}

@@ -1,1 +1,1 @@
-v208-r1 — Pages-diagnose en hercontrole; app ongewijzigd.
+v208-r2 — Patroon / Spoor / Lijn; volledige spoornavigatie.
