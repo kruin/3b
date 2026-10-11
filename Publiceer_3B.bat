@@ -10,11 +10,16 @@ set "GIT_RECOVERY="
 echo ============================================================
 echo 3B - PUBLICEREN EN CONTROLEREN
 echo ============================================================
+if /i "%~1"=="--pages-only" goto :pagesonly
 where git >nul 2>nul || (echo FOUT: Git ontbreekt.& goto :fout)
 for %%F in (package.json package-lock.json Installeer_Browsertests_3B.bat Voorbereid_Node_3B.ps1 browsertest-installatie.js index.html doc\index.html styles.css cursuscontrole-v208.js tafelbestanden-v208.js tafelbestandcontrole-v208.js tafelbestand-ui-controle-v208.js basis-catalogus-v208.js beheer-basisarchief-v208.js vendor\xlsx.full.min.js vendor\sql-asm.js app-v208.js config-v208.js kruinwaarden-generated-v208.js regressiecontrole-v208.js ui-regressie-v208.js zichtbare-negenbediening-v208.js Regressiecontrole_3B.bat VERSIE.txt START-HIER.md HANDLEIDING-GEBRUIKER.md EDIT-WERKWIJZE.md .gitignore Kruin.html Kruin.bat Kruin.command SESSIES-INSTALLEREN.md supabase-session-schema.sql BETALEN-ACTIVEREN.md Activeer_Betalen.bat Activeer_Betalen.ps1 supabase\config.toml supabase\functions\create-mollie-payment\index.ts uitleg-lokaal\BEWAAR-UITLEG-HIER.txt) do if not exist "%%F" (echo FOUT: %%F ontbreekt.& goto :fout)
 call Installeer_Browsertests_3B.bat --install-only
 if errorlevel 1 goto :fout
-node controleer-alles-v208.js || goto :fout
+if /i "%~1"=="--all-tests" (
+  node controleer-alles-v208.js || goto :fout
+) else (
+  echo App-tests worden niet herhaald. Gebruik --all-tests voor de volledige controle.
+)
 findstr /C:"Geldig voor versie 208" HANDLEIDING-GEBRUIKER.md >nul || (echo FOUT: gebruikershandleiding hoort niet bij versie %RELEASE%.& goto :fout)
 findstr /C:"app-v208.js" index.html >nul || (echo FOUT: index.html laadt app-v208.js niet.& goto :fout)
 findstr /C:"config-v208.js" index.html >nul || (echo FOUT: index.html laadt config-v208.js niet.& goto :fout)
@@ -62,16 +67,18 @@ git push -u origin main || goto :gitfout
 for /f "delims=" %%C in ('git rev-parse HEAD') do set "LOCAL=%%C"
 for /f "tokens=1" %%C in ('git ls-remote origin refs/heads/main') do set "REMOTE_COMMIT=%%C"
 if /i not "!LOCAL!"=="!REMOTE_COMMIT!" (echo FOUT: lokale en remote commit verschillen.& goto :fout)
-echo GitHub Pages wordt maximaal tien minuten gecontroleerd...
-set /a TRY=0
-:poll
-set /a TRY+=1
-echo Controle !TRY!/60
-powershell -NoProfile -Command "$ProgressPreference='SilentlyContinue'; try {$v=(Invoke-WebRequest -UseBasicParsing -Uri '%PAGES%/VERSIE.txt?c=!LOCAL!^&n=!TRY!' -Headers @{'Cache-Control'='no-cache'}).Content; $h=(Invoke-WebRequest -UseBasicParsing -Uri '%PAGES%/?c=!LOCAL!^&n=!TRY!' -Headers @{'Cache-Control'='no-cache'}).Content; $k=(Invoke-WebRequest -UseBasicParsing -Uri '%PAGES%/kruinwaarden-generated-v208.js?c=!LOCAL!^&n=!TRY!' -Headers @{'Cache-Control'='no-cache'}).Content; $d=(Invoke-WebRequest -UseBasicParsing -Uri '%PAGES%/doc/?c=!LOCAL!^&n=!TRY!' -Headers @{'Cache-Control'='no-cache'}).Content; if($v -match 'versie %RELEASE%' -and $h.Contains('app-v208.js') -and $h.Contains('config-v208.js') -and $h.Contains('kruinwaarden-generated-v208.js') -and $h.Contains('styles.css?v=208') -and $k.Contains('THREEB_KRUIN_VALUES') -and $d.Contains('3B-documentatie')){exit 0};exit 1}catch{exit 1}"
-if not errorlevel 1 goto :klaar
-if !TRY! GEQ 60 (echo PUBLICATIE NIET GESLAAGD: Git is bijgewerkt, Pages toont versie %RELEASE% nog niet.& goto :fout)
-timeout /t 10 /nobreak >nul
-goto :poll
+node pages-controle-v208.js --base-url "%PAGES%/" || goto :fout
+goto :klaar
+:pagesonly
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0Voorbereid_Node_3B.ps1" -PathFile "%TEMP%\3B-pages-node.txt"
+if errorlevel 1 goto :fout
+set /p "DRIEBAND_NODE_DIR="<"%TEMP%\3B-pages-node.txt"
+del "%TEMP%\3B-pages-node.txt" >nul 2>nul
+set "PATH=!DRIEBAND_NODE_DIR!;%PATH%"
+node pages-controle-v208.js --base-url "%PAGES%/"
+if errorlevel 1 goto :fout
+pause
+exit /b 0
 :klaar
 echo KLAAR: commit !LOCAL! staat op GitHub en GitHub Pages toont versie %RELEASE%.
 echo %PAGES%/
