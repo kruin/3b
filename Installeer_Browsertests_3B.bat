@@ -12,7 +12,7 @@ set "PATH=%DRIEBAND_NODE_DIR%;%PATH%"
 node browsertest-installatie.js
 if errorlevel 1 goto :fout
 if /i "%~1"=="--install-only" goto :klaar
-node controleer-alles-v206.js
+node controleer-alles-v208.js
 if errorlevel 1 goto :fout
 pause
 :klaar

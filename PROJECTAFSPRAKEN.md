@@ -579,7 +579,7 @@ Voor iedere release:
 - Voor parallelle Kop en Nek is nog geen regel vastgelegd; deze waarden blijven leeg.
 # Tijdelijke LKL-bronketen
 
-- Vanaf v206 worden waarde-aanpassingen rechtstreeks verwerkt in `Kruinconfig.sqlite3` van de private beheerrepository. `Bekijk_Kruinconfig.bat` opent het beheerblad en genereert de openbare tekenconfig voor controle en publicatie.
+- Vanaf v208 worden waarde-aanpassingen rechtstreeks verwerkt in `Kruinconfig.sqlite3` van de private beheerrepository. `Bekijk_Kruinconfig.bat` opent het beheerblad en genereert de openbare tekenconfig voor controle en publicatie.
 - De openbare release-ZIP bevat nooit de private beheer-JSON.
 - Onboardingregel: een nieuwe gebruiker krijgt eerst uitsluitend de cursus; tafelknoppen en duimpje blijven verborgen.
 - Een terugkerende gebruiker krijgt eerst één Start-aanwijzer op de tafel; pas daarna verschijnen de gewone bedieningselementen.
@@ -598,7 +598,7 @@ Voor iedere release:
 - De gewone gebruiker ziet en beheert geen beheer-JSON en gebruikt alleen de gepubliceerde app.
 
 
-### 2026-10-02 — begripsuitleg v206
+### 2026-10-02 — begripsuitleg v208
 
 - Korte uitleg staat achter onderstreepte begrippen in de cursus en de knop Begrippen.
 - De actuele cursus levert de begrippen, ook als de gebruiker een oudere Kruinbasis kiest.
@@ -607,7 +607,7 @@ Voor iedere release:
 - Beide tafelfuncties en alle herkomstlabels uit v177 blijven onderdeel van de cursus.
 
 
-### 2026-10-02 — zelfstandig SQLite-beheer v206
+### 2026-10-02 — zelfstandig SQLite-beheer v208
 
 - SQLite bevat alle private basiswaarden en menugegevens. Geen spreadsheet in de actieve werkwijze.
 - Beheerblad en tafel schrijven dezelfde losse lijnpunten.
@@ -616,7 +616,7 @@ Voor iedere release:
 - Private controletafel herleest de actuele bron; de openbare gebruiker behoudt eigen aanpassingen.
 
 
-# 3B v206 — menuherstel en volledige NEGEN
+# 3B v208 — menuherstel en volledige NEGEN
 
 Het undo-menu staat bij starten dicht. Open ☰ voor Undo, Opnieuw, Verwerp
 experiment en Sessiestart. Sluit met ×, Escape of een tik op de tafel.
@@ -667,7 +667,7 @@ gecontroleerd voor klein/groot en west/oost. De gewone regressietests
 blijven aanwezig. Een echte browserlayouttest kon in deze werkomgeving
 niet worden uitgevoerd doordat Chromium niet beschikbaar is.
 
-## v206 — 9 oktober 2026: patroonlengte en browsercontrole
+## v208 — 9 oktober 2026: patroonlengte en browsercontrole
 
 De tafel tekent het gedefinieerde patroon: LKL vijf bandcontacten en half Been.
 Na de eerste contra binnen dit traject: nog één volledige lijn en bandcontact,
@@ -683,4 +683,4 @@ van de onvolledige bron. Het testanker wordt niet in het pakket opgeslagen.
 
 Playwright en Chromium zijn geïnstalleerd. Echte browsertests en mobiele
 touchinvoer zijn uitgevoerd; de actuele resultaten staan in
-CONTROLERESULTAAT-v206.txt. Geen fysieke telefoon getest.
+CONTROLERESULTAAT-v208.txt. Geen fysieke telefoon getest.

@@ -1,4 +1,4 @@
-3B LIJNCONFIGURATOR - VERSIE 206
+3B LIJNCONFIGURATOR - VERSIE 208
 ================================
 
 Dit is de openbare appmap. Gebruik geen bestanden uit v139 tot en met v142 in
@@ -16,8 +16,8 @@ PUBLICEREN
 
 PRIVATE KRUINWAARDEN
 - Beheer Kruinwaarden via Bekijk_Kruinconfig in de private map; SQLite is de bron.
-- Gebruik de naastliggende map 3B-private-Kruinconfig-v206.
-- Bekijk_Kruinconfig genereert vandaar kruinwaarden-generated-v206.js.
+- Gebruik de naastliggende map 3B-private-Kruinconfig-v208.
+- Bekijk_Kruinconfig genereert vandaar kruinwaarden-generated-v208.js.
 
 BETALEN
 - Lees BETALEN-ACTIVEREN.md.

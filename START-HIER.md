@@ -1,6 +1,6 @@
-Voor v206: zie [WIJZIGINGEN-v206.md](WIJZIGINGEN-v206.md). Publiceer_3B.bat bereidt Node/Playwright/Chromium automatisch voor.
+Voor v208: zie [WIJZIGINGEN-v208.md](WIJZIGINGEN-v208.md). Publiceer_3B.bat bereidt Node/Playwright/Chromium automatisch voor.
 
-# Actuele werkwijze v206
+# Actuele werkwijze v208
 
 Voor Kruinbeheer: start Bekijk_Kruinconfig in de private map. Het SQLite-beheerblad
 is de ingang; Kruinconfig.sqlite3 bevat de losse waarden en menu-indeling.

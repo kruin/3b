@@ -374,7 +374,7 @@ body.fixed-track .junction-hit[data-junction-index="0"]{pointer-events:none}
 
 /* Eén menuknop. De Kruinconfig kiest hoek (standaard) of centraal. */
 #tableMenuToggle{display:none!important}
-body.menu-button-central #bandMenu{left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important}
+
 
 /* v161: herstel van de vertrouwde Spoor/Lijn-balk. Karkas staat alleen in
    het geopende reeksmenu; alleen het greepje verplaatst deze balk. */
@@ -506,7 +506,7 @@ body.table-only .band-corner{width:var(--screen-band,36px);height:var(--screen-b
 body.table-only .band-reset,body.table-only .band-save{font-size:8px}
 body.table-only .band-save{background:#176f4f}
 
-/* v206: de bovenste bedieningsrij kan horizontaal schuiven op smalle schermen. */
+/* v208: de bovenste bedieningsrij kan horizontaal schuiven op smalle schermen. */
 body.table-only .central-track-controls {
   overflow-x: auto;
   overflow-y: auto;
@@ -601,7 +601,7 @@ body.table-only .band-controls{z-index:2200}
 .course-glossary::backdrop{background:rgb(0 0 0 / .45)}
 .course-glossary header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}.course-glossary h2{font-size:22px;margin:0}.course-glossary p{line-height:1.55}.course-glossary header button{min-width:44px;min-height:44px;font-size:22px}.course-glossary nav{display:flex;flex-wrap:wrap;gap:6px}.course-glossary nav button{padding:8px;min-height:40px}.course-glossary nav button[aria-pressed="true"]{background:#176f4f;color:#fff}.course-origin-legend .framework{color:#a36b00}
 
-/* v206: herkomst bij stiplijnen, rustige aanraakvlakken en zichtbare waarden. */
+/* v208: herkomst bij stiplijnen, rustige aanraakvlakken en zichtbare waarden. */
 .table-svg .junction-click-zone{fill:transparent;stroke:none}
 .table-svg .drag-halo{opacity:0}
 .table-svg .junction-hit:hover,.table-svg .junction-hit:focus,.table-svg .junction-hit.selected,.table-svg .endpoint-hit:hover,.table-svg .endpoint-hit:focus,.table-svg .cue-hit:hover,.table-svg .cue-hit:focus{fill:transparent;stroke:#ffcf63;stroke-width:2;stroke-dasharray:4 3;outline:none}
@@ -627,14 +627,14 @@ body.table-menu-open .experiment-toolbar,
 body.bar-tab-open .experiment-toolbar,
 body:has(.user-settings:not([hidden])) .experiment-toolbar{display:none}
 
-/* v206: herstelbediening hoort bij het sluitbare menu of de lijneditor. */
+/* v208: herstelbediening hoort bij het sluitbare menu of de lijneditor. */
 .central-track-controls > .experiment-toolbar{position:static;display:block;z-index:auto;left:auto;bottom:auto;max-width:none;width:100%;margin:6px 0 0;box-shadow:none}
 body.table-menu-open .central-track-controls > .experiment-toolbar{display:block}
 
-/* v206: hoekknoppen blijven aanraakbaar wanneer de balk op een smalle tafel overlapt. */
+/* v208: hoekknoppen blijven aanraakbaar wanneer de balk op een smalle tafel overlapt. */
 body.table-only .band-corner{z-index:2002}
 
-/* v206: direct bereikbare keuzes en basisinstelling. */
+/* v208: direct bereikbare keuzes en basisinstelling. */
 .basis-display-settings{display:grid;gap:8px;padding:8px 0}.basis-display-settings label{display:flex;align-items:center;gap:8px}.basis-display-settings input[type=number]{width:70px}.basis-display-settings input[type=checkbox]{width:20px;height:20px}.pattern-runout{pointer-events:none}
 
 /* Verborgen cursusbediening mag in landscape geen touch onderscheppen. */
@@ -658,3 +658,23 @@ body.band-balls-mode #svgMount .table-origin-legend{top:18%}
 /* Het keuzemenu ligt boven de later toegevoegde bandbediening. */
 body.table-only.table-menu-open .onscreen-control-menuPanel{z-index:2400}
 body.table-only.band-balls-mode #bandCore{min-width:0;width:min(70vw,330px)}
+
+/* Desktop: mobiele voorbeeldweergave en terugknop bereikbaar houden. */
+@media(min-width:761px){
+ body.table-only .view-actions{display:flex!important;position:fixed;top:8px;right:8px;z-index:90}
+ body.table-only .view-actions>*:not(#mobilePreview){display:none}
+ body.table-only #mobilePreview{display:inline-flex}
+ body.table-only.mobile-preview .drawing{width:390px!important;max-width:100%;height:min(844px,100dvh)!important;margin:0 auto}
+}
+@media(min-width:761px){body.table-only .drawing-heading{z-index:2250}}
+
+/* Menu en Spoor/Lijn vormen één verschuifbare groep. */
+body.table-only #bandDock{position:fixed;width:min(200px,70vw);pointer-events:auto;z-index:1}
+body.table-only #bandDock #bandMenu{position:relative;display:block;left:auto!important;top:auto!important;transform:none!important;margin-left:auto;touch-action:none}
+body.table-only #bandDock #bandCore{position:relative;left:auto!important;top:auto!important;transform:none!important;width:100%;margin-top:4px;box-sizing:border-box}
+body.table-only #bandDock .band-drag-handle{touch-action:none}
+
+body.table-only #bandDock #bandCore{min-width:0;grid-template-columns:1fr 1fr}
+body.table-only .band-controls>.band-side,body.table-only .band-controls>.band-corner{touch-action:none}
+
+body.table-only #bandDock button{touch-action:none}

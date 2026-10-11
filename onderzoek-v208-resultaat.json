@@ -1,0 +1,839 @@
+[
+  {
+    "width": 1280,
+    "before": {
+      "ui": {
+        "language": "nl",
+        "tableMode": "groot",
+        "editTable": "groot",
+        "pattern": "VIJF",
+        "direction": "west",
+        "departure": "neus",
+        "correctionMode": "advies",
+        "valueStyle": "bij_lijntje",
+        "ballColor": "white",
+        "ballMarking": "spotted",
+        "showBasis": false,
+        "courseShowBasis": true,
+        "playRange": "lkl",
+        "trackFamily": "parallel",
+        "lineOneMode": "basis",
+        "parallelOffset": 0,
+        "parallelDisplay": "whole",
+        "parallelPartIndex": 0,
+        "tableNavMode": "track",
+        "fanLine": "HALFEEN",
+        "editorMode": "basis",
+        "addressForm": "jij",
+        "storageMode": "account",
+        "lineOpacity": 0.58,
+        "arrowMode": "request",
+        "arrowScale": 0.35,
+        "valueLabelMode": "on",
+        "valueLabelScale": 0.75,
+        "arrowRequested": false,
+        "seriesOverview": false,
+        "panelX": 0,
+        "panelY": 0,
+        "explanationIndex": 0,
+        "seriesFocus": "basis",
+        "courseSelfAssessment": null,
+        "lklExtraParts": [],
+        "explanationOpen": false
+      },
+      "geometry": [
+        [
+          "line",
+          "275.5603650517736",
+          "594.1264456896135",
+          "121.62273353977571",
+          "390.46982760231197",
+          null
+        ],
+        [
+          "line",
+          "119.79326940218664",
+          "377.71180036004944",
+          "223.54236981332508",
+          "104.06757439220908",
+          null
+        ],
+        [
+          "line",
+          "231.42334829492825",
+          "102.32387157742055",
+          "437.54609010293905",
+          "303.3612757721573",
+          null
+        ],
+        [
+          "line",
+          "438.95044589745163",
+          "314.76778832565753",
+          "166.33535881848445",
+          "756.5511595934668",
+          null
+        ],
+        [
+          "line",
+          "157.26270586809483",
+          "757.6107032413342",
+          "122.38929675866574",
+          "722.7372941319052",
+          null
+        ],
+        [
+          "line",
+          "121.21892757859521",
+          "711.3730889369738",
+          "275.96417101295407",
+          "475.2573594201687",
+          null
+        ]
+      ],
+      "series": 0
+    },
+    "after": {
+      "ui": {
+        "language": "nl",
+        "tableMode": "groot",
+        "editTable": "groot",
+        "pattern": "VIJF",
+        "direction": "west",
+        "departure": "neus",
+        "correctionMode": "advies",
+        "valueStyle": "bij_lijntje",
+        "ballColor": "white",
+        "ballMarking": "spotted",
+        "showBasis": false,
+        "courseShowBasis": true,
+        "playRange": "lkl",
+        "trackFamily": "parallel",
+        "lineOneMode": "basis",
+        "parallelOffset": 0,
+        "parallelDisplay": "whole",
+        "parallelPartIndex": 0,
+        "tableNavMode": "track",
+        "fanLine": "HALFEEN",
+        "editorMode": "basis",
+        "addressForm": "jij",
+        "storageMode": "account",
+        "lineOpacity": 0.58,
+        "arrowMode": "request",
+        "arrowScale": 0.35,
+        "valueLabelMode": "on",
+        "valueLabelScale": 0.75,
+        "arrowRequested": false,
+        "seriesOverview": false,
+        "panelX": 0,
+        "panelY": 0,
+        "explanationIndex": 0,
+        "seriesFocus": "basis",
+        "courseSelfAssessment": null,
+        "lklExtraParts": [],
+        "explanationOpen": false
+      },
+      "geometry": [
+        [
+          "line",
+          "275.5603650517736",
+          "594.1264456896135",
+          "121.62273353977571",
+          "390.46982760231197",
+          null
+        ],
+        [
+          "line",
+          "119.79326940218664",
+          "377.71180036004944",
+          "223.54236981332508",
+          "104.06757439220908",
+          null
+        ],
+        [
+          "line",
+          "231.42334829492825",
+          "102.32387157742055",
+          "437.54609010293905",
+          "303.3612757721573",
+          null
+        ],
+        [
+          "line",
+          "438.95044589745163",
+          "314.76778832565753",
+          "166.33535881848445",
+          "756.5511595934668",
+          null
+        ],
+        [
+          "line",
+          "157.26270586809483",
+          "757.6107032413342",
+          "122.38929675866574",
+          "722.7372941319052",
+          null
+        ],
+        [
+          "line",
+          "121.21892757859521",
+          "711.3730889369738",
+          "275.96417101295407",
+          "475.2573594201687",
+          null
+        ]
+      ],
+      "series": 0
+    },
+    "reload": {
+      "ui": {
+        "language": "nl",
+        "tableMode": "groot",
+        "editTable": "groot",
+        "pattern": "VIJF",
+        "direction": "west",
+        "departure": "neus",
+        "correctionMode": "advies",
+        "valueStyle": "bij_lijntje",
+        "ballColor": "white",
+        "ballMarking": "spotted",
+        "showBasis": false,
+        "courseShowBasis": true,
+        "playRange": "lkl",
+        "trackFamily": "parallel",
+        "lineOneMode": "basis",
+        "parallelOffset": 0,
+        "parallelDisplay": "whole",
+        "parallelPartIndex": 0,
+        "tableNavMode": "track",
+        "fanLine": "HALFEEN",
+        "editorMode": "basis",
+        "addressForm": "jij",
+        "storageMode": "account",
+        "lineOpacity": 0.58,
+        "arrowMode": "request",
+        "arrowScale": 0.35,
+        "valueLabelMode": "on",
+        "valueLabelScale": 0.75,
+        "arrowRequested": false,
+        "seriesOverview": false,
+        "panelX": 0,
+        "panelY": 0,
+        "explanationIndex": 0,
+        "seriesFocus": "basis",
+        "courseSelfAssessment": null,
+        "lklExtraParts": [],
+        "explanationOpen": false
+      },
+      "geometry": [
+        [
+          "line",
+          "275.5603650517736",
+          "594.1264456896135",
+          "121.62273353977571",
+          "390.46982760231197",
+          null
+        ],
+        [
+          "line",
+          "119.79326940218664",
+          "377.71180036004944",
+          "223.54236981332508",
+          "104.06757439220908",
+          null
+        ],
+        [
+          "line",
+          "231.42334829492825",
+          "102.32387157742055",
+          "437.54609010293905",
+          "303.3612757721573",
+          null
+        ],
+        [
+          "line",
+          "438.95044589745163",
+          "314.76778832565753",
+          "166.33535881848445",
+          "756.5511595934668",
+          null
+        ],
+        [
+          "line",
+          "157.26270586809483",
+          "757.6107032413342",
+          "122.38929675866574",
+          "722.7372941319052",
+          null
+        ],
+        [
+          "line",
+          "121.21892757859521",
+          "711.3730889369738",
+          "275.96417101295407",
+          "475.2573594201687",
+          null
+        ]
+      ],
+      "series": 0
+    }
+  },
+  {
+    "width": 390,
+    "before": {
+      "ui": {
+        "language": "nl",
+        "tableMode": "groot",
+        "editTable": "groot",
+        "pattern": "VIJF",
+        "direction": "west",
+        "departure": "neus",
+        "correctionMode": "advies",
+        "valueStyle": "bij_lijntje",
+        "ballColor": "white",
+        "ballMarking": "spotted",
+        "showBasis": false,
+        "courseShowBasis": true,
+        "playRange": "lkl",
+        "trackFamily": "parallel",
+        "lineOneMode": "basis",
+        "parallelOffset": 0,
+        "parallelDisplay": "whole",
+        "parallelPartIndex": 0,
+        "tableNavMode": "track",
+        "fanLine": "HALFEEN",
+        "editorMode": "basis",
+        "addressForm": "jij",
+        "storageMode": "account",
+        "lineOpacity": 0.58,
+        "arrowMode": "request",
+        "arrowScale": 0.35,
+        "valueLabelMode": "on",
+        "valueLabelScale": 0.75,
+        "arrowRequested": false,
+        "seriesOverview": false,
+        "panelX": 0,
+        "panelY": 0,
+        "explanationIndex": 0,
+        "seriesFocus": "basis",
+        "courseSelfAssessment": null,
+        "lklExtraParts": [],
+        "explanationOpen": false
+      },
+      "geometry": [
+        [
+          "line",
+          "275.5603650517736",
+          "594.1264456896135",
+          "121.62273353977571",
+          "390.46982760231197",
+          null
+        ],
+        [
+          "line",
+          "119.79326940218664",
+          "377.71180036004944",
+          "223.54236981332508",
+          "104.06757439220908",
+          null
+        ],
+        [
+          "line",
+          "231.42334829492825",
+          "102.32387157742055",
+          "437.54609010293905",
+          "303.3612757721573",
+          null
+        ],
+        [
+          "line",
+          "438.95044589745163",
+          "314.76778832565753",
+          "166.33535881848445",
+          "756.5511595934668",
+          null
+        ],
+        [
+          "line",
+          "157.26270586809483",
+          "757.6107032413342",
+          "122.38929675866574",
+          "722.7372941319052",
+          null
+        ],
+        [
+          "line",
+          "121.21892757859521",
+          "711.3730889369738",
+          "275.96417101295407",
+          "475.2573594201687",
+          null
+        ]
+      ],
+      "series": 0
+    },
+    "after": {
+      "ui": {
+        "language": "nl",
+        "tableMode": "groot",
+        "editTable": "groot",
+        "pattern": "VIJF",
+        "direction": "west",
+        "departure": "neus",
+        "correctionMode": "advies",
+        "valueStyle": "bij_lijntje",
+        "ballColor": "white",
+        "ballMarking": "spotted",
+        "showBasis": false,
+        "courseShowBasis": true,
+        "playRange": "lkl",
+        "trackFamily": "parallel",
+        "lineOneMode": "basis",
+        "parallelOffset": 0,
+        "parallelDisplay": "whole",
+        "parallelPartIndex": 0,
+        "tableNavMode": "track",
+        "fanLine": "HALFEEN",
+        "editorMode": "basis",
+        "addressForm": "jij",
+        "storageMode": "account",
+        "lineOpacity": 0.58,
+        "arrowMode": "request",
+        "arrowScale": 0.35,
+        "valueLabelMode": "on",
+        "valueLabelScale": 0.75,
+        "arrowRequested": false,
+        "seriesOverview": false,
+        "panelX": 0,
+        "panelY": 0,
+        "explanationIndex": 0,
+        "seriesFocus": "basis",
+        "courseSelfAssessment": null,
+        "lklExtraParts": [],
+        "explanationOpen": false
+      },
+      "geometry": [
+        [
+          "line",
+          "275.5603650517736",
+          "594.1264456896135",
+          "121.62273353977571",
+          "390.46982760231197",
+          null
+        ],
+        [
+          "line",
+          "119.79326940218664",
+          "377.71180036004944",
+          "223.54236981332508",
+          "104.06757439220908",
+          null
+        ],
+        [
+          "line",
+          "231.42334829492825",
+          "102.32387157742055",
+          "437.54609010293905",
+          "303.3612757721573",
+          null
+        ],
+        [
+          "line",
+          "438.95044589745163",
+          "314.76778832565753",
+          "166.33535881848445",
+          "756.5511595934668",
+          null
+        ],
+        [
+          "line",
+          "157.26270586809483",
+          "757.6107032413342",
+          "122.38929675866574",
+          "722.7372941319052",
+          null
+        ],
+        [
+          "line",
+          "121.21892757859521",
+          "711.3730889369738",
+          "275.96417101295407",
+          "475.2573594201687",
+          null
+        ]
+      ],
+      "series": 0
+    },
+    "reload": {
+      "ui": {
+        "language": "nl",
+        "tableMode": "groot",
+        "editTable": "groot",
+        "pattern": "VIJF",
+        "direction": "west",
+        "departure": "neus",
+        "correctionMode": "advies",
+        "valueStyle": "bij_lijntje",
+        "ballColor": "white",
+        "ballMarking": "spotted",
+        "showBasis": false,
+        "courseShowBasis": true,
+        "playRange": "lkl",
+        "trackFamily": "parallel",
+        "lineOneMode": "basis",
+        "parallelOffset": 0,
+        "parallelDisplay": "whole",
+        "parallelPartIndex": 0,
+        "tableNavMode": "track",
+        "fanLine": "HALFEEN",
+        "editorMode": "basis",
+        "addressForm": "jij",
+        "storageMode": "account",
+        "lineOpacity": 0.58,
+        "arrowMode": "request",
+        "arrowScale": 0.35,
+        "valueLabelMode": "on",
+        "valueLabelScale": 0.75,
+        "arrowRequested": false,
+        "seriesOverview": false,
+        "panelX": 0,
+        "panelY": 0,
+        "explanationIndex": 0,
+        "seriesFocus": "basis",
+        "courseSelfAssessment": null,
+        "lklExtraParts": [],
+        "explanationOpen": false
+      },
+      "geometry": [
+        [
+          "line",
+          "275.5603650517736",
+          "594.1264456896135",
+          "121.62273353977571",
+          "390.46982760231197",
+          null
+        ],
+        [
+          "line",
+          "119.79326940218664",
+          "377.71180036004944",
+          "223.54236981332508",
+          "104.06757439220908",
+          null
+        ],
+        [
+          "line",
+          "231.42334829492825",
+          "102.32387157742055",
+          "437.54609010293905",
+          "303.3612757721573",
+          null
+        ],
+        [
+          "line",
+          "438.95044589745163",
+          "314.76778832565753",
+          "166.33535881848445",
+          "756.5511595934668",
+          null
+        ],
+        [
+          "line",
+          "157.26270586809483",
+          "757.6107032413342",
+          "122.38929675866574",
+          "722.7372941319052",
+          null
+        ],
+        [
+          "line",
+          "121.21892757859521",
+          "711.3730889369738",
+          "275.96417101295407",
+          "475.2573594201687",
+          null
+        ]
+      ],
+      "series": 0
+    }
+  },
+  {
+    "width": 844,
+    "before": {
+      "ui": {
+        "language": "nl",
+        "tableMode": "groot",
+        "editTable": "groot",
+        "pattern": "VIJF",
+        "direction": "west",
+        "departure": "neus",
+        "correctionMode": "advies",
+        "valueStyle": "bij_lijntje",
+        "ballColor": "white",
+        "ballMarking": "spotted",
+        "showBasis": false,
+        "courseShowBasis": true,
+        "playRange": "lkl",
+        "trackFamily": "parallel",
+        "lineOneMode": "basis",
+        "parallelOffset": 0,
+        "parallelDisplay": "whole",
+        "parallelPartIndex": 0,
+        "tableNavMode": "track",
+        "fanLine": "HALFEEN",
+        "editorMode": "basis",
+        "addressForm": "jij",
+        "storageMode": "account",
+        "lineOpacity": 0.58,
+        "arrowMode": "request",
+        "arrowScale": 0.35,
+        "valueLabelMode": "on",
+        "valueLabelScale": 0.75,
+        "arrowRequested": false,
+        "seriesOverview": false,
+        "panelX": 0,
+        "panelY": 0,
+        "explanationIndex": 0,
+        "seriesFocus": "basis",
+        "courseSelfAssessment": null,
+        "lklExtraParts": [],
+        "explanationOpen": false
+      },
+      "geometry": [
+        [
+          "line",
+          "275.5603650517736",
+          "594.1264456896135",
+          "121.62273353977571",
+          "390.46982760231197",
+          null
+        ],
+        [
+          "line",
+          "119.79326940218664",
+          "377.71180036004944",
+          "223.54236981332508",
+          "104.06757439220908",
+          null
+        ],
+        [
+          "line",
+          "231.42334829492825",
+          "102.32387157742055",
+          "437.54609010293905",
+          "303.3612757721573",
+          null
+        ],
+        [
+          "line",
+          "438.95044589745163",
+          "314.76778832565753",
+          "166.33535881848445",
+          "756.5511595934668",
+          null
+        ],
+        [
+          "line",
+          "157.26270586809483",
+          "757.6107032413342",
+          "122.38929675866574",
+          "722.7372941319052",
+          null
+        ],
+        [
+          "line",
+          "121.21892757859521",
+          "711.3730889369738",
+          "275.96417101295407",
+          "475.2573594201687",
+          null
+        ]
+      ],
+      "series": 0
+    },
+    "after": {
+      "ui": {
+        "language": "nl",
+        "tableMode": "groot",
+        "editTable": "groot",
+        "pattern": "VIJF",
+        "direction": "west",
+        "departure": "neus",
+        "correctionMode": "advies",
+        "valueStyle": "bij_lijntje",
+        "ballColor": "white",
+        "ballMarking": "spotted",
+        "showBasis": false,
+        "courseShowBasis": true,
+        "playRange": "lkl",
+        "trackFamily": "parallel",
+        "lineOneMode": "basis",
+        "parallelOffset": 0,
+        "parallelDisplay": "whole",
+        "parallelPartIndex": 0,
+        "tableNavMode": "track",
+        "fanLine": "HALFEEN",
+        "editorMode": "basis",
+        "addressForm": "jij",
+        "storageMode": "account",
+        "lineOpacity": 0.58,
+        "arrowMode": "request",
+        "arrowScale": 0.35,
+        "valueLabelMode": "on",
+        "valueLabelScale": 0.75,
+        "arrowRequested": false,
+        "seriesOverview": false,
+        "panelX": 0,
+        "panelY": 0,
+        "explanationIndex": 0,
+        "seriesFocus": "basis",
+        "courseSelfAssessment": null,
+        "lklExtraParts": [],
+        "explanationOpen": false
+      },
+      "geometry": [
+        [
+          "line",
+          "275.5603650517736",
+          "594.1264456896135",
+          "121.62273353977571",
+          "390.46982760231197",
+          null
+        ],
+        [
+          "line",
+          "119.79326940218664",
+          "377.71180036004944",
+          "223.54236981332508",
+          "104.06757439220908",
+          null
+        ],
+        [
+          "line",
+          "231.42334829492825",
+          "102.32387157742055",
+          "437.54609010293905",
+          "303.3612757721573",
+          null
+        ],
+        [
+          "line",
+          "438.95044589745163",
+          "314.76778832565753",
+          "166.33535881848445",
+          "756.5511595934668",
+          null
+        ],
+        [
+          "line",
+          "157.26270586809483",
+          "757.6107032413342",
+          "122.38929675866574",
+          "722.7372941319052",
+          null
+        ],
+        [
+          "line",
+          "121.21892757859521",
+          "711.3730889369738",
+          "275.96417101295407",
+          "475.2573594201687",
+          null
+        ]
+      ],
+      "series": 0
+    },
+    "reload": {
+      "ui": {
+        "language": "nl",
+        "tableMode": "groot",
+        "editTable": "groot",
+        "pattern": "VIJF",
+        "direction": "west",
+        "departure": "neus",
+        "correctionMode": "advies",
+        "valueStyle": "bij_lijntje",
+        "ballColor": "white",
+        "ballMarking": "spotted",
+        "showBasis": false,
+        "courseShowBasis": true,
+        "playRange": "lkl",
+        "trackFamily": "parallel",
+        "lineOneMode": "basis",
+        "parallelOffset": 0,
+        "parallelDisplay": "whole",
+        "parallelPartIndex": 0,
+        "tableNavMode": "track",
+        "fanLine": "HALFEEN",
+        "editorMode": "basis",
+        "addressForm": "jij",
+        "storageMode": "account",
+        "lineOpacity": 0.58,
+        "arrowMode": "request",
+        "arrowScale": 0.35,
+        "valueLabelMode": "on",
+        "valueLabelScale": 0.75,
+        "arrowRequested": false,
+        "seriesOverview": false,
+        "panelX": 0,
+        "panelY": 0,
+        "explanationIndex": 0,
+        "seriesFocus": "basis",
+        "courseSelfAssessment": null,
+        "lklExtraParts": [],
+        "explanationOpen": false
+      },
+      "geometry": [
+        [
+          "line",
+          "275.5603650517736",
+          "594.1264456896135",
+          "121.62273353977571",
+          "390.46982760231197",
+          null
+        ],
+        [
+          "line",
+          "119.79326940218664",
+          "377.71180036004944",
+          "223.54236981332508",
+          "104.06757439220908",
+          null
+        ],
+        [
+          "line",
+          "231.42334829492825",
+          "102.32387157742055",
+          "437.54609010293905",
+          "303.3612757721573",
+          null
+        ],
+        [
+          "line",
+          "438.95044589745163",
+          "314.76778832565753",
+          "166.33535881848445",
+          "756.5511595934668",
+          null
+        ],
+        [
+          "line",
+          "157.26270586809483",
+          "757.6107032413342",
+          "122.38929675866574",
+          "722.7372941319052",
+          null
+        ],
+        [
+          "line",
+          "121.21892757859521",
+          "711.3730889369738",
+          "275.96417101295407",
+          "475.2573594201687",
+          null
+        ]
+      ],
+      "series": 0
+    }
+  }
+]
