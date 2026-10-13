@@ -77,12 +77,12 @@ del "%TEMP%\3B-pages-node.txt" >nul 2>nul
 set "PATH=!DRIEBAND_NODE_DIR!;%PATH%"
 node pages-controle-v208.js --base-url "%PAGES%/"
 if errorlevel 1 goto :fout
-pause
+if /i not "%~1"=="--from-beheer" pause
 exit /b 0
 :klaar
 echo KLAAR: commit !LOCAL! staat op GitHub en GitHub Pages toont versie %RELEASE%.
 echo %PAGES%/
-pause
+if /i not "%~1"=="--from-beheer" pause
 exit /b 0
 :clonefout
 if defined GIT_RECOVERY if exist "!GIT_RECOVERY!" rmdir /S /Q "!GIT_RECOVERY!"
@@ -91,5 +91,5 @@ goto :fout
 :gitfout
 echo FOUT: Git-opdracht mislukt. Lees de melding hierboven.
 :fout
-pause
+if /i not "%~1"=="--from-beheer" pause
 exit /b 1

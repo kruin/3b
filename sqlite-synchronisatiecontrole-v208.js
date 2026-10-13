@@ -1,0 +1,1 @@
+const cp=require('child_process'),path=require('path');cp.execFileSync(process.platform==='win32'?'python':'python3',[path.join(__dirname,'..','bronnen','sqlite-sync-test-v208.py')],{stdio:'inherit'});

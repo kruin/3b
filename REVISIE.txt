@@ -1,1 +1,2 @@
-v208-r2 — Patroon / Spoor / Lijn; volledige spoornavigatie.
+v208-r10
+Basissporen/Waaier V/A-overzicht; Been-rekenankers en patrooneinde apart. Geen SQLite in download.

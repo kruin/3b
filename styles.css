@@ -684,3 +684,22 @@ body.table-only #bandDock{width:min(330px,94vw)}
 body.table-only #bandDock #bandCore{grid-template-columns:1fr 1fr 1fr}
 body.table-only #bandDock.dock-central #bandMenu{margin-right:auto}
 body.table-only #bandPatternSelect{width:100%;min-width:0;min-height:30px;padding:0 2px;font-size:12px;background:#8b5b32;color:#fff8e8;border:0}
+
+/* v208-r5: compacte editor op desktop en mobiel. */
+.line-editor{width:min(360px,calc(100vw - 12px));padding:7px;border-width:2px;border-radius:10px}
+.line-editor header{padding:1px 1px 5px;gap:5px;border-bottom-width:1px}
+.line-editor header strong{font-size:15px}.line-editor header small{font-size:11px}
+.line-editor-values{grid-template-columns:1fr 1fr;gap:5px;margin:5px 0}
+.line-editor fieldset{padding:4px;border-width:1px;border-radius:6px;min-width:0}
+.line-editor fieldset>select{margin:0 0 3px;min-height:34px;font-size:13px}
+.line-value-step{grid-template-columns:32px minmax(32px,1fr) 32px;gap:2px}
+.line-value-step button{min-width:32px;min-height:38px}.line-value-step input{font-size:16px;min-height:38px}
+.line-editor legend{font-size:12px}.line-editor #lineFromAuto,.line-editor #lineToAuto{padding:3px;min-height:34px;font-size:12px}
+.line-editor .band-guide-config{margin:5px 0;gap:7px}.line-editor .band-guide-config label{margin:0;gap:3px;font-size:12px}
+.line-editor .band-guide-config input{width:52px;min-height:34px}.line-editor .band-guide-config small{display:none}
+.line-editor>.hint{font-size:11px;line-height:1.25;margin:5px 0}
+.line-editor .nose-length-editor{padding:3px}.line-editor .nose-length-editor p{font-size:12px;margin:3px 0}
+.line-editor #spoorValuesDetails{font-size:12px;margin:4px 0}.line-editor #spoorValuesDetails summary{cursor:pointer;font-weight:750}
+.line-editor .spoor-values{max-height:24dvh}.line-editor #spoorSaveStatus{font-size:11px;margin:3px 0}
+.line-editor footer{margin:4px 0 0;padding:4px 0;gap:5px}.line-editor footer button{min-height:38px;font-size:13px}
+.line-editor .experiment-toolbar.in-line-editor{margin:4px 0;padding:4px}.line-editor .experiment-toolbar p{font-size:10px;margin:2px 0}
