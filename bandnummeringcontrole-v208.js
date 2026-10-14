@@ -1,0 +1,13 @@
+const assert=require('node:assert/strict');
+const {classify}=require('./bandnummering-v208');
+const parts=['neus','kop','nek','romp','kruis'];
+const expected={neus:{to:'west'},kop:{to:'noord'},nek:{to:'oost'},romp:{to:'zuid'},kruis:{to:'west'}};
+const make=(pairs)=>Object.fromEntries(parts.map((k,i)=>[k,{from:{band:pairs[i][0]},to:{band:pairs[i][1]}}]));
+let r=classify(parts,expected,make([['zuid','west'],['west','noord'],['noord','oost'],['oost','zuid'],['zuid','west']]));
+assert.deepEqual(r.map(x=>x.loop),['+','+','+','+','+']);assert.deepEqual(r.map(x=>x.nummer),[1,2,3,4,5]);
+r=classify(parts,expected,make([['zuid','west'],['oost','west'],['west','noord'],['noord','oost'],['oost','zuid']]));
+assert.deepEqual(r.map(x=>x.loop),['+','-','-','-','-']);assert.equal(r[1].afwijkend,true);
+r=classify(parts,expected,make([['zuid','west'],['oost','west'],['west','noord'],['noord','oost'],['oost','west']]));
+assert.equal(r[4].loop,'+');
+r=classify(parts,expected,make([['zuid','west'],['west','oost'],['oost','west'],['west','noord'],['noord','oost']]));assert.equal(r[2].loop,'+');
+console.log('BANDNUMMERING OK: volgorde, contra, behoud, tweede overslag, routeafwijking');

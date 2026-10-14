@@ -1,2 +1,5 @@
-v208-r10
-Basissporen/Waaier V/A-overzicht; Been-rekenankers en patrooneinde apart. Geen SQLite in download.
+3B v208-r14-fix2 — VOLLEDIG PAKKET
+Gebaseerd op v208-r14-fix1, inclusief herstel Basissporen en bandnummering/contra.
+Deze uitgave bevat de complete openbare app en het private Kruinbeheer.
+Geen losse patch. Geen SQLite-database meegeleverd: behoud je lokale database.
+De volledige browserregressie is niet opnieuw uitgevoerd.
