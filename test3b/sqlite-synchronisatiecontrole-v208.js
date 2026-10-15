@@ -1,0 +1,1 @@
+const cp=require('child_process'),path=require('path');cp.execFileSync(process.platform==='win32'?'python':'python3',[path.join(__dirname,'..','3B-private-Kruinconfig-v208','SQLiteSynccontrole.py')],{stdio:'inherit'});

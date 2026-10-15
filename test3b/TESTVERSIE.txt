@@ -1,0 +1,5 @@
+TEST 3B v208-r15
+Tijdelijk openbaar; geen toegangsbeveiliging via #owner.
+Opslag alleen in aparte browseropslag; geen Python-/SQLite-server.
+Productiebestanden blijven ongewijzigd.
+Release-ZIP SHA256: 0e87cdab255ca2200516612ef16dddcea9b3b7fc6343082043f838ddfaceb323

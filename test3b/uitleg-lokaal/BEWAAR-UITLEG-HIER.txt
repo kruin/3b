@@ -1,0 +1,12 @@
+KRUINS BESCHERMDE LOKALE UITLEG
+
+Gebruik in Kruin > Uitleg bewerken de knop "Download uitlegkopie".
+Verplaats het gedownloade bestand 3B-uitleg-lokaal.json naar deze map.
+
+Bestanden *.json in deze map worden door Git genegeerd. Daardoor worden ze
+niet gepubliceerd en niet vervangen door een volgende release.
+
+Terugzetten:
+1. Open Kruin > Uitleg bewerken.
+2. Kies "Haal uitlegkopie op".
+3. Selecteer uitleg-lokaal/3B-uitleg-lokaal.json.

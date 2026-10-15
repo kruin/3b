@@ -1,0 +1,54 @@
+# 3B — lokale exports en reservekopieën
+/3B-mijn-tafels.json
+/3B-my-tables.json
+/3B-uitleg-*.json
+/3B-*.svg
+
+# Lokale download- en releasepakketten
+/Download-3B-*.zip
+/*.zip
+
+# Tijdelijke werkmappen en bestanden
+/exports/
+/backups/
+*.tmp
+*.bak
+*~
+
+# Besturingssysteem en editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+
+# De openbare sitebestanden, BAT-starters en documentatie worden bewust
+# niet genegeerd en horen in Git.
+
+# Kruins lokaal aangepaste uitleg is werkmateriaal en mag niet door een
+# release of publicatie worden overschreven.
+uitleg-lokaal/*.json
+
+# Tijdelijke centrale Kruin-config zolang het patroon LKL nog niet stabiel is.
+# De JSON reist mee in de download-ZIP, maar wordt niet naar GitHub gepubliceerd.
+config-input/*.json
+
+# Privé Kruinbeheer hoort uitsluitend in kruin/3b-kruin-beheer.
+/HANDLEIDING-KRUIN.md
+/config-input/
+/Kruinconfig-3B-v*.xlsx
+/Genereer_Kruinconfig.ps1
+/Bekijk_Kruinconfig.bat
+
+# Persoonlijke tafelbestanden
+/3B-*--kruin-*--app-v*.xlsx
+/3B-*--kruin-*--app-v*.ods
+/3B-*--kruin-*--app-v*.csv
+/3B-*--kruin-*--app-v*.sqlite3
+
+# Lokale testinstallatie
+/node_modules/
+/test-results/
+/playwright-report/
+
+node_modules/

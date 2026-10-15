@@ -1,0 +1,8 @@
+3B v208-r15 — KRUIS-GEOMETRIE — VOLLEDIG PAKKET
+Opnieuw opgebouwd vanuit v208-r14-fix2; de eerdere r15-download is niet teruggevonden.
+Automatische parallelle lijnen kiezen de eerste fysieke band op de balmiddellijn.
+Romp → Kruis volgt de werkelijke vertrekband en de ingestelde Kruishoek.
+Nummering 0–80/0–40 en bandnummering/contra blijven behouden.
+De ZIP bevat openbare app en privaat beheer, zonder SQLite-databases.
+Bestaande databases, eigen waarden en historische basisbestanden behouden.
+Zie VERSLAG-v208-r15.md voor validatie en beperkingen.
