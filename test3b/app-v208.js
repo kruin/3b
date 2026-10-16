@@ -184,7 +184,7 @@
  }
   function ensureTableFilesUi(){
     const box=document.createElement("section");box.className="table-file-tools";
-    box.innerHTML='<strong>Mijn tafel</strong><label>Tafelnaam (optioneel)<input id="tableFileName" type="text" maxlength="120"></label><label>Kruinbasis<select id="tableBasisSelect"></select></label><button id="chooseTableBasis" type="button">Gebruik deze basis</button><label>Downloadformaat<select id="tableFileFormat"><option value="xlsx">XLSX (Excel)</option><option value="ods">ODS (LibreOffice)</option><option value="sqlite3">SQLite</option><option value="csv">CSV (komma-separated)</option></select></label><button id="downloadTableFile" type="button">Download mijn aanpassingen</button><label class="file-button">Terugladen<input id="importTableFile" type="file" accept=".xlsx,.ods,.sqlite3,.sqlite,.db,.csv"></label><p id="tableFileStatus" role="status"></p>';
+    box.innerHTML='<strong>Mijn tafel</strong><label>Tafelnaam (optioneel)<input id="tableFileName" type="text" maxlength="120"></label><label>Kruinbasis<select id="tableBasisSelect"></select></label><button id="chooseTableBasis" type="button">Gebruik deze basis</button><button id="downloadTableFile" type="button">Bewaar mijn tafel</button><label class="file-button">Terugladen<input id="importTableFile" type="file" accept=".json"></label><p id="tableFileStatus" role="status"></p>';
     $("menuSettings").querySelector(".menu-settings-grid").append(box);
     $("tableFileName").oninput=()=>{state.tableName=$("tableFileName").value;save();};
     $("downloadTableFile").onclick=downloadTableFile;
@@ -215,11 +215,12 @@
   function tableFilePayload(){return{format:"3B-tafel",version:1,appRelease:Number(window.THREEB_START_CONFIG.publicRelease||window.THREEB_START_CONFIG.release),tableName:state.tableName||"",basis:copy(state.basis),state:copy({...state,history:{undo:[],redo:[]},basis:undefined})};}
   async function downloadTableFile(){
     const button=$("downloadTableFile");button.disabled=true;
-    try{const payload=tableFilePayload(),format=$("tableFileFormat").value,bytes=await window.ThreeBFiles.encode(payload,format);download(window.ThreeBFiles.filename(payload,format),bytes,"application/octet-stream");$("tableFileStatus").textContent="Gedownload: alle aanpassingen, tafelnaam en oorspronkelijke Kruinbasis.";}
+    try{const payload=tableFilePayload(),format="json",bytes=await window.ThreeBFiles.encode(payload,format);download(window.ThreeBFiles.filename(payload,format),bytes,"application/octet-stream");$("tableFileStatus").textContent="Je tafel is gedownload. Bewaar het bestand om later verder te gaan.";}
     catch(error){$("tableFileStatus").textContent=error.message;}finally{button.disabled=false;}
   }
   async function importTableFile(event){
     const file=event.target.files?.[0];if(!file)return;
+    if(!file.name.toLowerCase().endsWith(".json")){$("tableFileStatus").textContent="Kies je opgeslagen tafelbestand (.json).";event.target.value="";return;}
     try{const payload=await window.ThreeBFiles.decode(await file.arrayBuffer(),file.name),restored=copy(payload.state);restored.basis=copy(payload.basis);restored.tableName=payload.tableName;
       localStorage.setItem(KEY,JSON.stringify(restored));location.reload();
     }catch(error){$("tableFileStatus").textContent=`Terugladen mislukt: ${error.message}`;}finally{event.target.value="";}

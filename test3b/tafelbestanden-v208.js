@@ -112,3 +112,23 @@ window.ThreeBFiles = (() => {
   }
   return {encode, decode, rows, fromRows, differences, tracked, validate, filename};
 })();
+
+/* Complete personal table files; SQLite remains the official private source. */
+(() => {
+  'use strict';
+  const legacy=window.ThreeBFiles;
+  window.ThreeBFiles={...legacy,
+    async encode(payload,format){
+      if(format!=='json')return legacy.encode(payload,format);
+      legacy.validate(payload);
+      const complete=JSON.parse(JSON.stringify(payload));
+      complete.provenance={appRelease:complete.appRelease,basisId:complete.basis.id,databaseRevision:complete.basis.values.beheerRevision||null};
+      return JSON.stringify(complete,null,2)+'\n';
+    },
+    async decode(bytes,filename){
+      if(filename.split('.').at(-1).toLowerCase()!=='json')return legacy.decode(bytes,filename);
+      const text=new TextDecoder('utf-8',{fatal:true}).decode(bytes).replace(/^\uFEFF/,'');
+      return legacy.validate(JSON.parse(text));
+    }
+  };
+})();
