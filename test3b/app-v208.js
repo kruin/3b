@@ -9,6 +9,7 @@
     if(requested){const basis=(window.THREEB_BASES||[]).find(item=>item.values?.beheerBasis===requested&&item.values?.beheerRevision===window.THREEB_KRUIN_VALUES?.beheerRevision);if(basis)nextBasis={basis};}
   }
   const C = nextBasis?.basis?.config||previousState?.basis?.config||window.THREEB_START_CONFIG, K = nextBasis?.basis?.values||previousState?.basis?.values||window.THREEB_KRUIN_VALUES||{release:0,tracks:{}}, KEY = "3b-canonical-west-v2", EXPLANATION_KEY="3b-kruin-uitleg-v1", OWNER_PARAMS=new URLSearchParams(location.hash.slice(1)), PRIVATE_OWNER=OWNER_PARAMS.get("owner")==="kruin", NEW_USER_AT_LOAD=!localStorage.getItem(KEY)&&!PRIVATE_OWNER;
+  const transferSource=JSON.parse(JSON.stringify(K));
   const ownerActive=()=>PRIVATE_OWNER&&!document.body.classList.contains("customer-preview");
   const COURSE=window.THREEB_START_CONFIG.explanation, COURSE_CASES=window.THREEB_START_CONFIG.courseCases||[];
 
@@ -382,7 +383,7 @@
     const reference=p.automaticReference;let replacement;
     if(reference)replacement=copy(reference);
     else {const spec=K.tracks?.[table]?.[selectedTrackKey()]?.linePoints?.[part]?.[side]||K.tracks?.[table]?.[ui.pattern]?.linePoints?.[part]?.[side];replacement=spec&&spec.source!=="user"&&!spec.userAdjusted?copy(spec):{band:p.band,value:null,status:"calculated",source:"automatic"};}
-    delete replacement.automaticReference;route[part][side]=replacement;const overrides=state.bandOverrides?.[table]?.[selectedTrackKey()]?.[part];if(overrides){delete overrides[side];if(!Object.keys(overrides).length)delete state.bandOverrides[table][selectedTrackKey()][part];}
+    delete replacement.automaticReference;replacement.transferReset=true;route[part][side]=replacement;const overrides=state.bandOverrides?.[table]?.[selectedTrackKey()]?.[part];if(overrides){delete overrides[side];if(!Object.keys(overrides).length)delete state.bandOverrides[table][selectedTrackKey()][part];}
     derivedTrackCache[`${table}:${selectedTrackKey()}`]=route;applyAutomaticCalculations(table);save();render();if(joint!==undefined)openJunctionEditor(Number(joint),table);else openLineEditor(Number(editor.dataset.index),table);$("spoorSaveStatus").textContent="Override verwijderd · oorspronkelijke waarde of automatische berekening hersteld. Bewaar om dit vast te leggen.";
   }
   function rememberAutomaticPoint(t,part,side){const p=ensureEditableRoute(t)?.[part]?.[side];if(p&&p.kind!=="acquit"&&!p.automaticReference)p.automaticReference=copy(p);}
@@ -1195,5 +1196,15 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
   function exportJson(){download(ui.language==="nl"?"3B-mijn-tafels.json":"3B-my-tables.json",JSON.stringify(state,null,2),"application/json");}
   async function importJson(e){const f=e.target.files[0];if(!f)return;try{const x=JSON.parse(await f.text());if(!x?.data)throw Error("Invalid file");state.data=x.data;state.departurePositions=x.departurePositions||{};if(x.ui)Object.assign(ui,x.ui);normalize();applyAllAutomaticCalculations();save();render();}catch(err){$("messages").textContent=err.message;}e.target.value="";}
   function reset(){if(!confirm(`${tr("confirm")} ${trackLabel(patternLabel(ui.pattern))} · ${tableLabel(ui.editTable)}?`))return;checkpoint();const fresh=initial();state.data[ui.editTable][ui.pattern]=copy(fresh.data[ui.editTable][ui.pattern]);for(const key of Object.keys(state.departurePositions))if(key.startsWith(`${ui.editTable}:${ui.pattern}:`))delete state.departurePositions[key];save();render();}
+  window.captureThreeBTransfer=()=>{
+    if(!PRIVATE_OWNER)throw Error('Open eerst de Kruin-testbediening.');
+    const editor=$('lineEditor');
+    if(editor&&!editor.hidden){
+      if(editor.dataset.saving)throw Error('Wacht tot bewaren klaar is.');
+      if(['lineFromValue','lineToValue'].some(id=>{const el=$(id);return el&&!el.disabled&&(el.validity.badInput||el.validity.rangeUnderflow||el.validity.rangeOverflow);}))throw Error('Herstel eerst de ongeldige invoer.');
+    }
+    save();
+    return copy({source:transferSource,state,strokeDefaults:C.drawing.departureBall.defaultLengthsCm||{},explanations:localExplanationDrafts||null,explanationsStored:localStorage.getItem(EXPLANATION_KEY)});
+  };
   init();
 })();
