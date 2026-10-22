@@ -1211,18 +1211,33 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
 
   /* 3B full spoor editor adapter */
   if(window.installThreeBSpoorScreen)window.installThreeBSpoorScreen({
-    read(){const table=ui.editTable,extent=patternExtent(table);return copy({
+    read(direction=ui.direction){const table=ui.editTable,extent=patternExtent(table),key=table+':'+selectedTrackKey();
+      const east=state.spoorDirectionalMeasurements?.[key]?.oost;
+      return copy({
       table,spoor:selectedTrackKey(),label:lineOneName()+' · '+tableLabel(table),
-      token:JSON.stringify(spoorSnapshot(table)),direction:ui.direction,
+      token:JSON.stringify({route:spoorSnapshot(table),east}),direction:direction==='oost'?'oost':'west',
       geometry:{...C.tables[table],inset:bandCenterLineInsetCm()},
       lines:activeLines().slice(0,extent.index+1).map((part,index)=>({
-        key:part.key,label:lineLabel(part),V:data(table)[part.key]?.from,A:data(table)[part.key]?.to,
+        key:part.key,label:lineLabel(part),V:direction==='oost'&&east?.lines?.[part.key]?east.lines[part.key].V:data(table)[part.key]?.from,A:direction==='oost'&&east?.lines?.[part.key]?east.lines[part.key].A:data(table)[part.key]?.to,
         terminal:index===extent.index,fraction:index===extent.index?extent.fraction:1
       }))
     });},
     async save(original,changes){
-      const table=original.table;
-      if(table!==ui.editTable||original.spoor!==selectedTrackKey()||original.token!==JSON.stringify(spoorSnapshot(table)))throw Error('Het spoor is gewijzigd. Sluit en open het Spoorscherm opnieuw.');
+      const table=original.table,key=table+':'+selectedTrackKey(),east=state.spoorDirectionalMeasurements?.[key]?.oost;
+      if(table!==ui.editTable||original.spoor!==selectedTrackKey()||original.token!==JSON.stringify({route:spoorSnapshot(table),east}))throw Error('Het spoor is gewijzigd. Sluit en open het Spoorscherm opnieuw.');
+      if(original.direction==='oost'){
+        const lines=Object.fromEntries(original.lines.map(line=>[line.key,{V:copy(line.V),A:copy(line.A)}]));
+        for(const change of changes){
+          const part=original.lines.find(line=>line.key===change.line);
+          if(!part||part.terminal||!['V','A'].includes(change.side)||change.side==='V'&&part.V?.kind==='acquit')throw Error('Dit punt blijft automatisch.');
+          lines[change.line][change.side]={...copy(change.point),status:change.point.value===null?'calculated':'edited',source:change.point.value===null?'automatic':'user',userAdjusted:change.point.value!==null,measurement:false,editOwner:ownerActive()?'kruin':'user'};
+        }
+        state.spoorDirectionalMeasurements??={};state.spoorDirectionalMeasurements[key]??={};
+        const previous=copy(state.spoorDirectionalMeasurements[key]);
+        state.spoorDirectionalMeasurements[key].oost={lines,updatedAt:new Date().toISOString()};
+        try{save();}catch(error){state.spoorDirectionalMeasurements[key]=previous;throw error;}
+        return;
+      }
       const before=copy(state);tableCheckpoint(table);
       try{
         const route=ensureEditableRoute(table);
