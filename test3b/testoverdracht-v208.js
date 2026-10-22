@@ -5,6 +5,8 @@
   const comparable=p=>JSON.stringify(['kind','offset','configuredStartOffset','band','value','status','source','userAdjusted','measurement','calculationBasis'].map(k=>p?.[k]??null));
   function packet(capture) {
     const {source,state}=capture, operations=[], routes={};
+    if(state.startAcquitOffset!==undefined&&state.startAcquitOffset!==(source.startAcquitOffset??0))operations.push({kind:'start-acquit',before:source.startAcquitOffset??0,after:state.startAcquitOffset});
+    for(const name of ['startAcquitRoutes','startAcquitLengths'])if(state[name]&&JSON.stringify(state[name])!==JSON.stringify(source[name]||{}))operations.push({kind:'start-measurements',name,before:clone(source[name]||{}),after:clone({...source[name],...state[name]})});
     if(!source?.beheerRevision||!source?.beheerBasis)throw Error('De databasebron ontbreekt. Herlaad de testtafel.');
     for(const group of [state.data,state.variantData]) for(const [table,tracks] of Object.entries(group||{}))
       for(const [track,route] of Object.entries(tracks)) routes[table+':'+track]={table,track,route};

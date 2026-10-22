@@ -7,7 +7,7 @@ const SpoorGeometry = (() => {
   function point(p,g){
     if(!known(p))throw Error('V of A is nog onbekend.');
     const {widthCm:w,heightCm:h,dotOffsetCm:d}=g,v=Number(p.value);
-    if(p.kind==='acquit')return {x:w/2,y:h*(.75-(Number(p.offset)||0)/8)};
+    if(p.kind==='acquit')return {x:w/2,y:h*(.75-((Number(p.offset)||0)+(Number(g.startAcquitOffset)||0))/8)};
     return {west:{x:-d,y:(1-v/80)*h},oost:{x:w+d,y:v/80*h},noord:{x:v/40*w,y:-d},zuid:{x:(1-v/40)*w,y:h+d}}[p.band];
   }
   function value(band,p,g){return {west:(1-p.y/g.heightCm)*80,oost:p.y/g.heightCm*80,noord:p.x/g.widthCm*40,zuid:(1-p.x/g.widthCm)*40}[band];}
@@ -30,6 +30,36 @@ const SpoorGeometry = (() => {
     return {band:r.band,value:value(r.band,p,g)};
   }
   return {contact,arrival,point};
+})();
+
+/* Translate a launch ray, then find its real cushion sequence. Coordinates are
+   ball centres; stip values are projections on the original diamond lines. */
+const ThreeBStartRay=(()=>{
+  function trace(nose,g,offset,count=9){
+    const w=g.widthCm,h=g.heightCm,d=g.dotOffsetCm,r=g.inset;
+    if(!nose?.from||!nose?.to||nose.to.value===null||nose.to.value===undefined||nose.to.value===''||!Number.isFinite(Number(nose.to.value)))return {error:'Neusrichting nog onbekend',pattern:'?'};
+    const from=SpoorGeometry.point(nose.from,{...g,startAcquitOffset:0}),aim=SpoorGeometry.point(nose.to,{...g,startAcquitOffset:0});
+    let p={x:from.x,y:from.y-h*offset/8},v={x:aim.x-from.x,y:aim.y-from.y};
+    const heading={...v},origin={...p},hits=[],segments=[];
+    if(!Object.values(v).every(Number.isFinite)||Math.hypot(v.x,v.y)<1e-9)return {error:'Neusrichting nog onbekend',pattern:'?'};
+    if(p.x<=r||p.x>=w-r||p.y<=r||p.y>=h-r)return {error:'Vertrekpunt ligt buiten het speelvlak',pattern:'?'};
+    function stip(band,at,dir){
+      const vertical=band==='west'||band==='oost',axis=vertical?'x':'y',target={west:-d,oost:w+d,noord:-d,zuid:h+d}[band];
+      const u=(target-at[axis])/dir[axis],q={x:at.x+u*dir.x,y:at.y+u*dir.y};
+      const value={west:(1-q.y/h)*80,oost:q.y/h*80,noord:q.x/w*40,zuid:(1-q.x/w)*40}[band];
+      return {band,value,status:'calculated',source:'start_acquit_geometry',calculationBasis:'translated_launch_ray'};
+    }
+    for(let i=0;i<count;i++){
+      const times=[['west',v.x<0?(r-p.x)/v.x:Infinity],['oost',v.x>0?(w-r-p.x)/v.x:Infinity],['noord',v.y<0?(r-p.y)/v.y:Infinity],['zuid',v.y>0?(h-r-p.y)/v.y:Infinity]].filter(([,t])=>t>1e-9).sort((a,b)=>a[1]-b[1]);
+      if(!times.length||!Number.isFinite(times[0][1]))return {error:'Geen volgende band',pattern:'?',hits,segments,heading,origin};
+      if(Math.abs(times[0][1]-times[1]?.[1])<1e-8)return {error:'Hoekpunt: geen eenduidige bandvolgorde',pattern:'?',hits,segments,heading,origin};
+      const [band,t]=times[0],end={x:p.x+t*v.x,y:p.y+t*v.y};
+      segments.push({from:i?stip(hits[i-1].band,p,v):{...nose.from},to:stip(band,end,v)});
+      hits.push({band,center:end});p=end;v={x:(band==='west'||band==='oost')?-v.x:v.x,y:(band==='noord'||band==='zuid')?-v.y:v.y};
+    }
+    return {pattern:hits.slice(0,3).map(hit=>['west','oost'].includes(hit.band)?'L':'K').join(''),hits,segments,heading,origin};
+  }
+  return {trace};
 })();
 
 /* Symbols and compact values belong only to the spoor editor. */
@@ -68,7 +98,7 @@ if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
   if(document.getElementById('openSpoorscherm'))return;
   const css=document.createElement('style');css.textContent=`
   body:has(#explanationCarousel:not([hidden])) #testTransfer,body:has(#spoorScreen[open]) #testTransfer{display:none}
-  #spoorScreen{position:fixed;inset:auto;margin:0;z-index:3000;box-shadow:0 8px 30px #0005;width:min(96vw,460px);max-height:94dvh;overflow:auto;padding:12px;border:1px solid #8a9b91;border-radius:10px;background:#f7f5ed;color:#142e24;font:15px system-ui;box-sizing:border-box;--spoor-symbol-size:32px}
+  [data-start-acquit="true"]{pointer-events:auto;cursor:pointer}#centralStartAcquitControl{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:4px;padding:5px 8px;background:#f7f5ed;color:#142e24;border:1px solid #8a9b91;border-radius:6px;font:600 13px system-ui}#spoorScreen .spoor-start-cycle{font:inherit;padding:0 3px;background:transparent;border:0;color:inherit;min-width:0;width:100%;touch-action:manipulation}#startAcquitCycle{font:800 16px system-ui;padding:2px 8px;min-height:32px;touch-action:manipulation}#startAcquitPatternStatus{flex-basis:100%;text-align:center;font-size:12px}#centralStartAcquitControl{flex-wrap:wrap}#centralStartAcquit{min-height:32px;max-width:65%;font:inherit} #spoorScreen{position:fixed;inset:auto;margin:0;z-index:3000;box-shadow:0 8px 30px #0005;width:min(96vw,460px);max-height:94dvh;overflow:auto;padding:12px;border:1px solid #8a9b91;border-radius:10px;background:#f7f5ed;color:#142e24;font:15px system-ui;box-sizing:border-box;--spoor-symbol-size:32px}
   body.spoor-editor-only #lineEditor,body.spoor-editor-only #ballNudgePanel,body.spoor-editor-only .workspace>.editor,body.spoor-editor-only .ball-value-window,body.spoor-editor-only #toggleConfig{display:none!important}#spoorScreen>header{cursor:grab;touch-action:none;user-select:none}#spoorScreen>header:active{cursor:grabbing}#spoorScreen header,#spoorScreen footer{display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap}#spoorScreen h2{font-size:18px;margin:0}
   #spoorScreen table{width:100%;table-layout:fixed;border-collapse:collapse;background:#fff}#spoorScreen th,#spoorScreen td{padding:6px 3px;border-bottom:1px solid #d8dfd8;text-align:left}#spoorScreen thead th{font-size:14px;text-align:center;background:#e4ece5}#spoorScreen th:first-child{width:19%;white-space:nowrap}#spoorScreen td{width:27%}#spoorScreen tbody th{font-size:13px;text-transform:none;letter-spacing:0}#spoorScreen .spoor-point{position:relative;display:flex;align-items:center;white-space:nowrap;isolation:isolate}
   #spoorScreen .spoor-symbol{position:absolute;right:4px;top:50%;transform:translateY(-50%);z-index:0;opacity:.24;pointer-events:none;font-family:'Noto Sans Symbols 2','DejaVu Sans',sans-serif;font-size:var(--spoor-symbol-size);font-weight:800;line-height:1.25;min-width:1.1em;text-align:center;color:#123e2c;font-style:normal;-webkit-text-stroke:.25px currentColor}
@@ -80,7 +110,7 @@ if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
   dialog.innerHTML=`<header><h2 id="spoorScreenTitle">Spoorscherm</h2><div><button id="configSpoorScreen" type="button" aria-expanded="false" aria-controls="spoorStyleConfig">⚙ Config</button><button id="positionSpoorScreen" type="button" title="Terug in beeld" aria-label="Spoorscherm terug in beeld">↺</button><button id="closeSpoorScreen" type="button" aria-label="Sluiten" title="Sluiten">×</button></div></header>
   <div class="spoor-tools"><label><input id="mirrorSpoorScreen" type="checkbox">Spiegelen · naar Oost</label><span id="spoorDirectionLabel"></span></div>
   <table><thead><tr><th>Lijn</th><th>V</th><th>R</th><th>A</th></tr></thead><tbody></tbody></table>
-  <details id="spoorStyleConfig"><summary>Config</summary><div class="styles"><label>S · startpunt<select id="spoorStart"><option value="0">Benedenacquit · S</option><option value="2">Middenacquit · S+2</option><option value="4">Bovenacquit · S+4</option></select></label><label>V en A<select id="spoorArrowStyle"><option value="double">⇖ Dubbele pijlen</option><option value="single">↖ Enkele pijlen</option></select></label><label>Raakpunt<select id="spoorContactStyle"><option value="bar">⇥ Pijl met bandstreep</option><option value="single">→ Enkele pijl</option></select></label><label>Symboolgrootte<select id="spoorSymbolSize"><option value="24">24</option><option value="28">28</option><option value="32" selected>32</option></select></label></div><p class="hint">V en A volgen de speelrichting; R wijst naar de geraakte band.<br>30+ ≈ 30¼ · 30++ ≈ 30½ · 31− ≈ 30¾. Exacte bestaande waarden blijven bewaard.</p></details>
+  <details id="spoorStyleConfig"><summary>Config</summary><div class="styles"><label>S · vertrekacquit (centraal)<select id="spoorStart"><option value="0">Benedenacquit</option><option value="2">Middenacquit</option><option value="4">Bovenacquit</option></select></label><label>V en A<select id="spoorArrowStyle"><option value="double">⇖ Dubbele pijlen</option><option value="single">↖ Enkele pijlen</option></select></label><label>Raakpunt<select id="spoorContactStyle"><option value="bar">⇥ Pijl met bandstreep</option><option value="single">→ Enkele pijl</option></select></label><label>Symboolgrootte<select id="spoorSymbolSize"><option value="24">24</option><option value="28">28</option><option value="32" selected>32</option></select></label></div><p class="hint">S geldt voor alle sporen, tafels en richtingen. Parallel (+/−) en waaier blijven relatief aan S.<br>V en A volgen de speelrichting; R wijst naar de geraakte band.<br>30+ ≈ 30¼ · 30++ ≈ 30½ · 31− ≈ 30¾. Exacte bestaande waarden blijven bewaard.</p></details>
   <p id="spoorMeasurementHint" class="hint"></p><footer><button id="saveSpoorScreen" type="button">Bewaar spoor</button><button id="reloadSpoorScreen" type="button">Herlaad</button><span id="spoorScreenStatus" role="status" aria-live="polite"></span></footer>`;
   document.body.append(dialog);
   const $=id=>dialog.querySelector('#'+id),body=dialog.querySelector('tbody'),text=(message,error=false)=>{$('spoorScreenStatus').textContent=message;$('spoorScreenStatus').classList.toggle('error',error);};
@@ -101,7 +131,7 @@ if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
   }
   function controls(td,line,side){
     const row=working[line.key],p=side==='L'?{value:row.lengthCm}:side==='R'?null:row[side];
-    if(p?.kind==='acquit'){td.textContent='Start S'+(Number(p.offset)?(Number(p.offset)>0?'+':'')+p.offset:'');td.className='start';return;}
+    if(p?.kind==='acquit'){const start=document.createElement('button');start.type='button';start.className='spoor-start-cycle';start.textContent='Start S'+(Number(p.offset)?(Number(p.offset)>0?'+':'')+p.offset:'');bindStartCycle(start);td.append(start);td.className='start';return;}
     const wrap=document.createElement('div');wrap.className='spoor-point';const symbol=document.createElement('span');symbol.className='spoor-symbol';symbol.dataset.side=side;symbol.setAttribute('role','img');
     const input=document.createElement('input');input.type='text';input.className='spoor-value';input.dataset.side=side;input.value=SpoorScreenFormat.format(p?.value);input.placeholder='·';input.autocomplete='off';input.spellcheck=false;input.disabled=line.terminal||side==='L'&&!original.strokeLimits;input.setAttribute('aria-label',side==='L'?'Neus afstootlengte in cm':line.label+' '+side+' waarde');
     wrap.append(input,symbol);if(side==='L'){const unit=document.createElement('small');unit.className='spoor-unit';unit.textContent='cm';wrap.append(unit);}td.append(wrap);
@@ -122,18 +152,39 @@ if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
   }
   function load(direction=viewDirection){
     original=adapter.read(direction);viewDirection=original.direction;working={};dirty=false;body.replaceChildren();
-    $('spoorScreenTitle').textContent='Spoorscherm · '+original.label;$('mirrorSpoorScreen').checked=original.direction==='oost';$('spoorDirectionLabel').textContent=original.direction==='oost'?'Oost':'West';
-    $('spoorMeasurementHint').textContent=original.direction==='oost'?'Eigen Oost-meting: apart bewaard in deze browser; de West-meting blijft behouden.':'';
+    $('spoorScreenTitle').textContent='Spoorscherm · '+original.label+' · '+original.actualPattern;$('mirrorSpoorScreen').checked=original.direction==='oost';$('spoorDirectionLabel').textContent=original.direction==='oost'?'Oost':'West';
+    $('spoorMeasurementHint').textContent=(original.startError?original.startError+'. ':original.startAcquitOffset&&original.actualPattern!=='LKL'?'Dit spoor valt buiten LKL ('+original.actualPattern+'). ':'')+(original.direction==='oost'?'Eigen Oost-meting: apart bewaard in deze browser; de West-meting blijft behouden.':'');
     for(const line of original.lines){working[line.key]={V:structuredClone(line.V),A:structuredClone(line.A),lengthCm:line.key==='neus'?original.strokeLengthCm:null,changed:new Set()};const tr=document.createElement('tr');tr.dataset.line=line.key;
       const th=document.createElement('th');th.scope='row';th.textContent=line.label;tr.append(th);
       if(line.terminal){const small=document.createElement('span');small.className='terminal';small.textContent='Auto'+(line.fraction===.5?' · ½':line.fraction===.25?' · ¼':'');th.append(small);}
       for(const side of line.key==='neus'?['V','L','A']:['V','R','A']){const td=document.createElement('td');if(line.terminal)td.className='automatic';controls(td,line,side);tr.append(td);}body.append(tr);refresh(tr,line);
     }
-    const start=$('spoorStart'),offset=Number(working.neus?.V?.offset)||0;start.querySelector('[data-legacy]')?.remove();if(![0,2,4].includes(offset)){const option=new Option('Bestaand · S'+(offset>0?'+':'')+offset,String(offset));option.dataset.legacy='true';start.add(option);}start.value=String(offset);
+    $('spoorStart').value=String(original.startAcquitOffset);
     dialog.style.setProperty('--spoor-symbol-size',$('spoorSymbolSize').value+'px');text(window.THREEB_TEST_ENVIRONMENT?'TEST · bewaren in aparte browseropslag.':'Bewaar spoor om je wijzigingen vast te leggen.');
   }
   for(const id of ['spoorArrowStyle','spoorContactStyle','spoorSymbolSize'])$(id).onchange=()=>{localStorage.setItem(styleKey,JSON.stringify(Object.fromEntries(['spoorArrowStyle','spoorContactStyle','spoorSymbolSize'].map(id=>[id,$(id).value]))));dialog.style.setProperty('--spoor-symbol-size',$('spoorSymbolSize').value+'px');for(const tr of body.rows)symbols(tr,original.lines.find(l=>l.key===tr.dataset.line));};
-  $('spoorStart').onchange=()=>{const offset=Number($('spoorStart').value),row=working.neus;row.V={...row.V,kind:'acquit',value:offset?'S+'+offset:'S',offset,configuredStartOffset:offset};row.changed.add('S');dirty=true;const tr=body.querySelector('[data-line=neus]');tr.querySelector('.start').textContent='Start '+row.V.value;symbols(tr,original.lines.find(l=>l.key==='neus'));text('Startpunt gewijzigd; kies Bewaar spoor.');};
+  function setStart(offset){
+    if(dirty||saving){syncStart();text('Bewaar of herlaad je spoorwijzigingen voordat je S verplaatst.',true);return;}
+    try{adapter.setStartAcquit(Number(offset));syncStart();if(dialog.open)load();text('S centraal verplaatst; parallel- en waaierstanden behouden.');}catch(error){syncStart();text(error.message,true);}
+  }
+  const central=document.createElement('label');central.id='centralStartAcquitControl';central.innerHTML='<button id="startAcquitCycle" type="button">S</button><span>vertrek</span><select id="centralStartAcquit" aria-label="Centraal vertrekacquit S"><option value="0">Benedenacquit</option><option value="2">Middenacquit</option><option value="4">Bovenacquit</option></select><small id="startAcquitPatternStatus" role="status"></small>';document.getElementById('bandDock')?.append(central);
+  function cycleStart(){const values=[0,2,4];setStart(values[(values.indexOf(Number(adapter.startAcquitOffset()))+1)%3]);}
+  function bindStartCycle(node){
+    node.title='Dubbelklik: S beneden → midden → boven';node.setAttribute('aria-label','S · dubbelklik om vertrekacquit te wisselen');
+    let lastTap=0,lastX=0,lastY=0,suppressUntil=0;
+    node.ondblclick=e=>{e.preventDefault();if(Date.now()>suppressUntil)cycleStart();};
+    node.onpointerup=e=>{if(e.pointerType!=='touch')return;const now=Date.now();if(lastTap&&now-lastTap<400&&Math.hypot(e.clientX-lastX,e.clientY-lastY)<20){lastTap=0;suppressUntil=now+600;e.preventDefault();cycleStart();}else{lastTap=now;lastX=e.clientX;lastY=e.clientY;}};
+    node.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();cycleStart();}};
+  }
+  bindStartCycle(central.querySelector('#startAcquitCycle'));
+  let rayTap=0,rayX=0,rayY=0,raySuppress=0;
+  document.addEventListener('click',e=>{if(e.target.closest('[data-start-acquit="true"]'))e.stopImmediatePropagation();},true);
+  document.addEventListener('dblclick',e=>{if(!e.target.closest('[data-start-acquit="true"]'))return;e.preventDefault();e.stopImmediatePropagation();if(Date.now()>raySuppress)cycleStart();},true);
+  document.addEventListener('pointerup',e=>{if(e.pointerType!=='touch'||!e.target.closest('[data-start-acquit="true"]'))return;const now=Date.now();if(rayTap&&now-rayTap<400&&Math.hypot(e.clientX-rayX,e.clientY-rayY)<20){rayTap=0;raySuppress=now+600;e.preventDefault();cycleStart();}else{rayTap=now;rayX=e.clientX;rayY=e.clientY;}},true);
+
+  function syncStart(){const value=String(adapter.startAcquitOffset());$('spoorStart').value=value;central.querySelector('select').value=value;}
+  $('spoorStart').onchange=()=>setStart($('spoorStart').value);central.querySelector('select').onchange=e=>setStart(e.target.value);window.addEventListener('threeb-spoor-state',syncStart);syncStart();
+
   let position;
   function place(next){const box=dialog.getBoundingClientRect();const left=Math.max(48-box.width,Math.min(innerWidth-48,next.left)),top=Math.max(-18,Math.min(innerHeight-32,next.top));position={left,top};dialog.style.left=left+'px';dialog.style.top=top+'px';}
   function recenter(){const box=dialog.getBoundingClientRect();place({left:(innerWidth-box.width)/2,top:Math.max(8,(innerHeight-box.height)/2)});}
@@ -165,7 +216,7 @@ if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
   $('closeSpoorScreen').onclick=close;dialog.addEventListener('cancel',e=>{e.preventDefault();close();});$('reloadSpoorScreen').onclick=()=>{if(!saving)load();};
   $('saveSpoorScreen').onclick=async()=>{
     if(saving)return;for(const input of dialog.querySelectorAll('.spoor-value'))if(!input.reportValidity())return;if(!dirty){text('Geen gewijzigde waarden.');return;}
-    const changes=[];for(const [line,row] of Object.entries(working))for(const side of row.changed)changes.push({line,side,point:side==='L'?{value:row.lengthCm}:side==='S'?row.V:row[side]});
+    const changes=[];for(const [line,row] of Object.entries(working))for(const side of row.changed)changes.push({line,side,point:side==='L'?{value:row.lengthCm}:row[side]});
     saving=true;for(const el of dialog.querySelectorAll('input,select,button'))el.disabled=true;text('Bewaren…');
     try{await adapter.save(original,changes);load();text(original.direction==='oost'?'Oost-meting apart bewaard in deze browser.':window.THREEB_TEST_ENVIRONMENT?'Spoor bewaard in de testbrowser.':'Spoor bewaard.');}
     catch(error){text(error.message,true);}
