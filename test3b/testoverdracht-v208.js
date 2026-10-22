@@ -2,7 +2,7 @@
 (() => {
   'use strict';
   const clone=v=>JSON.parse(JSON.stringify(v));
-  const comparable=p=>JSON.stringify(['kind','band','value','status','source','userAdjusted','measurement','calculationBasis'].map(k=>p?.[k]??null));
+  const comparable=p=>JSON.stringify(['kind','offset','configuredStartOffset','band','value','status','source','userAdjusted','measurement','calculationBasis'].map(k=>p?.[k]??null));
   function packet(capture) {
     const {source,state}=capture, operations=[], routes={};
     if(!source?.beheerRevision||!source?.beheerBasis)throw Error('De databasebron ontbreekt. Herlaad de testtafel.');
