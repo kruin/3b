@@ -1208,4 +1208,43 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
     return copy({source:transferSource,state,strokeDefaults:C.drawing.departureBall.defaultLengthsCm||{},explanations:localExplanationDrafts||null,explanationsStored:localStorage.getItem(EXPLANATION_KEY)});
   };
   init();
+
+  /* 3B full spoor editor adapter */
+  if(window.installThreeBSpoorScreen)window.installThreeBSpoorScreen({
+    read(){const table=ui.editTable,extent=patternExtent(table);return copy({
+      table,spoor:selectedTrackKey(),label:lineOneName()+' · '+tableLabel(table),
+      token:JSON.stringify(spoorSnapshot(table)),direction:ui.direction,
+      geometry:{...C.tables[table],inset:bandCenterLineInsetCm()},
+      lines:activeLines().slice(0,extent.index+1).map((part,index)=>({
+        key:part.key,label:lineLabel(part),V:data(table)[part.key]?.from,A:data(table)[part.key]?.to,
+        terminal:index===extent.index,fraction:index===extent.index?extent.fraction:1
+      }))
+    });},
+    async save(original,changes){
+      const table=original.table;
+      if(table!==ui.editTable||original.spoor!==selectedTrackKey()||original.token!==JSON.stringify(spoorSnapshot(table)))throw Error('Het spoor is gewijzigd. Sluit en open het Spoorscherm opnieuw.');
+      const before=copy(state);tableCheckpoint(table);
+      try{
+        const route=ensureEditableRoute(table);
+        for(const change of changes){
+          const part=original.lines.find(line=>line.key===change.line),side=change.side==='V'?'from':change.side==='A'?'to':null;
+          if(!part||part.terminal||!side||side==='from'&&part.V?.kind==='acquit')throw Error('Dit punt blijft automatisch.');
+          const old=route[change.line][side];
+          route[change.line][side]={...copy(old),automaticReference:copy(old?.automaticReference||old),band:change.point.band,value:change.point.value,
+            status:change.point.value===null?'calculated':'edited',source:change.point.value===null?'automatic':'user',
+            userAdjusted:change.point.value!==null,measurement:false,editOwner:ownerActive()?'kruin':'user'};
+          if(change.point.value===null){delete route[change.line][side].calculationBasis;route[change.line][side].transferReset=true;}
+          state.bandOverrides??={};state.bandOverrides[table]??={};state.bandOverrides[table][selectedTrackKey()]??={};
+          state.bandOverrides[table][selectedTrackKey()][change.line]??={};state.bandOverrides[table][selectedTrackKey()][change.line][side]=change.point.band;
+        }
+        derivedTrackCache[`${table}:${selectedTrackKey()}`]=route;applyAutomaticCalculations(table);
+        if(!window.SpoorStorage?.save)throw Error('Opslag is niet beschikbaar.');
+        await window.SpoorStorage.save(spoorSnapshot(table),K.beheerBasis);
+        save();acceptExperiment();
+        if(ownerActive()&&!window.THREEB_TEST_ENVIRONMENT){experimentSession.allowNextSource=true;persistExperimentSession();}
+        render();
+      }catch(error){for(const key of Object.keys(state))delete state[key];Object.assign(state,before);Object.assign(ui,before.ui);derivedTrackCache={};render();throw error;}
+    }
+  });
+
 })();
