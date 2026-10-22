@@ -1144,7 +1144,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
       const ballA=isDeparture?{x:startLimit.x+(ballB.x-startLimit.x)*fraction,y:startLimit.y+(ballB.y-startLimit.y)*fraction}:fixedA;
       const A=map(ballA),fullB=map(ballB),B=partial?{x:A.x+(fullB.x-A.x)*renderFraction,y:A.y+(fullB.y-A.y)*renderFraction}:fullB,GA=map(guideA),GB=map(stipB),ballRadius=radiusCm*scale,lineWidth=C.ballDiameterMm/10*scale,guideWidth=C.drawing.guideLineWidthSvg,mx=(A.x+B.x)/2,my=(A.y+B.y)/2;
       const thinA=edge(A,GA,ballRadius),thickA=edge(A,B,ballRadius),thickB=edge(B,A,ballRadius),thinB=edge(B,GB,ballRadius);
-      const fromValue=seg.from.kind==="acquit"?("S"+(Number(seg.from.offset)?signedOffset(Number(seg.from.offset)):"")):formattedValue(seg.from.value),toValue=formattedValue(seg.to.value);
+      const fromValue=seg.from.kind==="acquit"?(startAcquitCode()+(Number(seg.from.offset)?signedOffset(Number(seg.from.offset)):"")):formattedValue(seg.from.value),toValue=formattedValue(seg.to.value);
       const fromTag=tagText(l,"V",fromValue),toTag=tagText(l,"A",toValue),lengthCm=Math.max(0,startDistance*(1-fraction)-radiusCm*2);
       if(isDeparture)dragModels[t]={startDistance,radiusCm,fraction,maxFraction,lengthCm};
       const dragAttrs=isDeparture?`tabindex="0" role="slider" aria-label="${ui.language==="nl"?"Lijn 1 afstootlengte":"Line 1 stroke length"}" data-drag-table="${t}" data-x0="${map(startLimit).x}" data-y0="${map(startLimit).y}" data-x1="${B.x}" data-y1="${B.y}" data-max="${maxFraction}"`:"";
@@ -1212,6 +1212,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
   /* 3B full spoor editor adapter */
   var spoorBaseDepth=0,originRayCache=new Map();
   function startAcquitOffset(){return spoorBaseDepth?0:state.startAcquitOffset??K.startAcquitOffset??0;}
+  function startAcquitCode(){return {0:'S',2:'M',4:'B'}[startAcquitOffset()]||'S';}
   function originRouteKey(table,direction=ui.direction){return startAcquitOffset()+':'+table+':'+selectedTrackKey()+(direction==='oost'?':oost':'');}
   function startRay(table=ui.editTable,direction=ui.direction){
     const offset=startAcquitOffset(),key=offset+':'+table+':'+selectedTrackKey()+':'+direction;
