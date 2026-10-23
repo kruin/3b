@@ -647,8 +647,8 @@
     const bc=$("ballColor"),bm=$("ballMarking");$("ballColorLabel").textContent=ui.language==="nl"?"Bal":"Ball";$("ballMarkingLabel").textContent=ui.language==="nl"?"Markering":"Marking";bc.options[0].text=ui.language==="nl"?"Wit":"White";bc.options[1].text=ui.language==="nl"?"Geel":"Yellow";bm.options[0].text=ui.language==="nl"?"Met stippen":"Spotted";bm.options[1].text=ui.language==="nl"?"Zonder stippen":"Plain";bc.value=ui.ballColor;bm.value=ui.ballMarking;$("dragHelp").textContent=ui.language==="nl"?"Sleep de speelbal over de afstootlijn.":"Drag the cue ball along the departure line.";
     $("lineSelectLabel").textContent=trackTerm();$("patternLabel").textContent=ui.language==="nl"?"Patroon":"Pattern";$("rangeLabel").textContent=ui.language==="nl"?"Patroon":"Pattern";const pr=$("playRange");pr.options[0].text="LKL";pr.options[1].text=ui.language==="nl"?"6–7 banden":"6–7 cushions";pr.options[2].text=ui.language==="nl"?"Vrij spel":"Free play";pr.value=ui.playRange;
     const ps=$("patternSelect");ps.replaceChildren();panelBaseTracks().forEach(n=>ps.add(new Option(trackLabel(patternLabel(n)),n)));ps.value=ui.pattern;
-    $("trackFamilyLabel").textContent=ui.language==="nl"?"Reeks":"Series";$("trackFamilySelect").options[0].text="Waaier";$("trackFamilySelect").options[1].text="Parallel (P)";$("trackFamilySelect").value=ui.trackFamily;const central=$("centralLineSelect"),centralLines=centralTrackKeys();$('centralLineLabel').textContent=ui.trackFamily==="waaier"?(ui.language==="nl"?"Waaierstand":"Fan position"):(ui.language==="nl"?"Parallelstand":"Parallel position");central.setAttribute("aria-label",ui.language==="nl"?"Kies spoor":"Choose track");central.replaceChildren();centralLines.forEach(line=>central.add(new Option(startAcquitOffset()?effectiveStartKey(line):positionLabel(line),line)));if(!centralLines.includes(selectedTrackKey())){if(spoorGeometryReady){const unavailable=new Option(effectiveStartKey()+" · "+actualStartPattern()+" (buiten LKL)",selectedTrackKey());unavailable.disabled=true;central.add(unavailable);}else{ui.pattern=panelBaseTracks().includes(ui.pattern)?ui.pattern:panelBaseTracks()[0];ui.lineOneMode="basis";ui.parallelOffset=0;}}central.value=selectedTrackKey();
- const parallel=$("parallelTrackSelect"),choiceBounds=parallelBounds(),keys=[];for(let offset=choiceBounds.minimum;offset<=choiceBounds.maximum;offset++)keys.push(offset?`${ui.pattern}${offset>0?"+":""}${offset}`:ui.pattern);parallel.replaceChildren(...keys.filter(key=>!spoorGeometryReady||ui.playRange!=="lkl"||centralTrackKeys().includes(key)).map(key=>new Option(startAcquitOffset()?effectiveStartKey(key):positionLabel(key),key)));parallel.value=ui.lineOneMode==="waaier"?ui.pattern:selectedTrackKey();parallel.closest("label").hidden=false;
+    $("trackFamilyLabel").textContent=ui.language==="nl"?"Reeks":"Series";$("trackFamilySelect").options[0].text="Waaier";$("trackFamilySelect").options[1].text="Parallel (P)";$("trackFamilySelect").value=ui.trackFamily;const central=$("centralLineSelect"),centralLines=centralTrackKeys();$('centralLineLabel').textContent=ui.trackFamily==="waaier"?(ui.language==="nl"?"Waaierstand":"Fan position"):(ui.language==="nl"?"Parallelstand":"Parallel position");central.setAttribute("aria-label",ui.language==="nl"?"Kies spoor":"Choose track");central.replaceChildren();centralLines.forEach(line=>central.add(new Option(originTrackLabel(line),line)));if(!centralLines.includes(selectedTrackKey())){if(spoorGeometryReady){const unavailable=new Option(originTrackLabel()+" · "+actualStartPattern()+" (buiten LKL)",selectedTrackKey());unavailable.disabled=true;central.add(unavailable);}else{ui.pattern=panelBaseTracks().includes(ui.pattern)?ui.pattern:panelBaseTracks()[0];ui.lineOneMode="basis";ui.parallelOffset=0;}}central.value=selectedTrackKey();
+ const parallel=$("parallelTrackSelect"),choiceBounds=parallelBounds(),keys=[];for(let offset=choiceBounds.minimum;offset<=choiceBounds.maximum;offset++)keys.push(offset?`${ui.pattern}${offset>0?"+":""}${offset}`:ui.pattern);parallel.replaceChildren(...keys.filter(key=>!spoorGeometryReady||ui.playRange!=="lkl"||centralTrackKeys().includes(key)).map(key=>new Option(originTrackLabel(key),key)));parallel.value=ui.lineOneMode==="waaier"?ui.pattern:selectedTrackKey();parallel.closest("label").hidden=false;
  $("showBasis").checked=ui.showBasis;$("courseShowBasis").checked=$("courseBasisToggle").checked=ui.courseShowBasis;$("sixSevenRunOutControl").hidden=ui.playRange!=="sixSeven";$("sixSevenRunOutCm").value=sixSevenRunOutCm();
 const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.canMinus;$("centralTrackPlus").disabled=!centralStep.canPlus;$("centralTrackMinus").setAttribute("aria-label",ui.language==="nl"?"Vorig spoor":"Previous track");$("centralTrackPlus").setAttribute("aria-label",ui.language==="nl"?"Volgend spoor":"Next track");document.body.classList.toggle("fixed-track",noseArrivalLocked());
     const displayControl=$("parallelDisplayControl"),displaySelect=$("parallelDisplaySelect"),partControl=$("parallelPartControl"),parts=activeLines();displayControl.hidden=false;$("parallelDisplayLabel").textContent=ui.language==="nl"?"Weergave":"View";displaySelect.options[0].text=ui.language==="nl"?"Statisch · heel spoor":"Static · whole track";displaySelect.options[1].text=ui.language==="nl"?"Lijn voor lijn":"Line by line";displaySelect.options[2].text=ui.language==="nl"?"Aankomsten":"Arrivals";displaySelect.options[3].text=ui.language==="nl"?"Bandballen · V/A":"Cushion balls · V/A";displaySelect.value=ui.parallelDisplay;ui.parallelPartIndex=Math.max(0,Math.min(parts.length-1,ui.parallelPartIndex));partControl.hidden=!(parallelLineMode()||arrivalMode());$("parallelPartLabel").textContent=ui.language==="nl"?"Lijn":"Line";$("parallelPartName").textContent=numberedLineLabel(parts[ui.parallelPartIndex]);$("parallelPartMinus").disabled=parts.length<2;$("parallelPartPlus").disabled=parts.length<2;$("resetBaseTrack").hidden=ui.trackFamily!=="parallel"||ui.lineOneMode==="basis";$("resetBaseTrack").textContent=ui.language==="nl"?`Terug naar basisspoor ${patternLabel(ui.pattern)}`:`Back to base track ${patternLabel(ui.pattern)}`;$("restoreKruinBase").textContent=ui.language==="nl"?"Herstel Kruinbasis":"Restore Kruin baseline";const navMode=tableNavigationMode(),navLine=parts[ui.parallelPartIndex];$("tableNavMode").textContent=ui.language==="nl"?"Lijn":"Line";$("tableNavValue").textContent=numberedLineLabel(navLine);$("tableNavContext").classList.remove("can-switch");$("tableNavContext").title=ui.language==="nl"?"Tik voor het keuzemenu":"Tap for the selection menu";$("tableNavMinus").disabled=parts.length<2;$("tableNavPlus").disabled=parts.length<2;$("tableNavMinus").setAttribute("aria-label",ui.language==="nl"?"Vorige lijn":"Previous line");$("tableNavPlus").setAttribute("aria-label",ui.language==="nl"?"Volgende lijn":"Next line");document.querySelector(".table-stepper")?.setAttribute("aria-label",ui.language==="nl"?"Vaste tafelbediening":"Fixed table controls");updateFloatingPanel();
@@ -1344,6 +1344,18 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
     if(index>=0&&names[index+shift])return (half?'HALF':'')+names[index+shift]+relative;
     return root+relative;
   }
+  function originTrackLabel(key=selectedTrackKey()){return startAcquitCode()+' · '+effectiveStartKey(key);}
+  function originReferenceLabel(key=selectedTrackKey()){
+    if(!startAcquitOffset())return '';
+    const match=String(key).match(/^(.+?)([+-]\d+)?$/),total=(Number(match?.[2])||0)+startAcquitOffset();
+    return 'O · '+(match?.[1]||key)+(total?(total>0?'+':'−')+Math.abs(total):'');
+  }
+  function originFullLabel(key=selectedTrackKey()){const reference=originReferenceLabel(key);return originTrackLabel(key)+(reference?' (= '+reference+')':'');}
+  function acquitMarkersSvg(){
+    const hidden=state.showAcquits===false?' style="display:none"':'';
+    return '<g class="acquit-markers"'+hidden+' pointer-events="none" aria-label="Acquits Onder Midden Boven">'+[['O',600,'Onder'],['M',430,'Midden'],['B',260,'Boven']].map(([code,y,name])=>'<g data-acquit="'+code+'" aria-label="'+name+'acquit"><path d="M 275 '+y+' H 285 M 280 '+(y-5)+' V '+(y+5)+'" fill="none" stroke="#fff1b5" stroke-width="1.5" vector-effect="non-scaling-stroke"/><text x="293" y="'+(y+4)+'" font-family="system-ui" font-size="13" font-weight="800" fill="#fff1b5" stroke="#134b38" stroke-width="3" paint-order="stroke fill">'+code+'</text></g>').join('')+'</g>';
+  }
+  function withAcquitMarkers(svg,table){return svg.replace(/(<svg\b[^>]*>(?:<rect\b[^>]*\/>){2})/,(_,start)=>start+acquitMarkersSvg()).replace(/(<svg\b[^>]*\baria-label=")[^"]*/,(_,start)=>start+esc(originFullLabel()+' · '+tableLabel(table)));}
   function actualStartPattern(table=ui.editTable,direction=ui.direction){return spoorGeometryReady?startRay(table,direction).pattern:(ui.pattern==='NEGEN'?'LKL':C.patternByLine[ui.pattern])||'?';}
   // Preserve the old per-track experiment before restoring relative starts.
   let migratedStarts=false;
@@ -1367,12 +1379,14 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
 
   if(window.installThreeBSpoorScreen)window.installThreeBSpoorScreen({
     startAcquitOffset,
+    showAcquits(){return state.showAcquits!==false;},
+    setShowAcquits(value){state.showAcquits=Boolean(value);save();for(const g of document.querySelectorAll('#svgMount .acquit-markers'))g.style.display=value?'':'none';},
     desktopOrientations(){return copy(state.desktopTableOrientations||{});},
     comparisonInfo(){
       const table=ui.editTable,route=resolvedSpoorRoute(table),point=p=>p?{kind:p.kind||null,band:p.band||null,value:typeof p.value==='number'?Math.round(p.value*1e6)/1e6:p.value,offset:Number(p.offset)||0}:null;
       const text=JSON.stringify({table,spoor:selectedTrackKey(),origin:startAcquitOffset(),direction:ui.direction,geometry:C.tables[table],ball:C.ballDiameterMm,inset:bandCenterLineInsetCm(),length:originStrokeLength(table)??dragModels[table]?.lengthCm,range:ui.playRange,display:ui.parallelDisplay,part:ui.parallelPartIndex,basis:!!ui.showBasis,extra:ui.lklExtraParts,framework:!!ui.frameworkView,route:C.parts.map(p=>[p.key,point(route[p.key]?.from),point(route[p.key]?.to)])});
       let code=2166136261;for(let i=0;i<text.length;i++)code=Math.imul(code^text.charCodeAt(i),16777619);
-      return tableLabel(table)+' · '+effectiveStartKey()+' · '+startAcquitCode()+' · '+(ui.direction==='oost'?'Oost':'West')+' · tafelcode '+(code>>>0).toString(16).padStart(8,'0').toUpperCase();
+      return tableLabel(table)+' · '+originFullLabel()+' · '+(ui.direction==='oost'?'Oost':'West')+' · tafelcode '+(code>>>0).toString(16).padStart(8,'0').toUpperCase();
     },
     mobileOrientation(){return state.mobileTableOrientation||'auto';},
     setMobileOrientation(value){if(!['auto','upright','right','left'].includes(value))throw Error('Ongeldige mobiele stand.');state.mobileTableOrientation=value;save();fitTableOrientation();},
@@ -1392,7 +1406,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
       const displayedRoute=spoorGeometryReady?resolvedSpoorRoute(table,direction):data(table);
       return copy({
       actualPattern:actualStartPattern(table,direction),startError:spoorGeometryReady?startRay(table,direction).error:null,startAcquitOffset:startAcquitOffset(),strokeLengthCm:originStrokeLength(table,direction)??(direction==='oost'?(east?.lengthCm??westLength):westLength),strokeLimits,
-      table,spoor:selectedTrackKey(),label:(startAcquitOffset()?effectiveStartKey():lineOneName())+' · '+tableLabel(table),
+      table,spoor:selectedTrackKey(),label:originFullLabel()+' · '+tableLabel(table),
       token:JSON.stringify({route:spoorSnapshot(table),east,startAcquitOffset:startAcquitOffset()}),direction:direction==='oost'?'oost':'west',
       geometry:{...C.tables[table],inset:bandCenterLineInsetCm(),startAcquitOffset:startAcquitPhysicalOffset()},
       lines:activeLines().slice(0,extent.index+1).map((part,index)=>({
@@ -1466,19 +1480,19 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
   if(window.openThreeBSpoorScreen){
     const spoorRender=render;
     const spoorDrawTable=drawTable;
-    function spoorRouteMessage(table=ui.editTable){return effectiveStartKey()+(startRay(table).error?' is onvolledig: '+startRay(table).error:' past niet in LKL');}
+    function spoorRouteMessage(table=ui.editTable){return originFullLabel()+(startRay(table).error?' is onvolledig: '+startRay(table).error:' past niet in LKL');}
     drawTable=function(table){
       if(spoorGeometryReady&&ui.playRange==='lkl'&&actualStartPattern(table)!=='LKL'){
         delete dragModels[table];
-        return '<div class="drawing-card"><svg data-view-table="'+table+'" class="table-svg" viewBox="60 40 440 780" role="img" aria-label="Geen passend LKL-spoor"><rect x="60" y="40" width="440" height="780" rx="11" fill="#704725"/><rect x="110" y="90" width="340" height="680" fill="#176f4f" stroke="#e7c66e" stroke-width="3"/><text x="280" y="420" text-anchor="middle" fill="#fff6dd" font-family="system-ui" font-size="16">' + esc(spoorRouteMessage(table)) + '</text></svg></div>';
+        return withAcquitMarkers('<div class="drawing-card"><svg data-view-table="'+table+'" class="table-svg" viewBox="60 40 440 780" role="img" aria-label="Geen passend LKL-spoor"><rect x="60" y="40" width="440" height="780" rx="11" fill="#704725"/><rect x="110" y="90" width="340" height="680" fill="#176f4f" stroke="#e7c66e" stroke-width="3"/><text x="280" y="420" text-anchor="middle" fill="#fff6dd" font-family="system-ui" font-size="16">' + esc(spoorRouteMessage(table)) + '</text></svg></div>',table);
       }
-      return spoorDrawTable(table).replace('<svg class="table-svg"','<svg data-view-table="'+table+'" class="table-svg"');
+      return withAcquitMarkers(spoorDrawTable(table),table).replace('<svg class="table-svg"','<svg data-view-table="'+table+'" class="table-svg"');
     };
     render=function(...args){originRayCache.clear();
       const result=spoorRender(...args);
       const pattern=actualStartPattern(),excluded=spoorGeometryReady&&ui.playRange==='lkl'&&pattern!=='LKL';
-      const status=$('startAcquitPatternStatus');if(status){status.textContent=spoorGeometryReady?(startRay().error?effectiveStartKey()+' · '+startRay().error:(effectiveStartKey()+' · '+pattern+(excluded?' · uitgesloten van LKL':''))):'Patroon '+pattern;status.dataset.pattern=pattern;}
-      if(spoorGeometryReady){for(const id of ['patternSelect','fanSelect'])for(const option of $(id).options)option.text=effectiveStartKey(option.value);$('bandTrackValue').textContent=effectiveStartKey();$('drawingTitle').textContent=pattern+' · '+effectiveStartKey()+' · '+(ui.direction==='oost'?'Oost':'West');$('patternBadge').textContent=pattern;}
+      const status=$('startAcquitPatternStatus');if(status){status.textContent=spoorGeometryReady?(startRay().error?originFullLabel()+' · '+startRay().error:(originFullLabel()+' · '+pattern+(excluded?' · uitgesloten van LKL':''))):'Patroon '+pattern;status.dataset.pattern=pattern;}
+      if(spoorGeometryReady){for(const id of ['patternSelect','fanSelect'])for(const option of $(id).options)option.text=originTrackLabel(option.value);$('bandTrackValue').textContent=originTrackLabel();$('bandTrackValue').title=originFullLabel();$('drawingTitle').textContent=pattern+' · '+originFullLabel()+' · '+(ui.direction==='oost'?'Oost':'West');$('patternBadge').textContent=pattern;}
       if(excluded){
         const central=$('centralLineSelect');
         for(const option of [...central.options])if(option.disabled)option.remove();
