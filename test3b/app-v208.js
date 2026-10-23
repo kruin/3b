@@ -1229,12 +1229,34 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
     const result={...trace,route};originRayCache.set(key,result);return result;
   }
   const originalSpoorData=data;
+  function referenceSpoorRoute(table,direction=ui.direction){
+    let route;spoorBaseDepth++;try{route=copy(originalSpoorData(table));}finally{spoorBaseDepth--;}
+    const source=K.tracks?.[table]?.[selectedTrackKey()]?.linePoints;
+    for(const [line,points] of Object.entries(source||{}))if(route[line])for(const side of ['from','to']){
+      const p=points[side],current=route[line][side];
+      if(p&&Number.isFinite(p.value)&&(p.measurement===true||p.status==='approved'||p.status==='edited'||p.source==='user')&&!(current?.userAdjusted===true||current?.status==='edited'||current?.source==='user'))route[line][side]=copy(p);
+    }
+    const east=direction==='oost'&&state.spoorDirectionalMeasurements?.[table+':'+selectedTrackKey()]?.oost;
+    if(east)for(const [line,points] of Object.entries(east.lines||{}))if(route[line]){if(points.V)route[line].from=copy(points.V);if(points.A)route[line].to=copy(points.A);}
+    return route;
+  }
+  function resolvedSpoorRoute(table,direction=ui.direction){
+    const saved=state.startAcquitRoutes?.[originRouteKey(table,direction)]||K.startAcquitRoutes?.[originRouteKey(table,direction)];
+    if(startAcquitOffset()!==0)return saved||startRay(table,direction).route;
+    const route=referenceSpoorRoute(table,direction);
+    // A saved route also contains untouched generated points. Only actual edits
+    // may override the original measurements in the unshifted reference route.
+    for(const [line,points] of Object.entries(saved||{}))if(route[line])for(const side of ['from','to']){
+      const p=points[side];if(p&&(p.userAdjusted===true||p.status==='edited'||p.source==='user'))route[line][side]=copy(p);
+    }
+    return route;
+  }
   data=function(table=ui.editTable){
     if(spoorBaseDepth||!spoorGeometryReady)return originalSpoorData(table);
-    return state.startAcquitRoutes?.[originRouteKey(table)]||K.startAcquitRoutes?.[originRouteKey(table)]||startRay(table).route;
+    return resolvedSpoorRoute(table);
   };
   const originalEditableRoute=ensureEditableRoute;
-  ensureEditableRoute=function(table=ui.editTable){if(spoorBaseDepth||!spoorGeometryReady)return originalEditableRoute(table);state.startAcquitRoutes??=copy(K.startAcquitRoutes||{});return state.startAcquitRoutes[originRouteKey(table)]??=copy(data(table));};
+  ensureEditableRoute=function(table=ui.editTable){if(spoorBaseDepth||!spoorGeometryReady)return originalEditableRoute(table);state.startAcquitRoutes??=copy(K.startAcquitRoutes||{});const key=originRouteKey(table);return state.startAcquitRoutes[key]=copy(resolvedSpoorRoute(table));};
   const originalStrokeLength=setStrokeLength;
   setStrokeLength=function(table,length){if(spoorBaseDepth||!spoorGeometryReady)return originalStrokeLength(table,length);state.startAcquitLengths??=copy(K.startAcquitLengths||{});state.startAcquitLengths[originRouteKey(table)]=Math.max(0,length);};
   const originalCentralKeys=centralTrackKeys;
@@ -1278,7 +1300,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
       const east=spoorGeometryReady?null:state.spoorDirectionalMeasurements?.[key]?.oost,model=dragModels[table];
       const westLength=originStrokeLength(table,'west')??model?.lengthCm??state.strokeLengthsCm?.[table]?.[ui.pattern]??C.drawing.departureBall.defaultLengthsCm?.[table]?.[ui.pattern]??baseStrokeLength(table);
       const strokeLimits=direction==='oost'?{min:0,max:Math.hypot(C.tables[table].widthCm,C.tables[table].heightCm)}:model?{min:model.startDistance*(1-model.maxFraction)-model.radiusCm*2,max:model.startDistance-model.radiusCm*2}:null;
-      const displayedRoute=spoorGeometryReady?(state.startAcquitRoutes?.[originRouteKey(table,direction)]||K.startAcquitRoutes?.[originRouteKey(table,direction)]||startRay(table,direction).route):data(table);
+      const displayedRoute=spoorGeometryReady?resolvedSpoorRoute(table,direction):data(table);
       return copy({
       actualPattern:actualStartPattern(table,direction),startError:spoorGeometryReady?startRay(table,direction).error:null,startAcquitOffset:startAcquitOffset(),strokeLengthCm:originStrokeLength(table,direction)??(direction==='oost'?(east?.lengthCm??westLength):westLength),strokeLimits,
       table,spoor:selectedTrackKey(),label:(startAcquitOffset()?effectiveStartKey():lineOneName())+' · '+tableLabel(table),
@@ -1298,7 +1320,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
       if(spoorGeometryReady){
         const routeKey=originRouteKey(table,original.direction),before=copy(state);tableCheckpoint(table);
         try{
-          state.startAcquitRoutes??=copy(K.startAcquitRoutes||{});const route=copy(state.startAcquitRoutes[routeKey]||{...startRay(table,original.direction).route,...Object.fromEntries(original.lines.map(line=>[line.key,{from:line.V,to:line.A}]))});
+          state.startAcquitRoutes??=copy(K.startAcquitRoutes||{});const route=copy(resolvedSpoorRoute(table,original.direction));
           for(const change of changes){if(change.side==='L')continue;const part=original.lines.find(line=>line.key===change.line),side=change.side==='V'?'from':change.side==='A'?'to':null;if(!part||part.terminal||!side||side==='from'&&part.V?.kind==='acquit')throw Error('Dit punt blijft automatisch.');route[change.line][side]={...copy(change.point),source:'user',status:'edited',userAdjusted:true,editOwner:ownerActive()?'kruin':'user'};}
           state.startAcquitRoutes[routeKey]=route;
           if(lengthChange){state.startAcquitLengths??=copy(K.startAcquitLengths||{});state.startAcquitLengths[routeKey]=wantedLength;}
