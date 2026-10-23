@@ -1,3 +1,27 @@
+/* Physical phone testing: show the project's published QR, without changing app state. */
+if(typeof window!=='undefined'){
+  window.installMobileTestQr=function({button,imageUrl,testUrl,qrPageUrl}){
+    if(!button)return;
+    let dialog=document.getElementById('mobileQrDialog');
+    if(!dialog){
+      const style=document.createElement('style');style.textContent='#mobileQrDialog{width:min(94vw,440px);max-height:92dvh;box-sizing:border-box;overflow:auto;padding:16px;border:1px solid #82958b;border-radius:12px;background:#fff;color:#142e24;font:16px system-ui;text-align:center}#mobileQrDialog::backdrop{background:#0006}#mobileQrDialog header{display:flex;align-items:center;justify-content:space-between;gap:12px}#mobileQrDialog h2{font:700 20px system-ui;margin:0}#mobileQrDialog button{min-width:44px;min-height:44px;font:20px system-ui;color:#142e24;background:#f1f5f2;border:1px solid #82958b;border-radius:6px}#mobileQrDialog img{display:block;width:100%;height:auto;max-width:410px;margin:12px auto;background:#fff}#mobileQrDialog p{font:14px/1.4 system-ui;margin:10px 0}#mobileQrDialog a{color:#1552a0;text-decoration:underline}';document.head.append(style);
+      dialog=document.createElement('dialog');dialog.id='mobileQrDialog';dialog.setAttribute('aria-labelledby','mobileQrTitle');
+      const header=document.createElement('header'),title=document.createElement('h2'),close=document.createElement('button');title.id='mobileQrTitle';title.textContent='Test op je telefoon';close.type='button';close.textContent='×';close.setAttribute('aria-label','QR sluiten');close.onclick=()=>dialog.close();header.append(title,close);
+      const img=document.createElement('img');img.src=imageUrl;img.alt='QR-code om dit project op je telefoon te openen';
+      const instruction=document.createElement('p');instruction.textContent='Scan met de camera van je telefoon. Test staand én liggend.';
+      const links=document.createElement('p'),large=document.createElement('a'),open=document.createElement('a');large.href=qrPageUrl;large.textContent='QR groot openen';large.target='_blank';large.rel='noopener';open.href=testUrl;open.textContent='Open de site';open.target='_blank';open.rel='noopener';links.append(large,document.createTextNode(' · '),open);
+      const note=document.createElement('p');note.textContent='De QR opent de site; eigen gegevens en instellingen worden niet automatisch overgenomen.';
+      dialog.append(header,instruction,img,links,note);document.body.append(dialog);
+    }
+    button.textContent='QR · Test op telefoon';button.setAttribute('aria-haspopup','dialog');button.setAttribute('aria-controls','mobileQrDialog');button.onclick=()=>{if(!dialog.open)dialog.showModal();};
+  };
+  const script=document.currentScript;
+  if(script?.dataset.testUrl){
+    const setup=()=>{const button=document.createElement('button');button.id='openMobileQr';button.type='button';button.style.cssText='position:fixed;right:12px;top:12px;z-index:3000;min-height:44px;padding:8px 14px;border:1px solid #82958b;border-radius:8px;background:white;color:#142e24;font:700 15px system-ui';document.body.append(button);window.installMobileTestQr({button,imageUrl:new URL(script.dataset.qrImage,script.src).href,testUrl:script.dataset.testUrl,qrPageUrl:new URL(script.dataset.qrPage,script.src).href});};
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',setup,{once:true});else setup();
+  }
+}
+
 'use strict';
 // R uses the cushion numbering (0–80 / 0–40). Its tangential coordinate
 // is the ball centre's coordinate; the normal coordinate is the cushion edge.
@@ -100,6 +124,7 @@ const SpoorScreenFormat=(()=>{
 if(typeof module!=='undefined')module.exports=SpoorScreenFormat;
 if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
   document.body.classList.add('spoor-editor-only');
+  window.installMobileTestQr?.({button:document.getElementById('mobilePreview'),imageUrl:new URL('qr-test-neus.png?v=qr-phone-20261024',location.href).href,testUrl:'https://kruin.github.io/3b/test3b/?v=qr-phone-20261024#owner=kruin',qrPageUrl:new URL('qr.html',location.href).href});
   const markTestVersion=()=>{const banner=document.querySelector('#testEnvironmentBanner');if(banner&&!document.querySelector('#spoorTestVersion')){const version=document.createElement('span');version.id='spoorTestVersion';version.textContent='TEST 24-10 · Neus V';if(banner.firstChild?.nodeType===3)banner.firstChild.textContent=banner.firstChild.textContent.replace('TEST v208-r15 · aparte browseropslag · geen databaseverbinding',' · testopslag · geen database · ');banner.prepend(version);}};
   markTestVersion();window.addEventListener('DOMContentLoaded',markTestVersion,{once:true});
 
