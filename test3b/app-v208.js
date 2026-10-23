@@ -1153,7 +1153,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
       const selectedWindow=junction&&selectedBall?.type==="junction"&&selectedBall.table===t&&selectedBall.index===index?ballValueWindow(B,shownBand(seg.to.band),seg.to,data(t)[nextLine.key].from,x,y,fieldW,fieldH,wood):hiddenPriorJunction&&selectedBall?.type==="junction"&&selectedBall.table===t&&selectedBall.index===index-1?ballValueWindow(A,shownBand(seg.from.band),previousData.to,seg.from,x,y,fieldW,fieldH,wood):"";
       const fromActive=valueLabelActive(t,index,"V"),toActive=valueLabelActive(t,index,"A"),dragging=document.body.classList.contains("ball-dragging"),fromGuideWidth=dragging&&fromActive?lineWidth:guideWidth,toGuideWidth=dragging&&toActive?lineWidth:guideWidth;
       const labelBounds={left:viewX,right:viewX+viewW,top:viewY,bottom:viewY+viewH},fromLabel=valueTag(fromTagPoint,fromTag,l.color,labelBounds,labelKey(t,index,"V"),fromActive,seg.from),toLabel=valueTag(GB,toTag,l.color,labelBounds,labelKey(t,index,"A"),toActive,seg.to);
-      if(showLine){labelLayer+=fromLabel+(partial?"":toLabel)+selectedWindow;ballHitLayer+=hiddenPriorZone+junctionZone;const stipMarker=(p,side,source)=>{p={x:Math.max(viewX+13,Math.min(viewX+viewW-13,p.x)),y:Math.max(viewY+13,Math.min(viewY+viewH-13,p.y))};return `<g class="stip-marker"><circle pointer-events="none" cx="${p.x}" cy="${p.y}" r="5" fill="${statusColor(source)}" stroke="#fffaf0" stroke-width="1.5"/><circle class="stip-hit" tabindex="0" role="img" aria-label="${esc(side==='V'?fromTag:toTag)} · ${esc(originLabel(source))}" data-label-key="${labelKey(t,index,side)}" data-start-acquit="${source?.kind==="acquit"}" cx="${p.x}" cy="${p.y}" r="12" fill="transparent"/></g>`;};ballHitLayer+=stipMarker(fromTagPoint,"V",seg.from)+(partial?"":stipMarker(GB,"A",seg.to));const selectable=true,segmentHit=selectable?`<line class="segment-hit" data-segment-index="${index}" data-segment-table="${t}" x1="${A.x}" y1="${A.y}" x2="${B.x}" y2="${B.y}"/>`:"";lineShieldLayer+=segmentHit;routeLayer+=`<g data-part="${l.key}" data-table="${t}" data-runout-fraction="${renderFraction}" class="${index===activeSegmentIndex&&t===activeSegmentTable?"active-line":""}"><line class="value-guide value-guide-v${dragging&&fromActive?" drag-wide-guide":""}" x1="${GA.x}" y1="${GA.y}" x2="${thinA.x}" y2="${thinA.y}" stroke="${statusColor(seg.from)}" stroke-width="${Math.max(3,fromGuideWidth)}"/><line class="route-line" x1="${thickA.x}" y1="${thickA.y}" x2="${thickB.x}" y2="${thickB.y}" stroke="${l.color}" stroke-width="${lineWidth}"/>${partial?"":`<line class="value-guide value-guide-a${dragging&&toActive?" drag-wide-guide":""}" x1="${thinB.x}" y1="${thinB.y}" x2="${GB.x}" y2="${GB.y}" stroke="${statusColor(seg.to)}" stroke-width="${Math.max(3,toGuideWidth)}"/>`}${priorJunction?"":ballSvg(A,ballRadius,hiddenPriorJunction?"junction-ball":isDeparture?"cue-ball":"",hiddenPriorJunction?hiddenPriorAttrs:dragAttrs,seg.from)}${ballSvg(B,ballRadius,partial?"runout-ball":junction?"junction-ball":endpoint?"endpoint-ball":"",partial?"":junction?junctionAttrs:endpointAttrs,partial?null:seg.to)}<text x="${mx}" y="${my-(partial?35:10)}" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="800" fill="#fff6dd" stroke="#103d2c" stroke-width="3" paint-order="stroke fill">${esc(numberedLineLabel(l))}</text>${isDeparture?`<text x="${mx}" y="${my+18}" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="800" fill="#fff6dd" stroke="#103d2c" stroke-width="3" paint-order="stroke fill">${ui.language==="nl"?"Afstoot":"Stroke"} ${Math.round(lengthCm)} cm</text>`:""}</g>`;}
+      if(showLine){labelLayer+=fromLabel+(partial?"":toLabel)+selectedWindow;ballHitLayer+=hiddenPriorZone+junctionZone;const stipMarker=(p,side,source)=>{p={x:Math.max(viewX+13,Math.min(viewX+viewW-13,p.x)),y:Math.max(viewY+13,Math.min(viewY+viewH-13,p.y))};return `<g class="stip-marker"><circle pointer-events="none" cx="${p.x}" cy="${p.y}" r="5" fill="${statusColor(source)}" stroke="#fffaf0" stroke-width="1.5"/><circle class="stip-hit" tabindex="0" role="img" aria-label="${esc(side==='V'?fromTag:toTag)} · ${esc(originLabel(source))}" data-label-key="${labelKey(t,index,side)}" data-start-acquit="${source?.kind==="acquit"}" cx="${p.x}" cy="${p.y}" r="12" fill="transparent"/></g>`;};ballHitLayer+=stipMarker(fromTagPoint,"V",seg.from)+(partial?"":stipMarker(GB,"A",seg.to));const selectable=true,segmentHit=selectable?`<line class="segment-hit" data-segment-index="${index}" data-segment-table="${t}" x1="${A.x}" y1="${A.y}" x2="${B.x}" y2="${B.y}"/>`:"";lineShieldLayer+=segmentHit;routeLayer+=`<g data-part="${l.key}" data-table="${t}" data-runout-fraction="${renderFraction}" class="${index===activeSegmentIndex&&t===activeSegmentTable?"active-line":""}"><line class="value-guide value-guide-v${dragging&&fromActive?" drag-wide-guide":""}" x1="${GA.x}" y1="${GA.y}" x2="${thinA.x}" y2="${thinA.y}" stroke="${statusColor(seg.from)}" stroke-width="${Math.max(3,fromGuideWidth)}"/><line class="route-line" x1="${thickA.x}" y1="${thickA.y}" x2="${thickB.x}" y2="${thickB.y}" stroke="${l.color}" stroke-width="${lineWidth}"/>${partial?"":`<line class="value-guide value-guide-a${dragging&&toActive?" drag-wide-guide":""}" x1="${thinB.x}" y1="${thinB.y}" x2="${GB.x}" y2="${GB.y}" stroke="${statusColor(seg.to)}" stroke-width="${Math.max(3,toGuideWidth)}"/>`}${priorJunction?"":ballSvg(A,ballRadius,hiddenPriorJunction?"junction-ball":isDeparture?"cue-ball":"",hiddenPriorJunction?hiddenPriorAttrs:dragAttrs,seg.from)}${ballSvg(B,ballRadius,partial?"runout-ball":junction?"junction-ball":endpoint?"endpoint-ball":"",partial?"":junction?junctionAttrs:endpointAttrs,partial?null:(junction&&nextLine?.key==="romp"?data(t).romp.from:seg.to))}<text x="${mx}" y="${my-(partial?35:10)}" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="800" fill="#fff6dd" stroke="#103d2c" stroke-width="3" paint-order="stroke fill">${esc(numberedLineLabel(l))}</text>${isDeparture?`<text x="${mx}" y="${my+18}" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="800" fill="#fff6dd" stroke="#103d2c" stroke-width="3" paint-order="stroke fill">${ui.language==="nl"?"Afstoot":"Stroke"} ${Math.round(lengthCm)} cm</text>`:""}</g>`;}
     });
     /* Lijnbediening onder balbediening; waardevensters boven alle tekenlagen. */
     s+=lineShieldLayer+routeLayer+(bandOnly?"":sixSevenRunOutSvg(t,map,visibleKeys))+ballHitLayer+labelLayer;
@@ -1210,7 +1210,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
   init();
 
   /* 3B full spoor editor adapter */
-  var spoorBaseDepth=0,spoorGeometryReady=false,originRayCache=new Map();
+  var spoorBaseDepth=0,spoorGeometryReady=false,originRayCache=new Map(),spoorCalculation=null;
   function startAcquitOffset(){return spoorBaseDepth?0:state.startAcquitOffset??K.startAcquitOffset??0;}
   function startAcquitPhysicalOffset(){return spoorBaseDepth||!spoorGeometryReady?0:startAcquitOffset();}
   function startAcquitCode(){return {0:'O',2:'M',4:'B'}[startAcquitOffset()]||'O';}
@@ -1220,12 +1220,23 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
   function startRay(table=ui.editTable,direction=ui.direction){
     const offset=startAcquitOffset(),key=offset+':'+table+':'+selectedTrackKey()+':'+direction;
     if(originRayCache.has(key))return originRayCache.get(key);
-    let reference;spoorBaseDepth++;try{reference=copy(originalSpoorData(table));}finally{spoorBaseDepth--;}
-    const east=direction==='oost'&&state.spoorDirectionalMeasurements?.[table+':'+selectedTrackKey()]?.oost?.lines?.neus;if(east)reference.neus={from:copy(east.V),to:copy(east.A)};
-    const old=state.startAcquitRoutes?.[legacyOriginRouteKey(table,direction)]||K.startAcquitRoutes?.[legacyOriginRouteKey(table,direction)];
-    const nose=old?.neus||reference.neus,referenceOffset=old?offset:0;
-    const trace=ThreeBStartRay.trace(nose,{...C.tables[table],inset:bandCenterLineInsetCm(),referenceOffset},old?0:offset,C.parts.length);
-    const route={};C.parts.forEach((part,index)=>route[part.key]=trace.segments?.[index]||{from:index?{band:'west',value:null}:{...reference.neus.from},to:{band:'west',value:null}});
+    let base;spoorBaseDepth++;try{
+      base=referenceSpoorRoute(table,direction);
+      const ownKey='omb:0:'+table+':'+selectedTrackKey()+(direction==='oost'?':oost':''),own=state.startAcquitRoutes?.[ownKey]||K.startAcquitRoutes?.[ownKey];
+      for(const [line,points] of Object.entries(own||{}))if(base[line])for(const side of ['from','to']){const p=points[side];if(skeletonEditable(line,side)&&p&&(p.userAdjusted||p.status==='edited'||p.source==='user'))base[line][side]=copy(p);}
+      base=calculateSkeletonRoute(table,base);
+    }finally{spoorBaseDepth--;}
+    const route=copy(base),hits=[];let shared=complete(base.neus?.from)?point(base.neus.from,table):null,departure=null,error=null;
+    const previousDirection=ui.direction;ui.direction=direction;
+    try{for(let i=0;i<C.parts.length;i++){
+      const part=C.parts[i],source=base[part.key];if(!shared||!source||![source.from,source.to].every(complete)){for(const later of C.parts.slice(i))route[later.key]={from:{band:base[later.key]?.from?.band||'west',value:null},to:{band:base[later.key]?.to?.band||'noord',value:null}};break;}
+      let a,b;spoorBaseDepth++;try{a=point(source.from,table);b=point(source.to,table);}finally{spoorBaseDepth--;}
+      if(i===0)shared=point(source.from,table);
+      const hit=firstCushionContact(table,shared,{x:b.x-a.x,y:b.y-a.y});if(!hit){error='Geen geldig volgend bandcontact';break;}
+      const V=i?{band:departure,value:diamondValueThroughBall(departure,shared,hit.point,table,.000001),status:'calculated',source:'karkas_translation'}:copy(source.from),A={band:hit.band,value:diamondValueThroughBall(hit.band,shared,hit.point,table,.000001),status:'calculated',source:'karkas_translation'};
+      route[part.key]={from:V,to:A};hits.push({band:hit.band,center:hit.point});shared=hit.point;departure=hit.band;
+    }}finally{ui.direction=previousDirection;}
+    const trace={hits,error:error||(hits.length<3?'Kopmeting of karkas nog onvolledig':null),pattern:hits.length>=3?hits.slice(0,3).map(h=>['west','oost'].includes(h.band)?'L':'K').join(''):'?'};
     const result={...trace,route};originRayCache.set(key,result);return result;
   }
   const originalSpoorData=data;
@@ -1234,24 +1245,62 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
     const source=K.tracks?.[table]?.[selectedTrackKey()]?.linePoints;
     for(const [line,points] of Object.entries(source||{}))if(route[line])for(const side of ['from','to']){
       const p=points[side],current=route[line][side];
-      if(p&&Number.isFinite(p.value)&&(p.measurement===true||p.status==='approved'||p.status==='edited'||p.source==='user')&&!(current?.userAdjusted===true||current?.status==='edited'||current?.source==='user'))route[line][side]=copy(p);
+      if(p&&Number.isFinite(p.value)&&(p.measurement===true||p.status==='edited'||p.source==='user'||p.status==='approved'&&!(line==='nek'&&side==='to'&&legacyNeckDefault(table,p)))&&!(current?.userAdjusted===true||current?.status==='edited'||current?.source==='user'))route[line][side]=copy(p);
     }
     const east=direction==='oost'&&state.spoorDirectionalMeasurements?.[table+':'+selectedTrackKey()]?.oost;
     if(east)for(const [line,points] of Object.entries(east.lines||{}))if(route[line]){if(points.V)route[line].from=copy(points.V);if(points.A)route[line].to=copy(points.A);}
     return route;
   }
-  function resolvedSpoorRoute(table,direction=ui.direction){
-    const saved=state.startAcquitRoutes?.[originRouteKey(table,direction)]||K.startAcquitRoutes?.[originRouteKey(table,direction)];
-    if(startAcquitOffset()!==0)return saved||startRay(table,direction).route;
-    const route=referenceSpoorRoute(table,direction);
-    // A saved route also contains untouched generated points. Only actual edits
-    // may override the original measurements in the unshifted reference route.
-    for(const [line,points] of Object.entries(saved||{}))if(route[line])for(const side of ['from','to']){
-      const p=points[side];if(p&&(p.userAdjusted===true||p.status==='edited'||p.source==='user'))route[line][side]=copy(p);
+  function skeletonEditable(line,side){return line==='neus'&&side==='to'||line==='romp'||line==='kop'&&side==='to'||line==='been'&&side==='to';}
+  function calculateSkeletonRoute(table,input){
+    const route=copy(input);
+    for(const [line,points] of Object.entries(route))for(const side of ['from','to']){
+      const p=points[side];if(!p||skeletonEditable(line,side)||line==='neus')continue;
+      const ref=p.inputReference||(p.userAdjusted||p.status==='edited'||p.measurement===true||p.source==='user'?copy(p):null);
+      points[side]={...p,status:'calculated',source:'automatic',calculationBasis:'karkas_contact',userAdjusted:false,measurement:false};delete points[side].editOwner;
+      if(ref)points[side].inputReference=ref;
+    }
+    const nose=route.neus,head=route.kop,neck=route.nek,body=route.romp,radius=C.ballDiameterMm/20;
+    if(nose&&head&&neck&&body&&[nose.from,nose.to,head.to,body.from,body.to].every(complete)){
+      const first=bandBall(nose.to,nose.from,table,radius),third=bandBall(body.from,body.to,table,radius);
+      const h=diamondValueThroughBall(nose.to.band,first,point(head.to,table),table,.000001);
+      if(h!==null){head.from={...head.from,band:nose.to.band,value:h};const second=bandBall(head.to,head.from,table,radius);
+        const v=diamondValueThroughBall(head.to.band,second,third,table,.000001),a=diamondValueThroughBall(body.from.band,third,second,table,.000001);
+        if(v!==null&&a!==null){neck.from={...neck.from,band:head.to.band,value:v};neck.to={...neck.to,band:body.from.band,value:a};}
+      }
+      const previous=spoorCalculation;spoorCalculation={table,route};
+      try{
+        applyConfiguredCrossFromBody(table);applyLklLegFromCross(table);
+        let prior=route.been;
+        for(const part of C.parts.slice(C.parts.findIndex(p=>p.key==='been')+1)){
+          if(!prior||![prior.from,prior.to].every(complete))break;
+          const start=bandBall(prior.to,prior.from,table,radius),before=bandBall(prior.from,prior.to,table,radius),dx=start.x-before.x,dy=start.y-before.y;
+          const vertical=['west','oost'].includes(prior.to.band),hit=firstCushionContact(table,start,{x:vertical?-dx:dx,y:vertical?dy:-dy});if(!hit)break;
+          const v=diamondValueThroughBall(prior.to.band,start,hit.point,table,.000001),a=diamondValueThroughBall(hit.band,start,hit.point,table,.000001);if(v===null||a===null)break;
+          route[part.key].from={...route[part.key].from,band:prior.to.band,value:v};route[part.key].to={...route[part.key].to,band:hit.band,value:a};prior=route[part.key];
+        }
+      }finally{spoorCalculation=previous;}
+    }else{
+      for(const [line,side] of [['kop','from'],['nek','from'],['nek','to']])if(route[line]?.[side])route[line][side].value=null;
+    }
+    for(const [line,points] of Object.entries(input))for(const side of ['from','to']){
+      const p=points[side],ref=p?.inputReference||(p&&(p.userAdjusted||p.status==='edited'||p.measurement===true||p.source==='user')?copy(p):null);
+      if(ref&&route[line]?.[side]&&!skeletonEditable(line,side)&&line!=='neus')route[line][side].inputReference=ref;
     }
     return route;
   }
+  function resolvedSpoorRoute(table,direction=ui.direction){
+    const saved=state.startAcquitRoutes?.[originRouteKey(table,direction)]||K.startAcquitRoutes?.[originRouteKey(table,direction)];
+    const route=startAcquitOffset()!==0?copy(startRay(table,direction).route):referenceSpoorRoute(table,direction);
+    // A saved route also contains untouched generated points. Only actual edits
+    // may override the original measurements in the unshifted reference route.
+    for(const [line,points] of Object.entries(saved||{}))if(route[line])for(const side of ['from','to']){
+      const p=points[side];if(p&&(p.userAdjusted===true||p.status==='edited'||p.source==='user'))route[line][side]=copy(p);else if(p?.inputReference)route[line][side].inputReference=copy(p.inputReference);
+    }
+    return calculateSkeletonRoute(table,route);
+  }
   data=function(table=ui.editTable){
+    if(spoorCalculation?.table===table)return spoorCalculation.route;
     if(spoorBaseDepth||!spoorGeometryReady)return originalSpoorData(table);
     return resolvedSpoorRoute(table);
   };
@@ -1307,7 +1356,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
       token:JSON.stringify({route:spoorSnapshot(table),east,startAcquitOffset:startAcquitOffset()}),direction:direction==='oost'?'oost':'west',
       geometry:{...C.tables[table],inset:bandCenterLineInsetCm(),startAcquitOffset:startAcquitPhysicalOffset()},
       lines:activeLines().slice(0,extent.index+1).map((part,index)=>({
-        key:part.key,label:lineLabel(part),V:!spoorGeometryReady&&direction==='oost'&&east?.lines?.[part.key]?east.lines[part.key].V:displayedRoute[part.key]?.from,A:!spoorGeometryReady&&direction==='oost'&&east?.lines?.[part.key]?east.lines[part.key].A:displayedRoute[part.key]?.to,
+        key:part.key,label:lineLabel(part),editableV:skeletonEditable(part.key,'from'),editableA:skeletonEditable(part.key,'to'),startBall:index>0&&displayedRoute[activeLines()[index-1].key]&&[displayedRoute[activeLines()[index-1].key].from,displayedRoute[activeLines()[index-1].key].to].every(complete)?canonicalPoint(bandBall(displayedRoute[activeLines()[index-1].key].to,displayedRoute[activeLines()[index-1].key].from,table,C.ballDiameterMm/20),table):null,V:!spoorGeometryReady&&direction==='oost'&&east?.lines?.[part.key]?east.lines[part.key].V:displayedRoute[part.key]?.from,A:!spoorGeometryReady&&direction==='oost'&&east?.lines?.[part.key]?east.lines[part.key].A:displayedRoute[part.key]?.to,
         terminal:index===extent.index,fraction:index===extent.index?extent.fraction:1
       }))
     });},
@@ -1321,8 +1370,8 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
         const routeKey=originRouteKey(table,original.direction),before=copy(state);tableCheckpoint(table);
         try{
           state.startAcquitRoutes??=copy(K.startAcquitRoutes||{});const route=copy(resolvedSpoorRoute(table,original.direction));
-          for(const change of changes){if(change.side==='L')continue;const part=original.lines.find(line=>line.key===change.line),side=change.side==='V'?'from':change.side==='A'?'to':null;if(!part||part.terminal||!side||side==='from'&&part.V?.kind==='acquit')throw Error('Dit punt blijft automatisch.');route[change.line][side]={...copy(change.point),source:'user',status:'edited',userAdjusted:true,editOwner:ownerActive()?'kruin':'user'};}
-          state.startAcquitRoutes[routeKey]=route;
+          for(const change of changes){if(change.side==='L')continue;const part=original.lines.find(line=>line.key===change.line),side=change.side==='V'?'from':change.side==='A'?'to':null;if(!part||part.terminal||!side||side==='from'&&(part.V?.kind==='acquit'||part.editableV===false)||side==='to'&&part.editableA===false)throw Error('Dit punt wordt afgeleid uit het karkas.');route[change.line][side]={...copy(change.point),source:'user',status:'edited',userAdjusted:true,editOwner:ownerActive()?'kruin':'user'};}
+          state.startAcquitRoutes[routeKey]=calculateSkeletonRoute(table,route);
           if(lengthChange){state.startAcquitLengths??=copy(K.startAcquitLengths||{});state.startAcquitLengths[routeKey]=wantedLength;}
           save();acceptExperiment();originRayCache.clear();render();return;
         }catch(error){for(const name of Object.keys(state))delete state[name];Object.assign(state,before);throw error;}
@@ -1347,7 +1396,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
         for(const change of changes){
           if(change.line==='neus'&&change.side==='L')continue;
           const part=original.lines.find(line=>line.key===change.line),side=change.side==='V'?'from':change.side==='A'?'to':null;
-          if(!part||part.terminal||!side||side==='from'&&part.V?.kind==='acquit')throw Error('Dit punt blijft automatisch.');
+          if(!part||part.terminal||!side||side==='from'&&(part.V?.kind==='acquit'||part.editableV===false)||side==='to'&&part.editableA===false)throw Error('Dit punt wordt afgeleid uit het karkas.');
           const old=route[change.line][side];
           route[change.line][side]={...copy(old),automaticReference:copy(old?.automaticReference||old),band:change.point.band,value:change.point.value,
             status:change.point.value===null?'calculated':'edited',source:change.point.value===null?'automatic':'user',
@@ -1377,10 +1426,11 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
   if(window.openThreeBSpoorScreen){
     const spoorRender=render;
     const spoorDrawTable=drawTable;
+    function spoorRouteMessage(table=ui.editTable){return effectiveStartKey()+(startRay(table).error?' is onvolledig: '+startRay(table).error:' past niet in LKL');}
     drawTable=function(table){
       if(spoorGeometryReady&&ui.playRange==='lkl'&&actualStartPattern(table)!=='LKL'){
         delete dragModels[table];
-        return '<div class="drawing-card"><svg class="table-svg" viewBox="60 40 440 780" role="img" aria-label="Geen passend LKL-spoor"><rect x="60" y="40" width="440" height="780" rx="11" fill="#704725"/><rect x="110" y="90" width="340" height="680" fill="#176f4f" stroke="#e7c66e" stroke-width="3"/><text x="280" y="420" text-anchor="middle" fill="#fff6dd" font-family="system-ui" font-size="16">' + esc(effectiveStartKey()+' past niet in LKL') + '</text></svg></div>';
+        return '<div class="drawing-card"><svg class="table-svg" viewBox="60 40 440 780" role="img" aria-label="Geen passend LKL-spoor"><rect x="60" y="40" width="440" height="780" rx="11" fill="#704725"/><rect x="110" y="90" width="340" height="680" fill="#176f4f" stroke="#e7c66e" stroke-width="3"/><text x="280" y="420" text-anchor="middle" fill="#fff6dd" font-family="system-ui" font-size="16">' + esc(spoorRouteMessage(table)) + '</text></svg></div>';
       }
       return spoorDrawTable(table);
     };
@@ -1393,8 +1443,8 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
         const central=$('centralLineSelect');
         for(const option of [...central.options])if(option.disabled)option.remove();
         const available=central.options.length;central.prepend(new Option(available?'Kies een LKL-spoor':'Geen passend LKL-spoor','',true,true));central.value='';central.disabled=!available;
-        $('drawingTitle').textContent=effectiveStartKey()+' past niet in LKL';
-        if(status)status.textContent=effectiveStartKey()+' past niet in LKL. Kies een ander spoor of vertrekpunt.';
+        $('drawingTitle').textContent=spoorRouteMessage();
+        if(status)status.textContent=spoorRouteMessage()+'. Kies een ander spoor of vertrekpunt.';
       }else $('centralLineSelect').disabled=false;
       window.dispatchEvent(new Event('threeb-spoor-state'));return result;};
     $('ownerEditLines').onclick=()=>window.openThreeBSpoorScreen({recenter:true});

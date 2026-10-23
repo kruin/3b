@@ -19,17 +19,22 @@ const SpoorGeometry = (() => {
     if(p.x<g.inset-1e-6||p.x>g.widthCm-g.inset+1e-6||p.y<g.inset-1e-6||p.y>g.heightCm-g.inset+1e-6)throw Error('Raakpunt ligt buiten de band.');
     return {band:a.band,value:value(a.band,p,g)};
   }
-  function arrival(v,r,g){
+  function arrival(v,r,g){return arrivalFromBall(point(v,g),r,g);}
+  function arrivalFromBall(from,r,g){
     if(!bands.includes(r.band)||!Number.isFinite(r.value))throw Error('Kies een band en een geldig raakpunt.');
     const w=g.widthCm,h=g.heightCm,d=g.dotOffsetCm,i=g.inset;
     const ball={west:{x:i,y:(1-r.value/80)*h},oost:{x:w-i,y:r.value/80*h},noord:{x:r.value/40*w,y:i},zuid:{x:(1-r.value/40)*w,y:h-i}}[r.band];
     if(ball.x<i-1e-6||ball.x>w-i+1e-6||ball.y<i-1e-6||ball.y>h-i+1e-6)throw Error('Raakpunt ligt buiten de band.');
-    const from=point(v,g),axis=['west','oost'].includes(r.band)?'x':'y',target={west:-d,oost:w+d,noord:-d,zuid:h+d}[r.band],delta=from[axis]-ball[axis];
+    const axis=['west','oost'].includes(r.band)?'x':'y',target={west:-d,oost:w+d,noord:-d,zuid:h+d}[r.band],delta=from[axis]-ball[axis];
     if(Math.abs(delta)<1e-9)throw Error('Geen unieke aankomst.');
     const u=(target-ball[axis])/delta,p={x:ball.x+u*(from.x-ball.x),y:ball.y+u*(from.y-ball.y)};
     return {band:r.band,value:value(r.band,p,g)};
   }
-  return {contact,arrival,point};
+  function departureFromBall(ball,a,band,g){
+    const aim=point(a,g),axis=['west','oost'].includes(band)?'x':'y',target={west:-g.dotOffsetCm,oost:g.widthCm+g.dotOffsetCm,noord:-g.dotOffsetCm,zuid:g.heightCm+g.dotOffsetCm}[band],delta=aim[axis]-ball[axis];
+    if(Math.abs(delta)<1e-9)throw Error('Geen uniek vertrek.');const u=(target-ball[axis])/delta,p={x:ball.x+u*(aim.x-ball.x),y:ball.y+u*(aim.y-ball.y)};return {band,value:value(band,p,g)};
+  }
+  return {contact,arrival,arrivalFromBall,departureFromBall,point};
 })();
 
 /* Translate a launch ray, then find its real cushion sequence. Coordinates are
@@ -98,7 +103,7 @@ if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
   if(document.getElementById('openSpoorscherm'))return;
   const css=document.createElement('style');css.textContent=`
   body:has(#explanationCarousel:not([hidden])) #testTransfer,body:has(#spoorScreen[open]) #testTransfer{display:none}
-  .spoor-origin-options{display:flex;gap:4px;width:100%}.spoor-origin-options button{flex:1;min-height:44px;min-width:0;padding:5px 4px;border:1px solid #8a9b91;border-radius:5px;background:#f7f5ed;color:#142e24;font:600 13px system-ui;touch-action:manipulation}#spoorScreen .spoor-origin-options button{min-height:44px}.spoor-origin-options button.active{background:#176f4f!important;color:#fff!important;border-color:#0d4934}.spoor-start-setting{grid-column:1/-1;display:grid;gap:4px}#centralStartAcquit[hidden],#spoorStart[hidden]{display:none!important}
+  .spoor-reference-diff{border-color:#a36b00!important;background:#fff3d4!important}.spoor-origin-options{display:flex;gap:4px;width:100%}.spoor-origin-options button{flex:1;min-height:44px;min-width:0;padding:5px 4px;border:1px solid #8a9b91;border-radius:5px;background:#f7f5ed;color:#142e24;font:600 13px system-ui;touch-action:manipulation}#spoorScreen .spoor-origin-options button{min-height:44px}.spoor-origin-options button.active{background:#176f4f!important;color:#fff!important;border-color:#0d4934}.spoor-start-setting{grid-column:1/-1;display:grid;gap:4px}#centralStartAcquit[hidden],#spoorStart[hidden]{display:none!important}
   [data-start-acquit="true"]{pointer-events:auto;cursor:pointer}#centralStartAcquitControl{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:4px;padding:5px 8px;background:#f7f5ed;color:#142e24;border:1px solid #8a9b91;border-radius:6px;font:600 13px system-ui}#spoorScreen .spoor-start-cycle{font:inherit;padding:0 3px;background:transparent;border:0;color:inherit;min-width:0;width:100%;touch-action:manipulation}#startAcquitCycle{font:800 16px system-ui;padding:2px 8px;min-height:32px;touch-action:manipulation}#startAcquitPatternStatus{flex-basis:100%;text-align:center;font-size:12px}#centralStartAcquitControl{flex-wrap:wrap}#centralStartAcquit{min-height:32px;max-width:65%;font:inherit} #spoorScreen{position:fixed;inset:auto;margin:0;z-index:3000;box-shadow:0 8px 30px #0005;width:min(96vw,460px);max-height:94dvh;overflow:auto;padding:12px;border:1px solid #8a9b91;border-radius:10px;background:#f7f5ed;color:#142e24;font:15px system-ui;box-sizing:border-box;--spoor-symbol-size:32px}
   body.spoor-editor-only #lineEditor,body.spoor-editor-only #ballNudgePanel,body.spoor-editor-only .workspace>.editor,body.spoor-editor-only .ball-value-window,body.spoor-editor-only #toggleConfig{display:none!important}#spoorScreen>header{cursor:grab;touch-action:none;user-select:none}#spoorScreen>header:active{cursor:grabbing}#spoorScreen header,#spoorScreen footer{display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap}#spoorScreen h2{font-size:18px;margin:0}
   #spoorScreen table{width:100%;table-layout:fixed;border-collapse:collapse;background:#fff}#spoorScreen th,#spoorScreen td{padding:6px 3px;border-bottom:1px solid #d8dfd8;text-align:left}#spoorScreen thead th{font-size:14px;text-align:center;background:#e4ece5}#spoorScreen th:first-child{width:19%;white-space:nowrap}#spoorScreen td{width:27%}#spoorScreen tbody th{font-size:13px;text-transform:none;letter-spacing:0}#spoorScreen .spoor-point{position:relative;display:flex;align-items:center;white-space:nowrap;isolation:isolate}
@@ -134,7 +139,8 @@ if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
     const row=working[line.key],p=side==='L'?{value:row.lengthCm}:side==='R'?null:row[side];
     if(p?.kind==='acquit'){const start=document.createElement('button');start.type='button';start.className='spoor-start-cycle';start.textContent='Start '+originCode()+(Number(p.offset)?(Number(p.offset)>0?'+':'')+p.offset:'');bindStartChoice(start);td.append(start);td.className='start';return;}
     const wrap=document.createElement('div');wrap.className='spoor-point';const symbol=document.createElement('span');symbol.className='spoor-symbol';symbol.dataset.side=side;symbol.setAttribute('role','img');
-    const input=document.createElement('input');input.type='text';input.className='spoor-value';input.dataset.side=side;input.value=SpoorScreenFormat.format(p?.value);input.placeholder='·';input.autocomplete='off';input.spellcheck=false;input.disabled=line.terminal||side==='L'&&!original.strokeLimits;input.setAttribute('aria-label',side==='L'?'Neus afstootlengte in cm':line.label+' '+side+' waarde');
+    const input=document.createElement('input');input.type='text';input.className='spoor-value';input.dataset.side=side;input.value=SpoorScreenFormat.format(p?.value);input.placeholder='·';input.autocomplete='off';input.spellcheck=false;input.disabled=line.terminal||side==='L'&&!original.strokeLimits||side==='V'&&line.editableV===false||side==='A'&&line.editableA===false||side==='R'&&line.editableA===false;input.setAttribute('aria-label',side==='L'?'Neus afstootlengte in cm':line.label+' '+side+' waarde');
+    if(p?.inputReference&&(p.band!==p.inputReference.band||Math.abs(p.value-p.inputReference.value)>.125)){input.title='Afgeleid uit karkas; opgeslagen meting '+SpoorScreenFormat.format(p.inputReference.value);input.classList.add('spoor-reference-diff');}
     wrap.append(input,symbol);if(side==='L'){const unit=document.createElement('small');unit.className='spoor-unit';unit.textContent='cm';wrap.append(unit);}td.append(wrap);
     input.oninput=()=>{
       try{
@@ -143,9 +149,10 @@ if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
           const limits=original.strokeLimits;if(value===null||!limits||value<limits.min-1e-6||value>limits.max+1e-6)throw Error('Lengte buiten bereik ('+Math.ceil(limits?.min||0)+'–'+Math.floor(limits?.max||0)+' cm).');row.lengthCm=value;row.changed.add('L');
         }else if(side==='R'){
           if(value===null)throw Error('Vul het raakpunt in, of kies Herlaad.');
-          const a=SpoorGeometry.arrival(row.V,{band:row.A.band,value},original.geometry);row.A={...row.A,...a};row.changed.add('A');if(row.V.kind!=='acquit')row.changed.add('V');
+          const r={band:row.A.band,value},a=line.editableV===false&&row.startBall?SpoorGeometry.arrivalFromBall(row.startBall,r,original.geometry):SpoorGeometry.arrival(row.V,r,original.geometry);row.A={...row.A,...a};row.changed.add('A');if(row.V.kind!=='acquit'&&line.editableV!==false)row.changed.add('V');
           td.parentElement.querySelector('.spoor-value[data-side=A]').value=SpoorScreenFormat.format(a.value);
         }else{row[side]={...row[side],value};row.changed.add(side);}
+        if(line.editableV===false&&row.startBall&&(side==='A'||side==='R')){row.V={...row.V,...SpoorGeometry.departureFromBall(row.startBall,row.A,row.V.band,original.geometry)};td.parentElement.querySelector('.spoor-value[data-side=V]').value=SpoorScreenFormat.format(row.V.value);}
         input.setCustomValidity('');dirty=true;if(side!=='R')refresh(td.parentElement,line);else symbols(td.parentElement,line);text('Wijzigingen nog niet bewaard.');
       }catch(error){input.setCustomValidity(error.message);text(error.message,true);}
     };
@@ -155,11 +162,14 @@ if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
     original=adapter.read(direction);viewDirection=original.direction;working={};dirty=false;body.replaceChildren();
     $('spoorScreenTitle').textContent='Spoorscherm · '+original.label+' · '+original.actualPattern;$('mirrorSpoorScreen').checked=original.direction==='oost';$('spoorDirectionLabel').textContent=original.direction==='oost'?'Oost':'West';
     $('spoorMeasurementHint').textContent=(original.startError?original.startError+'. ':original.actualPattern!=='LKL'?'Dit spoor valt buiten LKL ('+original.actualPattern+'). ':'')+(original.direction==='oost'?'Eigen Oost-meting: apart bewaard in deze browser; de West-meting blijft behouden.':'');
-    for(const line of original.lines){working[line.key]={V:structuredClone(line.V),A:structuredClone(line.A),lengthCm:line.key==='neus'?original.strokeLengthCm:null,changed:new Set()};const tr=document.createElement('tr');tr.dataset.line=line.key;
+    const head=original.lines.find(line=>line.key==='kop')?.A;if(!head||head.value===null)$('spoorMeasurementHint').textContent+=' Kop A is nog niet gemeten; de tussenroute is onvolledig.';else if(head.source==='estimate')$('spoorMeasurementHint').textContent+=' Kop A is een schatting, geen meting.';
+    $('spoorMeasurementHint').textContent+=' Neus en Romp zijn leidend; Kop A is het meetanker. De tussenwaarden zijn afgeleid.';
+    for(const line of original.lines){working[line.key]={V:structuredClone(line.V),A:structuredClone(line.A),lengthCm:line.key==='neus'?original.strokeLengthCm:null,startBall:line.startBall,changed:new Set()};const tr=document.createElement('tr');tr.dataset.line=line.key;
       const th=document.createElement('th');th.scope='row';th.textContent=line.label;tr.append(th);
       if(line.terminal){const small=document.createElement('span');small.className='terminal';small.textContent='Auto'+(line.fraction===.5?' · ½':line.fraction===.25?' · ¼':'');th.append(small);}
       for(const side of line.key==='neus'?['V','L','A']:['V','R','A']){const td=document.createElement('td');if(line.terminal)td.className='automatic';controls(td,line,side);tr.append(td);}body.append(tr);refresh(tr,line);
     }
+    const refs=original.lines.flatMap(line=>['V','A'].filter(side=>line[side]?.inputReference&&Math.abs(line[side].value-line[side].inputReference.value)>.125).map(side=>line.label+' '+side+': opgeslagen '+SpoorScreenFormat.format(line[side].inputReference.value)+', uit karkas '+SpoorScreenFormat.format(line[side].value)));if(refs.length)$('spoorMeasurementHint').textContent+=' Tussenmetingen bewaard als referentie: '+refs.join('; ')+'.';
     $('spoorStart').value=String(original.startAcquitOffset);
     dialog.style.setProperty('--spoor-symbol-size',$('spoorSymbolSize').value+'px');text(window.THREEB_TEST_ENVIRONMENT?'TEST · bewaren in aparte browseropslag.':'Bewaar spoor om je wijzigingen vast te leggen.');
   }
