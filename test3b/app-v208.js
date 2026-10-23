@@ -1354,10 +1354,32 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
   });
   if(window.openThreeBSpoorScreen){
     const spoorRender=render;
-    render=function(...args){originRayCache.clear();const result=spoorRender(...args);
+    const spoorDrawTable=drawTable;
+    drawTable=function(table){
+      if(spoorGeometryReady&&ui.playRange==='lkl'&&actualStartPattern(table)!=='LKL'){
+        delete dragModels[table];
+        return '<div class="drawing-card"><svg class="table-svg" viewBox="60 40 440 780" role="img" aria-label="Geen passend LKL-spoor"><rect x="60" y="40" width="440" height="780" rx="11" fill="#704725"/><rect x="110" y="90" width="340" height="680" fill="#176f4f" stroke="#e7c66e" stroke-width="3"/><text x="280" y="420" text-anchor="middle" fill="#fff6dd" font-family="system-ui" font-size="16">Geen passend LKL-spoor</text></svg></div>';
+      }
+      return spoorDrawTable(table);
+    };
+    render=function(...args){originRayCache.clear();
+      if(spoorGeometryReady&&ui.playRange==='lkl'){
+        const available=centralTrackKeys(),current=selectedTrackKey();
+        if(available.length&&!available.includes(current)){
+          const all=originalCentralKeys(),index=all.indexOf(current);
+          const nearest=available.reduce((best,key)=>Math.abs(all.indexOf(key)-index)<Math.abs(all.indexOf(best)-index)?key:best,available[0]);
+          chooseCentralTrack(nearest);save();
+        }
+      }
+      const result=spoorRender(...args);
       const pattern=actualStartPattern(),excluded=spoorGeometryReady&&ui.playRange==='lkl'&&pattern!=='LKL';
       const status=$('startAcquitPatternStatus');if(status){status.textContent=spoorGeometryReady?(startRay().error?effectiveStartKey()+' · '+startRay().error:(effectiveStartKey()+' · '+pattern+(excluded?' · uitgesloten van LKL':''))):'Patroon '+pattern;status.dataset.pattern=pattern;}
       if(spoorGeometryReady){for(const id of ['patternSelect','fanSelect'])for(const option of $(id).options)option.text=effectiveStartKey(option.value);$('bandTrackValue').textContent=effectiveStartKey();$('drawingTitle').textContent=pattern+' · '+effectiveStartKey()+' · '+(ui.direction==='oost'?'Oost':'West');$('patternBadge').textContent=pattern;}
+      if(excluded){
+        const central=$('centralLineSelect');central.replaceChildren(new Option('Geen passend LKL-spoor',''));central.disabled=true;
+        $('bandTrackValue').textContent='Geen LKL-spoor';$('drawingTitle').textContent='Geen passend LKL-spoor';
+        if(status)status.textContent='Geen passend LKL-spoor vanaf '+({0:'Onder',2:'Midden',4:'Boven'}[startAcquitOffset()])+'. Kies een ander vertrekpunt.';
+      }else $('centralLineSelect').disabled=false;
       window.dispatchEvent(new Event('threeb-spoor-state'));return result;};
     $('ownerEditLines').onclick=()=>window.openThreeBSpoorScreen({recenter:true});
     render();
