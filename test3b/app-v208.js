@@ -347,10 +347,12 @@
   function tableLandscape(){return false;}
   function positionBandControls(){const svg=document.querySelector(".table-svg"),matrix=svg?.getScreenCTM(),box=svg?.viewBox?.baseVal;if(!svg||!matrix||!box)return;const wood=(box.width-340)/2,x=box.x+wood,y=90,left=x-wood/2,right=x+340+wood/2,top=y-wood/2,bottom=y+680+wood/2,middleX=x+170,middleY=y+340,outer=new DOMPoint(box.x,middleY).matrixTransform(matrix),inner=new DOMPoint(x,middleY).matrixTransform(matrix),bandPx=Math.max(28,Math.hypot(inner.x-outer.x,inner.y-outer.y));document.documentElement.style.setProperty("--screen-band",`${bandPx}px`);const landscape=tableLandscape(),points=landscape?{bandCore:[left,middleY],bandFamily:[middleX,bottom],bandTable:[middleX,top],bandUndo:[left,bottom],bandMenu:[left,top],bandReset:[right,bottom],bandSave:[right,top]}:{bandCore:[middleX,top],bandFamily:[left,middleY],bandTable:[right,middleY],bandUndo:[left,top],bandMenu:[right,top],bandReset:[left,bottom],bandSave:[right,bottom]};Object.entries(points).forEach(([id,[px,py]])=>{const node=$(id),point=new DOMPoint(px,py).matrixTransform(matrix);if(node&&!node.dataset.userMoved){node.style.left=`${point.x}px`;node.style.top=`${point.y}px`;}});if(Math.hypot(inner.x-outer.x,inner.y-outer.y)<28&&!landscape){const a=new DOMPoint(box.x,y).matrixTransform(matrix),b=new DOMPoint(box.x+box.width,y+680).matrixTransform(matrix);for(const [id,rightSide,bottomSide] of [['bandUndo',false,false],['bandMenu',true,false],['bandReset',false,true],['bandSave',true,true]]){const node=$(id);if(node&&!node.dataset.userMoved){node.style.left=`${rightSide?b.x+20:a.x-20}px`;node.style.top=`${Math.max(20,Math.min(innerHeight-20,bottomSide?b.y:a.y))}px`;}}}for(const [id,pos] of Object.entries(ui.bandControlPositions||{})){const node=$(id);if(!node)continue;node.dataset.userMoved="true";node.style.transform="none";node.style.left=Math.max(4,Math.min(innerWidth-node.offsetWidth-4,pos.x*innerWidth))+"px";node.style.top=Math.max(4,Math.min(innerHeight-node.offsetHeight-4,pos.y*innerHeight))+"px";}positionBandDock();const editor=$('lineEditor');if(editor&&!editor.hidden&&!editor.dataset.userMoved){const top=Math.max(76,Math.min(150,$('bandCore').getBoundingClientRect().bottom+8)),bar=$('experimentToolbar'),reserved=bar&&!bar.classList.contains('in-line-editor')?bar.getBoundingClientRect().height+20:20;editor.style.top=`${top}px`;editor.style.maxHeight=`${Math.max(180,innerHeight-top-reserved)}px`;}}
   function fitTableOrientation(){
-    const svgs=[...document.querySelectorAll("#svgMount .table-svg")],desktop=matchMedia("(min-width:761px)").matches&&!document.body.classList.contains("mobile-preview");
+    const svgs=[...document.querySelectorAll("#svgMount .table-svg")],preview=document.body.classList.contains("mobile-preview"),desktop=matchMedia("(min-width:761px)").matches&&!matchMedia("(pointer:coarse)").matches&&!preview;
+    const mobile=state.mobileTableOrientation||'auto',mobileChoice=mobile==='auto'?(!preview&&innerWidth>innerHeight?'right':'upright'):mobile;
+    document.body.classList.toggle('mobile-preview-landscape',preview&&mobileChoice!=='upright');
     document.body.classList.remove("table-landscape");
     for(const svg of svgs){
-      const table=svg.dataset.viewTable||ui.editTable,choice=desktop?state.desktopTableOrientations?.[table]:"upright",angle=choice==="right"?90:choice==="left"?-90:0;
+      const table=svg.dataset.viewTable||ui.editTable,choice=desktop?state.desktopTableOrientations?.[table]:mobileChoice,angle=choice==="right"?90:choice==="left"?-90:0;
       const card=svg.closest(".drawing-card"),rect=card.getBoundingClientRect(),box=svg.viewBox.baseVal;
       const top=Math.max(0,rect.top),bottom=Math.min(innerHeight,rect.bottom),left=Math.max(0,rect.left),right=Math.min(innerWidth,rect.right),height=Math.max(1,bottom-top-4),width=Math.max(1,right-left-4);
       const scale=Math.min(width/(angle?box.height:box.width),height/(angle?box.width:box.height));
@@ -1268,6 +1270,10 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
     if(east)for(const [line,points] of Object.entries(east.lines||{}))if(route[line]){if(points.V)route[line].from=copy(points.V);if(points.A)route[line].to=copy(points.A);}
     return route;
   }
+  function noseDiamondDeparture(table,route){
+    const n=route.neus;if(!n||![n.from,n.to].every(complete))return {band:'zuid',value:null};
+    return {band:'zuid',value:diamondValueThroughBall('zuid',point(n.from,table),bandBall(n.to,n.from,table,C.ballDiameterMm/20),table,.000001),status:'calculated',source:'automatic'};
+  }
   function skeletonEditable(line,side){return line==='neus'&&side==='to'||line==='romp'||line==='kop'&&side==='to'||line==='been'&&side==='to';}
   function calculateSkeletonRoute(table,input){
     const route=copy(input);
@@ -1355,9 +1361,21 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
   }
   if(migratedStarts)save();
   spoorGeometryReady=typeof ThreeBStartRay!=='undefined'&&Boolean(window.installThreeBSpoorScreen);
+  if(spoorGeometryReady&&!state.appliedMigrations.includes('base-overlay-opt-in-20261024')){
+    ui.showBasis=false;state.appliedMigrations.push('base-overlay-opt-in-20261024');save();
+  }
+
   if(window.installThreeBSpoorScreen)window.installThreeBSpoorScreen({
     startAcquitOffset,
     desktopOrientations(){return copy(state.desktopTableOrientations||{});},
+    comparisonInfo(){
+      const table=ui.editTable,route=resolvedSpoorRoute(table),point=p=>p?{kind:p.kind||null,band:p.band||null,value:typeof p.value==='number'?Math.round(p.value*1e6)/1e6:p.value,offset:Number(p.offset)||0}:null;
+      const text=JSON.stringify({table,spoor:selectedTrackKey(),origin:startAcquitOffset(),direction:ui.direction,geometry:C.tables[table],ball:C.ballDiameterMm,inset:bandCenterLineInsetCm(),length:originStrokeLength(table)??dragModels[table]?.lengthCm,range:ui.playRange,display:ui.parallelDisplay,part:ui.parallelPartIndex,basis:!!ui.showBasis,extra:ui.lklExtraParts,framework:!!ui.frameworkView,route:C.parts.map(p=>[p.key,point(route[p.key]?.from),point(route[p.key]?.to)])});
+      let code=2166136261;for(let i=0;i<text.length;i++)code=Math.imul(code^text.charCodeAt(i),16777619);
+      return tableLabel(table)+' · '+effectiveStartKey()+' · '+startAcquitCode()+' · '+(ui.direction==='oost'?'Oost':'West')+' · tafelcode '+(code>>>0).toString(16).padStart(8,'0').toUpperCase();
+    },
+    mobileOrientation(){return state.mobileTableOrientation||'auto';},
+    setMobileOrientation(value){if(!['auto','upright','right','left'].includes(value))throw Error('Ongeldige mobiele stand.');state.mobileTableOrientation=value;save();fitTableOrientation();},
     setDesktopOrientation(table,orientation){
       if(!['klein','groot'].includes(table)||!['upright','right','left'].includes(orientation))throw Error('Ongeldige tafelstand.');
       state.desktopTableOrientations??={};state.desktopTableOrientations[table]=orientation;save();fitTableOrientation();
@@ -1378,7 +1396,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
       token:JSON.stringify({route:spoorSnapshot(table),east,startAcquitOffset:startAcquitOffset()}),direction:direction==='oost'?'oost':'west',
       geometry:{...C.tables[table],inset:bandCenterLineInsetCm(),startAcquitOffset:startAcquitPhysicalOffset()},
       lines:activeLines().slice(0,extent.index+1).map((part,index)=>({
-        key:part.key,label:lineLabel(part),editableV:skeletonEditable(part.key,'from'),editableA:skeletonEditable(part.key,'to'),startBall:index>0&&displayedRoute[activeLines()[index-1].key]&&[displayedRoute[activeLines()[index-1].key].from,displayedRoute[activeLines()[index-1].key].to].every(complete)?canonicalPoint(bandBall(displayedRoute[activeLines()[index-1].key].to,displayedRoute[activeLines()[index-1].key].from,table,C.ballDiameterMm/20),table):null,V:!spoorGeometryReady&&direction==='oost'&&east?.lines?.[part.key]?east.lines[part.key].V:displayedRoute[part.key]?.from,A:!spoorGeometryReady&&direction==='oost'&&east?.lines?.[part.key]?east.lines[part.key].A:displayedRoute[part.key]?.to,
+        key:part.key,label:lineLabel(part),editableV:skeletonEditable(part.key,'from'),editableA:skeletonEditable(part.key,'to'),startBall:part.key==='neus'?canonicalPoint(point(displayedRoute.neus.from,table),table):index>0&&displayedRoute[activeLines()[index-1].key]&&[displayedRoute[activeLines()[index-1].key].from,displayedRoute[activeLines()[index-1].key].to].every(complete)?canonicalPoint(bandBall(displayedRoute[activeLines()[index-1].key].to,displayedRoute[activeLines()[index-1].key].from,table,C.ballDiameterMm/20),table):null,V:part.key==='neus'?noseDiamondDeparture(table,displayedRoute):!spoorGeometryReady&&direction==='oost'&&east?.lines?.[part.key]?east.lines[part.key].V:displayedRoute[part.key]?.from,A:!spoorGeometryReady&&direction==='oost'&&east?.lines?.[part.key]?east.lines[part.key].A:displayedRoute[part.key]?.to,
         terminal:index===extent.index,fraction:index===extent.index?extent.fraction:1
       }))
     });},
