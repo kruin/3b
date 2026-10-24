@@ -1,3 +1,4 @@
+window.THREEB_RELEASE=Object.freeze({"version": "v208-r16", "date": "2026-10-24", "channel": "test", "compatibilityBase": "v208-r15"});
 /* Physical phone testing: show the project's published QR, without changing app state. */
 if(typeof window!=='undefined'){
   window.installMobileTestQr=function({button,imageUrl,testUrl,qrPageUrl}){
@@ -124,8 +125,9 @@ const SpoorScreenFormat=(()=>{
 if(typeof module!=='undefined')module.exports=SpoorScreenFormat;
 if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
   document.body.classList.add('spoor-editor-only');
-  window.installMobileTestQr?.({button:document.getElementById('mobilePreview'),imageUrl:new URL('qr-test-neus.png?v=omb-notatie-20261024',location.href).href,testUrl:'https://kruin.github.io/3b/test3b/?v=omb-notatie-20261024#owner=kruin',qrPageUrl:new URL('qr.html',location.href).href});
-  const markTestVersion=()=>{const banner=document.querySelector('#testEnvironmentBanner');if(banner&&!document.querySelector('#spoorTestVersion')){const version=document.createElement('span');version.id='spoorTestVersion';version.textContent='TEST 24-10 · O/M/B';if(banner.firstChild?.nodeType===3)banner.firstChild.textContent=banner.firstChild.textContent.replace('TEST v208-r15 · aparte browseropslag · geen databaseverbinding',' · testopslag · geen database · ');banner.prepend(version);}};
+  const releaseVersion=window.THREEB_RELEASE?.version||'onbekend';
+  window.installMobileTestQr?.({button:document.getElementById('mobilePreview'),imageUrl:new URL('qr-test-neus.png?v='+releaseVersion,location.href).href,testUrl:'https://kruin.github.io/3b/test3b/?v='+releaseVersion+'#owner=kruin',qrPageUrl:new URL('qr.html',location.href).href});
+  const markTestVersion=()=>{const banner=document.querySelector('#testEnvironmentBanner');if(banner&&!document.querySelector('#spoorTestVersion')){const version=document.createElement('span');version.id='spoorTestVersion';version.textContent='TEST '+releaseVersion;document.title='TEST · 3B '+releaseVersion;if(banner.firstChild?.nodeType===3)banner.firstChild.textContent=banner.firstChild.textContent.replace('TEST v208-r15 · aparte browseropslag · geen databaseverbinding',' · testopslag · geen database · ');banner.prepend(version);}};
   markTestVersion();window.addEventListener('DOMContentLoaded',markTestVersion,{once:true});
 
   if(document.getElementById('openSpoorscherm'))return;
@@ -250,6 +252,15 @@ if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
   $('configSpoorScreen').onclick=showConfig;
   $('spoorStyleConfig').ontoggle=()=>{ $('configSpoorScreen').setAttribute('aria-expanded',String($('spoorStyleConfig').open));if($('spoorStyleConfig').open)fitExpandedConfig(); };
   const courseActions=document.querySelector('#explanationCarousel .course-header-actions');if(courseActions){const config=document.createElement('button');config.type='button';config.id='courseSpoorConfig';config.textContent='⚙ Config';config.onclick=()=>{open({recenter:true});showConfig();};courseActions.prepend(config);}
+
+  const course=document.querySelector('#explanationCarousel');
+  if(course&&!document.getElementById('courseAcquitMotivation')){
+    const motivation=document.createElement('p');motivation.id='courseAcquitMotivation';
+    motivation.textContent='Oriëntatie op de echte tafel: O · Onder, M · Midden en B · Boven zijn vaste herkenningspunten. Van daaruit lees of trek je de lijnen naar de stippen en stiplijnen. De acquitletter hoort bij je spoornotatie. Voorbeeld: M · ZEVEN = O · VIJF+2. Dit zijn twee notaties voor hetzelfde spoor: alle lijnen, raakpunten en ballen zijn gelijk. Je kiest een ander vast punt als referentie; je krijgt daardoor geen ander spoor. Via Config kun je de O/M/B-markeringen op de tafel tonen.';
+    motivation.style.cssText='margin:8px 12px;line-height:1.45;max-width:70ch';
+    const assessment=document.getElementById('courseAssessment');
+    if(assessment?.parentElement)assessment.before(motivation);else course.append(motivation);
+  }
 
   const header=dialog.querySelector('header');header.onpointerdown=event=>{
     if(event.button!==0||event.target.closest('button,input,select'))return;
