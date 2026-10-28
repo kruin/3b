@@ -1,4 +1,4 @@
-3B v208-r16 — VOLLEDIGE TESTRELEASE
-24 oktober 2026
-Acquitnotatie O/M/B, vaste tafelmarkeringen en ontwerpmotivatie in documentatie en cursus.
-Compatibiliteitsbasis v208-r15; bestaande metingen en SQLite ongewijzigd.
+3B v208-r17 — VOLLEDIGE TESTRELEASE
+28 oktober 2026
+Ongeldige M/B-keuzen verborgen; Z/S als zuidelijke vertrekreferentie voor een korte Neus.
+Gedeelde spoorberekening, oorspronkelijke metingen en officiële SQLite behouden.

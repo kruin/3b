@@ -1232,7 +1232,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
   window.addEventListener?.('load',()=>fitTableOrientation());
   function startAcquitOffset(){return spoorBaseDepth?0:state.startAcquitOffset??K.startAcquitOffset??0;}
   function startAcquitPhysicalOffset(){return spoorBaseDepth||!spoorGeometryReady?0:startAcquitOffset();}
-  function startAcquitCode(){return {0:'O',2:'M',4:'B'}[startAcquitOffset()]||'O';}
+  function startAcquitCode(){return {'-2':ui.language==='nl'?'Z':'S',0:'O',2:'M',4:'B'}[startAcquitOffset()]||'O';}
   function legacyOriginRouteKey(table,direction=ui.direction){return startAcquitOffset()+':'+table+':'+selectedTrackKey()+(direction==='oost'?':oost':'');}
   function canonicalStart(key=selectedTrackKey(),origin=startAcquitOffset()){
     const match=String(key).match(/^(.+?)([+-]\d+)?$/);
@@ -1244,7 +1244,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
   function originAliases(table,direction=ui.direction){
     const selection=canonicalStart(),suffix=direction==='oost'?':oost':'';
     if(!selection)return [originRouteKey(table,direction),legacyOriginRouteKey(table,direction)];
-    const keys=[];for(const origin of [0,2,4]){const relative=selection.total-origin,key=selection.root+(relative?(relative>0?'+':'')+relative:'');keys.push('omb:'+origin+':'+table+':'+key+suffix);}
+    const keys=[];for(const origin of [0,2,4,-2]){const relative=selection.total-origin,key=selection.root+(relative?(relative>0?'+':'')+relative:'');keys.push('omb:'+origin+':'+table+':'+key+suffix);}
     return keys;
   }
   function originStored(name,table,direction=ui.direction){const keys=originAliases(table,direction),found=[];for(const store of [state[name],K[name]])for(const key of keys)if(store?.[key]!==undefined)found.push(store[key]);if(name==='startAcquitRoutes'){const measured=found.find(route=>Object.values(route).some(line=>Object.values(line||{}).some(p=>p&&(p.userAdjusted===true||p.status==='edited'||p.source==='user'))));if(measured)return measured;}return found[0];}
@@ -1255,7 +1255,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
   positionKey=function(table){const selection=canonicalStart();return spoorGeometryReady&&selection?table+':'+selection.key+':'+ui.departure+':'+ui.direction:previousPositionKey(table);};
   function canonicalReference(table,direction){
     const selection=canonicalStart();if(!selection)return null;
-    if(selection.total){
+    if(selection.total>0){
       // Translate the measured, already connected base skeleton. In particular,
       // never reuse the old independent Kop V when translating its Kop A.
       const route=copy(startRay(table,direction).route);
@@ -1376,7 +1376,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
   const originalCentralKeys=centralTrackKeys;
   centralTrackKeys=function(){
     const keys=originalCentralKeys();if(spoorBaseDepth||!spoorGeometryReady||ui.playRange!=='lkl')return keys;
-    const previous=copy(ui),oldActive=activeSegmentIndex,oldTable=activeSegmentTable,oldBall=selectedBall;try{return keys.filter(key=>{chooseCentralTrack(key);return startRay(ui.editTable).pattern==='LKL';});}finally{Object.assign(ui,previous);activeSegmentIndex=oldActive;activeSegmentTable=oldTable;selectedBall=oldBall;}
+    const previous=copy(ui),oldActive=activeSegmentIndex,oldTable=activeSegmentTable,oldBall=selectedBall;try{return keys.filter(key=>{chooseCentralTrack(key);return actualStartPattern(ui.editTable)==='LKL';});}finally{Object.assign(ui,previous);activeSegmentIndex=oldActive;activeSegmentTable=oldTable;selectedBall=oldBall;}
   };
   function effectiveStartKey(key=selectedTrackKey()){
     const match=String(key).match(/^(.+?)([+-]\d+)?$/),root=match[1],relative=match[2]||'',shift=startAcquitOffset();
@@ -1395,10 +1395,19 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
   function originFullLabel(key=selectedTrackKey()){const reference=originReferenceLabel(key);return originTrackLabel(key)+(reference?' (= '+reference+')':'');}
   function acquitMarkersSvg(){
     const hidden=state.showAcquits===false?' style="display:none"':'';
-    return '<g class="acquit-markers"'+hidden+' pointer-events="none" aria-label="Acquits Onder Midden Boven">'+[['O',600,'Onder'],['M',430,'Midden'],['B',260,'Boven']].map(([code,y,name])=>'<g data-acquit="'+code+'" aria-label="'+name+'acquit"><path d="M 275 '+y+' H 285 M 280 '+(y-5)+' V '+(y+5)+'" fill="none" stroke="#fff1b5" stroke-width="1.5" vector-effect="non-scaling-stroke"/><text x="293" y="'+(y+4)+'" font-family="system-ui" font-size="13" font-weight="800" fill="#fff1b5" stroke="#134b38" stroke-width="3" paint-order="stroke fill">'+code+'</text></g>').join('')+'</g>';
+    return '<g class="acquit-markers"'+hidden+' pointer-events="none" aria-label="Acquits Onder Midden Boven">'+[['O',600,'Onder'],['M',430,'Midden'],['B',260,'Boven']].map(([code,y,name])=>'<g data-acquit="'+code+'" aria-label="'+name+'acquit"><path d="M 275 '+y+' H 285 M 280 '+(y-5)+' V '+(y+5)+'" fill="none" stroke="#fff1b5" stroke-width="1.5" vector-effect="non-scaling-stroke"/><text x="293" y="'+(y+4)+'" font-family="system-ui" font-size="13" font-weight="800" fill="#fff1b5" stroke="#134b38" stroke-width="3" paint-order="stroke fill">'+code+'</text></g>').join('')+'<g class="south-origin-marker" data-reference-track="VIJF-2" aria-label="'+(ui.language==='nl'?'Zuid':'South')+' (= VIJF−2)"><title>'+(ui.language==='nl'?'Z · Zuid':'S · South')+' (= VIJF−2)</title><path d="M 275 770 H 285 M 280 765 V 775" fill="none" stroke="#fff1b5" stroke-width="1.5" vector-effect="non-scaling-stroke"/><text x="293" y="790" font-family="system-ui" font-size="13" font-weight="800" fill="#fff1b5" stroke="#134b38" stroke-width="3" paint-order="stroke fill">'+(ui.language==='nl'?'Z':'S')+'</text></g></g>';
   }
   function withAcquitMarkers(svg,table){return svg.replace(/(<svg\b[^>]*>(?:<rect\b[^>]*\/>){2})/,(_,start)=>start+acquitMarkersSvg()).replace(/(<svg\b[^>]*\baria-label=")[^"]*/,(_,start)=>start+esc(originFullLabel()+' · '+tableLabel(table)));}
-  function actualStartPattern(table=ui.editTable,direction=ui.direction){return spoorGeometryReady?startRay(table,direction).pattern:(ui.pattern==='NEGEN'?'LKL':C.patternByLine[ui.pattern])||'?';}
+  function actualStartPattern(table=ui.editTable,direction=ui.direction){
+    if(!spoorGeometryReady)return (ui.pattern==='NEGEN'?'LKL':C.patternByLine[ui.pattern])||'?';
+    const previous=ui.direction;ui.direction=direction;
+    try{const selection=canonicalStart();if(selection?.total>0&&!startRay(table,direction).hits.length)return '?';const route=resolvedSpoorRoute(table,direction);if(!complete(route.neus?.from)||!complete(route.neus?.to))return '?';let shared=point(route.neus.from,table),pattern='';const dimensions=C.tables[table];if(shared.x<0||shared.x>dimensions.widthCm||shared.y<0||shared.y>dimensions.heightCm)return '?';
+      const firstAim=point(route.neus.to,table);if(shared.y<=1e-8&&firstAim.y<=shared.y||shared.y>=dimensions.heightCm-1e-8&&firstAim.y>=shared.y||shared.x<=1e-8&&firstAim.x<=shared.x||shared.x>=dimensions.widthCm-1e-8&&firstAim.x>=shared.x)return '?';
+      const inset=bandCenterLineInsetCm();if(shared.x<inset||shared.x>dimensions.widthCm-inset||shared.y<inset||shared.y>dimensions.heightCm-inset)shared=insetEntry(shared,firstAim,table,inset);
+      for(const part of C.parts.slice(0,3)){const target=route[part.key]?.to;if(!complete(target))return '?';const aim=point(target,table),hit=firstCushionContact(table,shared,{x:aim.x-shared.x,y:aim.y-shared.y});if(!hit)return '?';pattern+=['west','oost'].includes(hit.band)?'L':'K';shared=hit.point;}
+      return pattern;
+    }finally{ui.direction=previous;}
+  }
   // Preserve the old per-track experiment before restoring relative starts.
   let migratedStarts=false;
   for(const group of ['data','variantData'])for(const [table,tracks] of Object.entries(state[group]||{}))for(const [track,route] of Object.entries(tracks)){
@@ -1421,6 +1430,14 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
 
   if(window.installThreeBSpoorScreen)window.installThreeBSpoorScreen({
     startAcquitOffset,
+    startAcquitCode,
+    language(){return ui.language;},
+    availableStartAcquits(){
+      if(ui.playRange!=='lkl')return [-2,0,2,4];
+      const previous=state.startAcquitOffset;
+      try{return [-2,0,2,4].filter(offset=>{state.startAcquitOffset=offset;return offset<=0||actualStartPattern()==='LKL';});}
+      finally{if(previous===undefined)delete state.startAcquitOffset;else state.startAcquitOffset=previous;}
+    },
     showAcquits(){return state.showAcquits!==false;},
     setShowAcquits(value){state.showAcquits=Boolean(value);save();for(const g of document.querySelectorAll('#svgMount .acquit-markers'))g.style.display=value?'':'none';},
     desktopOrientations(){return copy(state.desktopTableOrientations||{});},
@@ -1437,7 +1454,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
       state.desktopTableOrientations??={};state.desktopTableOrientations[table]=orientation;save();fitTableOrientation();
     },
     setStartAcquit(offset){
-      if(![0,2,4].includes(offset))throw Error('Ongeldig startacquit.');
+      if(![-2,0,2,4].includes(offset))throw Error('Ongeldig startacquit.');
       const before=state.startAcquitOffset;state.startAcquitOffset=offset;
       try{originRayCache.clear();save();render();}catch(error){if(before===undefined)delete state.startAcquitOffset;else state.startAcquitOffset=before;render();throw error;}
     },
@@ -1447,7 +1464,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
       const strokeLimits=direction==='oost'?{min:0,max:Math.hypot(C.tables[table].widthCm,C.tables[table].heightCm)}:model?{min:model.startDistance*(1-model.maxFraction)-model.radiusCm*2,max:model.startDistance-model.radiusCm*2}:null;
       const displayedRoute=spoorGeometryReady?resolvedSpoorRoute(table,direction):data(table);
       return copy({
-      actualPattern:actualStartPattern(table,direction),startError:spoorGeometryReady?startRay(table,direction).error:null,startAcquitOffset:startAcquitOffset(),strokeLengthCm:originStrokeLength(table,direction)??(direction==='oost'?(east?.lengthCm??westLength):westLength),strokeLimits,
+      actualPattern:actualStartPattern(table,direction),startError:spoorGeometryReady&&actualStartPattern(table,direction)==='?'?startRay(table,direction).error:null,startAcquitOffset:startAcquitOffset(),strokeLengthCm:originStrokeLength(table,direction)??(direction==='oost'?(east?.lengthCm??westLength):westLength),strokeLimits,
       table,spoor:selectedTrackKey(),label:originFullLabel()+' · '+tableLabel(table),
       token:JSON.stringify({route:spoorSnapshot(table),east,startAcquitOffset:startAcquitOffset()}),direction:direction==='oost'?'oost':'west',
       geometry:{...C.tables[table],inset:bandCenterLineInsetCm(),startAcquitOffset:startAcquitPhysicalOffset()},
@@ -1533,7 +1550,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
     render=function(...args){originRayCache.clear();
       const result=spoorRender(...args);
       const pattern=actualStartPattern(),excluded=spoorGeometryReady&&ui.playRange==='lkl'&&pattern!=='LKL';
-      const status=$('startAcquitPatternStatus');if(status){status.textContent=spoorGeometryReady?(startRay().error?originFullLabel()+' · '+startRay().error:(originFullLabel()+' · '+pattern+(excluded?' · uitgesloten van LKL':''))):'Patroon '+pattern;status.dataset.pattern=pattern;}
+      const status=$('startAcquitPatternStatus');if(status){status.textContent=spoorGeometryReady?(pattern==='?'&&startRay().error?originFullLabel()+' · '+startRay().error:(originFullLabel()+' · '+pattern+(excluded?' · uitgesloten van LKL':''))):'Patroon '+pattern;status.dataset.pattern=pattern;}
       if(spoorGeometryReady){for(const id of ['patternSelect','fanSelect'])for(const option of $(id).options)option.text=originTrackLabel(option.value);$('bandTrackValue').textContent=originTrackLabel();$('bandTrackValue').title=originFullLabel();$('drawingTitle').textContent=pattern+' · '+originFullLabel()+' · '+(ui.direction==='oost'?'Oost':'West');$('patternBadge').textContent=pattern;}
       if(excluded){
         const central=$('centralLineSelect');
