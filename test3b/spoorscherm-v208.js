@@ -1,4 +1,4 @@
-window.THREEB_RELEASE=Object.freeze({"version": "v208-r20", "date": "2026-10-29", "channel": "test", "compatibilityBase": "v208-r15"});
+window.THREEB_RELEASE=Object.freeze({"version": "v208-r21", "date": "2026-10-29", "channel": "test", "compatibilityBase": "v208-r15"});
 /* Physical phone testing: show the project's published QR, without changing app state. */
 if(typeof window!=='undefined'){
   window.installMobileTestQr=function({button,imageUrl,testUrl,qrPageUrl}){
@@ -74,7 +74,7 @@ if(typeof window!=='undefined'){
     }catch(e){try{db.run('ROLLBACK');}catch(_){}db.close();const SQL=await ready();db=new SQL.Database(before);record=oldRecord;validate();throw e;}finally{busy=false;}
   }
   async function close(){if(window.hasThreeBSpoorChanges?.())throw Error('Bewaar je spoorwijzigingen of kies Herlaad voordat je het werkbestand sluit.');if(!record)return;const old=record;await put(null,old);old.backupState===null?localStorage.removeItem(key):localStorage.setItem(key,old.backupState);for(const k of Array.from({length:sessionStorage.length},(_,i)=>sessionStorage.key(i)))if(k.includes('experiment:'))sessionStorage.removeItem(k);for(const [k,v] of old.backupSession||[])sessionStorage.setItem(k,v);location.reload();}
-  function mount(){if(!enabled()||!document.body||document.getElementById('databaseWorkspace'))return;const panel=document.createElement('section');panel.id='databaseWorkspace';panel.style.cssText='position:relative;margin:8px 8px 8px auto;width:360px;max-width:calc(100vw - 16px);box-sizing:border-box;padding:10px;border:1px solid #8064a6;border-radius:8px;background:#f4effc;color:#142e24;font:14px system-ui';panel.innerHTML='<details open><summary><strong>Kruin · database configureren</strong></summary><p>1. Open SQLite → 2. Bewerk tafel / patroon / spoor / lijn → 3. Bewaar spoor → 4. Upload de gedownloade database privé.</p><label><strong>Open werkdatabase</strong><input id="openDatabaseWorkspace" type="file" accept=".sqlite3,.sqlite,.db" style="display:block;max-width:100%"></label><p><a href="https://github.com/kruin/3b-kruin-beheer/blob/main/Kruinconfig.sqlite3" target="_blank" rel="noopener noreferrer">Download actuele database bij GitHub</a></p><button id="downloadDatabaseWorkspace" type="button">Download SQLite</button> <a id="uploadDatabaseWorkspace" href="https://github.com/kruin/3b-kruin-beheer/upload/main" target="_blank" rel="noopener noreferrer">Upload database naar GitHub</a> <button id="closeDatabaseWorkspace" type="button">Sluit werkbestand</button><p id="databaseWorkspaceStatus" role="status"></p><small>De database blijft lokaal tot je zelf uploadt. Productie wordt alleen op afzonderlijke opdracht bijgewerkt.</small></details>';(document.getElementById('testEnvironmentBanner')||document.body.firstChild)?.after(panel);const transfer=document.getElementById('testTransfer');if(transfer)transfer.hidden=true;document.getElementById('openDatabaseWorkspace').onchange=e=>{const file=e.target.files[0];if(file)open(file).catch(()=>{});};document.getElementById('downloadDatabaseWorkspace').onclick=()=>download(record.bytes,'Kruinconfig.sqlite3');document.getElementById('closeDatabaseWorkspace').onclick=()=>close().catch(e=>notify(e.message));for(const id of ['downloadDatabaseWorkspace','closeDatabaseWorkspace'])document.getElementById(id).disabled=!record;notify(window.ThreeBDatabaseWorkspace.error||(record?'Werkdatabase: '+record.name+' · kies tafel, patroon, spoor en lijn.':'Open je volledige Kruinconfig.sqlite3 om wijzigingen in een echte database te bewaren.'));}
+  function mount(){if(!enabled()||!document.body||document.getElementById('databaseWorkspace'))return;const style=document.createElement('style');style.textContent='.db-workfile-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:stretch;margin:12px 0}.db-workfile-actions button,.db-workfile-actions a{box-sizing:border-box;min-height:40px;margin:0!important}.db-workfile-actions a{display:flex;align-items:center;justify-content:center;padding:6px 8px;border:1px solid #b9accc;border-radius:8px;background:#fff;color:#142e24;text-align:center;text-decoration:none}.db-workfile-actions #closeDatabaseWorkspace{grid-column:1/-1}';document.head.append(style);const panel=document.createElement('section');panel.id='databaseWorkspace';panel.style.cssText='position:relative;margin:8px 8px 8px auto;width:360px;max-width:calc(100vw - 16px);box-sizing:border-box;padding:10px;border:1px solid #8064a6;border-radius:8px;background:#f4effc;color:#142e24;font:14px system-ui';panel.innerHTML='<details open><summary><strong>Kruin · database configureren</strong></summary><p>Open je database, bewerk op de tafel en bewaar het spoor. Upload daarna de bijgewerkte database.</p><label><strong>Open werkdatabase</strong><input id="openDatabaseWorkspace" type="file" accept=".sqlite3,.sqlite,.db" style="display:block;max-width:100%"></label><p><a href="https://github.com/kruin/3b-kruin-beheer/blob/main/Kruinconfig.sqlite3" target="_blank" rel="noopener noreferrer">Centrale database downloaden (GitHub)</a></p><div class="db-workfile-actions"><button id="downloadDatabaseWorkspace" type="button">Mijn werkdatabase downloaden</button> <a id="uploadDatabaseWorkspace" href="https://github.com/kruin/3b-kruin-beheer/upload/main" target="_blank" rel="noopener noreferrer">Werkdatabase uploaden</a> <button id="closeDatabaseWorkspace" type="button">Sluit werkbestand</button></div><p id="databaseWorkspaceStatus" role="status"></p><small>Werkbestand blijft lokaal tot je uploadt. Productie bijwerken blijft een aparte opdracht.</small></details>';(document.getElementById('testEnvironmentBanner')||document.body.firstChild)?.after(panel);const transfer=document.getElementById('testTransfer');if(transfer)transfer.hidden=true;document.getElementById('openDatabaseWorkspace').onchange=e=>{const file=e.target.files[0];if(file)open(file).catch(()=>{});};document.getElementById('downloadDatabaseWorkspace').onclick=()=>download(record.bytes,'Kruinconfig.sqlite3');document.getElementById('closeDatabaseWorkspace').onclick=()=>close().catch(e=>notify(e.message));for(const id of ['downloadDatabaseWorkspace','closeDatabaseWorkspace'])document.getElementById(id).disabled=!record;notify(window.ThreeBDatabaseWorkspace.error||(record?'Werkdatabase: '+record.name:'Nog geen werkdatabase geopend.'));}
   window.ThreeBDatabaseWorkspace={restore,open,commit,get active(){return Boolean(db&&record);},get required(){return enabled();},mount};
 })();
 
@@ -191,13 +191,40 @@ if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
       .threeb-test-appearance #testTransfer{position:relative!important;top:auto!important;right:auto!important;z-index:1!important;margin:8px 8px 8px auto;background:#f4effc!important;border-color:#8064a6!important}
       .threeb-test-appearance #centralStartAcquitControl{background:#f4effc;border-color:#8064a6}
       .threeb-test-appearance #spoorScreen{background:#faf8ff;border:2px solid #8064a6}
+      #desktopWorkbench{display:none}
+      body.test-desktop-workbench{--test-workbench-width:360px;overflow:hidden}
+      body.test-desktop-workbench #desktopWorkbench{display:flex;flex-direction:column;gap:12px;position:fixed;top:calc(var(--threeb-test-banner-height,48px) + 12px);right:12px;bottom:12px;width:var(--test-workbench-width);overflow:auto;box-sizing:border-box;z-index:950;padding:0 0 16px}
+      body.test-desktop-workbench #desktopWorkbench #databaseWorkspace{position:static!important;margin:0!important;width:100%!important;max-width:none!important;font-size:15px!important;line-height:1.4}
+      body.test-desktop-workbench #databaseWorkspace summary{font-size:16px}
+      body.test-desktop-workbench #databaseWorkspace button{min-height:40px;margin-bottom:6px}
+      body.test-desktop-workbench #desktopWorkbench #bandDock{position:relative!important;inset:auto!important;left:auto!important;top:auto!important;transform:none!important;width:100%!important;flex-shrink:0;box-sizing:border-box}
+      body.test-desktop-workbench #desktopWorkbench #bandCore{width:100%;margin:0}
+      body.test-desktop-workbench #desktopWorkbench #bandMenu{margin:0 0 6px auto}
+      body.test-desktop-workbench #desktopWorkbench #mobilePreview{display:flex!important;align-items:center;justify-content:center;min-height:40px;width:100%;flex-shrink:0;font-size:15px}
+      body.test-desktop-workbench #desktopWorkbench .onscreen-control-menuPanel{display:none!important;position:static!important;inset:auto!important;pointer-events:auto;width:100%;flex-shrink:0}
+      body.test-desktop-workbench.table-menu-open #desktopWorkbench .onscreen-control-menuPanel{display:block!important}
+      body.test-desktop-workbench #desktopWorkbench .central-track-controls{position:static!important;inset:auto!important;transform:none!important;width:100%!important;max-width:100%!important;max-height:none!important;margin:0!important;box-sizing:border-box}
+      #desktopOpenSpoor{min-height:44px;background:#176f4f;color:white;border:0;border-radius:7px;font:700 15px system-ui;flex-shrink:0}
+      body.test-desktop-workbench .drawing{position:fixed!important;inset:var(--threeb-test-banner-height,48px) calc(var(--test-workbench-width) + 24px) 0 0!important;width:auto!important;height:auto!important;margin:0!important;padding:0!important;max-width:none!important;max-height:none!important;border:0!important;border-radius:0!important;overflow:hidden}
+      body.test-desktop-workbench .drawing>.drawing-heading{position:absolute!important;inset:0 0 auto!important}
+      body.test-desktop-workbench #svgMount{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-height:100%!important}
+      body.test-desktop-workbench .onscreen-layout{height:100%!important;max-height:100%!important}
+      body.test-desktop-workbench.course-open #desktopWorkbench,body.customer-preview #desktopWorkbench{visibility:hidden;pointer-events:none}
+
     `;document.head.append(style);}
   }
 
   const releaseVersion=window.THREEB_RELEASE?.version||'onbekend';
   window.installMobileTestQr?.({button:document.getElementById('mobilePreview'),imageUrl:new URL('qr-test-neus.png?v='+releaseVersion,location.href).href,testUrl:'https://kruin.github.io/3b/test3b/?v='+releaseVersion+'#owner=kruin',qrPageUrl:new URL('qr.html',location.href).href});
-  const markTestVersion=()=>{const banner=document.querySelector('#testEnvironmentBanner');if(banner&&!document.querySelector('#spoorTestVersion')){const version=document.createElement('span');version.id='spoorTestVersion';version.textContent='TEST '+releaseVersion;document.title='TEST · 3B '+releaseVersion;if(banner.firstChild?.nodeType===3)banner.firstChild.textContent=banner.firstChild.textContent.replace('TEST v208-r15 · aparte browseropslag · geen databaseverbinding',' · testopslag · geen database · ');banner.prepend(version);const height=()=>document.documentElement.style.setProperty('--threeb-test-banner-height',banner.offsetHeight+'px');height();window.addEventListener('resize',height);}};
-  markTestVersion();window.addEventListener('DOMContentLoaded',markTestVersion,{once:true});
+  const markTestVersion=()=>{
+    const banner=document.querySelector('#testEnvironmentBanner');if(!banner)return;
+    if(!document.getElementById('spoorTestVersion')){const version=document.createElement('span');version.id='spoorTestVersion';version.textContent='TEST '+releaseVersion;banner.prepend(version);}
+    document.title='TEST · 3B '+releaseVersion;
+    const description=[...banner.childNodes].find(n=>n.nodeType===3);
+    if(description)description.textContent=window.ThreeBDatabaseWorkspace?.active?' · SQLite-werkbestand geopend · productie apart ':' · Kruin configureren · open een SQLite-werkbestand ';
+    document.documentElement.style.setProperty('--threeb-test-banner-height',banner.offsetHeight+'px');
+  };
+  markTestVersion();window.addEventListener('DOMContentLoaded',markTestVersion,{once:true});window.addEventListener('resize',markTestVersion);window.addEventListener('threeb-database-state',markTestVersion);
 
   if(document.getElementById('openSpoorscherm'))return;
   const css=document.createElement('style');css.textContent=`
@@ -341,4 +368,17 @@ if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
     finally{saving=false;for(const el of dialog.querySelectorAll('button,select,#mirrorSpoorScreen'))el.disabled=false;if(dirty)for(const tr of body.rows)if(!original.lines.find(l=>l.key===tr.dataset.line).terminal)for(const el of tr.querySelectorAll('input'))el.disabled=false;}
   };
   window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue='';}});
+  if(window.THREEB_TEST_ENVIRONMENT&&document.getElementById('databaseWorkspace')){
+    const sidebar=document.createElement('aside');sidebar.id='desktopWorkbench';sidebar.setAttribute('aria-label','Kruin configureren');
+    const quick=document.createElement('button');quick.id='desktopOpenSpoor';quick.type='button';quick.textContent='Spoorscherm · V / R / A';quick.onclick=()=>open({recenter:true});
+    document.body.append(sidebar);
+    const nodes=[document.getElementById('databaseWorkspace'),document.getElementById('bandDock'),document.getElementById('mobilePreview'),document.querySelector('.onscreen-control-menuPanel')].filter(Boolean),anchors=nodes.map(node=>{const anchor=document.createComment('workbench-original-position');node.before(anchor);return anchor;});
+    let previous=null;
+    const layout=()=>{const desktop=innerWidth>=1000&&!matchMedia('(pointer:coarse)').matches;document.body.classList.toggle('test-desktop-workbench',desktop);if(desktop===previous)return;previous=desktop;
+      if(desktop){for(const node of nodes.slice(0,2))sidebar.append(node);sidebar.append(quick);for(const node of nodes.slice(2))sidebar.append(node);}else{nodes.forEach((node,i)=>anchors[i].after(node));quick.remove();}
+      requestAnimationFrame(()=>window.dispatchEvent(new Event('resize')));
+    };
+    window.addEventListener('resize',layout);layout();
+  }
+
 };
