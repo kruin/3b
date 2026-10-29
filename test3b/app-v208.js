@@ -1,5 +1,6 @@
-(() => {
+(async () => {
   "use strict";
+  await window.ThreeBDatabaseWorkspace?.restore();
   let previousState=null;
   try{previousState=JSON.parse(localStorage.getItem("3b-canonical-west-v2"));}catch(_){}
   if(new URLSearchParams(location.hash.slice(1)).get("owner")==="kruin"&&previousState)delete previousState.basis;
@@ -1494,9 +1495,12 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
         const routeKey=originRouteKey(table,original.direction),before=copy(state);tableCheckpoint(table);
         try{
           state.startAcquitRoutes??=copy(K.startAcquitRoutes||{});const route=copy(resolvedSpoorRoute(table,original.direction));
-          for(const change of changes){if(change.side==='L')continue;const part=original.lines.find(line=>line.key===change.line),side=change.side==='V'?'from':change.side==='A'?'to':null;if(!part||part.terminal||!side||side==='from'&&(part.V?.kind==='acquit'||part.editableV===false)||side==='to'&&part.editableA===false)throw Error('Dit punt wordt afgeleid uit het karkas.');route[change.line][side]={...copy(change.point),source:'user',status:'edited',userAdjusted:true,editOwner:ownerActive()?'kruin':'user'};}
+          for(const change of changes){if(change.side==='L')continue;const part=original.lines.find(line=>line.key===change.line),side=change.side==='V'?'from':change.side==='A'?'to':null;if(!part||part.terminal||!side||side==='from'&&(part.V?.kind==='acquit'||part.editableV===false)||side==='to'&&part.editableA===false)throw Error('Dit punt wordt afgeleid uit het karkas.');route[change.line][side]={...copy(change.point),source:'user',status:'edited',userAdjusted:true,measurement:false,editOwner:ownerActive()?'kruin':'user'};}
           state.startAcquitRoutes[routeKey]=calculateSkeletonRoute(table,route);
           if(lengthChange){state.startAcquitLengths??=copy(K.startAcquitLengths||{});state.startAcquitLengths[routeKey]=wantedLength;}
+          if(window.ThreeBDatabaseWorkspace?.required){
+            await window.ThreeBDatabaseWorkspace.commit({table,track:canonicalStart()?.key||selectedTrackKey(),routeKey,route:state.startAcquitRoutes[routeKey],length:state.startAcquitLengths?.[routeKey],changes});
+          }
           save();acceptExperiment();originRayCache.clear();render();return;
         }catch(error){for(const name of Object.keys(state))delete state[name];Object.assign(state,before);throw error;}
       }
