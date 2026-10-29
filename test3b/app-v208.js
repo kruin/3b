@@ -1,6 +1,7 @@
 (async () => {
   "use strict";
   await window.ThreeBDatabaseWorkspace?.restore();
+  if(window.ThreeBDatabaseWorkspace?.required&&!window.ThreeBDatabaseWorkspace.active)return;
   let previousState=null;
   try{previousState=JSON.parse(localStorage.getItem("3b-canonical-west-v2"));}catch(_){}
   if(new URLSearchParams(location.hash.slice(1)).get("owner")==="kruin"&&previousState)delete previousState.basis;
@@ -9,6 +10,7 @@
     const requested=new URLSearchParams(location.search||"").get("beheerBasis");
     if(requested){const basis=(window.THREEB_BASES||[]).find(item=>item.values?.beheerBasis===requested&&item.values?.beheerRevision===window.THREEB_KRUIN_VALUES?.beheerRevision);if(basis)nextBasis={basis};}
   }
+  if(window.ThreeBDatabaseWorkspace?.required){nextBasis=null;if(previousState)delete previousState.basis;}
   const C = nextBasis?.basis?.config||previousState?.basis?.config||window.THREEB_START_CONFIG, K = nextBasis?.basis?.values||previousState?.basis?.values||window.THREEB_KRUIN_VALUES||{release:0,tracks:{}}, KEY = "3b-canonical-west-v2", EXPLANATION_KEY="3b-kruin-uitleg-v1", OWNER_PARAMS=new URLSearchParams(location.hash.slice(1)), PRIVATE_OWNER=OWNER_PARAMS.get("owner")==="kruin", NEW_USER_AT_LOAD=!localStorage.getItem(KEY)&&!PRIVATE_OWNER;
   const transferSource=JSON.parse(JSON.stringify(K));
   const ownerActive=()=>PRIVATE_OWNER&&!document.body.classList.contains("customer-preview");
@@ -74,7 +76,7 @@
   }
   function ensureVirtualNoseTracks(){Object.keys(C.tables).forEach(table=>{const route=state.data?.[table]?.NEGEN;if(!route||complete(route.neus?.to))return;route.neus={from:{kind:"acquit",value:"S"},to:{band:"west",value:90,status:"calculated",source:"automatic",calculationBasis:"virtual_nose",virtual:true}};});}
   function load(){try{const x=JSON.parse(localStorage.getItem(KEY));if([4,5,6,7,8,9,10,11,12,13,14].includes(x?.version)&&x.data){x.version=14;return x;}}catch(_){}return initial();}
-  const state=load();if(PRIVATE_OWNER&&!window.THREEB_TEST_ENVIRONMENT){const fresh=initial();state.data=fresh.data;state.variantData={};state.noseLengthAnchors={};state.noseCorrectionConfig={};state.strokeLengthsCm=copy(K.strokeLengthsCm||{});state.departurePositions={};state.appliedMigrations=copy(fresh.appliedMigrations);}let ui=state.ui,dragModels={},selectedBall=null,activeSegmentIndex=null,activeSegmentTable=null,touchCandidate=null,lastBallTap={key:"",time:0},drawingTableContext=null,explanationParts=null,seriesFocusOverride=null,localExplanationDrafts=null,supabaseClient=null,authUser=null,sessionTracker=null,derivedTrackCache={},courseCaseAnswerVisible=false,suppressTableClickUntil=0,panelDraggedUntil=0,tableScreenContext="",tableScreenHistories={},bodyEditSessions={},lineConfigContext=null;
+  const state=load();if(PRIVATE_OWNER&&(!window.THREEB_TEST_ENVIRONMENT||window.ThreeBDatabaseWorkspace?.active)){const fresh=initial();if(window.ThreeBDatabaseWorkspace?.active){state.startAcquitRoutes=copy(K.startAcquitRoutes||{});state.startAcquitLengths=copy(K.startAcquitLengths||{});state.startAcquitOffset=0;state.ui??=copy(fresh.ui);state.ui.trackFamily="parallel";if(!["basis","parallel"].includes(state.ui.lineOneMode)){state.ui.lineOneMode="basis";state.ui.parallelOffset=0;}}state.data=fresh.data;state.variantData={};state.noseLengthAnchors={};state.noseCorrectionConfig={};state.strokeLengthsCm=copy(K.strokeLengthsCm||{});state.departurePositions={};state.appliedMigrations=window.ThreeBDatabaseWorkspace?.active?Array.from(new Set([...(state.appliedMigrations||[]),...["all-lkl-track-rules-v84", "base-overlay-opt-in-20261024", "five-body-anchor-repair-v111", "five-complete-spec-v82", "five-heel-reflection-v83", "force-kruin-five-source-v111", "full-chain-from-nose-v54", "head-neck-experience-anchors-v84", "kruin-body-anchors-v69", "lesson-one-five-only-v74", "nose-presentation-v176", "parallel-only-20261029", "repair-zes-north-anchors-v164", "reset-stale-halfzes-v49", "small-five-connected-chain-v53", "small-five-tail-default-v19", "variant-bridge-v208"],"kruin-excel-source-"+K.release])):copy(fresh.appliedMigrations);}let ui=state.ui,dragModels={},selectedBall=null,activeSegmentIndex=null,activeSegmentTable=null,touchCandidate=null,lastBallTap={key:"",time:0},drawingTableContext=null,explanationParts=null,seriesFocusOverride=null,localExplanationDrafts=null,supabaseClient=null,authUser=null,sessionTracker=null,derivedTrackCache={},courseCaseAnswerVisible=false,suppressTableClickUntil=0,panelDraggedUntil=0,tableScreenContext="",tableScreenHistories={},bodyEditSessions={},lineConfigContext=null;
   function normalize(){
     const base=initial();Object.keys(C.tables).forEach(t=>{state.data[t]??={};C.shotLines.forEach(n=>{state.data[t][n]??=base.data[t][n];C.parts.forEach(l=>state.data[t][n][l.key]??=base.data[t][n][l.key]);});});
     if(Array.isArray(state.explanationDrafts)&&!localStorage.getItem(EXPLANATION_KEY))localStorage.setItem(EXPLANATION_KEY,JSON.stringify({version:COURSE.version,slides:state.explanationDrafts}));
@@ -220,6 +222,7 @@
     catch(error){$("tableFileStatus").textContent=error.message;}finally{button.disabled=false;}
   }
   async function importTableFile(event){
+    if(window.ThreeBDatabaseWorkspace?.required){$("tableFileStatus").textContent="Kruin werkt op SQLite. Gebruik Open werkdatabase.";return;}
     const file=event.target.files?.[0];if(!file)return;
     if(!file.name.toLowerCase().endsWith(".json")){$("tableFileStatus").textContent="Kies je opgeslagen tafelbestand (.json).";event.target.value="";return;}
     try{const payload=await window.ThreeBFiles.decode(await file.arrayBuffer(),file.name),restored=copy(payload.state);restored.basis=copy(payload.basis);restored.tableName=payload.tableName;
@@ -227,6 +230,7 @@
     }catch(error){$("tableFileStatus").textContent=`Terugladen mislukt: ${error.message}`;}finally{event.target.value="";}
   }
   function chooseTableBasis(){
+    if(window.ThreeBDatabaseWorkspace?.required){$("tableFileStatus").textContent="De geopende SQLite-database is de bron.";return;}
     const id=$("tableBasisSelect").value;if(id===state.basis.id)return;
     const selected=(window.THREEB_BASES||[]).find(item=>item.id===id);if(!selected)return;
     if(!confirm("Deze basis begint met de bijbehorende Kruinwaarden. Download eerst je huidige aanpassingen als je die wilt bewaren. Doorgaan?")){fillTableBasis();return;}
