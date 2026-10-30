@@ -1481,6 +1481,8 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
       try{originRayCache.clear();save();render();}catch(error){if(before===undefined)delete state.startAcquitOffset;else state.startAcquitOffset=before;render();throw error;}
     },
     dockPosition(){return ui.bandDockPosition;},
+    dockFloating(){return Boolean(ui.comfortMenuFloating);},
+    floatDock(){ui.comfortMenuFloating=true;save();},
     setDockPosition(left,top){ui.bandDockPosition={x:left/innerWidth,y:top/innerHeight};positionBandDock();save();},
     clearPreview(){const had=Boolean(spoorPreview);spoorPreview=null;if(had)render();},
     preview(original,changes){
