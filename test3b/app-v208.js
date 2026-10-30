@@ -76,7 +76,7 @@
   }
   function ensureVirtualNoseTracks(){Object.keys(C.tables).forEach(table=>{const route=state.data?.[table]?.NEGEN;if(!route||complete(route.neus?.to))return;route.neus={from:{kind:"acquit",value:"S"},to:{band:"west",value:90,status:"calculated",source:"automatic",calculationBasis:"virtual_nose",virtual:true}};});}
   function load(){try{const x=JSON.parse(localStorage.getItem(KEY));if([4,5,6,7,8,9,10,11,12,13,14].includes(x?.version)&&x.data){x.version=14;return x;}}catch(_){}return initial();}
-  const state=load();if(PRIVATE_OWNER&&(!window.THREEB_TEST_ENVIRONMENT||window.ThreeBDatabaseWorkspace?.active)){const fresh=initial();if(window.ThreeBDatabaseWorkspace?.active){state.startAcquitRoutes=copy(K.startAcquitRoutes||{});state.startAcquitLengths=copy(K.startAcquitLengths||{});state.startAcquitOffset=0;state.ui??=copy(fresh.ui);state.ui.trackFamily="parallel";if(!["basis","parallel"].includes(state.ui.lineOneMode)){state.ui.lineOneMode="basis";state.ui.parallelOffset=0;}}state.data=fresh.data;state.variantData={};state.noseLengthAnchors={};state.noseCorrectionConfig={};state.strokeLengthsCm=copy(K.strokeLengthsCm||{});state.departurePositions={};state.appliedMigrations=window.ThreeBDatabaseWorkspace?.active?Array.from(new Set([...(state.appliedMigrations||[]),...["all-lkl-track-rules-v84", "base-overlay-opt-in-20261024", "five-body-anchor-repair-v111", "five-complete-spec-v82", "five-heel-reflection-v83", "force-kruin-five-source-v111", "full-chain-from-nose-v54", "head-neck-experience-anchors-v84", "kruin-body-anchors-v69", "lesson-one-five-only-v74", "nose-presentation-v176", "parallel-only-20261029", "repair-zes-north-anchors-v164", "reset-stale-halfzes-v49", "small-five-connected-chain-v53", "small-five-tail-default-v19", "variant-bridge-v208"],"kruin-excel-source-"+K.release])):copy(fresh.appliedMigrations);}let ui=state.ui,dragModels={},selectedBall=null,activeSegmentIndex=null,activeSegmentTable=null,touchCandidate=null,lastBallTap={key:"",time:0},drawingTableContext=null,explanationParts=null,seriesFocusOverride=null,localExplanationDrafts=null,supabaseClient=null,authUser=null,sessionTracker=null,derivedTrackCache={},courseCaseAnswerVisible=false,suppressTableClickUntil=0,panelDraggedUntil=0,tableScreenContext="",tableScreenHistories={},bodyEditSessions={},lineConfigContext=null;
+  const state=load();if(PRIVATE_OWNER&&(!window.THREEB_TEST_ENVIRONMENT||window.ThreeBDatabaseWorkspace?.active)){const fresh=initial();if(window.ThreeBDatabaseWorkspace?.active){state.startAcquitRoutes=copy(K.startAcquitRoutes||{});state.startAcquitLengths=copy(K.startAcquitLengths||{});state.spoorLineNotes=copy(K.spoorLineNotes||{});state.startAcquitOffset=0;state.ui??=copy(fresh.ui);state.ui.trackFamily="parallel";if(!["basis","parallel"].includes(state.ui.lineOneMode)){state.ui.lineOneMode="basis";state.ui.parallelOffset=0;}}state.data=fresh.data;state.variantData={};state.noseLengthAnchors={};state.noseCorrectionConfig={};state.strokeLengthsCm=copy(K.strokeLengthsCm||{});state.departurePositions={};state.appliedMigrations=window.ThreeBDatabaseWorkspace?.active?Array.from(new Set([...(state.appliedMigrations||[]),...["all-lkl-track-rules-v84", "base-overlay-opt-in-20261024", "five-body-anchor-repair-v111", "five-complete-spec-v82", "five-heel-reflection-v83", "force-kruin-five-source-v111", "full-chain-from-nose-v54", "head-neck-experience-anchors-v84", "kruin-body-anchors-v69", "lesson-one-five-only-v74", "nose-presentation-v176", "parallel-only-20261029", "repair-zes-north-anchors-v164", "reset-stale-halfzes-v49", "small-five-connected-chain-v53", "small-five-tail-default-v19", "variant-bridge-v208"],"kruin-excel-source-"+K.release])):copy(fresh.appliedMigrations);}let ui=state.ui,dragModels={},selectedBall=null,activeSegmentIndex=null,activeSegmentTable=null,touchCandidate=null,lastBallTap={key:"",time:0},drawingTableContext=null,explanationParts=null,seriesFocusOverride=null,localExplanationDrafts=null,supabaseClient=null,authUser=null,sessionTracker=null,derivedTrackCache={},courseCaseAnswerVisible=false,suppressTableClickUntil=0,panelDraggedUntil=0,tableScreenContext="",tableScreenHistories={},bodyEditSessions={},lineConfigContext=null;
   function normalize(){
     const base=initial();Object.keys(C.tables).forEach(t=>{state.data[t]??={};C.shotLines.forEach(n=>{state.data[t][n]??=base.data[t][n];C.parts.forEach(l=>state.data[t][n][l.key]??=base.data[t][n][l.key]);});});
     if(Array.isArray(state.explanationDrafts)&&!localStorage.getItem(EXPLANATION_KEY))localStorage.setItem(EXPLANATION_KEY,JSON.stringify({version:COURSE.version,slides:state.explanationDrafts}));
@@ -1233,7 +1233,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
   init();
 
   /* 3B full spoor editor adapter */
-  var spoorBaseDepth=0,spoorGeometryReady=false,originRayCache=new Map(),spoorCalculation=null;
+  var spoorBaseDepth=0,spoorGeometryReady=false,originRayCache=new Map(),spoorCalculation=null,spoorPreview=null;
   window.addEventListener?.('load',()=>fitTableOrientation());
   function startAcquitOffset(){return 0;}
   function startAcquitPhysicalOffset(){return spoorBaseDepth||!spoorGeometryReady?0:startAcquitOffset();}
@@ -1365,6 +1365,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
     return route;
   }
   function resolvedSpoorRoute(table,direction=ui.direction){
+    if(spoorPreview?.table===table&&spoorPreview.direction===direction)return copy(spoorPreview.route);
     const saved=originStored('startAcquitRoutes',table,direction);
     const route=canonicalReference(table,direction)||(startAcquitOffset()!==0?copy(startRay(table,direction).route):referenceSpoorRoute(table,direction));
     // A saved route also contains untouched generated points. Only actual edits
@@ -1479,6 +1480,15 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
       const before=state.startAcquitOffset;state.startAcquitOffset=offset;
       try{originRayCache.clear();save();render();}catch(error){if(before===undefined)delete state.startAcquitOffset;else state.startAcquitOffset=before;render();throw error;}
     },
+    dockPosition(){return ui.bandDockPosition;},
+    setDockPosition(left,top){ui.bandDockPosition={x:left/innerWidth,y:top/innerHeight};positionBandDock();save();},
+    clearPreview(){const had=Boolean(spoorPreview);spoorPreview=null;if(had)render();},
+    preview(original,changes){
+      const route=copy(original.route);
+      for(const change of changes){if(!['V','A'].includes(change.side))continue;const side=change.side==='V'?'from':'to';route[change.line][side]={...copy(change.point),status:'edited',source:'user',userAdjusted:true,measurement:false};}
+      const previous=spoorPreview;spoorPreview=null;
+      try{spoorPreview={table:original.table,direction:original.direction,route:calculateSkeletonRoute(original.table,route)};render();return this.read(original.direction);}catch(error){spoorPreview=previous;throw error;}
+    },
     read(direction=ui.direction){const table=ui.editTable,extent=patternExtent(table),key=table+':'+selectedTrackKey();
       const east=spoorGeometryReady?null:state.spoorDirectionalMeasurements?.[key]?.oost,model=dragModels[table];
       const westLength=originStrokeLength(table,'west')??model?.lengthCm??state.strokeLengthsCm?.[table]?.[ui.pattern]??C.drawing.departureBall.defaultLengthsCm?.[table]?.[ui.pattern]??baseStrokeLength(table);
@@ -1486,11 +1496,11 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
       const displayedRoute=spoorGeometryReady?resolvedSpoorRoute(table,direction):data(table);
       return copy({
       selectedPattern:ui.playRange==='sixSeven'?'6–7 banden':ui.playRange==='vrij'?'Vrij spel':'LKL',actualPattern:actualStartPattern(table,direction),startError:spoorGeometryReady&&actualStartPattern(table,direction)==='?'?startRay(table,direction).error:null,startAcquitOffset:startAcquitOffset(),strokeLengthCm:originStrokeLength(table,direction)??(direction==='oost'?(east?.lengthCm??westLength):westLength),strokeLimits,
-      table,spoor:selectedTrackKey(),label:originFullLabel()+' · '+tableLabel(table),
+      route:displayedRoute,table,spoor:selectedTrackKey(),label:originFullLabel()+' · '+tableLabel(table),
       token:JSON.stringify({route:spoorSnapshot(table),east,startAcquitOffset:startAcquitOffset()}),direction:direction==='oost'?'oost':'west',
       geometry:{...C.tables[table],inset:bandCenterLineInsetCm(),startAcquitOffset:startAcquitPhysicalOffset()},
       lines:activeLines().slice(0,extent.index+1).map((part,index)=>({
-        key:part.key,label:lineLabel(part),editableV:skeletonEditable(part.key,'from'),editableA:skeletonEditable(part.key,'to'),startBall:part.key==='neus'?canonicalPoint(point(displayedRoute.neus.from,table),table):index>0&&displayedRoute[activeLines()[index-1].key]&&[displayedRoute[activeLines()[index-1].key].from,displayedRoute[activeLines()[index-1].key].to].every(complete)?canonicalPoint(bandBall(displayedRoute[activeLines()[index-1].key].to,displayedRoute[activeLines()[index-1].key].from,table,C.ballDiameterMm/20),table):null,V:part.key==='neus'?noseDiamondDeparture(table,displayedRoute):!spoorGeometryReady&&direction==='oost'&&east?.lines?.[part.key]?east.lines[part.key].V:displayedRoute[part.key]?.from,A:!spoorGeometryReady&&direction==='oost'&&east?.lines?.[part.key]?east.lines[part.key].A:displayedRoute[part.key]?.to,
+        key:part.key,note:(state.spoorLineNotes||K.spoorLineNotes||{})[originRouteKey(table,direction)]?.[part.key]||'',label:lineLabel(part),editableV:skeletonEditable(part.key,'from'),editableA:skeletonEditable(part.key,'to'),startBall:part.key==='neus'?canonicalPoint(point(displayedRoute.neus.from,table),table):index>0&&displayedRoute[activeLines()[index-1].key]&&[displayedRoute[activeLines()[index-1].key].from,displayedRoute[activeLines()[index-1].key].to].every(complete)?canonicalPoint(bandBall(displayedRoute[activeLines()[index-1].key].to,displayedRoute[activeLines()[index-1].key].from,table,C.ballDiameterMm/20),table):null,V:part.key==='neus'?noseDiamondDeparture(table,displayedRoute):!spoorGeometryReady&&direction==='oost'&&east?.lines?.[part.key]?east.lines[part.key].V:displayedRoute[part.key]?.from,A:!spoorGeometryReady&&direction==='oost'&&east?.lines?.[part.key]?east.lines[part.key].A:displayedRoute[part.key]?.to,
         terminal:index===extent.index,fraction:index===extent.index?extent.fraction:1
       }))
     });},
@@ -1504,11 +1514,12 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
         const routeKey=originRouteKey(table,original.direction),before=copy(state);tableCheckpoint(table);
         try{
           state.startAcquitRoutes??=copy(K.startAcquitRoutes||{});const route=copy(resolvedSpoorRoute(table,original.direction));
-          for(const change of changes){if(change.side==='L')continue;const part=original.lines.find(line=>line.key===change.line),side=change.side==='V'?'from':change.side==='A'?'to':null;if(!part||part.terminal||!side||side==='from'&&(part.V?.kind==='acquit'||part.editableV===false)||side==='to'&&part.editableA===false)throw Error('Dit punt wordt afgeleid uit het karkas.');route[change.line][side]={...copy(change.point),source:'user',status:'edited',userAdjusted:true,measurement:false,editOwner:ownerActive()?'kruin':'user'};}
+          for(const change of changes){if(change.side==='L'||change.side==='N')continue;const part=original.lines.find(line=>line.key===change.line),side=change.side==='V'?'from':change.side==='A'?'to':null;if(!part||part.terminal||!side||side==='from'&&(part.V?.kind==='acquit'||part.editableV===false)||side==='to'&&part.editableA===false)throw Error('Dit punt wordt afgeleid uit het karkas.');route[change.line][side]={...copy(change.point),source:'user',status:'edited',userAdjusted:true,measurement:false,editOwner:ownerActive()?'kruin':'user'};}
+          const notes=Object.fromEntries(changes.filter(c=>c.side==='N').map(c=>[c.line,c.point.value]));state.spoorLineNotes??=copy(K.spoorLineNotes||{});state.spoorLineNotes[routeKey]={...state.spoorLineNotes[routeKey],...notes};
           state.startAcquitRoutes[routeKey]=calculateSkeletonRoute(table,route);
           if(lengthChange){state.startAcquitLengths??=copy(K.startAcquitLengths||{});state.startAcquitLengths[routeKey]=wantedLength;}
           if(window.ThreeBDatabaseWorkspace?.required){
-            await window.ThreeBDatabaseWorkspace.commit({table,track:canonicalStart()?.key||selectedTrackKey(),routeKey,route:state.startAcquitRoutes[routeKey],length:state.startAcquitLengths?.[routeKey],changes});
+            await window.ThreeBDatabaseWorkspace.commit({table,track:canonicalStart()?.key||selectedTrackKey(),routeKey,notes,route:state.startAcquitRoutes[routeKey],length:state.startAcquitLengths?.[routeKey],changes});
           }
           save();acceptExperiment();originRayCache.clear();render();return;
         }catch(error){for(const name of Object.keys(state))delete state[name];Object.assign(state,before);throw error;}
