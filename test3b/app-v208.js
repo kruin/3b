@@ -1340,7 +1340,12 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
       }
       const previous=spoorCalculation;spoorCalculation={table,route};
       try{
-        applyConfiguredCrossFromBody(table);applyLklLegFromCross(table);
+        applyConfiguredCrossFromBody(table);
+        const cross=route.kruis,leg=route.been;
+        if(cross&&leg&&[cross.from,cross.to,leg.to].every(complete)){
+          const shared=bandBall(cross.to,cross.from,table,radius),v=diamondValueThroughBall(cross.to.band,shared,point(leg.to,table),table,.000001);
+          if(v!==null)leg.from={...leg.from,band:cross.to.band,value:v,status:'calculated',source:'automatic',calculationBasis:'karkas_contact',userAdjusted:false,measurement:false};
+        }
         let prior=route.been;
         for(const part of C.parts.slice(C.parts.findIndex(p=>p.key==='been')+1)){
           if(!prior||![prior.from,prior.to].every(complete))break;
@@ -1480,7 +1485,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
       const strokeLimits=direction==='oost'?{min:0,max:Math.hypot(C.tables[table].widthCm,C.tables[table].heightCm)}:model?{min:model.startDistance*(1-model.maxFraction)-model.radiusCm*2,max:model.startDistance-model.radiusCm*2}:null;
       const displayedRoute=spoorGeometryReady?resolvedSpoorRoute(table,direction):data(table);
       return copy({
-      actualPattern:actualStartPattern(table,direction),startError:spoorGeometryReady&&actualStartPattern(table,direction)==='?'?startRay(table,direction).error:null,startAcquitOffset:startAcquitOffset(),strokeLengthCm:originStrokeLength(table,direction)??(direction==='oost'?(east?.lengthCm??westLength):westLength),strokeLimits,
+      selectedPattern:ui.playRange==='sixSeven'?'6–7 banden':ui.playRange==='vrij'?'Vrij spel':'LKL',actualPattern:actualStartPattern(table,direction),startError:spoorGeometryReady&&actualStartPattern(table,direction)==='?'?startRay(table,direction).error:null,startAcquitOffset:startAcquitOffset(),strokeLengthCm:originStrokeLength(table,direction)??(direction==='oost'?(east?.lengthCm??westLength):westLength),strokeLimits,
       table,spoor:selectedTrackKey(),label:originFullLabel()+' · '+tableLabel(table),
       token:JSON.stringify({route:spoorSnapshot(table),east,startAcquitOffset:startAcquitOffset()}),direction:direction==='oost'?'oost':'west',
       geometry:{...C.tables[table],inset:bandCenterLineInsetCm(),startAcquitOffset:startAcquitPhysicalOffset()},

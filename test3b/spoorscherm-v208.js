@@ -1,4 +1,4 @@
-window.THREEB_RELEASE=Object.freeze({"version": "v208-r24", "date": "2026-10-29", "channel": "test", "compatibilityBase": "v208-r15"});
+window.THREEB_RELEASE=Object.freeze({"version": "v208-r25", "date": "2026-10-30", "channel": "test", "compatibilityBase": "v208-r15"});
 /* Physical phone testing: show the project's published QR, without changing app state. */
 if(typeof window!=='undefined'){
   window.installMobileTestQr=function({button,imageUrl,testUrl,qrPageUrl}){
@@ -204,6 +204,7 @@ if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
       body.test-desktop-workbench #desktopWorkbench .onscreen-control-menuPanel{display:none!important;position:static!important;inset:auto!important;pointer-events:auto;width:100%;flex-shrink:0}
       body.test-desktop-workbench.table-menu-open #desktopWorkbench .onscreen-control-menuPanel{display:block!important}
       body.test-desktop-workbench #desktopWorkbench .central-track-controls{position:static!important;inset:auto!important;transform:none!important;width:100%!important;max-width:100%!important;max-height:none!important;margin:0!important;box-sizing:border-box}
+      body.test-desktop-workbench #bandDock.workbench-menu-floating{position:fixed!important;width:340px!important;max-width:calc(100vw - 8px)!important;z-index:3900}
       #desktopOpenSpoor{min-height:44px;background:#176f4f;color:white;border:0;border-radius:7px;font:700 15px system-ui;flex-shrink:0}
       body.test-desktop-workbench .drawing{position:fixed!important;inset:var(--threeb-test-banner-height,48px) calc(var(--test-workbench-width) + 24px) 0 0!important;width:auto!important;height:auto!important;margin:0!important;padding:0!important;max-width:none!important;max-height:none!important;border:0!important;border-radius:0!important;overflow:hidden}
       body.test-desktop-workbench .drawing>.drawing-heading{position:absolute!important;inset:0 0 auto!important}
@@ -306,8 +307,8 @@ if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
   function load(direction=viewDirection){
     original=adapter.read(direction);viewDirection=original.direction;working={};dirty=false;body.replaceChildren();
     const comparison=$('spoorComparisonInfo');comparison.hidden=!window.THREEB_TEST_ENVIRONMENT;comparison.textContent=adapter.comparisonInfo?.()||'';comparison.title='Vergelijk deze tafelcode op desktop en telefoon. Bij verschillende codes zijn de getoonde tafelgegevens of instellingen niet gelijk.';
-    $('spoorScreenTitle').textContent='Spoorscherm · '+original.label+' · '+original.actualPattern;$('mirrorSpoorScreen').checked=original.direction==='oost';$('spoorDirectionLabel').textContent=original.direction==='oost'?'Oost':'West';
-    $('spoorMeasurementHint').textContent=(original.startError?original.startError+'. ':original.actualPattern!=='LKL'?'Dit spoor valt buiten LKL ('+original.actualPattern+'). ':'')+(original.direction==='oost'?'Eigen Oost-meting: apart bewaard; de West-meting blijft behouden.':'');
+    $('spoorScreenTitle').textContent='Spoorscherm · '+original.label+' · '+(original.selectedPattern||original.actualPattern);$('mirrorSpoorScreen').checked=original.direction==='oost';$('spoorDirectionLabel').textContent=original.direction==='oost'?'Oost':'West';
+    $('spoorMeasurementHint').textContent=(original.startError?original.startError+'. ':original.selectedPattern&&original.selectedPattern!=='LKL'?'Eerste drie banden: '+original.actualPattern+'. ':original.actualPattern!=='LKL'?'Dit spoor valt buiten LKL ('+original.actualPattern+'). ':'')+(original.direction==='oost'?'Eigen Oost-meting: apart bewaard; de West-meting blijft behouden.':'');
     const head=original.lines.find(line=>line.key==='kop')?.A;if(!head||head.value===null)$('spoorMeasurementHint').textContent+=' Kop A is nog niet gemeten; de tussenroute is onvolledig.';else if(head.source==='estimate')$('spoorMeasurementHint').textContent+=' Kop A is een schatting, geen meting.';
     $('spoorMeasurementHint').textContent+=' Neus en Romp zijn leidend; Kop A is het meetanker. De tussenwaarden zijn afgeleid.';
     for(const line of original.lines){working[line.key]={V:structuredClone(line.V),A:structuredClone(line.A),lengthCm:line.key==='neus'?original.strokeLengthCm:null,startBall:line.startBall,changed:new Set()};const tr=document.createElement('tr');tr.dataset.line=line.key;
@@ -356,8 +357,8 @@ if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
   window.addEventListener('resize',()=>{if(dialog.open&&position)place(position);});
   window.addEventListener('threeb-spoor-state',()=>{if(!dialog.open||saving)return;if(dirty){text('Tafel gewijzigd; bewaar of herlaad vóór verdere edits.',true);return;}load();});
   $('mirrorSpoorScreen').onchange=()=>{if(saving||dirty){$('mirrorSpoorScreen').checked=original.direction==='oost';text('Bewaar of herlaad voordat je spiegelt.',true);return;}load($('mirrorSpoorScreen').checked?'oost':'west');};
-  function close(){if(saving)return;if(dirty){text('Bewaar je wijzigingen of kies Herlaad voordat je sluit.',true);return;}dialog.close();}
-  $('closeSpoorScreen').onclick=close;dialog.addEventListener('cancel',e=>{e.preventDefault();close();});$('reloadSpoorScreen').onclick=()=>{if(!saving)load();};
+  function close(){if(saving)return;if(dirty&&!confirm('Niet-bewaarde spoorwijzigingen verwerpen en sluiten?'))return;dirty=false;dialog.close();}
+  $('closeSpoorScreen').onclick=close;dialog.addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();e.stopPropagation();close();}});dialog.addEventListener('cancel',e=>{e.preventDefault();close();});$('reloadSpoorScreen').onclick=()=>{if(!saving)load();};
   window.hasThreeBSpoorChanges=()=>dirty||saving;
   $('saveSpoorScreen').onclick=async()=>{
     if(saving)return;if(window.ThreeBDatabaseWorkspace?.required&&!window.ThreeBDatabaseWorkspace.active){text('Open eerst je SQLite-werkdatabase via Open werkdatabase. Daarna bewaart Bewaar spoor in die database.',true);return;}for(const input of dialog.querySelectorAll('.spoor-value'))if(!input.reportValidity())return;if(!dirty&&!window.ThreeBDatabaseWorkspace?.active){text('Geen gewijzigde waarden.');return;}
@@ -373,9 +374,14 @@ if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
     const quick=document.createElement('button');quick.id='desktopOpenSpoor';quick.type='button';quick.textContent='Spoorscherm · V / R / A';quick.onclick=()=>open({recenter:true});
     document.body.append(sidebar);
     const nodes=[document.getElementById('databaseWorkspace'),document.getElementById('bandDock'),document.getElementById('mobilePreview'),document.querySelector('.onscreen-control-menuPanel')].filter(Boolean),anchors=nodes.map(node=>{const anchor=document.createComment('workbench-original-position');node.before(anchor);return anchor;});
+    const dock=document.getElementById('bandDock');
+    dock?.addEventListener('pointerdown',event=>{
+      if(!document.body.classList.contains('test-desktop-workbench')||event.button!==0||!event.target.closest('.band-drag-handle'))return;
+      if(!dock.classList.contains('workbench-menu-floating')){const box=dock.getBoundingClientRect();dock.classList.add('workbench-menu-floating');document.body.append(dock);dock.style.left=box.left+'px';dock.style.top=box.top+'px';}
+    },true);
     let previous=null;
     const layout=()=>{const desktop=innerWidth>=1000&&!matchMedia('(pointer:coarse)').matches;document.body.classList.toggle('test-desktop-workbench',desktop);if(desktop===previous)return;previous=desktop;
-      if(desktop){for(const node of nodes.slice(0,2))sidebar.append(node);sidebar.append(quick);for(const node of nodes.slice(2))sidebar.append(node);}else{nodes.forEach((node,i)=>anchors[i].after(node));quick.remove();}
+      if(desktop){for(const node of nodes.slice(0,2))if(!node.classList.contains('workbench-menu-floating'))sidebar.append(node);sidebar.append(quick);for(const node of nodes.slice(2))sidebar.append(node);}else{nodes.forEach((node,i)=>{node.classList.remove('workbench-menu-floating');anchors[i].after(node);});quick.remove();}
       requestAnimationFrame(()=>window.dispatchEvent(new Event('resize')));
     };
     window.addEventListener('resize',layout);layout();
