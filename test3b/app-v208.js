@@ -359,11 +359,13 @@
     for(const svg of svgs){
       const table=svg.dataset.viewTable||ui.editTable,choice=desktop?state.desktopTableOrientations?.[table]:mobileChoice,angle=choice==="right"?90:choice==="left"?-90:0;
       const card=svg.closest(".drawing-card"),rect=card.getBoundingClientRect(),box=svg.viewBox.baseVal;
-      const top=Math.max(0,rect.top),bottom=Math.min(innerHeight,rect.bottom),left=Math.max(0,rect.left),right=Math.min(innerWidth,rect.right),height=Math.max(1,bottom-top-4),width=Math.max(1,right-left-4);
+      const top=Math.max(0,rect.top)+(ui.tableMode==='beide'?48:0),bottom=Math.min(innerHeight,rect.bottom),left=Math.max(0,rect.left),right=Math.min(innerWidth,rect.right),height=Math.max(1,bottom-top-4),width=Math.max(1,right-left-4);
       const scale=Math.min(width/(angle?box.height:box.width),height/(angle?box.width:box.height));
       svg.style.width=box.width*scale+"px";svg.style.height=box.height*scale+"px";svg.style.maxWidth="none";svg.style.maxHeight="none";
       svg.style.left=(left+(right-left)/2-rect.left)+"px";svg.style.top=(top+(bottom-top)/2-rect.top)+"px";svg.style.transformBox="border-box";svg.style.transformOrigin="center";
       svg.style.transform="translate(-50%,-50%) rotate("+angle+"deg)";svg.style.setProperty("--desktop-table-angle",angle+"deg");svg.dataset.desktopAngle=String(angle);
+      const title=card.querySelector('.table-size-label');if(title&&ui.tableMode==='beide'){const bounds=svg.getBoundingClientRect();title.style.top=Math.max(4,bounds.top-rect.top-title.getBoundingClientRect().height-8)+'px';}
+
       for(const label of svg.querySelectorAll('.value-tag'))label.style.removeProperty('transform');
       if(angle){const bounds=svg.getBoundingClientRect(),unit=Math.hypot(svg.getScreenCTM().a,svg.getScreenCTM().b);for(const label of svg.querySelectorAll('.value-tag')){const r=label.getBoundingClientRect(),dx=Math.max(bounds.left+4-r.left,Math.min(0,bounds.right-4-r.right)),dy=Math.max(bounds.top+4-r.top,Math.min(0,bounds.bottom-4-r.bottom));if(dx||dy)label.style.transform='rotate('+(-angle)+'deg) translate('+(dx/unit)+'px,'+(dy/unit)+'px)';}}
 
@@ -1409,7 +1411,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
     const hidden=state.showAcquits===false?' style="display:none"':'';
     return '<g class="acquit-markers"'+hidden+' pointer-events="none" aria-label="Oriëntatiekruisjes">'+[600,430,260,770].map(y=>'<path d="M 275 '+y+' H 285 M 280 '+(y-5)+' V '+(y+5)+'" fill="none" stroke="#fff1b5" stroke-width="1.5" vector-effect="non-scaling-stroke"/>'+(y===430||y===260?'<text x="280" y="'+(y+4)+'" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="800" fill="#fff1b5" stroke="#176f4f" stroke-width="4" paint-order="stroke fill">'+(y===430?'+2':'4')+'</text>':'')).join('')+'</g>';
   }
-  function withAcquitMarkers(svg,table){return svg.replace(/(<svg\b[^>]*>(?:<rect\b[^>]*\/>){2})/,(_,start)=>start+acquitMarkersSvg()).replace(/(<svg\b[^>]*\baria-label=")[^"]*/,(_,start)=>start+esc(originFullLabel()+' · '+tableLabel(table)));}
+  function withAcquitMarkers(svg,table){const label=table==='groot'?'Grote tafel':'Kleine tafel';svg=svg.replace('<div class="drawing-card">','<div class="drawing-card" data-table-size="'+table+'"> <strong class="table-size-label" data-table-size="'+table+'">'+label+'</strong>');return svg.replace(/(<svg\b[^>]*>(?:<rect\b[^>]*\/>){2})/,(_,start)=>start+acquitMarkersSvg()).replace(/(<svg\b[^>]*\baria-label=")[^"]*/,(_,start)=>start+esc(originFullLabel()+' · '+tableLabel(table)));}
   function actualStartPattern(table=ui.editTable,direction=ui.direction){
     if(!spoorGeometryReady)return (ui.pattern==='NEGEN'?'LKL':C.patternByLine[ui.pattern])||'?';
     const previous=ui.direction;ui.direction=direction;

@@ -1,5 +1,5 @@
-window.THREEB_RELEASE=Object.freeze({"version": "v208-r36", "date": "2026-10-30", "channel": "test", "compatibilityBase": "v208-r15"});
-window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r36", "date": "2026-10-30"});
+window.THREEB_RELEASE=Object.freeze({"version": "v208-r37", "date": "2026-10-30", "channel": "test", "compatibilityBase": "v208-r15"});
+window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r37", "date": "2026-10-30"});
 /* Shared display provenance. Approval and technical pinning are not manual entry. */
 const ThreeBValueOrigin=(()=>{
   function kind(p){
@@ -353,6 +353,8 @@ if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
 
   body.table-only.mobile-preview.mobile-preview-landscape .drawing{width:min(844px,96vw)!important;height:min(390px,90dvh)!important}
   @media(pointer:coarse){body.table-only .view-actions{display:none!important}}
+  .table-size-label{display:none;position:absolute;top:4px;left:50%;transform:translateX(-50%);z-index:5;box-sizing:border-box;max-width:calc(100% - 12px);padding:5px 12px;border-radius:7px;border:1px solid #efd09b;background:#fff8e9;color:#173d2c;font:800 clamp(16px,1.6vw,22px)/1.2 system-ui;text-align:center;white-space:nowrap;pointer-events:none;box-shadow:0 1px 5px #0003}
+  body.compare-tables .table-size-label{display:block}
   /* Mobile preview is a container, not the desktop viewport. */
   body.table-only.mobile-preview .onscreen-layout{width:100%;height:100%;min-width:0;min-height:0}
   body.table-only.mobile-preview .drawing{padding:0;box-sizing:border-box}
