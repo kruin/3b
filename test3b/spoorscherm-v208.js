@@ -1,5 +1,5 @@
-window.THREEB_RELEASE=Object.freeze({"version": "v208-r34", "date": "2026-10-30", "channel": "test", "compatibilityBase": "v208-r15"});
-window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r34", "date": "2026-10-30"});
+window.THREEB_RELEASE=Object.freeze({"version": "v208-r35", "date": "2026-10-30", "channel": "test", "compatibilityBase": "v208-r15"});
+window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r35", "date": "2026-10-30"});
 /* Physical phone testing: show the project's published QR, without changing app state. */
 if(typeof window!=='undefined'){
   window.installMobileTestQr=function({button,imageUrl,testUrl,qrPageUrl}){
@@ -244,7 +244,14 @@ const SpoorScreenFormat=(()=>{
     if(direction==='oost')band={west:'oost',oost:'west'}[band]||band;
     return (style==='bar'?{west:'⇤',oost:'⇥',noord:'⤒',zuid:'⤓'}:{west:'←',oost:'→',noord:'↑',zuid:'↓'})[band]||'·';
   }
-  return {format,parse,arrow,contact};
+  function arrival(text,band,direction='west'){
+    const match=text.trim().match(/^(west|oost|noord|zuid|[wonz])\s*[·:]?\s*(.*)$/i);
+    if(!match)return {band,value:parse(text)};
+    const names={w:'west',o:'oost',n:'noord',z:'zuid'},shown=names[match[1].toLowerCase()]||match[1].toLowerCase(),canonical=direction==='oost'?({west:'oost',oost:'west'}[shown]||shown):shown;
+    if(!['west','zuid'].includes(canonical))throw Error('Romp: kies '+(direction==='oost'?'Oost':'West')+' of Zuid.');
+    const value=parse(match[2]);if(value===null)throw Error('Vul ook de waarde in, bijvoorbeeld Zuid 19.');return {band:canonical,value};
+  }
+  return {format,parse,arrival,arrow,contact};
 })();
 if(typeof module!=='undefined')module.exports=SpoorScreenFormat;
 if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
@@ -377,13 +384,13 @@ if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
     const wrap=document.createElement('div');wrap.className='spoor-point';const symbol=document.createElement('span');symbol.className='spoor-symbol';symbol.dataset.side=side;symbol.setAttribute('role','img');
     const input=document.createElement('input');input.type='text';input.className='spoor-value';input.dataset.side=side;input.value=SpoorScreenFormat.format(p?.value);input.placeholder='·';input.autocomplete='off';input.spellcheck=false;input.disabled=Boolean(window.ThreeBDatabaseWorkspace?.required&&!window.ThreeBDatabaseWorkspace.active)||line.terminal||side==='L'&&!original.strokeLimits||side==='V'&&line.editableV===false||side==='A'&&line.editableA===false||side==='R'&&line.editableA===false;input.setAttribute('aria-label',side==='L'?'Neus afstootlengte in cm':line.label+' '+side+' waarde');
     if(p?.inputReference&&(p.band!==p.inputReference.band||Math.abs(p.value-p.inputReference.value)>.125)){input.title='Afgeleid uit karkas; opgeslagen meting '+SpoorScreenFormat.format(p.inputReference.value);input.classList.add('spoor-reference-diff');}
-    if(side==='A'){const label=document.createElement('small');label.className='spoor-arrival-band-label';const band=row.A?.band;label.textContent=original.direction==='oost'?({west:'oost',oost:'west'}[band]||band):band;label.style.cssText='display:block;text-align:center;font:11px system-ui';td.append(label);if(['been','romp'].includes(line.key)&&!line.terminal){input.title=line.key==='been'?'Onder 20: Oost · boven 20: Noord. 20 is niet eenduidig.':'Onder 20: West · boven 20: Zuid. 20 is niet eenduidig.';}}
+    if(side==='A'){const label=document.createElement('small');label.className='spoor-arrival-band-label';const band=row.A?.band;label.textContent=original.direction==='oost'?({west:'oost',oost:'west'}[band]||band):band;label.style.cssText='display:block;text-align:center;font:11px system-ui';td.append(label);if(['been','romp'].includes(line.key)&&!line.terminal){input.title=line.key==='been'?'Onder 20: Oost · boven 20: Noord. 20 is niet eenduidig.':'Getal behoudt de getoonde band. Band wijzigen: '+(original.direction==='oost'?'Oost':'West')+' 10 of Zuid 40.';}}
     wrap.append(input,symbol);if(side==='L'){const unit=document.createElement('small');unit.className='spoor-unit';unit.textContent='cm';wrap.append(unit);}td.prepend(wrap);
     input.oninput=()=>{
       try{
-        const value=SpoorScreenFormat.parse(input.value);
-        let arrivalBand=row.A?.band;
-        if(['been','romp'].includes(line.key)&&!line.terminal&&(side==='A'||side==='R')){
+        const parsed=line.key==='romp'&&(side==='A'||side==='R')?SpoorScreenFormat.arrival(input.value,row.A?.band,original.direction):{value:SpoorScreenFormat.parse(input.value),band:row.A?.band};
+        const value=parsed.value;let arrivalBand=parsed.band;
+        if(line.key==='been'&&!line.terminal&&(side==='A'||side==='R')){
           const longBand=line.key==='been'?'oost':'west',shortBand=line.key==='been'?'noord':'zuid',shown=original.direction==='oost'?({west:'oost',oost:'west'}[longBand]||longBand):longBand;
           if(value===null||value<0||value>40||value===20)throw Error(line.label+': onder 20 = '+shown+', boven 20 = '+shortBand+' (tot 40). 20 is niet eenduidig.');
           arrivalBand=value<20?longBand:shortBand;
@@ -399,7 +406,7 @@ if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
         input.setCustomValidity('');dirty=true;preview();if(side!=='R')refresh(td.parentElement,line);else symbols(td.parentElement,line);text('Wijzigingen nog niet bewaard.');
       }catch(error){input.setCustomValidity(error.message);text(error.message,true);}
     };
-    input.onblur=()=>{if(input.checkValidity()&&input.value!=='')input.value=SpoorScreenFormat.format(SpoorScreenFormat.parse(input.value));};
+    input.onblur=()=>{if(input.checkValidity()&&input.value!=='')input.value=SpoorScreenFormat.format(line.key==='romp'&&(side==='A'||side==='R')?SpoorScreenFormat.arrival(input.value,row.A?.band,original.direction).value:SpoorScreenFormat.parse(input.value));};
   }
   function changes(){const list=[];for(const [line,row] of Object.entries(working||{}))for(const side of row.changed)list.push({line,side,point:side==='N'?{value:row.note}:side==='L'?{value:row.lengthCm}:row[side]});return list;}
   function clearPreview(){previewing=true;try{adapter.clearPreview?.();}finally{previewing=false;}}
