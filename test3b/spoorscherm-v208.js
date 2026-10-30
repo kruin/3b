@@ -1,5 +1,5 @@
-window.THREEB_RELEASE=Object.freeze({"version": "v208-r32", "date": "2026-10-30", "channel": "test", "compatibilityBase": "v208-r15"});
-window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r32", "date": "2026-10-30"});
+window.THREEB_RELEASE=Object.freeze({"version": "v208-r33", "date": "2026-10-30", "channel": "test", "compatibilityBase": "v208-r15"});
+window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r33", "date": "2026-10-30"});
 /* Physical phone testing: show the project's published QR, without changing app state. */
 if(typeof window!=='undefined'){
   window.installMobileTestQr=function({button,imageUrl,testUrl,qrPageUrl}){
@@ -364,6 +364,7 @@ if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
       const label=side==='L'?'Afstootlengte in centimeter':side==='R'?'Raakpunt met de '+band+'band':side+' · speelrichting '+(directions[arrow]||'onbekend');symbol.setAttribute('aria-label',label);symbol.title=label;}
   }
   function refresh(tr,line){
+    const band=working[line.key].A?.band,shown=original.direction==='oost'?({west:'oost',oost:'west'}[band]||band):band,label=tr.querySelector('.spoor-arrival-band-label');if(label)label.textContent=shown||'';
     const input=tr.querySelector('.spoor-value[data-side=R]');
     if(!input){symbols(tr,line);return;}
     try{input.value=SpoorScreenFormat.format(SpoorGeometry.contact(working[line.key].V,working[line.key].A,original.geometry).value);input.setCustomValidity('');}
@@ -376,17 +377,24 @@ if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
     const wrap=document.createElement('div');wrap.className='spoor-point';const symbol=document.createElement('span');symbol.className='spoor-symbol';symbol.dataset.side=side;symbol.setAttribute('role','img');
     const input=document.createElement('input');input.type='text';input.className='spoor-value';input.dataset.side=side;input.value=SpoorScreenFormat.format(p?.value);input.placeholder='·';input.autocomplete='off';input.spellcheck=false;input.disabled=Boolean(window.ThreeBDatabaseWorkspace?.required&&!window.ThreeBDatabaseWorkspace.active)||line.terminal||side==='L'&&!original.strokeLimits||side==='V'&&line.editableV===false||side==='A'&&line.editableA===false||side==='R'&&line.editableA===false;input.setAttribute('aria-label',side==='L'?'Neus afstootlengte in cm':line.label+' '+side+' waarde');
     if(p?.inputReference&&(p.band!==p.inputReference.band||Math.abs(p.value-p.inputReference.value)>.125)){input.title='Afgeleid uit karkas; opgeslagen meting '+SpoorScreenFormat.format(p.inputReference.value);input.classList.add('spoor-reference-diff');}
-    wrap.append(input,symbol);if(side==='L'){const unit=document.createElement('small');unit.className='spoor-unit';unit.textContent='cm';wrap.append(unit);}td.append(wrap);
+    if(side==='A'){const label=document.createElement('small');label.className='spoor-arrival-band-label';const band=row.A?.band;label.textContent=original.direction==='oost'?({west:'oost',oost:'west'}[band]||band):band;label.style.cssText='display:block;text-align:center;font:11px system-ui';td.append(label);if(line.key==='been'&&!line.terminal){input.title='Onder 20: Oost · boven 20: Noord. 20 is niet eenduidig.';}}
+    wrap.append(input,symbol);if(side==='L'){const unit=document.createElement('small');unit.className='spoor-unit';unit.textContent='cm';wrap.append(unit);}td.prepend(wrap);
     input.oninput=()=>{
       try{
         const value=SpoorScreenFormat.parse(input.value);
+        let arrivalBand=row.A?.band;
+        if(line.key==='been'&&!line.terminal&&(side==='A'||side==='R')){
+          if(value===null||value<0||value>40||value===20)throw Error('Been: onder 20 = '+(original.direction==='oost'?'West':'Oost')+', boven 20 = Noord (tot 40). 20 is niet eenduidig.');
+          arrivalBand=value<20?'oost':'noord';
+        }
+
         if(side==='L'){
           const limits=original.strokeLimits;if(value===null||!limits||value<limits.min-1e-6||value>limits.max+1e-6)throw Error('Lengte buiten bereik ('+Math.ceil(limits?.min||0)+'–'+Math.floor(limits?.max||0)+' cm).');row.lengthCm=value;row.changed.add('L');
         }else if(side==='R'){
           if(value===null)throw Error('Vul het raakpunt in, of kies Herlaad.');
-          const r={band:row.A.band,value},a=line.editableV===false&&row.startBall?SpoorGeometry.arrivalFromBall(row.startBall,r,original.geometry):SpoorGeometry.arrival(row.V,r,original.geometry);row.A={...row.A,...a};row.changed.add('A');if(row.V.kind!=='acquit'&&line.editableV!==false)row.changed.add('V');
+          const r={band:arrivalBand,value},a=line.editableV===false&&row.startBall?SpoorGeometry.arrivalFromBall(row.startBall,r,original.geometry):SpoorGeometry.arrival(row.V,r,original.geometry);row.A={...row.A,...a};row.changed.add('A');if(row.V.kind!=='acquit'&&line.editableV!==false)row.changed.add('V');
           td.parentElement.querySelector('.spoor-value[data-side=A]').value=SpoorScreenFormat.format(a.value);
-        }else{row[side]={...row[side],value};row.changed.add(side);}
+        }else{row[side]={...row[side],...(side==='A'?{band:arrivalBand}:{}),value};row.changed.add(side);}
         if(line.editableV===false&&row.startBall&&(side==='A'||side==='R')){row.V={...row.V,...SpoorGeometry.departureFromBall(row.startBall,row.A,row.V.band,original.geometry)};td.parentElement.querySelector('.spoor-value[data-side=V]').value=SpoorScreenFormat.format(row.V.value);}
         input.setCustomValidity('');dirty=true;preview();if(side!=='R')refresh(td.parentElement,line);else symbols(td.parentElement,line);text('Wijzigingen nog niet bewaard.');
       }catch(error){input.setCustomValidity(error.message);text(error.message,true);}
