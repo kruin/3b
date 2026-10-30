@@ -1,5 +1,5 @@
-window.THREEB_RELEASE=Object.freeze({"version": "v208-r33", "date": "2026-10-30", "channel": "test", "compatibilityBase": "v208-r15"});
-window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r33", "date": "2026-10-30"});
+window.THREEB_RELEASE=Object.freeze({"version": "v208-r34", "date": "2026-10-30", "channel": "test", "compatibilityBase": "v208-r15"});
+window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r34", "date": "2026-10-30"});
 /* Physical phone testing: show the project's published QR, without changing app state. */
 if(typeof window!=='undefined'){
   window.installMobileTestQr=function({button,imageUrl,testUrl,qrPageUrl}){
@@ -377,17 +377,17 @@ if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
     const wrap=document.createElement('div');wrap.className='spoor-point';const symbol=document.createElement('span');symbol.className='spoor-symbol';symbol.dataset.side=side;symbol.setAttribute('role','img');
     const input=document.createElement('input');input.type='text';input.className='spoor-value';input.dataset.side=side;input.value=SpoorScreenFormat.format(p?.value);input.placeholder='·';input.autocomplete='off';input.spellcheck=false;input.disabled=Boolean(window.ThreeBDatabaseWorkspace?.required&&!window.ThreeBDatabaseWorkspace.active)||line.terminal||side==='L'&&!original.strokeLimits||side==='V'&&line.editableV===false||side==='A'&&line.editableA===false||side==='R'&&line.editableA===false;input.setAttribute('aria-label',side==='L'?'Neus afstootlengte in cm':line.label+' '+side+' waarde');
     if(p?.inputReference&&(p.band!==p.inputReference.band||Math.abs(p.value-p.inputReference.value)>.125)){input.title='Afgeleid uit karkas; opgeslagen meting '+SpoorScreenFormat.format(p.inputReference.value);input.classList.add('spoor-reference-diff');}
-    if(side==='A'){const label=document.createElement('small');label.className='spoor-arrival-band-label';const band=row.A?.band;label.textContent=original.direction==='oost'?({west:'oost',oost:'west'}[band]||band):band;label.style.cssText='display:block;text-align:center;font:11px system-ui';td.append(label);if(line.key==='been'&&!line.terminal){input.title='Onder 20: Oost · boven 20: Noord. 20 is niet eenduidig.';}}
+    if(side==='A'){const label=document.createElement('small');label.className='spoor-arrival-band-label';const band=row.A?.band;label.textContent=original.direction==='oost'?({west:'oost',oost:'west'}[band]||band):band;label.style.cssText='display:block;text-align:center;font:11px system-ui';td.append(label);if(['been','romp'].includes(line.key)&&!line.terminal){input.title=line.key==='been'?'Onder 20: Oost · boven 20: Noord. 20 is niet eenduidig.':'Onder 20: West · boven 20: Zuid. 20 is niet eenduidig.';}}
     wrap.append(input,symbol);if(side==='L'){const unit=document.createElement('small');unit.className='spoor-unit';unit.textContent='cm';wrap.append(unit);}td.prepend(wrap);
     input.oninput=()=>{
       try{
         const value=SpoorScreenFormat.parse(input.value);
         let arrivalBand=row.A?.band;
-        if(line.key==='been'&&!line.terminal&&(side==='A'||side==='R')){
-          if(value===null||value<0||value>40||value===20)throw Error('Been: onder 20 = '+(original.direction==='oost'?'West':'Oost')+', boven 20 = Noord (tot 40). 20 is niet eenduidig.');
-          arrivalBand=value<20?'oost':'noord';
+        if(['been','romp'].includes(line.key)&&!line.terminal&&(side==='A'||side==='R')){
+          const longBand=line.key==='been'?'oost':'west',shortBand=line.key==='been'?'noord':'zuid',shown=original.direction==='oost'?({west:'oost',oost:'west'}[longBand]||longBand):longBand;
+          if(value===null||value<0||value>40||value===20)throw Error(line.label+': onder 20 = '+shown+', boven 20 = '+shortBand+' (tot 40). 20 is niet eenduidig.');
+          arrivalBand=value<20?longBand:shortBand;
         }
-
         if(side==='L'){
           const limits=original.strokeLimits;if(value===null||!limits||value<limits.min-1e-6||value>limits.max+1e-6)throw Error('Lengte buiten bereik ('+Math.ceil(limits?.min||0)+'–'+Math.floor(limits?.max||0)+' cm).');row.lengthCm=value;row.changed.add('L');
         }else if(side==='R'){

@@ -1516,6 +1516,12 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
         const routeKey=originRouteKey(table,original.direction),before=copy(state);tableCheckpoint(table);
         try{
           state.startAcquitRoutes??=copy(K.startAcquitRoutes||{});const route=copy(resolvedSpoorRoute(table,original.direction));
+          // Preserve the exact shown skeleton anchors when saving an edit.
+          // Legacy six/seven defaults may otherwise regenerate Romp V from
+          // the newly saved A on reload, changing the measured ray.
+          if(changes.some(c=>c.side==='V'||c.side==='A'))for(const [line,points] of Object.entries(route))for(const side of ['from','to']){
+            const p=points[side];if(skeletonEditable(line,side)&&p&&p.status==='calculated'&&!p.userAdjusted)points[side]={...p,userAdjusted:true,calculationBasis:'retained_karkas_anchor'};
+          }
           for(const change of changes){if(change.side==='L'||change.side==='N')continue;const part=original.lines.find(line=>line.key===change.line),side=change.side==='V'?'from':change.side==='A'?'to':null;if(!part||part.terminal||!side||side==='from'&&(part.V?.kind==='acquit'||part.editableV===false)||side==='to'&&part.editableA===false)throw Error('Dit punt wordt afgeleid uit het karkas.');route[change.line][side]={...copy(change.point),source:'user',status:'edited',userAdjusted:true,measurement:false,editOwner:ownerActive()?'kruin':'user'};}
           const notes=Object.fromEntries(changes.filter(c=>c.side==='N').map(c=>[c.line,c.point.value]));state.spoorLineNotes??=copy(K.spoorLineNotes||{});state.spoorLineNotes[routeKey]={...state.spoorLineNotes[routeKey],...notes};
           state.startAcquitRoutes[routeKey]=calculateSkeletonRoute(table,route);
