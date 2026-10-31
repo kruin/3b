@@ -1,8 +1,8 @@
-# 3B v208-r41 — User-werkwijze
+# 3B v208-r42 — User-werkwijze
 
-# Cursus of zelfstandig gebruik
+# Niveau · cursus of geoefend gebruik
 
-Cursus betekent stap voor stap leren: voordoen, één oefening tegelijk, feedback en herhaling. De knop Cursus opent de keuze; Cursus · stap voor stap start direct les 1.
+Cursus betekent stap voor stap leren: voordoen, één oefening tegelijk, feedback en herhaling. De altijd zichtbare balk Niveau · LKL boven de tafel biedt Cursus · stap voor stap en Geoefend · zelfstandig. De cursus begint met LKL, vervolgens Neus, Kop, Romp en het karkas; daarna volgen de oefeningen.
 
 Zelfstandig · oefenen en meten is voor wie de werkwijze kent: zelf het spoor kiezen, spelen, kijken en eventueel meten, zonder lesvragen. Dit is geen examenstatus. Beide routes gebruiken dezelfde actieve tafelconfiguratie; wisselen verandert geen metingen. Bestaande meetinstructies zijn apart bereikbaar als naslag en meetlessen.
 
