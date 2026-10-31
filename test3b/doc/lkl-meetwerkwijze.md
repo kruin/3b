@@ -1,3 +1,9 @@
+# Cursus of zelfstandig gebruik
+
+Cursus betekent stap voor stap leren: voordoen, één oefening tegelijk, feedback en herhaling. De knop Cursus opent de keuze; Cursus · stap voor stap start direct les 1.
+
+Zelfstandig · oefenen en meten is voor wie de werkwijze kent: zelf het spoor kiezen, spelen, kijken en eventueel meten, zonder lesvragen. Dit is geen examenstatus. Beide routes gebruiken dezelfde actieve tafelconfiguratie; wisselen verandert geen metingen. Bestaande meetinstructies zijn apart bereikbaar als naslag en meetlessen.
+
 # Les 1 — Ik ontdek het karkas
 
 Ik ben de speler (User). Ik begin met LKL op de kleine tafel, spoor VIJF. Ik gebruik mijn eigen complete karkas als ik dat al gemeten heb; anders de waarden van Kruin. Deze oefening verandert geen metingen.

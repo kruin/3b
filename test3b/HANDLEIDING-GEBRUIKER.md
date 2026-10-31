@@ -1,4 +1,10 @@
-# 3B v208-r39 — User-werkwijze
+# 3B v208-r40 — User-werkwijze
+
+# Cursus of zelfstandig gebruik
+
+Cursus betekent stap voor stap leren: voordoen, één oefening tegelijk, feedback en herhaling. De knop Cursus opent de keuze; Cursus · stap voor stap start direct les 1.
+
+Zelfstandig · oefenen en meten is voor wie de werkwijze kent: zelf het spoor kiezen, spelen, kijken en eventueel meten, zonder lesvragen. Dit is geen examenstatus. Beide routes gebruiken dezelfde actieve tafelconfiguratie; wisselen verandert geen metingen. Bestaande meetinstructies zijn apart bereikbaar als naslag en meetlessen.
 
 # Les 1 — Ik ontdek het karkas
 

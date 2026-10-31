@@ -1,5 +1,5 @@
-window.THREEB_RELEASE=Object.freeze({"version": "v208-r39", "date": "2026-10-31", "channel": "test", "compatibilityBase": "v208-r15"});
-window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r39", "date": "2026-10-31"});
+window.THREEB_RELEASE=Object.freeze({"version": "v208-r40", "date": "2026-10-31", "channel": "test", "compatibilityBase": "v208-r15"});
+window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r40", "date": "2026-10-31"});
 /* Shared display provenance. Approval and technical pinning are not manual entry. */
 const ThreeBValueOrigin=(()=>{
   function kind(p){
@@ -337,7 +337,26 @@ window.installThreeBLklLesson=adapter=>{
   button.onclick=()=>{if(document.getElementById('spoorScreen')?.open){alert('Sluit eerst het spoorscherm; je meetinvoer blijft behouden.');return;}try{data=adapter.lesson1Data();index=0;render();if(!d.open)d.showModal();}catch(e){alert('Les 1 kan niet starten: '+e.message);}};
   $('closeLklLesson').onclick=()=>d.close();$('nextLklExercise').onclick=()=>{if(!answered)return;index=Math.min(index+1,steps.length-1);render();$('lklExerciseTitle').scrollIntoView({block:'nearest'});};$('repeatLklLesson').onclick=()=>{index=0;render();};
   const source=()=>{const own=data.source==='user';$('lklLessonSource').textContent=own?'Mijn metingen · eigen compleet karkas':'Kruins metingen · voorbeeldkarkas';d.dataset.source=data.source;d.dataset.signature=JSON.stringify(data.route);};
-  const oldRender=render;render=function(){oldRender();source();};
+
+  // Learning and routine use have separate entrances; neither changes measurements.
+  const chooser=document.createElement('dialog');chooser.id='lklUseChoice';chooser.setAttribute('aria-labelledby','lklUseChoiceTitle');
+  chooser.innerHTML=`<header><h2 id="lklUseChoiceTitle">Hoe wil ik aan de slag?</h2><button type="button" id="closeLklUseChoice">Sluiten</button></header><button type="button" id="chooseLklCourse"><strong>Cursus · stap voor stap</strong><span>Ik leer LKL. Eerst voordoen, dan één oefening tegelijk, met uitleg, controle en herhaling.</span></button><button type="button" id="chooseLklPractice"><strong>Zelfstandig · oefenen en meten</strong><span>Ik ken de werkwijze. Ik kies zelf mijn spoor, oefen aan tafel en voer zo nodig metingen in. Zonder lesstappen of vragen.</span></button><p>Beide gebruiken mijn eigen tafelconfiguratie, of Kruins waarden waar ik nog geen eigen complete metingen heb. Wisselen verandert geen metingen.</p><details><summary>Naslag en meetlessen</summary><p>De bestaande uitleg en meetinstructies blijven beschikbaar als naslag.</p><button type="button" id="openLklReferences">Open naslag en meetlessen</button></details>`;
+  document.body.append(chooser);style.textContent+=`#lklUseChoice{box-sizing:border-box;width:min(560px,94vw);max-height:92dvh;overflow:auto;border:2px solid #176f4f;border-radius:12px;background:#faf8ef;padding:18px;color:#173b30;font:16px/1.5 system-ui}#lklUseChoice::backdrop{background:#0008}#lklUseChoice header{display:flex;justify-content:space-between;align-items:center;gap:12px}#lklUseChoice h2{font-size:21px}#lklUseChoice button{font:inherit;min-height:44px;padding:10px;border:1px solid #78988b;border-radius:8px;background:white;color:#173b30}#chooseLklCourse,#chooseLklPractice{display:block;text-align:left;width:100%;margin:14px 0}#lklUseChoice strong,#lklUseChoice span{display:block}#chooseLklCourse{border-left:6px solid #176f4f!important}#chooseLklPractice{border-left:6px solid #8b652d!important}#lklUseModes{grid-column:1/-1;display:grid;gap:6px;margin:8px 0;padding:10px;background:#f7f4e9;border-radius:8px;color:#173b30}#lklUseModes button{white-space:normal;min-height:44px;font:600 15px system-ui;padding:8px}#lklUseModes p{font:14px/1.4 system-ui;margin:0}`;
+  const menu=document.querySelector('.onscreen-control-menuPanel .central-track-controls')?.parentElement||document.querySelector('.onscreen-control-menuPanel');
+  const modes=document.createElement('section');modes.id='lklUseModes';modes.setAttribute('aria-label','Cursus of zelfstandig gebruik');modes.innerHTML='<button type="button" id="menuLklCourse">Cursus · stap voor stap</button><button type="button" id="menuLklPractice">Zelfstandig · oefenen en meten</button><p id="lklUseStatus">Zelfstandig gebruik · kies zelf je spoor en bediening.</p>';menu?.append(modes);
+  const setMode=mode=>{document.body.dataset.learningMode=mode;document.getElementById('lklUseStatus').textContent=mode==='course'?'Cursus · één oefening tegelijk, met uitleg en herhaling.':'Zelfstandig gebruik · kies zelf je spoor en bediening.';};
+  const openLegacy=document.getElementById('openExplanation');let reference=false;
+  function practice(){chooser.close();if(d.open)d.close();document.getElementById('closeExplanation')?.click();setMode('practice');document.querySelector('#closeSelectionMenu')?.click();document.querySelector('#closeOwnerMenu')?.click();}
+  function startCourse(){chooser.close();document.getElementById('closeExplanation')?.click();button.click();if(d.open)setMode('course');}
+  openLegacy?.addEventListener('click',e=>{if(reference)return;e.preventDefault();e.stopImmediatePropagation();if(!chooser.open)chooser.showModal();},true);
+  chooser.querySelector('#closeLklUseChoice').onclick=()=>chooser.close();chooser.querySelector('#chooseLklCourse').onclick=startCourse;chooser.querySelector('#chooseLklPractice').onclick=practice;
+  chooser.querySelector('#openLklReferences').onclick=()=>{chooser.close();reference=true;try{openLegacy.click();}finally{reference=false;}};
+  modes.querySelector('#menuLklCourse').onclick=startCourse;modes.querySelector('#menuLklPractice').onclick=practice;
+  const exit=document.createElement('button');exit.type='button';exit.id='lessonToIndependent';exit.textContent='Verder zelfstandig oefenen';exit.onclick=practice;$('repeatLklLesson').after(exit);
+  // The lesson retains its own next-step check; routine use never asks lesson questions.
+  const oldRender=render;render=function(){oldRender();source();$('lessonToIndependent').hidden=index!==steps.length-1;};
+  if(window.THREEB_CHOOSE_USAGE_ON_START){delete window.THREEB_CHOOSE_USAGE_ON_START;chooser.showModal();}
+
 };
 
 /* Symbols and compact values belong only to the spoor editor. */
