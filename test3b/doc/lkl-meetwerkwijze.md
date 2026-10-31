@@ -53,6 +53,11 @@ Mijn doel: ik herken Neus, Kop en Romp en zie of beide ballen bij hetzelfde kark
 Iedere les: voordoen, samen oefenen, zelf oefenen en later opnieuw oefenen. De nieuwe interactieve les 1 is beschikbaar via Start les 1 · LKL oefenen in de cursus. De andere lessen worden vanuit deze indeling verder uitgewerkt; de bestaande meetlessen blijven beschikbaar.
 
 
+## Navigeren in les 1
+
+Les sluiten brengt me terug naar de tafel. Vorige stap en Volgende stap blijven onderaan de les bereikbaar. Een goed beantwoorde oefening blijft goed wanneer ik terugkijk; een onbeantwoorde oefening moet ik nog doen. De duidelijke knop Namen en lesindeling opent de uitleg en het lesoverzicht in dezelfde les, zonder een nieuw venster. Terug naar de les sluit dit overzicht.
+
+
 # LKL meten: Neus, Kop en Romp
 
 Begin met LKL en één basislijn, bijvoorbeeld VIJF op Klein. Je onderzoekt wat je eigen afstoot werkelijk doet. Bouw het karkas op uit ingevoerde metingen van **Neus, Kop en Romp**. Een getekende basiswaarde of schatting telt nog niet als een eigen meetgegeven. Begin pas aan andere patronen nadat deze werkwijze goed werkt.
