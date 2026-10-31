@@ -1,4 +1,4 @@
-3B v208-r38 — VOLLEDIGE TESTRELEASE
+3B v208-r39 — VOLLEDIGE TESTRELEASE
 31 oktober 2026
 Cursus 1.3: start met LKL; Neus, Kop en Romp vormen het gemeten karkas.
 User: eerst eigen meetinvoer; tot die compleet is blijft Kruin voor het spoor actief.

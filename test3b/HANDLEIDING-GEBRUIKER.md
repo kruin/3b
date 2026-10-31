@@ -1,4 +1,53 @@
-# 3B v208-r38 — User-werkwijze
+# 3B v208-r39 — User-werkwijze
+
+# Les 1 — Ik ontdek het karkas
+
+Ik ben de speler (User). Ik begin met LKL op de kleine tafel, spoor VIJF. Ik gebruik mijn eigen complete karkas als ik dat al gemeten heb; anders de waarden van Kruin. Deze oefening verandert geen metingen.
+
+## Mijn twee vaste vragen
+
+1. Op welk spoor ligt bal 3?
+2. Lig ik goed met bal 1 — op hetzelfde spoor?
+
+Ik kijk altijd eerst naar bal 3 en daarna naar mijn eigen bal.
+
+## Namen waarmee ik kan oefenen
+
+Patroon LKL betekent lange band West, korte band Noord, lange band Oost. Een spoor is één benoemde route binnen dit patroon, bijvoorbeeld VIJF.
+
+Neus is mijn eerste lijn naar West. Kop loopt van West naar Noord. Romp loopt vanaf Oost naar de zuidzijde. Neus, Kop en Romp vormen samen het karkas. Ik volg eerst deze drie lijnen; de andere lijnen blijven buiten beeld.
+
+## Oefenen: ik herken de lijnen
+
+Eerst bekijk ik het karkas met de namen zichtbaar. Dan wijs ik achtereenvolgens Neus, Romp en Kop aan zonder namen. De letters A, B en C helpen om een lijn te kiezen. Na een fout kijk ik opnieuw en probeer ik nog eens.
+
+## Oefenen: op welk spoor ligt bal 3?
+
+Bal 3 ligt duidelijk op de Romp van VIJF. Ik zeg: bal 3 ligt op spoor VIJF. Daarna ligt bal 3 op een andere plek langs dezelfde Romp. Het blijft hetzelfde spoor. Ik oefen dit opnieuw.
+
+## Oefenen: lig ik goed?
+
+Mijn witte bal 1 ligt op de Neus van VIJF. Bal 3 op de Romp en bal 1 op de Neus passen bij hetzelfde karkas. Vervolgens ligt bal 1 duidelijk naast de Neus. Bal 3 ligt nog goed, maar ik niet. Ik wissel passende en niet-passende voorbeelden af en stel steeds mijn twee vragen.
+
+## Aan tafel: herhalen
+
+Ik leg bal 3 op de getoonde Romp en bal 1 op de Neus. Voor iedere poging stel ik weer mijn twee vragen. Mijn miklijn is de Neus richting West. Ik speel dezelfde opstelling meerdere keren en vergelijk de loop met het karkas. Dit is een spooroefening: bal 2 en de volledige carambole komen later.
+
+Mijn doel: ik herken Neus, Kop en Romp en zie of beide ballen bij hetzelfde karkas passen. Ik hoef nog geen eigen metingen in te voeren.
+
+## Indeling van de LKL-cursus
+
+1. Het karkas ontdekken: deze interactieve les.
+2. Op welk spoor ligt bal 3? Duidelijke voorbeelden met verschillende sporen.
+3. Lig ik goed? Passende en niet-passende posities herkennen.
+4. Het passende spoor spelen: mikken, spelen, kijken, herhalen.
+5. Parallelsporen herkennen en oefenen.
+6. Zelf kiezen en controleren.
+7. Mijn eigen VIJF meten: Neus, Kop en Romp.
+8. Mijn parallelsporen gebruiken en gericht oefenen.
+
+Iedere les: voordoen, samen oefenen, zelf oefenen en later opnieuw oefenen. De nieuwe interactieve les 1 is beschikbaar via Start les 1 · LKL oefenen in de cursus. De andere lessen worden vanuit deze indeling verder uitgewerkt; de bestaande meetlessen blijven beschikbaar.
+
 
 # LKL meten: Neus, Kop en Romp
 

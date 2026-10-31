@@ -1466,6 +1466,8 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
     acceptTransfer(proposal){if(PRIVATE_OWNER)throw Error('Dit voorstel is voor User-meetgegevens.');const before={startAcquitRoutes:copy(state.startAcquitRoutes||{}),lklUserDrafts:copy(state.lklUserDrafts||{}),lklTransfers:copy(state.lklTransfers||{})};try{const n=ThreeBLklKarkas.accept(state,K,proposal);save();originRayCache.clear();render();return n;}catch(error){Object.assign(state,before);originRayCache.clear();render();throw error;}},
     selectTransferTrack(track,direction){chooseCentralTrack(track);ui.direction=direction;save();render();},
 
+    lesson1Data(){const old=copy(ui),offset=state.startAcquitOffset;try{ui.editTable='klein';ui.tableMode='klein';ui.playRange='lkl';ui.pattern='VIJF';ui.trackFamily='parallel';ui.lineOneMode='basis';ui.parallelOffset=0;ui.direction='west';state.startAcquitOffset=0;const key=originRouteKey('klein','west'),route=copy(resolvedSpoorRoute('klein','west'));return {route,source:!PRIVATE_OWNER&&ThreeBLklKarkas.routeStatus(state.startAcquitRoutes?.[key]).complete?'user':'kruin',geometry:{...C.tables.klein,inset:bandCenterLineInsetCm(),startAcquitOffset:startAcquitPhysicalOffset()}};}finally{Object.assign(ui,old);if(offset===undefined)delete state.startAcquitOffset;else state.startAcquitOffset=offset;}},
+
     prepareLklCourse(){ui.editTable=courseTable();ui.tableMode=courseTable();ui.playRange='lkl';ui.pattern='VIJF';ui.trackFamily='parallel';ui.lineOneMode='basis';ui.parallelOffset=0;save();render();},
 
     availableStartAcquits(){
