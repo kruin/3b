@@ -1,6 +1,6 @@
 # Niveau · cursus of geoefend gebruik
 
-Cursus betekent stap voor stap leren: voordoen, één oefening tegelijk, feedback en herhaling. De altijd zichtbare balk Niveau · LKL boven de tafel biedt Cursus · stap voor stap en Geoefend · zelfstandig. De cursus begint met LKL, vervolgens Neus, Romp en het zichtbare karkas; daarna volgen de oefeningen.
+Cursus betekent stap voor stap leren: voordoen, één oefening tegelijk, feedback en herhaling. De altijd zichtbare balk Niveau · LKL boven de tafel biedt Cursus · stap voor stap en Geoefend · zelfstandig. De cursus begint met LKL, vervolgens de lijnnamen Neus, Kop, Nek, Romp, Kruis en Been, met Hiel bij langere patronen. Daarna het zichtbare karkas Neus en Romp; daarna volgen de oefeningen.
 
 Zelfstandig · oefenen en meten is voor wie de werkwijze kent: zelf het spoor kiezen, spelen, kijken en eventueel meten, zonder lesvragen. Dit is geen examenstatus. Beide routes gebruiken dezelfde actieve tafelconfiguratie; wisselen verandert geen metingen. Bestaande meetinstructies zijn apart bereikbaar als naslag en meetlessen.
 
@@ -55,12 +55,17 @@ Iedere les: voordoen, samen oefenen, zelf oefenen en later opnieuw oefenen. De n
 
 ## Navigeren in les 1
 
-Les sluiten brengt me terug naar de tafel. Vorige stap en Volgende stap blijven onderaan de les bereikbaar. Een goed beantwoorde oefening blijft goed wanneer ik terugkijk; een onbeantwoorde oefening moet ik nog doen. De duidelijke knop Namen en lesindeling opent de uitleg en het lesoverzicht in dezelfde les, zonder een nieuw venster. Terug naar de les sluit dit overzicht.
+Les sluiten brengt me terug naar de tafel. Vorige stap en Volgende stap blijven onderaan de les bereikbaar. Een goed beantwoorde oefening blijft goed wanneer ik terugkijk; antwoorden zijn oefenhulp en blokkeren het verdergaan niet. De duidelijke knop Namen en lesindeling opent de uitleg en het lesoverzicht in dezelfde les, zonder een nieuw venster. Terug naar de les sluit dit overzicht.
 
 
 ## Later: van zien naar doen en meten
 
 Het zichtbare karkas is Neus en Romp. Daarmee herken ik het spoor. Mijn eigen afstoot bepaalt het werkelijke verloop. In een latere meetles vraag ik: waar ligt mijn Kop A? Ik kijk langs de Kop en meet A op de noordelijke stiplijn, of meet R met pionnen en laat A berekenen. Tot mijn eigen Kop-meting bekend is, blijft Kruins Kop herkenbaar het uitgangspunt. Alleen Neus en Romp bepalen mijn Kop A niet. Voor een complete eigen meetbasis blijven eigen Neus, Romp en de aanvullende Kop-meting verplicht.
+
+
+## De aanpak ervaren
+
+Ik kijk → ik kies mijn spoor → ik speel → ik kijk opnieuw. Bij de namen licht de behandelde lijn op: Neus, Kop, Nek, Romp, Kruis, Been; bij langere patronen ook Hiel. Kop en Nek verbinden het zichtbare karkas Neus en Romp. Namen leren is iets anders dan mijn eigen Kop A meten: dat komt later. Geoefend opent de gewone tafel direct, zonder extra Start-klik of lesvragen. De actieve niveaukeuze is zichtbaar.
 
 
 # LKL meten: Neus, Kop en Romp
