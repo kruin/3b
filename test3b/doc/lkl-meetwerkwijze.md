@@ -1,71 +1,39 @@
-# Niveau · cursus of geoefend gebruik
+# Cursus — de bal lijn na lijn volgen
 
-Cursus betekent stap voor stap leren: voordoen, één oefening tegelijk, feedback en herhaling. De altijd zichtbare balk Niveau · LKL boven de tafel biedt Cursus · stap voor stap en Geoefend · zelfstandig. De cursus begint met LKL, vervolgens de lijnnamen Neus, Kop, Nek, Romp, Kruis en Been, met Hiel bij langere patronen. Daarna het zichtbare karkas Neus en Romp; daarna volgen de oefeningen.
+De aanpak is dynamisch. Ik volg de rollende bal in één vaste volgorde: **Neus → Kop → Nek → Romp → Kruis → Been**. Bij langere patronen volgt **Hiel**. Eerst de Neus, dan de Kop, dan de Nek enzovoort. Geen keuzevragen en geen willekeurige lijnkeuze.
 
-Zelfstandig · oefenen en meten is voor wie de werkwijze kent: zelf het spoor kiezen, spelen, kijken en eventueel meten, zonder lesvragen. Dit is geen examenstatus. Beide routes gebruiken dezelfde actieve tafelconfiguratie; wisselen verandert geen metingen. Bestaande meetinstructies zijn apart bereikbaar als naslag en meetlessen.
+Het spoor groeit terwijl de bal rolt. Eerdere lijnen blijven zichtbaar. Met Pauze bekijk ik de huidige lijn. Met Lijn opnieuw rollen herhaal ik die beweging. Vorige stap en Volgende stap brengen mij naar de voorgaande of volgende lijn. Vorige les en Volgende les gaan naar een andere les. Antwoorden of een toets zijn niet nodig om verder te kunnen.
 
-# Les 1 — Ik ontdek het karkas
+# Les 1 — LKL op VIJF
 
-Ik ben de speler (User). Ik begin met LKL op de kleine tafel, spoor VIJF. Ik gebruik mijn eigen complete karkas als ik dat al gemeten heb; anders de waarden van Kruin. Deze oefening verandert geen metingen.
+Ik ben de speler (User). Ik begin op de kleine tafel met VIJF. Mijn actieve eigen meetgegevens gelden als mijn meetbasis compleet is; anders zie ik Kruins spoor. De cursus verandert mijn meetgegevens niet.
 
-## Mijn twee vaste vragen
+Voor de afstoot kijk ik eerst: op welk spoor ligt bal 3? Daarna: waar lig ik met bal 1? Dit zijn waarnemingen, geen keuzevragen. Bal 3 staat alvast op de Romp. Bal 2 en de volledige carambole worden hier nog niet uitgewerkt.
 
-1. Op welk spoor ligt bal 3?
-2. Lig ik goed met bal 1 — op hetzelfde spoor?
+1. **Neus.** Ik volg bal 1 vanaf de afstoot naar de westband.
+2. **Kop.** Vanaf West loopt de bal naar de noordband.
+3. **Nek.** Vanaf Noord loopt de bal naar de oostband. De Nek verbindt Kop en Romp.
+4. **Romp.** Vanaf Oost loopt de bal richting de zuidzijde. Neus en Romp vormen het zichtbare karkas.
+5. **Kruis.** Na de Romp volgt het Kruis. Ik blijf dezelfde bal volgen.
+6. **Been.** Na het Kruis volgt het Been. Bij langere patronen volgt daarna Hiel. Niet iedere stoot bereikt het volledige vervolg.
 
-Ik kijk altijd eerst naar bal 3 en daarna naar mijn eigen bal.
+Ik rol elke lijn opnieuw af en herhaal dezelfde afstoot aan tafel. Daarna volg ik het hele verloop weer vanaf de Neus. Mijn eigen Kop A meten komt in een latere meetles; de naam Kop leer ik wel meteen op de juiste plaats in de volgorde.
 
-## Namen waarmee ik kan oefenen
+# Les 2 — dezelfde volgorde op ZES
 
-Patroon LKL betekent lange band West, korte band Noord, lange band Oost. Een spoor is één benoemde route binnen dit patroon, bijvoorbeeld VIJF.
+Met Volgende les ga ik naar ZES. De vorm van het spoor verandert, de volgorde blijft gelijk: Neus, Kop, Nek, Romp, Kruis en Been. Ik volg opnieuw eerst de Neus. Ik pauzeer bij elke band en vergelijk wat mijn eigen afstoot doet.
 
-Neus is mijn eerste lijn naar West. Romp loopt vanaf Oost naar de zuidzijde. Neus en Romp vormen het zichtbare karkas. Ik volg eerst deze twee lijnen; de andere lijnen blijven buiten beeld.
+Met Vorige les ga ik terug naar VIJF. Ook daar begint het verloop weer bij de Neus. De voorbeelden komen uit mijn actieve User-configuratie, of uit Kruins waarden als ik voor dat spoor nog geen complete eigen metingen heb. Een ontbrekend of ongeldig vervolg wordt gemeld en niet verzonnen.
 
-## Oefenen: ik herken de lijnen
+## Niveau en bediening
 
-Eerst bekijk ik het karkas met de namen zichtbaar. Dan wijs ik achtereenvolgens Neus en Romp aan zonder namen. De letters A en B helpen om een lijn te kiezen. Na een fout kijk ik opnieuw en probeer ik nog eens.
+Boven de tafel staat Niveau: Cursus · stap voor stap of Geoefend · zelfstandig. Geoefend opent direct de gewone tafel, zonder lesvragen of een extra Start-klik. Les sluiten brengt mij daar ook terug. Namen en lesindeling opent de uitleg binnen dezelfde les.
 
-## Oefenen: op welk spoor ligt bal 3?
+De bewegende bal toont de geometrie van het actieve spoor. Het is geen voorspelling van snelheid, effect of uitrolafstand. **Schuivende bal** hoort bij het latere **Pro-niveau**; dat is hier nog niet uitgewerkt.
 
-Bal 3 ligt duidelijk op de Romp van VIJF. Ik zeg: bal 3 ligt op spoor VIJF. Daarna ligt bal 3 op een andere plek langs dezelfde Romp. Het blijft hetzelfde spoor. Ik oefen dit opnieuw.
+## Latere meetlessen
 
-## Oefenen: lig ik goed?
-
-Mijn witte bal 1 ligt op de Neus van VIJF. Bal 3 op de Romp en bal 1 op de Neus passen bij hetzelfde karkas. Vervolgens ligt bal 1 duidelijk naast de Neus. Bal 3 ligt nog goed, maar ik niet. Ik wissel passende en niet-passende voorbeelden af en stel steeds mijn twee vragen.
-
-## Aan tafel: herhalen
-
-Ik leg bal 3 op de getoonde Romp en bal 1 op de Neus. Voor iedere poging stel ik weer mijn twee vragen. Mijn miklijn is de Neus richting West. Ik speel dezelfde opstelling meerdere keren en vergelijk de loop met het karkas. Dit is een spooroefening: bal 2 en de volledige carambole komen later.
-
-Mijn doel: ik herken Neus en Romp en zie of beide ballen bij hetzelfde karkas passen. Ik hoef nog geen eigen metingen in te voeren.
-
-## Indeling van de LKL-cursus
-
-1. Het karkas ontdekken: deze interactieve les.
-2. Op welk spoor ligt bal 3? Duidelijke voorbeelden met verschillende sporen.
-3. Lig ik goed? Passende en niet-passende posities herkennen.
-4. Het passende spoor spelen: mikken, spelen, kijken, herhalen.
-5. Parallelsporen herkennen en oefenen.
-6. Zelf kiezen en controleren.
-7. Wat doet mijn eigen afstoot? Waar ligt mijn Kop A? Een latere meetles met Kop A op de noordelijke stiplijn, of R met pionnen waarna A wordt berekend.
-8. Mijn parallelsporen gebruiken en gericht oefenen.
-
-Iedere les: voordoen, samen oefenen, zelf oefenen en later opnieuw oefenen. De nieuwe interactieve les 1 is beschikbaar via Start les 1 · LKL oefenen in de cursus. De andere lessen worden vanuit deze indeling verder uitgewerkt; de bestaande meetlessen blijven beschikbaar.
-
-
-## Navigeren in les 1
-
-Les sluiten brengt me terug naar de tafel. Vorige stap en Volgende stap blijven onderaan de les bereikbaar. Een goed beantwoorde oefening blijft goed wanneer ik terugkijk; antwoorden zijn oefenhulp en blokkeren het verdergaan niet. De duidelijke knop Namen en lesindeling opent de uitleg en het lesoverzicht in dezelfde les, zonder een nieuw venster. Terug naar de les sluit dit overzicht.
-
-
-## Later: van zien naar doen en meten
-
-Het zichtbare karkas is Neus en Romp. Daarmee herken ik het spoor. Mijn eigen afstoot bepaalt het werkelijke verloop. In een latere meetles vraag ik: waar ligt mijn Kop A? Ik kijk langs de Kop en meet A op de noordelijke stiplijn, of meet R met pionnen en laat A berekenen. Tot mijn eigen Kop-meting bekend is, blijft Kruins Kop herkenbaar het uitgangspunt. Alleen Neus en Romp bepalen mijn Kop A niet. Voor een complete eigen meetbasis blijven eigen Neus, Romp en de aanvullende Kop-meting verplicht.
-
-
-## De aanpak ervaren
-
-Ik kijk → ik kies mijn spoor → ik speel → ik kijk opnieuw. Bij de namen licht de behandelde lijn op: Neus, Kop, Nek, Romp, Kruis, Been; bij langere patronen ook Hiel. Kop en Nek verbinden het zichtbare karkas Neus en Romp. Namen leren is iets anders dan mijn eigen Kop A meten: dat komt later. Geoefend opent de gewone tafel direct, zonder extra Start-klik of lesvragen. De actieve niveaukeuze is zichtbaar.
+Na het volgen van de lijnen onderzoek ik mijn eigen afstoot. Waar ligt mijn Kop A op de noordelijke stiplijn? Ik meet A door langs de Kop te kijken, of meet R met pionnen en laat A berekenen. Alleen Neus en Romp bepalen mijn Kop A niet. Voor een complete eigen meetbasis blijven Neus, Romp en de aanvullende Kop-meting nodig. Tot die compleet zijn blijft Kruin actief en blijft mijn eigen invoer concept.
 
 
 # LKL meten: Neus, Kop en Romp
