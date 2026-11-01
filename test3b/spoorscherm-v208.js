@@ -1,5 +1,5 @@
-window.THREEB_RELEASE=Object.freeze({"version": "v208-r50", "date": "2026-11-01", "channel": "test", "compatibilityBase": "v208-r15"});
-window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r50", "date": "2026-11-01"});
+window.THREEB_RELEASE=Object.freeze({"version": "v208-r51", "date": "2026-11-01", "channel": "test", "compatibilityBase": "v208-r15"});
+window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r51", "date": "2026-11-01"});
 /* Shared display provenance. Approval and technical pinning are not manual entry. */
 const ThreeBValueOrigin=(()=>{
   function kind(p){
@@ -383,6 +383,53 @@ window.installThreeBLklLesson=adapter=>{
   setMode('practice');if(window.THREEB_CHOOSE_USAGE_ON_START){delete window.THREEB_CHOOSE_USAGE_ON_START;chooser.showModal();}
 };
 
+/* One entry point; reuse existing controls and their listeners. */
+window.installThreeBCleanConfig=function(){
+  if(document.getElementById('cleanConfigDialog'))return;
+  const get=id=>document.getElementById(id),gear=get('bandMenu');if(!gear)return;
+  const style=document.createElement('style');style.textContent=`
+  body.clean-config #bandDock,body.clean-config #desktopWorkbench,body.clean-config #databaseMobileToggle{display:none!important}
+  body.clean-config #onscreenLayout{padding-top:0!important}
+  body.clean-config.test-desktop-workbench .drawing{inset:var(--threeb-test-banner-height,0px) 0 0!important}
+  body.clean-config #bandMenu{position:fixed!important;left:var(--config-x,50%)!important;top:var(--config-y,50%)!important;transform:translate(-50%,-50%)!important;width:44px!important;height:44px!important;z-index:1100;font-size:25px;border-radius:50%;cursor:pointer}
+  #cleanConfigDialog{box-sizing:border-box;width:min(440px,calc(100vw - 24px));max-height:calc(100dvh - 24px);padding:18px;border:1px solid #b9b7a7;border-radius:14px;background:#faf9f2;color:#19392e;overflow:auto}
+  #cleanConfigDialog::backdrop{background:#132c2366}
+  #cleanConfigDialog header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+  #cleanConfigDialog h2,#cleanConfigDialog h3{margin:0 0 10px}
+  #cleanConfigDialog button,#cleanConfigDialog select{min-height:44px;cursor:pointer}
+  #cleanConfigDialog #bandCore{position:static!important;inset:auto!important;transform:none!important;width:100%!important;max-width:none!important;box-sizing:border-box;display:grid!important;grid-template-columns:1fr!important;overflow:visible;gap:8px;margin:0 0 18px}
+  #cleanConfigDialog .band-drag-handle,#cleanConfigDialog #bandCore:before,#cleanConfigDialog #bandCore:after{display:none!important}
+  #cleanConfigDialog #bandCore .band-step{width:auto!important;min-width:0!important;display:flex!important;justify-content:space-between;align-items:center;padding:0 8px}
+  #cleanConfigDialog #bandCore .band-step>span{display:flex;align-items:center;gap:8px}
+  #cleanConfigDialog #bandCore select{max-width:240px;min-width:0;width:auto}
+  #cleanConfigDialog .central-track-controls>.central-line-select:not(#parallelDisplayControl),#cleanConfigDialog #centralPatternControl,#cleanConfigDialog #centralParallelControl{display:none!important}
+  #cleanConfigDialog #lklLevelBar{position:static!important;inset:auto!important;transform:none!important;display:flex!important;flex-wrap:wrap;gap:8px;width:auto!important;min-height:0!important;margin:0;padding:0;background:none;box-shadow:none;border:0}
+  #cleanConfigDialog #lklLevelBar strong{display:none}
+  #cleanConfigDialog #lklLevelBar button{flex:1}
+  #cleanConfigDialog #lklUseStatus{margin:8px 0 16px}
+  #cleanConfigDialog #cleanConfigMore>summary{padding:12px 0;font-weight:bold;cursor:pointer}
+  #cleanConfigDialog .central-track-controls{position:static!important;inset:auto!important;transform:none!important;width:auto!important;max-height:none!important;display:block!important;pointer-events:auto}
+  #cleanConfigDialog .central-track-controls>#lklUseModes,#cleanConfigDialog .selection-menu-header,#cleanConfigDialog #centralTrackControl,#cleanConfigDialog #centralTableControl,#cleanConfigDialog #parallelPartControl{display:none!important}
+  #cleanConfigDialog #databaseWorkspace{display:block!important;transform:none!important;position:static!important;width:auto!important;max-height:none!important;box-sizing:border-box;overflow:visible}
+  #cleanConfigDialog #menuSettings{margin:8px 0}
+  #cleanConfigDialog #bandUndo,#cleanConfigDialog #bandReset,#cleanConfigDialog #bandSave,#cleanConfigDialog #thumbUp{position:static!important;inset:auto!important;transform:none!important;margin:4px}
+  `;document.head.append(style);
+  const dialog=document.createElement('dialog');dialog.id='cleanConfigDialog';dialog.setAttribute('aria-labelledby','cleanConfigTitle');dialog.innerHTML='<header><h2 id="cleanConfigTitle">⚙ Config</h2><button type="button" id="closeCleanConfig" aria-label="Config sluiten">×</button></header><section id="cleanConfigTracks" aria-label="Spoor en lijn"></section><section id="cleanConfigCourse"><h3>Cursus</h3></section><details id="cleanConfigMore"><summary>Meer instellingen</summary><div id="cleanConfigSettings"></div></details>';document.body.append(dialog);document.body.classList.add('clean-config');
+  gear.textContent='⚙';gear.setAttribute('aria-label','Config openen');gear.title='Config · spoor, lijn en cursus';document.body.append(gear);
+  const move=(node,parent)=>{if(node&&node.parentElement!==parent)parent.append(node);};
+  function reconcile(){move(get('bandCore'),get('cleanConfigTracks'));move(get('lklLevelBar'),get('cleanConfigCourse'));move(get('lklUseStatus'),get('cleanConfigCourse'));
+    const settings=get('cleanConfigSettings');move(document.querySelector('.central-track-controls'),settings);
+    const db=get('databaseWorkspace');if(db&&!db.closest('#githubConnectionDialog'))move(db,settings);
+    for(const id of ['mobilePreview','bandUndo','bandReset','bandSave','thumbUp'])move(get(id),settings);
+    document.body.append(gear);position();
+  }
+  function position(){const svg=document.querySelector('.table-svg');if(!svg)return;const b=svg.getBoundingClientRect();let corner=false;try{corner=localStorage.getItem('3b-clean-config-position-v1')==='corner';}catch(_){}const x=corner?b.right-30:b.left+b.width/2,y=corner?b.top+30:b.top+b.height/2;document.body.style.setProperty('--config-x',Math.max(24,Math.min(innerWidth-24,x))+'px');document.body.style.setProperty('--config-y',Math.max(30,Math.min(innerHeight-24,y))+'px');const select=get('menuButtonPositionSelect');if(select)select.value=corner?'corner':'central';}
+  gear.onclick=e=>{e.preventDefault();e.stopPropagation();reconcile();if(!dialog.open)dialog.showModal();};get('closeCleanConfig').onclick=()=>dialog.close();get('closeSelectionMenu')?.addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog){const b=dialog.getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)dialog.close();}});
+  dialog.addEventListener('click',e=>{const id=e.target.closest('button,a')?.id;if(['levelLklCourse','levelLklPractice','openExplanation','openSpoorscherm','openLklFramework','desktopOpenSpoor','mobilePreview','userSettingsButton','toggleConfig','thumbUp'].includes(id))dialog.close();},true);
+  get('menuButtonPositionSelect')?.addEventListener('change',e=>{try{localStorage.setItem('3b-clean-config-position-v1',e.target.value);}catch(_){}requestAnimationFrame(position);});
+  window.addEventListener('resize',()=>requestAnimationFrame(reconcile));window.addEventListener('threeb-spoor-state',()=>requestAnimationFrame(position));reconcile();requestAnimationFrame(()=>window.dispatchEvent(new Event('resize')));
+};
+
 /* Symbols and compact values belong only to the spoor editor. */
 const SpoorScreenFormat=(()=>{
   const doubles=['⇗','⇘','⇙','⇖'],singles=['↗','↘','↙','↖'];
@@ -700,5 +747,7 @@ if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
     };
     window.addEventListener('resize',layout);layout();
   }
+
+  window.installThreeBCleanConfig?.();
 
 };

@@ -1396,7 +1396,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
   const originalCentralKeys=centralTrackKeys;
   centralTrackKeys=function(){
     const keys=originalCentralKeys();if(spoorBaseDepth||!spoorGeometryReady||ui.playRange!=='lkl')return keys;
-    const previous=copy(ui),oldActive=activeSegmentIndex,oldTable=activeSegmentTable,oldBall=selectedBall;try{return keys.filter(key=>{chooseCentralTrack(key);return actualStartPattern(ui.editTable)==='LKL';});}finally{Object.assign(ui,previous);activeSegmentIndex=oldActive;activeSegmentTable=oldTable;selectedBall=oldBall;}
+    const previous=copy(ui),oldActive=activeSegmentIndex,oldTable=activeSegmentTable,oldBall=selectedBall;try{return keys.filter(key=>{chooseCentralTrack(key);const pattern=actualStartPattern(ui.editTable);const route=pattern==='?'?resolvedSpoorRoute(ui.editTable,ui.direction):null;return pattern==='LKL'||pattern==='?'&&complete(route?.neus?.from)&&complete(route?.neus?.to);});}finally{Object.assign(ui,previous);activeSegmentIndex=oldActive;activeSegmentTable=oldTable;selectedBall=oldBall;}
   };
   function effectiveStartKey(key=selectedTrackKey()){
     const match=String(key).match(/^(.+?)([+-]\d+)?$/),root=match[1],relative=match[2]||'',shift=startAcquitOffset();
@@ -1613,7 +1613,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
   if(window.openThreeBSpoorScreen){
     const spoorRender=render;
     const spoorDrawTable=drawTable;
-    function spoorRouteMessage(table=ui.editTable){return originFullLabel()+(startRay(table).error?' is onvolledig: '+startRay(table).error:' past niet in LKL');}
+    function spoorRouteMessage(table=ui.editTable){return originFullLabel()+(startRay(table).error?' is onvolledig: '+startRay(table).error:actualStartPattern(table)==='?'?' · metingen onvolledig; vul het karkas aan':' past niet in LKL');}
     drawTable=function(table){
       if(spoorGeometryReady&&ui.playRange==='lkl'&&actualStartPattern(table)!=='LKL'){
         delete dragModels[table];
@@ -1626,7 +1626,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
       const pattern=actualStartPattern(),excluded=spoorGeometryReady&&ui.playRange==='lkl'&&pattern!=='LKL';
       const status=$('startAcquitPatternStatus');if(status){status.textContent=spoorGeometryReady?(pattern==='?'&&startRay().error?originFullLabel()+' · '+startRay().error:(originFullLabel()+' · '+pattern+(excluded?' · uitgesloten van LKL':''))):'Patroon '+pattern;status.dataset.pattern=pattern;}
       if(spoorGeometryReady){for(const id of ['patternSelect','fanSelect'])for(const option of $(id).options)option.text=originTrackLabel(option.value);$('bandTrackValue').textContent=originTrackLabel();$('bandTrackValue').title=originFullLabel();$('drawingTitle').textContent=pattern+' · '+originFullLabel()+' · '+(ui.direction==='oost'?'Oost':'West');$('patternBadge').textContent=pattern;}
-      if(excluded){
+      if(excluded&&pattern!=='?'){
         const central=$('centralLineSelect');
         for(const option of [...central.options])if(option.disabled)option.remove();
         const available=central.options.length;central.prepend(new Option(available?'Kies een LKL-spoor':'Geen passend LKL-spoor','',true,true));central.value='';central.disabled=!available;
