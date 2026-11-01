@@ -1084,7 +1084,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
   function patternLineFraction(t,key,route){const extent=patternExtent(t,route),index=C.parts.findIndex(line=>line.key===key);return index<extent.index?1:index===extent.index?extent.fraction:0;}
   function baseTrackReferenceSvg(t,map,visibleKeys){
     if(!(explanationParts?ui.courseShowBasis:ui.showBasis))return"";
-    const route=noseLengthAnchor(t)?.active?noseLengthAnchor(t).route:state.data[t]?.[ui.pattern];if(!route)return"";
+    const route=resolvedBasisReference(t);if(!route)return"";
     const lines=activeLines(),radius=C.ballDiameterMm/20;let svg='<g class="base-track-reference" aria-hidden="true">';
     lines.forEach((line,index)=>{if(!visibleKeys.has(line.key))return;const segment=route[line.key];if(!segment||![segment.from,segment.to].every(complete)||![segment.from,segment.to].every(valid))return;const fromDiamond=point(segment.from,t),fromCenter=segment.from.kind==="acquit"?fromDiamond:bandBall(segment.from,segment.to,t,radius),toCenter=bandBall(segment.to,segment.from,t,radius);const fraction=patternLineFraction(t,line.key,route);if(!fraction)return;const start=map(segment.from.kind==="acquit"?fromDiamond:fromCenter),end=map(fraction===1?toCenter:{x:fromCenter.x+(toCenter.x-fromCenter.x)*fraction,y:fromCenter.y+(toCenter.y-fromCenter.y)*fraction});svg+=`<line data-reference-part="${line.key}" x1="${start.x}" y1="${start.y}" x2="${end.x}" y2="${end.y}"/>`;});
     return svg+'</g>';
@@ -1266,6 +1266,14 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
   function canonicalBaseLength(table){const previous=spoorBaseDepth||0;spoorBaseDepth=previous+1;try{return baseStrokeLength(table);}finally{spoorBaseDepth=previous;}}
   const previousPositionKey=positionKey;
   positionKey=function(table){const selection=canonicalStart();return spoorGeometryReady&&selection?table+':'+selection.key+':'+ui.departure+':'+ui.direction:previousPositionKey(table);};
+  // Approved stored anchors remain authoritative without being relabelled as measurements.
+  function storedSpoorAnchor(p){return complete(p)&&(p.measurement===true||p.userAdjusted===true||p.status==='edited'||p.source==='user'||p.status==='approved'&&['kruin_sqlite','kruin_measured','measured'].includes(p.source));}
+  function resolvedBasisReference(table){
+    const previous=copy(ui),oldActive=activeSegmentIndex,oldTable=activeSegmentTable,oldBall=selectedBall,oldPreview=spoorPreview;
+    const root=canonicalStart()?.root||ui.pattern;
+    try{if(selectedTrackKey()!==root)spoorPreview=null;chooseCentralTrack(root);return copy(resolvedSpoorRoute(table));}
+    finally{Object.assign(ui,previous);activeSegmentIndex=oldActive;activeSegmentTable=oldTable;selectedBall=oldBall;spoorPreview=oldPreview;}
+  }
   function canonicalReference(table,direction){
     const selection=canonicalStart();if(!selection)return null;
     if(selection.total>0){
@@ -1274,7 +1282,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
       const route=copy(startRay(table,direction).route);
       const inputs=[K.tracks?.[table]?.[selection.key]?.linePoints,state.variantData?.[table]?.[selection.key]];
       for(const input of inputs)for(const [line,points] of Object.entries(input||{}))for(const side of ['from','to']){
-        const p=points[side];if(route[line]&&skeletonEditable(line,side)&&p&&(p.measurement===true||p.userAdjusted===true||p.status==='edited'||p.source==='user'))route[line][side]=copy(p);
+        const p=points[side];if(route[line]&&skeletonEditable(line,side)&&storedSpoorAnchor(p))route[line][side]=copy(p);
       }
       const east=direction==='oost'&&state.spoorDirectionalMeasurements?.[table+':'+selection.key]?.oost;
       for(const [line,points] of Object.entries(east?.lines||{}))for(const [label,side] of [['V','from'],['A','to']])if(route[line]&&skeletonEditable(line,side)&&points[label])route[line][side]=copy(points[label]);
@@ -1319,7 +1327,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
     const source=K.tracks?.[table]?.[selectedTrackKey()]?.linePoints;
     for(const [line,points] of Object.entries(source||{}))if(route[line])for(const side of ['from','to']){
       const p=points[side],current=route[line][side];
-      if(p&&Number.isFinite(p.value)&&(p.measurement===true||p.status==='edited'||p.source==='user'||p.status==='approved'&&!(line==='nek'&&side==='to'&&legacyNeckDefault(table,p)))&&!(current?.userAdjusted===true||current?.status==='edited'||current?.source==='user'))route[line][side]=copy(p);
+      if(storedSpoorAnchor(p)&&!(line==='nek'&&side==='to'&&legacyNeckDefault(table,p))&&!(current?.userAdjusted===true||current?.status==='edited'||current?.source==='user'))route[line][side]=copy(p);
     }
     const east=direction==='oost'&&state.spoorDirectionalMeasurements?.[table+':'+selectedTrackKey()]?.oost;
     if(east)for(const [line,points] of Object.entries(east.lines||{}))if(route[line]){if(points.V)route[line].from=copy(points.V);if(points.A)route[line].to=copy(points.A);}

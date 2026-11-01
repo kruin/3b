@@ -1,4 +1,4 @@
-# 3B v208-r54 — User-werkwijze
+# 3B v208-r55 — User-werkwijze
 
 # Cursus — de bal lijn na lijn volgen
 
@@ -121,6 +121,12 @@ Verander je later je eigen basis, dan vervalt de geldigheid van de eerdere overd
 ## Taal
 
 We spreken je aan met **je**. **U** is de rol *User*, geen aanspreekvorm.
+
+## Het dunne basisspoor vergelijken
+
+Met Toon basis zie je het oorspronkelijke basisspoor, bijvoorbeeld VIJF, naast het gekozen spoor. De dunne referentie gebruikt dezelfde berekening en dezelfde geldige eigen basis als de gewone tafel.
+
+Bij een parallelstand vergelijken we de afstoot met dat basisspoor. Afzonderlijk vastgelegde metingen van het vervolg, zoals Kop A bij VIJF+1, kunnen een andere richting geven dan een zuiver geometrische verplaatsing. Je meting blijft dan behouden; de app maakt het vervolg niet kunstmatig parallel.
 
 
 Bewaar mijn tafel en Terugladen gebruiken het volledige JSON-tafelbestand. De officiële private Kruin-database wordt hiermee niet gewijzigd.

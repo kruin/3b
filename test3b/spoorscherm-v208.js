@@ -1,5 +1,5 @@
-window.THREEB_RELEASE=Object.freeze({"version": "v208-r54", "date": "2026-11-01", "channel": "test", "compatibilityBase": "v208-r15"});
-window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r54", "date": "2026-11-01"});
+window.THREEB_RELEASE=Object.freeze({"version": "v208-r55", "date": "2026-11-02", "channel": "test", "compatibilityBase": "v208-r15"});
+window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r55", "date": "2026-11-02"});
 /* Shared display provenance. Approval and technical pinning are not manual entry. */
 const ThreeBValueOrigin=(()=>{
   function kind(p){
