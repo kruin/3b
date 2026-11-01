@@ -1,4 +1,4 @@
-# 3B v208-r49 — User-werkwijze
+# 3B v208-r50 — User-werkwijze
 
 # Cursus — de bal lijn na lijn volgen
 
@@ -22,11 +22,17 @@ Voor de afstoot kijk ik eerst: op welk spoor ligt bal 3? Daarna: waar lig ik met
 
 Ik rol elke lijn opnieuw af en herhaal dezelfde afstoot aan tafel. Daarna volg ik het hele verloop weer vanaf de Neus. Mijn eigen Kop A meten komt in een latere meetles; de naam Kop leer ik wel meteen op de juiste plaats in de volgorde.
 
-# Les 2 — dezelfde volgorde op ZES
+# Les 2 — van de Romp terug naar mijn positie
 
-Met Volgende les ga ik naar ZES. De vorm van het spoor verandert, de volgorde blijft gelijk: Neus, Kop, Nek, Romp, Kruis en Been. Ik volg opnieuw eerst de Neus. Ik pauzeer bij elke band en vergelijk wat mijn eigen afstoot doet.
+Ik werk teruguit: eerst bal 3 op de Romp, daarna bal 1 en pas dan de Neus ter controle. Dit is een vast oefenvoorbeeld op Klein. De notatie 30–30 betekent **Romp V = 30 op Oost** en **Romp A = 30 op Zuid**, geen centimeters. Bal 3 ligt op die Romplijn.
 
-Met Vorige les ga ik terug naar VIJF. Ook daar begint het verloop weer bij de Neus. De voorbeelden komen uit mijn actieve User-configuratie, of uit Kruins waarden als ik voor dat spoor nog geen complete eigen metingen heb. Een ontbrekend of ongeldig vervolg wordt gemeld en niet verzonnen.
+1. **Eerst de Romp.** Alleen de Romp en bal 3 zijn zichtbaar. De stiplijnen op Oost en Zuid tonen beide 30. Bal 1 en de Neus blijven verborgen.
+2. **Ligt bal 1 op hetzelfde spoor?** Mijn witte speelbal verschijnt. Ik beoordeel de positie zonder de Neus te zien. Er zijn geen verplichte ja/nee-knoppen en geen toetsblokkade.
+3. **Toon de Neus.** De gegeven Neus van het oefenvoorbeeld wordt zichtbaar. In dit voorbeeld ligt bal 1 erop. Ik controleer met mijn ogen of bal 1 en bal 3 bij hetzelfde karkas passen. Met Vorige stap verberg ik de Neus weer en oefen ik opnieuw.
+
+Het voorbeeld toont een gegeven Neus richting West 60. Die Neus is niet uniek uit alleen de Romp berekend. Mijn eigen spoorwaarden worden niet gewijzigd of als deze vaste oefenwaarden gepresenteerd. Les 1 en de meetlessen blijven mijn actieve eigen configuratie gebruiken waar die compleet is.
+
+Met Vorige les ga ik terug naar de voorwaartse opbouw. Met Volgende les ga ik naar het afzonderlijke 6–7-patroon.
 
 ## Niveau en bediening
 
