@@ -1,6 +1,6 @@
 # Cursus — de bal lijn na lijn volgen
 
-De aanpak is dynamisch. Ik volg de rollende bal in één vaste volgorde: **Neus → Kop → Nek → Romp → Kruis → Been**. Bij LKL volgt na Been de uitloop tot **halve Hiel**. Een harder lopende bal hoort bij het afzonderlijke patroon **6–7 banden**. Eerst de Neus, dan de Kop, dan de Nek enzovoort. Geen keuzevragen en geen willekeurige lijnkeuze.
+De aanpak is dynamisch. Ik volg de rollende bal in één vaste volgorde: **Neus → Kop → Nek → Romp → Kruis → Been**. LKL loopt uit tot **half Been**. Een harder lopende bal hoort bij het afzonderlijke patroon **6–7 banden**. Eerst de Neus, dan de Kop, dan de Nek enzovoort. Geen keuzevragen en geen willekeurige lijnkeuze.
 
 Het spoor groeit terwijl de bal rolt. Eerdere lijnen blijven zichtbaar. Met Pauze bekijk ik de huidige lijn. Met Lijn opnieuw rollen herhaal ik die beweging. Vorige stap en Volgende stap brengen mij naar de voorgaande of volgende lijn. Vorige les en Volgende les gaan naar een andere les. Antwoorden of een toets zijn niet nodig om verder te kunnen.
 
@@ -15,8 +15,8 @@ Voor de afstoot kijk ik eerst: op welk spoor ligt bal 3? Daarna: waar lig ik met
 3. **Nek.** Vanaf Noord loopt de bal naar de oostband. De Nek verbindt Kop en Romp.
 4. **Romp.** Vanaf Oost loopt de bal richting de zuidzijde. Neus en Romp vormen het zichtbare karkas.
 5. **Kruis.** Na de Romp volgt het Kruis. Ik blijf dezelfde bal volgen.
-6. **Been.** Na het Kruis volgt het Been.
-7. **Halve Hiel.** De LKL-bal loopt uit tot het midden van de Hiel en stopt daar.
+6. **Half Been.** Na het Kruis volgt het Been. De LKL-bal loopt tot halverwege het Been en stopt daar.
+
 
 Ik rol elke lijn opnieuw af en herhaal dezelfde afstoot aan tafel. Daarna volg ik het hele verloop weer vanaf de Neus. Mijn eigen Kop A meten komt in een latere meetles; de naam Kop leer ik wel meteen op de juiste plaats in de volgorde.
 
@@ -39,7 +39,14 @@ Na het volgen van de lijnen onderzoek ik mijn eigen afstoot. Waar ligt mijn Kop 
 
 # Les 3 — harder lopende bal: 6–7 banden
 
-Na de halve Hiel staat de knop Harder lopende bal → 6–7 banden. Dit opent het afzonderlijke 6–7-patroon met zijn eigen gemeten of berekende lijnwaarden; ik verleng niet simpelweg de LKL-baan. Ik volg weer Neus, Kop, Nek, Romp, Kruis, Been en Hiel. De Hiel wordt hier volledig doorlopen tot de volgende band. Neus en Been zijn de karkasankers van dit patroon. De les gebruikt de actieve gegevens voor dat patroon. Ontbrekend of ongeldig vervolg wordt gemeld. De animatie toont deze geometrie en berekent geen snelheidsovergang.
+Na de half Been staat de knop Harder lopende bal → 6–7 banden. Dit opent het afzonderlijke 6–7-patroon met zijn eigen gemeten of berekende lijnwaarden; ik verleng niet simpelweg de LKL-baan. Ik volg weer Neus, Kop, Nek, Romp, Kruis, Been en Hiel. De Hiel wordt hier volledig doorlopen tot de volgende band. Neus en Been zijn de karkasankers van dit patroon. De les gebruikt de actieve gegevens voor dat patroon. Ontbrekend of ongeldig vervolg wordt gemeld. De animatie toont deze geometrie en berekent geen snelheidsovergang.
+
+
+## Uitloop configureren per basisspoor
+
+LKL toont en loopt tot half Been. De 6–7-bander doorloopt de hele Hiel en rolt daarna standaard 15 cm verder, in de richting na de band. In Config · uitloop van dit basisspoor kan ik de extra lengte na Hiel aanpassen en Bewaar uitloop kiezen. Dezelfde instelling staat bij Geoefend in het tafelmenu. De instelling geldt per basisspoor en tafel; VIJF, ZES, Klein en Groot kunnen verschillende waarden hebben. Parallelvarianten gebruiken de instelling van hun basisspoor. Nul betekent stoppen bij het einde van Hiel.
+
+Kruin bewaart deze instelling rechtstreeks in het GitHub-werkbestand, bij het betreffende spoor. User bewaart de instelling in de eigen tafelgegevens en het volledige JSON-tafelbestand. Bewaren verandert de lijnmetingen niet. Uitloop die een volgende band zou passeren wordt in de cursus gemeld en niet als rechte lijn buiten de tafel verzonnen.
 
 
 # LKL meten: Neus, Kop en Romp
