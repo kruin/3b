@@ -49,6 +49,13 @@ LKL toont en loopt tot half Been. De 6–7-bander doorloopt de hele Hiel en rolt
 Kruin bewaart deze instelling rechtstreeks in het GitHub-werkbestand, bij het betreffende spoor. User bewaart de instelling in de eigen tafelgegevens en het volledige JSON-tafelbestand. Bewaren verandert de lijnmetingen niet. Uitloop die een volgende band zou passeren wordt in de cursus gemeld en niet als rechte lijn buiten de tafel verzonnen.
 
 
+## Stippen zien terwijl de karkaslijn loopt
+
+Tijdens de Neus zie ik de genummerde stiplijn op West, met de actieve Neus-waarde gemarkeerd: bij Kruins VIJF bijvoorbeeld 50. Tijdens de Romp zie ik de stiplijn op Oost, met de actieve Romp V: bijvoorbeeld 20. De nummering staat op de vaste plek zoals ik die aan tafel zie: West 0 onder/80 boven, Oost 0 boven/80 onder. Het is de stiplijnwaarde, niet het raakpunt R. Een korte onderbroken verlenging verbindt de getekende lijn met die stiplijnwaarde.
+
+De waarden volgen mijn actieve User-configuratie; de voorbeelden 50 en 20 worden niet vastgezet. De stippen verdwijnen als de volgende lijn geen karkaslijn is. Bij 6–7 banden zijn Neus en Been de karkasankers; bij Been volgt de aanduiding de band van de eigen Been A.
+
+
 # LKL meten: Neus, Kop en Romp
 
 Begin met LKL en één basislijn, bijvoorbeeld VIJF op Klein. Je onderzoekt wat je eigen afstoot werkelijk doet. Het zichtbare karkas is Neus en Romp: dat leer je eerst herkennen. In deze latere meetles onderzoek je wat je eigen afstoot doet, met de vraag: waar ligt mijn Kop A? Bouw de complete eigen meetbasis op uit ingevoerde metingen van **Neus, Kop en Romp**. Een getekende basiswaarde of schatting telt nog niet als een eigen meetgegeven. Begin pas aan andere patronen nadat deze werkwijze goed werkt.

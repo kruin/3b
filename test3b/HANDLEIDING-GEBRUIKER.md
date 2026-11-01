@@ -1,4 +1,4 @@
-# 3B v208-r48 — User-werkwijze
+# 3B v208-r49 — User-werkwijze
 
 # Cursus — de bal lijn na lijn volgen
 
@@ -49,6 +49,13 @@ Na de half Been staat de knop Harder lopende bal → 6–7 banden. Dit opent het
 LKL toont en loopt tot half Been. De 6–7-bander doorloopt de hele Hiel en rolt daarna standaard 15 cm verder, in de richting na de band. In Config · uitloop van dit basisspoor kan ik de extra lengte na Hiel aanpassen en Bewaar uitloop kiezen. Dezelfde instelling staat bij Geoefend in het tafelmenu. De instelling geldt per basisspoor en tafel; VIJF, ZES, Klein en Groot kunnen verschillende waarden hebben. Parallelvarianten gebruiken de instelling van hun basisspoor. Nul betekent stoppen bij het einde van Hiel.
 
 Kruin bewaart deze instelling rechtstreeks in het GitHub-werkbestand, bij het betreffende spoor. User bewaart de instelling in de eigen tafelgegevens en het volledige JSON-tafelbestand. Bewaren verandert de lijnmetingen niet. Uitloop die een volgende band zou passeren wordt in de cursus gemeld en niet als rechte lijn buiten de tafel verzonnen.
+
+
+## Stippen zien terwijl de karkaslijn loopt
+
+Tijdens de Neus zie ik de genummerde stiplijn op West, met de actieve Neus-waarde gemarkeerd: bij Kruins VIJF bijvoorbeeld 50. Tijdens de Romp zie ik de stiplijn op Oost, met de actieve Romp V: bijvoorbeeld 20. De nummering staat op de vaste plek zoals ik die aan tafel zie: West 0 onder/80 boven, Oost 0 boven/80 onder. Het is de stiplijnwaarde, niet het raakpunt R. Een korte onderbroken verlenging verbindt de getekende lijn met die stiplijnwaarde.
+
+De waarden volgen mijn actieve User-configuratie; de voorbeelden 50 en 20 worden niet vastgezet. De stippen verdwijnen als de volgende lijn geen karkaslijn is. Bij 6–7 banden zijn Neus en Been de karkasankers; bij Been volgt de aanduiding de band van de eigen Been A.
 
 
 # LKL meten: Neus, Kop en Romp
