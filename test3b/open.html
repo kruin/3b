@@ -1,0 +1,6 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Actuele 3B openen</title></head><body><p>De actuele versie wordt geopend…</p><a id="openCurrent" href="./">Open 3B</a><script>
+(() => {
+  function open(){const target=new URL('./',location.href),params=new URLSearchParams(location.search);if(params.get('mode')==='user')target.searchParams.set('mode','user');target.searchParams.set('_open',Date.now()+'-'+Math.random().toString(36).slice(2));target.hash=location.hash;document.getElementById('openCurrent').href=target.href;location.replace(target.href);}
+  window.addEventListener('pageshow',event=>{if(event.persisted)open();});open();
+})();
+</script></body></html>
