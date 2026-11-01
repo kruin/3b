@@ -1,6 +1,6 @@
 # Cursus — de bal lijn na lijn volgen
 
-De aanpak is dynamisch. Ik volg de rollende bal in één vaste volgorde: **Neus → Kop → Nek → Romp → Kruis → Been**. Bij langere patronen volgt **Hiel**. Eerst de Neus, dan de Kop, dan de Nek enzovoort. Geen keuzevragen en geen willekeurige lijnkeuze.
+De aanpak is dynamisch. Ik volg de rollende bal in één vaste volgorde: **Neus → Kop → Nek → Romp → Kruis → Been**. Bij LKL volgt na Been de uitloop tot **halve Hiel**. Een harder lopende bal hoort bij het afzonderlijke patroon **6–7 banden**. Eerst de Neus, dan de Kop, dan de Nek enzovoort. Geen keuzevragen en geen willekeurige lijnkeuze.
 
 Het spoor groeit terwijl de bal rolt. Eerdere lijnen blijven zichtbaar. Met Pauze bekijk ik de huidige lijn. Met Lijn opnieuw rollen herhaal ik die beweging. Vorige stap en Volgende stap brengen mij naar de voorgaande of volgende lijn. Vorige les en Volgende les gaan naar een andere les. Antwoorden of een toets zijn niet nodig om verder te kunnen.
 
@@ -15,7 +15,8 @@ Voor de afstoot kijk ik eerst: op welk spoor ligt bal 3? Daarna: waar lig ik met
 3. **Nek.** Vanaf Noord loopt de bal naar de oostband. De Nek verbindt Kop en Romp.
 4. **Romp.** Vanaf Oost loopt de bal richting de zuidzijde. Neus en Romp vormen het zichtbare karkas.
 5. **Kruis.** Na de Romp volgt het Kruis. Ik blijf dezelfde bal volgen.
-6. **Been.** Na het Kruis volgt het Been. Bij langere patronen volgt daarna Hiel. Niet iedere stoot bereikt het volledige vervolg.
+6. **Been.** Na het Kruis volgt het Been.
+7. **Halve Hiel.** De LKL-bal loopt uit tot het midden van de Hiel en stopt daar.
 
 Ik rol elke lijn opnieuw af en herhaal dezelfde afstoot aan tafel. Daarna volg ik het hele verloop weer vanaf de Neus. Mijn eigen Kop A meten komt in een latere meetles; de naam Kop leer ik wel meteen op de juiste plaats in de volgorde.
 
@@ -34,6 +35,11 @@ De bewegende bal toont de geometrie van het actieve spoor. Het is geen voorspell
 ## Latere meetlessen
 
 Na het volgen van de lijnen onderzoek ik mijn eigen afstoot. Waar ligt mijn Kop A op de noordelijke stiplijn? Ik meet A door langs de Kop te kijken, of meet R met pionnen en laat A berekenen. Alleen Neus en Romp bepalen mijn Kop A niet. Voor een complete eigen meetbasis blijven Neus, Romp en de aanvullende Kop-meting nodig. Tot die compleet zijn blijft Kruin actief en blijft mijn eigen invoer concept.
+
+
+# Les 3 — harder lopende bal: 6–7 banden
+
+Na de halve Hiel staat de knop Harder lopende bal → 6–7 banden. Dit opent het afzonderlijke 6–7-patroon met zijn eigen gemeten of berekende lijnwaarden; ik verleng niet simpelweg de LKL-baan. Ik volg weer Neus, Kop, Nek, Romp, Kruis, Been en Hiel. De Hiel wordt hier volledig doorlopen tot de volgende band. Neus en Been zijn de karkasankers van dit patroon. De les gebruikt de actieve gegevens voor dat patroon. Ontbrekend of ongeldig vervolg wordt gemeld. De animatie toont deze geometrie en berekent geen snelheidsovergang.
 
 
 # LKL meten: Neus, Kop en Romp
