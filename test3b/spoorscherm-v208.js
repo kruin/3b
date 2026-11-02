@@ -1,5 +1,5 @@
-window.THREEB_RELEASE=Object.freeze({"version": "v208-r57", "date": "2026-11-02", "channel": "test", "compatibilityBase": "v208-r15"});
-window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r57", "date": "2026-11-02"});
+window.THREEB_RELEASE=Object.freeze({"version": "v208-r58", "date": "2026-11-02", "channel": "test", "compatibilityBase": "v208-r15"});
+window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r58", "date": "2026-11-02"});
 /* Shared display provenance. Approval and technical pinning are not manual entry. */
 const ThreeBValueOrigin=(()=>{
   function kind(p){
@@ -466,14 +466,14 @@ window.installThreeBCleanConfig=function(){
   const read=key=>{try{const p=JSON.parse(localStorage.getItem(key));return p&&Number.isFinite(p.x)&&Number.isFinite(p.y)?p:null;}catch(_){return null;}};
   const write=(key,p)=>{try{localStorage.setItem(key,JSON.stringify(p));}catch(_){}};
   const erase=key=>{try{localStorage.removeItem(key);}catch(_){}};
-  try{if(localStorage.getItem('3b-clean-config-romp-default-v1')!=='1'){localStorage.setItem('3b-clean-config-position-v1','central');erase(gearKey);localStorage.setItem('3b-clean-config-romp-default-v1','1');}}catch(_){}
+  try{if(localStorage.getItem('3b-clean-config-neus-default-v1')!=='1'){localStorage.setItem('3b-clean-config-position-v1','central');erase(gearKey);localStorage.setItem('3b-clean-config-neus-default-v1','1');}}catch(_){}
   const clamp=(v,min,max)=>Math.max(min,Math.min(Math.max(min,max),v));
   function placeGear(x,y){const r=gear.getBoundingClientRect();document.body.style.setProperty('--config-x',clamp(x,r.width/2+8,innerWidth-r.width/2-8)+'px');document.body.style.setProperty('--config-y',clamp(y,r.height/2+8,innerHeight-r.height/2-8)+'px');}
-  const select=get('menuButtonPositionSelect');if(select){select.closest('label').querySelector('span').textContent='Configwieltje';select.querySelector('option[value=central]').textContent='Midden op Romp';const custom=new Option('Eigen plek · versleep','free');custom.disabled=true;select.add(custom);}
+  const select=get('menuButtonPositionSelect');if(select){select.closest('label').querySelector('span').textContent='Configwieltje';select.querySelector('option[value=central]').textContent='Midden op Neus';const custom=new Option('Eigen plek · versleep','free');custom.disabled=true;select.add(custom);}
   function position(){if(gearDrag)return;const pattern=get('bandPatternSelect')?.value;
     if(lastPattern&&lastPattern!==pattern){erase(gearKey);try{localStorage.setItem('3b-clean-config-position-v1','central');}catch(_){}}lastPattern=pattern;
     const svg=document.querySelector('.table-svg[data-view-table="'+get('editTable')?.value+'"]')||document.querySelector('.table-svg');if(!svg)return;
-    const b=svg.getBoundingClientRect(),romp=svg.querySelector('g[data-part=romp] .route-line')?.getBoundingClientRect(),marker=svg.querySelector('[data-config-romp-center]');let anchor=romp?{x:romp.left+romp.width/2,y:romp.top+romp.height/2}:null;
+    const b=svg.getBoundingClientRect(),neus=svg.querySelector('g[data-part=neus] .route-line')?.getBoundingClientRect(),marker=svg.querySelector('[data-config-neus-center]');let anchor=neus?{x:neus.left+neus.width/2,y:neus.top+neus.height/2}:null;
     if(!anchor&&marker&&svg.getScreenCTM()){const p=svg.createSVGPoint();p.x=Number(marker.dataset.x);p.y=Number(marker.dataset.y);anchor=p.matrixTransform(svg.getScreenCTM());}
     let saved=read(gearKey);if(saved?.pattern&&saved.pattern!==pattern){erase(gearKey);saved=null;}let corner=false;try{corner=localStorage.getItem('3b-clean-config-position-v1')==='corner';}catch(_){}
     placeGear(saved?saved.x*innerWidth:corner?b.right-53:anchor?.x??b.left+b.width/2,saved?saved.y*innerHeight:corner?b.top+30:anchor?.y??b.top+b.height/2);if(select)select.value=saved?'free':corner?'corner':'central';fitDialog();
@@ -491,7 +491,7 @@ window.installThreeBCleanConfig=function(){
   document.addEventListener('click',e=>{if(suppressGearClick&&e.detail!==0){suppressGearClick=false;e.preventDefault();e.stopImmediatePropagation();}},true);
   gear.onclick=e=>{e.preventDefault();e.stopPropagation();suppressGearClick=false;openConfig();};get('closeCleanConfig').onclick=()=>dialog.close();get('closeSelectionMenu')?.addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog){const b=dialog.getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)dialog.close();}});
   dialog.addEventListener('toggle',()=>requestAnimationFrame(fitDialog),true);
-  const reset=document.createElement('button');reset.id='resetConfigPosition';reset.type='button';reset.textContent='Config naar standaardplek';reset.title='Wieltje midden op Romp, venster centraal';get('cleanConfigSettings').append(reset);reset.onclick=()=>{erase(gearKey);erase(dialogKey);dialog.removeAttribute('style');if(select){select.value='central';select.dispatchEvent(new Event('change',{bubbles:true}));}position();};
+  const reset=document.createElement('button');reset.id='resetConfigPosition';reset.type='button';reset.textContent='Config naar standaardplek';reset.title='Wieltje midden op Neus, venster centraal';get('cleanConfigSettings').append(reset);reset.onclick=()=>{erase(gearKey);erase(dialogKey);dialog.removeAttribute('style');if(select){select.value='central';select.dispatchEvent(new Event('change',{bubbles:true}));}position();};
   dialog.addEventListener('click',e=>{const id=e.target.closest('button,a')?.id;if(['levelLklCourse','levelLklPractice','openExplanation','openSpoorscherm','openLklFramework','desktopOpenSpoor','mobilePreview','userSettingsButton','toggleConfig','thumbUp'].includes(id))dialog.close();},true);
   get('menuButtonPositionSelect')?.addEventListener('change',e=>{erase(gearKey);try{localStorage.setItem('3b-clean-config-position-v1',e.target.value);}catch(_){}requestAnimationFrame(position);});
   window.addEventListener('resize',()=>requestAnimationFrame(reconcile));window.addEventListener('threeb-spoor-state',()=>requestAnimationFrame(position));reconcile();requestAnimationFrame(()=>window.dispatchEvent(new Event('resize')));
