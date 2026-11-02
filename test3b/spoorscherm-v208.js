@@ -1,5 +1,5 @@
-window.THREEB_RELEASE=Object.freeze({"version": "v208-r60", "date": "2026-11-02", "channel": "test", "compatibilityBase": "v208-r15"});
-window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r60", "date": "2026-11-02"});
+window.THREEB_RELEASE=Object.freeze({"version": "v208-r61", "date": "2026-11-02", "channel": "test", "compatibilityBase": "v208-r15"});
+window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r61", "date": "2026-11-02"});
 /* Shared display provenance. Approval and technical pinning are not manual entry. */
 const ThreeBValueOrigin=(()=>{
   function kind(p){
@@ -431,7 +431,7 @@ window.installThreeBCleanConfig=function(){
   body.clean-config #onscreenLayout{padding-top:0!important}
   body.clean-config.test-desktop-workbench .drawing{inset:var(--threeb-test-banner-height,0px) 0 0!important}
   body.clean-config #bandMenu{position:fixed!important;left:var(--config-x,50%)!important;top:var(--config-y,50%)!important;transform:translate(-50%,-50%)!important;width:90px!important;height:44px!important;z-index:1100;font-size:16px;border-radius:22px;cursor:grab;touch-action:none;user-select:none;display:flex;align-items:center;justify-content:center;gap:5px}
-  #cleanConfigDialog{position:fixed;inset:0;margin:auto;box-sizing:border-box;width:min(300px,calc(100vw - 24px));max-height:calc(100dvh - 24px);padding:12px;border:1px solid #b9b7a7;border-radius:14px;background:#faf9f2;color:#19392e;overflow:auto}
+  #cleanConfigDialog{position:fixed;inset:0;margin:auto;box-sizing:border-box;width:min(224px,calc(100vw - 16px));height:fit-content;max-height:calc(100dvh - 16px);padding:6px;z-index:2400;box-shadow:0 3px 12px #0003;border:1px solid #b9b7a7;border-radius:14px;background:#faf9f2;color:#19392e;overflow:auto}
   #cleanConfigDialog:has(#cleanConfigMore[open]){width:min(440px,calc(100vw - 24px))}
   #cleanConfigDialog::backdrop{background:#132c2366}
   #cleanConfigDialog header{cursor:grab;touch-action:none;user-select:none;display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
@@ -462,6 +462,27 @@ window.installThreeBCleanConfig=function(){
   #cleanConfigDialog #databaseWorkspace{display:block!important;transform:none!important;position:static!important;width:auto!important;max-height:none!important;box-sizing:border-box;overflow:visible}
   #cleanConfigDialog #menuSettings{margin:8px 0}
   #cleanConfigDialog #bandUndo,#cleanConfigDialog #bandReset,#cleanConfigDialog #bandSave,#cleanConfigDialog #thumbUp{position:static!important;inset:auto!important;transform:none!important;margin:4px}
+  #cleanConfigDialog[open]:not(:has(#cleanConfigMore[open])){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4px 6px}
+  #cleanConfigDialog>header{grid-column:1/-1;margin:0;min-height:28px;gap:4px}
+  #cleanConfigDialog>header h2{font-size:12px}
+  #cleanConfigDialog>header h2::before{content:'⋮⋮';margin-right:5px;font-size:15px}
+  #cleanConfigDialog #closeCleanConfig{min-height:28px;height:28px;width:28px;padding:0;margin:0}
+  #cleanConfigDialog #cleanConfigTracks{grid-column:1/-1;margin:0}
+  #cleanConfigDialog #cleanConfigTracks #bandTrack{padding:0 3px;gap:0}
+  #cleanConfigDialog #cleanConfigTracks #bandTrack small{display:none}
+  #cleanConfigDialog #cleanConfigTracks #bandTrack>span{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;gap:2px;width:100%}
+  #cleanConfigDialog #cleanConfigTracks #bandTrack output{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  #cleanConfigDialog #cleanConfigTracks #bandTrack button{width:44px}
+  #cleanConfigDialog #cleanConfigCourse{grid-column:1;margin:0}
+  #cleanConfigDialog #levelLklCourse{font-size:14px}
+  #cleanConfigDialog #cleanConfigMore{grid-column:2;margin:0}
+  #cleanConfigDialog #cleanConfigMore>summary{box-sizing:border-box;display:flex;align-items:center;justify-content:center;list-style:none;padding:0!important;min-height:44px;border:1px solid #78988b;border-radius:6px;font:600 13px system-ui;background:white}
+  #cleanConfigDialog #cleanConfigMore>summary::-webkit-details-marker{display:none}
+  #cleanConfigDialog:has(#cleanConfigMore[open]){padding:12px}
+  #cleanConfigDialog:has(#cleanConfigMore[open])>header{margin-bottom:8px}
+  #cleanConfigDialog:has(#cleanConfigMore[open]) #cleanConfigTracks{margin-bottom:8px}
+  #cleanConfigDialog:has(#cleanConfigMore[open]) #cleanConfigMore>summary{margin:8px 0}
+  @media(pointer:coarse){#cleanConfigDialog>header{min-height:44px}#cleanConfigDialog #closeCleanConfig{min-height:44px;height:44px;width:44px}}
   `;document.head.append(style);
   const dialog=document.createElement('dialog');dialog.id='cleanConfigDialog';dialog.setAttribute('aria-labelledby','cleanConfigTitle');dialog.innerHTML='<header><h2 id="cleanConfigTitle">Menu</h2><button type="button" id="closeCleanConfig" aria-label="Menu sluiten">×</button></header><section id="cleanConfigTracks" aria-label="Spoor"></section><section id="cleanConfigCourse" aria-label="Cursus"><h3>Cursus</h3></section><details id="cleanConfigMore"><summary>⚙ Config</summary><div id="cleanConfigSettings"></div></details>';document.body.append(dialog);document.body.classList.add('clean-config');
   gear.textContent='⚙ Menu';gear.setAttribute('aria-label','Spoor en cursus openen');gear.title='Spoor en cursus · klik om te openen, versleep naar een vrije plek';document.body.append(gear);
@@ -496,10 +517,11 @@ window.installThreeBCleanConfig=function(){
     document.addEventListener('pointermove',move,{passive:false});document.addEventListener('pointerup',end);document.addEventListener('pointercancel',end);
   });}
   bindDrag(gear,gearKey,true);bindDrag(dialog.querySelector('header'),dialogKey,false);
-  function openConfig(){reconcile();if(!dialog.open){get('cleanConfigMore').open=false;dialog.scrollTop=0;dialog.showModal();get('closeCleanConfig').focus({preventScroll:true});}fitDialog();}
+  function openConfig(){reconcile();if(!dialog.open){get('cleanConfigMore').open=false;dialog.scrollTop=0;dialog.show();get('closeCleanConfig').focus({preventScroll:true});}fitDialog();}
   document.addEventListener('pointerdown',()=>{suppressGearClick=false;},true);
   document.addEventListener('click',e=>{if(suppressGearClick&&e.detail!==0){suppressGearClick=false;e.preventDefault();e.stopImmediatePropagation();}},true);
   gear.onclick=e=>{e.preventDefault();e.stopPropagation();suppressGearClick=false;openConfig();};get('closeCleanConfig').onclick=()=>dialog.close();get('closeSelectionMenu')?.addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog){const b=dialog.getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)dialog.close();}});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&dialog.open&&!document.querySelector('dialog:modal')){e.preventDefault();dialog.close();}});
   dialog.addEventListener('toggle',()=>requestAnimationFrame(fitDialog),true);
   const reset=document.createElement('button');reset.id='resetConfigPosition';reset.type='button';reset.textContent='Config naar standaardplek';reset.title='Wieltje midden op Neus, venster centraal';get('cleanConfigSettings').append(reset);reset.onclick=()=>{erase(gearKey);erase(dialogKey);dialog.removeAttribute('style');if(select){select.value='central';select.dispatchEvent(new Event('change',{bubbles:true}));}position();};
   dialog.addEventListener('click',e=>{const id=e.target.closest('button,a')?.id;if(['levelLklCourse','levelLklPractice','openExplanation','openSpoorscherm','openLklFramework','desktopOpenSpoor','mobilePreview','userSettingsButton','toggleConfig','thumbUp'].includes(id))dialog.close();},true);
