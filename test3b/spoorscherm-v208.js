@@ -1,5 +1,5 @@
-window.THREEB_RELEASE=Object.freeze({"version": "v208-r56", "date": "2026-11-02", "channel": "test", "compatibilityBase": "v208-r15"});
-window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r56", "date": "2026-11-02"});
+window.THREEB_RELEASE=Object.freeze({"version": "v208-r57", "date": "2026-11-02", "channel": "test", "compatibilityBase": "v208-r15"});
+window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r57", "date": "2026-11-02"});
 /* Shared display provenance. Approval and technical pinning are not manual entry. */
 const ThreeBValueOrigin=(()=>{
   function kind(p){
@@ -430,10 +430,10 @@ window.installThreeBCleanConfig=function(){
   body.clean-config #bandDock,body.clean-config #desktopWorkbench,body.clean-config #databaseMobileToggle{display:none!important}
   body.clean-config #onscreenLayout{padding-top:0!important}
   body.clean-config.test-desktop-workbench .drawing{inset:var(--threeb-test-banner-height,0px) 0 0!important}
-  body.clean-config #bandMenu{position:fixed!important;left:var(--config-x,50%)!important;top:var(--config-y,50%)!important;transform:translate(-50%,-50%)!important;width:44px!important;height:44px!important;z-index:1100;font-size:25px;border-radius:50%;cursor:pointer}
-  #cleanConfigDialog{box-sizing:border-box;width:min(440px,calc(100vw - 24px));max-height:calc(100dvh - 24px);padding:18px;border:1px solid #b9b7a7;border-radius:14px;background:#faf9f2;color:#19392e;overflow:auto}
+  body.clean-config #bandMenu{position:fixed!important;left:var(--config-x,50%)!important;top:var(--config-y,50%)!important;transform:translate(-50%,-50%)!important;width:90px!important;height:44px!important;z-index:1100;font-size:16px;border-radius:22px;cursor:grab;touch-action:none;user-select:none;display:flex;align-items:center;justify-content:center;gap:5px}
+  #cleanConfigDialog{position:fixed;inset:0;margin:auto;box-sizing:border-box;width:min(440px,calc(100vw - 24px));max-height:calc(100dvh - 24px);padding:18px;border:1px solid #b9b7a7;border-radius:14px;background:#faf9f2;color:#19392e;overflow:auto}
   #cleanConfigDialog::backdrop{background:#132c2366}
-  #cleanConfigDialog header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+  #cleanConfigDialog header{cursor:grab;touch-action:none;user-select:none;display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
   #cleanConfigDialog h2,#cleanConfigDialog h3{margin:0 0 10px}
   #cleanConfigDialog button,#cleanConfigDialog select{min-height:44px;cursor:pointer}
   #cleanConfigDialog #bandCore{position:static!important;inset:auto!important;transform:none!important;width:100%!important;max-width:none!important;box-sizing:border-box;display:grid!important;grid-template-columns:1fr!important;overflow:visible;gap:8px;margin:0 0 18px}
@@ -454,7 +454,7 @@ window.installThreeBCleanConfig=function(){
   #cleanConfigDialog #bandUndo,#cleanConfigDialog #bandReset,#cleanConfigDialog #bandSave,#cleanConfigDialog #thumbUp{position:static!important;inset:auto!important;transform:none!important;margin:4px}
   `;document.head.append(style);
   const dialog=document.createElement('dialog');dialog.id='cleanConfigDialog';dialog.setAttribute('aria-labelledby','cleanConfigTitle');dialog.innerHTML='<header><h2 id="cleanConfigTitle">⚙ Config</h2><button type="button" id="closeCleanConfig" aria-label="Config sluiten">×</button></header><section id="cleanConfigTracks" aria-label="Spoor en lijn"></section><section id="cleanConfigCourse"><h3>Cursus</h3></section><details id="cleanConfigMore"><summary>Meer instellingen</summary><div id="cleanConfigSettings"></div></details>';document.body.append(dialog);document.body.classList.add('clean-config');
-  gear.textContent='⚙';gear.setAttribute('aria-label','Config openen');gear.title='Config · spoor, lijn en cursus';document.body.append(gear);
+  gear.textContent='⚙ Config';gear.setAttribute('aria-label','Config openen');gear.title='Config · klik om te openen, versleep naar een vrije plek';document.body.append(gear);
   const move=(node,parent)=>{if(node&&node.parentElement!==parent)parent.append(node);};
   function reconcile(){move(get('bandCore'),get('cleanConfigTracks'));move(get('lklLevelBar'),get('cleanConfigCourse'));move(get('lklUseStatus'),get('cleanConfigCourse'));
     const settings=get('cleanConfigSettings');move(document.querySelector('.central-track-controls'),settings);
@@ -462,10 +462,38 @@ window.installThreeBCleanConfig=function(){
     for(const id of ['mobilePreview','bandUndo','bandReset','bandSave','thumbUp'])move(get(id),settings);
     document.body.append(gear);position();
   }
-  function position(){const svg=document.querySelector('.table-svg');if(!svg)return;const b=svg.getBoundingClientRect();let corner=false;try{corner=localStorage.getItem('3b-clean-config-position-v1')==='corner';}catch(_){}const x=corner?b.right-30:b.left+b.width/2,y=corner?b.top+30:b.top+b.height/2;document.body.style.setProperty('--config-x',Math.max(24,Math.min(innerWidth-24,x))+'px');document.body.style.setProperty('--config-y',Math.max(30,Math.min(innerHeight-24,y))+'px');const select=get('menuButtonPositionSelect');if(select)select.value=corner?'corner':'central';}
-  gear.onclick=e=>{e.preventDefault();e.stopPropagation();reconcile();if(!dialog.open)dialog.showModal();};get('closeCleanConfig').onclick=()=>dialog.close();get('closeSelectionMenu')?.addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog){const b=dialog.getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)dialog.close();}});
+  const gearKey='3b-clean-config-free-position-v1',dialogKey='3b-clean-config-dialog-position-v1';let gearDrag=false,windowDrag=false,suppressGearClick=false,lastPattern=null;
+  const read=key=>{try{const p=JSON.parse(localStorage.getItem(key));return p&&Number.isFinite(p.x)&&Number.isFinite(p.y)?p:null;}catch(_){return null;}};
+  const write=(key,p)=>{try{localStorage.setItem(key,JSON.stringify(p));}catch(_){}};
+  const erase=key=>{try{localStorage.removeItem(key);}catch(_){}};
+  try{if(localStorage.getItem('3b-clean-config-romp-default-v1')!=='1'){localStorage.setItem('3b-clean-config-position-v1','central');erase(gearKey);localStorage.setItem('3b-clean-config-romp-default-v1','1');}}catch(_){}
+  const clamp=(v,min,max)=>Math.max(min,Math.min(Math.max(min,max),v));
+  function placeGear(x,y){const r=gear.getBoundingClientRect();document.body.style.setProperty('--config-x',clamp(x,r.width/2+8,innerWidth-r.width/2-8)+'px');document.body.style.setProperty('--config-y',clamp(y,r.height/2+8,innerHeight-r.height/2-8)+'px');}
+  const select=get('menuButtonPositionSelect');if(select){select.closest('label').querySelector('span').textContent='Configwieltje';select.querySelector('option[value=central]').textContent='Midden op Romp';const custom=new Option('Eigen plek · versleep','free');custom.disabled=true;select.add(custom);}
+  function position(){if(gearDrag)return;const pattern=get('bandPatternSelect')?.value;
+    if(lastPattern&&lastPattern!==pattern){erase(gearKey);try{localStorage.setItem('3b-clean-config-position-v1','central');}catch(_){}}lastPattern=pattern;
+    const svg=document.querySelector('.table-svg[data-view-table="'+get('editTable')?.value+'"]')||document.querySelector('.table-svg');if(!svg)return;
+    const b=svg.getBoundingClientRect(),romp=svg.querySelector('g[data-part=romp] .route-line')?.getBoundingClientRect(),marker=svg.querySelector('[data-config-romp-center]');let anchor=romp?{x:romp.left+romp.width/2,y:romp.top+romp.height/2}:null;
+    if(!anchor&&marker&&svg.getScreenCTM()){const p=svg.createSVGPoint();p.x=Number(marker.dataset.x);p.y=Number(marker.dataset.y);anchor=p.matrixTransform(svg.getScreenCTM());}
+    let saved=read(gearKey);if(saved?.pattern&&saved.pattern!==pattern){erase(gearKey);saved=null;}let corner=false;try{corner=localStorage.getItem('3b-clean-config-position-v1')==='corner';}catch(_){}
+    placeGear(saved?saved.x*innerWidth:corner?b.right-53:anchor?.x??b.left+b.width/2,saved?saved.y*innerHeight:corner?b.top+30:anchor?.y??b.top+b.height/2);if(select)select.value=saved?'free':corner?'corner':'central';fitDialog();
+  }
+  function placeDialog(left,top){const r=dialog.getBoundingClientRect();Object.assign(dialog.style,{left:clamp(left,8,innerWidth-r.width-8)+'px',top:clamp(top,8,innerHeight-r.height-8)+'px',right:'auto',bottom:'auto',margin:'0'});}
+  function fitDialog(){if(!dialog.open||windowDrag)return;const saved=read(dialogKey);if(saved)placeDialog(saved.x*innerWidth,saved.y*innerHeight);}
+  function bindDrag(node,key,isGear){node.addEventListener('pointerdown',event=>{if(!event.isPrimary||event.button!==0||!isGear&&event.target.closest('button,a,input,select,textarea'))return;event.stopPropagation();if(isGear)suppressGearClick=false;const box=(isGear?gear:dialog).getBoundingClientRect(),sx=event.clientX,sy=event.clientY,id=event.pointerId;let moved=false;
+    const move=e=>{if(e.pointerId!==id)return;if(!moved&&Math.hypot(e.clientX-sx,e.clientY-sy)<6)return;if(!moved)node.setPointerCapture(e.pointerId);moved=true;e.preventDefault();if(isGear){gearDrag=true;placeGear(box.x+box.width/2+e.clientX-sx,box.y+box.height/2+e.clientY-sy);}else{windowDrag=true;placeDialog(box.x+e.clientX-sx,box.y+e.clientY-sy);}};
+    const end=e=>{if(e.pointerId!==id)return;document.removeEventListener('pointermove',move);document.removeEventListener('pointerup',end);document.removeEventListener('pointercancel',end);if(moved){if(e.type!=='pointercancel'){const r=(isGear?gear:dialog).getBoundingClientRect();write(key,isGear?{x:(r.x+r.width/2)/innerWidth,y:(r.y+r.height/2)/innerHeight,pattern:get('bandPatternSelect')?.value}:{x:r.x/innerWidth,y:r.y/innerHeight});}if(e.type==='pointercancel'&&!isGear)placeDialog(box.x,box.y);if(isGear)suppressGearClick=true;}gearDrag=false;windowDrag=false;if(isGear&&!moved&&e.type==='pointerup'){e.preventDefault();suppressGearClick=true;openConfig();}position();};
+    document.addEventListener('pointermove',move,{passive:false});document.addEventListener('pointerup',end);document.addEventListener('pointercancel',end);
+  });}
+  bindDrag(gear,gearKey,true);bindDrag(dialog.querySelector('header'),dialogKey,false);
+  function openConfig(){reconcile();if(!dialog.open)dialog.showModal();fitDialog();}
+  document.addEventListener('pointerdown',()=>{suppressGearClick=false;},true);
+  document.addEventListener('click',e=>{if(suppressGearClick&&e.detail!==0){suppressGearClick=false;e.preventDefault();e.stopImmediatePropagation();}},true);
+  gear.onclick=e=>{e.preventDefault();e.stopPropagation();suppressGearClick=false;openConfig();};get('closeCleanConfig').onclick=()=>dialog.close();get('closeSelectionMenu')?.addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog){const b=dialog.getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)dialog.close();}});
+  dialog.addEventListener('toggle',()=>requestAnimationFrame(fitDialog),true);
+  const reset=document.createElement('button');reset.id='resetConfigPosition';reset.type='button';reset.textContent='Config naar standaardplek';reset.title='Wieltje midden op Romp, venster centraal';get('cleanConfigSettings').append(reset);reset.onclick=()=>{erase(gearKey);erase(dialogKey);dialog.removeAttribute('style');if(select){select.value='central';select.dispatchEvent(new Event('change',{bubbles:true}));}position();};
   dialog.addEventListener('click',e=>{const id=e.target.closest('button,a')?.id;if(['levelLklCourse','levelLklPractice','openExplanation','openSpoorscherm','openLklFramework','desktopOpenSpoor','mobilePreview','userSettingsButton','toggleConfig','thumbUp'].includes(id))dialog.close();},true);
-  get('menuButtonPositionSelect')?.addEventListener('change',e=>{try{localStorage.setItem('3b-clean-config-position-v1',e.target.value);}catch(_){}requestAnimationFrame(position);});
+  get('menuButtonPositionSelect')?.addEventListener('change',e=>{erase(gearKey);try{localStorage.setItem('3b-clean-config-position-v1',e.target.value);}catch(_){}requestAnimationFrame(position);});
   window.addEventListener('resize',()=>requestAnimationFrame(reconcile));window.addEventListener('threeb-spoor-state',()=>requestAnimationFrame(position));reconcile();requestAnimationFrame(()=>window.dispatchEvent(new Event('resize')));
 };
 
