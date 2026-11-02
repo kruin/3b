@@ -1,5 +1,5 @@
-window.THREEB_RELEASE=Object.freeze({"version": "v208-r58", "date": "2026-11-02", "channel": "test", "compatibilityBase": "v208-r15"});
-window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r58", "date": "2026-11-02"});
+window.THREEB_RELEASE=Object.freeze({"version": "v208-r59", "date": "2026-11-02", "channel": "test", "compatibilityBase": "v208-r15"});
+window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r59", "date": "2026-11-02"});
 /* Shared display provenance. Approval and technical pinning are not manual entry. */
 const ThreeBValueOrigin=(()=>{
   function kind(p){
@@ -453,8 +453,8 @@ window.installThreeBCleanConfig=function(){
   #cleanConfigDialog #menuSettings{margin:8px 0}
   #cleanConfigDialog #bandUndo,#cleanConfigDialog #bandReset,#cleanConfigDialog #bandSave,#cleanConfigDialog #thumbUp{position:static!important;inset:auto!important;transform:none!important;margin:4px}
   `;document.head.append(style);
-  const dialog=document.createElement('dialog');dialog.id='cleanConfigDialog';dialog.setAttribute('aria-labelledby','cleanConfigTitle');dialog.innerHTML='<header><h2 id="cleanConfigTitle">⚙ Config</h2><button type="button" id="closeCleanConfig" aria-label="Config sluiten">×</button></header><section id="cleanConfigTracks" aria-label="Spoor en lijn"></section><section id="cleanConfigCourse"><h3>Cursus</h3></section><details id="cleanConfigMore"><summary>Meer instellingen</summary><div id="cleanConfigSettings"></div></details>';document.body.append(dialog);document.body.classList.add('clean-config');
-  gear.textContent='⚙ Config';gear.setAttribute('aria-label','Config openen');gear.title='Config · klik om te openen, versleep naar een vrije plek';document.body.append(gear);
+  const dialog=document.createElement('dialog');dialog.id='cleanConfigDialog';dialog.setAttribute('aria-labelledby','cleanConfigTitle');dialog.innerHTML='<header><h2 id="cleanConfigTitle">Spoor · Lijn · Cursus</h2><button type="button" id="closeCleanConfig" aria-label="Menu sluiten">×</button></header><section id="cleanConfigTracks" aria-label="Spoor en lijn"></section><section id="cleanConfigCourse"><h3>Cursus</h3></section><details id="cleanConfigMore"><summary>⚙ Config</summary><div id="cleanConfigSettings"></div></details>';document.body.append(dialog);document.body.classList.add('clean-config');
+  gear.textContent='⚙ Menu';gear.setAttribute('aria-label','Spoor, lijn en cursus openen');gear.title='Spoor, lijn en cursus · klik om te openen, versleep naar een vrije plek';document.body.append(gear);
   const move=(node,parent)=>{if(node&&node.parentElement!==parent)parent.append(node);};
   function reconcile(){move(get('bandCore'),get('cleanConfigTracks'));move(get('lklLevelBar'),get('cleanConfigCourse'));move(get('lklUseStatus'),get('cleanConfigCourse'));
     const settings=get('cleanConfigSettings');move(document.querySelector('.central-track-controls'),settings);
@@ -486,7 +486,7 @@ window.installThreeBCleanConfig=function(){
     document.addEventListener('pointermove',move,{passive:false});document.addEventListener('pointerup',end);document.addEventListener('pointercancel',end);
   });}
   bindDrag(gear,gearKey,true);bindDrag(dialog.querySelector('header'),dialogKey,false);
-  function openConfig(){reconcile();if(!dialog.open)dialog.showModal();fitDialog();}
+  function openConfig(){reconcile();if(!dialog.open){get('cleanConfigMore').open=false;dialog.scrollTop=0;dialog.showModal();get('closeCleanConfig').focus({preventScroll:true});}fitDialog();}
   document.addEventListener('pointerdown',()=>{suppressGearClick=false;},true);
   document.addEventListener('click',e=>{if(suppressGearClick&&e.detail!==0){suppressGearClick=false;e.preventDefault();e.stopImmediatePropagation();}},true);
   gear.onclick=e=>{e.preventDefault();e.stopPropagation();suppressGearClick=false;openConfig();};get('closeCleanConfig').onclick=()=>dialog.close();get('closeSelectionMenu')?.addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog){const b=dialog.getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)dialog.close();}});
