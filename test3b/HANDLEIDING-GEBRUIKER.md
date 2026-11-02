@@ -1,4 +1,4 @@
-# 3B v208-r63 — User-werkwijze
+# 3B v208-r64 — User-werkwijze
 
 # Cursus — VIJF leren zien en oefenen
 
@@ -56,6 +56,12 @@ Met × of Geoefend verlaat ik de begeleide oefening en gebruik ik de gewone tafe
 Eerst rond ik deze VIJF-reeks af. **Daarna vormt de waaier de brug van VIJF naar ZES en de volgende basissporen.** Dat is de volgende cursusfase; de huidige vier lessen blijven bij VIJF en zijn parallellen. Het patroon 6–7 banden heeft later een eigen lesreeks.
 
 De rollende bal toont spoorgeometrie, geen voorspelling van snelheid of effect. De schuivende bal hoort bij het latere Pro-niveau.
+
+## Focus tijdens de VIJF-lessen
+
+Zolang ik in de VIJF-cursus oefen, biedt de tafel alleen VIJF en de behandelde parallellen VIJF−1, VIJF+1, VIJF+2 en VIJF+3. Andere basissporen, de waaier en 6–7 banden komen later. Met sluiten of Geoefend verlaat ik deze begrenzing.
+
+De bal beweegt zonder draaipuntje: effect wordt hier nog niet uitgelegd of voorgesteld. Dat krijgt een latere les. Bij iedere getoonde lijn of aankomst staan de relevante stippen en waarden op de banden. Ze gaan mee naar de tafel en terug naar de les. Bij de liggingsoefeningen zie ik eerst de Rompstippen; bij de karkascontrole komt de Neusstiplijn erbij.
 
 
 # LKL meten: Neus, Kop en Romp

@@ -161,9 +161,9 @@
   function fixedTrackArrival(){const privateNose=sourcePoint(K.tracks?.[ui.editTable]?.[selectedTrackKey()]?.neusA);if(privateNose&&Number.isFinite(Number(privateNose.value)))return Number(privateNose.value);if(ui.lineOneMode==="waaier")return C.lineOneVariants.fan.entries.find(x=>x.key===ui.fanLine)?.noseArrival??null;const base=C.lklTrackRules?.noseArrivalByTrack?.[ui.pattern];return ui.lineOneMode==="parallel"&&Number.isFinite(base)?base+ui.parallelOffset*C.lineOneVariants.parallel.longRailUnitsPerStep:(base??null);}
   function panelBaseTracks(){return ui.playRange==="sixSeven"?C.patternFamilies.sixSeven.tracks:ui.playRange==="vrij"?C.patternFamilies.vrij.tracks:C.lklTrackRules.panelTracks||C.lklTrackRules.appliesTo;}
   function centralTrackKeys(){const result=[];panelBaseTracks().forEach(pattern=>{if(ui.trackFamily==="parallel"){const {minimum:min,maximum:max}=parallelBounds(ui.editTable,pattern);for(let offset=min;offset<0;offset++)result.push(`${pattern}${offset}`);result.push(pattern);for(let offset=1;offset<=max;offset++)result.push(`${pattern}+${offset}`);}else{result.push(pattern);const half=C.lineOneVariants.fan.entries.find(item=>item.between?.[0]===pattern);if(half&&panelBaseTracks().includes(half.between?.[1]))result.push(half.key);}});return result;}
-  function panelStepKeys(){return centralTrackKeys();}
+  function panelStepKeys(){return window.threebVijfCourseScope?["VIJF-1","VIJF","VIJF+1","VIJF+2","VIJF+3"]:centralTrackKeys();}
   function panelStepState(){const keys=panelStepKeys(),index=keys.indexOf(selectedTrackKey());return{keys,index,canMinus:index>0,canPlus:index>=0&&index<keys.length-1};}
-  function chooseCentralTrack(key){if(key.startsWith("ZESZEVEN"))ui.playRange="sixSeven";else if(ui.playRange==="sixSeven")ui.playRange="lkl";activeSegmentIndex=null;activeSegmentTable=null;selectedBall=null;const half=C.lineOneVariants.fan.entries.find(item=>item.key===key);if(half){ui.pattern=half.between[0];ui.lineOneMode="waaier";ui.fanLine=half.key;ui.parallelOffset=0;return;}const match=key.match(/^(.+?)([+-]\d+)$/);if(match&&C.shotLines.includes(match[1])){ui.pattern=match[1];ui.lineOneMode="parallel";ui.parallelOffset=Number(match[2]);return;}ui.pattern=key;ui.lineOneMode="basis";ui.parallelOffset=0;}
+  function chooseCentralTrack(key){if(window.threebVijfCourseScope&&!["VIJF-1","VIJF","VIJF+1","VIJF+2","VIJF+3"].includes(key))return;if(key.startsWith("ZESZEVEN"))ui.playRange="sixSeven";else if(ui.playRange==="sixSeven")ui.playRange="lkl";activeSegmentIndex=null;activeSegmentTable=null;selectedBall=null;const half=C.lineOneVariants.fan.entries.find(item=>item.key===key);if(half){ui.pattern=half.between[0];ui.lineOneMode="waaier";ui.fanLine=half.key;ui.parallelOffset=0;return;}const match=key.match(/^(.+?)([+-]\d+)$/);if(match&&C.shotLines.includes(match[1])){ui.pattern=match[1];ui.lineOneMode="parallel";ui.parallelOffset=Number(match[2]);return;}ui.pattern=key;ui.lineOneMode="basis";ui.parallelOffset=0;}
   function stepCentralTrack(delta){const step=panelStepState();if(step.index<0)return;const next=Math.max(0,Math.min(step.keys.length-1,step.index+Math.sign(delta)));if(next===step.index)return;chooseCentralTrack(step.keys[next]);save();render();}
   function parallelLineMode(){return ui.parallelDisplay==="line";}
   function arrivalMode(){return ui.parallelDisplay==="arrivals";}
@@ -1478,6 +1478,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
 
     lesson2Data(){const result=this.lesson1Data('VIJF'),body=result.journey.find(p=>p.key==='romp');if(!body)throw Error('De Romp van VIJF is nog niet bepaald.');return {...result,lessonTwoTarget:{x:body.from.x+(body.to.x-body.from.x)*.55,y:body.from.y+(body.to.y-body.from.y)*.55}};},
     enterCoursePractice(track='VIJF'){if(!['VIJF','VIJF-1','VIJF+1','VIJF+2','VIJF+3'].includes(track))throw Error('Onbekend VIJF-cursusspoor.');ui.editTable='klein';ui.tableMode='klein';ui.playRange='lkl';chooseCentralTrack(track);ui.direction='west';ui.departure='neus';ui.parallelDisplay='whole';ui.frameworkView=false;ui.seriesOverview=false;ui.explanationOpen=false;selectedBall=null;document.body.classList.remove('first-course-focus','awaiting-table-start');finishTableStart();forceFreshTableView();save();render();closeTableMenu();},
+    setCourseScope(active){window.threebVijfCourseScope=!!active;if(!active)for(const option of document.querySelectorAll("option[data-vijf-disabled]")){option.disabled=option.dataset.vijfDisabled==="true";delete option.dataset.vijfDisabled;}render();},
     courseSelection(){return {track:selectedTrackKey(),table:ui.editTable,mode:ui.tableMode,direction:ui.direction,pattern:ui.playRange,display:ui.parallelDisplay,framework:ui.frameworkView};},
     setCourseView(view){ui.parallelDisplay=view==='arrivals'?'arrivals':'whole';ui.frameworkView=view==='framework';save();render();},
     fitCourseTable(){fitTableOrientation();positionBandControls();},
@@ -1635,6 +1636,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
       return withAcquitMarkers(spoorDrawTable(table),table).replace('<svg class="table-svg"','<svg data-view-table="'+table+'" class="table-svg"');
     };
     render=function(...args){originRayCache.clear();
+      if(window.threebVijfCourseScope){ui.playRange="lkl";ui.trackFamily="parallel";if(!["VIJF-1","VIJF","VIJF+1","VIJF+2","VIJF+3"].includes(selectedTrackKey()))chooseCentralTrack("VIJF");}
       const result=spoorRender(...args);
       const pattern=actualStartPattern(),excluded=spoorGeometryReady&&ui.playRange==='lkl'&&pattern!=='LKL';
       const status=$('startAcquitPatternStatus');if(status){status.textContent=spoorGeometryReady?(pattern==='?'&&startRay().error?originFullLabel()+' · '+startRay().error:(originFullLabel()+' · '+pattern+(excluded?' · uitgesloten van LKL':''))):'Patroon '+pattern;status.dataset.pattern=pattern;}
@@ -1646,6 +1648,10 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
         $('drawingTitle').textContent=spoorRouteMessage();
         if(status)status.textContent=spoorRouteMessage()+'. Kies een ander spoor of een andere parallelstand.';
       }else $('centralLineSelect').disabled=false;
+      if(window.threebVijfCourseScope){
+        for(const id of ['centralLineSelect','patternSelect','fanSelect'])for(const option of $(id)?.options||[])option.disabled=!['VIJF-1','VIJF','VIJF+1','VIJF+2','VIJF+3'].includes(option.value);
+        for(const id of ['bandPatternSelect','trackFamilySelect'])for(const option of $(id)?.options||[]){option.dataset.vijfDisabled??=String(option.disabled);option.disabled=option.value!==(id==='bandPatternSelect'?'lkl':'parallel');}
+      }
       window.dispatchEvent(new Event('threeb-spoor-state'));return result;};
     $('ownerEditLines').onclick=()=>window.openThreeBSpoorScreen({recenter:true});
     render();
