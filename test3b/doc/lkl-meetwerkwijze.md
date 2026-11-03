@@ -2,9 +2,17 @@
 
 Ik ben de speler (User). Ik begin op Klein met één spoor: **VIJF**, in het patroon **LKL**. Een patroon beschrijft het bandverloop; een spoor verbindt mijn afstoot met de aankomsten. De lijnen heten, in de volgorde waarin de bal rolt: **Neus → Kop → Nek → Romp → Kruis → Been**. LKL stopt hier op half Been.
 
+## Eerst het patroon, dan het spoor
+
+Bal 3 ligt op de Romp van VIJF. Door diezelfde bal lopen ook allerlei andere lijnen, mogelijk van andere sporen of patronen. Zijn plaats alleen bepaalt dus niet welk spoor ik speel.
+
+**Het patroon is leidend.** In deze lessen kies ik LKL: de bal gaat eerst naar de lange westband, dan naar de korte noordband en vervolgens naar de lange oostband. Binnen dat bandverloop zoek ik een passend spoor. Bij VIJF horen Neus, Kop, Nek en Romp bij elkaar; ik controleer het hele verloop met het karkas.
+
+Ik wijs dus niet zomaar een lijn door bal 3 aan. Ik vraag: **binnen LKL, op welk spoor ligt bal 3, en lig ik met bal 1 op de bijbehorende Neus?** Een andere lijn door bal 3 kan bij een andere oplossing horen. Die onderzoeken we later.
+
 Mijn twee vaste vragen zijn:
 
-1. **Op welk spoor ligt bal 3?**
+1. **Binnen het gekozen patroon LKL: op welk spoor ligt bal 3?**
 2. **Lig ik met bal 1 op hetzelfde spoor?**
 
 Neus en Romp vormen het zichtbare **karkas**. De Kop en Nek verbinden die lijnen. Ik leer eerst zien en herhalen; mijn eigen Kop meten volgt later. Een complete eigen meetbasis bevat Neus, Kop (R of A) en Romp. Tot die compleet is, blijft Kruins configuratie gelden en is mijn invoer concept.
@@ -19,7 +27,7 @@ Tijdens de Neus verschijnt de genummerde westelijke stiplijn, met de actieve Neu
 
 ## Les 2 — hetzelfde VIJF, terug vanaf de Romp
 
-Ik werk terug: eerst zie ik alleen de Romp met bal 3 erop. Daarna verschijnt bal 1. Ligt die op hetzelfde spoor? Pas vervolgens toon ik de Neus ter controle. Met Vorige stap verberg ik de Neus opnieuw.
+Ik blijf bij het gekozen patroon LKL. Bal 3 kan op allerlei lijnen liggen; ik zoek hier de Romp die bij het LKL-spoor VIJF hoort. Ik werk terug: eerst zie ik alleen die Romp met bal 3 erop. Daarna verschijnt bal 1. Ligt die op hetzelfde spoor? Pas vervolgens toon ik de Neus ter controle. Met Vorige stap verberg ik de Neus opnieuw.
 
 Dit is hetzelfde gemeten VIJF als in les 1, met dezelfde actieve eigen meetbasis of Kruinbasis. Er is geen apart vast 30–30-voorbeeld. De gegeven Neus wordt uit dat complete spoor overgenomen; alleen de Romp zou die Neus niet uniek bepalen.
 
