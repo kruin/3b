@@ -1,5 +1,5 @@
-window.THREEB_RELEASE=Object.freeze({"version": "v208-r67", "date": "2026-11-03", "channel": "test", "compatibilityBase": "v208-r15"});
-window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r67", "date": "2026-11-03"});
+window.THREEB_RELEASE=Object.freeze({"version": "v208-r68", "date": "2026-11-03", "channel": "test", "compatibilityBase": "v208-r15"});
+window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r68", "date": "2026-11-03"});
 /* Shared display provenance. Approval and technical pinning are not manual entry. */
 const ThreeBValueOrigin=(()=>{
   function kind(p){
@@ -407,7 +407,7 @@ window.installThreeBLklLesson=adapter=>{
     const pair=data.route[p.key],dx=p.to.x-p.from.x,dy=p.to.y-p.from.y,len=Math.hypot(dx,dy);if(!pair||!len)return;
     for(const [side,ref,a,b]of [['V',p.key==='neus'?data.neusDeparture:pair.from,p.from,p.to],...(p.fraction===.5?[]:[['A',pair.to,p.to,p.from]])]){
       if(ref?.value===null||ref?.value===undefined||ref?.value==='')continue;const t=.16;
-      el('text',{class:'endpoint-value','data-part':p.key,'data-side':side,'data-value':ref.value,x:a.x+(b.x-a.x)*t-dy/len*3,y:a.y+(b.y-a.y)*t+dx/len*3,'text-anchor':'middle','dominant-baseline':'middle',style:'fill:#173b30;stroke:#fff8df;stroke-width:1.2px;pointer-events:none'},side+' '+SpoorScreenFormat.format(ref.value));
+      el('text',{class:'endpoint-value','data-part':p.key,'data-side':side,'data-value':ref.value,'data-value-band':ref.band,x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t,'text-anchor':'middle','dominant-baseline':'middle',style:'fill:#173b30;stroke:#fff8df;stroke-width:1.2px;pointer-events:none'},SpoorScreenFormat.format(ref.value));
     }
     requestAnimationFrame(()=>{const m=svg.getScreenCTM();if(!m)return;const unit=Math.hypot(m.a,m.b);for(const text of svg.querySelectorAll('.endpoint-value'))text.style.fontSize=(prefs.endpointSize/unit)+'px';});
   }
@@ -610,7 +610,7 @@ window.installThreeBCleanConfig=function(){
   gear.onclick=e=>{e.preventDefault();e.stopPropagation();suppressGearClick=false;openConfig();};get('closeCleanConfig').onclick=()=>dialog.close();get('closeSelectionMenu')?.addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog){const b=dialog.getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)dialog.close();}});
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&dialog.open&&!document.querySelector('dialog:modal')){e.preventDefault();dialog.close();}});
   dialog.addEventListener('toggle',()=>requestAnimationFrame(fitDialog),true);
-  const textConfig=document.createElement('fieldset');textConfig.id='tableTextConfig';textConfig.innerHTML='<legend>Tafelteksten · horizontaal</legend><label>Cursustafel <select id="courseTableSize"><option value="klein">Klein · standaard</option><option value="groot">Groot</option></select></label><label>Bandteksten (px) <input id="tableBandFontSize" type="number" min="12" max="28" step="1"></label><label><input id="showEndpointValues" type="checkbox"> V/A bij begin en eind van de lijn</label><label>V/A-tekst (px) <input id="tableEndpointFontSize" type="number" min="10" max="26" step="1"></label>';get('cleanConfigSettings').append(textConfig);
+  const textConfig=document.createElement('fieldset');textConfig.id='tableTextConfig';textConfig.innerHTML='<legend>Tafelteksten · horizontaal</legend><label>Cursustafel <select id="courseTableSize"><option value="klein">Klein · standaard</option><option value="groot">Groot</option></select></label><label>Bandteksten (px) <input id="tableBandFontSize" type="number" min="12" max="28" step="1"></label><label><input id="showEndpointValues" type="checkbox"> Getallen bij begin en eind van de lijn</label><label>Lijngetallen (px) <input id="tableEndpointFontSize" type="number" min="10" max="26" step="1"></label>';get('cleanConfigSettings').append(textConfig);
   const textPrefs=window.ThreeBTableText.get();get('courseTableSize').value=textPrefs.courseTable;get('tableBandFontSize').value=textPrefs.bandSize;get('tableEndpointFontSize').value=textPrefs.endpointSize;get('showEndpointValues').checked=textPrefs.showEndpoints;
   textConfig.onchange=e=>{if(!e.target.checkValidity())return;window.ThreeBTableText.update({courseTable:get('courseTableSize').value,bandSize:Number(get('tableBandFontSize').value),endpointSize:Number(get('tableEndpointFontSize').value),showEndpoints:get('showEndpointValues').checked});};
   const reset=document.createElement('button');reset.id='resetConfigPosition';reset.type='button';reset.textContent='Config naar standaardplek';reset.title='Wieltje midden op Neus, bediening op een vrije plek';get('cleanConfigSettings').append(reset);reset.onclick=()=>{erase(gearKey);erase(dialogKey);dialog.removeAttribute('style');if(select){select.value='central';select.dispatchEvent(new Event('change',{bubbles:true}));}position();};

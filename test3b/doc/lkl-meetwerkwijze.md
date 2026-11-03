@@ -75,6 +75,10 @@ Op de tafel én in elke cursusles staan altijd alle stippen en nummers op de vie
 
 De relevante V/A-waarde krijgt een extra markering. De overige stippen verdwijnen niet bij een volgende lijn, een andere les, een karkascontrole of bij les ↔ tafel. Nummering en herkenningspunten blijven dus beschikbaar vóórdat ik het karkas toon. Klein en Groot gebruiken dezelfde stipwaarden, met hun eigen gemeten lijngegevens.
 
+## De getallen op de lijn
+
+Getallen bij begin en eind horen bij die lijn; de letters V/A zijn in de tekening weggelaten. Het getal staat gecentreerd op de lijn. Voor het begin van de Neus gebruiken we de projectie op de oostelijke stiplijn, met de balnummering van Oost. Bij Kruins Klein-basis is VIJF 90 en VIJF+2 70. Dit is een herkenningsgetal voor dezelfde lijn, geen extra bandcontact of nieuwe meting. De bestaande stipnummers op de vier banden blijven gelijk. Een getal buiten de bandrange is een projectie op de verlengde stiplijn.
+
 
 # LKL meten: Neus, Kop en Romp
 

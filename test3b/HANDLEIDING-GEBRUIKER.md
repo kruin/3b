@@ -1,4 +1,4 @@
-# 3B v208-r67 — User-werkwijze
+# 3B v208-r68 — User-werkwijze
 
 # Cursus — VIJF leren zien en oefenen
 
@@ -76,6 +76,10 @@ De bal beweegt zonder draaipuntje: effect wordt hier nog niet uitgelegd of voorg
 Op de tafel én in elke cursusles staan altijd alle stippen en nummers op de vier banden. Voor LKL naar West loopt de nummering met de bal mee: West van Zuid naar Noord (0–80), Noord van West naar Oost (0–40), Oost van Noord naar Zuid (0–80), Zuid van Oost naar West (0–40). Bij een volgende passage op dezelfde band blijven die oorspronkelijke nummers staan. Bij spiegelen spiegelen de fysieke plaatsen mee; er wordt niet per lijn opnieuw genummerd.
 
 De relevante V/A-waarde krijgt een extra markering. De overige stippen verdwijnen niet bij een volgende lijn, een andere les, een karkascontrole of bij les ↔ tafel. Nummering en herkenningspunten blijven dus beschikbaar vóórdat ik het karkas toon. Klein en Groot gebruiken dezelfde stipwaarden, met hun eigen gemeten lijngegevens.
+
+## De getallen op de lijn
+
+Getallen bij begin en eind horen bij die lijn; de letters V/A zijn in de tekening weggelaten. Het getal staat gecentreerd op de lijn. Voor het begin van de Neus gebruiken we de projectie op de oostelijke stiplijn, met de balnummering van Oost. Bij Kruins Klein-basis is VIJF 90 en VIJF+2 70. Dit is een herkenningsgetal voor dezelfde lijn, geen extra bandcontact of nieuwe meting. De bestaande stipnummers op de vier banden blijven gelijk. Een getal buiten de bandrange is een projectie op de verlengde stiplijn.
 
 
 # LKL meten: Neus, Kop en Romp
