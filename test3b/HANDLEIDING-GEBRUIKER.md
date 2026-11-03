@@ -1,8 +1,8 @@
-# 3B v208-r66 — User-werkwijze
+# 3B v208-r67 — User-werkwijze
 
 # Cursus — VIJF leren zien en oefenen
 
-Ik ben de speler (User). Ik begin op Klein met één spoor: **VIJF**, in het patroon **LKL**. Een patroon beschrijft het bandverloop; een spoor verbindt mijn afstoot met de aankomsten. De lijnen heten, in de volgorde waarin de bal rolt: **Neus → Kop → Nek → Romp → Kruis → Been**. LKL stopt hier op half Been.
+Ik ben de speler (User). De cursus begint standaard op Klein; via Config → Cursustafel kies ik desgewenst Groot. De lessen lezen dan de metingen van die tafel. Ik begin met één spoor: **VIJF**, in het patroon **LKL**. Een patroon beschrijft het bandverloop; een spoor verbindt mijn afstoot met de aankomsten. De lijnen heten, in de volgorde waarin de bal rolt: **Neus → Kop → Nek → Romp → Kruis → Been**. LKL stopt hier op half Been.
 
 ## Eerst het patroon, dan het spoor
 
@@ -70,6 +70,12 @@ De rollende bal toont spoorgeometrie, geen voorspelling van snelheid of effect. 
 Zolang ik in de VIJF-cursus oefen, biedt de tafel alleen VIJF en de behandelde parallellen VIJF−1, VIJF+1, VIJF+2 en VIJF+3. Andere basissporen, de waaier en 6–7 banden komen later. Met sluiten of Geoefend verlaat ik deze begrenzing.
 
 De bal beweegt zonder draaipuntje: effect wordt hier nog niet uitgelegd of voorgesteld. Dat krijgt een latere les. Bij iedere getoonde lijn of aankomst staan de relevante stippen en waarden op de banden. Ze gaan mee naar de tafel en terug naar de les. Bij de liggingsoefeningen zie ik eerst de Rompstippen; bij de karkascontrole komt de Neusstiplijn erbij.
+
+## Alle banden blijven herkenbaar
+
+Op de tafel én in elke cursusles staan altijd alle stippen en nummers op de vier banden. Voor LKL naar West loopt de nummering met de bal mee: West van Zuid naar Noord (0–80), Noord van West naar Oost (0–40), Oost van Noord naar Zuid (0–80), Zuid van Oost naar West (0–40). Bij een volgende passage op dezelfde band blijven die oorspronkelijke nummers staan. Bij spiegelen spiegelen de fysieke plaatsen mee; er wordt niet per lijn opnieuw genummerd.
+
+De relevante V/A-waarde krijgt een extra markering. De overige stippen verdwijnen niet bij een volgende lijn, een andere les, een karkascontrole of bij les ↔ tafel. Nummering en herkenningspunten blijven dus beschikbaar vóórdat ik het karkas toon. Klein en Groot gebruiken dezelfde stipwaarden, met hun eigen gemeten lijngegevens.
 
 
 # LKL meten: Neus, Kop en Romp
