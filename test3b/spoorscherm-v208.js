@@ -1,5 +1,5 @@
-window.THREEB_RELEASE=Object.freeze({"version": "v208-r70", "date": "2026-11-03", "channel": "test", "compatibilityBase": "v208-r15"});
-window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r70", "date": "2026-11-03"});
+window.THREEB_RELEASE=Object.freeze({"version": "v208-r71", "date": "2026-11-04", "channel": "test", "compatibilityBase": "v208-r15"});
+window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r71", "date": "2026-11-04"});
 /* Shared display provenance. Approval and technical pinning are not manual entry. */
 const ThreeBValueOrigin=(()=>{
   function kind(p){
@@ -322,21 +322,27 @@ window.ThreeBUniformBalls=(()=>{
   const diameter=20,observed=new WeakSet();let pending=false;
   function mode(){return window.ThreeBTableText?.get().scaleMode||'tracks';}
   function dimensions(){return window.ThreeBTableText?.dimensions()||{groot:{widthCm:142,heightCm:284},klein:{widthCm:115,heightCm:230}};}
-  function targetDiameter(svg){const tables=dimensions(),table=svg.dataset.viewTable||svg.dataset.courseTable||'klein';return mode()==='tables'?diameter*Math.max(tables.groot.widthCm,tables.klein.widthCm)/tables[table].widthCm:diameter;}
+  function targetDiameter(svg,unit){
+    const tables=dimensions(),table=svg.dataset.viewTable||svg.dataset.courseTable||'klein',maxW=Math.max(tables.groot.widthCm,tables.klein.widthCm),ratio=tables[table].widthCm/maxW;
+    const fieldUnits=svg.id==='lklLessonTable'?Number(svg.dataset.courseWidth)||tables[table].widthCm:340,fieldPixels=fieldUnits*unit;
+    const referencePixels=mode()==='balls'?fieldPixels/ratio:fieldPixels,physicalDiameter=(window.THREEB_START_CONFIG?.ballDiameterMm||61.5)/10;
+    const base=Math.min(diameter,referencePixels*physicalDiameter/maxW);
+    return mode()==='tables'?base/ratio:base;
+  }
   function courseFrame(svg,g,table){
     const tables=dimensions(),maxW=Math.max(tables.groot.widthCm,tables.klein.widthCm),maxH=Math.max(tables.groot.heightCm,tables.klein.heightCm),ratio=g.widthCm/maxW;
     const w=mode()==='balls'?maxW+64:g.widthCm+64*ratio,h=mode()==='balls'?maxH+64:g.heightCm+64*ratio;
-    svg.dataset.courseTable=table;svg.setAttribute('viewBox',`${(g.widthCm-w)/2} ${(g.heightCm-h)/2} ${w} ${h}`);
+    svg.dataset.courseTable=table;svg.dataset.courseWidth=String(g.widthCm);svg.setAttribute('viewBox',`${(g.widthCm-w)/2} ${(g.heightCm-h)/2} ${w} ${h}`);
   }
   function apply(svg){
-    const m=svg?.getScreenCTM();if(!m)return;const unit=Math.hypot(m.a,m.b),target=targetDiameter(svg);if(!Number.isFinite(unit)||unit<=0)return;
+    const m=svg?.getScreenCTM();if(!m)return;const unit=Math.hypot(m.a,m.b),target=targetDiameter(svg,unit);if(!Number.isFinite(unit)||unit<=0)return;
     for(const group of svg.querySelectorAll('g.uniform-ball')){
       const ball=group.querySelector('.ball-visible'),radius=Number(group.dataset.geometryRadius);if(!ball||!radius)continue;
       const x=Number(ball.getAttribute('cx')),y=Number(ball.getAttribute('cy')),scale=target/(2*radius*unit);
       group.setAttribute('transform',`translate(${x} ${y}) scale(${scale}) translate(${-x} ${-y})`);
-      ball.setAttribute('vector-effect','non-scaling-stroke');ball.style.strokeWidth='2px';
+      ball.setAttribute('vector-effect','non-scaling-stroke');ball.style.strokeWidth=Math.min(2,target/8)+'px';
     }
-    for(const ball of svg.querySelectorAll('.lesson-ball,.lesson-target,.course-arrival')){ball.setAttribute('r',target/(2*unit));ball.setAttribute('vector-effect','non-scaling-stroke');ball.style.strokeWidth='2px';}
+    for(const ball of svg.querySelectorAll('.lesson-ball,.lesson-target,.course-arrival')){ball.setAttribute('r',target/(2*unit));ball.setAttribute('vector-effect','non-scaling-stroke');ball.style.strokeWidth=Math.min(2,target/8)+'px';}
     for(const number of svg.querySelectorAll('.ball-number'))number.style.fontSize=(9*target/diameter/unit)+'px';
   }
   function refresh(){pending=false;for(const svg of document.querySelectorAll('#svgMount .table-svg,#lklLessonTable')){if(!observed.has(svg)){observed.add(svg);resize.observe(svg);}apply(svg);}}
