@@ -1,5 +1,5 @@
-window.THREEB_RELEASE=Object.freeze({"version": "v208-r73", "date": "2026-11-04", "channel": "test", "compatibilityBase": "v208-r15"});
-window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r73", "date": "2026-11-04"});
+window.THREEB_RELEASE=Object.freeze({"version": "v208-r74", "date": "2026-11-04", "channel": "test", "compatibilityBase": "v208-r15"});
+window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r74", "date": "2026-11-04"});
 /* Shared display provenance. Approval and technical pinning are not manual entry. */
 const ThreeBValueOrigin=(()=>{
   function kind(p){
@@ -2855,7 +2855,9 @@ window.installThreeBLklLesson=adapter=>{
 window.installThreeBCleanConfig=function(){
   if(document.getElementById('cleanConfigDialog'))return;
   const get=id=>document.getElementById(id),gear=get('bandMenu');if(!gear)return;
+  const touch=navigator.maxTouchPoints>0||matchMedia('(pointer:coarse)').matches;document.body.classList.toggle('touch-track-choices',touch);
   const style=document.createElement('style');style.textContent=`
+  body.touch-track-choices #cleanConfigTracks{display:none!important}
   body.clean-config .band-side{transform:translate(-50%,-50%)!important;height:auto!important;min-height:36px;padding:6px 9px!important}body.clean-config #bandDock,body.clean-config #desktopWorkbench,body.clean-config #databaseMobileToggle{display:none!important}
   body.clean-config #onscreenLayout{padding-top:0!important}
   body.clean-config.test-desktop-workbench .drawing{inset:var(--threeb-test-banner-height,0px) 0 0!important}
@@ -2939,7 +2941,7 @@ window.installThreeBCleanConfig=function(){
   const dialog=document.createElement('dialog');dialog.id='cleanConfigDialog';dialog.setAttribute('aria-label','Spoor en cursus');dialog.innerHTML='<header><h2 id="cleanConfigTitle" aria-label="Bediening verslepen">⠿</h2><button type="button" id="closeCleanConfig" aria-label="Menu sluiten">×</button></header><section id="cleanConfigTracks" aria-label="Spoor"></section><section id="cleanConfigCourse" aria-label="Cursus"><h3>Cursus</h3></section><details id="cleanConfigMore"><summary>⚙ Config</summary><div id="cleanConfigSettings"></div></details>';document.body.append(dialog);document.body.classList.add('clean-config');
   gear.textContent='☰';gear.setAttribute('aria-label','Spoor en cursus openen');gear.title='Spoor en cursus · klik om te openen, versleep naar een vrije plek';document.body.append(gear);
   const move=(node,parent)=>{if(node&&node.parentElement!==parent)parent.append(node);};
-  function reconcile(){move(get('bandTrack'),get('cleanConfigTracks'));move(get('bandLine'),get('bandCore'));move(get('lklLevelBar'),get('cleanConfigCourse'));get('levelLklCourse').textContent='Cursus';
+  function reconcile(){if(touch)get('centralLineSelect')?.closest('.central-track-stepper')?.style.setProperty('display','flex','important');move(get('bandTrack'),get('cleanConfigTracks'));move(get('bandLine'),get('bandCore'));move(get('lklLevelBar'),get('cleanConfigCourse'));get('levelLklCourse').textContent='Cursus';
     const settings=get('cleanConfigSettings');move(get('bandCore'),settings);move(get('levelLklPractice'),settings);move(get('lklUseStatus'),settings);move(document.querySelector('.central-track-controls'),settings);
     const db=get('databaseWorkspace');if(db&&!db.closest('#githubConnectionDialog'))move(db,settings);
     for(const id of ['mobilePreview','bandUndo','bandReset','bandSave','thumbUp'])move(get(id),settings);
@@ -2952,15 +2954,16 @@ window.installThreeBCleanConfig=function(){
   try{if(localStorage.getItem('3b-clean-config-neus-default-v1')!=='1'){localStorage.setItem('3b-clean-config-position-v1','central');erase(gearKey);localStorage.setItem('3b-clean-config-neus-default-v1','1');}}catch(_){}
   try{if(localStorage.getItem('3b-clean-strip-layout-v1')!=='1'){erase(dialogKey);localStorage.setItem('3b-clean-strip-layout-v1','1');}}catch(_){}
   try{if(localStorage.getItem('3b-menu-table-center-v1')!=='1'){erase(gearKey);erase(dialogKey);localStorage.setItem('3b-clean-config-position-v1','central');localStorage.setItem('3b-menu-table-center-v1','1');}}catch(_){}
+  try{if(localStorage.getItem('3b-menu-upper-inside-v1')!=='1'){erase(gearKey);localStorage.setItem('3b-clean-config-position-v1','central');localStorage.setItem('3b-menu-upper-inside-v1','1');}}catch(_){}
   const clamp=(v,min,max)=>Math.max(min,Math.min(Math.max(min,max),v));
   function placeGear(x,y){const r=gear.getBoundingClientRect();document.body.style.setProperty('--config-x',clamp(x,r.width/2+8,innerWidth-r.width/2-8)+'px');document.body.style.setProperty('--config-y',clamp(y,r.height/2+8,innerHeight-r.height/2-8)+'px');}
-  const select=get('menuButtonPositionSelect');if(select){select.closest('label').querySelector('span').textContent='Menuknop';select.querySelector('option[value=central]').textContent='Midden op tafel';const custom=new Option('Eigen plek · versleep','free');custom.disabled=true;select.add(custom);}
+  const select=get('menuButtonPositionSelect');if(select){select.closest('label').querySelector('span').textContent='Menuknop';select.querySelector('option[value=central]').textContent='Boven op tafel · spiegelt mee';const custom=new Option('Eigen plek · versleep','free');custom.disabled=true;select.add(custom);}
   function position(){if(gearDrag)return;const pattern=get('bandPatternSelect')?.value;
     if(lastPattern&&lastPattern!==pattern){erase(gearKey);try{localStorage.setItem('3b-clean-config-position-v1','central');}catch(_){}}lastPattern=pattern;
     const svg=document.querySelector('.table-svg[data-view-table="'+get('editTable')?.value+'"]')||document.querySelector('.table-svg');if(!svg)return;
-    const b=svg.getBoundingClientRect(),matrix=svg.getScreenCTM();let anchor=matrix?new DOMPoint(280,430).matrixTransform(matrix):null;
+    const b=svg.getBoundingClientRect(),matrix=svg.getScreenCTM(),mirrored=get('noseDirection')?.value==='oost';const inset=matrix?Math.max(40,28/Math.hypot(matrix.a,matrix.b)):40;let anchor=matrix?new DOMPoint(mirrored?110+inset:450-inset,90+inset).matrixTransform(matrix):null;
     let saved=read(gearKey);if(saved?.pattern&&saved.pattern!==pattern){erase(gearKey);saved=null;}let corner=false;try{corner=localStorage.getItem('3b-clean-config-position-v1')==='corner';}catch(_){}
-    placeGear(saved?saved.x*innerWidth:corner?b.right-53:anchor?.x??b.left+b.width/2,saved?saved.y*innerHeight:corner?b.top+30:anchor?.y??b.top+b.height/2);if(select)select.value=saved?'free':corner?'corner':'central';fitDialog();
+    const stored=saved&&Number.isFinite(saved.tableX)&&matrix?new DOMPoint(mirrored?560-saved.tableX:saved.tableX,saved.tableY).matrixTransform(matrix):null;placeGear(saved?stored?.x??saved.x*innerWidth:corner?b.right-53:anchor?.x??b.left+b.width/2,saved?stored?.y??saved.y*innerHeight:corner?b.top+30:anchor?.y??b.top+b.height/2);if(select)select.value=saved?'free':corner?'corner':'central';fitDialog();
   }
   function placeDialog(left,top){const r=dialog.getBoundingClientRect();Object.assign(dialog.style,{left:clamp(left,8,innerWidth-r.width-8)+'px',top:clamp(top,8,innerHeight-r.height-8)+'px',right:'auto',bottom:'auto',margin:'0'});}
   function fitDialog(){if(!dialog.open||windowDrag)return;const saved=read(dialogKey);if(saved){placeDialog(saved.x*innerWidth,saved.y*innerHeight);return;}const r=dialog.getBoundingClientRect();if(get('cleanConfigMore').open){placeDialog((innerWidth-r.width)/2,(innerHeight-r.height)/2);return;}
@@ -2977,7 +2980,7 @@ window.installThreeBCleanConfig=function(){
   }
   function bindDrag(node,key,isGear){node.addEventListener('pointerdown',event=>{if(!event.isPrimary||event.button!==0||!isGear&&event.target.closest('button,a,input,select,textarea'))return;event.stopPropagation();if(isGear)suppressGearClick=false;const box=(isGear?gear:dialog).getBoundingClientRect(),sx=event.clientX,sy=event.clientY,id=event.pointerId;let moved=false;
     const move=e=>{if(e.pointerId!==id)return;if(!moved&&Math.hypot(e.clientX-sx,e.clientY-sy)<6)return;if(!moved)node.setPointerCapture(e.pointerId);moved=true;e.preventDefault();if(isGear){gearDrag=true;placeGear(box.x+box.width/2+e.clientX-sx,box.y+box.height/2+e.clientY-sy);}else{windowDrag=true;placeDialog(box.x+e.clientX-sx,box.y+e.clientY-sy);}};
-    const end=e=>{if(e.pointerId!==id)return;document.removeEventListener('pointermove',move);document.removeEventListener('pointerup',end);document.removeEventListener('pointercancel',end);if(moved){if(e.type!=='pointercancel'){const r=(isGear?gear:dialog).getBoundingClientRect();write(key,isGear?{x:(r.x+r.width/2)/innerWidth,y:(r.y+r.height/2)/innerHeight,pattern:get('bandPatternSelect')?.value}:{x:r.x/innerWidth,y:r.y/innerHeight});}if(e.type==='pointercancel'&&!isGear)placeDialog(box.x,box.y);if(isGear)suppressGearClick=true;}gearDrag=false;windowDrag=false;if(isGear&&!moved&&e.type==='pointerup'){e.preventDefault();suppressGearClick=true;openConfig();}position();};
+    const end=e=>{if(e.pointerId!==id)return;document.removeEventListener('pointermove',move);document.removeEventListener('pointerup',end);document.removeEventListener('pointercancel',end);if(moved){if(e.type!=='pointercancel'){const r=(isGear?gear:dialog).getBoundingClientRect();const svg=document.querySelector('.table-svg[data-view-table="'+get('editTable')?.value+'"]')||document.querySelector('.table-svg'),matrix=svg?.getScreenCTM(),point=isGear&&matrix?new DOMPoint(r.x+r.width/2,r.y+r.height/2).matrixTransform(matrix.inverse()):null;write(key,isGear?{tableX:point?(get('noseDirection')?.value==='oost'?560-point.x:point.x):undefined,tableY:point?.y,x:(r.x+r.width/2)/innerWidth,y:(r.y+r.height/2)/innerHeight,pattern:get('bandPatternSelect')?.value}:{x:r.x/innerWidth,y:r.y/innerHeight});}if(e.type==='pointercancel'&&!isGear)placeDialog(box.x,box.y);if(isGear)suppressGearClick=true;}gearDrag=false;windowDrag=false;if(isGear&&!moved&&e.type==='pointerup'){e.preventDefault();suppressGearClick=true;openConfig();}position();};
     document.addEventListener('pointermove',move,{passive:false});document.addEventListener('pointerup',end);document.addEventListener('pointercancel',end);
   });}
   bindDrag(gear,gearKey,true);bindDrag(dialog.querySelector('header'),dialogKey,false);
@@ -2991,11 +2994,11 @@ window.installThreeBCleanConfig=function(){
   const textPrefs=window.ThreeBTableText.get();get('courseTableSize').value=textPrefs.courseTable;get('tableScaleMode').value=textPrefs.scaleMode;get('tableBandFontSize').value=textPrefs.bandSize;get('tableEndpointFontSize').value=textPrefs.endpointSize;get('showEndpointValues').checked=textPrefs.showEndpoints;
   textConfig.onchange=e=>{if(!e.target.checkValidity())return;const fields={tableScaleMode:['scaleMode',e.target.value],courseTableSize:['courseTable',e.target.value],tableBandFontSize:['bandSize',Number(e.target.value)],tableEndpointFontSize:['endpointSize',Number(e.target.value)],showEndpointValues:['showEndpoints',e.target.checked]},field=fields[e.target.id];if(field)window.ThreeBTableText.update({[field[0]]:field[1]});};
   function syncScaleMode(){const prefs=window.ThreeBTableText.get(),mode=prefs.scaleMode;get('tableScaleMode').value=mode;get('courseTableSize').value=prefs.courseTable;get('tableScaleHint').textContent=({tables:'Gelijke gele randen; de bal op Klein is naar verhouding groter.',balls:'Gelijke ballen; Klein wordt kleiner getekend dan Groot.',tracks:'Gelijke gele randen en ballen om lijnen te vergelijken.'})[mode];}window.addEventListener('threeb-spoor-state',syncScaleMode);syncScaleMode();
-  const reset=document.createElement('button');reset.id='resetConfigPosition';reset.type='button';reset.textContent='Config naar standaardplek';reset.title='Menu midden op tafel, spoorbediening op een vrije plek';get('cleanConfigSettings').append(reset);reset.onclick=()=>{erase(gearKey);erase(dialogKey);dialog.removeAttribute('style');if(select){select.value='central';select.dispatchEvent(new Event('change',{bubbles:true}));}position();};
+  const reset=document.createElement('button');reset.id='resetConfigPosition';reset.type='button';reset.textContent='Config naar standaardplek';reset.title='Menu rechtsboven in het speelvlak, linksboven bij spiegelen';get('cleanConfigSettings').append(reset);reset.onclick=()=>{erase(gearKey);erase(dialogKey);dialog.removeAttribute('style');if(select){select.value='central';select.dispatchEvent(new Event('change',{bubbles:true}));}position();};
   dialog.addEventListener('click',e=>{const id=e.target.closest('button,a')?.id;if(['levelLklCourse','levelLklPractice','openExplanation','openSpoorscherm','openLklFramework','desktopOpenSpoor','mobilePreview','userSettingsButton','toggleConfig','thumbUp'].includes(id))dialog.close();},true);
   get('menuButtonPositionSelect')?.addEventListener('change',e=>{erase(gearKey);try{localStorage.setItem('3b-clean-config-position-v1',e.target.value);}catch(_){}requestAnimationFrame(position);});
   const mount=get('svgMount');if(mount&&window.ResizeObserver)new ResizeObserver(()=>requestAnimationFrame(position)).observe(mount);
-  window.addEventListener('resize',()=>requestAnimationFrame(reconcile));window.addEventListener('threeb-spoor-state',()=>requestAnimationFrame(position));reconcile();requestAnimationFrame(()=>window.dispatchEvent(new Event('resize')));
+  window.addEventListener('threeb-table-layout',position);window.addEventListener('resize',()=>requestAnimationFrame(reconcile));window.addEventListener('threeb-spoor-state',()=>requestAnimationFrame(position));reconcile();requestAnimationFrame(()=>window.dispatchEvent(new Event('resize')));
 };
 
 /* Symbols and compact values belong only to the spoor editor. */
