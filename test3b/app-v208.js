@@ -1167,14 +1167,15 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
     });return svg+balls.sort((a,b)=>(a.side==="A")-(b.side==="A")).map(b=>b.svg).join("")+labels.join("")+'</g>';
   }
   function scaleViewMode(){return ['tables','balls','tracks'].includes(state.scaleViewMode)?state.scaleViewMode:state.comparePhysicalSize?'balls':'tracks';}
-  function tableTextPrefs(){const p=state.tableTextSettings||{};return {bandSize:Math.max(12,Math.min(28,Number(p.bandSize)||18)),endpointSize:Math.max(10,Math.min(26,Number(p.endpointSize)||15)),showEndpoints:p.showEndpoints!==false,courseTable:state.courseTable==='groot'?'groot':'klein',scaleMode:scaleViewMode()};}
+  function tableTextPrefs(){const p=state.tableTextSettings||{};return {bandSize:Math.max(12,Math.min(28,Number(p.bandSize)||18)),endpointSize:Math.max(10,Math.min(26,Number(p.endpointSize)||15)),showEndpoints:p.showEndpoints!==false,neusArrivalLabelMode:['number','name','both'].includes(p.neusArrivalLabelMode)?p.neusArrivalLabelMode:'both',courseTable:state.courseTable==='groot'?'groot':'klein',scaleMode:scaleViewMode()};}
+  function formatNeusArrivalLabel(value,track=selectedTrackKey()){const mode=tableTextPrefs().neusArrivalLabelMode,number=SpoorScreenFormat.format(value),name=positionLabel(track);return mode==='name'?name:mode==='number'?number:number+' · '+name;}
   function endpointValueSvg(table,line,seg,A,B,partial){
     if(!tableTextPrefs().showEndpoints)return '';
     const dx=B.x-A.x,dy=B.y-A.y,len=Math.hypot(dx,dy);if(!len)return '';
     return [['V',line.key==='neus'?noseVisualDeparture(table,{neus:seg}):seg.from,A,B],...(!partial?[['A',seg.to,B,A]]:[])].map(([side,ref,a,b])=>{
       if(ref?.value===null||ref?.value===undefined||ref?.value==='')return '';
       const t=Math.min(.22,32/len),x=a.x+(b.x-a.x)*t,y=a.y+(b.y-a.y)*t;
-      return `<text class="endpoint-value" data-part="${line.key}" data-side="${side}" data-value="${ref.value}" data-value-band="${ref.band}" x="${x}" y="${y}" dominant-baseline="middle" text-anchor="middle" font-family="system-ui" font-size="15" font-weight="${window.ThreeBValueOrigin.weight(ref)}" fill="#173b30" stroke="#fff8df" stroke-width="3" paint-order="stroke fill" pointer-events="none">${esc(SpoorScreenFormat.format(ref.value))}</text>`;
+      return `<text class="endpoint-value" data-part="${line.key}" data-side="${side}" data-value="${ref.value}" data-value-band="${ref.band}" x="${x}" y="${y}" dominant-baseline="middle" text-anchor="middle" font-family="system-ui" font-size="15" font-weight="${window.ThreeBValueOrigin.weight(ref)}" fill="#173b30" stroke="#fff8df" stroke-width="3" paint-order="stroke fill" pointer-events="none">${esc(line.key==='neus'&&side==='A'?formatNeusArrivalLabel(ref.value):SpoorScreenFormat.format(ref.value))}</text>`;
     }).join('');
   }
   function drawTable(t){
@@ -1512,6 +1513,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
   if(window.installThreeBSpoorScreen)window.installThreeBSpoorScreen({
     mobileTableView(){return {v:1,t:ui.tableMode,e:ui.editTable,s:scaleViewMode(),p:ui.playRange,k:selectedTrackKey(),d:ui.direction,f:ui.trackFamily,w:ui.parallelDisplay,r:!!ui.frameworkView,n:ui.parallelPartIndex};},
     tableTextSettings(){return tableTextPrefs();},
+    neusArrivalLabel(value,track){return formatNeusArrivalLabel(value,track);},
     startAcquitOffset,
     startAcquitCode,
     language(){return ui.language;},
