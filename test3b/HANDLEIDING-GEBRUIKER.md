@@ -1,8 +1,8 @@
-# 3B v208-r76 — User-werkwijze
+# 3B v208-r77 — User-werkwijze
 
 # Cursus — VIJF leren zien en oefenen
 
-Ik ben de speler (User). De cursus begint standaard op Klein; via Config → Cursustafel kies ik desgewenst Groot. De lessen lezen dan de metingen van die tafel. Ik begin met één spoor: **VIJF**, in het patroon **LKL**. Een patroon beschrijft het bandverloop; een spoor verbindt mijn afstoot met de aankomsten. De lijnen heten, in de volgorde waarin de bal rolt: **Neus → Kop → Nek → Romp → Kruis → Been**. LKL stopt hier op half Been.
+Ik ben de speler (User). De cursus begint standaard op Klein; via Config → Cursustafel kies ik desgewenst Groot. De lessen lezen dan de metingen van die tafel. Ik begin met één spoor: **VIJF**, in het patroon **LKL**. Een patroon beschrijft het bandverloop; een spoor verbindt mijn afstoot met de aankomsten. De lijnen heten, in de volgorde waarin de bal rolt: **Neus → Kop → Nek → Romp → Kruis → Been**. LKL stopt hier op 45% van Been.
 
 ## Eerst het patroon, dan het spoor
 
@@ -21,7 +21,7 @@ Neus en Romp vormen het zichtbare **karkas**. De Kop en Nek verbinden die lijnen
 
 ## Les 1 — VIJF, lijn na lijn
 
-Ik volg één rollende bal vanaf de Neus: naar West, via de Kop naar Noord, via de Nek naar Oost, verder langs Romp, Kruis en half Been. Eerdere lijnen blijven staan. Pauze, Lijn opnieuw rollen, Vorige stap en Volgende stap laten mij telkens dezelfde beweging bekijken en herhalen.
+Ik volg één rollende bal vanaf de Neus: naar West, via de Kop naar Noord, via de Nek naar Oost, verder langs Romp, Kruis en 45% van Been. Eerdere lijnen blijven staan. Pauze, Lijn opnieuw rollen, Vorige stap en Volgende stap laten mij telkens dezelfde beweging bekijken en herhalen.
 
 Tijdens de Neus verschijnt de genummerde westelijke stiplijn, met de actieve Neus A: bij Kruins VIJF bijvoorbeeld 50. Tijdens de Romp verschijnt de oostelijke stiplijn met Romp V: bijvoorbeeld 20. West telt 0 onder tot 80 boven; Oost 0 boven tot 80 onder. Ik zie de stiplijnwaarden zoals aan tafel, niet het fysieke raakpunt R. De waarden volgen de actieve meetbasis.
 
