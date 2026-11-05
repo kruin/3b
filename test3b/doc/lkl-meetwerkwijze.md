@@ -167,6 +167,10 @@ Eén paar **Vorige · Volgende** volgt de hele cursus, ook tussen de lessen en d
 Iedere stap heeft een passende demonstratie: eerst de waaier vanuit het vaste referentiepunt0, dan VIJF binnen de waaierstap, vervolgens de Neus en de Romp. In les2 rolt de bal lijn na lijn. Les3 demonstreert de Romp en de bijbehorende Neus; les4 toont het spoor, karkas of de aankomstpunten van de gekozen parallel. **Demo opnieuw** herhaalt dezelfde uitleg zonder een extra stap of opdracht. Alle demos gebruiken Kruins meetbasis.
 
 
+## Namen en lesindeling bij de tafel
+Op de gewone tafel staat **Namen** onder **Cursus** in het menu. Deze naslag verklaart Waaier, patroon, spoor, karkas en de lijnnamen, gevolgd door de lesindeling. De cursus zelf bevat deze extra knop en dit naslagblok niet; daar volgt de uitleg de stappen. Sluiten van de naslag brengt je terug naar de tafel zonder een les te starten of metingen te wijzigen.
+
+
 # LKL meten: Neus, Kop en Romp
 
 Begin met LKL en één basislijn, bijvoorbeeld VIJF op Klein. Je onderzoekt wat je eigen afstoot werkelijk doet. Het zichtbare karkas is Neus en Romp: dat leer je eerst herkennen. In deze latere meetles onderzoek je wat je eigen afstoot doet, met de vraag: waar ligt mijn Kop A? Bouw de complete eigen meetbasis op uit ingevoerde metingen van **Neus, Kop en Romp**. Een getekende basiswaarde of schatting telt nog niet als een eigen meetgegeven. Begin pas aan andere patronen nadat deze werkwijze goed werkt.

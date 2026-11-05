@@ -1,4 +1,4 @@
-# 3B v208-r89 — User-werkwijze
+# 3B v208-r90 — User-werkwijze
 
 # De Waaier — Van Top tot Teen
 
@@ -167,6 +167,10 @@ Eén paar **Vorige · Volgende** volgt de hele cursus, ook tussen de lessen en d
 
 ## Demo bij elke stap
 Iedere stap heeft een passende demonstratie: eerst de waaier vanuit het vaste referentiepunt0, dan VIJF binnen de waaierstap, vervolgens de Neus en de Romp. In les2 rolt de bal lijn na lijn. Les3 demonstreert de Romp en de bijbehorende Neus; les4 toont het spoor, karkas of de aankomstpunten van de gekozen parallel. **Demo opnieuw** herhaalt dezelfde uitleg zonder een extra stap of opdracht. Alle demos gebruiken Kruins meetbasis.
+
+
+## Namen en lesindeling bij de tafel
+Op de gewone tafel staat **Namen** onder **Cursus** in het menu. Deze naslag verklaart Waaier, patroon, spoor, karkas en de lijnnamen, gevolgd door de lesindeling. De cursus zelf bevat deze extra knop en dit naslagblok niet; daar volgt de uitleg de stappen. Sluiten van de naslag brengt je terug naar de tafel zonder een les te starten of metingen te wijzigen.
 
 
 # LKL meten: Neus, Kop en Romp
