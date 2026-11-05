@@ -1,4 +1,4 @@
-# 3B v208-r87 — User-werkwijze
+# 3B v208-r88 — User-werkwijze
 
 # De Waaier — Van Top tot Teen
 
@@ -44,7 +44,10 @@ Zo’n eerste lijn hoort bij een **patroon**: de volgorde van de geraakte banden
 De lijn vanuit 0 naar **50 (stip 5)** bespreken we hier binnen **LKL:
 lang–kort–lang**. Eerst raakt de bal een lange band, dan een korte band,
 dan weer een lange band. We beginnen met LKL en lichten daaruit VIJF uit.
-Andere patronen volgen later.
+Andere patronen volgen later. In dezezelfde stap demonstreert de gele lijn
+het hele spoor VIJF binnen LKL, in de volgorde Neus → Kop → Nek → Romp → Kruis → Been.
+**Demo opnieuw** herhaalt de demonstratie. Het blijft stap 2, geen extra pagina.
+De waaierkeuze toont weer de gekozen eerste lijn.
 
 ### 3. VIJF is één van de mogelijkheden
 
@@ -158,6 +161,10 @@ Getallen bij begin en eind horen bij die lijn; de letters V/A zijn in de tekenin
 
 ## Navigatie
 Eén paar **Vorige · Volgende** volgt de hele cursus, ook tussen de lessen en de introductiepagina’s. Terug vanaf de eerste Neus bereikt de laatste introductiepagina; verder terug bereikt het begin. Geen aparte hervatknop of tweede paar lesknoppen. Sluiten verlaat de cursus; opnieuw starten begint bij les 1. Naar tafel en terug behoudt dezelfde les en dezelfde tekening.
+
+
+## Demo bij elke stap
+Iedere stap heeft een passende demonstratie: eerst het referentiepunt0, dan VIJF binnen de waaierstap, vervolgens de Neus en de Romp. In les2 rolt de bal lijn na lijn. Les3 demonstreert de Romp en de bijbehorende Neus; les4 toont het spoor, karkas of de aankomstpunten van de gekozen parallel. **Demo opnieuw** herhaalt dezelfde uitleg zonder een extra stap of opdracht. Alle demos gebruiken Kruins meetbasis.
 
 
 # LKL meten: Neus, Kop en Romp
