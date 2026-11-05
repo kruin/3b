@@ -5,6 +5,10 @@
 De cursus geeft uitleg en voorbeelden, zonder oefeningen of opdrachten.
 Oefeningen worden alleen op uitdrukkelijk verzoek toegevoegd.
 
+**In de cursus kijk je uitsluitend naar Kruins tafel en Kruins metingen.**
+Je eigen tafel(s) en eigen metingen volgen later. Ook als je al eigen waarden
+hebt opgeslagen, gebruikt de cursus die niet; ze blijven behouden voor de gewone tafel.
+
 U betekent User: de gebruiker. De uitleg spreekt je aan met jij/je. Ik-zinnen
 zijn het perspectief van jou als speler, bijvoorbeeld: “Waar lig ik met bal 1?”
 
@@ -79,7 +83,7 @@ je later met eigen metingen. **Lange Neus, korte Neus
 en richtingcorrectie** krijgen een aparte les, met eigen metingen. De introductie
 loopt niet vooruit op correctiegetallen of verdere spooruitbreidingen.
 
-Ik ben de speler (User). De cursus begint standaard op Klein; via Config → Cursustafel kies ik desgewenst Groot. De lessen lezen dan de metingen van die tafel. Na de introductie begin ik met één spoor: **VIJF**, in het patroon **LKL**. Een patroon beschrijft het bandverloop; een spoor verbindt mijn afstoot met de aankomsten. De lijnen heten, in de volgorde waarin de bal rolt: **Neus → Kop → Nek → Romp → Kruis → Been**. LKL stopt hier op 45% van Been.
+Ik ben de speler (User). De cursus begint standaard op Klein; via Config → Cursustafel kies ik desgewenst Groot. De lessen lezen uitsluitend Kruins metingen voor die tafelmaat. Na de introductie begin ik met één spoor: **VIJF**, in het patroon **LKL**. Een patroon beschrijft het bandverloop; een spoor verbindt mijn afstoot met de aankomsten. De lijnen heten, in de volgorde waarin de bal rolt: **Neus → Kop → Nek → Romp → Kruis → Been**. LKL stopt hier op 45% van Been.
 
 ## Eerst het patroon, dan het spoor
 
@@ -100,14 +104,14 @@ Neus en Romp vormen het zichtbare **karkas**. De Kop en Nek verbinden die lijnen
 
 Ik volg één rollende bal vanaf de Neus: naar West, via de Kop naar Noord, via de Nek naar Oost, verder langs Romp, Kruis en 45% van Been. Eerdere lijnen blijven staan. Pauze, Lijn opnieuw rollen, Vorige stap en Volgende stap laten mij telkens dezelfde beweging bekijken en herhalen.
 
-Tijdens de Neus verschijnt de genummerde westelijke stiplijn, met de actieve Neus A: bij Kruins VIJF bijvoorbeeld 50. Tijdens de Romp verschijnt de oostelijke stiplijn met Romp V: bijvoorbeeld 20. West telt 0 onder tot 80 boven; Oost 0 boven tot 80 onder. Ik zie de stiplijnwaarden zoals aan tafel, niet het fysieke raakpunt R. De waarden volgen de actieve meetbasis.
+Tijdens de Neus verschijnt de genummerde westelijke stiplijn, met de actieve Neus A: bij Kruins VIJF bijvoorbeeld 50. Tijdens de Romp verschijnt de oostelijke stiplijn met Romp V: bijvoorbeeld 20. West telt 0 onder tot 80 boven; Oost 0 boven tot 80 onder. Ik zie de stiplijnwaarden zoals aan tafel, niet het fysieke raakpunt R. De waarden volgen uitsluitend Kruins meetbasis.
 
 
 ## Les 3 — hetzelfde VIJF, terug vanaf de Romp
 
 Ik blijf bij het gekozen patroon LKL. Bal 3 kan op allerlei lijnen liggen; ik zoek hier de Romp die bij het LKL-spoor VIJF hoort. Ik werk terug: eerst zie ik alleen die Romp met bal 3 erop. Daarna verschijnt bal 1. In dit voorbeeld ligt die op hetzelfde spoor. Daarna wordt de bijbehorende Neus zichtbaar. Met Vorige stap verberg ik de Neus opnieuw.
 
-Dit is hetzelfde gemeten VIJF als in les 2, met dezelfde actieve eigen meetbasis of Kruinbasis. Er is geen apart vast 30–30-voorbeeld. De gegeven Neus wordt uit dat complete spoor overgenomen; alleen de Romp zou die Neus niet uniek bepalen.
+Dit is hetzelfde gemeten VIJF als in les 2, met dezelfde Kruinbasis. Er is geen apart vast 30–30-voorbeeld. De gegeven Neus wordt uit dat complete spoor overgenomen; alleen de Romp zou die Neus niet uniek bepalen.
 
 
 ## Les 4 — de parallellen van VIJF
