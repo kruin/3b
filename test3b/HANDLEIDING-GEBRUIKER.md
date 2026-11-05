@@ -1,6 +1,8 @@
-# 3B v208-r81 — User-werkwijze
+# 3B v208-r82 — User-werkwijze
 
-# De Waaier — meetsysteem en cursus voor driebanden
+# De Waaier — Van Top tot Teen
+
+*Meetsysteem en cursus voor driebanden.*
 
 U betekent User: de gebruiker. De uitleg spreekt je aan met jij/je. Ik-zinnen
 zijn het perspectief van jou als speler, bijvoorbeeld: “Waar lig ik met bal 1?”
@@ -10,7 +12,13 @@ zijn het perspectief van jou als speler, bijvoorbeeld: “Waar lig ik met bal 1?
 **De Waaier — meetsysteem en cursus voor driebanden.** Eerst kijk je vanuit
 één vast punt, daarna leer je één spoor kennen. Parallel komt pas later.
 
-### 1. Benedenacquit 0
+### 1. West, oost en benedenacquit 0
+
+Het benedenacquit is de onderste vaste markering op het laken. De witte
+stippen rond de tafel liggen op de stiplijnen.
+
+Links op de tekening is **west**, rechts **oost**. Boven is noord, onder zuid.
+Met **Spiegelen** bekijk je dezelfde opzet naar oost.
 
 Je kiest het **benedenacquit als 0**, je vaste referentie op het laken. Andere
 meetsystemen nemen vaak een hoek als oorsprong. Hier heb je 0 vlak bij je en
@@ -23,17 +31,17 @@ NUL is een afzonderlijke spoornaam.
 ### 2. De waaier 0 t/m 8
 
 Het vertrekpunt blijft 0; de richting verandert. Kies in de interactieve
-introductie een lijn uit de reeks **0–8** (stiplijnwaarden0–80). De gekozen lijn
-licht op. Dit zijn eerste-lijnvoorbeelden; een volledige route wordt later aan
-het patroon getoetst.
+introductie een lijn uit de reeks **0–8** (stiplijnwaarden0–80). De gekozen eerste lijn licht op.
 
 **Oefenen:** kies3,5 en7; wijs steeds eerst0 aan. Wat blijft gelijk en wat verandert?
 
 ### 3. VIJF is één van de mogelijkheden
 
-Licht **5 · VIJF** uit in de waaier. Het systeem geeft je vaste namen: **LKL**
+Licht **5 · VIJF** uit in de waaier. Nu zie je het volledige gemeten spoor in
+geel, vanaf de Neus via Kop, Nek, Romp en Kruis tot het Been. Het systeem geeft je vaste namen: **LKL**
 benoemt het patroon (lange–korte–lange band aan het begin van de route), **VIJF**
-een spoor en **Neus** de eerste lijn vanaf je afstoot. Die namen helpen in de
+een spoor en **Neus** de eerste lijn vanaf je afstoot. In **Van Top tot Teen** volgen de
+lijnnamen verder; **Top** is de keutop, de **pommerans**. Die namen helpen in de
 cursus én aan de echte tafel. Met ‘de Neus van VIJF in LKL’ kun je precies
 vertellen welk patroon, spoor en lijndeel je bedoelt.
 
@@ -51,8 +59,9 @@ Je kunt de gebruikte lijnen en patronen zelf inmeten. Latere meetlessen leren
 je hoe je een eigen meetbasis vastlegt. Het doel is minder en overzichtelijkere
 correcties dan bij een aanpak met veel afzonderlijke hoekcorrecties.
 
-Bij gelijk gehouden afstoot, snelheid en effect gebruik je de **Neuslengte**
-als uitgangspunt voor een eventuele richtingcorrectie. **Lange Neus, korte Neus
+Fysieke factoren zoals de afstootuitvoering, snelheid en effect spelen mee.
+Hoe je de **Neuslengte** gebruikt bij een eventuele richtingcorrectie, onderzoek
+je later met eigen metingen. **Lange Neus, korte Neus
 en richtingcorrectie** krijgen een aparte les, met eigen metingen. De introductie
 loopt niet vooruit op correctiegetallen of verdere spooruitbreidingen.
 
