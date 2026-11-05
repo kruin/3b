@@ -17,7 +17,9 @@ zijn het perspectief van jou als speler, bijvoorbeeld: “Waar lig ik met bal 1?
 **De Waaier — meetsysteem en cursus voor driebanden.** Eerst kijk je vanuit
 één vast punt, daarna leer je één spoor kennen. Parallel komt pas later.
 
-### 1. West, oost en benedenacquit 0
+### 1. De waaier vanuit benedenacquit 0
+
+De demo laat de negen eerste lijnen vanuit benedenacquit 0 naar de westelijke stiplijnwaarden 0–80 groeien. **Demo opnieuw** herhaalt deze waaier binnen stap 1. Het vertrekpunt blijft gelijk.
 
 Het benedenacquit is de onderste vaste markering op het laken. De witte
 stippen rond de tafel liggen op de stiplijnen.
@@ -162,7 +164,7 @@ Eén paar **Vorige · Volgende** volgt de hele cursus, ook tussen de lessen en d
 
 
 ## Demo bij elke stap
-Iedere stap heeft een passende demonstratie: eerst het referentiepunt0, dan VIJF binnen de waaierstap, vervolgens de Neus en de Romp. In les2 rolt de bal lijn na lijn. Les3 demonstreert de Romp en de bijbehorende Neus; les4 toont het spoor, karkas of de aankomstpunten van de gekozen parallel. **Demo opnieuw** herhaalt dezelfde uitleg zonder een extra stap of opdracht. Alle demos gebruiken Kruins meetbasis.
+Iedere stap heeft een passende demonstratie: eerst de waaier vanuit het vaste referentiepunt0, dan VIJF binnen de waaierstap, vervolgens de Neus en de Romp. In les2 rolt de bal lijn na lijn. Les3 demonstreert de Romp en de bijbehorende Neus; les4 toont het spoor, karkas of de aankomstpunten van de gekozen parallel. **Demo opnieuw** herhaalt dezelfde uitleg zonder een extra stap of opdracht. Alle demos gebruiken Kruins meetbasis.
 
 
 # LKL meten: Neus, Kop en Romp
