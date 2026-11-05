@@ -1,8 +1,62 @@
-# 3B v208-r80 — User-werkwijze
+# 3B v208-r81 — User-werkwijze
 
-# Cursus — VIJF leren zien en oefenen
+# De Waaier — meetsysteem en cursus voor driebanden
 
-Ik ben de speler (User). De cursus begint standaard op Klein; via Config → Cursustafel kies ik desgewenst Groot. De lessen lezen dan de metingen van die tafel. Ik begin met één spoor: **VIJF**, in het patroon **LKL**. Een patroon beschrijft het bandverloop; een spoor verbindt mijn afstoot met de aankomsten. De lijnen heten, in de volgorde waarin de bal rolt: **Neus → Kop → Nek → Romp → Kruis → Been**. LKL stopt hier op 45% van Been.
+U betekent User: de gebruiker. De uitleg spreekt je aan met jij/je. Ik-zinnen
+zijn het perspectief van jou als speler, bijvoorbeeld: “Waar lig ik met bal 1?”
+
+## Introductie — De Waaier
+
+**De Waaier — meetsysteem en cursus voor driebanden.** Eerst kijk je vanuit
+één vast punt, daarna leer je één spoor kennen. Parallel komt pas later.
+
+### 1. Benedenacquit 0
+
+Je kiest het **benedenacquit als 0**, je vaste referentie op het laken. Andere
+meetsystemen nemen vaak een hoek als oorsprong. Hier heb je 0 vlak bij je en
+steeds in het zicht. Vanuit die kijkbasis overzie je de eerste lijnen naar de
+stiplijnen. Acquit0 is een referentiepunt; bandgetallen benoemen plaatsen en
+NUL is een afzonderlijke spoornaam.
+
+**Oefenen:** wijs 0 aan, kijk naar verschillende stippen en vind 0 weer terug.
+
+### 2. De waaier 0 t/m 8
+
+Het vertrekpunt blijft 0; de richting verandert. Kies in de interactieve
+introductie een lijn uit de reeks **0–8** (stiplijnwaarden0–80). De gekozen lijn
+licht op. Dit zijn eerste-lijnvoorbeelden; een volledige route wordt later aan
+het patroon getoetst.
+
+**Oefenen:** kies3,5 en7; wijs steeds eerst0 aan. Wat blijft gelijk en wat verandert?
+
+### 3. VIJF is één van de mogelijkheden
+
+Licht **5 · VIJF** uit in de waaier. Het systeem geeft je vaste namen: **LKL**
+benoemt het patroon (lange–korte–lange band aan het begin van de route), **VIJF**
+een spoor en **Neus** de eerste lijn vanaf je afstoot. Die namen helpen in de
+cursus én aan de echte tafel. Met ‘de Neus van VIJF in LKL’ kun je precies
+vertellen welk patroon, spoor en lijndeel je bedoelt.
+
+**Oefenen:** vind VIJF tussen de andere lijnen; benoem0, het spoor en de Neus.
+Daarna volg je het volledige spoor in de VIJF-lessen.
+
+### Later: parallellen, eigen metingen en correcties
+
+Pas als je VIJF en de Neus kent, volgt **P · Parallel** in les3. Voorbeelden:
+VIJF−2 t/m VIJF+3. De richting blijft gelijk en het vertrek verschuift:
+**alle neuzen wijzen dezelfde kant op**. Vergelijk dit dan met W, waar0 vast
+blijft en de richting verandert. De vervolglijnen volgen hun eigen metingen.
+
+Je kunt de gebruikte lijnen en patronen zelf inmeten. Latere meetlessen leren
+je hoe je een eigen meetbasis vastlegt. Het doel is minder en overzichtelijkere
+correcties dan bij een aanpak met veel afzonderlijke hoekcorrecties.
+
+Bij gelijk gehouden afstoot, snelheid en effect gebruik je de **Neuslengte**
+als uitgangspunt voor een eventuele richtingcorrectie. **Lange Neus, korte Neus
+en richtingcorrectie** krijgen een aparte les, met eigen metingen. De introductie
+loopt niet vooruit op correctiegetallen of verdere spooruitbreidingen.
+
+Ik ben de speler (User). De cursus begint standaard op Klein; via Config → Cursustafel kies ik desgewenst Groot. De lessen lezen dan de metingen van die tafel. Na de introductie begin ik met één spoor: **VIJF**, in het patroon **LKL**. Een patroon beschrijft het bandverloop; een spoor verbindt mijn afstoot met de aankomsten. De lijnen heten, in de volgorde waarin de bal rolt: **Neus → Kop → Nek → Romp → Kruis → Been**. LKL stopt hier op 45% van Been.
 
 ## Eerst het patroon, dan het spoor
 
