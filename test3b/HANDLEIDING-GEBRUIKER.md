@@ -1,4 +1,4 @@
-# 3B v208-r84 — User-werkwijze
+# 3B v208-r85 — User-werkwijze
 
 # De Waaier — Van Top tot Teen
 
@@ -37,15 +37,17 @@ introductie een lijn uit de reeks **0–8** (stiplijnwaarden0–80). De gekozen 
 
 ### 3. VIJF is één van de mogelijkheden
 
-Licht **5 · VIJF** uit in de waaier. Nu zie je het volledige gemeten spoor in
-geel, vanaf de Neus via Kop, Nek, Romp en Kruis tot het Been. Het systeem geeft je vaste namen: **LKL**
+Licht **5 · VIJF** uit in de waaier. Nu zie je alleen de gemeten Neus in
+geel: van 0 naar de westband. Het hulplijntje loopt door naar 50 op de echte
+stiplijn. Bandcontact en richtpunt zijn verschillende plaatsen. Het hele spoor
+volgt pas in les 2, lijn na lijn. Het systeem geeft je vaste namen: **LKL**
 benoemt het patroon (lange–korte–lange band aan het begin van de route), **VIJF**
 een spoor en **Neus** de eerste lijn vanaf je afstoot. In **Van Top tot Teen** volgen de
 lijnnamen verder; **Top** is de keutop, de **pommerans**. Die namen helpen in de
 cursus én aan de echte tafel. Met ‘de Neus van VIJF in LKL’ kun je precies
 vertellen welk patroon, spoor en lijndeel je bedoelt.
 
-**Oefenen:** vind VIJF tussen de andere lijnen; benoem0, het spoor en de Neus.
+**Oefenen:** wijs 0, de Neus en richtpunt 50 aan. Volg de lijn heen en terug.
 Daarna volg je het volledige spoor in de VIJF-lessen.
 
 ### Later: parallellen, eigen metingen en correcties
@@ -143,6 +145,10 @@ De relevante V/A-waarde krijgt een extra markering. De overige stippen verdwijne
 ## De getallen op de lijn
 
 Getallen bij begin en eind horen bij die lijn; de letters V/A zijn in de tekening weggelaten. Het getal staat gecentreerd op de lijn. Voor het begin van de Neus gebruiken we de projectie op de oostelijke stiplijn, met de balnummering van Oost. Bij Kruins Klein-basis is VIJF 90 en VIJF+2 70. Dit is een herkenningsgetal voor dezelfde lijn, geen extra bandcontact of nieuwe meting. De bestaande stipnummers op de vier banden blijven gelijk. Een getal buiten de bandrange is een projectie op de verlengde stiplijn.
+
+
+## Navigatie
+Eén paar **Vorige · Volgende** volgt de hele cursus, ook tussen de lessen en de introductiepagina’s. Terug vanaf de eerste Neus bereikt de laatste introductiepagina; verder terug bereikt het begin. Geen aparte hervatknop of tweede paar lesknoppen. Sluiten verlaat de cursus; opnieuw starten begint bij les 1. Naar tafel en terug behoudt dezelfde les en dezelfde tekening.
 
 
 # LKL meten: Neus, Kop en Romp
