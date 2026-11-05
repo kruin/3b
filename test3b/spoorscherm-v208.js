@@ -1,5 +1,5 @@
-window.THREEB_RELEASE=Object.freeze({"version": "v208-r91", "date": "2026-11-05", "channel": "test", "compatibilityBase": "v208-r15"});
-window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r91", "date": "2026-11-05"});
+window.THREEB_RELEASE=Object.freeze({"version": "v208-r92", "date": "2026-11-05", "channel": "test", "compatibilityBase": "v208-r15"});
+window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r92", "date": "2026-11-05"});
 /* Shared display provenance. Approval and technical pinning are not manual entry. */
 const ThreeBValueOrigin=(()=>{
   function kind(p){
@@ -2946,7 +2946,6 @@ window.installThreeBCleanConfig=function(){
   const touch=navigator.maxTouchPoints>0||matchMedia('(pointer:coarse)').matches;document.body.classList.toggle('touch-track-choices',touch);
   const style=document.createElement('style');style.textContent=`
   body.table-only.clean-config.mobile-full-table .drawing{position:fixed!important;inset:auto!important;left:var(--mobile-table-left,0px)!important;top:var(--mobile-table-top,0px)!important;width:var(--mobile-table-width,100vw)!important;height:var(--mobile-table-height,100dvh)!important;min-width:0!important;min-height:0!important}body.clean-config.mobile-full-table #cleanConfigDialog{max-width:calc(var(--mobile-table-width,100vw) - 16px)!important;max-height:calc(var(--mobile-table-height,100dvh) - 16px)!important}body.clean-config.mobile-full-table #onscreenLayout{width:100%!important;height:100%!important;min-width:0!important;min-height:0!important}
-  body.touch-track-choices #cleanConfigTracks{display:none!important}
   body.clean-config .band-side{transform:translate(-50%,-50%)!important;height:auto!important;min-height:36px;padding:6px 9px!important}body.clean-config #bandDock,body.clean-config #desktopWorkbench,body.clean-config #databaseMobileToggle{display:none!important}
   body.clean-config #onscreenLayout{padding-top:0!important}
   body.clean-config.test-desktop-workbench .drawing{inset:var(--threeb-test-banner-height,0px) 0 0!important}
@@ -2992,9 +2991,9 @@ window.installThreeBCleanConfig=function(){
   #cleanConfigDialog>header h2::before{content:'⋮⋮';margin-right:5px;font-size:15px}
   #cleanConfigDialog #closeCleanConfig{min-height:28px;height:28px;width:28px;padding:0;margin:0}
   #cleanConfigDialog #cleanConfigTracks{grid-column:1/-1;margin:0}
-  #cleanConfigDialog #cleanConfigTracks #bandTrack{padding:0 3px;gap:0}
+  #cleanConfigDialog #cleanConfigTracks #bandTrack{padding:0;gap:0;height:46px;min-height:46px;box-sizing:border-box}
   #cleanConfigDialog #cleanConfigTracks #bandTrack small{display:none}
-  #cleanConfigDialog #cleanConfigTracks #bandTrack>span{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;gap:2px;width:100%}
+  #cleanConfigDialog #cleanConfigTracks #bandTrack>span{height:44px;display:grid;grid-template-columns:44px minmax(0,1fr) 44px;gap:2px;width:100%}
   #cleanConfigDialog #cleanConfigTracks #bandTrack output{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   #cleanConfigDialog #cleanConfigTracks #bandTrack button{width:44px}
   #cleanConfigDialog #cleanConfigCourse{grid-column:1;margin:0}
@@ -3007,29 +3006,28 @@ window.installThreeBCleanConfig=function(){
   #cleanConfigDialog:has(#cleanConfigMore[open]) #cleanConfigTracks{margin-bottom:8px}
   #cleanConfigDialog:has(#cleanConfigMore[open]) #cleanConfigMore>summary{margin:8px 0}
   @media(pointer:coarse){#cleanConfigDialog>header{min-height:44px}#cleanConfigDialog #closeCleanConfig{min-height:44px;height:44px;width:44px}}
-  body.clean-config #bandMenu{width:44px!important;font-size:22px;border-radius:50%}
-  #cleanConfigDialog[open]:not(:has(#cleanConfigMore[open])){display:flex;align-items:center;gap:2px;flex-wrap:nowrap;width:max-content;max-width:calc(100vw - 16px);padding:0;border:0;background:transparent;box-shadow:none;overflow:visible}
-  #cleanConfigDialog:not(:has(#cleanConfigMore[open]))>header{display:contents}
-  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #cleanConfigTitle{order:0;flex:none;margin:0;padding:0 2px;font:16px/28px system-ui;color:white;text-shadow:0 1px 3px #111;cursor:grab}
-  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #cleanConfigTitle::before{content:none}
-  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #closeCleanConfig{order:4;flex:none;width:24px;height:28px;min-height:28px;border:0;background:#173b30d9;color:white;font-size:18px;border-radius:4px}
-  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #cleanConfigTracks{order:1;flex:none;margin:0}
-  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #bandTrack{padding:0;background:#173b30d9;border-radius:4px}
-  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #bandTrack>span{grid-template-columns:28px 72px 28px;gap:0;width:128px}
-  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #bandTrack button{min-height:28px;height:28px;width:28px;font-size:17px;color:white;background:transparent;border:0}
-  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #bandTrack output{font-size:13px;color:white}
-  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #cleanConfigCourse{order:2;flex:none;width:54px;margin:0}
-  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #levelLklCourse{min-width:0;min-height:28px;height:28px;padding:0 4px;margin:0;font-size:12px;line-height:1.1;color:white;background:#173b30d9;border:0;border-radius:4px}
-  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #cleanConfigMore{order:3;flex:none;width:28px;margin:0}
-  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #cleanConfigMore>summary{min-height:28px;height:28px;padding:0!important;font-size:0;color:white;background:#173b30d9;border:0;border-radius:4px}
-  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #cleanConfigMore>summary::after{content:'⚙';font-size:18px}
+  body.clean-config #bandMenu{width:44px!important;height:44px!important;font-size:22px;border-radius:50%;border:1px solid #ffffff55;background:#173b30f5;color:#fffaf0;box-shadow:0 2px 8px #0003}
+  body.clean-config #bandMenu:focus-visible{outline:2px solid #f7df98;outline-offset:3px}
+  #cleanConfigDialog[open]:not(:has(#cleanConfigMore[open])){display:grid;grid-template-columns:minmax(0,1fr) 44px;gap:6px;box-sizing:border-box;width:208px;max-width:calc(100vw - 16px);padding:8px;border:1px solid #ffffff40;border-radius:12px;background:#173b30f5;color:#fffaf0;box-shadow:0 4px 16px #0003;overflow:hidden}
+  #cleanConfigDialog:not(:has(#cleanConfigMore[open]))>header{display:none}
+  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #cleanConfigTracks{grid-column:1/-1;display:block!important;min-width:0;margin:0}
+  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #bandTrack{padding:0;background:none;border-radius:6px;border:1px solid #ffffff35}
+  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #bandTrack>span{grid-template-columns:44px minmax(0,1fr) 44px;gap:0;width:100%}
+  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #bandTrack button{width:44px;min-height:44px;height:44px;padding:0;border:0;background:transparent;color:inherit;font-size:20px}
+  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #bandTrack output{min-width:0;font-size:15px;color:inherit}
+  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #cleanConfigCourse{grid-column:1;min-width:0;margin:0}
+  #cleanConfigDialog #cleanConfigCourse #lklLevelBar{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px!important}
+  #cleanConfigDialog #cleanConfigCourse #lklLevelBar>button{box-sizing:border-box;min-width:0;width:100%;height:44px;min-height:44px;margin:0;padding:4px;border:1px solid #78988b;border-radius:6px;background:transparent;font:14px system-ui;text-decoration:none;white-space:nowrap}
+  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #cleanConfigCourse #lklLevelBar>button{color:#fffaf0;border-color:#ffffff35}
+  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #cleanConfigMore{grid-column:2;min-width:0;width:44px;margin:0}
+  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #cleanConfigMore>summary{box-sizing:border-box;height:44px;min-height:44px;margin:0;padding:0!important;border:1px solid #ffffff35;border-radius:6px;background:transparent;color:inherit;font-size:0}
+  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #cleanConfigMore>summary::after{content:'⚙';font-size:21px}
+  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) button:hover,#cleanConfigDialog:not(:has(#cleanConfigMore[open])) summary:hover{background:#ffffff18!important}
+  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) button:focus-visible,#cleanConfigDialog:not(:has(#cleanConfigMore[open])) summary:focus-visible{outline:2px solid #f7df98;outline-offset:1px}
   #cleanConfigDialog:has(#cleanConfigMore[open]){background:#faf9f2;border:1px solid #b9b7a7;box-shadow:0 3px 12px #0003}
-  @media(pointer:coarse){
-    #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #cleanConfigTitle{line-height:44px}
-    #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #bandTrack>span{grid-template-columns:32px 70px 32px;width:134px}
-    #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #bandTrack button{width:32px;min-height:44px;height:44px}
-    #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #levelLklCourse,#cleanConfigDialog:not(:has(#cleanConfigMore[open])) #cleanConfigMore>summary,#cleanConfigDialog:not(:has(#cleanConfigMore[open])) #closeCleanConfig{min-height:44px;height:44px}
-  }
+  #cleanConfigDialog #cleanConfigMore[open]>summary{display:none}
+  #cleanConfigDialog:has(#cleanConfigMore[open]) #cleanConfigTitle{font-size:18px}
+  #cleanConfigDialog:has(#cleanConfigMore[open]) #closeCleanConfig{min-width:44px;width:44px;min-height:44px;font-size:22px}
   `;document.head.append(style);
   const dialog=document.createElement('dialog');dialog.id='cleanConfigDialog';dialog.setAttribute('aria-label','Spoor en cursus');dialog.innerHTML='<header><h2 id="cleanConfigTitle" aria-label="Bediening verslepen">⠿</h2><button type="button" id="closeCleanConfig" aria-label="Menu sluiten">×</button></header><section id="cleanConfigTracks" aria-label="Spoor"></section><section id="cleanConfigCourse" aria-label="Cursus"><h3>Cursus</h3></section><details id="cleanConfigMore"><summary>⚙ Config</summary><div id="cleanConfigSettings"></div></details>';document.body.append(dialog);document.body.classList.add('clean-config');
   gear.textContent='☰';gear.setAttribute('aria-label','Spoor en cursus openen');gear.title='Spoor en cursus · klik om te openen, versleep naar een vrije plek';document.body.append(gear);
@@ -3050,7 +3048,7 @@ window.installThreeBCleanConfig=function(){
   try{if(localStorage.getItem('3b-menu-upper-inside-v1')!=='1'){erase(gearKey);localStorage.setItem('3b-clean-config-position-v1','central');localStorage.setItem('3b-menu-upper-inside-v1','1');}}catch(_){}
   const clamp=(v,min,max)=>Math.max(min,Math.min(Math.max(min,max),v));
   const visibleScreen=()=>{const v=window.visualViewport,left=v?.offsetLeft||0,top=v?.offsetTop||0,width=v?.width||innerWidth,height=v?.height||innerHeight;return {left,top,width,height,right:left+width,bottom:top+height};};
-  function placeGear(x,y){const r=gear.getBoundingClientRect(),v=visibleScreen();document.body.style.setProperty('--config-x',clamp(x,v.left+r.width/2+8,v.right-r.width/2-8)+'px');document.body.style.setProperty('--config-y',clamp(y,v.top+r.height/2+8,v.bottom-r.height/2-8)+'px');}
+  function placeGear(x,y){const r=gear.getBoundingClientRect(),v=visibleScreen();document.body.style.setProperty('--config-x',clamp(x,v.left+r.width/2+8,v.right-r.width/2-8)+'px');document.body.style.setProperty('--config-y',clamp(y,v.top+r.height/2+8,v.bottom-r.height/2-8)+'px');if(dialog.open&&!get('cleanConfigMore').open)fitDialog();}
   const select=get('menuButtonPositionSelect');if(select){select.closest('label').querySelector('span').textContent='Menuknop';select.querySelector('option[value=central]').textContent='Midden op tafel';const custom=new Option('Eigen plek · versleep','free');custom.disabled=true;select.add(custom);}
   function position(){if(gearDrag)return;const pattern=get('bandPatternSelect')?.value;
     if(lastPattern&&lastPattern!==pattern){erase(gearKey);try{localStorage.setItem('3b-clean-config-position-v1','central');}catch(_){}}lastPattern=pattern;
@@ -3060,17 +3058,10 @@ window.installThreeBCleanConfig=function(){
     const stored=saved&&Number.isFinite(saved.tableX)&&matrix?new DOMPoint(mirrored?560-saved.tableX:saved.tableX,saved.tableY).matrixTransform(matrix):null;placeGear(saved?stored?.x??saved.x*innerWidth:corner?b.right-53:anchor?.x??b.left+b.width/2,saved?stored?.y??saved.y*innerHeight:corner?b.top+30:anchor?.y??b.top+b.height/2);if(select)select.value=saved?'free':corner?'corner':'central';fitDialog();
   }
   function placeDialog(left,top){const r=dialog.getBoundingClientRect(),v=visibleScreen();Object.assign(dialog.style,{left:clamp(left,v.left+8,v.right-r.width-8)+'px',top:clamp(top,v.top+8,v.bottom-r.height-8)+'px',right:'auto',bottom:'auto',margin:'0'});}
-  function fitDialog(){if(!dialog.open||windowDrag)return;const saved=read(dialogKey);if(saved){placeDialog(saved.x*innerWidth,saved.y*innerHeight);return;}const r=dialog.getBoundingClientRect(),v=visibleScreen();if(get('cleanConfigMore').open){placeDialog(v.left+(v.width-r.width)/2,v.top+(v.height-r.height)/2);return;}
-    const svg=document.querySelector('.table-svg[data-view-table="'+get('editTable')?.value+'"]')||document.querySelector('.table-svg'),matrix=svg?.getScreenCTM();
-    if(!matrix){placeDialog((innerWidth-r.width)/2,(innerHeight-r.height)/2);return;}
-    // Choose an empty patch near the centre; line/ball rectangles are deliberately
-    // avoided using SVG hit testing, not their misleading diagonal bounding boxes.
-    let best=null;const blockers=svg.querySelectorAll('.route-line,circle');
-    for(const [x,y] of [[280,375],[280,485],[280,430],[200,430],[360,430],[200,345],[360,345],[200,515],[360,515],[280,260],[280,600]]){
-      const p=new DOMPoint(x,y).matrixTransform(matrix),left=clamp(p.x-r.width/2,v.left+8,v.right-r.width-8),top=clamp(p.y-r.height/2,v.top+8,v.bottom-r.height-8);let hits=0;
-      for(const node of blockers){const box=node.getBoundingClientRect();if(box.right<left||box.left>left+r.width||box.bottom<top||box.top>top+r.height)continue;const inverse=node.getScreenCTM()?.inverse();if(!inverse)continue;for(let dx=0;dx<=r.width;dx+=16)for(let dy=0;dy<=r.height;dy+=12){const q=new DOMPoint(left+dx,top+dy).matrixTransform(inverse);if(node.isPointInStroke?.(q)||node.isPointInFill?.(q))hits++;}}
-      const g=gear.getBoundingClientRect(),overlap=Math.max(0,Math.min(left+r.width,g.right)-Math.max(left,g.left))*Math.max(0,Math.min(top+r.height,g.bottom)-Math.max(top,g.top));const score=hits*1000+overlap*100+Math.hypot(x-280,y-430);if(!best||score<best.score)best={left,top,score};
-    }placeDialog(best.left,best.top);
+  function fitDialog(){if(!dialog.open||windowDrag)return;const r=dialog.getBoundingClientRect(),v=visibleScreen();
+    if(get('cleanConfigMore').open){const saved=read(dialogKey);placeDialog(saved?saved.x*innerWidth:v.left+(v.width-r.width)/2,saved?saved.y*innerHeight:v.top+(v.height-r.height)/2);return;}
+    const anchor=gear.getBoundingClientRect(),above=anchor.top-r.height-10;
+    placeDialog(anchor.left+anchor.width/2-r.width/2,above>=v.top+8?above:anchor.bottom+10);
   }
   function bindDrag(node,key,isGear){node.addEventListener('pointerdown',event=>{if(!event.isPrimary||event.button!==0||!isGear&&event.target.closest('button,a,input,select,textarea'))return;event.stopPropagation();if(isGear)suppressGearClick=false;const box=(isGear?gear:dialog).getBoundingClientRect(),sx=event.clientX,sy=event.clientY,id=event.pointerId;let moved=false;
     const move=e=>{if(e.pointerId!==id)return;if(!moved&&Math.hypot(e.clientX-sx,e.clientY-sy)<6)return;if(!moved)node.setPointerCapture(e.pointerId);moved=true;e.preventDefault();if(isGear){gearDrag=true;placeGear(box.x+box.width/2+e.clientX-sx,box.y+box.height/2+e.clientY-sy);}else{windowDrag=true;placeDialog(box.x+e.clientX-sx,box.y+e.clientY-sy);}};
@@ -3078,17 +3069,21 @@ window.installThreeBCleanConfig=function(){
     document.addEventListener('pointermove',move,{passive:false});document.addEventListener('pointerup',end);document.addEventListener('pointercancel',end);
   });}
   bindDrag(gear,gearKey,true);bindDrag(dialog.querySelector('header'),dialogKey,false);
-  function openConfig(){reconcile();if(!dialog.open){get('cleanConfigMore').open=false;dialog.scrollTop=0;dialog.show();get('closeCleanConfig').focus({preventScroll:true});}fitDialog();}
+  function syncMenu(){const open=dialog.open,more=get('cleanConfigMore').open;gear.textContent=open?'×':'☰';gear.setAttribute('aria-expanded',String(open));gear.setAttribute('aria-controls','cleanConfigDialog');gear.setAttribute('aria-label',open?'Menu sluiten':'Spoor en cursus openen');gear.title=open?'Menu sluiten · versleep naar een vrije plek':'Spoor en cursus · versleep naar een vrije plek';get('closeCleanConfig').textContent=more?'←':'×';get('closeCleanConfig').setAttribute('aria-label',more?'Terug naar menu':'Menu sluiten');get('cleanConfigTitle').textContent=more?'Instellingen':'⠿';}
+  function openConfig(){if(dialog.open){dialog.close();syncMenu();return;}reconcile();get('cleanConfigMore').open=false;dialog.scrollTop=0;dialog.show();syncMenu();fitDialog();gear.focus({preventScroll:true});}
+  function backFromSettings(){if(get('cleanConfigMore').open){get('cleanConfigMore').open=false;dialog.scrollTop=0;syncMenu();fitDialog();gear.focus({preventScroll:true});}else dialog.close();}
+  dialog.addEventListener('close',()=>{syncMenu();gear.focus({preventScroll:true});});
+  get('cleanConfigMore').addEventListener('toggle',()=>{syncMenu();fitDialog();if(dialog.open)get(get('cleanConfigMore').open?'closeCleanConfig':'bandMenu').focus({preventScroll:true});});syncMenu();
   document.addEventListener('pointerdown',()=>{suppressGearClick=false;},true);
   document.addEventListener('click',e=>{if(suppressGearClick&&e.detail!==0){suppressGearClick=false;e.preventDefault();e.stopImmediatePropagation();}},true);
-  gear.onclick=e=>{e.preventDefault();e.stopPropagation();suppressGearClick=false;openConfig();};get('closeCleanConfig').onclick=()=>dialog.close();get('closeSelectionMenu')?.addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog){const b=dialog.getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)dialog.close();}});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&dialog.open&&!document.querySelector('dialog:modal')){e.preventDefault();dialog.close();}});
+  gear.onclick=e=>{e.preventDefault();e.stopPropagation();suppressGearClick=false;openConfig();};get('closeCleanConfig').onclick=backFromSettings;get('closeSelectionMenu')?.addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog){const b=dialog.getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)dialog.close();}});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&dialog.open&&!document.querySelector('dialog:modal')){e.preventDefault();backFromSettings();}});
   dialog.addEventListener('toggle',()=>requestAnimationFrame(fitDialog),true);
   const textConfig=document.createElement('fieldset');textConfig.id='tableTextConfig';textConfig.innerHTML='<legend>Tafel en teksten</legend><label>Schaalweergave <select id="tableScaleMode"><option value="tables">Tafels even groot</option><option value="balls">Ballen even groot</option><option value="tracks">Vergelijk sporen</option></select></label><p id="tableScaleHint"></p><label>Cursustafel <select id="courseTableSize"><option value="klein">Klein · standaard</option><option value="groot">Groot</option></select></label><label>Bandteksten (px) <input id="tableBandFontSize" type="number" min="12" max="28" step="1"></label><label><input id="showEndpointValues" type="checkbox"> Labels bij begin en eind van de lijn</label><label>Neus · aankomst <select id="neusArrivalLabelMode"><option value="number">Getal · 50</option><option value="name">Spoornaam · VIJF</option><option value="both">Beide · 50 · VIJF</option></select></label><label>Lijngetallen (px) <input id="tableEndpointFontSize" type="number" min="10" max="26" step="1"></label>';get('cleanConfigSettings').prepend(textConfig);
   const textPrefs=window.ThreeBTableText.get();get('courseTableSize').value=textPrefs.courseTable;get('tableScaleMode').value=textPrefs.scaleMode;get('tableBandFontSize').value=textPrefs.bandSize;get('tableEndpointFontSize').value=textPrefs.endpointSize;get('showEndpointValues').checked=textPrefs.showEndpoints;get('neusArrivalLabelMode').value=textPrefs.neusArrivalLabelMode;
   textConfig.onchange=e=>{if(!e.target.checkValidity())return;const fields={neusArrivalLabelMode:['neusArrivalLabelMode',e.target.value],tableScaleMode:['scaleMode',e.target.value],courseTableSize:['courseTable',e.target.value],tableBandFontSize:['bandSize',Number(e.target.value)],tableEndpointFontSize:['endpointSize',Number(e.target.value)],showEndpointValues:['showEndpoints',e.target.checked]},field=fields[e.target.id];if(field)window.ThreeBTableText.update({[field[0]]:field[1]});};
   function syncScaleMode(){const prefs=window.ThreeBTableText.get(),mode=prefs.scaleMode;get('tableScaleMode').value=mode;get('courseTableSize').value=prefs.courseTable;get('neusArrivalLabelMode').value=prefs.neusArrivalLabelMode;get('tableScaleHint').textContent=({tables:'Gelijke gele randen; de bal op Klein is naar verhouding groter.',balls:'Gelijke ballen; Klein wordt kleiner getekend dan Groot.',tracks:'Gelijke gele randen en ballen om lijnen te vergelijken.'})[mode];}window.addEventListener('threeb-spoor-state',syncScaleMode);syncScaleMode();
-  const reset=document.createElement('button');reset.id='resetConfigPosition';reset.type='button';reset.textContent='Config naar standaardplek';reset.title='Menu rechtsboven in het speelvlak, linksboven bij spiegelen';get('cleanConfigSettings').append(reset);reset.onclick=()=>{erase(gearKey);erase(dialogKey);dialog.removeAttribute('style');if(select){select.value='central';select.dispatchEvent(new Event('change',{bubbles:true}));}position();};
+  const reset=document.createElement('button');reset.id='resetConfigPosition';reset.type='button';reset.textContent='Config naar standaardplek';reset.title='Menu midden op tafel';get('cleanConfigSettings').append(reset);reset.onclick=()=>{erase(gearKey);erase(dialogKey);dialog.removeAttribute('style');if(select){select.value='central';select.dispatchEvent(new Event('change',{bubbles:true}));}position();};
   dialog.addEventListener('click',e=>{const id=e.target.closest('button,a')?.id;if(['levelLklCourse','levelLklPractice','openExplanation','openSpoorscherm','openLklFramework','desktopOpenSpoor','mobilePreview','userSettingsButton','toggleConfig','thumbUp'].includes(id))dialog.close();},true);
   get('menuButtonPositionSelect')?.addEventListener('change',e=>{erase(gearKey);try{localStorage.setItem('3b-clean-config-position-v1',e.target.value);}catch(_){}requestAnimationFrame(position);});
   const mount=get('svgMount');if(mount&&window.ResizeObserver)new ResizeObserver(()=>requestAnimationFrame(position)).observe(mount);

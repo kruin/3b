@@ -1,4 +1,4 @@
-# 3B v208-r91 — User-werkwijze
+# 3B v208-r92 — User-werkwijze
 
 # De Waaier — Van Top tot Teen
 
@@ -170,11 +170,15 @@ Iedere stap heeft een passende demonstratie: eerst de waaier vanuit het vaste re
 
 
 ## Namen en lesindeling bij de tafel
-Op de gewone tafel staat **Namen** onder **Cursus** in het menu. Deze naslag verklaart Waaier, patroon, spoor, karkas en de lijnnamen, gevolgd door de lesindeling. De cursus zelf bevat deze extra knop en dit naslagblok niet; daar volgt de uitleg de stappen. Sluiten van de naslag brengt je terug naar de tafel zonder een les te starten of metingen te wijzigen.
+Op de gewone tafel staat **Namen** naast **Cursus** in het menu. Deze naslag verklaart Waaier, patroon, spoor, karkas en de lijnnamen, gevolgd door de lesindeling. De cursus zelf bevat deze extra knop en dit naslagblok niet; daar volgt de uitleg de stappen. Sluiten van de naslag brengt je terug naar de tafel zonder een les te starten of metingen te wijzigen.
 
 
 ## Vaste bediening
 **Vorige · Volgende** blijven onderaan op dezelfde plek staan, van de introductie tot de lijnlessen. Alleen de uitleg scrolt. De tafel behoudt per weergave zijn vaste plaats. In les2 zijn de lijnnamen **Neus · Kop · Nek · Romp · Kruis · Been** knoppen: ze openen direct die lijn en starten de bijbehorende demo. Vorige/Volgende gaan vanaf daar verder in de vaste lijnvolgorde.
+
+
+## Tafelmenu openen en teruggaan
+De ronde menuknop blijft staan en wisselt tussen ☰ en ×. Het compacte paneel opent erbij, met Spoor en daarnaast Cursus, Namen en Instellingen als leesbare knoppen. Vanuit Instellingen gaat ← terug naar hetzelfde compacte menu. × sluit het menu. De bediening blijft versleepbaar en keert bij terugkomst op de tafel naar het midden terug.
 
 
 # LKL meten: Neus, Kop en Romp
