@@ -1,5 +1,5 @@
-window.THREEB_RELEASE=Object.freeze({"version": "v208-r79", "date": "2026-11-05", "channel": "test", "compatibilityBase": "v208-r15"});
-window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r79", "date": "2026-11-05"});
+window.THREEB_RELEASE=Object.freeze({"version": "v208-r80", "date": "2026-11-05", "channel": "test", "compatibilityBase": "v208-r15"});
+window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r80", "date": "2026-11-05"});
 /* Shared display provenance. Approval and technical pinning are not manual entry. */
 const ThreeBValueOrigin=(()=>{
   function kind(p){
@@ -2857,11 +2857,12 @@ window.installThreeBCleanConfig=function(){
   const get=id=>document.getElementById(id),gear=get('bandMenu');if(!gear)return;
   const touch=navigator.maxTouchPoints>0||matchMedia('(pointer:coarse)').matches;document.body.classList.toggle('touch-track-choices',touch);
   const style=document.createElement('style');style.textContent=`
+  body.table-only.clean-config.mobile-full-table .drawing{position:fixed!important;inset:auto!important;left:var(--mobile-table-left,0px)!important;top:var(--mobile-table-top,0px)!important;width:var(--mobile-table-width,100vw)!important;height:var(--mobile-table-height,100dvh)!important;min-width:0!important;min-height:0!important}body.clean-config.mobile-full-table #cleanConfigDialog{max-width:calc(var(--mobile-table-width,100vw) - 16px)!important;max-height:calc(var(--mobile-table-height,100dvh) - 16px)!important}body.clean-config.mobile-full-table #onscreenLayout{width:100%!important;height:100%!important;min-width:0!important;min-height:0!important}
   body.touch-track-choices #cleanConfigTracks{display:none!important}
   body.clean-config .band-side{transform:translate(-50%,-50%)!important;height:auto!important;min-height:36px;padding:6px 9px!important}body.clean-config #bandDock,body.clean-config #desktopWorkbench,body.clean-config #databaseMobileToggle{display:none!important}
   body.clean-config #onscreenLayout{padding-top:0!important}
   body.clean-config.test-desktop-workbench .drawing{inset:var(--threeb-test-banner-height,0px) 0 0!important}
-  body.clean-config #bandMenu{position:fixed!important;left:var(--config-x,50%)!important;top:var(--config-y,50%)!important;transform:translate(-50%,-50%)!important;width:90px!important;height:44px!important;z-index:1100;font-size:16px;border-radius:22px;cursor:grab;touch-action:none;user-select:none;display:flex;align-items:center;justify-content:center;gap:5px}
+  body.clean-config #bandMenu{position:fixed!important;left:var(--config-x,50%)!important;top:var(--config-y,50%)!important;transform:translate(-50%,-50%)!important;width:90px!important;height:44px!important;z-index:2300;font-size:16px;border-radius:22px;cursor:grab;touch-action:none;user-select:none;display:flex;align-items:center;justify-content:center;gap:5px}
   #cleanConfigDialog{position:fixed;inset:0;margin:auto;box-sizing:border-box;width:min(224px,calc(100vw - 16px));height:fit-content;max-height:calc(100dvh - 16px);padding:6px;z-index:2400;box-shadow:0 3px 12px #0003;border:1px solid #b9b7a7;border-radius:14px;background:#faf9f2;color:#19392e;overflow:auto}
   #cleanConfigDialog:has(#cleanConfigMore[open]){width:min(440px,calc(100vw - 24px))}
   #cleanConfigDialog::backdrop{background:#132c2366}
@@ -2956,7 +2957,8 @@ window.installThreeBCleanConfig=function(){
   try{if(localStorage.getItem('3b-menu-table-center-v1')!=='1'){erase(gearKey);erase(dialogKey);localStorage.setItem('3b-clean-config-position-v1','central');localStorage.setItem('3b-menu-table-center-v1','1');}}catch(_){}
   try{if(localStorage.getItem('3b-menu-upper-inside-v1')!=='1'){erase(gearKey);localStorage.setItem('3b-clean-config-position-v1','central');localStorage.setItem('3b-menu-upper-inside-v1','1');}}catch(_){}
   const clamp=(v,min,max)=>Math.max(min,Math.min(Math.max(min,max),v));
-  function placeGear(x,y){const r=gear.getBoundingClientRect();document.body.style.setProperty('--config-x',clamp(x,r.width/2+8,innerWidth-r.width/2-8)+'px');document.body.style.setProperty('--config-y',clamp(y,r.height/2+8,innerHeight-r.height/2-8)+'px');}
+  const visibleScreen=()=>{const v=window.visualViewport,left=v?.offsetLeft||0,top=v?.offsetTop||0,width=v?.width||innerWidth,height=v?.height||innerHeight;return {left,top,width,height,right:left+width,bottom:top+height};};
+  function placeGear(x,y){const r=gear.getBoundingClientRect(),v=visibleScreen();document.body.style.setProperty('--config-x',clamp(x,v.left+r.width/2+8,v.right-r.width/2-8)+'px');document.body.style.setProperty('--config-y',clamp(y,v.top+r.height/2+8,v.bottom-r.height/2-8)+'px');}
   const select=get('menuButtonPositionSelect');if(select){select.closest('label').querySelector('span').textContent='Menuknop';select.querySelector('option[value=central]').textContent='Boven op tafel · spiegelt mee';const custom=new Option('Eigen plek · versleep','free');custom.disabled=true;select.add(custom);}
   function position(){if(gearDrag)return;const pattern=get('bandPatternSelect')?.value;
     if(lastPattern&&lastPattern!==pattern){erase(gearKey);try{localStorage.setItem('3b-clean-config-position-v1','central');}catch(_){}}lastPattern=pattern;
@@ -2965,15 +2967,15 @@ window.installThreeBCleanConfig=function(){
     let saved=read(gearKey);if(saved?.pattern&&saved.pattern!==pattern){erase(gearKey);saved=null;}let corner=false;try{corner=localStorage.getItem('3b-clean-config-position-v1')==='corner';}catch(_){}
     const stored=saved&&Number.isFinite(saved.tableX)&&matrix?new DOMPoint(mirrored?560-saved.tableX:saved.tableX,saved.tableY).matrixTransform(matrix):null;placeGear(saved?stored?.x??saved.x*innerWidth:corner?b.right-53:anchor?.x??b.left+b.width/2,saved?stored?.y??saved.y*innerHeight:corner?b.top+30:anchor?.y??b.top+b.height/2);if(select)select.value=saved?'free':corner?'corner':'central';fitDialog();
   }
-  function placeDialog(left,top){const r=dialog.getBoundingClientRect();Object.assign(dialog.style,{left:clamp(left,8,innerWidth-r.width-8)+'px',top:clamp(top,8,innerHeight-r.height-8)+'px',right:'auto',bottom:'auto',margin:'0'});}
-  function fitDialog(){if(!dialog.open||windowDrag)return;const saved=read(dialogKey);if(saved){placeDialog(saved.x*innerWidth,saved.y*innerHeight);return;}const r=dialog.getBoundingClientRect();if(get('cleanConfigMore').open){placeDialog((innerWidth-r.width)/2,(innerHeight-r.height)/2);return;}
+  function placeDialog(left,top){const r=dialog.getBoundingClientRect(),v=visibleScreen();Object.assign(dialog.style,{left:clamp(left,v.left+8,v.right-r.width-8)+'px',top:clamp(top,v.top+8,v.bottom-r.height-8)+'px',right:'auto',bottom:'auto',margin:'0'});}
+  function fitDialog(){if(!dialog.open||windowDrag)return;const saved=read(dialogKey);if(saved){placeDialog(saved.x*innerWidth,saved.y*innerHeight);return;}const r=dialog.getBoundingClientRect(),v=visibleScreen();if(get('cleanConfigMore').open){placeDialog(v.left+(v.width-r.width)/2,v.top+(v.height-r.height)/2);return;}
     const svg=document.querySelector('.table-svg[data-view-table="'+get('editTable')?.value+'"]')||document.querySelector('.table-svg'),matrix=svg?.getScreenCTM();
     if(!matrix){placeDialog((innerWidth-r.width)/2,(innerHeight-r.height)/2);return;}
     // Choose an empty patch near the centre; line/ball rectangles are deliberately
     // avoided using SVG hit testing, not their misleading diagonal bounding boxes.
     let best=null;const blockers=svg.querySelectorAll('.route-line,circle');
     for(const [x,y] of [[280,375],[280,485],[280,430],[200,430],[360,430],[200,345],[360,345],[200,515],[360,515],[280,260],[280,600]]){
-      const p=new DOMPoint(x,y).matrixTransform(matrix),left=clamp(p.x-r.width/2,8,innerWidth-r.width-8),top=clamp(p.y-r.height/2,8,innerHeight-r.height-8);let hits=0;
+      const p=new DOMPoint(x,y).matrixTransform(matrix),left=clamp(p.x-r.width/2,v.left+8,v.right-r.width-8),top=clamp(p.y-r.height/2,v.top+8,v.bottom-r.height-8);let hits=0;
       for(const node of blockers){const box=node.getBoundingClientRect();if(box.right<left||box.left>left+r.width||box.bottom<top||box.top>top+r.height)continue;const inverse=node.getScreenCTM()?.inverse();if(!inverse)continue;for(let dx=0;dx<=r.width;dx+=16)for(let dy=0;dy<=r.height;dy+=12){const q=new DOMPoint(left+dx,top+dy).matrixTransform(inverse);if(node.isPointInStroke?.(q)||node.isPointInFill?.(q))hits++;}}
       const g=gear.getBoundingClientRect(),overlap=Math.max(0,Math.min(left+r.width,g.right)-Math.max(left,g.left))*Math.max(0,Math.min(top+r.height,g.bottom)-Math.max(top,g.top));const score=hits*1000+overlap*100+Math.hypot(x-280,y-430);if(!best||score<best.score)best={left,top,score};
     }placeDialog(best.left,best.top);
