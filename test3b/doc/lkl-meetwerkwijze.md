@@ -171,6 +171,10 @@ Iedere stap heeft een passende demonstratie: eerst de waaier vanuit het vaste re
 Op de gewone tafel staat **Namen** onder **Cursus** in het menu. Deze naslag verklaart Waaier, patroon, spoor, karkas en de lijnnamen, gevolgd door de lesindeling. De cursus zelf bevat deze extra knop en dit naslagblok niet; daar volgt de uitleg de stappen. Sluiten van de naslag brengt je terug naar de tafel zonder een les te starten of metingen te wijzigen.
 
 
+## Vaste bediening
+**Vorige · Volgende** blijven onderaan op dezelfde plek staan, van de introductie tot de lijnlessen. Alleen de uitleg scrolt. De tafel behoudt per weergave zijn vaste plaats. In les2 zijn de lijnnamen **Neus · Kop · Nek · Romp · Kruis · Been** knoppen: ze openen direct die lijn en starten de bijbehorende demo. Vorige/Volgende gaan vanaf daar verder in de vaste lijnvolgorde.
+
+
 # LKL meten: Neus, Kop en Romp
 
 Begin met LKL en één basislijn, bijvoorbeeld VIJF op Klein. Je onderzoekt wat je eigen afstoot werkelijk doet. Het zichtbare karkas is Neus en Romp: dat leer je eerst herkennen. In deze latere meetles onderzoek je wat je eigen afstoot doet, met de vraag: waar ligt mijn Kop A? Bouw de complete eigen meetbasis op uit ingevoerde metingen van **Neus, Kop en Romp**. Een getekende basiswaarde of schatting telt nog niet als een eigen meetgegeven. Begin pas aan andere patronen nadat deze werkwijze goed werkt.
