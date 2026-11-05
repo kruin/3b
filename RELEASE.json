@@ -1,6 +1,7 @@
 {
-  "version": "v208-r54",
-  "date": "2026-11-01",
+  "version": "v208-r89",
+  "date": "2026-11-05",
   "channel": "production",
-  "compatibilityBase": "v208-r15"
+  "compatibilityBase": "v208-r15",
+  "name": "VIJF"
 }

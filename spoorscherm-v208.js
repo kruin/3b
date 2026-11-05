@@ -1,5 +1,5 @@
-window.THREEB_RELEASE=Object.freeze({"version": "v208-r54", "date": "2026-11-01", "channel": "test", "compatibilityBase": "v208-r15"});
-window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r54", "date": "2026-11-01"});
+window.THREEB_RELEASE=Object.freeze({"version": "v208-r89", "date": "2026-11-05", "channel": "test", "compatibilityBase": "v208-r15"});
+window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r89", "date": "2026-11-05"});
 /* Shared display provenance. Approval and technical pinning are not manual entry. */
 const ThreeBValueOrigin=(()=>{
   function kind(p){
@@ -74,6 +74,8 @@ const ThreeBLklKarkas=(()=>{
     romp:'Je afstoot levert de werkelijk gespeelde Romplijn. Kijk vanaf het bekende kijkpunt A bij de zuidband in de verwachte lijn en zie de bal aankomen vanaf Romp V op de oostelijke stiplijn. Voer het waargenomen V in; met het bekende A berekent de app R. Je hoeft R dan niet nog eens te meten. Wijkt je kijkpunt af, leg dat vast als A. Je kunt R ook afzonderlijk meten.'
   };
   function applyCourse(c){
+    const prior=c?.explanation?.levels?.find(l=>l.key==='LKL')?.slides?.find(s=>s.key==='lesson-five-goal');
+    if(prior?.text?.nl?.includes('Les 2 werkt terug vanaf een vaste Romp Oost 30 → Zuid 30 op Klein: eerst bal 3, dan bal 1, daarna de gegeven Neus ter controle. De vaste oefenwaarden wijzigen mijn eigen metingen niet.'))prior.text.nl=prior.text.nl.replace('Les 2 werkt terug vanaf een vaste Romp Oost 30 → Zuid 30 op Klein: eerst bal 3, dan bal 1, daarna de gegeven Neus ter controle. De vaste oefenwaarden wijzigen mijn eigen metingen niet.','Les 2 werkt terug vanaf de Romp van hetzelfde gemeten VIJF: eerst bal 3, dan bal 1, daarna de Neus ter controle. Les 3 vergelijkt VIJF−1, +1, +2 en +3, ook via hun aankomsten. Les 4 herhaalt of bal 1 op hetzelfde spoor ligt als bal 3. Naar tafel en Terug naar mijn les houden dezelfde tekening en stap vast. Na deze VIJF-reeks vormt de waaier de brug naar ZES en volgende basissporen.');
     if(!c||c.__lklMeasurementCourse==='1.9')return;c.__lklMeasurementCourse='1.9';
     if(c.editor)c.editor.lklBasicParts=['neus','kop','romp'];if(c.speedProfiles?.lkl)c.speedProfiles.lkl.framework=['neus','romp'];
     const course=c.explanation;if(!course)return;course.previousCardsLklMeasurements={};course.updated='2026-11-01';course.version='1.9';
@@ -81,7 +83,7 @@ const ThreeBLklKarkas=(()=>{
     if(course.glossary?.hiel)course.glossary.hiel.text={nl:'De lijn na Been. LKL stopt op half Been. De 6–7-bander doorloopt de hele Hiel, met daarna standaard 15 cm extra uitloop. Die extra lengte is per tafel en basisspoor instelbaar. Een harder lopende bal hoort bij het afzonderlijke patroon 6–7 banden met eigen meetwaarden, niet bij een verlengde LKL-baan. De animatie berekent geen snelheidsovergang.',en:'The line after Leg. The LKL course runs out halfway along Leg. A harder-running ball uses the separate 6–7-cushion pattern with its own measurements, not an extended LKL route.'};
     if(course.glossary?.kop)course.glossary.kop.text={nl:instructions.kop,en:'Head V is calculated. Measure Head R with cushion-edge markers and calculate A, or sight along Head V–A and enter A to calculate R.'};
     const changes={
-      'lesson-five-goal':['Start met LKL · lijn na lijn','Ik volg de bal altijd in dezelfde volgorde: Neus → Kop → Nek → Romp → Kruis → Been. Bij LKL volgt uitloop tot half Been; een harder lopende bal hoort bij het afzonderlijke patroon 6–7 banden. Eerst de Neus, daarna pas de Kop, daarna de Nek enzovoort. Geen keuzevragen of willekeurige lijnkeuze. De bal rolt langs de actieve lijn; ik kan pauzeren, herhalen en naar de vorige of volgende stap. Les 1 volgt VIJF voorwaarts. Les 2 werkt terug vanaf een vaste Romp Oost 30 → Zuid 30 op Klein: eerst bal 3, dan bal 1, daarna de gegeven Neus ter controle. De vaste oefenwaarden wijzigen mijn eigen metingen niet. Eigen metingen en mijn Kop A komen later. Schuivende bal is voor het latere Pro-niveau.','Start with LKL and one base track, for example FIVE on Small. Enter measurements for Nose, Head and Body before the framework is complete. Other patterns follow later.'],
+      'lesson-five-goal':['Start met LKL · lijn na lijn','Ik volg de bal altijd in dezelfde volgorde: Neus → Kop → Nek → Romp → Kruis → Been. Bij LKL volgt uitloop tot half Been; een harder lopende bal hoort bij het afzonderlijke patroon 6–7 banden. Eerst de Neus, daarna pas de Kop, daarna de Nek enzovoort. Geen keuzevragen of willekeurige lijnkeuze. De bal rolt langs de actieve lijn; ik kan pauzeren, herhalen en naar de vorige of volgende stap. Les 1 volgt VIJF voorwaarts. Les 2 werkt terug vanaf de Romp van hetzelfde gemeten VIJF: eerst bal 3, dan bal 1, daarna de Neus ter controle. Les 3 vergelijkt VIJF−1, +1, +2 en +3, ook via hun aankomsten. Les 4 herhaalt of bal 1 op hetzelfde spoor ligt als bal 3. Naar tafel en Terug naar mijn les houden dezelfde tekening en stap vast. Na deze VIJF-reeks vormt de waaier de brug naar ZES en volgende basissporen. Eigen metingen en mijn Kop A komen later. Schuivende bal is voor het latere Pro-niveau.','Start with LKL and one base track, for example FIVE on Small. Enter measurements for Nose, Head and Body before the framework is complete. Other patterns follow later.'],
       'lesson-framework':['Lijn na lijn · het karkas Neus en Romp','Ik volg eerst Neus, Kop, Nek, Romp, Kruis en Been. LKL loopt uit tot half Been; harder gaat naar het afzonderlijke patroon 6–7 banden. De bal bouwt het spoor in die vaste volgorde op, zonder keuzevragen. Het karkas is wat je ziet: Neus en Romp. Herken eerst op welk spoor bal 3 ligt en of bal 1 op de bijbehorende Neus ligt. Daar komt later bij wat je doet: je eigen afstoot en de vraag waar jouw Kop A ligt. Voor een complete eigen meetbasis zijn Neus, Romp en aanvullend Kop R of A nodig. Meet eerst de gekozen basislijn op je tafel en voer de meetgegevens van alle drie in. Kop V voert je niet in: die wordt berekend. Voor Kop meet je R of A. Voor de Romp observeert je je eigen afstoot: meet V langs het bekende kijkpunt A, dan berekent de app R; een aparte R-meting is dan niet nodig. Het gaat om je eigen waarnemingen; de Kruinwaarden zijn het startvoorbeeld. Je mag tussentijds bewaren als concept. Zolang je eigen metingen van alle drie niet compleet zijn, blijft Kruin voor dit spoor actief.','LKL requires measured Nose, Head and Body. Head V is calculated; measure Head R or A. Observe Body V from the known viewing point A to calculate R; a separate R measurement is not required. Only your own recorded measurements complete the User framework. Partial work is saved as a draft while Kruin remains active.'],
       'lesson-head-measure':['Latere meetles · waar ligt mijn Kop A?','Het zichtbare karkas is Neus en Romp. Nu onderzoek je wat je eigen afstoot doet: waar ligt mijn Kop A op de noordelijke stiplijn? Tot die eigen meting bekend is, blijft Kruins Kop het aangegeven uitgangspunt. '+instructions.kop,'Measure Head R with markers on the north cushion edge: the marker falling perpendicular to the cushion identifies the contact. Enter R to calculate A. Alternatively walk alongside and sight along Head V–A, enter A to calculate R. Head V is always calculated.'],
       'lesson-record-body':['Romp meten · kijken vanaf de zuidband',instructions.romp,'Your shot supplies the actual Body line. Observe Body V on the east diamond line from the known viewing point A at the south cushion. Enter V to calculate R with that known A; no separate R measurement is required. Record A if the viewing point changes.'],
@@ -99,22 +101,2355 @@ const ThreeBLklKarkas=(()=>{
 if(typeof window!=='undefined')window.ThreeBLklKarkas=ThreeBLklKarkas;
 if(typeof module!=='undefined')module.exports=ThreeBLklKarkas;
 
+/* qrcode-generator 1.4.4 (npm), MIT
+MIT License
+
+Copyright (c) 2009 Kazuhiko Arase
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+IN THE SOFTWARE.
+*/
+//---------------------------------------------------------------------
+//
+// QR Code Generator for JavaScript
+//
+// Copyright (c) 2009 Kazuhiko Arase
+//
+// URL: http://www.d-project.com/
+//
+// Licensed under the MIT license:
+//  http://www.opensource.org/licenses/mit-license.php
+//
+// The word 'QR Code' is registered trademark of
+// DENSO WAVE INCORPORATED
+//  http://www.denso-wave.com/qrcode/faqpatent-e.html
+//
+//---------------------------------------------------------------------
+
+var qrcode = function() {
+
+  //---------------------------------------------------------------------
+  // qrcode
+  //---------------------------------------------------------------------
+
+  /**
+   * qrcode
+   * @param typeNumber 1 to 40
+   * @param errorCorrectionLevel 'L','M','Q','H'
+   */
+  var qrcode = function(typeNumber, errorCorrectionLevel) {
+
+    var PAD0 = 0xEC;
+    var PAD1 = 0x11;
+
+    var _typeNumber = typeNumber;
+    var _errorCorrectionLevel = QRErrorCorrectionLevel[errorCorrectionLevel];
+    var _modules = null;
+    var _moduleCount = 0;
+    var _dataCache = null;
+    var _dataList = [];
+
+    var _this = {};
+
+    var makeImpl = function(test, maskPattern) {
+
+      _moduleCount = _typeNumber * 4 + 17;
+      _modules = function(moduleCount) {
+        var modules = new Array(moduleCount);
+        for (var row = 0; row < moduleCount; row += 1) {
+          modules[row] = new Array(moduleCount);
+          for (var col = 0; col < moduleCount; col += 1) {
+            modules[row][col] = null;
+          }
+        }
+        return modules;
+      }(_moduleCount);
+
+      setupPositionProbePattern(0, 0);
+      setupPositionProbePattern(_moduleCount - 7, 0);
+      setupPositionProbePattern(0, _moduleCount - 7);
+      setupPositionAdjustPattern();
+      setupTimingPattern();
+      setupTypeInfo(test, maskPattern);
+
+      if (_typeNumber >= 7) {
+        setupTypeNumber(test);
+      }
+
+      if (_dataCache == null) {
+        _dataCache = createData(_typeNumber, _errorCorrectionLevel, _dataList);
+      }
+
+      mapData(_dataCache, maskPattern);
+    };
+
+    var setupPositionProbePattern = function(row, col) {
+
+      for (var r = -1; r <= 7; r += 1) {
+
+        if (row + r <= -1 || _moduleCount <= row + r) continue;
+
+        for (var c = -1; c <= 7; c += 1) {
+
+          if (col + c <= -1 || _moduleCount <= col + c) continue;
+
+          if ( (0 <= r && r <= 6 && (c == 0 || c == 6) )
+              || (0 <= c && c <= 6 && (r == 0 || r == 6) )
+              || (2 <= r && r <= 4 && 2 <= c && c <= 4) ) {
+            _modules[row + r][col + c] = true;
+          } else {
+            _modules[row + r][col + c] = false;
+          }
+        }
+      }
+    };
+
+    var getBestMaskPattern = function() {
+
+      var minLostPoint = 0;
+      var pattern = 0;
+
+      for (var i = 0; i < 8; i += 1) {
+
+        makeImpl(true, i);
+
+        var lostPoint = QRUtil.getLostPoint(_this);
+
+        if (i == 0 || minLostPoint > lostPoint) {
+          minLostPoint = lostPoint;
+          pattern = i;
+        }
+      }
+
+      return pattern;
+    };
+
+    var setupTimingPattern = function() {
+
+      for (var r = 8; r < _moduleCount - 8; r += 1) {
+        if (_modules[r][6] != null) {
+          continue;
+        }
+        _modules[r][6] = (r % 2 == 0);
+      }
+
+      for (var c = 8; c < _moduleCount - 8; c += 1) {
+        if (_modules[6][c] != null) {
+          continue;
+        }
+        _modules[6][c] = (c % 2 == 0);
+      }
+    };
+
+    var setupPositionAdjustPattern = function() {
+
+      var pos = QRUtil.getPatternPosition(_typeNumber);
+
+      for (var i = 0; i < pos.length; i += 1) {
+
+        for (var j = 0; j < pos.length; j += 1) {
+
+          var row = pos[i];
+          var col = pos[j];
+
+          if (_modules[row][col] != null) {
+            continue;
+          }
+
+          for (var r = -2; r <= 2; r += 1) {
+
+            for (var c = -2; c <= 2; c += 1) {
+
+              if (r == -2 || r == 2 || c == -2 || c == 2
+                  || (r == 0 && c == 0) ) {
+                _modules[row + r][col + c] = true;
+              } else {
+                _modules[row + r][col + c] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+
+    var setupTypeNumber = function(test) {
+
+      var bits = QRUtil.getBCHTypeNumber(_typeNumber);
+
+      for (var i = 0; i < 18; i += 1) {
+        var mod = (!test && ( (bits >> i) & 1) == 1);
+        _modules[Math.floor(i / 3)][i % 3 + _moduleCount - 8 - 3] = mod;
+      }
+
+      for (var i = 0; i < 18; i += 1) {
+        var mod = (!test && ( (bits >> i) & 1) == 1);
+        _modules[i % 3 + _moduleCount - 8 - 3][Math.floor(i / 3)] = mod;
+      }
+    };
+
+    var setupTypeInfo = function(test, maskPattern) {
+
+      var data = (_errorCorrectionLevel << 3) | maskPattern;
+      var bits = QRUtil.getBCHTypeInfo(data);
+
+      // vertical
+      for (var i = 0; i < 15; i += 1) {
+
+        var mod = (!test && ( (bits >> i) & 1) == 1);
+
+        if (i < 6) {
+          _modules[i][8] = mod;
+        } else if (i < 8) {
+          _modules[i + 1][8] = mod;
+        } else {
+          _modules[_moduleCount - 15 + i][8] = mod;
+        }
+      }
+
+      // horizontal
+      for (var i = 0; i < 15; i += 1) {
+
+        var mod = (!test && ( (bits >> i) & 1) == 1);
+
+        if (i < 8) {
+          _modules[8][_moduleCount - i - 1] = mod;
+        } else if (i < 9) {
+          _modules[8][15 - i - 1 + 1] = mod;
+        } else {
+          _modules[8][15 - i - 1] = mod;
+        }
+      }
+
+      // fixed module
+      _modules[_moduleCount - 8][8] = (!test);
+    };
+
+    var mapData = function(data, maskPattern) {
+
+      var inc = -1;
+      var row = _moduleCount - 1;
+      var bitIndex = 7;
+      var byteIndex = 0;
+      var maskFunc = QRUtil.getMaskFunction(maskPattern);
+
+      for (var col = _moduleCount - 1; col > 0; col -= 2) {
+
+        if (col == 6) col -= 1;
+
+        while (true) {
+
+          for (var c = 0; c < 2; c += 1) {
+
+            if (_modules[row][col - c] == null) {
+
+              var dark = false;
+
+              if (byteIndex < data.length) {
+                dark = ( ( (data[byteIndex] >>> bitIndex) & 1) == 1);
+              }
+
+              var mask = maskFunc(row, col - c);
+
+              if (mask) {
+                dark = !dark;
+              }
+
+              _modules[row][col - c] = dark;
+              bitIndex -= 1;
+
+              if (bitIndex == -1) {
+                byteIndex += 1;
+                bitIndex = 7;
+              }
+            }
+          }
+
+          row += inc;
+
+          if (row < 0 || _moduleCount <= row) {
+            row -= inc;
+            inc = -inc;
+            break;
+          }
+        }
+      }
+    };
+
+    var createBytes = function(buffer, rsBlocks) {
+
+      var offset = 0;
+
+      var maxDcCount = 0;
+      var maxEcCount = 0;
+
+      var dcdata = new Array(rsBlocks.length);
+      var ecdata = new Array(rsBlocks.length);
+
+      for (var r = 0; r < rsBlocks.length; r += 1) {
+
+        var dcCount = rsBlocks[r].dataCount;
+        var ecCount = rsBlocks[r].totalCount - dcCount;
+
+        maxDcCount = Math.max(maxDcCount, dcCount);
+        maxEcCount = Math.max(maxEcCount, ecCount);
+
+        dcdata[r] = new Array(dcCount);
+
+        for (var i = 0; i < dcdata[r].length; i += 1) {
+          dcdata[r][i] = 0xff & buffer.getBuffer()[i + offset];
+        }
+        offset += dcCount;
+
+        var rsPoly = QRUtil.getErrorCorrectPolynomial(ecCount);
+        var rawPoly = qrPolynomial(dcdata[r], rsPoly.getLength() - 1);
+
+        var modPoly = rawPoly.mod(rsPoly);
+        ecdata[r] = new Array(rsPoly.getLength() - 1);
+        for (var i = 0; i < ecdata[r].length; i += 1) {
+          var modIndex = i + modPoly.getLength() - ecdata[r].length;
+          ecdata[r][i] = (modIndex >= 0)? modPoly.getAt(modIndex) : 0;
+        }
+      }
+
+      var totalCodeCount = 0;
+      for (var i = 0; i < rsBlocks.length; i += 1) {
+        totalCodeCount += rsBlocks[i].totalCount;
+      }
+
+      var data = new Array(totalCodeCount);
+      var index = 0;
+
+      for (var i = 0; i < maxDcCount; i += 1) {
+        for (var r = 0; r < rsBlocks.length; r += 1) {
+          if (i < dcdata[r].length) {
+            data[index] = dcdata[r][i];
+            index += 1;
+          }
+        }
+      }
+
+      for (var i = 0; i < maxEcCount; i += 1) {
+        for (var r = 0; r < rsBlocks.length; r += 1) {
+          if (i < ecdata[r].length) {
+            data[index] = ecdata[r][i];
+            index += 1;
+          }
+        }
+      }
+
+      return data;
+    };
+
+    var createData = function(typeNumber, errorCorrectionLevel, dataList) {
+
+      var rsBlocks = QRRSBlock.getRSBlocks(typeNumber, errorCorrectionLevel);
+
+      var buffer = qrBitBuffer();
+
+      for (var i = 0; i < dataList.length; i += 1) {
+        var data = dataList[i];
+        buffer.put(data.getMode(), 4);
+        buffer.put(data.getLength(), QRUtil.getLengthInBits(data.getMode(), typeNumber) );
+        data.write(buffer);
+      }
+
+      // calc num max data.
+      var totalDataCount = 0;
+      for (var i = 0; i < rsBlocks.length; i += 1) {
+        totalDataCount += rsBlocks[i].dataCount;
+      }
+
+      if (buffer.getLengthInBits() > totalDataCount * 8) {
+        throw 'code length overflow. ('
+          + buffer.getLengthInBits()
+          + '>'
+          + totalDataCount * 8
+          + ')';
+      }
+
+      // end code
+      if (buffer.getLengthInBits() + 4 <= totalDataCount * 8) {
+        buffer.put(0, 4);
+      }
+
+      // padding
+      while (buffer.getLengthInBits() % 8 != 0) {
+        buffer.putBit(false);
+      }
+
+      // padding
+      while (true) {
+
+        if (buffer.getLengthInBits() >= totalDataCount * 8) {
+          break;
+        }
+        buffer.put(PAD0, 8);
+
+        if (buffer.getLengthInBits() >= totalDataCount * 8) {
+          break;
+        }
+        buffer.put(PAD1, 8);
+      }
+
+      return createBytes(buffer, rsBlocks);
+    };
+
+    _this.addData = function(data, mode) {
+
+      mode = mode || 'Byte';
+
+      var newData = null;
+
+      switch(mode) {
+      case 'Numeric' :
+        newData = qrNumber(data);
+        break;
+      case 'Alphanumeric' :
+        newData = qrAlphaNum(data);
+        break;
+      case 'Byte' :
+        newData = qr8BitByte(data);
+        break;
+      case 'Kanji' :
+        newData = qrKanji(data);
+        break;
+      default :
+        throw 'mode:' + mode;
+      }
+
+      _dataList.push(newData);
+      _dataCache = null;
+    };
+
+    _this.isDark = function(row, col) {
+      if (row < 0 || _moduleCount <= row || col < 0 || _moduleCount <= col) {
+        throw row + ',' + col;
+      }
+      return _modules[row][col];
+    };
+
+    _this.getModuleCount = function() {
+      return _moduleCount;
+    };
+
+    _this.make = function() {
+      if (_typeNumber < 1) {
+        var typeNumber = 1;
+
+        for (; typeNumber < 40; typeNumber++) {
+          var rsBlocks = QRRSBlock.getRSBlocks(typeNumber, _errorCorrectionLevel);
+          var buffer = qrBitBuffer();
+
+          for (var i = 0; i < _dataList.length; i++) {
+            var data = _dataList[i];
+            buffer.put(data.getMode(), 4);
+            buffer.put(data.getLength(), QRUtil.getLengthInBits(data.getMode(), typeNumber) );
+            data.write(buffer);
+          }
+
+          var totalDataCount = 0;
+          for (var i = 0; i < rsBlocks.length; i++) {
+            totalDataCount += rsBlocks[i].dataCount;
+          }
+
+          if (buffer.getLengthInBits() <= totalDataCount * 8) {
+            break;
+          }
+        }
+
+        _typeNumber = typeNumber;
+      }
+
+      makeImpl(false, getBestMaskPattern() );
+    };
+
+    _this.createTableTag = function(cellSize, margin) {
+
+      cellSize = cellSize || 2;
+      margin = (typeof margin == 'undefined')? cellSize * 4 : margin;
+
+      var qrHtml = '';
+
+      qrHtml += '<table style="';
+      qrHtml += ' border-width: 0px; border-style: none;';
+      qrHtml += ' border-collapse: collapse;';
+      qrHtml += ' padding: 0px; margin: ' + margin + 'px;';
+      qrHtml += '">';
+      qrHtml += '<tbody>';
+
+      for (var r = 0; r < _this.getModuleCount(); r += 1) {
+
+        qrHtml += '<tr>';
+
+        for (var c = 0; c < _this.getModuleCount(); c += 1) {
+          qrHtml += '<td style="';
+          qrHtml += ' border-width: 0px; border-style: none;';
+          qrHtml += ' border-collapse: collapse;';
+          qrHtml += ' padding: 0px; margin: 0px;';
+          qrHtml += ' width: ' + cellSize + 'px;';
+          qrHtml += ' height: ' + cellSize + 'px;';
+          qrHtml += ' background-color: ';
+          qrHtml += _this.isDark(r, c)? '#000000' : '#ffffff';
+          qrHtml += ';';
+          qrHtml += '"/>';
+        }
+
+        qrHtml += '</tr>';
+      }
+
+      qrHtml += '</tbody>';
+      qrHtml += '</table>';
+
+      return qrHtml;
+    };
+
+    _this.createSvgTag = function(cellSize, margin, alt, title) {
+
+      var opts = {};
+      if (typeof arguments[0] == 'object') {
+        // Called by options.
+        opts = arguments[0];
+        // overwrite cellSize and margin.
+        cellSize = opts.cellSize;
+        margin = opts.margin;
+        alt = opts.alt;
+        title = opts.title;
+      }
+
+      cellSize = cellSize || 2;
+      margin = (typeof margin == 'undefined')? cellSize * 4 : margin;
+
+      // Compose alt property surrogate
+      alt = (typeof alt === 'string') ? {text: alt} : alt || {};
+      alt.text = alt.text || null;
+      alt.id = (alt.text) ? alt.id || 'qrcode-description' : null;
+
+      // Compose title property surrogate
+      title = (typeof title === 'string') ? {text: title} : title || {};
+      title.text = title.text || null;
+      title.id = (title.text) ? title.id || 'qrcode-title' : null;
+
+      var size = _this.getModuleCount() * cellSize + margin * 2;
+      var c, mc, r, mr, qrSvg='', rect;
+
+      rect = 'l' + cellSize + ',0 0,' + cellSize +
+        ' -' + cellSize + ',0 0,-' + cellSize + 'z ';
+
+      qrSvg += '<svg version="1.1" xmlns="http://www.w3.org/2000/svg"';
+      qrSvg += !opts.scalable ? ' width="' + size + 'px" height="' + size + 'px"' : '';
+      qrSvg += ' viewBox="0 0 ' + size + ' ' + size + '" ';
+      qrSvg += ' preserveAspectRatio="xMinYMin meet"';
+      qrSvg += (title.text || alt.text) ? ' role="img" aria-labelledby="' +
+          escapeXml([title.id, alt.id].join(' ').trim() ) + '"' : '';
+      qrSvg += '>';
+      qrSvg += (title.text) ? '<title id="' + escapeXml(title.id) + '">' +
+          escapeXml(title.text) + '</title>' : '';
+      qrSvg += (alt.text) ? '<description id="' + escapeXml(alt.id) + '">' +
+          escapeXml(alt.text) + '</description>' : '';
+      qrSvg += '<rect width="100%" height="100%" fill="white" cx="0" cy="0"/>';
+      qrSvg += '<path d="';
+
+      for (r = 0; r < _this.getModuleCount(); r += 1) {
+        mr = r * cellSize + margin;
+        for (c = 0; c < _this.getModuleCount(); c += 1) {
+          if (_this.isDark(r, c) ) {
+            mc = c*cellSize+margin;
+            qrSvg += 'M' + mc + ',' + mr + rect;
+          }
+        }
+      }
+
+      qrSvg += '" stroke="transparent" fill="black"/>';
+      qrSvg += '</svg>';
+
+      return qrSvg;
+    };
+
+    _this.createDataURL = function(cellSize, margin) {
+
+      cellSize = cellSize || 2;
+      margin = (typeof margin == 'undefined')? cellSize * 4 : margin;
+
+      var size = _this.getModuleCount() * cellSize + margin * 2;
+      var min = margin;
+      var max = size - margin;
+
+      return createDataURL(size, size, function(x, y) {
+        if (min <= x && x < max && min <= y && y < max) {
+          var c = Math.floor( (x - min) / cellSize);
+          var r = Math.floor( (y - min) / cellSize);
+          return _this.isDark(r, c)? 0 : 1;
+        } else {
+          return 1;
+        }
+      } );
+    };
+
+    _this.createImgTag = function(cellSize, margin, alt) {
+
+      cellSize = cellSize || 2;
+      margin = (typeof margin == 'undefined')? cellSize * 4 : margin;
+
+      var size = _this.getModuleCount() * cellSize + margin * 2;
+
+      var img = '';
+      img += '<img';
+      img += '\u0020src="';
+      img += _this.createDataURL(cellSize, margin);
+      img += '"';
+      img += '\u0020width="';
+      img += size;
+      img += '"';
+      img += '\u0020height="';
+      img += size;
+      img += '"';
+      if (alt) {
+        img += '\u0020alt="';
+        img += escapeXml(alt);
+        img += '"';
+      }
+      img += '/>';
+
+      return img;
+    };
+
+    var escapeXml = function(s) {
+      var escaped = '';
+      for (var i = 0; i < s.length; i += 1) {
+        var c = s.charAt(i);
+        switch(c) {
+        case '<': escaped += '&lt;'; break;
+        case '>': escaped += '&gt;'; break;
+        case '&': escaped += '&amp;'; break;
+        case '"': escaped += '&quot;'; break;
+        default : escaped += c; break;
+        }
+      }
+      return escaped;
+    };
+
+    var _createHalfASCII = function(margin) {
+      var cellSize = 1;
+      margin = (typeof margin == 'undefined')? cellSize * 2 : margin;
+
+      var size = _this.getModuleCount() * cellSize + margin * 2;
+      var min = margin;
+      var max = size - margin;
+
+      var y, x, r1, r2, p;
+
+      var blocks = {
+        '██': '█',
+        '█ ': '▀',
+        ' █': '▄',
+        '  ': ' '
+      };
+
+      var blocksLastLineNoMargin = {
+        '██': '▀',
+        '█ ': '▀',
+        ' █': ' ',
+        '  ': ' '
+      };
+
+      var ascii = '';
+      for (y = 0; y < size; y += 2) {
+        r1 = Math.floor((y - min) / cellSize);
+        r2 = Math.floor((y + 1 - min) / cellSize);
+        for (x = 0; x < size; x += 1) {
+          p = '█';
+
+          if (min <= x && x < max && min <= y && y < max && _this.isDark(r1, Math.floor((x - min) / cellSize))) {
+            p = ' ';
+          }
+
+          if (min <= x && x < max && min <= y+1 && y+1 < max && _this.isDark(r2, Math.floor((x - min) / cellSize))) {
+            p += ' ';
+          }
+          else {
+            p += '█';
+          }
+
+          // Output 2 characters per pixel, to create full square. 1 character per pixels gives only half width of square.
+          ascii += (margin < 1 && y+1 >= max) ? blocksLastLineNoMargin[p] : blocks[p];
+        }
+
+        ascii += '\n';
+      }
+
+      if (size % 2 && margin > 0) {
+        return ascii.substring(0, ascii.length - size - 1) + Array(size+1).join('▀');
+      }
+
+      return ascii.substring(0, ascii.length-1);
+    };
+
+    _this.createASCII = function(cellSize, margin) {
+      cellSize = cellSize || 1;
+
+      if (cellSize < 2) {
+        return _createHalfASCII(margin);
+      }
+
+      cellSize -= 1;
+      margin = (typeof margin == 'undefined')? cellSize * 2 : margin;
+
+      var size = _this.getModuleCount() * cellSize + margin * 2;
+      var min = margin;
+      var max = size - margin;
+
+      var y, x, r, p;
+
+      var white = Array(cellSize+1).join('██');
+      var black = Array(cellSize+1).join('  ');
+
+      var ascii = '';
+      var line = '';
+      for (y = 0; y < size; y += 1) {
+        r = Math.floor( (y - min) / cellSize);
+        line = '';
+        for (x = 0; x < size; x += 1) {
+          p = 1;
+
+          if (min <= x && x < max && min <= y && y < max && _this.isDark(r, Math.floor((x - min) / cellSize))) {
+            p = 0;
+          }
+
+          // Output 2 characters per pixel, to create full square. 1 character per pixels gives only half width of square.
+          line += p ? white : black;
+        }
+
+        for (r = 0; r < cellSize; r += 1) {
+          ascii += line + '\n';
+        }
+      }
+
+      return ascii.substring(0, ascii.length-1);
+    };
+
+    _this.renderTo2dContext = function(context, cellSize) {
+      cellSize = cellSize || 2;
+      var length = _this.getModuleCount();
+      for (var row = 0; row < length; row++) {
+        for (var col = 0; col < length; col++) {
+          context.fillStyle = _this.isDark(row, col) ? 'black' : 'white';
+          context.fillRect(row * cellSize, col * cellSize, cellSize, cellSize);
+        }
+      }
+    }
+
+    return _this;
+  };
+
+  //---------------------------------------------------------------------
+  // qrcode.stringToBytes
+  //---------------------------------------------------------------------
+
+  qrcode.stringToBytesFuncs = {
+    'default' : function(s) {
+      var bytes = [];
+      for (var i = 0; i < s.length; i += 1) {
+        var c = s.charCodeAt(i);
+        bytes.push(c & 0xff);
+      }
+      return bytes;
+    }
+  };
+
+  qrcode.stringToBytes = qrcode.stringToBytesFuncs['default'];
+
+  //---------------------------------------------------------------------
+  // qrcode.createStringToBytes
+  //---------------------------------------------------------------------
+
+  /**
+   * @param unicodeData base64 string of byte array.
+   * [16bit Unicode],[16bit Bytes], ...
+   * @param numChars
+   */
+  qrcode.createStringToBytes = function(unicodeData, numChars) {
+
+    // create conversion map.
+
+    var unicodeMap = function() {
+
+      var bin = base64DecodeInputStream(unicodeData);
+      var read = function() {
+        var b = bin.read();
+        if (b == -1) throw 'eof';
+        return b;
+      };
+
+      var count = 0;
+      var unicodeMap = {};
+      while (true) {
+        var b0 = bin.read();
+        if (b0 == -1) break;
+        var b1 = read();
+        var b2 = read();
+        var b3 = read();
+        var k = String.fromCharCode( (b0 << 8) | b1);
+        var v = (b2 << 8) | b3;
+        unicodeMap[k] = v;
+        count += 1;
+      }
+      if (count != numChars) {
+        throw count + ' != ' + numChars;
+      }
+
+      return unicodeMap;
+    }();
+
+    var unknownChar = '?'.charCodeAt(0);
+
+    return function(s) {
+      var bytes = [];
+      for (var i = 0; i < s.length; i += 1) {
+        var c = s.charCodeAt(i);
+        if (c < 128) {
+          bytes.push(c);
+        } else {
+          var b = unicodeMap[s.charAt(i)];
+          if (typeof b == 'number') {
+            if ( (b & 0xff) == b) {
+              // 1byte
+              bytes.push(b);
+            } else {
+              // 2bytes
+              bytes.push(b >>> 8);
+              bytes.push(b & 0xff);
+            }
+          } else {
+            bytes.push(unknownChar);
+          }
+        }
+      }
+      return bytes;
+    };
+  };
+
+  //---------------------------------------------------------------------
+  // QRMode
+  //---------------------------------------------------------------------
+
+  var QRMode = {
+    MODE_NUMBER :    1 << 0,
+    MODE_ALPHA_NUM : 1 << 1,
+    MODE_8BIT_BYTE : 1 << 2,
+    MODE_KANJI :     1 << 3
+  };
+
+  //---------------------------------------------------------------------
+  // QRErrorCorrectionLevel
+  //---------------------------------------------------------------------
+
+  var QRErrorCorrectionLevel = {
+    L : 1,
+    M : 0,
+    Q : 3,
+    H : 2
+  };
+
+  //---------------------------------------------------------------------
+  // QRMaskPattern
+  //---------------------------------------------------------------------
+
+  var QRMaskPattern = {
+    PATTERN000 : 0,
+    PATTERN001 : 1,
+    PATTERN010 : 2,
+    PATTERN011 : 3,
+    PATTERN100 : 4,
+    PATTERN101 : 5,
+    PATTERN110 : 6,
+    PATTERN111 : 7
+  };
+
+  //---------------------------------------------------------------------
+  // QRUtil
+  //---------------------------------------------------------------------
+
+  var QRUtil = function() {
+
+    var PATTERN_POSITION_TABLE = [
+      [],
+      [6, 18],
+      [6, 22],
+      [6, 26],
+      [6, 30],
+      [6, 34],
+      [6, 22, 38],
+      [6, 24, 42],
+      [6, 26, 46],
+      [6, 28, 50],
+      [6, 30, 54],
+      [6, 32, 58],
+      [6, 34, 62],
+      [6, 26, 46, 66],
+      [6, 26, 48, 70],
+      [6, 26, 50, 74],
+      [6, 30, 54, 78],
+      [6, 30, 56, 82],
+      [6, 30, 58, 86],
+      [6, 34, 62, 90],
+      [6, 28, 50, 72, 94],
+      [6, 26, 50, 74, 98],
+      [6, 30, 54, 78, 102],
+      [6, 28, 54, 80, 106],
+      [6, 32, 58, 84, 110],
+      [6, 30, 58, 86, 114],
+      [6, 34, 62, 90, 118],
+      [6, 26, 50, 74, 98, 122],
+      [6, 30, 54, 78, 102, 126],
+      [6, 26, 52, 78, 104, 130],
+      [6, 30, 56, 82, 108, 134],
+      [6, 34, 60, 86, 112, 138],
+      [6, 30, 58, 86, 114, 142],
+      [6, 34, 62, 90, 118, 146],
+      [6, 30, 54, 78, 102, 126, 150],
+      [6, 24, 50, 76, 102, 128, 154],
+      [6, 28, 54, 80, 106, 132, 158],
+      [6, 32, 58, 84, 110, 136, 162],
+      [6, 26, 54, 82, 110, 138, 166],
+      [6, 30, 58, 86, 114, 142, 170]
+    ];
+    var G15 = (1 << 10) | (1 << 8) | (1 << 5) | (1 << 4) | (1 << 2) | (1 << 1) | (1 << 0);
+    var G18 = (1 << 12) | (1 << 11) | (1 << 10) | (1 << 9) | (1 << 8) | (1 << 5) | (1 << 2) | (1 << 0);
+    var G15_MASK = (1 << 14) | (1 << 12) | (1 << 10) | (1 << 4) | (1 << 1);
+
+    var _this = {};
+
+    var getBCHDigit = function(data) {
+      var digit = 0;
+      while (data != 0) {
+        digit += 1;
+        data >>>= 1;
+      }
+      return digit;
+    };
+
+    _this.getBCHTypeInfo = function(data) {
+      var d = data << 10;
+      while (getBCHDigit(d) - getBCHDigit(G15) >= 0) {
+        d ^= (G15 << (getBCHDigit(d) - getBCHDigit(G15) ) );
+      }
+      return ( (data << 10) | d) ^ G15_MASK;
+    };
+
+    _this.getBCHTypeNumber = function(data) {
+      var d = data << 12;
+      while (getBCHDigit(d) - getBCHDigit(G18) >= 0) {
+        d ^= (G18 << (getBCHDigit(d) - getBCHDigit(G18) ) );
+      }
+      return (data << 12) | d;
+    };
+
+    _this.getPatternPosition = function(typeNumber) {
+      return PATTERN_POSITION_TABLE[typeNumber - 1];
+    };
+
+    _this.getMaskFunction = function(maskPattern) {
+
+      switch (maskPattern) {
+
+      case QRMaskPattern.PATTERN000 :
+        return function(i, j) { return (i + j) % 2 == 0; };
+      case QRMaskPattern.PATTERN001 :
+        return function(i, j) { return i % 2 == 0; };
+      case QRMaskPattern.PATTERN010 :
+        return function(i, j) { return j % 3 == 0; };
+      case QRMaskPattern.PATTERN011 :
+        return function(i, j) { return (i + j) % 3 == 0; };
+      case QRMaskPattern.PATTERN100 :
+        return function(i, j) { return (Math.floor(i / 2) + Math.floor(j / 3) ) % 2 == 0; };
+      case QRMaskPattern.PATTERN101 :
+        return function(i, j) { return (i * j) % 2 + (i * j) % 3 == 0; };
+      case QRMaskPattern.PATTERN110 :
+        return function(i, j) { return ( (i * j) % 2 + (i * j) % 3) % 2 == 0; };
+      case QRMaskPattern.PATTERN111 :
+        return function(i, j) { return ( (i * j) % 3 + (i + j) % 2) % 2 == 0; };
+
+      default :
+        throw 'bad maskPattern:' + maskPattern;
+      }
+    };
+
+    _this.getErrorCorrectPolynomial = function(errorCorrectLength) {
+      var a = qrPolynomial([1], 0);
+      for (var i = 0; i < errorCorrectLength; i += 1) {
+        a = a.multiply(qrPolynomial([1, QRMath.gexp(i)], 0) );
+      }
+      return a;
+    };
+
+    _this.getLengthInBits = function(mode, type) {
+
+      if (1 <= type && type < 10) {
+
+        // 1 - 9
+
+        switch(mode) {
+        case QRMode.MODE_NUMBER    : return 10;
+        case QRMode.MODE_ALPHA_NUM : return 9;
+        case QRMode.MODE_8BIT_BYTE : return 8;
+        case QRMode.MODE_KANJI     : return 8;
+        default :
+          throw 'mode:' + mode;
+        }
+
+      } else if (type < 27) {
+
+        // 10 - 26
+
+        switch(mode) {
+        case QRMode.MODE_NUMBER    : return 12;
+        case QRMode.MODE_ALPHA_NUM : return 11;
+        case QRMode.MODE_8BIT_BYTE : return 16;
+        case QRMode.MODE_KANJI     : return 10;
+        default :
+          throw 'mode:' + mode;
+        }
+
+      } else if (type < 41) {
+
+        // 27 - 40
+
+        switch(mode) {
+        case QRMode.MODE_NUMBER    : return 14;
+        case QRMode.MODE_ALPHA_NUM : return 13;
+        case QRMode.MODE_8BIT_BYTE : return 16;
+        case QRMode.MODE_KANJI     : return 12;
+        default :
+          throw 'mode:' + mode;
+        }
+
+      } else {
+        throw 'type:' + type;
+      }
+    };
+
+    _this.getLostPoint = function(qrcode) {
+
+      var moduleCount = qrcode.getModuleCount();
+
+      var lostPoint = 0;
+
+      // LEVEL1
+
+      for (var row = 0; row < moduleCount; row += 1) {
+        for (var col = 0; col < moduleCount; col += 1) {
+
+          var sameCount = 0;
+          var dark = qrcode.isDark(row, col);
+
+          for (var r = -1; r <= 1; r += 1) {
+
+            if (row + r < 0 || moduleCount <= row + r) {
+              continue;
+            }
+
+            for (var c = -1; c <= 1; c += 1) {
+
+              if (col + c < 0 || moduleCount <= col + c) {
+                continue;
+              }
+
+              if (r == 0 && c == 0) {
+                continue;
+              }
+
+              if (dark == qrcode.isDark(row + r, col + c) ) {
+                sameCount += 1;
+              }
+            }
+          }
+
+          if (sameCount > 5) {
+            lostPoint += (3 + sameCount - 5);
+          }
+        }
+      };
+
+      // LEVEL2
+
+      for (var row = 0; row < moduleCount - 1; row += 1) {
+        for (var col = 0; col < moduleCount - 1; col += 1) {
+          var count = 0;
+          if (qrcode.isDark(row, col) ) count += 1;
+          if (qrcode.isDark(row + 1, col) ) count += 1;
+          if (qrcode.isDark(row, col + 1) ) count += 1;
+          if (qrcode.isDark(row + 1, col + 1) ) count += 1;
+          if (count == 0 || count == 4) {
+            lostPoint += 3;
+          }
+        }
+      }
+
+      // LEVEL3
+
+      for (var row = 0; row < moduleCount; row += 1) {
+        for (var col = 0; col < moduleCount - 6; col += 1) {
+          if (qrcode.isDark(row, col)
+              && !qrcode.isDark(row, col + 1)
+              &&  qrcode.isDark(row, col + 2)
+              &&  qrcode.isDark(row, col + 3)
+              &&  qrcode.isDark(row, col + 4)
+              && !qrcode.isDark(row, col + 5)
+              &&  qrcode.isDark(row, col + 6) ) {
+            lostPoint += 40;
+          }
+        }
+      }
+
+      for (var col = 0; col < moduleCount; col += 1) {
+        for (var row = 0; row < moduleCount - 6; row += 1) {
+          if (qrcode.isDark(row, col)
+              && !qrcode.isDark(row + 1, col)
+              &&  qrcode.isDark(row + 2, col)
+              &&  qrcode.isDark(row + 3, col)
+              &&  qrcode.isDark(row + 4, col)
+              && !qrcode.isDark(row + 5, col)
+              &&  qrcode.isDark(row + 6, col) ) {
+            lostPoint += 40;
+          }
+        }
+      }
+
+      // LEVEL4
+
+      var darkCount = 0;
+
+      for (var col = 0; col < moduleCount; col += 1) {
+        for (var row = 0; row < moduleCount; row += 1) {
+          if (qrcode.isDark(row, col) ) {
+            darkCount += 1;
+          }
+        }
+      }
+
+      var ratio = Math.abs(100 * darkCount / moduleCount / moduleCount - 50) / 5;
+      lostPoint += ratio * 10;
+
+      return lostPoint;
+    };
+
+    return _this;
+  }();
+
+  //---------------------------------------------------------------------
+  // QRMath
+  //---------------------------------------------------------------------
+
+  var QRMath = function() {
+
+    var EXP_TABLE = new Array(256);
+    var LOG_TABLE = new Array(256);
+
+    // initialize tables
+    for (var i = 0; i < 8; i += 1) {
+      EXP_TABLE[i] = 1 << i;
+    }
+    for (var i = 8; i < 256; i += 1) {
+      EXP_TABLE[i] = EXP_TABLE[i - 4]
+        ^ EXP_TABLE[i - 5]
+        ^ EXP_TABLE[i - 6]
+        ^ EXP_TABLE[i - 8];
+    }
+    for (var i = 0; i < 255; i += 1) {
+      LOG_TABLE[EXP_TABLE[i] ] = i;
+    }
+
+    var _this = {};
+
+    _this.glog = function(n) {
+
+      if (n < 1) {
+        throw 'glog(' + n + ')';
+      }
+
+      return LOG_TABLE[n];
+    };
+
+    _this.gexp = function(n) {
+
+      while (n < 0) {
+        n += 255;
+      }
+
+      while (n >= 256) {
+        n -= 255;
+      }
+
+      return EXP_TABLE[n];
+    };
+
+    return _this;
+  }();
+
+  //---------------------------------------------------------------------
+  // qrPolynomial
+  //---------------------------------------------------------------------
+
+  function qrPolynomial(num, shift) {
+
+    if (typeof num.length == 'undefined') {
+      throw num.length + '/' + shift;
+    }
+
+    var _num = function() {
+      var offset = 0;
+      while (offset < num.length && num[offset] == 0) {
+        offset += 1;
+      }
+      var _num = new Array(num.length - offset + shift);
+      for (var i = 0; i < num.length - offset; i += 1) {
+        _num[i] = num[i + offset];
+      }
+      return _num;
+    }();
+
+    var _this = {};
+
+    _this.getAt = function(index) {
+      return _num[index];
+    };
+
+    _this.getLength = function() {
+      return _num.length;
+    };
+
+    _this.multiply = function(e) {
+
+      var num = new Array(_this.getLength() + e.getLength() - 1);
+
+      for (var i = 0; i < _this.getLength(); i += 1) {
+        for (var j = 0; j < e.getLength(); j += 1) {
+          num[i + j] ^= QRMath.gexp(QRMath.glog(_this.getAt(i) ) + QRMath.glog(e.getAt(j) ) );
+        }
+      }
+
+      return qrPolynomial(num, 0);
+    };
+
+    _this.mod = function(e) {
+
+      if (_this.getLength() - e.getLength() < 0) {
+        return _this;
+      }
+
+      var ratio = QRMath.glog(_this.getAt(0) ) - QRMath.glog(e.getAt(0) );
+
+      var num = new Array(_this.getLength() );
+      for (var i = 0; i < _this.getLength(); i += 1) {
+        num[i] = _this.getAt(i);
+      }
+
+      for (var i = 0; i < e.getLength(); i += 1) {
+        num[i] ^= QRMath.gexp(QRMath.glog(e.getAt(i) ) + ratio);
+      }
+
+      // recursive call
+      return qrPolynomial(num, 0).mod(e);
+    };
+
+    return _this;
+  };
+
+  //---------------------------------------------------------------------
+  // QRRSBlock
+  //---------------------------------------------------------------------
+
+  var QRRSBlock = function() {
+
+    var RS_BLOCK_TABLE = [
+
+      // L
+      // M
+      // Q
+      // H
+
+      // 1
+      [1, 26, 19],
+      [1, 26, 16],
+      [1, 26, 13],
+      [1, 26, 9],
+
+      // 2
+      [1, 44, 34],
+      [1, 44, 28],
+      [1, 44, 22],
+      [1, 44, 16],
+
+      // 3
+      [1, 70, 55],
+      [1, 70, 44],
+      [2, 35, 17],
+      [2, 35, 13],
+
+      // 4
+      [1, 100, 80],
+      [2, 50, 32],
+      [2, 50, 24],
+      [4, 25, 9],
+
+      // 5
+      [1, 134, 108],
+      [2, 67, 43],
+      [2, 33, 15, 2, 34, 16],
+      [2, 33, 11, 2, 34, 12],
+
+      // 6
+      [2, 86, 68],
+      [4, 43, 27],
+      [4, 43, 19],
+      [4, 43, 15],
+
+      // 7
+      [2, 98, 78],
+      [4, 49, 31],
+      [2, 32, 14, 4, 33, 15],
+      [4, 39, 13, 1, 40, 14],
+
+      // 8
+      [2, 121, 97],
+      [2, 60, 38, 2, 61, 39],
+      [4, 40, 18, 2, 41, 19],
+      [4, 40, 14, 2, 41, 15],
+
+      // 9
+      [2, 146, 116],
+      [3, 58, 36, 2, 59, 37],
+      [4, 36, 16, 4, 37, 17],
+      [4, 36, 12, 4, 37, 13],
+
+      // 10
+      [2, 86, 68, 2, 87, 69],
+      [4, 69, 43, 1, 70, 44],
+      [6, 43, 19, 2, 44, 20],
+      [6, 43, 15, 2, 44, 16],
+
+      // 11
+      [4, 101, 81],
+      [1, 80, 50, 4, 81, 51],
+      [4, 50, 22, 4, 51, 23],
+      [3, 36, 12, 8, 37, 13],
+
+      // 12
+      [2, 116, 92, 2, 117, 93],
+      [6, 58, 36, 2, 59, 37],
+      [4, 46, 20, 6, 47, 21],
+      [7, 42, 14, 4, 43, 15],
+
+      // 13
+      [4, 133, 107],
+      [8, 59, 37, 1, 60, 38],
+      [8, 44, 20, 4, 45, 21],
+      [12, 33, 11, 4, 34, 12],
+
+      // 14
+      [3, 145, 115, 1, 146, 116],
+      [4, 64, 40, 5, 65, 41],
+      [11, 36, 16, 5, 37, 17],
+      [11, 36, 12, 5, 37, 13],
+
+      // 15
+      [5, 109, 87, 1, 110, 88],
+      [5, 65, 41, 5, 66, 42],
+      [5, 54, 24, 7, 55, 25],
+      [11, 36, 12, 7, 37, 13],
+
+      // 16
+      [5, 122, 98, 1, 123, 99],
+      [7, 73, 45, 3, 74, 46],
+      [15, 43, 19, 2, 44, 20],
+      [3, 45, 15, 13, 46, 16],
+
+      // 17
+      [1, 135, 107, 5, 136, 108],
+      [10, 74, 46, 1, 75, 47],
+      [1, 50, 22, 15, 51, 23],
+      [2, 42, 14, 17, 43, 15],
+
+      // 18
+      [5, 150, 120, 1, 151, 121],
+      [9, 69, 43, 4, 70, 44],
+      [17, 50, 22, 1, 51, 23],
+      [2, 42, 14, 19, 43, 15],
+
+      // 19
+      [3, 141, 113, 4, 142, 114],
+      [3, 70, 44, 11, 71, 45],
+      [17, 47, 21, 4, 48, 22],
+      [9, 39, 13, 16, 40, 14],
+
+      // 20
+      [3, 135, 107, 5, 136, 108],
+      [3, 67, 41, 13, 68, 42],
+      [15, 54, 24, 5, 55, 25],
+      [15, 43, 15, 10, 44, 16],
+
+      // 21
+      [4, 144, 116, 4, 145, 117],
+      [17, 68, 42],
+      [17, 50, 22, 6, 51, 23],
+      [19, 46, 16, 6, 47, 17],
+
+      // 22
+      [2, 139, 111, 7, 140, 112],
+      [17, 74, 46],
+      [7, 54, 24, 16, 55, 25],
+      [34, 37, 13],
+
+      // 23
+      [4, 151, 121, 5, 152, 122],
+      [4, 75, 47, 14, 76, 48],
+      [11, 54, 24, 14, 55, 25],
+      [16, 45, 15, 14, 46, 16],
+
+      // 24
+      [6, 147, 117, 4, 148, 118],
+      [6, 73, 45, 14, 74, 46],
+      [11, 54, 24, 16, 55, 25],
+      [30, 46, 16, 2, 47, 17],
+
+      // 25
+      [8, 132, 106, 4, 133, 107],
+      [8, 75, 47, 13, 76, 48],
+      [7, 54, 24, 22, 55, 25],
+      [22, 45, 15, 13, 46, 16],
+
+      // 26
+      [10, 142, 114, 2, 143, 115],
+      [19, 74, 46, 4, 75, 47],
+      [28, 50, 22, 6, 51, 23],
+      [33, 46, 16, 4, 47, 17],
+
+      // 27
+      [8, 152, 122, 4, 153, 123],
+      [22, 73, 45, 3, 74, 46],
+      [8, 53, 23, 26, 54, 24],
+      [12, 45, 15, 28, 46, 16],
+
+      // 28
+      [3, 147, 117, 10, 148, 118],
+      [3, 73, 45, 23, 74, 46],
+      [4, 54, 24, 31, 55, 25],
+      [11, 45, 15, 31, 46, 16],
+
+      // 29
+      [7, 146, 116, 7, 147, 117],
+      [21, 73, 45, 7, 74, 46],
+      [1, 53, 23, 37, 54, 24],
+      [19, 45, 15, 26, 46, 16],
+
+      // 30
+      [5, 145, 115, 10, 146, 116],
+      [19, 75, 47, 10, 76, 48],
+      [15, 54, 24, 25, 55, 25],
+      [23, 45, 15, 25, 46, 16],
+
+      // 31
+      [13, 145, 115, 3, 146, 116],
+      [2, 74, 46, 29, 75, 47],
+      [42, 54, 24, 1, 55, 25],
+      [23, 45, 15, 28, 46, 16],
+
+      // 32
+      [17, 145, 115],
+      [10, 74, 46, 23, 75, 47],
+      [10, 54, 24, 35, 55, 25],
+      [19, 45, 15, 35, 46, 16],
+
+      // 33
+      [17, 145, 115, 1, 146, 116],
+      [14, 74, 46, 21, 75, 47],
+      [29, 54, 24, 19, 55, 25],
+      [11, 45, 15, 46, 46, 16],
+
+      // 34
+      [13, 145, 115, 6, 146, 116],
+      [14, 74, 46, 23, 75, 47],
+      [44, 54, 24, 7, 55, 25],
+      [59, 46, 16, 1, 47, 17],
+
+      // 35
+      [12, 151, 121, 7, 152, 122],
+      [12, 75, 47, 26, 76, 48],
+      [39, 54, 24, 14, 55, 25],
+      [22, 45, 15, 41, 46, 16],
+
+      // 36
+      [6, 151, 121, 14, 152, 122],
+      [6, 75, 47, 34, 76, 48],
+      [46, 54, 24, 10, 55, 25],
+      [2, 45, 15, 64, 46, 16],
+
+      // 37
+      [17, 152, 122, 4, 153, 123],
+      [29, 74, 46, 14, 75, 47],
+      [49, 54, 24, 10, 55, 25],
+      [24, 45, 15, 46, 46, 16],
+
+      // 38
+      [4, 152, 122, 18, 153, 123],
+      [13, 74, 46, 32, 75, 47],
+      [48, 54, 24, 14, 55, 25],
+      [42, 45, 15, 32, 46, 16],
+
+      // 39
+      [20, 147, 117, 4, 148, 118],
+      [40, 75, 47, 7, 76, 48],
+      [43, 54, 24, 22, 55, 25],
+      [10, 45, 15, 67, 46, 16],
+
+      // 40
+      [19, 148, 118, 6, 149, 119],
+      [18, 75, 47, 31, 76, 48],
+      [34, 54, 24, 34, 55, 25],
+      [20, 45, 15, 61, 46, 16]
+    ];
+
+    var qrRSBlock = function(totalCount, dataCount) {
+      var _this = {};
+      _this.totalCount = totalCount;
+      _this.dataCount = dataCount;
+      return _this;
+    };
+
+    var _this = {};
+
+    var getRsBlockTable = function(typeNumber, errorCorrectionLevel) {
+
+      switch(errorCorrectionLevel) {
+      case QRErrorCorrectionLevel.L :
+        return RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 0];
+      case QRErrorCorrectionLevel.M :
+        return RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 1];
+      case QRErrorCorrectionLevel.Q :
+        return RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 2];
+      case QRErrorCorrectionLevel.H :
+        return RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 3];
+      default :
+        return undefined;
+      }
+    };
+
+    _this.getRSBlocks = function(typeNumber, errorCorrectionLevel) {
+
+      var rsBlock = getRsBlockTable(typeNumber, errorCorrectionLevel);
+
+      if (typeof rsBlock == 'undefined') {
+        throw 'bad rs block @ typeNumber:' + typeNumber +
+            '/errorCorrectionLevel:' + errorCorrectionLevel;
+      }
+
+      var length = rsBlock.length / 3;
+
+      var list = [];
+
+      for (var i = 0; i < length; i += 1) {
+
+        var count = rsBlock[i * 3 + 0];
+        var totalCount = rsBlock[i * 3 + 1];
+        var dataCount = rsBlock[i * 3 + 2];
+
+        for (var j = 0; j < count; j += 1) {
+          list.push(qrRSBlock(totalCount, dataCount) );
+        }
+      }
+
+      return list;
+    };
+
+    return _this;
+  }();
+
+  //---------------------------------------------------------------------
+  // qrBitBuffer
+  //---------------------------------------------------------------------
+
+  var qrBitBuffer = function() {
+
+    var _buffer = [];
+    var _length = 0;
+
+    var _this = {};
+
+    _this.getBuffer = function() {
+      return _buffer;
+    };
+
+    _this.getAt = function(index) {
+      var bufIndex = Math.floor(index / 8);
+      return ( (_buffer[bufIndex] >>> (7 - index % 8) ) & 1) == 1;
+    };
+
+    _this.put = function(num, length) {
+      for (var i = 0; i < length; i += 1) {
+        _this.putBit( ( (num >>> (length - i - 1) ) & 1) == 1);
+      }
+    };
+
+    _this.getLengthInBits = function() {
+      return _length;
+    };
+
+    _this.putBit = function(bit) {
+
+      var bufIndex = Math.floor(_length / 8);
+      if (_buffer.length <= bufIndex) {
+        _buffer.push(0);
+      }
+
+      if (bit) {
+        _buffer[bufIndex] |= (0x80 >>> (_length % 8) );
+      }
+
+      _length += 1;
+    };
+
+    return _this;
+  };
+
+  //---------------------------------------------------------------------
+  // qrNumber
+  //---------------------------------------------------------------------
+
+  var qrNumber = function(data) {
+
+    var _mode = QRMode.MODE_NUMBER;
+    var _data = data;
+
+    var _this = {};
+
+    _this.getMode = function() {
+      return _mode;
+    };
+
+    _this.getLength = function(buffer) {
+      return _data.length;
+    };
+
+    _this.write = function(buffer) {
+
+      var data = _data;
+
+      var i = 0;
+
+      while (i + 2 < data.length) {
+        buffer.put(strToNum(data.substring(i, i + 3) ), 10);
+        i += 3;
+      }
+
+      if (i < data.length) {
+        if (data.length - i == 1) {
+          buffer.put(strToNum(data.substring(i, i + 1) ), 4);
+        } else if (data.length - i == 2) {
+          buffer.put(strToNum(data.substring(i, i + 2) ), 7);
+        }
+      }
+    };
+
+    var strToNum = function(s) {
+      var num = 0;
+      for (var i = 0; i < s.length; i += 1) {
+        num = num * 10 + chatToNum(s.charAt(i) );
+      }
+      return num;
+    };
+
+    var chatToNum = function(c) {
+      if ('0' <= c && c <= '9') {
+        return c.charCodeAt(0) - '0'.charCodeAt(0);
+      }
+      throw 'illegal char :' + c;
+    };
+
+    return _this;
+  };
+
+  //---------------------------------------------------------------------
+  // qrAlphaNum
+  //---------------------------------------------------------------------
+
+  var qrAlphaNum = function(data) {
+
+    var _mode = QRMode.MODE_ALPHA_NUM;
+    var _data = data;
+
+    var _this = {};
+
+    _this.getMode = function() {
+      return _mode;
+    };
+
+    _this.getLength = function(buffer) {
+      return _data.length;
+    };
+
+    _this.write = function(buffer) {
+
+      var s = _data;
+
+      var i = 0;
+
+      while (i + 1 < s.length) {
+        buffer.put(
+          getCode(s.charAt(i) ) * 45 +
+          getCode(s.charAt(i + 1) ), 11);
+        i += 2;
+      }
+
+      if (i < s.length) {
+        buffer.put(getCode(s.charAt(i) ), 6);
+      }
+    };
+
+    var getCode = function(c) {
+
+      if ('0' <= c && c <= '9') {
+        return c.charCodeAt(0) - '0'.charCodeAt(0);
+      } else if ('A' <= c && c <= 'Z') {
+        return c.charCodeAt(0) - 'A'.charCodeAt(0) + 10;
+      } else {
+        switch (c) {
+        case ' ' : return 36;
+        case '$' : return 37;
+        case '%' : return 38;
+        case '*' : return 39;
+        case '+' : return 40;
+        case '-' : return 41;
+        case '.' : return 42;
+        case '/' : return 43;
+        case ':' : return 44;
+        default :
+          throw 'illegal char :' + c;
+        }
+      }
+    };
+
+    return _this;
+  };
+
+  //---------------------------------------------------------------------
+  // qr8BitByte
+  //---------------------------------------------------------------------
+
+  var qr8BitByte = function(data) {
+
+    var _mode = QRMode.MODE_8BIT_BYTE;
+    var _data = data;
+    var _bytes = qrcode.stringToBytes(data);
+
+    var _this = {};
+
+    _this.getMode = function() {
+      return _mode;
+    };
+
+    _this.getLength = function(buffer) {
+      return _bytes.length;
+    };
+
+    _this.write = function(buffer) {
+      for (var i = 0; i < _bytes.length; i += 1) {
+        buffer.put(_bytes[i], 8);
+      }
+    };
+
+    return _this;
+  };
+
+  //---------------------------------------------------------------------
+  // qrKanji
+  //---------------------------------------------------------------------
+
+  var qrKanji = function(data) {
+
+    var _mode = QRMode.MODE_KANJI;
+    var _data = data;
+
+    var stringToBytes = qrcode.stringToBytesFuncs['SJIS'];
+    if (!stringToBytes) {
+      throw 'sjis not supported.';
+    }
+    !function(c, code) {
+      // self test for sjis support.
+      var test = stringToBytes(c);
+      if (test.length != 2 || ( (test[0] << 8) | test[1]) != code) {
+        throw 'sjis not supported.';
+      }
+    }('\u53cb', 0x9746);
+
+    var _bytes = stringToBytes(data);
+
+    var _this = {};
+
+    _this.getMode = function() {
+      return _mode;
+    };
+
+    _this.getLength = function(buffer) {
+      return ~~(_bytes.length / 2);
+    };
+
+    _this.write = function(buffer) {
+
+      var data = _bytes;
+
+      var i = 0;
+
+      while (i + 1 < data.length) {
+
+        var c = ( (0xff & data[i]) << 8) | (0xff & data[i + 1]);
+
+        if (0x8140 <= c && c <= 0x9FFC) {
+          c -= 0x8140;
+        } else if (0xE040 <= c && c <= 0xEBBF) {
+          c -= 0xC140;
+        } else {
+          throw 'illegal char at ' + (i + 1) + '/' + c;
+        }
+
+        c = ( (c >>> 8) & 0xff) * 0xC0 + (c & 0xff);
+
+        buffer.put(c, 13);
+
+        i += 2;
+      }
+
+      if (i < data.length) {
+        throw 'illegal char at ' + (i + 1);
+      }
+    };
+
+    return _this;
+  };
+
+  //=====================================================================
+  // GIF Support etc.
+  //
+
+  //---------------------------------------------------------------------
+  // byteArrayOutputStream
+  //---------------------------------------------------------------------
+
+  var byteArrayOutputStream = function() {
+
+    var _bytes = [];
+
+    var _this = {};
+
+    _this.writeByte = function(b) {
+      _bytes.push(b & 0xff);
+    };
+
+    _this.writeShort = function(i) {
+      _this.writeByte(i);
+      _this.writeByte(i >>> 8);
+    };
+
+    _this.writeBytes = function(b, off, len) {
+      off = off || 0;
+      len = len || b.length;
+      for (var i = 0; i < len; i += 1) {
+        _this.writeByte(b[i + off]);
+      }
+    };
+
+    _this.writeString = function(s) {
+      for (var i = 0; i < s.length; i += 1) {
+        _this.writeByte(s.charCodeAt(i) );
+      }
+    };
+
+    _this.toByteArray = function() {
+      return _bytes;
+    };
+
+    _this.toString = function() {
+      var s = '';
+      s += '[';
+      for (var i = 0; i < _bytes.length; i += 1) {
+        if (i > 0) {
+          s += ',';
+        }
+        s += _bytes[i];
+      }
+      s += ']';
+      return s;
+    };
+
+    return _this;
+  };
+
+  //---------------------------------------------------------------------
+  // base64EncodeOutputStream
+  //---------------------------------------------------------------------
+
+  var base64EncodeOutputStream = function() {
+
+    var _buffer = 0;
+    var _buflen = 0;
+    var _length = 0;
+    var _base64 = '';
+
+    var _this = {};
+
+    var writeEncoded = function(b) {
+      _base64 += String.fromCharCode(encode(b & 0x3f) );
+    };
+
+    var encode = function(n) {
+      if (n < 0) {
+        // error.
+      } else if (n < 26) {
+        return 0x41 + n;
+      } else if (n < 52) {
+        return 0x61 + (n - 26);
+      } else if (n < 62) {
+        return 0x30 + (n - 52);
+      } else if (n == 62) {
+        return 0x2b;
+      } else if (n == 63) {
+        return 0x2f;
+      }
+      throw 'n:' + n;
+    };
+
+    _this.writeByte = function(n) {
+
+      _buffer = (_buffer << 8) | (n & 0xff);
+      _buflen += 8;
+      _length += 1;
+
+      while (_buflen >= 6) {
+        writeEncoded(_buffer >>> (_buflen - 6) );
+        _buflen -= 6;
+      }
+    };
+
+    _this.flush = function() {
+
+      if (_buflen > 0) {
+        writeEncoded(_buffer << (6 - _buflen) );
+        _buffer = 0;
+        _buflen = 0;
+      }
+
+      if (_length % 3 != 0) {
+        // padding
+        var padlen = 3 - _length % 3;
+        for (var i = 0; i < padlen; i += 1) {
+          _base64 += '=';
+        }
+      }
+    };
+
+    _this.toString = function() {
+      return _base64;
+    };
+
+    return _this;
+  };
+
+  //---------------------------------------------------------------------
+  // base64DecodeInputStream
+  //---------------------------------------------------------------------
+
+  var base64DecodeInputStream = function(str) {
+
+    var _str = str;
+    var _pos = 0;
+    var _buffer = 0;
+    var _buflen = 0;
+
+    var _this = {};
+
+    _this.read = function() {
+
+      while (_buflen < 8) {
+
+        if (_pos >= _str.length) {
+          if (_buflen == 0) {
+            return -1;
+          }
+          throw 'unexpected end of file./' + _buflen;
+        }
+
+        var c = _str.charAt(_pos);
+        _pos += 1;
+
+        if (c == '=') {
+          _buflen = 0;
+          return -1;
+        } else if (c.match(/^\s$/) ) {
+          // ignore if whitespace.
+          continue;
+        }
+
+        _buffer = (_buffer << 6) | decode(c.charCodeAt(0) );
+        _buflen += 6;
+      }
+
+      var n = (_buffer >>> (_buflen - 8) ) & 0xff;
+      _buflen -= 8;
+      return n;
+    };
+
+    var decode = function(c) {
+      if (0x41 <= c && c <= 0x5a) {
+        return c - 0x41;
+      } else if (0x61 <= c && c <= 0x7a) {
+        return c - 0x61 + 26;
+      } else if (0x30 <= c && c <= 0x39) {
+        return c - 0x30 + 52;
+      } else if (c == 0x2b) {
+        return 62;
+      } else if (c == 0x2f) {
+        return 63;
+      } else {
+        throw 'c:' + c;
+      }
+    };
+
+    return _this;
+  };
+
+  //---------------------------------------------------------------------
+  // gifImage (B/W)
+  //---------------------------------------------------------------------
+
+  var gifImage = function(width, height) {
+
+    var _width = width;
+    var _height = height;
+    var _data = new Array(width * height);
+
+    var _this = {};
+
+    _this.setPixel = function(x, y, pixel) {
+      _data[y * _width + x] = pixel;
+    };
+
+    _this.write = function(out) {
+
+      //---------------------------------
+      // GIF Signature
+
+      out.writeString('GIF87a');
+
+      //---------------------------------
+      // Screen Descriptor
+
+      out.writeShort(_width);
+      out.writeShort(_height);
+
+      out.writeByte(0x80); // 2bit
+      out.writeByte(0);
+      out.writeByte(0);
+
+      //---------------------------------
+      // Global Color Map
+
+      // black
+      out.writeByte(0x00);
+      out.writeByte(0x00);
+      out.writeByte(0x00);
+
+      // white
+      out.writeByte(0xff);
+      out.writeByte(0xff);
+      out.writeByte(0xff);
+
+      //---------------------------------
+      // Image Descriptor
+
+      out.writeString(',');
+      out.writeShort(0);
+      out.writeShort(0);
+      out.writeShort(_width);
+      out.writeShort(_height);
+      out.writeByte(0);
+
+      //---------------------------------
+      // Local Color Map
+
+      //---------------------------------
+      // Raster Data
+
+      var lzwMinCodeSize = 2;
+      var raster = getLZWRaster(lzwMinCodeSize);
+
+      out.writeByte(lzwMinCodeSize);
+
+      var offset = 0;
+
+      while (raster.length - offset > 255) {
+        out.writeByte(255);
+        out.writeBytes(raster, offset, 255);
+        offset += 255;
+      }
+
+      out.writeByte(raster.length - offset);
+      out.writeBytes(raster, offset, raster.length - offset);
+      out.writeByte(0x00);
+
+      //---------------------------------
+      // GIF Terminator
+      out.writeString(';');
+    };
+
+    var bitOutputStream = function(out) {
+
+      var _out = out;
+      var _bitLength = 0;
+      var _bitBuffer = 0;
+
+      var _this = {};
+
+      _this.write = function(data, length) {
+
+        if ( (data >>> length) != 0) {
+          throw 'length over';
+        }
+
+        while (_bitLength + length >= 8) {
+          _out.writeByte(0xff & ( (data << _bitLength) | _bitBuffer) );
+          length -= (8 - _bitLength);
+          data >>>= (8 - _bitLength);
+          _bitBuffer = 0;
+          _bitLength = 0;
+        }
+
+        _bitBuffer = (data << _bitLength) | _bitBuffer;
+        _bitLength = _bitLength + length;
+      };
+
+      _this.flush = function() {
+        if (_bitLength > 0) {
+          _out.writeByte(_bitBuffer);
+        }
+      };
+
+      return _this;
+    };
+
+    var getLZWRaster = function(lzwMinCodeSize) {
+
+      var clearCode = 1 << lzwMinCodeSize;
+      var endCode = (1 << lzwMinCodeSize) + 1;
+      var bitLength = lzwMinCodeSize + 1;
+
+      // Setup LZWTable
+      var table = lzwTable();
+
+      for (var i = 0; i < clearCode; i += 1) {
+        table.add(String.fromCharCode(i) );
+      }
+      table.add(String.fromCharCode(clearCode) );
+      table.add(String.fromCharCode(endCode) );
+
+      var byteOut = byteArrayOutputStream();
+      var bitOut = bitOutputStream(byteOut);
+
+      // clear code
+      bitOut.write(clearCode, bitLength);
+
+      var dataIndex = 0;
+
+      var s = String.fromCharCode(_data[dataIndex]);
+      dataIndex += 1;
+
+      while (dataIndex < _data.length) {
+
+        var c = String.fromCharCode(_data[dataIndex]);
+        dataIndex += 1;
+
+        if (table.contains(s + c) ) {
+
+          s = s + c;
+
+        } else {
+
+          bitOut.write(table.indexOf(s), bitLength);
+
+          if (table.size() < 0xfff) {
+
+            if (table.size() == (1 << bitLength) ) {
+              bitLength += 1;
+            }
+
+            table.add(s + c);
+          }
+
+          s = c;
+        }
+      }
+
+      bitOut.write(table.indexOf(s), bitLength);
+
+      // end code
+      bitOut.write(endCode, bitLength);
+
+      bitOut.flush();
+
+      return byteOut.toByteArray();
+    };
+
+    var lzwTable = function() {
+
+      var _map = {};
+      var _size = 0;
+
+      var _this = {};
+
+      _this.add = function(key) {
+        if (_this.contains(key) ) {
+          throw 'dup key:' + key;
+        }
+        _map[key] = _size;
+        _size += 1;
+      };
+
+      _this.size = function() {
+        return _size;
+      };
+
+      _this.indexOf = function(key) {
+        return _map[key];
+      };
+
+      _this.contains = function(key) {
+        return typeof _map[key] != 'undefined';
+      };
+
+      return _this;
+    };
+
+    return _this;
+  };
+
+  var createDataURL = function(width, height, getPixel) {
+    var gif = gifImage(width, height);
+    for (var y = 0; y < height; y += 1) {
+      for (var x = 0; x < width; x += 1) {
+        gif.setPixel(x, y, getPixel(x, y) );
+      }
+    }
+
+    var b = byteArrayOutputStream();
+    gif.write(b);
+
+    var base64 = base64EncodeOutputStream();
+    var bytes = b.toByteArray();
+    for (var i = 0; i < bytes.length; i += 1) {
+      base64.writeByte(bytes[i]);
+    }
+    base64.flush();
+
+    return 'data:image/gif;base64,' + base64;
+  };
+
+  //---------------------------------------------------------------------
+  // returns qrcode function.
+
+  return qrcode;
+}();
+
+// multibyte support
+!function() {
+
+  qrcode.stringToBytesFuncs['UTF-8'] = function(s) {
+    // http://stackoverflow.com/questions/18729405/how-to-convert-utf8-string-to-byte-array
+    function toUTF8Array(str) {
+      var utf8 = [];
+      for (var i=0; i < str.length; i++) {
+        var charcode = str.charCodeAt(i);
+        if (charcode < 0x80) utf8.push(charcode);
+        else if (charcode < 0x800) {
+          utf8.push(0xc0 | (charcode >> 6),
+              0x80 | (charcode & 0x3f));
+        }
+        else if (charcode < 0xd800 || charcode >= 0xe000) {
+          utf8.push(0xe0 | (charcode >> 12),
+              0x80 | ((charcode>>6) & 0x3f),
+              0x80 | (charcode & 0x3f));
+        }
+        // surrogate pair
+        else {
+          i++;
+          // UTF-16 encodes 0x10000-0x10FFFF by
+          // subtracting 0x10000 and splitting the
+          // 20 bits of 0x0-0xFFFFF into two halves
+          charcode = 0x10000 + (((charcode & 0x3ff)<<10)
+            | (str.charCodeAt(i) & 0x3ff));
+          utf8.push(0xf0 | (charcode >>18),
+              0x80 | ((charcode>>12) & 0x3f),
+              0x80 | ((charcode>>6) & 0x3f),
+              0x80 | (charcode & 0x3f));
+        }
+      }
+      return utf8;
+    }
+    return toUTF8Array(s);
+  };
+
+}();
+
+(function (factory) {
+  if (typeof define === 'function' && define.amd) {
+      define([], factory);
+  } else if (typeof exports === 'object') {
+      module.exports = factory();
+  }
+}(function () {
+    return qrcode;
+}));
+
+/* A small, allowlisted view snapshot. No measurements, files, tokens or account state. */
+window.ThreeBMobileView=(()=>{
+  const enums={t:['klein','groot','beide'],e:['klein','groot'],s:['tables','balls','tracks'],p:['lkl','sixSeven','vrij'],d:['west','oost'],f:['parallel','waaier'],w:['whole','line','arrivals','bandballs']};
+  function clean(raw){if(!raw||raw.v!==1)return null;const out={v:1};for(const [key,values]of Object.entries(enums)){if(!values.includes(raw[key]))return null;out[key]=raw[key];}if(typeof raw.k!=='string'||!/^[-A-Z0-9_+]{1,40}$/.test(raw.k)||typeof raw.r!=='boolean'||!Number.isInteger(raw.n)||raw.n<0||raw.n>6)return null;out.k=raw.k;out.r=raw.r;out.n=raw.n;return out;}
+  function encode(raw){const value=clean(raw);if(!value)throw Error('Ongeldige tafel-view.');return btoa(JSON.stringify(value)).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');}
+  function decode(value){try{if(typeof value!=='string'||value.length>1800||!/^[A-Za-z0-9_-]+$/.test(value))return null;return clean(JSON.parse(atob(value.replace(/-/g,'+').replace(/_/g,'/'))));}catch(_){return null;}}
+  function image(url){const code=qrcode(0,'M');code.addData(url);code.make();return 'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(code.createSvgTag({cellSize:5,margin:20,scalable:true}));}
+  function link(url,view){const target=new URL(url);const hash=new URLSearchParams(target.hash.slice(1));hash.set('tableView',encode(view));target.hash=hash.toString();return target.href;}
+  function qrPage(){const raw=new URLSearchParams(location.hash.slice(1)).get('tableView'),view=decode(raw);if(!view)return;const open=document.querySelector('a[href*="open.html"]'),img=document.querySelector('img');if(!open||!img)return;open.href=link(open.href,view);img.src=image(open.href);img.alt='QR-code met de gekozen tafel-view';const p=document.createElement('p');p.textContent='Deze QR neemt tafelkeuze, spoor en schaal mee. Metingen en toegangstokens worden niet verstuurd.';document.body.append(p);}
+  return {clean,encode,decode,image,link,qrPage};
+})();
+
 /* Physical phone testing: show the project's published QR, without changing app state. */
 if(typeof window!=='undefined'){
-  window.installMobileTestQr=function({button,imageUrl,testUrl,qrPageUrl}){
+  window.installMobileTestQr=function({button,imageUrl,testUrl,qrPageUrl,getView}){
     if(!button)return;
     let dialog=document.getElementById('mobileQrDialog');
     if(!dialog){
       const style=document.createElement('style');style.textContent='#mobileQrDialog{width:min(94vw,440px);max-height:92dvh;box-sizing:border-box;overflow:auto;padding:16px;border:1px solid #82958b;border-radius:12px;background:#fff;color:#142e24;font:16px system-ui;text-align:center}#mobileQrDialog::backdrop{background:#0006}#mobileQrDialog header{display:flex;align-items:center;justify-content:space-between;gap:12px}#mobileQrDialog h2{font:700 20px system-ui;margin:0}#mobileQrDialog button{min-width:44px;min-height:44px;font:20px system-ui;color:#142e24;background:#f1f5f2;border:1px solid #82958b;border-radius:6px}#mobileQrDialog img{display:block;width:100%;height:auto;max-width:410px;margin:12px auto;background:#fff}#mobileQrDialog p{font:14px/1.4 system-ui;margin:10px 0}#mobileQrDialog a{color:#1552a0;text-decoration:underline}';document.head.append(style);
       dialog=document.createElement('dialog');dialog.id='mobileQrDialog';dialog.setAttribute('aria-labelledby','mobileQrTitle');
       const header=document.createElement('header'),title=document.createElement('h2'),close=document.createElement('button');title.id='mobileQrTitle';title.textContent='Test op je telefoon';close.type='button';close.textContent='×';close.setAttribute('aria-label','QR sluiten');close.onclick=()=>dialog.close();header.append(title,close);
-      const img=document.createElement('img');img.src=imageUrl;img.alt='QR-code om dit project op je telefoon te openen';
+      const img=document.createElement('img');img.id='mobileViewQrImage';img.src=imageUrl;img.alt='QR-code om dit project op je telefoon te openen';
       const instruction=document.createElement('p');instruction.textContent='Scan met de camera van je telefoon. Test staand én liggend.';
-      const links=document.createElement('p'),large=document.createElement('a'),open=document.createElement('a');large.href=qrPageUrl;large.textContent='QR groot openen';large.target='_blank';large.rel='noopener';open.href=testUrl;open.textContent='Open de site';open.target='_blank';open.rel='noopener';links.append(large,document.createTextNode(' · '),open);
-      const note=document.createElement('p');note.textContent='De QR opent de site; eigen gegevens en instellingen worden niet automatisch overgenomen.';
+      const links=document.createElement('p'),large=document.createElement('a'),open=document.createElement('a');large.id='mobileViewQrLarge';large.href=qrPageUrl;large.textContent='QR groot openen';large.target='_blank';large.rel='noopener';open.id='mobileViewQrOpen';open.href=testUrl;open.textContent='Open de site';open.target='_blank';open.rel='noopener';links.append(large,document.createTextNode(' · '),open);
+      const note=document.createElement('p');note.id='mobileViewQrNote';note.textContent='De QR opent de site; eigen gegevens en instellingen worden niet automatisch overgenomen.';
       dialog.append(header,instruction,img,links,note);document.body.append(dialog);
     }
-    button.textContent='QR · Test op telefoon';button.setAttribute('aria-haspopup','dialog');button.setAttribute('aria-controls','mobileQrDialog');button.onclick=()=>{if(!dialog.open)dialog.showModal();};
+    button.textContent='QR · Test op telefoon';button.setAttribute('aria-haspopup','dialog');button.setAttribute('aria-controls','mobileQrDialog');button.onclick=()=>{if(getView){try{const view=getView(),url=window.ThreeBMobileView.link(testUrl,view),page=new URL(qrPageUrl);page.hash=new URLSearchParams({tableView:window.ThreeBMobileView.encode(view)}).toString();dialog.querySelector('#mobileViewQrImage').src=window.ThreeBMobileView.image(url);dialog.querySelector('#mobileViewQrOpen').href=url;dialog.querySelector('#mobileViewQrLarge').href=page.href;dialog.querySelector('#mobileViewQrNote').textContent='Deze mobiele test neemt de huidige tafel-view over: tafelkeuze, spoor en schaal. De indeling past zich aan je telefoon aan. Metingen en toegangstokens worden niet verstuurd; gebruik dezelfde meetbasis op beide apparaten.';}catch(e){dialog.querySelector('#mobileViewQrImage').src=imageUrl;dialog.querySelector('#mobileViewQrOpen').href=testUrl;dialog.querySelector('#mobileViewQrLarge').href=qrPageUrl;dialog.querySelector('#mobileViewQrNote').textContent='De tafel-view kon niet worden meegenomen. Deze QR opent alleen de site, zonder je huidige tafel-view.';if(!dialog.open)dialog.showModal();return;}}if(!dialog.open)dialog.showModal();};
   };
   const script=document.currentScript;
   if(script?.dataset.testUrl){
@@ -126,7 +2461,7 @@ if(typeof window!=='undefined'){
 /* Test release freshness, separate from the SQLite blob revision. No automatic reload. */
 (() => {
  'use strict';let last=null,pending;
- const latestUrl=()=>{const u=new URL(location.href);u.searchParams.delete('v');u.searchParams.set('_refresh',String(Date.now()));return u.href;};
+ const latestUrl=()=>{const u=new URL('open.html',location.href);if(new URLSearchParams(location.search).get('mode')==='user')u.searchParams.set('mode','user');u.hash=location.hash;return u.href;};
  function paint(){if(!document.body)return;let box=document.getElementById('testUpdateNotice');if(last?.ok){box?.remove();return;}if(!last)return;if(!box){box=document.createElement('section');box.id='testUpdateNotice';box.setAttribute('role','alert');box.style.cssText='position:fixed;left:8px;right:8px;bottom:8px;z-index:7000;max-width:760px;margin:auto;padding:12px;box-sizing:border-box;background:#fff0c2;color:#142e24;border:2px solid #a66b14;border-radius:8px;font:15px/1.4 system-ui;box-shadow:0 3px 16px #0004';const text=document.createElement('span');text.className='version-message';const button=document.createElement('button');button.type='button';button.textContent='Nieuwste testversie openen';button.style.cssText='min-height:44px;margin:8px 0 0;padding:8px';button.onclick=()=>{if(window.hasThreeBSpoorChanges?.()&&!confirm('Nieuwste versie openen? Invoer die nog niet is bewaard kan verloren gaan.'))return;location.assign(latestUrl());};box.append(text,document.createElement('br'),button);document.body.append(box);}box.querySelector('.version-message').textContent=last.message;}
  async function check(){if(!window.THREEB_TEST_ENVIRONMENT)return {ok:true};if(pending)return pending;pending=(async()=>{const abort=new AbortController(),timer=setTimeout(()=>abort.abort(),8000);try{const u=new URL('RELEASE.json',location.href);u.searchParams.set('check',String(Date.now()));const response=await fetch(u,{cache:'no-store',credentials:'omit',signal:abort.signal});if(!response.ok)throw Error();const release=await response.json();if(!/^v\d+-r\d+$/.test(release.version))throw Error();const current=window.THREEB_RELEASE?.version;last={ok:release.version===current,version:release.version,message:release.version===current?'':'Deze tab gebruikt '+current+'; op test staat '+release.version+'. Bewaren op GitHub is geblokkeerd. Je werk blijft behouden; open de nieuwste testversie.'};}catch(_){last={ok:false,message:'De actuele appversie kan niet worden gecontroleerd. Bewaren op GitHub is tijdelijk geblokkeerd; je werk blijft behouden. Controleer de verbinding en probeer opnieuw.'};}finally{clearTimeout(timer);pending=null;}paint();return last;})();return pending;}
  async function assertCurrent(){const result=await check();if(!result.ok)throw Object.assign(Error(result.message),{stale:true});}
@@ -242,7 +2577,7 @@ if(typeof window!=='undefined'){
     }catch(e){if(keepPending)throw e;try{db.run('ROLLBACK');}catch(_){}db.close();const SQL=await ready();db=new SQL.Database(before);record=oldRecord;contentFingerprint=oldFingerprint;validate();if(record.github&&[409,422].includes(e.status))record={...record,github:{...record.github,conflict:true}};if(staged||record.github?.conflict)try{await put(record);}catch(_){e.message+=' De browsercache kon niet worden hersteld; controleer de werkstand na herladen.';}notify(e.message);throw e;}finally{busy=false;}
   }
   async function close(){if(window.hasThreeBSpoorChanges?.())throw Error('Bewaar je spoorwijzigingen of kies Herlaad voordat je het werkbestand sluit.');if(!record)return;const old=record;await put(null,old);old.backupState===null?localStorage.removeItem(key):localStorage.setItem(key,old.backupState);for(const k of Array.from({length:sessionStorage.length},(_,i)=>sessionStorage.key(i)))if(k.includes('experiment:'))sessionStorage.removeItem(k);for(const [k,v] of old.backupSession||[])sessionStorage.setItem(k,v);location.reload();}
-  function mount(){if(!enabled()||!document.body||document.getElementById('databaseWorkspace'))return;const style=document.createElement('style');style.textContent='#databaseWorkspace .db-compact-header{display:flex;align-items:center;justify-content:space-between;gap:8px}#databaseWorkspace .db-compact-header button{min-height:40px;margin:0;padding:6px 12px}#databaseWorkspace [hidden]{display:none!important}#databaseWorkspace #databaseTools>summary{display:none}#databaseWorkspace #databaseOriginBadge{margin:8px 0 0}#databaseWorkspace #databaseWorkspaceStatus{margin:8px 0;font-size:14px}#databaseWorkspace .db-github-primary,#githubConnectionDialog .db-github-primary{display:block;box-sizing:border-box;padding:12px;min-height:44px;background:#176f4f;color:white;font-weight:700;text-align:center;text-decoration:none;border-radius:7px;margin:12px 0}#databaseWorkspace .db-source-help{margin:14px 0}body.database-workspace .table-file-tools{display:none!important}body.database-not-open{background:#eee9f7!important;min-height:100dvh}body.database-not-open> :not(#databaseWorkspace):not(#testEnvironmentBanner):not(#mobileQrDialog):not(#testUpdateNotice){display:none!important}body.database-not-open #databaseWorkspace{position:fixed!important;top:90px;left:50%;transform:translateX(-50%);width:min(520px,calc(100vw - 24px))!important;max-height:calc(100dvh - 110px);overflow:auto;margin:0!important;line-height:1.5;font:15px system-ui!important}body.database-not-open #testEnvironmentBanner{background:#4e347a!important;color:white!important;font:600 14px system-ui!important;padding:12px!important;text-align:center}body.database-not-open #testEnvironmentBanner a{color:white}body.database-not-open .db-workfile-actions{display:none}#databaseStartQr{width:100%;min-height:40px;margin-top:12px}.db-workfile-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:stretch;margin:12px 0}.db-workfile-actions button,.db-workfile-actions a{box-sizing:border-box;min-height:40px;margin:0!important}.db-workfile-actions a{display:flex;align-items:center;justify-content:center;padding:6px 8px;border:1px solid #b9accc;border-radius:8px;background:#fff;color:#142e24;text-align:center;text-decoration:none}.db-workfile-actions #closeDatabaseWorkspace{grid-column:1/-1}@media(max-width:999px),(pointer:coarse){body.database-workspace #databaseWorkspace{display:none;position:fixed!important;top:calc(var(--threeb-test-banner-height,48px) + 60px)!important;left:8px!important;right:8px!important;width:auto!important;max-width:none!important;max-height:calc(100dvh - var(--threeb-test-banner-height,48px) - 76px);overflow:auto;z-index:4000;margin:0!important;font:16px system-ui!important}body.database-workspace.database-panel-open #databaseWorkspace{display:block}#databaseMobileToggle{position:fixed;top:calc(var(--threeb-test-banner-height,48px) + 8px);left:8px;z-index:4001;min-height:44px;padding:8px 12px;border:1px solid #8064a6;border-radius:8px;background:#f4effc;color:#142e24;font:600 15px system-ui}#databaseWorkspace input[type=file]{min-height:48px;width:100%;font:16px system-ui}#databaseWorkspace summary{min-height:44px;cursor:pointer}#databaseWorkspace .db-workfile-actions{grid-template-columns:1fr}body.database-not-open #databaseWorkspace{top:70px!important;left:50%!important;right:auto!important;max-height:calc(100dvh - 86px)}}@media(min-width:1000px) and (pointer:fine){#databaseMobileToggle{display:none}}';document.head.append(style);const panel=document.createElement('section');panel.id='databaseWorkspace';panel.style.cssText='position:relative;margin:8px 8px 8px auto;width:360px;max-width:calc(100vw - 16px);box-sizing:border-box;padding:10px;border:1px solid #8064a6;border-radius:8px;background:#f4effc;color:#142e24;font:14px system-ui';panel.innerHTML='<header class="db-compact-header"><strong>GitHub-werkbestand</strong><button id="databaseManage" type="button" aria-expanded="false">Beheer</button></header><p id="databaseOriginBadge" role="status" style="padding:8px;border-radius:6px;font-weight:700;line-height:1.35"></p><p id="databaseIntro">Verbind om te starten. Bewaar spoor schrijft daarna rechtstreeks op GitHub.</p><div id="databaseConnectArea"><section class="db-github-connect"><label><strong>GitHub-toegangstoken</strong><input id="githubAccessToken" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" style="display:block;width:100%;box-sizing:border-box;min-height:44px;font:16px system-ui" aria-label="GitHub-toegangstoken"></label><button id="openGithubDatabase" class="db-github-primary" type="button">GitHub-werkbestand openen / verbinden</button><small>Eenmalig per pagina-sessie. Token blijft alleen in het geheugen van deze pagina.</small><a id="createGithubPhoneToken" href="https://github.com/settings/personal-access-tokens/new?name=Kruin%20telefoon&amp;target_name=kruin&amp;contents=write&amp;expires_in=30" target="_blank" rel="noopener noreferrer" style="display:block;min-height:44px;padding:12px 0;box-sizing:border-box">Token maken voor deze telefoon</a><p style="margin:0 0 10px">Nieuwe telefoon? Log op GitHub in als <strong>kruin</strong>. Kies alleen <strong>3b-kruin-beheer</strong> en controleer <strong>Contents: Read and write</strong>. Maak het token, kopieer het en keer terug naar dit tabblad om het hierboven te plakken.</p><details><summary>Token instellen op GitHub</summary><p>Maak een fine-grained token voor eigenaar kruin, alleen repository 3b-kruin-beheer, met Contents: Read and write en een korte vervaldatum. Plak het alleen hier; nooit in chat of een bestand.</p><a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener noreferrer">Toegangstoken maken op GitHub</a></details></section></div><p id="databaseWorkspaceStatus" role="status"></p><details id="databaseTools"><summary>Back-up en details</summary><button id="databaseReconnect" type="button">Opnieuw verbinden</button><details class="db-source-help"><summary>2 · Lokale back-up terugzetten</summary><p>Een lokale kopie is een back-up. Terugzetten vervangt de werkstand in deze browser; GitHub verandert niet.</p><label><strong>Kies de lokale back-up</strong><input id="openDatabaseWorkspace" type="file" style="display:block;max-width:100%"></label></details><div class="db-workfile-actions"><button id="downloadDatabaseWorkspace" type="button">Bewaar db lokaal · back-up</button>  <button id="closeDatabaseWorkspace" type="button">Sluit GitHub-werkbestand</button></div><p><small id="databaseAppVersion"></small><br><small id="databaseOriginDetail"></small></p><small>Productie apart. Lokale bestanden zijn alleen back-ups.</small></details>';(document.getElementById('testEnvironmentBanner')||document.body.firstChild)?.after(panel);document.getElementById('databaseManage').onclick=()=>{const tools=document.getElementById('databaseTools');tools.open=!tools.open;compactUi();};document.getElementById('databaseTools').ontoggle=compactUi;document.getElementById('databaseReconnect').onclick=showConnection;document.getElementById('databaseAppVersion').textContent='App '+(window.THREEB_RELEASE?.version||'');const transfer=document.getElementById('testTransfer');if(transfer)transfer.hidden=true;document.getElementById('openDatabaseWorkspace').onchange=e=>{const file=e.target.files[0];if(file)open(file).catch(()=>{});};document.getElementById('openGithubDatabase').onclick=()=>connectGithub().catch(()=>{});document.getElementById('downloadDatabaseWorkspace').onclick=()=>download(record.bytes,'Kruinconfig.sqlite3');document.getElementById('closeDatabaseWorkspace').onclick=()=>close().catch(e=>notify(e.message));for(const id of ['downloadDatabaseWorkspace','closeDatabaseWorkspace'])document.getElementById(id).disabled=!record;if(record){const toggle=document.createElement('button');toggle.id='databaseMobileToggle';toggle.type='button';toggle.textContent='GitHub-werkbestand';toggle.setAttribute('aria-controls','databaseWorkspace');toggle.setAttribute('aria-expanded','false');toggle.onclick=()=>{const shown=document.body.classList.toggle('database-panel-open');toggle.setAttribute('aria-expanded',String(shown));toggle.textContent=shown?'Paneel sluiten':'GitHub-werkbestand';};panel.after(toggle);}if(!record){const version=window.THREEB_RELEASE?.version||'';const banner=document.getElementById('testEnvironmentBanner');if(banner?.firstChild?.nodeType===3)banner.firstChild.textContent='TEST '+version+' · Open je GitHub-werkbestand ';document.title='TEST · '+version+' · GitHub-werkbestand openen';const qr=document.createElement('button');qr.id='databaseStartQr';qr.type='button';qr.textContent='QR · Test op telefoon';panel.append(qr);window.installMobileTestQr?.({button:qr,imageUrl:new URL('qr-test-neus.png?v='+version,location.href).href,testUrl:'https://kruin.github.io/3b/test3b/#owner=kruin',qrPageUrl:new URL('qr.html?v='+version,location.href).href});}notify(window.ThreeBDatabaseWorkspace.error||(record?'GitHub-werkbestand: '+record.name:'Verbind met GitHub; een lokaal bestand is niet nodig.'));}
+  function mount(){if(!enabled()||!document.body||document.getElementById('databaseWorkspace'))return;const style=document.createElement('style');style.textContent='#databaseWorkspace .db-compact-header{display:flex;align-items:center;justify-content:space-between;gap:8px}#databaseWorkspace .db-compact-header button{min-height:40px;margin:0;padding:6px 12px}#databaseWorkspace [hidden]{display:none!important}#databaseWorkspace #databaseTools>summary{display:none}#databaseWorkspace #databaseOriginBadge{margin:8px 0 0}#databaseWorkspace #databaseWorkspaceStatus{margin:8px 0;font-size:14px}#databaseWorkspace .db-github-primary,#githubConnectionDialog .db-github-primary{display:block;box-sizing:border-box;padding:12px;min-height:44px;background:#176f4f;color:white;font-weight:700;text-align:center;text-decoration:none;border-radius:7px;margin:12px 0}#databaseWorkspace .db-source-help{margin:14px 0}body.database-workspace .table-file-tools{display:none!important}body.database-not-open{background:#eee9f7!important;min-height:100dvh}body.database-not-open> :not(#databaseWorkspace):not(#testEnvironmentBanner):not(#mobileQrDialog):not(#testUpdateNotice){display:none!important}body.database-not-open #databaseWorkspace{position:fixed!important;top:90px;left:50%;transform:translateX(-50%);width:min(520px,calc(100vw - 24px))!important;max-height:calc(100dvh - 110px);overflow:auto;margin:0!important;line-height:1.5;font:15px system-ui!important}body.database-not-open #testEnvironmentBanner{background:#4e347a!important;color:white!important;font:600 14px system-ui!important;padding:12px!important;text-align:center}body.database-not-open #testEnvironmentBanner a{color:white}body.database-not-open .db-workfile-actions{display:none}#databaseStartQr{width:100%;min-height:40px;margin-top:12px}.db-workfile-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:stretch;margin:12px 0}.db-workfile-actions button,.db-workfile-actions a{box-sizing:border-box;min-height:40px;margin:0!important}.db-workfile-actions a{display:flex;align-items:center;justify-content:center;padding:6px 8px;border:1px solid #b9accc;border-radius:8px;background:#fff;color:#142e24;text-align:center;text-decoration:none}.db-workfile-actions #closeDatabaseWorkspace{grid-column:1/-1}@media(max-width:999px),(pointer:coarse){body.database-workspace #databaseWorkspace{display:none;position:fixed!important;top:calc(var(--threeb-test-banner-height,48px) + 60px)!important;left:8px!important;right:8px!important;width:auto!important;max-width:none!important;max-height:calc(100dvh - var(--threeb-test-banner-height,48px) - 76px);overflow:auto;z-index:4000;margin:0!important;font:16px system-ui!important}body.database-workspace.database-panel-open #databaseWorkspace{display:block}#databaseMobileToggle{position:fixed;top:calc(var(--threeb-test-banner-height,48px) + 8px);left:8px;z-index:4001;min-height:44px;padding:8px 12px;border:1px solid #8064a6;border-radius:8px;background:#f4effc;color:#142e24;font:600 15px system-ui}#databaseWorkspace input[type=file]{min-height:48px;width:100%;font:16px system-ui}#databaseWorkspace summary{min-height:44px;cursor:pointer}#databaseWorkspace .db-workfile-actions{grid-template-columns:1fr}body.database-not-open #databaseWorkspace{top:70px!important;left:50%!important;right:auto!important;max-height:calc(100dvh - 86px)}}@media(min-width:1000px) and (pointer:fine){#databaseMobileToggle{display:none}}';document.head.append(style);const panel=document.createElement('section');panel.id='databaseWorkspace';panel.style.cssText='position:relative;margin:8px 8px 8px auto;width:360px;max-width:calc(100vw - 16px);box-sizing:border-box;padding:10px;border:1px solid #8064a6;border-radius:8px;background:#f4effc;color:#142e24;font:14px system-ui';panel.innerHTML='<header class="db-compact-header"><strong>GitHub-werkbestand</strong><button id="databaseManage" type="button" aria-expanded="false">Beheer</button></header><p id="databaseOriginBadge" role="status" style="padding:8px;border-radius:6px;font-weight:700;line-height:1.35"></p><p id="databaseIntro">Verbind om te starten. Bewaar spoor schrijft daarna rechtstreeks op GitHub.</p><div id="databaseConnectArea"><section class="db-github-connect"><label><strong>GitHub-toegangstoken</strong><input id="githubAccessToken" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" style="display:block;width:100%;box-sizing:border-box;min-height:44px;font:16px system-ui" aria-label="GitHub-toegangstoken"></label><button id="openGithubDatabase" class="db-github-primary" type="button">GitHub-werkbestand openen / verbinden</button><small>Eenmalig per pagina-sessie. Token blijft alleen in het geheugen van deze pagina.</small><a id="createGithubPhoneToken" href="https://github.com/settings/personal-access-tokens/new?name=Kruin%20telefoon&amp;target_name=kruin&amp;contents=write&amp;expires_in=30" target="_blank" rel="noopener noreferrer" style="display:block;min-height:44px;padding:12px 0;box-sizing:border-box">Token maken voor deze telefoon</a><p style="margin:0 0 10px">Nieuwe telefoon? Log op GitHub in als <strong>kruin</strong>. Kies alleen <strong>3b-kruin-beheer</strong> en controleer <strong>Contents: Read and write</strong>. Maak het token, kopieer het en keer terug naar dit tabblad om het hierboven te plakken.</p><details><summary>Token instellen op GitHub</summary><p>Maak een fine-grained token voor eigenaar kruin, alleen repository 3b-kruin-beheer, met Contents: Read and write en een korte vervaldatum. Plak het alleen hier; nooit in chat of een bestand.</p><a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener noreferrer">Toegangstoken maken op GitHub</a></details></section></div><p id="databaseWorkspaceStatus" role="status"></p><details id="databaseTools"><summary>Back-up en details</summary><button id="databaseReconnect" type="button">Opnieuw verbinden</button><details class="db-source-help"><summary>2 · Lokale back-up terugzetten</summary><p>Een lokale kopie is een back-up. Terugzetten vervangt de werkstand in deze browser; GitHub verandert niet.</p><label><strong>Kies de lokale back-up</strong><input id="openDatabaseWorkspace" type="file" style="display:block;max-width:100%"></label></details><div class="db-workfile-actions"><button id="downloadDatabaseWorkspace" type="button">Bewaar db lokaal · back-up</button>  <button id="closeDatabaseWorkspace" type="button">Sluit GitHub-werkbestand</button></div><p><small id="databaseAppVersion"></small><br><small id="databaseOriginDetail"></small></p><small>Productie apart. Lokale bestanden zijn alleen back-ups.</small></details>';(document.getElementById('testEnvironmentBanner')||document.body.firstChild)?.after(panel);document.getElementById('databaseManage').onclick=()=>{const tools=document.getElementById('databaseTools');tools.open=!tools.open;compactUi();};document.getElementById('databaseTools').ontoggle=compactUi;document.getElementById('databaseReconnect').onclick=showConnection;document.getElementById('databaseAppVersion').textContent='App '+(window.THREEB_RELEASE?.version||'');const transfer=document.getElementById('testTransfer');if(transfer)transfer.hidden=true;document.getElementById('openDatabaseWorkspace').onchange=e=>{const file=e.target.files[0];if(file)open(file).catch(()=>{});};document.getElementById('openGithubDatabase').onclick=()=>connectGithub().catch(()=>{});document.getElementById('downloadDatabaseWorkspace').onclick=()=>download(record.bytes,'Kruinconfig.sqlite3');document.getElementById('closeDatabaseWorkspace').onclick=()=>close().catch(e=>notify(e.message));for(const id of ['downloadDatabaseWorkspace','closeDatabaseWorkspace'])document.getElementById(id).disabled=!record;if(record){const toggle=document.createElement('button');toggle.id='databaseMobileToggle';toggle.type='button';toggle.textContent='GitHub-werkbestand';toggle.setAttribute('aria-controls','databaseWorkspace');toggle.setAttribute('aria-expanded','false');toggle.onclick=()=>{const shown=document.body.classList.toggle('database-panel-open');toggle.setAttribute('aria-expanded',String(shown));toggle.textContent=shown?'Paneel sluiten':'GitHub-werkbestand';};panel.after(toggle);}if(!record){const version=window.THREEB_RELEASE?.version||'';const banner=document.getElementById('testEnvironmentBanner');if(banner?.firstChild?.nodeType===3)banner.firstChild.textContent='TEST '+version+' · Open je GitHub-werkbestand ';document.title='TEST · '+version+' · GitHub-werkbestand openen';const qr=document.createElement('button');qr.id='databaseStartQr';qr.type='button';qr.textContent='QR · Test op telefoon';panel.append(qr);window.installMobileTestQr?.({button:qr,imageUrl:new URL('qr-test-neus.png?v='+version,location.href).href,testUrl:'https://kruin.github.io/3b/test3b/open.html#owner=kruin',qrPageUrl:new URL('qr.html?v='+version,location.href).href});}notify(window.ThreeBDatabaseWorkspace.error||(record?'GitHub-werkbestand: '+record.name:'Verbind met GitHub; een lokaal bestand is niet nodig.'));}
   window.ThreeBDatabaseWorkspace={restore,open,commit,connectGithub,showConnection,get busy(){return busy;},get active(){return Boolean(db&&record);},get required(){return enabled();},get remote(){return Boolean(record?.github);},get saveMessage(){return document.getElementById('databaseWorkspaceStatus')?.textContent||'';},get sourceStatus(){if(record?.github)return record.github.conflict?'GitHub gewijzigd · heropenen':!window.ThreeBGitHub.connected?'GitHub · opnieuw verbinden':record.github.pending?'GitHub · niet bevestigd':'GitHub-werkbestand';return !record?'Geen werkdatabase':contentFingerprint===window.THREEB_DB_SOURCE?.fingerprint?'GitHub-bron ongewijzigd':record.savedAt?'Lokaal gewijzigd':'Andere databaseversie';},mount};
 })();
 
@@ -315,22 +2650,97 @@ const ThreeBStartRay=(()=>{
   return {trace};
 })();
 
+/* Screen-size appearance only. Physical radii and contact geometry stay unchanged. */
+window.ThreeBUniformBalls=(()=>{
+  const diameter=20,observed=new WeakSet();let pending=false;
+  function mode(){return window.ThreeBTableText?.get().scaleMode||'tracks';}
+  function dimensions(){return window.ThreeBTableText?.dimensions()||{groot:{widthCm:142,heightCm:284},klein:{widthCm:115,heightCm:230}};}
+  function targetDiameter(svg,unit){
+    const tables=dimensions(),table=svg.dataset.viewTable||svg.dataset.courseTable||'klein',maxW=Math.max(tables.groot.widthCm,tables.klein.widthCm),ratio=tables[table].widthCm/maxW;
+    const fieldUnits=svg.id==='lklLessonTable'?Number(svg.dataset.courseWidth)||tables[table].widthCm:340,fieldPixels=fieldUnits*unit;
+    const referencePixels=mode()==='balls'?fieldPixels/ratio:fieldPixels,physicalDiameter=(window.THREEB_START_CONFIG?.ballDiameterMm||61.5)/10;
+    const base=Math.min(diameter,referencePixels*physicalDiameter/maxW);
+    return mode()==='tables'?base/ratio:base;
+  }
+  function courseFrame(svg,g,table){
+    const tables=dimensions(),maxW=Math.max(tables.groot.widthCm,tables.klein.widthCm),maxH=Math.max(tables.groot.heightCm,tables.klein.heightCm),ratio=g.widthCm/maxW;
+    const w=mode()==='balls'?maxW+64:g.widthCm+64*ratio,h=mode()==='balls'?maxH+64:g.heightCm+64*ratio;
+    svg.dataset.courseTable=table;svg.dataset.courseWidth=String(g.widthCm);svg.setAttribute('viewBox',`${(g.widthCm-w)/2} ${(g.heightCm-h)/2} ${w} ${h}`);
+  }
+  function apply(svg){
+    const m=svg?.getScreenCTM();if(!m)return;const unit=Math.hypot(m.a,m.b),target=targetDiameter(svg,unit);if(!Number.isFinite(unit)||unit<=0)return;
+    for(const group of svg.querySelectorAll('g.uniform-ball')){
+      const ball=group.querySelector('.ball-visible'),radius=Number(group.dataset.geometryRadius);if(!ball||!radius)continue;
+      const x=Number(ball.getAttribute('cx')),y=Number(ball.getAttribute('cy')),scale=target/(2*radius*unit);
+      group.setAttribute('transform',`translate(${x} ${y}) scale(${scale}) translate(${-x} ${-y})`);
+      ball.setAttribute('vector-effect','non-scaling-stroke');ball.style.strokeWidth=Math.min(2,target/8)+'px';
+    }
+    for(const ball of svg.querySelectorAll('.lesson-ball,.lesson-target,.course-arrival')){ball.setAttribute('r',target/(2*unit));ball.setAttribute('vector-effect','non-scaling-stroke');ball.style.strokeWidth=Math.min(2,target/8)+'px';}
+    for(const number of svg.querySelectorAll('.ball-number'))number.style.fontSize=(9*target/diameter/unit)+'px';
+  }
+  function refresh(){pending=false;for(const svg of document.querySelectorAll('#svgMount .table-svg,#lklLessonTable')){if(!observed.has(svg)){observed.add(svg);resize.observe(svg);}apply(svg);}}
+  function schedule(){if(!pending){pending=true;requestAnimationFrame(refresh);}}
+  const resize=new ResizeObserver(schedule);
+  function start(){new MutationObserver(schedule).observe(document.body,{childList:true,subtree:true});window.addEventListener('resize',schedule);schedule();}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
+  return {apply,diameter,courseFrame};
+})();
+
+/* Introductory explanation. Reads table dimensions; never edits measurements. */
+window.ThreeBMeetsysteemIntro={create({geometry,route,onContinue,onClose}){
+  const key='3b-meetsysteem-intro-v1',ns='http://www.w3.org/2000/svg';let step=0,view='W',exampleP=0,exampleW=5,parallelLesson=false,mirrored=false,drawWidth=0,demo=false,demoFrame=0;
+  const dialog=document.createElement('dialog');dialog.id='meetsysteemIntro';dialog.setAttribute('aria-labelledby','meetIntroTitle');
+  dialog.innerHTML='<header><h2 id="meetIntroTitle">De Waaier<small style="display:block;font-size:15px;font-weight:500">Van Top tot Teen</small><small style="display:block;font-size:13px;font-weight:500">Kruins tafel · metingen van Kruin</small></h2><button id="closeMeetIntro" type="button" aria-label="Introductie sluiten">×</button></header><div class="meet-intro-layout"><section class="meet-intro-stage"><p id="meetIntroOrientation">Links is west, rechts is oost; boven is noord, onder is zuid.</p><button type="button" id="meetIntroMirror" aria-pressed="false">Spiegelen · naar oost</button><svg id="meetIntroTable" role="img" aria-label="Benedenacquit 0 en de eerste lijnen"></svg></section><section class="meet-intro-info"><p id="meetIntroProgress"></p><h3 id="meetIntroHeading"></h3><div id="meetIntroText"></div><nav id="meetIntroViews" aria-label="Twee views"><button type="button" data-meet-view="P">P · Parallel</button><button type="button" data-meet-view="W">Waaier</button></nav><label id="meetIntroExampleControl">Voorbeeld <select id="meetIntroExample" aria-label="Voorbeeld kiezen"></select></label><button type="button" id="meetIntroDemo" hidden>▶ Demo opnieuw</button><p id="meetIntroViewDescription"></p><nav class="meet-intro-navigation"><button id="previousMeetIntro" type="button">← Vorige</button><button id="nextMeetIntro" type="button">Volgende →</button></nav></section></div>';
+  const style=document.createElement('style');style.textContent='#meetsysteemIntro{box-sizing:border-box;width:min(940px,calc(100vw - 16px));max-width:calc(100vw - 16px);max-height:calc(100dvh - 16px);padding:14px;margin:auto;border:2px solid #176f4f;border-radius:12px;background:#faf8ef;color:#173b30;font:16px/1.5 system-ui;overflow:auto}#meetsysteemIntro::backdrop{background:#0008}#meetsysteemIntro header{position:sticky;top:-14px;z-index:3;background:#faf8ef;display:flex;align-items:center;justify-content:space-between;gap:10px}#meetsysteemIntro h2{font-size:20px;margin:0}#meetsysteemIntro h3{font-size:19px}#meetsysteemIntro button{min-height:44px;padding:7px 12px;border:1px solid #78988b;border-radius:6px;background:white;color:#173b30;font:inherit;cursor:pointer}#meetsysteemIntro button:disabled{opacity:.45}#meetsysteemIntro [aria-pressed=true]{background:#176f4f;color:white}.meet-intro-layout{display:grid;grid-template-columns:minmax(220px,1fr) minmax(240px,1.2fr);gap:18px}.meet-intro-stage{min-width:0;position:sticky;top:var(--meet-intro-header,64px);align-self:start}#meetIntroOrientation{font-size:13px;margin:3px 0}#meetIntroMirror{font-size:13px!important;margin-bottom:5px}#resumeMeetIntro[hidden]{display:none}#meetIntroTable{display:block;width:100%;height:min(66dvh,600px);background:#704725;border-radius:8px}.meet-intro-navigation,#meetIntroViews{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}#meetIntroExercise{padding:10px;background:#e4eee6;border-radius:6px;font-weight:600}#meetIntroProgress{font-size:14px}#meetIntroViewDescription{font-size:14px}#meetIntroViews[hidden],#meetIntroExampleControl[hidden]{display:none}#meetIntroExample{font:inherit;min-height:44px;max-width:100%;padding:6px}@media(max-width:650px){#meetsysteemIntro{padding:10px}.meet-intro-layout{grid-template-columns:minmax(0,1fr);gap:6px}#meetIntroTable{height:36dvh;min-height:180px}.meet-intro-stage{z-index:1;background:#faf8ef}.meet-intro-info h3{margin:8px 0}.meet-intro-info p{margin:8px 0}}';
+  document.head.append(style);document.body.append(dialog);const $=id=>dialog.querySelector('#'+id),svg=$('meetIntroTable');
+  const introSteps=[
+    {title:'De waaier vanuit benedenacquit 0',text:'<p>Jij bent de speler, hier U (User) genoemd. Je kijkt in deze cursus naar <strong>Kruins tafel en Kruins metingen</strong>. Eigen metingen op je eigen tafel(s) volgen later. Met “ik” in de uitleg wordt de speler bedoeld, dus jij met bal 1.</p><p>Je kijkt naar links: dat noemen we <strong>west</strong>. Rechts is <strong>oost</strong>, boven noord en onder zuid. Met Spiegelen bekijk je dezelfde opzet naar de andere kant.</p><p>Het benedenacquit is de onderste vaste markering op het laken. Dat punt noem je <strong>0</strong>.</p><p>Andere meetsystemen nemen vaak een hoek als oorsprong. Hier heb je 0 vlak bij je en steeds in het zicht. Vanuit die vaste kijkbasis overzie je het scala van eerste lijnen naar de stiplijnen.</p><p>De demo laat de eerste lijnen vanuit 0 één voor één naar de stiplijn uitwaaieren, van 0 t/m 80. Het vertrekpunt blijft steeds hetzelfde.</p><p>Acquit 0 is je referentiepunt. De witte stippen rond de tafel liggen op de stiplijnen. De bandgetallen helpen je daar plaatsen aan te wijzen; NUL is een afzonderlijke spoornaam.</p>'},
+    {title:'De waaier: vanuit 0 naar 0 t/m 8',text:'<p>Het vertrekpunt <strong>0 blijft vast</strong>. De richting verandert: de eerste lijnen waaieren naar verschillende plaatsen op de stiplijn uit.</p><p>Je ziet de reeks <strong>0 t/m 8</strong>, met stiplijnwaarden 0 t/m 80.</p><p>Zo’n eerste lijn hoort bij een <strong>patroon</strong>: de volgorde van de banden die de bal raakt. De lijn vanuit 0 naar <strong>50 (stip 5)</strong> bespreken we hier binnen <strong>LKL: lang–kort–lang</strong>. De bal raakt eerst een lange band, dan een korte band en vervolgens weer een lange band.</p><p>We beginnen met LKL en lichten daaruit <strong>VIJF</strong> uit. De eerste lijn alleen vertelt nog niet het hele verhaal: ook het verdere bandverloop hoort bij het patroon. Andere patronen komen later.</p>'},
+    {title:'VIJF is één van de mogelijkheden',text:'<p>Uit de waaier licht je nu <strong>5 · VIJF</strong> uit: één herkenbaar spoor uit de reeks.</p><p>Het systeem geeft je vaste namen. <strong>LKL</strong> benoemt het patroon: lange–korte–lange band aan het begin van het bandverloop. <strong>VIJF</strong> benoemt een spoor. De eerste lijn vanaf je afstoot heet <strong>Neus</strong>. In <strong>Van Top tot Teen</strong> leer je de lijnnamen verder kennen. Top is daar de keutop: de pommerans.</p><p>Die namen zijn handig in de cursus én aan de echte tafel. Met “de Neus van VIJF in LKL” kun je precies aangeven welk patroon, welk spoor en welke lijn je bedoelt.</p><p>Hier zie je alleen de <strong>Neus van VIJF</strong>: vanaf 0 naar de eerste band. Het dunne hulplijntje loopt door naar <strong>50 op de westelijke stiplijn</strong>. De bal raakt de band vóór die stiplijn; bandcontact en richtpunt zijn dus verschillende plaatsen. Je volgt hierna VIJF lijn voor lijn. Als je de Neus kent, bekijk je later de parallellen van VIJF.</p><p>Je kunt de gebruikte lijnen en patronen zelf inmeten. De meetlessen volgen later.</p><details id="meetIntroLater"><summary>Later: eigen metingen en lange/korte Neus</summary><p>Het doel is dat je met je eigen meetbasis minder en overzichtelijkere correcties nodig hebt dan bij een aanpak met veel afzonderlijke hoekcorrecties.</p><p>Fysieke factoren zoals de uitvoering van je afstoot, snelheid en effect spelen mee. Hoe je de Neuslengte gebruikt bij een eventuele richtingcorrectie, onderzoeken we later met eigen metingen. Lange Neus, korte Neus en richtingcorrectie krijgen een aparte les met eigen metingen.</p></details>'}
+    ,{title:'De Romp van hetzelfde spoor VIJF',text:'<p>De <strong>Romp</strong> is de lijn vanaf de lange oostband richting de zuidzijde. Op Klein hoort daarbij <strong>20 op de oostelijke stiplijn</strong>: de gemeten vertrekwaarde van de Romp.</p><p>De gele lijn is de Romp. De Neus blijft gedempt zichtbaar. Samen vormen Neus en Romp het zichtbare <strong>karkas</strong> van dit spoor VIJF.</p><p>Ze horen bij hetzelfde bandverloop: na de Neus volgen <strong>Kop en Nek</strong>, en daarna de Romp. Die tussenliggende lijnen slaan we bij het rollen niet over; in les 2 volgt de bal het hele spoor lijn voor lijn.</p>'}
+  ];
+  const parallelSteps=[
+    {title:'Parallel, nu je de Neus kent',text:'<p>Je kent de Neus van VIJF. Bij <strong>P · Parallel</strong> blijven de eerste lijnen evenwijdig: <strong>alle neuzen wijzen dezelfde kant op</strong>.</p><p>Het vertrek schuift mee ten opzichte van acquit 0. De vervolglijnen volgen hun eigen metingen; ze hoeven niet allemaal parallel te lopen.</p>'},
+    {title:'VIJF−2 t/m VIJF+3 vergelijken',text:'<p>De voorbeelden zijn <strong>VIJF−2, VIJF−1, VIJF, VIJF+1, VIJF+2 en VIJF+3</strong>. VIJF is je referentielijn.</p><p>Dit zijn eerste-lijnvoorbeelden. Het vertrek verschuift terwijl de richting gelijk blijft.</p>'},
+    {title:'Parallel en waaier uit elkaar houden',text:'<p>Bij de <strong>waaier</strong> blijft vertrekpunt 0 vast en verandert de richting. Bij <strong>P</strong> blijft de richting gelijk en verschuift het vertrek.</p><p>De twee views laten dit verschil zien.</p>'}
+  ];
+  function el(tag,attrs={},text){if(mirrored){attrs={...attrs};for(const k of ['cx','x1','x2'])if(attrs[k]!==undefined)attrs[k]=drawWidth-Number(attrs[k]);if(attrs.x!==undefined)attrs.x=drawWidth-Number(attrs.x)-(tag==='rect'?Number(attrs.width||0):0);if(attrs['text-anchor']==='start')attrs['text-anchor']='end';else if(attrs['text-anchor']==='end')attrs['text-anchor']='start';}const node=document.createElementNS(ns,tag);for(const [name,value]of Object.entries(attrs))node.setAttribute(name,value);if(text!==undefined)node.textContent=text;svg.append(node);return node;}
+  function draw(){cancelAnimationFrame(demoFrame);for(const a of svg.getAnimations({subtree:true}))a.cancel();const g=geometry(),w=g.widthCm,h=g.heightCm,m=Math.max(13,(g.dotOffsetCm||0)+14),x=w/2,y=h*.75,unit=Math.max(.1,Math.min(svg.clientWidth/(w+2*m)||1,svg.clientHeight/(h+2*m)||1)),numberSize=Math.max(4,10/unit),labelSize=Math.max(5,13/unit);drawWidth=w;dialog.style.setProperty('--meet-intro-header',(dialog.querySelector('header').getBoundingClientRect().height+6)+'px');svg.dataset.demoProgress='0';svg.replaceChildren();svg.setAttribute('viewBox',[-m,-m,w+2*m,h+2*m].join(' '));svg.dataset.table=g.table;svg.dataset.view=view;
+    el('rect',{x:0,y:0,width:w,height:h,fill:'#176f4f',stroke:'#e7c66e','stroke-width':1});const defs=document.createElementNS(ns,'defs');for(const [id,fill]of [['introArrowSelected','#ffdc68'],['introArrowOther','#82dcd4']]){const marker=document.createElementNS(ns,'marker');for(const [k,v]of Object.entries({id,viewBox:'0 0 6 6',refX:6,refY:3,markerWidth:4,markerHeight:4,orient:'auto'}))marker.setAttribute(k,v);const path=document.createElementNS(ns,'path');path.setAttribute('d','M0 0 L6 3 L0 6 Z');path.setAttribute('fill',fill);marker.append(path);defs.append(marker);}svg.append(defs);
+    for(const band of ['west','noord','oost','zuid'])for(let value=0;value<=(band==='west'||band==='oost'?80:40);value+=10){const p=SpoorGeometry.point({band,value},g);el('circle',{cx:p.x,cy:p.y,r:1.1,fill:'#fff8dc','data-intro-band':band,'data-value':value});el('text',{x:p.x+(band==='west'?-3:band==='oost'?3:0),y:p.y+(band==='noord'?-3:band==='zuid'?5:1.5),'font-size':numberSize,'text-anchor':band==='west'?'end':band==='oost'?'start':'middle',fill:'#fff8dc'},String(value));}
+    {if(view==='P'){for(const offset of [-2,-1,0,1,2,3]){const shift=-offset*h/8,selected=offset===exampleP;el('line',{'data-intro-line':'P','data-example':offset,'data-highlighted':String(selected),'marker-end':selected?'url(#introArrowSelected)':'url(#introArrowOther)',x1:x,y1:y+shift,x2:-g.dotOffsetCm,y2:h*.375+shift,stroke:selected?'#ffdc68':offset===0?'#fff8dc':'#82dcd4','stroke-width':selected?2.1:1,opacity:demo&&!parallelLesson&&step===1?.18:selected?1:.7});el('circle',{cx:x,cy:y+shift,r:1.4,fill:'#82dcd4'});}}else for(let example=0;example<=8;example++){const selected=example===exampleW;if(!parallelLesson&&(step>=2||step===1&&demo&&selected))continue;el('line',{'data-intro-line':'W','data-example':example,'data-highlighted':String(selected),'marker-end':selected?'url(#introArrowSelected)':'url(#introArrowOther)',x1:x,y1:y,x2:-g.dotOffsetCm,y2:h*(1-example/8),stroke:selected?'#ffdc68':example===5?'#fff8dc':'#82dcd4','stroke-width':selected?2.1:1,opacity:demo&&!parallelLesson&&step===1?.18:selected?1:.7});}
+      if(!parallelLesson&&(step>=2||step===1&&demo)){let measured;try{measured=route?.();}catch(_){}for(const part of (measured?.journey||[]).filter(p=>step===1&&demo||p.key==='neus'||step===3&&p.key==='romp'))el('line',{'data-intro-spoor':part.key,x1:part.from.x,y1:part.from.y,x2:part.to.x,y2:part.to.y,stroke:'#ffdc68',opacity:step===3&&part.key==='neus'?.35:1,'stroke-width':2.1,'marker-end':'url(#introArrowSelected)'});for(const [key,side] of (step===3?[['romp','from']]:[['neus','to']])){const ref=measured?.route?.[key]?.[side],part=measured?.journey?.find(p=>p.key===key);if(!ref||!part)continue;const p=SpoorGeometry.point(ref,g),anchor=side==='from'?part.from:part.fullTo||part.to;el('line',{'data-intro-reference':key,'data-value':ref.value,x1:anchor.x,y1:anchor.y,x2:p.x,y2:p.y,stroke:'#ffdc68','stroke-width':1,'stroke-dasharray':'2 2'});el('circle',{cx:p.x,cy:p.y,r:2.2,fill:'none',stroke:'#ffdc68','stroke-width':1});}}
+      if(demo){const parts=[...svg.querySelectorAll(parallelLesson?'[data-intro-line][data-highlighted=true]':step===0?'[data-intro-line=W]':step===3?'[data-intro-spoor=romp]':'[data-intro-spoor]')].map(node=>{const p={node,x1:+node.getAttribute('x1'),y1:+node.getAttribute('y1'),x2:+node.getAttribute('x2'),y2:+node.getAttribute('y2')};node.setAttribute('x2',p.x1);node.setAttribute('y2',p.y1);return p;}),start=performance.now();const tick=now=>{const progress=(now-start)/700;parts.forEach((p,i)=>{const t=Math.max(0,Math.min(1,progress-i));p.node.setAttribute('x2',p.x1+(p.x2-p.x1)*t);p.node.setAttribute('y2',p.y1+(p.y2-p.y1)*t);});svg.dataset.demoProgress=String(Math.min(1,progress/parts.length));if(progress<parts.length)demoFrame=requestAnimationFrame(tick);};demoFrame=requestAnimationFrame(tick);}
+      el('text',{x:w/2,y:8,'font-size':labelSize,'text-anchor':'middle',fill:'#ffdc68','font-weight':800},!parallelLesson&&step===0?'Waaier · 0–8':demo&&step===1&&!parallelLesson?'Demo VIJF · LKL':!parallelLesson&&step>=2?'VIJF · '+(step===3?'Romp':'Neus'):view==='P'?'P · VIJF'+(exampleP?(exampleP>0?'+':'−')+Math.abs(exampleP):''):'Waaier · '+exampleW+' · '+['NUL','EEN','TWEE','DRIE','VIER','VIJF','ZES','ZEVEN','ACHT'][exampleW]);
+    }
+    el('circle',{'data-intro-zero':'',cx:x,cy:y,r:Math.max(3.6,10/unit),fill:'#ffdc68',stroke:'#173b30','stroke-width':.7});el('text',{x,y:y+labelSize*.35,'font-size':labelSize,'font-weight':800,'text-anchor':'middle',fill:'#173b30'},'0');el('text',{x:x+Math.max(6,14/unit),y:y+2,'font-size':Math.max(4.4,11/unit),fill:'white'},'acquit 0');
+  }
+  function render(){const s=(parallelLesson?parallelSteps:introSteps)[step];dialog.dataset.step=step;dialog.dataset.view=view;$('meetIntroProgress').textContent=(parallelLesson?'Les 4 · parallel · stap ':'Les 1 · introductie · stap ')+(step+1)+' van '+(parallelLesson?parallelSteps:introSteps).length+' · '+(geometry().table==='groot'?'Groot':'Klein');$('meetIntroHeading').textContent=s.title;$('meetIntroText').innerHTML=s.text;$('meetIntroViews').hidden=!parallelLesson;$('meetIntroDemo').hidden=false;$('meetIntroExampleControl').hidden=!parallelLesson&&(step===0||step>=2);const select=$('meetIntroExample');select.replaceChildren();for(const value of view==='P'?[-2,-1,0,1,2,3]:[0,1,2,3,4,5,6,7,8]){const name=view==='P'?'VIJF'+(value?(value>0?'+':'−')+Math.abs(value):''):value+' · '+['NUL','EEN','TWEE','DRIE','VIER','VIJF','ZES','ZEVEN','ACHT'][value];select.add(new Option(name,String(value)));}select.value=String(view==='P'?exampleP:exampleW);$('meetIntroMirror').setAttribute('aria-pressed',String(mirrored));$('meetIntroMirror').textContent=mirrored?'Spiegelen · terug naar west':'Spiegelen · naar oost';$('previousMeetIntro').disabled=step===0;$('nextMeetIntro').textContent='Volgende →';$('meetIntroViewDescription').textContent=step||parallelLesson?(view==='P'?'P: de richting van de eerste lijn blijft gelijk. Ik verschuif de lijn evenwijdig; het vertrek schuift mee ten opzichte van 0.':'Waaier: ik houd vertrekpunt 0 vast en verander de richting. De eerste lijnen waaieren vanuit hetzelfde punt uit.'):'Ik houd mijn vaste referentiepunt in het zicht.';if(step||parallelLesson)$('meetIntroViewDescription').textContent+=' Voorbeeld: '+select.selectedOptions[0].textContent+'.';if(!parallelLesson&&step>=2)$('meetIntroViewDescription').textContent=step===3?'VIJF · Neus en Romp vormen het zichtbare karkas.':'VIJF · Neus naar stiplijn 50. Het hele spoor volgt lijn voor lijn.';for(const button of dialog.querySelectorAll('[data-meet-view]'))button.setAttribute('aria-pressed',String(button.dataset.meetView===view));draw();}
+  $('meetIntroDemo').onclick=()=>{demo=true;if(!parallelLesson&&step===1)exampleW=5;render();};$('meetIntroMirror').onclick=()=>{mirrored=!mirrored;render();};
+  $('meetIntroExample').onchange=e=>{demo=false;if(view==='P')exampleP=Number(e.target.value);else exampleW=Number(e.target.value);render();};window.addEventListener('resize',()=>{if(dialog.open)requestAnimationFrame(draw);});
+  const close=()=>{cancelAnimationFrame(demoFrame);for(const a of svg.getAnimations({subtree:true}))a.cancel();dialog.close();onClose?.();};$('closeMeetIntro').onclick=close;dialog.addEventListener('cancel',e=>{e.preventDefault();close();});$('previousMeetIntro').onclick=()=>{if(step){step--;demo=true;render();dialog.scrollTop=0;}};$('nextMeetIntro').onclick=()=>{if(step<(parallelLesson?parallelSteps:introSteps).length-1){step++;demo=true;dialog.scrollTop=0;if(!parallelLesson&&step>=2){view='W';exampleW=5;}render();}else{if(!parallelLesson)try{localStorage.setItem(key,'1');}catch(_){}cancelAnimationFrame(demoFrame);dialog.close();onContinue({parallel:parallelLesson});}};for(const button of dialog.querySelectorAll('[data-meet-view]'))button.onclick=()=>{view=button.dataset.meetView;render();};
+  return {completed(){try{return localStorage.getItem(key)==='1';}catch(_){return false;}},open({parallel=false,at=0}={}){mirrored=false;parallelLesson=parallel;step=Math.max(0,Math.min((parallel?parallelSteps:introSteps).length-1,Number(at)||0));demo=true;view=parallel?'P':'W';exampleP=0;exampleW=5;render();if(!dialog.open)dialog.showModal();dialog.scrollTop=0;requestAnimationFrame(()=>{draw();dialog.scrollTop=0;});}};
+}};
+
 /* Fixed course sequence. Animation reads shared band-ball positions, never writes measurements. */
 window.installThreeBLklLesson=adapter=>{
   const actions=document.querySelector('#explanationCarousel .course-header-actions');if(!actions)return;
-  const names={neus:'Neus',kop:'Kop',nek:'Nek',romp:'Romp',kruis:'Kruis',been:'Been',hiel:'Hiel',uitloop:'Uitloop na Hiel'},order=Object.keys(names).filter(key=>key!=='uitloop'),colors={neus:'#59bdec',kop:'#edb55b',nek:'#ad9be5',romp:'#37d3b2',kruis:'#ed88b6',been:'#d2dd68',hiel:'#edb55b',uitloop:'#edb55b'};
-  const explanations={neus:'Ik volg mijn speelbal vanaf de afstoot naar de eerste lange band: West.',kop:'Na de Neus volgt de Kop, van West naar de korte noordband. Waar mijn eigen Kop A ligt, meet ik in een latere meetles.',nek:'Na de Kop volgt de Nek, van de noordband naar de lange oostband. De Nek verbindt Kop en Romp.',romp:'Na de Nek volgt de Romp, vanaf de oostband richting de zuidzijde. Neus en Romp vormen het zichtbare karkas.',kruis:'Na de Romp volgt het Kruis. Ik blijf dezelfde bal volgen; ik spring niet naar een andere lijn.',been:'Na het Kruis volgt het Been. In LKL loopt de bal uit tot halverwege het Been en komt daar tot rust.',hiel:'Na Been volgt Hiel. In het afzonderlijke 6–7-patroon wordt de hele Hiel doorlopen.'};
-  const lessons=[{track:'VIJF',title:'Les 1 · LKL lijn na lijn'},{track:'ZES',title:'Les 2 · van Romp terug naar Neus'},{track:'ZESZEVEN',title:'Les 3 · harder · 6–7 banden'}];
-  let lesson=0,index=0,data=null,frame=0,progress=0,started=0,running=false,reference=false,lineNode,ballNode,markNode;
+  const names={neus:'Neus',kop:'Kop',nek:'Nek',romp:'Romp',kruis:'Kruis',been:'Been',hiel:'Hiel',uitloop:'Uitloop na Hiel'},order=['neus','kop','nek','romp','kruis','been'],colors={neus:'#59bdec',kop:'#edb55b',nek:'#ad9be5',romp:'#37d3b2',kruis:'#ed88b6',been:'#d2dd68',hiel:'#edb55b',uitloop:'#edb55b'};
+  const explanations={neus:'Ik volg mijn speelbal vanaf de afstoot naar de eerste lange band: West.',kop:'Na de Neus volgt de Kop, van West naar de korte noordband. Waar mijn eigen Kop A ligt, meet ik in een latere meetles.',nek:'Na de Kop volgt de Nek, van de noordband naar de lange oostband. De Nek verbindt Kop en Romp.',romp:'Na de Nek volgt de Romp, vanaf de oostband richting de zuidzijde. Neus en Romp vormen het zichtbare karkas.',kruis:'Na de Romp volgt het Kruis. Ik blijf dezelfde bal volgen; ik spring niet naar een andere lijn.',been:'Na het Kruis volgt het Been. In LKL loopt de bal uit tot 45% van het Been en komt daar tot rust.',hiel:'Na Been volgt Hiel. In het afzonderlijke 6–7-patroon wordt de hele Hiel doorlopen.'};
+  const lessons=[{track:'VIJF',title:'Les 2 · VIJF lijn na lijn'},{track:'VIJF',title:'Les 3 · VIJF terug vanaf de Romp'},{track:'VIJF',title:'Les 4 · parallellen van VIJF'}];
+  let lesson=0,index=0,data=null,frame=0,progress=0,started=0,running=false,demoAnimations=[],reference=false,lineNode,ballNode,markNode;
   const d=document.createElement('dialog');d.id='lklLesson1';d.setAttribute('aria-labelledby','lklLessonTitle');
-  d.innerHTML=`<header><h2 id="lklLessonTitle"></h2><button type="button" id="closeLklLesson">Les sluiten</button></header><p id="lklLessonSource"></p><p id="lklLessonProgress"></p><p id="lklDiamondCaption" hidden></p><button type="button" id="lklOutlineToggle" aria-controls="lklLessonOutline" aria-expanded="false">Namen en lesindeling ▾</button><section id="lklLessonOutline" hidden><h3>Vaste volgorde</h3><p>Neus → Kop → Nek → Romp → Kruis → Been. LKL loopt door tot half Been. Een harder lopende bal hoort bij het afzonderlijke patroon 6–7 banden. Ik volg altijd de bal, lijn na lijn. Het zichtbare karkas is Neus en Romp; mijn eigen Kop A meet ik later.</p><p>Les 1: VIJF. Les 2: terugredeneren vanaf de Romp Oost 30 → Zuid 30. Eerst bal 3, dan bal 1, dan de Neus ter controle. Les 3: harder lopende bal, met het eigen patroon 6–7 banden. Vorige/Volgende stap gaat naar een lijn; Vorige/Volgende les gaat naar een les. Schuivende bal hoort bij het latere Pro-niveau en is hier nog niet uitgewerkt.</p><button type="button" id="backFromLklOutline">Terug naar de les</button></section><div class="lkl-lesson-layout"><svg id="lklLessonTable" role="img" aria-label="De bal volgt het LKL-spoor lijn na lijn"></svg><section><p id="lklFixedQuestions"><strong>1. Op welk spoor ligt bal 3?<br>2. Waar lig ik met bal 1?</strong></p><h3 id="lklExerciseTitle"></h3><p id="lklExerciseText"></p><p id="lklRouteSequence" aria-label="Lijnvolgorde"></p><p id="lklApproach">Ik kijk → ik speel → ik volg de bal → ik kijk opnieuw.</p><p id="lklAnimationStatus" role="status" aria-live="polite"></p><p id="lklGeometryNotice"></p><fieldset id="courseRunOutConfig" hidden><legend>Config · uitloop van dit basisspoor</legend><label>Na Hiel (cm) <input id="courseRunOutCm" required type="number" min="0" max="100" step="1"></label><button type="button" id="saveCourseRunOut">Bewaar uitloop</button><p id="courseRunOutStatus" role="status"></p></fieldset><button type="button" id="harderLkl">Harder lopende bal → 6–7 banden</button><button type="button" id="lklRoll">Pauze</button><button type="button" id="repeatLklLine">Lijn opnieuw rollen</button><p>Dit is een weergave van het actieve spoor, geen voorspelling van snelheid of effect. Bal 3 staat alvast op de Romp; bal 2 en de volledige carambole komen later.</p></section></div><nav id="lklStepNavigation" aria-label="Lesstappen"><button type="button" id="previousLklExercise">← Vorige stap</button><button type="button" id="nextLklExercise">Volgende stap →</button><button type="button" id="repeatLklLesson">Les opnieuw</button></nav><nav id="lklLessonNavigation" aria-label="Lessen"><button type="button" id="previousLklLesson">← Vorige les</button><button type="button" id="nextLklLesson">Volgende les →</button><button type="button" id="lessonToIndependent">Geoefend · naar de tafel</button></nav>`;
+  d.innerHTML=`<header><h2 id="lklLessonTitle"></h2><button type="button" id="closeLklLesson" aria-label="Cursus sluiten">×</button></header><p id="lklLessonSource"></p><p>Je kijkt naar Kruins tafel. Eigen metingen op je eigen tafel(s) volgen later.</p><p id="lklLessonProgress"></p><p id="lklDiamondCaption" hidden></p><button type="button" id="lklOutlineToggle" aria-controls="lklLessonOutline" aria-expanded="false">Namen en lesindeling ▾</button><section id="lklLessonOutline" hidden><h3>Introductie: het meetsysteem</h3><p>Eerst benedenacquit 0, dan de waaier 0 t/m 8. VIJF is één van die mogelijkheden. Daarna volgen de namen, de Neus en het volledige spoor VIJF. Parallel komt bij les 4.</p><h3>Vaste volgorde</h3><p>Neus → Kop → Nek → Romp → Kruis → Been. LKL loopt door tot 45% van Been. Ik volg altijd de bal, lijn na lijn. Het zichtbare karkas is Neus en Romp; mijn eigen Kop A meet ik later.</p><p>Les 1: introductie. Les 2: VIJF. Les 3: terugredeneren vanaf de Romp van dezelfde VIJF. De Romp en de Neus horen bij hetzelfde spoor. Les 4: parallellen −1, +1, +2 en +3, met spoor-, karkas- en aankomstview. De introductie begint met de waaier vanuit 0; Parallel komt later in les 4. Na deze VIJF-reeks vormt de waaier de overgang naar ZES en de volgende basissporen. Oefeningen worden alleen op verzoek toegevoegd. Vorige en Volgende volgen één doorlopende reeks, ook tussen de lessen. Eigen meetlessen en een aparte les over lange/korte Neus en richtingcorrectie volgen later. Schuivende bal hoort bij het latere Pro-niveau en is hier nog niet uitgewerkt.</p><button type="button" id="backFromLklOutline">Terug naar de les</button></section><div class="lkl-lesson-layout"><svg id="lklLessonTable" role="img" aria-label="De bal volgt het LKL-spoor lijn na lijn"></svg><section><p id="lklFixedQuestions"><strong>LKL · lang–kort–lang</strong></p><h3 id="lklExerciseTitle"></h3><p id="lklExerciseText"></p><p id="lklRouteSequence" aria-label="Lijnvolgorde"></p><p id="lklApproach">De bal volgt het spoor lijn na lijn.</p><p id="lklAnimationStatus" role="status" aria-live="polite"></p><p id="lklGeometryNotice"></p><fieldset id="courseRunOutConfig" hidden><legend>Config · uitloop van dit basisspoor</legend><label>Na Hiel (cm) <input id="courseRunOutCm" required type="number" min="0" max="100" step="1"></label><button type="button" id="saveCourseRunOut">Bewaar uitloop</button><p id="courseRunOutStatus" role="status"></p></fieldset><button type="button" id="harderLkl">Harder lopende bal → 6–7 banden</button><button type="button" id="lklRoll">Pauze</button><button type="button" id="repeatLklLine">Demo opnieuw</button><p>Dit is een weergave van het actieve spoor, geen voorspelling van snelheid. Bal 3 staat alvast op de Romp; bal 2 en de volledige carambole komen later.</p></section></div><nav id="lklStepNavigation" aria-label="Lesstappen"><button type="button" id="previousLklExercise">← Vorige stap</button><button type="button" id="nextLklExercise">Volgende stap →</button><button type="button" id="repeatLklLesson">Les opnieuw</button></nav><nav id="lklLessonNavigation" aria-label="Lessen"><button type="button" id="previousLklLesson">← Vorige les</button><button type="button" id="nextLklLesson">Volgende les →</button><button type="button" id="lessonToIndependent">Naar tafel ↔</button></nav>`;
   document.body.append(d);const $=id=>d.querySelector('#'+id),svg=$('lklLessonTable'),ns='http://www.w3.org/2000/svg';
   const layout=d.querySelector('.lkl-lesson-layout'),info=layout.querySelector('section');info.className='lkl-course-info';
   const stage=document.createElement('section');stage.className='lkl-course-stage';stage.setAttribute('aria-label','Vaste cursustafel');layout.prepend(stage);stage.append(svg,$('lklDiamondCaption'));
   info.prepend($('lklLessonProgress'));const playback=document.createElement('nav');playback.className='lkl-course-playback';playback.setAttribute('aria-label','Rollende bal');$('lklExerciseText').after(playback);playback.append($('lklRoll'),$('repeatLklLine'));
-  info.append($('lklOutlineToggle'),$('lklLessonOutline'),$('lklLessonSource'),$('lklLessonNavigation'),$('repeatLklLesson'),$('lessonToIndependent'));
+  d.querySelector('header').insertBefore($('lessonToIndependent'),$('closeLklLesson'));
+  $('lklLessonNavigation').hidden=true;$('repeatLklLesson').hidden=true;
+  info.append($('lklOutlineToggle'),$('lklLessonOutline'),$('lklLessonSource'),$('lklLessonNavigation'),$('repeatLklLesson'));
   const style=document.createElement('style');style.textContent=`#lklLesson1,#lklUseChoice{position:fixed;inset:0;margin:auto;box-sizing:border-box;width:min(940px,96vw);max-width:calc(100dvw - 16px);max-height:calc(100dvh - 16px);overflow:auto;border:2px solid #176f4f;border-radius:12px;background:#faf8ef;color:#173b30;padding:16px;font:16px/1.45 system-ui}#lklLesson1::backdrop,#lklUseChoice::backdrop{background:#0008}#lklLesson1 header,#lklUseChoice header{display:flex;align-items:center;justify-content:space-between;gap:12px}#lklLesson1 header{position:sticky;top:-16px;z-index:2;background:#faf8ef;border-bottom:1px solid #b6c7bd;padding:6px 0}#lklLesson1 h2,#lklUseChoice h2{font-size:21px;margin:0}#lklLesson1 button,#lklUseChoice button{min-height:44px;padding:9px 12px;margin:4px;border:1px solid #78988b;border-radius:7px;background:white;color:#173b30;font:inherit}#lklLesson1 button:disabled{opacity:.45}#closeLklLesson{flex-shrink:0;font-weight:700!important}.lkl-lesson-layout{display:grid;grid-template-columns:minmax(210px,1fr) 1.3fr;gap:20px}#lklLessonTable{width:100%;height:min(60vh,580px);background:#76502c;border-radius:8px}#lklLessonTable text{font-family:system-ui;font-weight:700;paint-order:stroke;stroke:#176548;stroke-width:1.5px;fill:white}#lklStepNavigation{position:sticky;bottom:-16px;z-index:2;display:flex;flex-wrap:wrap;gap:4px;padding:8px 0;background:#faf8ef;border-top:1px solid #b6c7bd}#lklLessonNavigation{display:flex;flex-wrap:wrap;gap:4px;padding:8px 0;border-top:1px solid #b6c7bd}#lklLessonSource,#lklLessonOutline{background:#e4eee6;padding:8px;border-radius:6px}#lklOutlineToggle{display:block;font-weight:700!important;text-decoration:underline;background:#e4eee6!important}#lklRouteSequence{display:flex;gap:5px;flex-wrap:wrap}#lklRouteSequence span{padding:4px 7px;border:1px solid #78988b;border-radius:5px;font-size:14px}#lklRouteSequence [aria-current=step]{background:#176f4f;color:white;font-weight:800}#lklDiamondCaption{font-weight:800;color:#173b30;background:#fff0ad;padding:7px;border-radius:6px;margin:8px 0}#lklDiamondCaption[hidden]{display:none}#lklApproach{font-size:14px}#lklAnimationStatus{font-weight:700}#courseRunOutConfig{min-width:0;margin:12px 0}#courseRunOutConfig input{box-sizing:border-box;width:100px;max-width:100%;min-height:44px;font:inherit}#lklLessonOutline[hidden]{display:none}#changeCourseAssessment{display:none!important}#lklUseChoice{width:min(560px,94vw)}#chooseLklCourse,#chooseLklPractice{display:block;text-align:left;width:100%;margin:12px 0!important}#lklUseChoice strong,#lklUseChoice span{display:block}#lklUseModes{pointer-events:auto;grid-column:1/-1;display:grid;gap:6px;margin:8px 0;padding:10px;background:#f7f4e9;border-radius:8px;color:#173b30}#lklUseModes button{white-space:normal;min-height:44px;font:600 15px system-ui;padding:8px}#lklUseModes p{font:14px/1.4 system-ui;margin:0}#lklLevelBar{position:fixed;top:calc(var(--threeb-test-banner-height,0px) + 6px);left:50%;transform:translateX(-50%);z-index:2401;display:flex;align-items:center;gap:8px;box-sizing:border-box;max-width:calc(100vw - 16px);padding:6px 10px;border-radius:9px;border:1px solid #729081;background:#faf8ef;color:#173b30;box-shadow:0 2px 8px #0003;font:600 14px system-ui}#lklLevelBar strong{white-space:nowrap}#lklLevelBar button{min-height:44px;padding:6px 10px;border:1px solid #78988b;border-radius:6px;background:white;color:#173b30;font:inherit}#lklLevelBar button[aria-pressed=true]{background:#176f4f;color:white}body.table-only #onscreenLayout{box-sizing:border-box;padding-top:72px!important}body.test-desktop-workbench #lklLevelBar{left:calc((100vw - var(--test-workbench-width) - 24px)/2)}@media(max-width:600px){.lkl-lesson-layout{display:block}#lklLessonTable{height:38dvh}#lklLesson1{padding:10px}#lklLesson1 h2{font-size:18px}#lklLesson1 header{top:-10px}#lklStepNavigation{bottom:-10px}#lklStepNavigation button{flex:1;margin:2px!important}#lklLevelBar{gap:5px;padding:5px;font-size:12px;width:calc(100vw - 16px)}#lklLevelBar button{flex:1;padding:4px 6px}}`;
   style.textContent+=`
+  #lklLessonNavigation[hidden],#repeatLklLesson[hidden]{display:none!important}
   #lklLesson1{width:min(1120px,calc(100dvw - 16px));height:calc(100dvh - 16px);max-height:calc(100dvh - 16px);padding:12px;overflow:hidden}
   #lklLesson1[open]{display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:10px}
   #lklLesson1>header{position:static;padding:0 0 8px;min-width:0;box-sizing:border-box;height:60px;min-height:60px}
@@ -366,75 +2776,161 @@ window.installThreeBLklLesson=adapter=>{
     #lklLesson1 .lkl-lesson-layout{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
     #lklLesson1 #lklStepNavigation{padding-top:4px}
   }`;
+  style.textContent+=`#courseBridge{position:fixed;right:8px;top:calc(var(--threeb-test-banner-height,0px) + 6px);z-index:1200;display:flex;gap:4px;max-width:calc(100vw - 16px)}#courseBridge[hidden],#courseBridge button[hidden]{display:none!important}#courseBridge button{min-height:40px;border:0;border-radius:5px;background:#173b30e6;color:white;font:600 13px system-ui;padding:6px 8px}#svgMount #lklLessonTable{position:absolute;background:transparent}#lklLesson1 #lessonToIndependent{font-size:14px;min-height:44px;flex-shrink:0}#lklLesson1 #closeLklLesson{font-size:22px;min-width:44px;padding:4px;margin:0}#lklLesson1 #vijfParallelViews{display:flex;flex-wrap:wrap;gap:4px}#lklLesson1 #vijfParallelViews[hidden],#lklLesson1 #checkVijfExercise[hidden]{display:none!important}#lklLesson1 [data-vijf-view][aria-pressed=true]{background:#176f4f;color:white}`;
   document.head.append(style);
   function el(tag,attrs={},label){const n=document.createElementNS(ns,tag);for(const [k,v]of Object.entries(attrs))n.setAttribute(k,v);if(label)n.textContent=label;svg.append(n);return n;}
   const lerp=(a,b,t)=>({x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t});
-  function stop(){cancelAnimationFrame(frame);frame=0;running=false;}
-  function position(t){const part=data.journey[index],p=lerp(part.from,part.to,t);lineNode.setAttribute('x2',p.x);lineNode.setAttribute('y2',p.y);ballNode.setAttribute('cx',p.x);ballNode.setAttribute('cy',p.y);markNode.setAttribute('cx',p.x);markNode.setAttribute('cy',p.y-data.radiusCm*.55);const distance=data.journey.slice(0,index).reduce((sum,l)=>sum+Math.hypot(l.to.x-l.from.x,l.to.y-l.from.y),0)+t*Math.hypot(part.to.x-part.from.x,part.to.y-part.from.y);markNode.setAttribute('transform',`rotate(${distance/data.radiusCm*180/Math.PI} ${p.x} ${p.y})`);d.dataset.progress=String(t);}
-  function roll(){if(!d.open||lesson===1)return;stop();if(progress>=1)progress=0;started=performance.now()-progress*1800;running=true;$('lklRoll').textContent='Pauze';$('lklAnimationStatus').textContent='Ik volg de bal langs de '+names[data.journey[index].key]+'.';const tick=now=>{progress=Math.min(1,(now-started)/1800);position(progress);if(progress<1)frame=requestAnimationFrame(tick);else{running=false;frame=0;$('lklRoll').textContent='Opnieuw rollen';$('lklAnimationStatus').textContent=index<data.journey.length-1?'De bal is bij de band. Volgende stap: '+names[data.journey[index+1].key]+'.':(data.pattern==='LKL'?'De bal is uitgelopen tot half Been. Harder? Ga naar 6–7 banden.':'De bal is uitgelopen: hele Hiel + '+data.runOutCm+' cm.');}};frame=requestAnimationFrame(tick);}
+  function stop(){cancelAnimationFrame(frame);frame=0;running=false;for(const a of demoAnimations)a.cancel();demoAnimations=[];}
+  function position(t){const part=data.journey[index],p=lerp(part.from,part.to,t);lineNode.setAttribute('x2',p.x);lineNode.setAttribute('y2',p.y);ballNode.setAttribute('cx',p.x);ballNode.setAttribute('cy',p.y);d.dataset.progress=String(t);}
+  function roll(){if(!d.open||lesson!==0)return;stop();if(progress>=1)progress=0;started=performance.now()-progress*1800;running=true;$('lklRoll').textContent='Pauze';$('lklAnimationStatus').textContent='Ik volg de bal langs de '+names[data.journey[index].key]+'.';const tick=now=>{progress=Math.min(1,(now-started)/1800);position(progress);if(progress<1)frame=requestAnimationFrame(tick);else{running=false;frame=0;$('lklRoll').textContent='Opnieuw rollen';$('lklAnimationStatus').textContent=index<data.journey.length-1?'De bal is bij de band. Volgende stap: '+names[data.journey[index+1].key]+'.':(data.pattern==='LKL'?'De bal is uitgelopen tot 45% van Been. Ik bekijk VIJF opnieuw aan tafel.':'De bal is uitgelopen: hele Hiel + '+data.runOutCm+' cm.');}};frame=requestAnimationFrame(tick);}
+  function drawAllCourseDiamonds(g){
+    for(const band of ['west','noord','oost','zuid']){const group=el('g',{class:'course-diamonds','data-band':band,'aria-label':'Stiplijn '+band}),maximum=['west','oost'].includes(band)?80:40;
+      for(let value=0;value<=maximum;value+=10){const p=SpoorGeometry.point({band,value},g),circle=document.createElementNS(ns,'circle'),text=document.createElementNS(ns,'text');for(const [k,v]of Object.entries({cx:p.x,cy:p.y,r:1.8,fill:'#fff8dc',stroke:'#382918','stroke-width':.5,'data-diamond':value}))circle.setAttribute(k,v);
+        const pos=band==='west'?{x:p.x-6,y:p.y+3,'text-anchor':'end'}:band==='oost'?{x:p.x+6,y:p.y+3,'text-anchor':'start'}:band==='noord'?{x:p.x,y:p.y-7,'text-anchor':'middle'}:{x:p.x,y:p.y+11,'text-anchor':'middle'};
+        for(const [k,v]of Object.entries({...pos,'font-size':8.5,style:'fill:#fff8dc;stroke:#593c21;stroke-width:1.5px','data-number':value}))text.setAttribute(k,v);text.textContent=String(value);group.append(circle,text);
+      }
+    }
+  }
   function drawKarkasDiamonds(part,g,referenceOverride=null){
-    const reference=referenceOverride||(part.key==='neus'?data.route.neus?.to:data.pattern==='LKL'&&part.key==='romp'?data.route.romp?.from:data.pattern==='6–7 banden'&&part.key==='been'?data.route.been?.to:null);
+    const reference=referenceOverride||(part.key==='neus'?data.route.neus?.to:data.pattern==='LKL'&&part.key==='romp'?data.route.romp?.from:data.route[part.key]?.to);
     if(!reference||reference.value===null||reference.value===undefined||reference.value===''||!Number.isFinite(Number(reference.value))||!['west','oost','noord','zuid'].includes(reference.band))return;
-    const band=reference.band,value=Number(reference.value),maximum=['west','oost'].includes(band)?80:40,group=el('g',{'class':'course-diamonds','data-band':band,'data-active-value':value,'aria-label':'Stiplijn '+band+' · '+SpoorScreenFormat.format(value)});
+    const band=reference.band,value=Number(reference.value),maximum=['west','oost'].includes(band)?80:40,existing=svg.querySelector('.course-diamonds[data-band='+band+']'),group=existing||el('g',{'class':'course-diamonds','data-band':band,'data-active-value':value,'aria-label':'Stiplijn '+band+' · '+SpoorScreenFormat.format(value)});
+    group.dataset.activeValue=String(value);const tick=group.querySelector('[data-number="'+value+'"]');if(tick){tick.classList.add('active-diamond-label');tick.style.fill='#ffdc62';}
     function add(tag,attrs,text){const n=document.createElementNS(ns,tag);for(const [k,v]of Object.entries(attrs))n.setAttribute(k,v);if(text!==undefined)n.textContent=text;group.append(n);return n;}
     function labelAt(p){return band==='west'?{x:p.x-6,y:p.y+3,'text-anchor':'end'}:band==='oost'?{x:p.x+6,y:p.y+3,'text-anchor':'start'}:band==='noord'?{x:p.x,y:p.y-7,'text-anchor':'middle'}:{x:p.x,y:p.y+11,'text-anchor':'middle'};}
-    for(let v=0;v<=maximum;v+=10){const p=SpoorGeometry.point({band,value:v},g);add('circle',{cx:p.x,cy:p.y,r:1.8,fill:'#fff8dc',stroke:'#382918','stroke-width':.5,'data-diamond':v});if(Math.abs(v-value)>=4||Math.abs(v-value)<1e-8){const active=Math.abs(v-value)<1e-8;add('text',{...labelAt(p),'font-size':8.5,style:'fill:'+(active?'#ffdc62':'#fff8dc')+';stroke:#593c21;stroke-width:1.5px','data-number':v,...(active?{class:'active-diamond-label'}:{})},String(v));}}
-    const p=SpoorGeometry.point(reference,g);add('circle',{cx:p.x,cy:p.y,r:3,fill:'none',stroke:'#ffdc62','stroke-width':1.3,class:'active-diamond'});if(Math.abs(value-Math.round(value/10)*10)>1e-8)add('text',{...labelAt(p),'font-size':8.5,style:'fill:#ffdc62;stroke:#593c21;stroke-width:1.5px',class:'active-diamond-label'},SpoorScreenFormat.format(value));
-    const anchor=referenceOverride?part.to:part.key==='romp'?part.from:part.fullTo||part.to;add('line',{x1:anchor.x,y1:anchor.y,x2:p.x,y2:p.y,stroke:'#ffdc62','stroke-width':.7,'stroke-dasharray':'2 2',class:'diamond-reference'});
+    if(!existing)for(let v=0;v<=maximum;v+=10){const p=SpoorGeometry.point({band,value:v},g);add('circle',{cx:p.x,cy:p.y,r:1.8,fill:'#fff8dc',stroke:'#382918','stroke-width':.5,'data-diamond':v});if(Math.abs(v-value)>=4||Math.abs(v-value)<1e-8){const active=Math.abs(v-value)<1e-8;add('text',{...labelAt(p),'font-size':8.5,style:'fill:'+(active?'#ffdc62':'#fff8dc')+';stroke:#593c21;stroke-width:1.5px','data-number':v,...(active?{class:'active-diamond-label'}:{})},String(v));}}
+    const p=SpoorGeometry.point(reference,g);add('circle',{cx:p.x,cy:p.y,r:3,fill:'none',stroke:'#ffdc62','stroke-width':1.3,class:'active-diamond'});if(Math.abs(value-Math.round(value/10)*10)>1e-8)add('text',{...(band==='west'?{x:p.x+6,y:p.y+3,'text-anchor':'start'}:band==='oost'?{x:p.x-6,y:p.y+3,'text-anchor':'end'}:band==='noord'?{x:p.x,y:p.y+10,'text-anchor':'middle'}:{x:p.x,y:p.y-6,'text-anchor':'middle'}),'font-size':8.5,style:'fill:#ffdc62;stroke:#593c21;stroke-width:1.5px',class:'active-diamond-label'},SpoorScreenFormat.format(value));
+    const anchor=referenceOverride?(reference===data.route[part.key]?.from?part.from:part.fullTo||part.to):part.key==='romp'?part.from:part.fullTo||part.to;add('line',{x1:anchor.x,y1:anchor.y,x2:p.x,y2:p.y,stroke:'#ffdc62','stroke-width':.7,'stroke-dasharray':'2 2',class:'diamond-reference'});
     $('lklDiamondCaption').textContent=names[part.key]+' · '+({west:'West',oost:'Oost',noord:'Noord',zuid:'Zuid'}[band])+' · '+SpoorScreenFormat.format(value);$('lklDiamondCaption').hidden=false;
   }
+  const parallelTracks=['VIJF-1','VIJF+1','VIJF+2','VIJF+3'];
+  const parallelViews=document.createElement('nav');parallelViews.id='vijfParallelViews';parallelViews.setAttribute('aria-label','Tafelviews');parallelViews.innerHTML='<button type="button" data-vijf-view="whole">Spoor</button><button type="button" data-vijf-view="framework">Karkas</button><button type="button" data-vijf-view="arrivals">Aankomst</button>';parallelViews.hidden=true;$('lklExerciseText').after(parallelViews);
+  const checkExercise=document.createElement('button');checkExercise.id='checkVijfExercise';checkExercise.type='button';checkExercise.textContent='Toon karkas · controle';checkExercise.hidden=true;$('lklExerciseText').after(checkExercise);checkExercise.onclick=()=>{checked=!checked;render();};
+  function courseTrack(){return lesson===2?parallelTracks[index]:'VIJF';}
+  function readLessonData(){const result=lesson===1?adapter.lesson2Data():adapter.lesson1Data(courseTrack());if(lesson!==2&&!result.journey.length)throw Error('Het karkas van VIJF is nog onvolledig.');return result;}
+  function field(){const g=data.geometry;svg.replaceChildren();window.ThreeBUniformBalls.courseFrame(svg,g,data.table||'klein');el('rect',{x:0,y:0,width:g.widthCm,height:g.heightCm,fill:'#176548',stroke:'#f7df98','stroke-width':1.4});$('lklDiamondCaption').hidden=true;drawAllCourseDiamonds(g);}
+  function courseEndpointLabels(p){
+    const prefs=adapter.tableTextSettings?.()||{showEndpoints:true,endpointSize:15};if(!prefs.showEndpoints)return;
+    const pair=data.route[p.key],dx=p.to.x-p.from.x,dy=p.to.y-p.from.y,len=Math.hypot(dx,dy);if(!pair||!len)return;
+    for(const [side,ref,a,b]of [['V',p.key==='neus'?data.neusDeparture:pair.from,p.from,p.to],...(p.fraction<1?[]:[['A',pair.to,p.to,p.from]])]){
+      if(ref?.value===null||ref?.value===undefined||ref?.value==='')continue;const t=.16;
+      el('text',{class:'endpoint-value','data-part':p.key,'data-side':side,'data-value':ref.value,'data-value-band':ref.band,x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t,'text-anchor':'middle','dominant-baseline':'middle',style:'fill:#173b30;stroke:#fff8df;stroke-width:1.2px;pointer-events:none'},p.key==='neus'&&side==='A'&&adapter.neusArrivalLabel?adapter.neusArrivalLabel(ref.value,data.track):SpoorScreenFormat.format(ref.value));
+    }
+    requestAnimationFrame(()=>{const m=svg.getScreenCTM();if(!m)return;const unit=Math.hypot(m.a,m.b);for(const text of svg.querySelectorAll('.endpoint-value'))text.style.fontSize=(prefs.endpointSize/unit)+'px';});
+  }
+  function courseSegment(p,thin=false){const line=el('line',{x1:p.from.x,y1:p.from.y,x2:p.to.x,y2:p.to.y,stroke:thin?'#f5d680':colors[p.key],'stroke-width':thin?.7:3.5,...(thin?{'stroke-dasharray':'3 2',opacity:.7}:{})});line.dataset.part=p.key;line.dataset.reference=String(thin);if(!thin){courseEndpointLabels(p);const q=lerp(p.from,p.to,.5);el('text',{x:q.x+2,y:q.y-4,'font-size':7.5},names[p.key]);}}
+  function numberedBall(p,n,color,cls){el('circle',{cx:p.x,cy:p.y,r:data.radiusCm,fill:color,stroke:'#222','stroke-width':.5,class:cls});el('text',{x:p.x,y:p.y,'dominant-baseline':'middle','font-size':4.5,'text-anchor':'middle',class:'ball-number',style:'fill:#17271f;stroke:none'},String(n));}
+  function stepDemo(){
+    stop();$('repeatLklLine').hidden=false;$('repeatLklLine').textContent='Demo opnieuw';
+    const nodes=[...svg.querySelectorAll(parallelView==='arrivals'&&lesson===2?'.course-arrival':'line[data-part]:not([data-reference=true])')];
+    $('repeatLklLine').hidden=nodes.length===0;
+    nodes.forEach((node,i)=>{const length=node.tagName.toLowerCase()==='line'?Math.hypot(+node.getAttribute('x2')-+node.getAttribute('x1'),+node.getAttribute('y2')-+node.getAttribute('y1')):0;
+      demoAnimations.push(node.animate(length?[{strokeDasharray:String(length),strokeDashoffset:String(length)},{strokeDasharray:String(length),strokeDashoffset:'0'}]:[{opacity:.15},{opacity:1}],{duration:700,delay:i*300,fill:'both'}));
+    });
+    d.dataset.demo='step';
+  }
+  function quietStep(){stop();$('harderLkl').hidden=true;$('courseRunOutConfig').hidden=true;$('lklRoll').hidden=true;$('repeatLklLine').hidden=true;$('lklAnimationStatus').textContent='';$('lklGeometryNotice').textContent='';$('lklRouteSequence').replaceChildren();$('lklLessonSource').textContent='Kruins tafel · metingen van Kruin';$('lklLessonTitle').textContent=lessons[lesson].title;d.dataset.lesson=String(lesson+2);d.dataset.source=data.source;d.dataset.pattern=data.pattern;d.dataset.track=data.track;d.dataset.table=data.table||'klein';d.dataset.signature=JSON.stringify(data.route);$('previousLklLesson').disabled=lesson===0&&!systemIntro;$('nextLklLesson').disabled=lesson===lessons.length-1;info.scrollTop=0;d.scrollTop=0;}
+  function renderParallel(){data=adapter.lesson1Data(courseTrack());quietStep();d.dataset.line='parallellen';d.dataset.view=parallelView;$('lklLessonProgress').textContent=`Stap ${index+1} van 4 · ${data.trackLabel} · ${data.tableLabel||'Klein'}`;$('lklExerciseTitle').textContent=data.trackLabel+' vergelijken met VIJF';$('lklExerciseText').textContent='Ik verschuif mijn afstoot parallel. Ik vergelijk '+data.trackLabel+' met het basisspoor VIJF en bekijk ook de aankomst. Afzonderlijke gemeten vervolglijnen hoeven niet strikt parallel te lopen.';$('lklApproach').textContent='VIJF−1 → VIJF+1 → VIJF+2 → VIJF+3.';$('previousLklExercise').disabled=index===0;$('nextLklExercise').disabled=index===3;$('nextLklExercise').textContent='Volgende parallel →';for(const b of parallelViews.querySelectorAll('button'))b.setAttribute('aria-pressed',String(b.dataset.vijfView===parallelView));field();
+    if(data.excluded){$('lklGeometryNotice').textContent=data.trackLabel+' valt buiten LKL ('+data.actualPattern+'). De tafel blijft leeg.';el('text',{x:data.geometry.widthCm/2,y:data.geometry.heightCm/2,'text-anchor':'middle','font-size':6.5},'Geen passend LKL-spoor');return;}
+    if(data.unavailable)$('lklGeometryNotice').textContent='Het vervolg vanaf '+names[data.unavailable]+' is nog niet geldig of bepaald. Ik toon alleen het beschikbare spoor.';
+    const base=adapter.lesson1Data('VIJF');if(parallelView==='framework')for(const p of base.journey.filter(p=>['neus','romp'].includes(p.key)))courseSegment(p,true);
+    for(const p of data.journey){if(parallelView==='arrivals'&&p.fraction===1)drawKarkasDiamonds(p,data.geometry,data.route[p.key]?.to);else if(parallelView!=='arrivals'&&['neus','romp'].includes(p.key))drawKarkasDiamonds(p,data.geometry);if(parallelView==='arrivals'){if(p.fraction===1){const ref=data.route[p.key]?.to;numberedBall(p.to,'',colors[p.key],'course-arrival');const q=lerp(p.to,{x:data.geometry.widthCm/2,y:data.geometry.heightCm/2},.1);el('text',{x:q.x,y:q.y,'font-size':5.8,'text-anchor':'middle'},names[p.key]+' '+SpoorScreenFormat.format(ref?.value));}}else if(parallelView==='whole'||['neus','romp'].includes(p.key))courseSegment(p);}
+    if(parallelView!=='arrivals'){const nose=data.journey.find(p=>p.key==='neus');if(nose)numberedBall(nose.from,1,'white','lesson-ball');const body=data.journey.find(p=>p.key==='romp');if(body)numberedBall(lerp(body.from,body.to,.55),3,'#f34d4d','lesson-target');}
+  }
+  parallelViews.onclick=e=>{const view=e.target.closest('[data-vijf-view]')?.dataset.vijfView;if(view){parallelView=view;render();}};
   function renderBackwards(){
     stop();const body=data.journey.find(p=>p.key==='romp'),nose=data.journey.find(p=>p.key==='neus'),g=data.geometry;if(!body||!nose)throw Error('Neus of Romp is nog niet bepaald.');
-    d.dataset.lesson='2';d.dataset.line=index===2?'neus':'romp';d.dataset.source=data.source;d.dataset.pattern=data.pattern;d.dataset.signature=JSON.stringify(data.route);d.dataset.reverseStep=String(index);
-    $('lklLessonTitle').textContent=lessons[1].title;$('lklLessonProgress').textContent=`Stap ${index+1} van 3 · terugredeneren · Klein`;$('lklLessonSource').textContent='Vast oefenvoorbeeld · Romp Oost 30 → Zuid 30';
-    $('lklExerciseTitle').textContent=['Eerst de Romp en bal 3','Ligt bal 1 op hetzelfde spoor?','Controle · nu de Neus'][index];$('lklExerciseText').textContent=['Ik bekijk eerst de Romp: 30 op de oostelijke stiplijn naar 30 op de zuidelijke stiplijn. Bal 3 ligt op deze Romp. De afstoot en de Neus blijven nog verborgen.','Ik kijk nu naar mijn speelbal. Zonder de Neus te tonen vraag ik: ligt bal 1 op ditzelfde spoor? Ik kijk eerst zelf; daarna ga ik naar de controle.','De gegeven Neus van het oefenspoor wordt zichtbaar. Bal 1 ligt hier op die Neus: ik lig dus op hetzelfde spoor. Ik controleer dit met mijn ogen. De Neus is onderdeel van dit vaste voorbeeld; hij wordt niet uit alleen de Romp berekend.'][index];
-    $('courseRunOutConfig').hidden=true;$('harderLkl').hidden=true;$('lklRoll').hidden=true;$('repeatLklLine').hidden=true;$('lklAnimationStatus').textContent='';$('lklGeometryNotice').textContent='';$('lklApproach').textContent='Bal 3 → Romp → waar lig ik met bal 1? → Neus controleren.';$('lklRouteSequence').replaceChildren();
+    d.dataset.lesson=String(lesson+2);d.dataset.line=index===2?'neus':'romp';d.dataset.source=data.source;d.dataset.pattern=data.pattern;d.dataset.signature=JSON.stringify(data.route);d.dataset.reverseStep=String(index);
+    $('lklLessonTitle').textContent=lessons[1].title;$('lklLessonProgress').textContent=`Stap ${index+1} van 3 · VIJF · terugredeneren · ${data.tableLabel||'Klein'}`;$('lklLessonSource').textContent='Kruins tafel · metingen van Kruin';
+    $('lklExerciseTitle').textContent=['De Romp en bal 3','Bal 1 en het spoor','De bijbehorende Neus'][index];$('lklExerciseText').textContent=['Eerst het patroon: LKL. Door bal 3 lopen allerlei lijnen; niet elke lijn hoort bij dit bandverloop. Ik zoek binnen LKL het passende spoor en bekijk hier de Romp van VIJF, met dezelfde meetwaarden als in les 2. Bal 3 ligt op deze Romp. De afstoot en de Neus blijven nog verborgen.','Bal 1 is de speelbal. In dit voorbeeld ligt bal 1 op hetzelfde spoor als bal 3. De volgende stap maakt de bijbehorende Neus zichtbaar.','De Neus van dezelfde VIJF wordt zichtbaar. Bal 1 ligt hier op die Neus: ik lig dus op hetzelfde spoor. Neus en Romp maken samen zichtbaar dat beide ballen bij hetzelfde spoor horen. Dit is dezelfde gemeten VIJF als in les 2; de Neus wordt niet uit alleen de Romp berekend.'][index];
+    $('courseRunOutConfig').hidden=true;$('harderLkl').hidden=true;$('lklRoll').hidden=true;$('repeatLklLine').hidden=true;$('lklAnimationStatus').textContent='';$('lklGeometryNotice').textContent='';$('lklApproach').textContent='Bal 3 → Romp → bal 1 → de bijbehorende Neus.';$('lklRouteSequence').replaceChildren();
     $('previousLklExercise').disabled=index===0;$('nextLklExercise').disabled=index===2;$('nextLklExercise').textContent=index===1?'Toon de Neus →':'Volgende stap →';$('previousLklLesson').disabled=false;$('nextLklLesson').disabled=false;
-    svg.replaceChildren();svg.setAttribute('viewBox',`-32 -25 ${g.widthCm+64} ${g.heightCm+50}`);el('rect',{x:0,y:0,width:g.widthCm,height:g.heightCm,fill:'#176548',stroke:'#f7df98','stroke-width':1.4});$('lklDiamondCaption').hidden=true;drawKarkasDiamonds(index===2?nose:body,g);if(index<2){drawKarkasDiamonds(body,g,data.route.romp.to);$('lklDiamondCaption').textContent='Romp · Oost 30 → Zuid 30';}
-    const segment=p=>{const line=el('line',{x1:p.from.x,y1:p.from.y,x2:p.to.x,y2:p.to.y,stroke:colors[p.key],'stroke-width':3.5});line.dataset.part=p.key;const at=lerp(p.from,p.to,.5);el('text',{x:at.x+2,y:at.y-4,'font-size':7.5},names[p.key]);};segment(body);if(index===2)segment(nose);
+    svg.replaceChildren();window.ThreeBUniformBalls.courseFrame(svg,g,data.table||'klein');el('rect',{x:0,y:0,width:g.widthCm,height:g.heightCm,fill:'#176548',stroke:'#f7df98','stroke-width':1.4});$('lklDiamondCaption').hidden=true;drawAllCourseDiamonds(g);drawKarkasDiamonds(body,g);if(index===2)drawKarkasDiamonds(nose,g);{drawKarkasDiamonds(body,g,data.route.romp.to);$('lklDiamondCaption').textContent='VIJF · Romp · V '+SpoorScreenFormat.format(data.route.romp.from.value)+' → A '+SpoorScreenFormat.format(data.route.romp.to.value);}
+    const segment=p=>{const line=el('line',{x1:p.from.x,y1:p.from.y,x2:p.to.x,y2:p.to.y,stroke:colors[p.key],'stroke-width':3.5});line.dataset.part=p.key;courseEndpointLabels(p);const at=lerp(p.from,p.to,.5);el('text',{x:at.x+2,y:at.y-4,'font-size':7.5},names[p.key]);};segment(body);if(index===2)segment(nose);
     // Target coordinates are supplied by the lesson specification, separately from measurements.
-    if(data.lessonTwoTarget){const q=data.lessonTwoTarget;el('circle',{cx:q.x,cy:q.y,r:data.radiusCm,fill:'#f34d4d',stroke:'#222','stroke-width':.5,class:'lesson-target'});el('text',{x:q.x,y:q.y+1.5,'font-size':4.5,'text-anchor':'middle',style:'fill:#17271f;stroke:none'},'3');}
-    if(index>0){el('circle',{cx:nose.from.x,cy:nose.from.y,r:data.radiusCm,fill:'#fff',stroke:'#222','stroke-width':.5,class:'lesson-ball'});el('text',{x:nose.from.x,y:nose.from.y+1.5,'font-size':4.5,'text-anchor':'middle',style:'fill:#17271f;stroke:none'},'1');}info.scrollTop=0;d.scrollTop=0;
+    if(data.lessonTwoTarget){const q=data.lessonTwoTarget;el('circle',{cx:q.x,cy:q.y,r:data.radiusCm,fill:'#f34d4d',stroke:'#222','stroke-width':.5,class:'lesson-target'});el('text',{x:q.x,y:q.y+1.5,'font-size':4.5,'text-anchor':'middle',class:'ball-number',style:'fill:#17271f;stroke:none'},'3');}
+    if(index>0){el('circle',{cx:nose.from.x,cy:nose.from.y,r:data.radiusCm,fill:'#fff',stroke:'#222','stroke-width':.5,class:'lesson-ball'});el('text',{x:nose.from.x,y:nose.from.y+1.5,'font-size':4.5,'text-anchor':'middle',class:'ball-number',style:'fill:#17271f;stroke:none'},'1');}info.scrollTop=0;d.scrollTop=0;
   }
-  function render(){delete d.dataset.reverseStep;if(lesson===1){renderBackwards();return;}$('lklRoll').hidden=false;$('repeatLklLine').hidden=false;$('lklApproach').textContent='Ik kijk → ik speel → ik volg de bal → ik kijk opnieuw.';$('nextLklExercise').textContent='Volgende stap →';stop();progress=0;const part=data.journey[index],g=data.geometry;d.dataset.lesson=String(lesson+1);d.dataset.line=part.key;d.dataset.source=data.source;d.dataset.pattern=data.pattern;d.dataset.endpoint=JSON.stringify(data.journey.at(-1));d.dataset.signature=JSON.stringify(data.route);$('lklLessonTitle').textContent=lessons[lesson].title;$('lklLessonProgress').textContent=`Stap ${index+1} van ${data.journey.length} · ${data.trackLabel} · ${data.pattern} · Klein`;$('lklLessonSource').textContent=data.source==='user'?'Mijn metingen · eigen meetbasis':'Kruins metingen · voorbeeldspoor';$('lklExerciseTitle').textContent=`${index+1}. ${part.runOut&&part.key==='been'?'Half Been':names[part.key]}`;$('lklExerciseText').textContent=data.pattern==='6–7 banden'?(part.key==='neus'?'Dit is het afzonderlijke patroon 6–7 banden, met eigen meetwaarden. Ik volg de bal opnieuw vanaf de Neus.':part.key==='hiel'?'De 6–7-bander doorloopt de hele Hiel tot de volgende band. Daarna volgt de ingestelde extra uitloop.':part.key==='uitloop'?'Na de Hiel rolt de bal nog '+data.runOutCm+' cm door. Deze uitloop is instelbaar per basisspoor en tafel.':part.key==='romp'?'Na de Nek volgt de Romp. Bij 6–7 banden zijn Neus en Been de karkasankers.':part.key==='been'?'Na het Kruis volgt het Been. In dit afzonderlijke patroon is Been een karkasanker; het vervolg loopt door over de Hiel.':explanations[part.key]):explanations[part.key];$('courseRunOutConfig').hidden=data.pattern!=='6–7 banden';$('courseRunOutCm').value=data.runOutCm;$('harderLkl').hidden=data.pattern!=='LKL'||index!==data.journey.length-1;$('lklGeometryNotice').textContent=data.unavailable?'Het vervolg vanaf '+names[data.unavailable]+' is in deze configuratie niet geldig of nog niet bepaald. Ik teken daar geen verzonnen lijn.':'';$('previousLklExercise').disabled=index===0;$('nextLklExercise').disabled=index===data.journey.length-1;$('previousLklLesson').disabled=lesson===0;$('nextLklLesson').disabled=lesson===lessons.length-1;
-    $('lklRouteSequence').replaceChildren();for(const key of order){const chip=document.createElement('span');chip.textContent=names[key]+(key==='been'&&data.pattern==='LKL'?' (½)':'');chip.dataset.line=key;if(key===part.key)chip.setAttribute('aria-current','step');$('lklRouteSequence').append(chip);}
-    svg.replaceChildren();svg.setAttribute('viewBox',`-32 -25 ${g.widthCm+64} ${g.heightCm+50}`);el('rect',{x:0,y:0,width:g.widthCm,height:g.heightCm,fill:'#176548',stroke:'#f7df98','stroke-width':1.4});
-    $('lklDiamondCaption').hidden=true;drawKarkasDiamonds(part,g);
-    for(let n=0;n<=index;n++){const p=data.journey[n],current=n===index;const line=el('line',{x1:p.from.x,y1:p.from.y,x2:current?p.from.x:p.to.x,y2:current?p.from.y:p.to.y,stroke:colors[p.key],'stroke-width':current?3.5:2.5,opacity:current?1:.6});line.dataset.part=p.key;if(current)lineNode=line;const mid=lerp(p.from,p.to,.5);el('text',{x:mid.x+2,y:mid.y-4,'font-size':7.5},p.runOut&&p.key==='been'?'½ Been':names[p.key]);}
-    const body=data.journey.find(p=>p.key==='romp');if(body){const target=lerp(body.from,body.to,.55);el('circle',{cx:target.x,cy:target.y,r:data.radiusCm,fill:'#f34d4d',stroke:'#222','stroke-width':.4,class:'lesson-target'});el('text',{x:target.x,y:target.y+1.5,'font-size':4.5,'text-anchor':'middle',style:'fill:#17271f;stroke:none'},'3');}
-    ballNode=el('circle',{r:data.radiusCm,fill:'#fff',stroke:'#222','stroke-width':.5,class:'lesson-ball'});markNode=el('circle',{r:data.radiusCm*.2,fill:'#c83636',class:'lesson-roll-mark'});position(0);if(d.open){info.scrollTop=0;d.scrollTop=0;roll();}
+  function render(){$('previousLklLesson').textContent=lesson===0?'← Les 1 · introductie':'← Vorige les';$('previousLklExercise').textContent=lesson===0&&index===0?'← Introductie':'← Vorige stap';document.getElementById('openParallelExamples')?.toggleAttribute('hidden',lesson!==2);d.dataset.track=data.track;d.dataset.table=data.table||'klein';if(lesson!==3){delete d.dataset.caseIndex;delete d.dataset.onTrack;delete d.dataset.checked;}if(lesson!==2)delete d.dataset.view;parallelViews.hidden=lesson!==2;checkExercise.hidden=true;delete d.dataset.reverseStep;if(lesson===1){renderBackwards();stepDemo();remember();return;}if(lesson===2){renderParallel();stepDemo();remember();return;}$('lklRoll').hidden=false;$('repeatLklLine').hidden=false;$('lklApproach').textContent='De bal volgt het spoor lijn na lijn.';$('nextLklExercise').textContent='Volgende stap →';stop();progress=0;const part=data.journey[index],g=data.geometry;d.dataset.lesson=String(lesson+2);d.dataset.line=part.key;d.dataset.source=data.source;d.dataset.pattern=data.pattern;d.dataset.endpoint=JSON.stringify(data.journey.at(-1));d.dataset.signature=JSON.stringify(data.route);$('lklLessonTitle').textContent=lessons[lesson].title;$('lklLessonProgress').textContent=`Stap ${index+1} van ${data.journey.length} · ${data.trackLabel} · ${data.pattern} · ${data.tableLabel||'Klein'}`;$('lklLessonSource').textContent='Kruins tafel · metingen van Kruin';$('lklExerciseTitle').textContent=`${index+1}. ${part.runOut&&part.key==='been'?'Half Been':names[part.key]}`;$('lklExerciseText').textContent=data.pattern==='6–7 banden'?(part.key==='neus'?'Dit is het afzonderlijke patroon 6–7 banden, met eigen meetwaarden. Ik volg de bal opnieuw vanaf de Neus.':part.key==='hiel'?'De 6–7-bander doorloopt de hele Hiel tot de volgende band. Daarna volgt de ingestelde extra uitloop.':part.key==='uitloop'?'Na de Hiel rolt de bal nog '+data.runOutCm+' cm door. Deze uitloop is instelbaar per basisspoor en tafel.':part.key==='romp'?'Na de Nek volgt de Romp. Bij 6–7 banden zijn Neus en Been de karkasankers.':part.key==='been'?'Na het Kruis volgt het Been. In dit afzonderlijke patroon is Been een karkasanker; het vervolg loopt door over de Hiel.':explanations[part.key]):explanations[part.key];$('courseRunOutConfig').hidden=data.pattern!=='6–7 banden';$('courseRunOutCm').value=data.runOutCm;$('harderLkl').hidden=true;$('lklGeometryNotice').textContent=data.unavailable?'Het vervolg vanaf '+names[data.unavailable]+' is in deze configuratie niet geldig of nog niet bepaald. Ik teken daar geen verzonnen lijn.':'';$('previousLklExercise').disabled=index===0&&!systemIntro;$('nextLklExercise').disabled=index===data.journey.length-1;$('previousLklLesson').disabled=lesson===0&&!systemIntro;$('nextLklLesson').disabled=lesson===lessons.length-1;
+    $('lklRouteSequence').replaceChildren();for(const key of order){const chip=document.createElement('span');chip.textContent=names[key]+(key==='been'&&data.pattern==='LKL'?' (45%)':'');chip.dataset.line=key;if(key===part.key)chip.setAttribute('aria-current','step');$('lklRouteSequence').append(chip);}
+    svg.replaceChildren();window.ThreeBUniformBalls.courseFrame(svg,g,data.table||'klein');el('rect',{x:0,y:0,width:g.widthCm,height:g.heightCm,fill:'#176548',stroke:'#f7df98','stroke-width':1.4});
+    $('lklDiamondCaption').hidden=true;drawAllCourseDiamonds(g);drawKarkasDiamonds(part,g);
+    for(let n=0;n<=index;n++){const p=data.journey[n],current=n===index;const line=el('line',{x1:p.from.x,y1:p.from.y,x2:current?p.from.x:p.to.x,y2:current?p.from.y:p.to.y,stroke:colors[p.key],'stroke-width':current?3.5:2.5,opacity:current?1:.6});line.dataset.part=p.key;courseEndpointLabels(p);if(current)lineNode=line;const mid=lerp(p.from,p.to,.5);el('text',{x:mid.x+2,y:mid.y-4,'font-size':7.5},p.runOut&&p.key==='been'?'Been · 45%':names[p.key]);}
+    const body=data.journey.find(p=>p.key==='romp');if(body){const target=lerp(body.from,body.to,.55);el('circle',{cx:target.x,cy:target.y,r:data.radiusCm,fill:'#f34d4d',stroke:'#222','stroke-width':.4,class:'lesson-target'});el('text',{x:target.x,y:target.y+1.5,'font-size':4.5,'text-anchor':'middle',class:'ball-number',style:'fill:#17271f;stroke:none'},'3');}
+    ballNode=el('circle',{r:data.radiusCm,fill:'#fff',stroke:'#222','stroke-width':.5,class:'lesson-ball'});position(0);if(d.open){info.scrollTop=0;d.scrollTop=0;roll();}remember();
   }
   function setMode(mode){document.body.dataset.learningMode=mode;for(const [id,m]of [['levelLklCourse','course'],['levelLklPractice','practice']])document.getElementById(id)?.setAttribute('aria-pressed',String(m===mode));document.getElementById('lklUseStatus').textContent=mode==='course'?'Cursus · de bal lijn na lijn volgen.':'Geoefend · zelfstandig oefenen en meten.';}
-  function practice(){stop();chooser.close();if(d.open)d.close();document.getElementById('closeExplanation')?.click();adapter.enterPractice?.();setMode('practice');}
-  function openLesson(number=0){if(document.getElementById('spoorScreen')?.open){alert('Sluit eerst het spoorscherm; je meetinvoer blijft behouden.');return;}try{const target=number===2?(['ZES','ZESZEVEN_ZES'].includes(data?.track)?'ZESZEVEN_ZES':'ZESZEVEN'):lessons[number].track;const next=number===1?adapter.lesson2Data():adapter.lesson1Data(target);stop();lesson=number;index=0;data=next;render();if(!d.open)d.showModal();info.scrollTop=0;d.scrollTop=0;setMode('course');roll();}catch(e){alert('De les kan niet starten: '+e.message);}}
-  $('saveCourseRunOut').onclick=async()=>{const input=$('courseRunOutCm'),button=$('saveCourseRunOut');if(!input.checkValidity()){input.reportValidity();return;}button.disabled=true;stop();try{await adapter.saveCourseRunOut(data.track,Number(input.value));const step=index;data=adapter.lesson1Data(data.track);index=Math.min(step,data.journey.length-1);render();$('courseRunOutStatus').textContent='Uitloop bewaard voor '+data.trackLabel+' · Klein.';}catch(error){$('courseRunOutStatus').textContent=error.message;}finally{button.disabled=false;}};
-  function startCourse(){chooser.close();document.getElementById('closeExplanation')?.click();openLesson(0);}
-  $('closeLklLesson').onclick=practice;d.addEventListener('cancel',e=>{e.preventDefault();practice();});d.addEventListener('close',stop);document.addEventListener('visibilitychange',()=>{if(document.hidden&&running){stop();$('lklRoll').textContent='Verder rollen';}});
-  $('previousLklExercise').onclick=()=>{if(index>0){index--;render();}};$('nextLklExercise').onclick=()=>{if(index<(lesson===1?2:data.journey.length-1)){index++;render();}};$('previousLklLesson').onclick=()=>{if(lesson>0)openLesson(lesson-1);};$('nextLklLesson').onclick=()=>{if(lesson<lessons.length-1)openLesson(lesson+1);};$('repeatLklLesson').onclick=()=>openLesson(lesson);$('repeatLklLine').onclick=()=>{progress=0;roll();};$('lklRoll').onclick=()=>{if(running){stop();$('lklRoll').textContent='Verder rollen';$('lklAnimationStatus').textContent='Pauze · ik bekijk de '+names[data.journey[index].key]+'.';}else roll();};$('lessonToIndependent').onclick=practice;$('harderLkl').onclick=()=>openLesson(2);
+  let startedCourse=false,practiceActive=false,checked=false,checkpointReady=false,parallelView='whole',bridgeVisible=false,restoreTable=false;
+  const checkpointKey='3b-vijf-course-progress-v2';
+  const bridge=document.createElement('nav');bridge.id='courseBridge';bridge.hidden=true;bridge.setAttribute('aria-label','Cursus en tafel');bridge.innerHTML='<button type="button" id="returnToVijfLesson">← Terug naar mijn les</button><button type="button" id="checkVijfOnTable" hidden>Toon karkas</button><button type="button" id="cycleVijfView" hidden>View: spoor</button>';document.body.append(bridge);
+  function remember(view){stepNavigation();if(!checkpointReady||!startedCourse)return;try{localStorage.setItem(checkpointKey,JSON.stringify({lesson,index,checked,parallelView,fraction:progress,view:view||(practiceActive?'table':'lesson')}));}catch(_){} }
+  function setBridge(){bridge.hidden=!startedCourse||!bridgeVisible||d.open;bridge.setAttribute('aria-label','Kruins tafel · cursus');document.getElementById('returnToVijfLesson').textContent='← Kruins tafel · les '+(lesson+2)+' · stap '+(index+1);const check=document.getElementById('checkVijfOnTable');check.hidden=true;document.getElementById('cycleVijfView').hidden=!practiceActive||lesson!==2;document.getElementById('cycleVijfView').textContent='View: '+({whole:'spoor',framework:'karkas',arrivals:'aankomst'}[parallelView]);check.textContent=checked?'Volgende oefening →':'Toon karkas';}
+  function restoreCanvas(){svg.classList.remove('table-svg','course-linked-svg');svg.removeAttribute('style');delete svg.dataset.viewTable;delete svg.dataset.desktopAngle;for(const text of svg.querySelectorAll('text')){text.style.removeProperty('transform');text.style.removeProperty('transform-box');text.style.removeProperty('transform-origin');}stage.prepend(svg);}
+  function fitLinked(){if(!practiceActive||d.open)return;adapter.fitCourseTable?.();const angle=Number(svg.dataset.desktopAngle)||0;for(const text of svg.querySelectorAll('text')){text.style.transformBox='fill-box';text.style.transformOrigin='center';text.style.transform=angle?'rotate('+(-angle)+'deg)':'';} }
+  function dockCanvas(){if(!practiceActive||d.open)return;const card=document.querySelector('#svgMount .drawing-card');if(!card)return;const current=card.querySelector('.table-svg');svg.classList.add('table-svg','course-linked-svg');svg.dataset.viewTable=data.table||'klein';if(current!==svg){if(current)current.replaceWith(svg);else card.append(svg);}let marker=svg.querySelector('[data-config-neus-center]');if(!marker){marker=document.createElementNS(ns,'g');marker.setAttribute('data-config-neus-center','');svg.append(marker);}const n=data.journey.find(p=>p.key==='neus');if(n){marker.dataset.x=(n.from.x+n.to.x)/2;marker.dataset.y=(n.from.y+n.to.y)/2;}else marker.remove();document.body.classList.add('course-table-linked');fitLinked();setBridge();}
+  function validSelection(){const s=adapter.courseSelection?.();return s?.track===courseTrack()&&s.table===(adapter.tableTextSettings?.().courseTable||'klein')&&s.mode===s.table&&s.direction==='west'&&s.pattern==='lkl';}
+  function practice(){const fraction=progress;stop();chooser.close();if(d.open)d.close();startedCourse=true;bridgeVisible=true;practiceActive=false;restoreCanvas();adapter.enterCoursePractice?.(courseTrack());if(lesson===2)adapter.setCourseView?.(parallelView);practiceActive=true;data=readLessonData();render();if(lesson===0){progress=fraction;position(progress);}dockCanvas();setMode('practice');setBridge();remember('table');window.dispatchEvent(new Event('threeb-table-return'));}
+  function independent(){bridgeVisible=false;adapter.setCourseScope?.(false);stop();chooser.close();if(d.open)d.close();practiceActive=false;document.body.classList.remove('course-table-linked');restoreCanvas();adapter.enterPractice?.();setMode('practice');setBridge();remember('normal');window.dispatchEvent(new Event('threeb-table-return'));}
+  function openLesson(number=0){if(document.getElementById('spoorScreen')?.open){alert('Sluit eerst het spoorscherm; je meetinvoer blijft behouden.');return;}try{practiceActive=false;adapter.setCourseScope?.(true);document.body.classList.remove('course-table-linked');restoreCanvas();adapter.refreshCourseTable?.();stop();startedCourse=true;lesson=number;if(lesson===2)parallelView='whole';index=0;checked=false;data=readLessonData();render();if(!d.open)d.showModal();info.scrollTop=0;d.scrollTop=0;setMode('course');setBridge();remember('lesson');roll();}catch(e){alert('De les kan niet starten: '+e.message);}}
+  function resumeLesson(){if(document.getElementById('spoorScreen')?.open){alert('Sluit eerst het spoorscherm; je meetinvoer blijft behouden.');return;}const oldProgress=progress;practiceActive=false;adapter.setCourseScope?.(true);document.body.classList.remove('course-table-linked');restoreCanvas();adapter.refreshCourseTable?.();data=readLessonData();render();if(!d.open)d.showModal();if(lesson===0){progress=oldProgress;position(progress);roll();}setMode('course');setBridge();remember('lesson');}
+  function launchCourse(){chooser.close();document.getElementById('closeExplanation')?.click();if(startedCourse)resumeLesson();else openLesson(0);}
+  const systemIntro=window.ThreeBMeetsysteemIntro?.create({geometry:()=>adapter.courseIntroGeometry(),route:()=>adapter.lesson1Data('VIJF'),onContinue:({parallel=false}={})=>{if(parallel)launchCourse();else{chooser.close();document.getElementById('closeExplanation')?.click();openLesson(0);}},onClose:independent});
+  function startCourse(){if(document.getElementById('spoorScreen')?.open){alert('Sluit eerst het spoorscherm; je meetinvoer blijft behouden.');return;}chooser.close();stop();if(systemIntro)systemIntro.open();else launchCourse();}
+  const parallelExamples=document.createElement('button');parallelExamples.id='openParallelExamples';parallelExamples.type='button';parallelExamples.textContent='Voorbeelden · VIJF−2 t/m VIJF+3';parallelExamples.hidden=true;parallelExamples.onclick=()=>{stop();if(d.open)d.close();systemIntro?.open({parallel:true});};$('lklOutlineToggle').before(parallelExamples);
+  function previousIntroduction(){stop();if(d.open)d.close();systemIntro?.open({at:3});}
+  document.getElementById('returnToVijfLesson').onclick=resumeLesson;
+  document.getElementById('checkVijfOnTable').onclick=()=>{if(checked){index=(index+1)%6;checked=false;}else checked=true;render();dockCanvas();remember('table');};
+  document.getElementById('cycleVijfView').onclick=()=>{parallelView=['whole','framework','arrivals'][(['whole','framework','arrivals'].indexOf(parallelView)+1)%3];adapter.setCourseView?.(parallelView);};
+  window.addEventListener('threeb-spoor-state',()=>{if(!practiceActive||d.open)return;if(!validSelection()){practiceActive=false;document.body.classList.remove('course-table-linked');restoreCanvas();setBridge();remember('normal');return;}if(lesson===2){const s=adapter.courseSelection();parallelView=s.display==='arrivals'?'arrivals':s.framework?'framework':'whole';}try{const fraction=progress;data=readLessonData();render();if(lesson===0){progress=fraction;position(progress);}dockCanvas();}catch(_){practiceActive=false;restoreCanvas();setBridge();}});
+  window.addEventListener('resize',()=>requestAnimationFrame(fitLinked));
+  $('saveCourseRunOut').onclick=()=>{};
+  $('closeLklLesson').onclick=independent;d.addEventListener('cancel',e=>{e.preventDefault();independent();});d.addEventListener('close',stop);document.addEventListener('visibilitychange',()=>{if(document.hidden&&running){stop();$('lklRoll').textContent='Verder rollen';}});
+  function stepNavigation(){
+    $('previousLklExercise').textContent='← Vorige';$('nextLklExercise').textContent='Volgende →';
+    $('previousLklExercise').disabled=false;
+    $('nextLklExercise').disabled=lesson===lessons.length-1&&index===totalSteps()-1;
+  }
+  const totalSteps=()=>lesson===2?4:lesson===1?3:data.journey.length;
+  $('previousLklExercise').onclick=()=>{if(index>0){index--;checked=false;render();}else if(lesson===0)previousIntroduction();else{openLesson(lesson-1);index=totalSteps()-1;render();}};$('nextLklExercise').onclick=()=>{if(index<totalSteps()-1){index++;checked=false;render();}else if(lesson<lessons.length-1)openLesson(lesson+1);};$('previousLklLesson').onclick=()=>{if(lesson>0)openLesson(lesson-1);else previousIntroduction();};$('nextLklLesson').onclick=()=>{if(lesson<lessons.length-1)openLesson(lesson+1);};$('repeatLklLesson').onclick=()=>openLesson(lesson);$('repeatLklLine').onclick=()=>{if(lesson===0){progress=0;roll();}else stepDemo();};$('lklRoll').onclick=()=>{if(running){stop();$('lklRoll').textContent='Verder rollen';$('lklAnimationStatus').textContent='Pauze · ik bekijk de '+names[data.journey[index].key]+'.';}else roll();};$('lessonToIndependent').onclick=practice;$('harderLkl').onclick=()=>{};
   function outline(open){$('lklLessonOutline').hidden=!open;$('lklOutlineToggle').setAttribute('aria-expanded',String(open));}
   $('lklOutlineToggle').onclick=()=>outline($('lklLessonOutline').hidden);$('backFromLklOutline').onclick=()=>outline(false);
   const button=document.createElement('button');button.type='button';button.id='startLklLesson1';button.textContent='Cursus · LKL lijn na lijn';button.onclick=startCourse;actions.prepend(button);
-  const chooser=document.createElement('dialog');chooser.id='lklUseChoice';chooser.innerHTML=`<header><h2>Niveau · LKL</h2><button type="button" id="closeLklUseChoice">Sluiten</button></header><button type="button" id="chooseLklCourse"><strong>Cursus · stap voor stap</strong><span>Ik volg de rollende bal: Neus, Kop, Nek en de volgende lijnen. Eén lijn tegelijk, zonder keuzevragen.</span></button><button type="button" id="chooseLklPractice"><strong>Geoefend · zelfstandig</strong><span>Ik oefen en meet zelf aan tafel.</span></button><details><summary>Naslag en meetlessen</summary><button type="button" id="openLklReferences">Open naslag en meetlessen</button></details>`;document.body.append(chooser);
+  const chooser=document.createElement('dialog');chooser.id='lklUseChoice';chooser.innerHTML=`<header><h2>De Waaier · cursus of geoefend</h2><button type="button" id="closeLklUseChoice">Sluiten</button></header><button type="button" id="chooseLklCourse"><strong>Cursus · stap voor stap</strong><span>De Waaier: ik begin bij benedenacquit 0 en zie de waaier 0 t/m 8. Daaruit kies ik VIJF en volg dat spoor lijn voor lijn.</span></button><button type="button" id="chooseLklPractice"><strong>Geoefend · zelfstandig</strong><span>Ik oefen en meet zelf aan tafel.</span></button><details><summary>Naslag en meetlessen</summary><button type="button" id="openLklReferences">Open naslag en meetlessen</button></details>`;document.body.append(chooser);
   const menu=document.querySelector('.onscreen-control-menuPanel .central-track-controls')||document.querySelector('.central-track-controls');const modes=document.createElement('section');modes.id='lklUseModes';modes.innerHTML='<button type="button" id="menuLklCourse">Cursus · stap voor stap</button><button type="button" id="menuLklPractice">Geoefend · zelfstandig</button><p id="lklUseStatus"></p>';menu?.append(modes);
   const level=document.createElement('nav');level.id='lklLevelBar';level.setAttribute('aria-label','Niveau');level.innerHTML='<strong>Niveau · LKL</strong><button type="button" id="levelLklCourse">Cursus · stap voor stap</button><button type="button" id="levelLklPractice">Geoefend · zelfstandig</button>';document.body.append(level);
-  for(const id of ['chooseLklCourse','menuLklCourse','levelLklCourse'])document.getElementById(id).onclick=startCourse;for(const id of ['chooseLklPractice','menuLklPractice','levelLklPractice'])document.getElementById(id).onclick=practice;
+  for(const id of ['chooseLklCourse','menuLklCourse','levelLklCourse'])document.getElementById(id).onclick=startCourse;for(const id of ['chooseLklPractice','menuLklPractice','levelLklPractice'])document.getElementById(id).onclick=independent;
   const legacy=document.getElementById('openExplanation');legacy?.addEventListener('click',e=>{if(reference)return;e.preventDefault();e.stopImmediatePropagation();if(!chooser.open)chooser.showModal();},true);chooser.querySelector('#closeLklUseChoice').onclick=()=>chooser.close();chooser.querySelector('#openLklReferences').onclick=()=>{chooser.close();adapter.prepareCourseReference?.();reference=true;try{legacy.click();}finally{reference=false;}};
+  try{const saved=JSON.parse(localStorage.getItem(checkpointKey));if(saved&&Number.isInteger(saved.lesson)&&saved.lesson>=0&&saved.lesson<lessons.length&&Number.isInteger(saved.index)&&saved.index>=0&&saved.index<6){lesson=saved.lesson;index=lesson===1?Math.min(2,saved.index):lesson===2?Math.min(3,saved.index):saved.index;parallelView=['whole','framework','arrivals'].includes(saved.parallelView)?saved.parallelView:'whole';checked=Boolean(saved.checked);startedCourse=true;progress=Number.isFinite(saved.fraction)?Math.max(0,Math.min(1,saved.fraction)):0;if(window.THREEB_PHONE_VIEW_APPLIED){saved.view='normal';localStorage.setItem(checkpointKey,JSON.stringify(saved));}restoreTable=saved.view==='table';bridgeVisible=restoreTable;}}catch(_){}checkpointReady=true;delete window.THREEB_PHONE_VIEW_APPLIED;setBridge();
   setMode('practice');if(window.THREEB_CHOOSE_USAGE_ON_START){delete window.THREEB_CHOOSE_USAGE_ON_START;chooser.showModal();}
+  if(restoreTable)requestAnimationFrame(()=>{adapter.setCourseScope?.(true);if(validSelection()){try{const fraction=progress;practiceActive=true;data=readLessonData();render();if(lesson===0){progress=fraction;position(progress);}dockCanvas();setBridge();}catch(_){practiceActive=false;setBridge();}}});
 };
 
 /* One entry point; reuse existing controls and their listeners. */
 window.installThreeBCleanConfig=function(){
   if(document.getElementById('cleanConfigDialog'))return;
   const get=id=>document.getElementById(id),gear=get('bandMenu');if(!gear)return;
+  const touch=navigator.maxTouchPoints>0||matchMedia('(pointer:coarse)').matches;document.body.classList.toggle('touch-track-choices',touch);
   const style=document.createElement('style');style.textContent=`
-  body.clean-config #bandDock,body.clean-config #desktopWorkbench,body.clean-config #databaseMobileToggle{display:none!important}
+  body.table-only.clean-config.mobile-full-table .drawing{position:fixed!important;inset:auto!important;left:var(--mobile-table-left,0px)!important;top:var(--mobile-table-top,0px)!important;width:var(--mobile-table-width,100vw)!important;height:var(--mobile-table-height,100dvh)!important;min-width:0!important;min-height:0!important}body.clean-config.mobile-full-table #cleanConfigDialog{max-width:calc(var(--mobile-table-width,100vw) - 16px)!important;max-height:calc(var(--mobile-table-height,100dvh) - 16px)!important}body.clean-config.mobile-full-table #onscreenLayout{width:100%!important;height:100%!important;min-width:0!important;min-height:0!important}
+  body.touch-track-choices #cleanConfigTracks{display:none!important}
+  body.clean-config .band-side{transform:translate(-50%,-50%)!important;height:auto!important;min-height:36px;padding:6px 9px!important}body.clean-config #bandDock,body.clean-config #desktopWorkbench,body.clean-config #databaseMobileToggle{display:none!important}
   body.clean-config #onscreenLayout{padding-top:0!important}
   body.clean-config.test-desktop-workbench .drawing{inset:var(--threeb-test-banner-height,0px) 0 0!important}
-  body.clean-config #bandMenu{position:fixed!important;left:var(--config-x,50%)!important;top:var(--config-y,50%)!important;transform:translate(-50%,-50%)!important;width:44px!important;height:44px!important;z-index:1100;font-size:25px;border-radius:50%;cursor:pointer}
-  #cleanConfigDialog{box-sizing:border-box;width:min(440px,calc(100vw - 24px));max-height:calc(100dvh - 24px);padding:18px;border:1px solid #b9b7a7;border-radius:14px;background:#faf9f2;color:#19392e;overflow:auto}
+  body.clean-config #bandMenu{position:fixed!important;left:var(--config-x,50%)!important;top:var(--config-y,50%)!important;transform:translate(-50%,-50%)!important;width:90px!important;height:44px!important;z-index:2300;font-size:16px;border-radius:22px;cursor:grab;touch-action:none;user-select:none;display:flex;align-items:center;justify-content:center;gap:5px}
+  #cleanConfigDialog{position:fixed;inset:0;margin:auto;box-sizing:border-box;width:min(224px,calc(100vw - 16px));height:fit-content;max-height:calc(100dvh - 16px);padding:6px;z-index:2400;box-shadow:0 3px 12px #0003;border:1px solid #b9b7a7;border-radius:14px;background:#faf9f2;color:#19392e;overflow:auto}
+  #cleanConfigDialog:has(#cleanConfigMore[open]){width:min(440px,calc(100vw - 24px))}
   #cleanConfigDialog::backdrop{background:#132c2366}
-  #cleanConfigDialog header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
-  #cleanConfigDialog h2,#cleanConfigDialog h3{margin:0 0 10px}
+  #cleanConfigDialog header{cursor:grab;touch-action:none;user-select:none;display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+  #cleanConfigDialog h2,#cleanConfigDialog h3{margin:0;font-size:18px}
+  #cleanConfigDialog #cleanConfigCourse>h3{display:none}
+  #cleanConfigDialog #cleanConfigTracks{display:grid;gap:6px;margin-bottom:8px}
+  #cleanConfigDialog #bandTrack,#cleanConfigDialog #bandLine{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:6px 8px;background:#80582f;border-radius:8px;color:#fff4dd;min-width:0}
+  #cleanConfigDialog #bandTrack small,#cleanConfigDialog #bandLine small{font:600 14px system-ui}
+  #cleanConfigDialog #bandTrack>span,#cleanConfigDialog #bandLine>span{display:flex;align-items:center;gap:4px;min-width:0}
+  #cleanConfigDialog #bandTrack output,#cleanConfigDialog #bandLine output{font:700 16px system-ui;text-align:center;min-width:68px}
+  #cleanConfigDialog #bandTrack button,#cleanConfigDialog #bandLine button{width:36px;margin:0;padding:4px;background:#fff7e9;color:#442a13;border:1px solid #c6ab82;border-radius:6px}
+  #cleanConfigDialog #levelLklCourse{margin:0;width:100%}
+  #cleanConfigDialog #cleanConfigMore>summary{font-size:14px;padding:8px 0;min-height:28px}
   #cleanConfigDialog button,#cleanConfigDialog select{min-height:44px;cursor:pointer}
   #cleanConfigDialog #bandCore{position:static!important;inset:auto!important;transform:none!important;width:100%!important;max-width:none!important;box-sizing:border-box;display:grid!important;grid-template-columns:1fr!important;overflow:visible;gap:8px;margin:0 0 18px}
   #cleanConfigDialog .band-drag-handle,#cleanConfigDialog #bandCore:before,#cleanConfigDialog #bandCore:after{display:none!important}
@@ -452,21 +2948,117 @@ window.installThreeBCleanConfig=function(){
   #cleanConfigDialog #databaseWorkspace{display:block!important;transform:none!important;position:static!important;width:auto!important;max-height:none!important;box-sizing:border-box;overflow:visible}
   #cleanConfigDialog #menuSettings{margin:8px 0}
   #cleanConfigDialog #bandUndo,#cleanConfigDialog #bandReset,#cleanConfigDialog #bandSave,#cleanConfigDialog #thumbUp{position:static!important;inset:auto!important;transform:none!important;margin:4px}
+  #cleanConfigDialog[open]:not(:has(#cleanConfigMore[open])){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4px 6px}
+  #cleanConfigDialog>header{grid-column:1/-1;margin:0;min-height:28px;gap:4px}
+  #cleanConfigDialog>header h2{font-size:12px}
+  #cleanConfigDialog>header h2::before{content:'⋮⋮';margin-right:5px;font-size:15px}
+  #cleanConfigDialog #closeCleanConfig{min-height:28px;height:28px;width:28px;padding:0;margin:0}
+  #cleanConfigDialog #cleanConfigTracks{grid-column:1/-1;margin:0}
+  #cleanConfigDialog #cleanConfigTracks #bandTrack{padding:0 3px;gap:0}
+  #cleanConfigDialog #cleanConfigTracks #bandTrack small{display:none}
+  #cleanConfigDialog #cleanConfigTracks #bandTrack>span{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;gap:2px;width:100%}
+  #cleanConfigDialog #cleanConfigTracks #bandTrack output{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  #cleanConfigDialog #cleanConfigTracks #bandTrack button{width:44px}
+  #cleanConfigDialog #cleanConfigCourse{grid-column:1;margin:0}
+  #cleanConfigDialog #levelLklCourse{font-size:14px}
+  #cleanConfigDialog #cleanConfigMore{grid-column:2;margin:0}
+  #cleanConfigDialog #cleanConfigMore>summary{box-sizing:border-box;display:flex;align-items:center;justify-content:center;list-style:none;padding:0!important;min-height:44px;border:1px solid #78988b;border-radius:6px;font:600 13px system-ui;background:white}
+  #cleanConfigDialog #cleanConfigMore>summary::-webkit-details-marker{display:none}
+  #cleanConfigDialog:has(#cleanConfigMore[open]){padding:12px}
+  #cleanConfigDialog:has(#cleanConfigMore[open])>header{margin-bottom:8px}
+  #cleanConfigDialog:has(#cleanConfigMore[open]) #cleanConfigTracks{margin-bottom:8px}
+  #cleanConfigDialog:has(#cleanConfigMore[open]) #cleanConfigMore>summary{margin:8px 0}
+  @media(pointer:coarse){#cleanConfigDialog>header{min-height:44px}#cleanConfigDialog #closeCleanConfig{min-height:44px;height:44px;width:44px}}
+  body.clean-config #bandMenu{width:44px!important;font-size:22px;border-radius:50%}
+  #cleanConfigDialog[open]:not(:has(#cleanConfigMore[open])){display:flex;align-items:center;gap:2px;flex-wrap:nowrap;width:max-content;max-width:calc(100vw - 16px);padding:0;border:0;background:transparent;box-shadow:none;overflow:visible}
+  #cleanConfigDialog:not(:has(#cleanConfigMore[open]))>header{display:contents}
+  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #cleanConfigTitle{order:0;flex:none;margin:0;padding:0 2px;font:16px/28px system-ui;color:white;text-shadow:0 1px 3px #111;cursor:grab}
+  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #cleanConfigTitle::before{content:none}
+  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #closeCleanConfig{order:4;flex:none;width:24px;height:28px;min-height:28px;border:0;background:#173b30d9;color:white;font-size:18px;border-radius:4px}
+  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #cleanConfigTracks{order:1;flex:none;margin:0}
+  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #bandTrack{padding:0;background:#173b30d9;border-radius:4px}
+  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #bandTrack>span{grid-template-columns:28px 72px 28px;gap:0;width:128px}
+  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #bandTrack button{min-height:28px;height:28px;width:28px;font-size:17px;color:white;background:transparent;border:0}
+  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #bandTrack output{font-size:13px;color:white}
+  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #cleanConfigCourse{order:2;flex:none;width:54px;margin:0}
+  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #levelLklCourse{min-width:0;min-height:28px;height:28px;padding:0 4px;margin:0;font-size:12px;line-height:1.1;color:white;background:#173b30d9;border:0;border-radius:4px}
+  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #cleanConfigMore{order:3;flex:none;width:28px;margin:0}
+  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #cleanConfigMore>summary{min-height:28px;height:28px;padding:0!important;font-size:0;color:white;background:#173b30d9;border:0;border-radius:4px}
+  #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #cleanConfigMore>summary::after{content:'⚙';font-size:18px}
+  #cleanConfigDialog:has(#cleanConfigMore[open]){background:#faf9f2;border:1px solid #b9b7a7;box-shadow:0 3px 12px #0003}
+  @media(pointer:coarse){
+    #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #cleanConfigTitle{line-height:44px}
+    #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #bandTrack>span{grid-template-columns:32px 70px 32px;width:134px}
+    #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #bandTrack button{width:32px;min-height:44px;height:44px}
+    #cleanConfigDialog:not(:has(#cleanConfigMore[open])) #levelLklCourse,#cleanConfigDialog:not(:has(#cleanConfigMore[open])) #cleanConfigMore>summary,#cleanConfigDialog:not(:has(#cleanConfigMore[open])) #closeCleanConfig{min-height:44px;height:44px}
+  }
   `;document.head.append(style);
-  const dialog=document.createElement('dialog');dialog.id='cleanConfigDialog';dialog.setAttribute('aria-labelledby','cleanConfigTitle');dialog.innerHTML='<header><h2 id="cleanConfigTitle">⚙ Config</h2><button type="button" id="closeCleanConfig" aria-label="Config sluiten">×</button></header><section id="cleanConfigTracks" aria-label="Spoor en lijn"></section><section id="cleanConfigCourse"><h3>Cursus</h3></section><details id="cleanConfigMore"><summary>Meer instellingen</summary><div id="cleanConfigSettings"></div></details>';document.body.append(dialog);document.body.classList.add('clean-config');
-  gear.textContent='⚙';gear.setAttribute('aria-label','Config openen');gear.title='Config · spoor, lijn en cursus';document.body.append(gear);
+  const dialog=document.createElement('dialog');dialog.id='cleanConfigDialog';dialog.setAttribute('aria-label','Spoor en cursus');dialog.innerHTML='<header><h2 id="cleanConfigTitle" aria-label="Bediening verslepen">⠿</h2><button type="button" id="closeCleanConfig" aria-label="Menu sluiten">×</button></header><section id="cleanConfigTracks" aria-label="Spoor"></section><section id="cleanConfigCourse" aria-label="Cursus"><h3>Cursus</h3></section><details id="cleanConfigMore"><summary>⚙ Config</summary><div id="cleanConfigSettings"></div></details>';document.body.append(dialog);document.body.classList.add('clean-config');
+  gear.textContent='☰';gear.setAttribute('aria-label','Spoor en cursus openen');gear.title='Spoor en cursus · klik om te openen, versleep naar een vrije plek';document.body.append(gear);
   const move=(node,parent)=>{if(node&&node.parentElement!==parent)parent.append(node);};
-  function reconcile(){move(get('bandCore'),get('cleanConfigTracks'));move(get('lklLevelBar'),get('cleanConfigCourse'));move(get('lklUseStatus'),get('cleanConfigCourse'));
-    const settings=get('cleanConfigSettings');move(document.querySelector('.central-track-controls'),settings);
+  function reconcile(){if(touch)get('centralLineSelect')?.closest('.central-track-stepper')?.style.setProperty('display','flex','important');move(get('bandTrack'),get('cleanConfigTracks'));move(get('bandLine'),get('bandCore'));move(get('lklLevelBar'),get('cleanConfigCourse'));get('levelLklCourse').textContent='Cursus';
+    const settings=get('cleanConfigSettings');move(get('bandCore'),settings);move(get('levelLklPractice'),settings);move(get('lklUseStatus'),settings);move(document.querySelector('.central-track-controls'),settings);
     const db=get('databaseWorkspace');if(db&&!db.closest('#githubConnectionDialog'))move(db,settings);
     for(const id of ['mobilePreview','bandUndo','bandReset','bandSave','thumbUp'])move(get(id),settings);
     document.body.append(gear);position();
   }
-  function position(){const svg=document.querySelector('.table-svg');if(!svg)return;const b=svg.getBoundingClientRect();let corner=false;try{corner=localStorage.getItem('3b-clean-config-position-v1')==='corner';}catch(_){}const x=corner?b.right-30:b.left+b.width/2,y=corner?b.top+30:b.top+b.height/2;document.body.style.setProperty('--config-x',Math.max(24,Math.min(innerWidth-24,x))+'px');document.body.style.setProperty('--config-y',Math.max(30,Math.min(innerHeight-24,y))+'px');const select=get('menuButtonPositionSelect');if(select)select.value=corner?'corner':'central';}
-  gear.onclick=e=>{e.preventDefault();e.stopPropagation();reconcile();if(!dialog.open)dialog.showModal();};get('closeCleanConfig').onclick=()=>dialog.close();get('closeSelectionMenu')?.addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog){const b=dialog.getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)dialog.close();}});
+  const gearKey='3b-clean-config-free-position-v1',dialogKey='3b-clean-config-dialog-position-v1';let gearDrag=false,windowDrag=false,suppressGearClick=false,lastPattern=null;
+  const read=key=>{try{const p=JSON.parse(localStorage.getItem(key));return p&&Number.isFinite(p.x)&&Number.isFinite(p.y)?p:null;}catch(_){return null;}};
+  const write=(key,p)=>{try{localStorage.setItem(key,JSON.stringify(p));}catch(_){}};
+  const erase=key=>{try{localStorage.removeItem(key);}catch(_){}};
+  try{if(localStorage.getItem('3b-clean-config-neus-default-v1')!=='1'){localStorage.setItem('3b-clean-config-position-v1','central');erase(gearKey);localStorage.setItem('3b-clean-config-neus-default-v1','1');}}catch(_){}
+  try{if(localStorage.getItem('3b-clean-strip-layout-v1')!=='1'){erase(dialogKey);localStorage.setItem('3b-clean-strip-layout-v1','1');}}catch(_){}
+  try{if(localStorage.getItem('3b-menu-table-center-v1')!=='1'){erase(gearKey);erase(dialogKey);localStorage.setItem('3b-clean-config-position-v1','central');localStorage.setItem('3b-menu-table-center-v1','1');}}catch(_){}
+  try{if(localStorage.getItem('3b-menu-upper-inside-v1')!=='1'){erase(gearKey);localStorage.setItem('3b-clean-config-position-v1','central');localStorage.setItem('3b-menu-upper-inside-v1','1');}}catch(_){}
+  const clamp=(v,min,max)=>Math.max(min,Math.min(Math.max(min,max),v));
+  const visibleScreen=()=>{const v=window.visualViewport,left=v?.offsetLeft||0,top=v?.offsetTop||0,width=v?.width||innerWidth,height=v?.height||innerHeight;return {left,top,width,height,right:left+width,bottom:top+height};};
+  function placeGear(x,y){const r=gear.getBoundingClientRect(),v=visibleScreen();document.body.style.setProperty('--config-x',clamp(x,v.left+r.width/2+8,v.right-r.width/2-8)+'px');document.body.style.setProperty('--config-y',clamp(y,v.top+r.height/2+8,v.bottom-r.height/2-8)+'px');}
+  const select=get('menuButtonPositionSelect');if(select){select.closest('label').querySelector('span').textContent='Menuknop';select.querySelector('option[value=central]').textContent='Midden op tafel';const custom=new Option('Eigen plek · versleep','free');custom.disabled=true;select.add(custom);}
+  function position(){if(gearDrag)return;const pattern=get('bandPatternSelect')?.value;
+    if(lastPattern&&lastPattern!==pattern){erase(gearKey);try{localStorage.setItem('3b-clean-config-position-v1','central');}catch(_){}}lastPattern=pattern;
+    const svg=document.querySelector('.table-svg[data-view-table="'+get('editTable')?.value+'"]')||document.querySelector('.table-svg');if(!svg)return;
+    const b=svg.getBoundingClientRect(),matrix=svg.getScreenCTM(),mirrored=get('noseDirection')?.value==='oost',table=window.THREEB_START_CONFIG?.tables?.[get('editTable')?.value]||{widthCm:105,heightCm:210};const course=svg.id==='lklLessonTable';let anchor=matrix?new DOMPoint(course?table.widthCm/2:280,course?table.heightCm/2:90+170*table.heightCm/table.widthCm).matrixTransform(matrix):null;
+    let saved=read(gearKey);if(saved?.pattern&&saved.pattern!==pattern){erase(gearKey);saved=null;}let corner=false;try{corner=localStorage.getItem('3b-clean-config-position-v1')==='corner';}catch(_){}
+    const stored=saved&&Number.isFinite(saved.tableX)&&matrix?new DOMPoint(mirrored?560-saved.tableX:saved.tableX,saved.tableY).matrixTransform(matrix):null;placeGear(saved?stored?.x??saved.x*innerWidth:corner?b.right-53:anchor?.x??b.left+b.width/2,saved?stored?.y??saved.y*innerHeight:corner?b.top+30:anchor?.y??b.top+b.height/2);if(select)select.value=saved?'free':corner?'corner':'central';fitDialog();
+  }
+  function placeDialog(left,top){const r=dialog.getBoundingClientRect(),v=visibleScreen();Object.assign(dialog.style,{left:clamp(left,v.left+8,v.right-r.width-8)+'px',top:clamp(top,v.top+8,v.bottom-r.height-8)+'px',right:'auto',bottom:'auto',margin:'0'});}
+  function fitDialog(){if(!dialog.open||windowDrag)return;const saved=read(dialogKey);if(saved){placeDialog(saved.x*innerWidth,saved.y*innerHeight);return;}const r=dialog.getBoundingClientRect(),v=visibleScreen();if(get('cleanConfigMore').open){placeDialog(v.left+(v.width-r.width)/2,v.top+(v.height-r.height)/2);return;}
+    const svg=document.querySelector('.table-svg[data-view-table="'+get('editTable')?.value+'"]')||document.querySelector('.table-svg'),matrix=svg?.getScreenCTM();
+    if(!matrix){placeDialog((innerWidth-r.width)/2,(innerHeight-r.height)/2);return;}
+    // Choose an empty patch near the centre; line/ball rectangles are deliberately
+    // avoided using SVG hit testing, not their misleading diagonal bounding boxes.
+    let best=null;const blockers=svg.querySelectorAll('.route-line,circle');
+    for(const [x,y] of [[280,375],[280,485],[280,430],[200,430],[360,430],[200,345],[360,345],[200,515],[360,515],[280,260],[280,600]]){
+      const p=new DOMPoint(x,y).matrixTransform(matrix),left=clamp(p.x-r.width/2,v.left+8,v.right-r.width-8),top=clamp(p.y-r.height/2,v.top+8,v.bottom-r.height-8);let hits=0;
+      for(const node of blockers){const box=node.getBoundingClientRect();if(box.right<left||box.left>left+r.width||box.bottom<top||box.top>top+r.height)continue;const inverse=node.getScreenCTM()?.inverse();if(!inverse)continue;for(let dx=0;dx<=r.width;dx+=16)for(let dy=0;dy<=r.height;dy+=12){const q=new DOMPoint(left+dx,top+dy).matrixTransform(inverse);if(node.isPointInStroke?.(q)||node.isPointInFill?.(q))hits++;}}
+      const g=gear.getBoundingClientRect(),overlap=Math.max(0,Math.min(left+r.width,g.right)-Math.max(left,g.left))*Math.max(0,Math.min(top+r.height,g.bottom)-Math.max(top,g.top));const score=hits*1000+overlap*100+Math.hypot(x-280,y-430);if(!best||score<best.score)best={left,top,score};
+    }placeDialog(best.left,best.top);
+  }
+  function bindDrag(node,key,isGear){node.addEventListener('pointerdown',event=>{if(!event.isPrimary||event.button!==0||!isGear&&event.target.closest('button,a,input,select,textarea'))return;event.stopPropagation();if(isGear)suppressGearClick=false;const box=(isGear?gear:dialog).getBoundingClientRect(),sx=event.clientX,sy=event.clientY,id=event.pointerId;let moved=false;
+    const move=e=>{if(e.pointerId!==id)return;if(!moved&&Math.hypot(e.clientX-sx,e.clientY-sy)<6)return;if(!moved)node.setPointerCapture(e.pointerId);moved=true;e.preventDefault();if(isGear){gearDrag=true;placeGear(box.x+box.width/2+e.clientX-sx,box.y+box.height/2+e.clientY-sy);}else{windowDrag=true;placeDialog(box.x+e.clientX-sx,box.y+e.clientY-sy);}};
+    const end=e=>{if(e.pointerId!==id)return;document.removeEventListener('pointermove',move);document.removeEventListener('pointerup',end);document.removeEventListener('pointercancel',end);if(moved){if(e.type!=='pointercancel'){const r=(isGear?gear:dialog).getBoundingClientRect();const svg=document.querySelector('.table-svg[data-view-table="'+get('editTable')?.value+'"]')||document.querySelector('.table-svg'),matrix=svg?.getScreenCTM(),point=isGear&&matrix?new DOMPoint(r.x+r.width/2,r.y+r.height/2).matrixTransform(matrix.inverse()):null;write(key,isGear?{tableX:point?(get('noseDirection')?.value==='oost'?560-point.x:point.x):undefined,tableY:point?.y,x:(r.x+r.width/2)/innerWidth,y:(r.y+r.height/2)/innerHeight,pattern:get('bandPatternSelect')?.value}:{x:r.x/innerWidth,y:r.y/innerHeight});}if(e.type==='pointercancel'&&!isGear)placeDialog(box.x,box.y);if(isGear)suppressGearClick=true;}gearDrag=false;windowDrag=false;if(isGear&&!moved&&e.type==='pointerup'){e.preventDefault();suppressGearClick=true;openConfig();}position();};
+    document.addEventListener('pointermove',move,{passive:false});document.addEventListener('pointerup',end);document.addEventListener('pointercancel',end);
+  });}
+  bindDrag(gear,gearKey,true);bindDrag(dialog.querySelector('header'),dialogKey,false);
+  function openConfig(){reconcile();if(!dialog.open){get('cleanConfigMore').open=false;dialog.scrollTop=0;dialog.show();get('closeCleanConfig').focus({preventScroll:true});}fitDialog();}
+  document.addEventListener('pointerdown',()=>{suppressGearClick=false;},true);
+  document.addEventListener('click',e=>{if(suppressGearClick&&e.detail!==0){suppressGearClick=false;e.preventDefault();e.stopImmediatePropagation();}},true);
+  gear.onclick=e=>{e.preventDefault();e.stopPropagation();suppressGearClick=false;openConfig();};get('closeCleanConfig').onclick=()=>dialog.close();get('closeSelectionMenu')?.addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog){const b=dialog.getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)dialog.close();}});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&dialog.open&&!document.querySelector('dialog:modal')){e.preventDefault();dialog.close();}});
+  dialog.addEventListener('toggle',()=>requestAnimationFrame(fitDialog),true);
+  const textConfig=document.createElement('fieldset');textConfig.id='tableTextConfig';textConfig.innerHTML='<legend>Tafel en teksten</legend><label>Schaalweergave <select id="tableScaleMode"><option value="tables">Tafels even groot</option><option value="balls">Ballen even groot</option><option value="tracks">Vergelijk sporen</option></select></label><p id="tableScaleHint"></p><label>Cursustafel <select id="courseTableSize"><option value="klein">Klein · standaard</option><option value="groot">Groot</option></select></label><label>Bandteksten (px) <input id="tableBandFontSize" type="number" min="12" max="28" step="1"></label><label><input id="showEndpointValues" type="checkbox"> Labels bij begin en eind van de lijn</label><label>Neus · aankomst <select id="neusArrivalLabelMode"><option value="number">Getal · 50</option><option value="name">Spoornaam · VIJF</option><option value="both">Beide · 50 · VIJF</option></select></label><label>Lijngetallen (px) <input id="tableEndpointFontSize" type="number" min="10" max="26" step="1"></label>';get('cleanConfigSettings').prepend(textConfig);
+  const textPrefs=window.ThreeBTableText.get();get('courseTableSize').value=textPrefs.courseTable;get('tableScaleMode').value=textPrefs.scaleMode;get('tableBandFontSize').value=textPrefs.bandSize;get('tableEndpointFontSize').value=textPrefs.endpointSize;get('showEndpointValues').checked=textPrefs.showEndpoints;get('neusArrivalLabelMode').value=textPrefs.neusArrivalLabelMode;
+  textConfig.onchange=e=>{if(!e.target.checkValidity())return;const fields={neusArrivalLabelMode:['neusArrivalLabelMode',e.target.value],tableScaleMode:['scaleMode',e.target.value],courseTableSize:['courseTable',e.target.value],tableBandFontSize:['bandSize',Number(e.target.value)],tableEndpointFontSize:['endpointSize',Number(e.target.value)],showEndpointValues:['showEndpoints',e.target.checked]},field=fields[e.target.id];if(field)window.ThreeBTableText.update({[field[0]]:field[1]});};
+  function syncScaleMode(){const prefs=window.ThreeBTableText.get(),mode=prefs.scaleMode;get('tableScaleMode').value=mode;get('courseTableSize').value=prefs.courseTable;get('neusArrivalLabelMode').value=prefs.neusArrivalLabelMode;get('tableScaleHint').textContent=({tables:'Gelijke gele randen; de bal op Klein is naar verhouding groter.',balls:'Gelijke ballen; Klein wordt kleiner getekend dan Groot.',tracks:'Gelijke gele randen en ballen om lijnen te vergelijken.'})[mode];}window.addEventListener('threeb-spoor-state',syncScaleMode);syncScaleMode();
+  const reset=document.createElement('button');reset.id='resetConfigPosition';reset.type='button';reset.textContent='Config naar standaardplek';reset.title='Menu rechtsboven in het speelvlak, linksboven bij spiegelen';get('cleanConfigSettings').append(reset);reset.onclick=()=>{erase(gearKey);erase(dialogKey);dialog.removeAttribute('style');if(select){select.value='central';select.dispatchEvent(new Event('change',{bubbles:true}));}position();};
   dialog.addEventListener('click',e=>{const id=e.target.closest('button,a')?.id;if(['levelLklCourse','levelLklPractice','openExplanation','openSpoorscherm','openLklFramework','desktopOpenSpoor','mobilePreview','userSettingsButton','toggleConfig','thumbUp'].includes(id))dialog.close();},true);
-  get('menuButtonPositionSelect')?.addEventListener('change',e=>{try{localStorage.setItem('3b-clean-config-position-v1',e.target.value);}catch(_){}requestAnimationFrame(position);});
-  window.addEventListener('resize',()=>requestAnimationFrame(reconcile));window.addEventListener('threeb-spoor-state',()=>requestAnimationFrame(position));reconcile();requestAnimationFrame(()=>window.dispatchEvent(new Event('resize')));
+  get('menuButtonPositionSelect')?.addEventListener('change',e=>{erase(gearKey);try{localStorage.setItem('3b-clean-config-position-v1',e.target.value);}catch(_){}requestAnimationFrame(position);});
+  const mount=get('svgMount');if(mount&&window.ResizeObserver)new ResizeObserver(()=>requestAnimationFrame(position)).observe(mount);
+  function resetMenu(){erase(gearKey);erase(dialogKey);try{localStorage.setItem('3b-clean-config-position-v1','central');}catch(_){}requestAnimationFrame(position);}
+  window.addEventListener('pageshow',resetMenu);window.addEventListener('focus',resetMenu);
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)resetMenu();});
+  document.addEventListener('close',resetMenu,true);window.addEventListener('threeb-table-return',resetMenu);resetMenu();
+  window.addEventListener('threeb-table-layout',position);window.addEventListener('resize',()=>requestAnimationFrame(reconcile));window.addEventListener('threeb-spoor-state',()=>requestAnimationFrame(position));reconcile();requestAnimationFrame(()=>window.dispatchEvent(new Event('resize')));
 };
 
 /* Symbols and compact values belong only to the spoor editor. */
@@ -557,7 +3149,7 @@ if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
   }
 
   const releaseVersion=window.THREEB_RELEASE?.version||'onbekend';
-  const userQr=adapter.inputOwner?.()==='user';window.installMobileTestQr?.({button:document.getElementById('mobilePreview'),imageUrl:new URL((userQr?'qr-user.png':'qr-test-neus.png')+'?v='+releaseVersion,location.href).href,testUrl:userQr?'https://kruin.github.io/3b/test3b/?mode=user#owner=user':'https://kruin.github.io/3b/test3b/#owner=kruin',qrPageUrl:new URL(userQr?'qr-user.html':'qr.html',location.href).href});
+  const userQr=adapter.inputOwner?.()==='user';window.installMobileTestQr?.({getView:()=>adapter.mobileTableView(),button:document.getElementById('mobilePreview'),imageUrl:new URL((userQr?'qr-user.png':'qr-test-neus.png')+'?v='+releaseVersion,location.href).href,testUrl:userQr?'https://kruin.github.io/3b/test3b/open.html?mode=user#owner=user':'https://kruin.github.io/3b/test3b/open.html#owner=kruin',qrPageUrl:new URL((userQr?'qr-user.html':'qr.html')+'?v='+releaseVersion,location.href).href});
   const compactVersionStyle=document.createElement('style');compactVersionStyle.textContent='body.test-status-hidden #testEnvironmentBanner{display:none!important}';document.head.append(compactVersionStyle);
   let statusTimer;
   function showVersionBriefly(){document.body.classList.remove('test-status-hidden');markTestVersion();clearTimeout(statusTimer);statusTimer=setTimeout(()=>{document.body.classList.add('test-status-hidden');document.documentElement.style.setProperty('--threeb-test-banner-height','0px');},7000);}
@@ -581,6 +3173,7 @@ if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
   #spoorScreen table{width:100%;table-layout:fixed;border-collapse:collapse;background:#fff}#spoorScreen th,#spoorScreen td{padding:6px 3px;border-bottom:1px solid #d8dfd8;text-align:left}#spoorScreen thead th{font-size:14px;text-align:center;background:#e4ece5}#spoorScreen th:first-child{width:14%;white-space:nowrap}#spoorScreen td{width:20%}#spoorScreen thead th:last-child{width:26%;font-size:12px}#spoorScreen tbody th{font-size:13px;text-transform:none;letter-spacing:0}#spoorScreen .spoor-point{position:relative;display:flex;align-items:center;white-space:nowrap;isolation:isolate}
   #spoorScreen .spoor-symbol{position:absolute;right:4px;top:50%;transform:translateY(-50%);z-index:0;opacity:.24;pointer-events:none;font-family:'Noto Sans Symbols 2','DejaVu Sans',sans-serif;font-size:var(--spoor-symbol-size);font-weight:800;line-height:1.25;min-width:1.1em;text-align:center;color:#123e2c;font-style:normal;-webkit-text-stroke:.25px currentColor}
   #spoorScreen .spoor-value{position:relative;z-index:1;background:transparent!important;width:100%;min-width:0;min-height:38px;padding:4px 2px;margin:0;font:400 16px system-ui;font-variant-numeric:tabular-nums;text-align:center;box-sizing:border-box}#spoorScreen .spoor-value:disabled{opacity:1;color:#655b40;background:#f4f1e8}#spoorScreen .spoor-unit{position:absolute;right:4px;bottom:1px;z-index:2;font-size:9px;pointer-events:none}#spoorScreen .selected-line{background:#fff2c7}#spoorScreen .automatic{color:#655b40}#spoorScreen footer{position:sticky;bottom:0;background:#f7f5ed;padding:8px 0 0}#spoorScreen button{min-height:38px}#spoorScreen .hint{font-size:12px;line-height:1.4;margin:8px 0}#spoorScreenStatus{flex-basis:100%;font-size:13px}#spoorScreenStatus.error{color:#a72222}#spoorScreen .spoor-tools{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:8px 0}#spoorScreen .spoor-tools label{display:flex;align-items:center;gap:6px}#spoorStyleConfig{margin:8px 0;font-size:13px}#spoorStyleConfig summary{cursor:pointer;font-weight:700;padding:10px;border:1px solid #8a9b91;border-radius:6px;background:#e4ece5}#spoorScreen #configSpoorScreen,#courseSpoorConfig{font-weight:700;background:#e4ece5;color:#142e24;border:1px solid #8a9b91;border-radius:6px;padding:6px 12px;min-height:38px}#spoorStyleConfig .styles{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}#spoorStyleConfig label{display:grid;gap:3px}#spoorScreen select{min-height:36px;max-width:100%;font:inherit}#spoorScreen .start{font-size:13px}#spoorScreen .terminal{display:block;font-size:10px;white-space:normal}
+  #svgMount .table-svg{overflow:visible}
   #svgMount .table-svg[data-desktop-angle] text{transform-box:fill-box;transform-origin:center;transform:rotate(calc(-1 * var(--desktop-table-angle,0deg)))}
   #svgMount .table-svg[data-desktop-angle] :is(.route-caption,.value-tag){transform-box:fill-box;transform-origin:center;transform:rotate(calc(-1 * var(--desktop-table-angle,0deg)))}
   #svgMount .table-svg[data-desktop-angle] :is(.route-caption,.value-tag) text{transform:none}
@@ -711,7 +3304,7 @@ if(typeof window!=='undefined')window.installThreeBSpoorScreen=adapter=>{
     $('spoorMeasurementHint').textContent+=original.selectedPattern==='LKL'?' Karkas LKL: Neus, Kop en Romp meten en inbrengen. Kop V is altijd berekend; Kop R of A is een meting. Zonder alle drie is dit nog een voorvertoning.':' Neus en Romp zijn leidend; Kop A is het meetanker. De tussenwaarden zijn afgeleid.';
     for(const line of original.lines){working[line.key]={V:structuredClone(line.V),A:structuredClone(line.A),note:line.note||'',lengthCm:line.key==='neus'?original.strokeLengthCm:null,startBall:line.startBall,changed:new Set()};const tr=document.createElement('tr');tr.dataset.line=line.key;
       const th=document.createElement('th');th.scope='row';th.textContent=line.label;tr.append(th);
-      if(line.terminal){const small=document.createElement('span');small.className='terminal';small.textContent='Auto'+(line.fraction===.5?' · ½':line.fraction===.25?' · ¼':'');th.append(small);}
+      if(line.terminal){const small=document.createElement('span');small.className='terminal';small.textContent='Auto'+(line.fraction===.45?' · 45%':line.fraction===.5?' · ½':line.fraction===.25?' · ¼':'');th.append(small);}
       for(const side of ['V','R','A']){const td=document.createElement('td');if(line.terminal)td.className='automatic';controls(td,line,side);tr.append(td);}noteCell(tr,line);body.append(tr);refresh(tr,line);
     }
     const refs=original.lines.flatMap(line=>['V','A'].filter(side=>line[side]?.inputReference&&Math.abs(line[side].value-line[side].inputReference.value)>.125).map(side=>line.label+' '+side+': opgeslagen '+SpoorScreenFormat.format(line[side].inputReference.value)+', uit karkas '+SpoorScreenFormat.format(line[side].value)));if(refs.length)$('spoorMeasurementHint').textContent+=' Tussenmetingen bewaard als referentie: '+refs.join('; ')+'.';
