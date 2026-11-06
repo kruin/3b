@@ -57,7 +57,7 @@ stiplijn. Bandcontact en richtpunt zijn verschillende plaatsen. Het hele Spoor
 volgt pas in les 2, lijn na lijn. Het systeem geeft je vaste namen: **LKL**
 benoemt het Patroon (lange–korte–lange band aan het begin van de route), **VIJF**
 een Spoor en **Neus** de eerste lijn vanaf je afstoot. In **Van Top tot Teen** volgen de
-lijnnamen verder; **Top** is de keutop, de **pommerans**. Die namen helpen in de
+lijnnamen verder; **Top** is de keutop, de **pomerans**. Die namen helpen in de
 cursus én aan de echte tafel. Met ‘de Neus van VIJF in LKL’ kun je precies
 vertellen welk Patroon, Spoor en lijndeel je bedoelt.
 
@@ -92,11 +92,11 @@ Ik ben de speler (User). De cursus begint standaard op Klein; via Config → Cur
 
 ## Eerst het Patroon, dan het Spoor
 
-Bal 3 ligt op de Romp van VIJF. Door diezelfde bal lopen ook allerlei andere lijnen, mogelijk van andere sporen of patronen. Zijn plaats alleen bepaalt dus niet welk Spoor ik speel.
+Binnen deze LKL-reeks vergelijk ik een beperkt aantal Rompen: VIER, VIJF, ZES, ZEVEN en ACHT. De cursus tekent ze samen. De Romp van VIJF past bij bal 3: bal 3 ligt op VIJF.
 
 **Het Patroon is leidend.** In deze lessen kies ik LKL: de bal gaat eerst naar de lange westband, dan naar de korte noordband en vervolgens naar de lange oostband. Binnen dat bandverloop zoek ik een passend spoor. Bij VIJF horen Neus, Kop, Nek en Romp bij elkaar; ik controleer het hele verloop met het karkas.
 
-Ik wijs dus niet zomaar een lijn door bal 3 aan. Ik vraag: **binnen LKL, op welk Spoor ligt bal 3, en lig ik met bal 1 op de bijbehorende Neus?** Een andere lijn door bal 3 kan bij een andere oplossing horen. Die onderzoeken we later.
+Ik kies dus uit de Rompen die bij deze LKL-reeks horen. Ik vraag: **binnen LKL, op welk Spoor ligt bal 3, en lig ik met bal 1 op de bijbehorende Neus?** Een andere lijn door bal 3 kan bij een andere oplossing horen. Die onderzoeken we later.
 
 Mijn twee vaste vragen zijn:
 
@@ -114,8 +114,8 @@ Tijdens de Neus verschijnt de genummerde westelijke stiplijn, met de actieve Neu
 
 ## Les 3 — van twee ballen naar de stootrichting
 
-1. Alleen bal 1 en bal 3. Door bal 3 lopen vele lijnen; de plaats van bal 3 alleen bepaalt het juiste Spoor niet.
-2. De Romp van VIJF langs bal 3, binnen het gekozen Patroon LKL.
+1. Alleen bal 1 en bal 3. Binnen deze LKL-reeks zijn de mogelijke Rompen beperkt tot VIER, VIJF, ZES, ZEVEN en ACHT.
+2. Op Klein worden alle vijf Rompen getekend. De Romp van VIJF past bij bal 3 en licht op: bal 3 ligt op VIJF.
 3. Het Karkas van VIJF: de Neus en Romp laten zien hoe beide ballen bij dit Spoor horen. Kop en Nek verbinden ze in het bandverloop.
 4. De Neus van VIJF als stootrichting naar 50 op West.
 
@@ -219,6 +219,8 @@ Meerdere lijnen door bal 3; onderaan 55 als tussenliggend richtpunt tussen VIJF 
 
 Bekijk de bijbehorende plaatjes in de cursus of bij Meetsysteem.
 
+
+De vergelijking gebruikt de eigen Kruinwaarden per tafelmaat. Ontbreekt een Rompmeting, dan vermeldt de app dat en tekent zij die lijn niet. Meetwaarden van Klein worden niet gebruikt als vervanging voor Groot.
 
 
 # LKL meten: Neus, Kop en Romp
