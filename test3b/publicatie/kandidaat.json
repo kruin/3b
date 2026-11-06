@@ -1,0 +1,379 @@
+{
+  "schema": 1,
+  "version": "v208-r102",
+  "privateDbSha": "88693866078212dcdb10c2722a05c7712f2bfe0d",
+  "files": [
+    {
+      "path": "config-v208.js",
+      "group": "data",
+      "sha256": "83b69b2dfe0d664cdbe7a0d187af299d11d02fccd094684fa31a924d477dae4c",
+      "before": "dddce310f694b666b26e594f99ff2574cea3b48e"
+    },
+    {
+      "path": "kruinwaarden-generated-v208.js",
+      "group": "data",
+      "sha256": "74ee6d12308825bf5af85fa443ee8ba67714dbf39c67090922a4b054d14692ce",
+      "before": "739e06265b536ec0984341e14e13ae23abcb425e"
+    },
+    {
+      "path": "basis-catalogus-v208.js",
+      "group": "data",
+      "sha256": "907c76922b8d98dd9937c1a59bc7c147fec133d0c4789640fffe159a818d57b9",
+      "before": "f01b01c649f5f42d80d0c8bdc0e5a15d4919d454"
+    },
+    {
+      "path": "kruin-bases/kruin-v172-d98fabf0dc31b28a5449.js",
+      "group": "data",
+      "sha256": "89437efc444f6ee7a1cdbf7fda490f16ffa11a20514a7153554ce86a3fc5fac3",
+      "before": "32ac4559e09fcaf1421bc5fc7a25d3a208936854"
+    },
+    {
+      "path": "kruin-bases/kruin-v173-56b6390733b1fe5dba58.js",
+      "group": "data",
+      "sha256": "a07e05c951e404f7a47ef3a6c986cbda42192349b6f707213ff36559e5278708",
+      "before": "d8ed90e7d546ca3c40b0d423005902257bbd9107"
+    },
+    {
+      "path": "kruin-bases/kruin-v174-76ffd6f08585a280242c.js",
+      "group": "data",
+      "sha256": "c98c05ba12c109251bd90d823d62316dc9ec59a2d25e7b1b993e91c9a3358dfa",
+      "before": "f2ab66e03a1eab1423a69ee71242f7f3780482e3"
+    },
+    {
+      "path": "kruin-bases/kruin-v175-f9d639dfea470d4d4c1b.js",
+      "group": "data",
+      "sha256": "f9a523644d8754ec8bba3f49967355673c64f531435c98d8d053aea726797242",
+      "before": "ee3ee6da83096a430cd7ddd7da9175add37ce6e8"
+    },
+    {
+      "path": "kruin-bases/kruin-v176-d4bf0def1d9a4db182c9.js",
+      "group": "data",
+      "sha256": "10a50fe365ba23fc8b2ebe7effed8de69720d08ac6ec2343a0ca61f449aa99f5",
+      "before": "ef9990b853788ecc4df29535eb3b373267af1de5"
+    },
+    {
+      "path": "kruin-bases/kruin-v177-6898045f08f04dcaf66e.js",
+      "group": "data",
+      "sha256": "a5eea441847375c448a45e2e2cc259ef3f3792034870d7ec8e90fb9c0f3fd162",
+      "before": "ba7224803635cd9b316d04815e824868ff950acc"
+    },
+    {
+      "path": "kruin-bases/kruin-v178-803d6e6d42dfb24441e9.js",
+      "group": "data",
+      "sha256": "10cbad82b52590178651204e7c9a4b5e2d95f79032aa9e64ec221b0ec5d7fbd9",
+      "before": "085f8d5fc66a2a93e8fa3013a024ef9330e38400"
+    },
+    {
+      "path": "kruin-bases/kruin-v179-697f95259924c95e5e57.js",
+      "group": "data",
+      "sha256": "db8d31717c272ea35743942cd88d130b85ceeb4a6578acf782afd2df0c7fd872",
+      "before": "fa25ceed7bdc2c3c46c97aaf348500ed2a9a2a6b"
+    },
+    {
+      "path": "kruin-bases/kruin-v180-c5b7380b9313a0af040c.js",
+      "group": "data",
+      "sha256": "797d4c5379bd787a649852113831035e61a9d525d34001047f986f9fec5354f3",
+      "before": "59c9169d19b80754addac16b0d12d99aae9e5021"
+    },
+    {
+      "path": "kruin-bases/kruin-v181-e5c0476a766e4fa2c10d.js",
+      "group": "data",
+      "sha256": "0c285b6e24cbca3c2fa20c877f06c39d618f4de7de611f97e930862552d77e30",
+      "before": "16b117f3ffd2b04f0b49f161cf3d72ae4a74206f"
+    },
+    {
+      "path": "kruin-bases/kruin-v182-a1ae34c359e50ce72686.js",
+      "group": "data",
+      "sha256": "53c34b4f9ea3729e23d6c697b5b2c7385863f44ef757e5a2125625c62335baf9",
+      "before": "d48ee72f55382000a3dd3816573123b5c583eb6f"
+    },
+    {
+      "path": "kruin-bases/kruin-v183-a0f9f5dff27147e3858e.js",
+      "group": "data",
+      "sha256": "4ecd8dff20912f44af7533d22f4b9bbd85e304cb19a2d644fd57d9cf192f0b64",
+      "before": "859345b4c71ebdd3c0e0969e105152b50f6c404a"
+    },
+    {
+      "path": "kruin-bases/kruin-v184-01577a1cbc3374daf192.js",
+      "group": "data",
+      "sha256": "3e0960fc1d70c5c49eee28031ab17b37727d0d3fbd12fce181beee3bf250b61f",
+      "before": "2309c41c2dcd9065bc642a8c61520332bcc86297"
+    },
+    {
+      "path": "kruin-bases/kruin-v185-8beff8fc7a80e1df7cf8.js",
+      "group": "data",
+      "sha256": "e58ffddc8e168d46610475182550d5b83a3b4e92d40f53edc230a9687afd4e55",
+      "before": "751e1eaf476a7c3dbf8437c483df15eb7a5b6856"
+    },
+    {
+      "path": "kruin-bases/kruin-v186-b36fd5b3b18189d6c00d.js",
+      "group": "data",
+      "sha256": "33bc6a4fbb3f7eb293fb30dc3a7e5e6e211c57482376081eee5be6f1149bc7a2",
+      "before": "00b324d6ebccc3904f5d81d8777788edae0d9ae4"
+    },
+    {
+      "path": "kruin-bases/kruin-v187-0b3ceadf1e5d7675b743.js",
+      "group": "data",
+      "sha256": "7bfe5146538eda4912a6fc52b82f18bb579ce5693a48b4b8061e308a5346584e",
+      "before": "6d10eda8b5ccb80f6c98c1bc7cd42b2e0bd61f54"
+    },
+    {
+      "path": "kruin-bases/kruin-v188-8d7b21a579aa7c0fb80d.js",
+      "group": "data",
+      "sha256": "3c9c5b5903c56ee3f4df303a10795bbac5e706728cbc9333494763215bb52df3",
+      "before": "4331bed31f567458239d00e366ecc6dfc491877c"
+    },
+    {
+      "path": "kruin-bases/kruin-v189-ac30a3addd0a6db6c4a7.js",
+      "group": "data",
+      "sha256": "f41b6d24d1b5f6011587deddccfff131d16bed9797ce22438ac4d07afd6cec07",
+      "before": "863ae51c113a1cc226e8181c3299525ebbdad4be"
+    },
+    {
+      "path": "kruin-bases/kruin-v190-04b4691f4a6040a1081d.js",
+      "group": "data",
+      "sha256": "2f13f1b209aab5617279c1d8fd2008b285cb730dfcd4213427dd4efe9c1a7dd0",
+      "before": "68384a3f7ce2d40b507c0e6e429c7e7d323c4697"
+    },
+    {
+      "path": "kruin-bases/kruin-v190-21da70ac706679f2e284.js",
+      "group": "data",
+      "sha256": "70d29350409ad049b22e554b90c8883eb4c647f060d8a2fc097f9d314cb2c328",
+      "before": "d13d3f61c95bbe6933525d0141a66b04fdbd8d88"
+    },
+    {
+      "path": "kruin-bases/kruin-v191-c79bd6c63ae389902d3a.js",
+      "group": "data",
+      "sha256": "38d2c547aeba8a9bd7bb0201ff58741c62afc98afc1e2b975abfce42df81d7c1",
+      "before": "23a02c164720c87aa4a5c44b880391d2b0063ae2"
+    },
+    {
+      "path": "kruin-bases/kruin-v192-2d560a57f9d407b07c2d.js",
+      "group": "data",
+      "sha256": "394357ab816269609deec1104419afc32dd90a9e64149779cd6551ae74781db4",
+      "before": "01d09d43be1c698754c560cd230cef4febd83702"
+    },
+    {
+      "path": "kruin-bases/kruin-v193-0f722ad6f3f69875ffea.js",
+      "group": "data",
+      "sha256": "64810f333138712795f860d4dd244bfb79ccca051285da8e5a3a8bd0ec1fa63d",
+      "before": "ff57896d35e4a8f8856023ae3df01d49b063b66c"
+    },
+    {
+      "path": "kruin-bases/kruin-v194-2961be9d0ac7e85194f8.js",
+      "group": "data",
+      "sha256": "9d4a5542ccc0ff6381429c907cac64e2434b160c3d87d3d6ffd4a919ade79535",
+      "before": "c50040ea9eb5ce003224ec663f419d2a63b19a12"
+    },
+    {
+      "path": "kruin-bases/kruin-v195-5a115f4c6e8aae1d6d42.js",
+      "group": "data",
+      "sha256": "e45034b75ad89b0244e4d150bb52e9883ad714858538a221cc99920f803ec801",
+      "before": "a64901d4219c322e1828d898a1ad01d79f37f3b9"
+    },
+    {
+      "path": "kruin-bases/kruin-v196-b5479d5f102ae44d1664.js",
+      "group": "data",
+      "sha256": "2df8178e2d5a65832885a5b35197647172b302c819e571580ea839c088d46b84",
+      "before": "814c94988efed70d23f7628ff9f48b598d37e1a6"
+    },
+    {
+      "path": "kruin-bases/kruin-v197-37e011f90ef7f308ed90.js",
+      "group": "data",
+      "sha256": "0dabdfdf3f228cde6854000df29b2047dc29512c6988f1dfd5ce529476826e24",
+      "before": "47b5944ab41ab61cf62da9b8106d80de5f9e408f"
+    },
+    {
+      "path": "kruin-bases/kruin-v198-a752e28f056254643e05.js",
+      "group": "data",
+      "sha256": "4f51c3fba936ea656ebfe3262fd800b66f12f56fe0aeae700eb29fdc1e222554",
+      "before": "436b3651e278a279c7d6a4753d14d6505f007e40"
+    },
+    {
+      "path": "kruin-bases/kruin-v199-2c3b55089fc8b4826e4d.js",
+      "group": "data",
+      "sha256": "c62993080bdadab7fa3fd24112a1e1ac24bb64bda0f465c0b9a4c5abe8be6953",
+      "before": "64e3705de83c9c33a97f9f378ae3a2d55048823b"
+    },
+    {
+      "path": "kruin-bases/kruin-v200-77b613eff6d18d79cd2a.js",
+      "group": "data",
+      "sha256": "c62f996037f21a80086d26f23c31901e1f7f32361af2b9942a5d115f4b7f86b7",
+      "before": "296ab5c3c376f716cb20d995cd1f7ece925647f2"
+    },
+    {
+      "path": "kruin-bases/kruin-v201-d07864310ac84312df7f.js",
+      "group": "data",
+      "sha256": "8b35d0ae980e01cb640a457062f0152fe584232c7c8177d3b946ede1e8cc86bf",
+      "before": "f1f366400bb198c6d2a62aa0ee9ae333a4810a30"
+    },
+    {
+      "path": "kruin-bases/kruin-v202-6ca6b3a636fcaa5352dc.js",
+      "group": "data",
+      "sha256": "14a5c6f6e51d024727b9ce00cc135b46d7db53b4b006c5ea68bc6a109a6c62e9",
+      "before": "b9cc1ca5eee8f8647d08191cc978f49c48ece577"
+    },
+    {
+      "path": "kruin-bases/kruin-v203-461c301ec9b1589de66a.js",
+      "group": "data",
+      "sha256": "a94bce93eff32747f7911a922f4a53650646780a2e9134c66b9cd4a7c98116d7",
+      "before": "2e4ab8768855f2329fbec5c50a5fa02b27f9a733"
+    },
+    {
+      "path": "kruin-bases/kruin-v204-5412eaf6aba200cd1af5.js",
+      "group": "data",
+      "sha256": "f143e5e16331a2798e371cd3316fc966e14118d50d0915ad8a0c684b12116b4d",
+      "before": "b171474a87af9b072ae5a0b49037ffcf6056306b"
+    },
+    {
+      "path": "kruin-bases/kruin-v205-4e65308c201a72e99705.js",
+      "group": "data",
+      "sha256": "d5f454ca7c56ea959da5cece4cf9521358a76a37b1324ef73a23ed0861cb9dba",
+      "before": "a181cc9b3c7e3ae9ff2e35d972bf673630de1a49"
+    },
+    {
+      "path": "kruin-bases/kruin-v206-3db3efe1091e829a06e4.js",
+      "group": "data",
+      "sha256": "06c2a7d387d8044f3caf15f6491fe48cbeb19c24f4396c3d8a0721ef83822ce7",
+      "before": "f05d7ce3c66c338684e5f3a6107161f87630b4c3"
+    },
+    {
+      "path": "kruin-bases/kruin-v207-bfb2e3ceafdf1bbd44fb.js",
+      "group": "data",
+      "sha256": "48bf0c318f76c66b4a390649f4c8a9cc2401198dbe6763ee528446f193421ff2",
+      "before": "d8b5aa1f78e3232da9cecd889fdc3262c2fb645d"
+    },
+    {
+      "path": "kruin-bases/kruin-v208-2e6ae46ce64e2deeb411.js",
+      "group": "data",
+      "sha256": "6902b6d9432f7b566db7549b7461809c33a97c28b3619bb09129e02ecd49fd33",
+      "before": "7ff2519e5b144ff1b03dc001ef4fdfda2b1b6c9f"
+    },
+    {
+      "path": "kruin-bases/kruin-v208-a813a3da24249575feb3.js",
+      "group": "data",
+      "sha256": "7d9079388e2d97b141ceba715a6e168afc0d1d451d1f0499a1576cd21a942bb2",
+      "before": "d8640e3396cc5f4ff1eac1df76b03c34847d11c5"
+    },
+    {
+      "path": "MEETGEGEVENS-VERSIE.json",
+      "group": "data",
+      "sha256": "a3f4f8389b7d91e7517e4024a539e4abb0628cdf59926b1fa4248789e514ee26",
+      "before": null
+    },
+    {
+      "path": "app-v208.js",
+      "group": "app",
+      "sha256": "27317fa2e26964aa6db3b8a94e0738dfe20f7212a6c0e0b4108a3f9a3d77a6f3",
+      "before": "dcb41a5a646acd0f9badc20979be8d55b79062ef"
+    },
+    {
+      "path": "spoorscherm-v208.js",
+      "group": "app",
+      "sha256": "f5f2017bbbca520205685401e61c1c99627bac4806857bc16137f1578881a80e",
+      "before": "ffc7ab8870da87853139ad7904df018cdddc7758"
+    },
+    {
+      "path": "tafelbestanden-v208.js",
+      "group": "app",
+      "sha256": "8e00c4866a6075d11c817d06106394073b5efb26120e01f0918a020d45596b69",
+      "before": "2e348293cd84f6c313a21278f8e99b6b2c66ff38"
+    },
+    {
+      "path": "spoor-storage-v208.js",
+      "group": "app",
+      "sha256": "213b3d82cdae97510aaa29722c3a5ff7be7461b0c4a67d349292f8e0eb518e54",
+      "before": "0298a56ba57b7ac258f2f42198cfe396c7d979af"
+    },
+    {
+      "path": "bandnummering-v208.js",
+      "group": "app",
+      "sha256": "a9f9dd1c9b0a46696390cc50b461b5b82089770fe78cf19a826e4748dd74dd39",
+      "before": "cf073a045595a96e6a1d1607fa168120802f9337"
+    },
+    {
+      "path": "styles.css",
+      "group": "app",
+      "sha256": "5972723d755929a8cf7c415b62b1d6b7a33c48995fc8bc15f01b1c127e8748e8",
+      "before": "638a7ae30e1f7d6802211cd15c495f7fecdc0718"
+    },
+    {
+      "path": "favicon.svg",
+      "group": "app",
+      "sha256": "8ab322d269438228a160d8af0a8c1c1f8477304ef33198350cbea7b899c896fb",
+      "before": "33e4a48cc4817d079183741f06d59d52421b36e0"
+    },
+    {
+      "path": "REVISIE.txt",
+      "group": "app",
+      "sha256": "2ad78b4802b8d29e3c9edc7fc2e86e511597a1fc57bfa86238d8e005e40f78fc",
+      "before": "04a13dfab311fb2c1343c494383741130dc6bf2d"
+    },
+    {
+      "path": "VERSIE.txt",
+      "group": "app",
+      "sha256": "91cadb3bbcb5661c3e9081c3ffcc5254591e15b6e9e018951a5b5e9b6ed0fe9a",
+      "before": "46e2e678240691e0dc10799da03b4c3d677cd857"
+    },
+    {
+      "path": "HANDLEIDING-GEBRUIKER.md",
+      "group": "app",
+      "sha256": "a4ae6c624f22dc11059085f035131a3da591d802c22ffacb0dad001a910cbc43",
+      "before": "e86726007537684eec8e1dbd2533e4d94839409b"
+    },
+    {
+      "path": "doc/index.html",
+      "group": "app",
+      "sha256": "21949c5e7505114f7ea84421b3cacc81e6ce56f7f8416635b6c74a7f102214f1",
+      "before": "303192d0ffb386d27c971b89cfe6fecddce877e7"
+    },
+    {
+      "path": "doc/lkl-meetwerkwijze.md",
+      "group": "app",
+      "sha256": "cf855dcd938c9e4fa27a49f2689b959908d5e1b5459ad08ae7e04fd9acec3890",
+      "before": "595e8c43fa4e91ae853452b9ace38df3becc68fa"
+    },
+    {
+      "path": "doc/meetsysteem.html",
+      "group": "app",
+      "sha256": "5dc4bc02dc7efea8a3f9ea532dd1680eede64939983ff06229fd75703c2510e1",
+      "before": null
+    },
+    {
+      "path": "RELEASE.json",
+      "group": "app",
+      "sha256": "331bb939d3c9cbb029f577d9444fb8f5cad7c910668fe39bd0b3a0a36f086636",
+      "before": "3811cafbfb49a267415474cedf6419acfccacba9"
+    },
+    {
+      "path": "index.html",
+      "group": "app",
+      "sha256": "ca1d41c44c001740c2a7c80009b0da44211244b0eb3284ee55dbff8fe10f6ed8",
+      "before": "cae06c2c3cece099a9432564cca2d0ace50c362d"
+    },
+    {
+      "path": "open.html",
+      "group": "app",
+      "sha256": "58ef3a729a24cb49a2d24a76d1750bea616f7fc1d5c59e14d9e254e51c73a92f",
+      "before": "1981ad4c66b418b7ee2c3d067a206a2b07057c5e"
+    },
+    {
+      "path": "production-environment-v208.js",
+      "group": "app",
+      "sha256": "85628061d8917b94cacb045899ca34ea2b88df24a4ed2da600af9ffc0ccedbc7",
+      "before": "857dc2d467602a6ce1a9b4c16077735a4a322f1d"
+    },
+    {
+      "path": "qr-user.png",
+      "group": "app",
+      "sha256": "3e919191da40f85834ded9549aff66462893ea250578af2142b5f64bbe1864b6",
+      "before": null
+    },
+    {
+      "path": "qr-user.html",
+      "group": "app",
+      "sha256": "48af9a4caa37f5fe2e3804bd03ccf919739a18e06f395e25eb2772866b5983d6",
+      "before": null
+    }
+  ]
+}

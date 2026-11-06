@@ -1,8 +1,6 @@
-v208-r101 — VIJF en VIJF−2, genummerde aankomsten en Kruis 45°
+v208-r102 — publiceren uitsluitend vanuit Kruin-testbeheer
 6 november 2026
-U begint direct in de cursus.
-Kruin krijgt Cursus, Meetsysteem en Tafel/Config als drie keuzes.
-Meetsysteem is aparte naslag; Tafel/Config blijft werken met het GitHub-werkbestand.
-Expliciete telefoon-tafelviews behouden hun bestemming.
-Persoonlijke metingen en private database blijven behouden. Productie VIJF blijft apart.
-Meetsysteem is ook vanuit de U-cursus en het tafelmenu bereikbaar, met behoud van les en gegevens.
+Publiceer naar productie: Meetgegevens, App en cursus, of Beide.
+Eerst controleren, daarna expliciet bevestigen. SQLite blijft privé.
+Chat/Codex levert alleen test. Geen productie aangepast bij deze testrelease.
+Werkwijze: Kruin eerst Groot/Klein afronden; papier, later desktopinvoer.

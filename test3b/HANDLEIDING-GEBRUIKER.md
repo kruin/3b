@@ -1,4 +1,4 @@
-# 3B v208-r101 — User-werkwijze
+# 3B v208-r102 — User-werkwijze
 
 # De Waaier — Van Top tot Teen
 
@@ -246,6 +246,21 @@ Klein blijft het uitgangspunt. Met de knop **Klein ⇄ / Groot ⇄** bij de stap
 
 
 # LKL meten: Neus, Kop en Romp
+
+## Kruin: eerst Groot en Klein afronden
+
+Kruin werkt voorlopig met de twee bestaande standaardtafels: **Groot en Klein**. Er komen geen extra tafels, invoerprompts of aparte meetreeksen bij.
+
+1. Meet aan tafel één of enkele Sporen en noteer de resultaten op papier. Schrijf Groot of Klein, Patroon, Spoor, lijn, R/A/V en de gemeten waarde op. Een tafelnaam, datum of bijzonderheid kan als opmerking worden meegenomen.
+2. Open later op **desktop** Kruin-testbeheer en verbind het GitHub-werkbestand. Kies de bestaande standaard Groot of Klein en daarna het bijbehorende Patroon en Spoor.
+3. Voer alleen de nieuwe metingen in het Spoorscherm in. Controleer de tekening; laat overige meetwaarden staan. Begin voor LKL bij Neus, Kop en Romp.
+4. Kies **Bewaar spoor** om de verbonden private GitHub-database bij te werken. Geen download nodig. **Bewaar db lokaal** is uitsluitend een extra back-up.
+5. Vernieuw de gepubliceerde testmeetbasis om deze metingen in de User-cursus te controleren. Naar productie publiceren blijft een afzonderlijke opdracht.
+
+De **Gebruiker** kan eigen metingen ook op mobiel invoeren via het bestaande Spoorscherm en bewaart ze in het persoonlijke tafelbestand. Kruins werkwijze richt zich nu op desktop; er komt hiervoor geen aparte mobiele beheerroute. De cursus gebruikt uitsluitend Kruins gepubliceerde meetbasis.
+
+
+Deze meetwerkwijze hoort bij **Meetsysteem: meten en invoeren**. De Cursus legt uit met Kruins meetbasis; de Tafel toont het actieve Spoor. Gebruik het bestaande Spoorscherm voor alle meetinvoer. De ingang Meetsysteem opent momenteel nog de naslag; bereik het Spoorscherm via Tafel/Config.
 
 Kruins metingen zijn het uitgangspunt. Begin met LKL en één basislijn: VIJF of ZES op Klein of Groot. Je onderzoekt wat je eigen afstoot werkelijk doet. Het zichtbare Karkas is Neus en Romp: hun vertrek V en aankomst A op de stiplijnen kun je rechtstreeks zien en meten. Dat leer je eerst herkennen. In deze latere meetles onderzoek je wat je eigen afstoot doet, met de vraag: waar ligt mijn Kop A? Bouw de complete eigen meetbasis op uit ingevoerde metingen van **Neus, Kop en Romp**. Een getekende basiswaarde of schatting telt nog niet als een eigen meetgegeven. Begin pas aan andere patronen nadat deze werkwijze goed werkt.
 
