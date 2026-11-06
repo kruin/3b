@@ -1,6 +1,7 @@
-v208-r102 — publiceren uitsluitend vanuit Kruin-testbeheer
+v208-r103 — publiceren uitsluitend vanuit Kruin-testbeheer
 6 november 2026
 Publiceer naar productie: Meetgegevens, App en cursus, of Beide.
 Eerst controleren, daarna expliciet bevestigen. SQLite blijft privé.
 Chat/Codex levert alleen test. Geen productie aangepast bij deze testrelease.
 Werkwijze: Kruin eerst Groot/Klein afronden; papier, later desktopinvoer.
+De Pages-status herkent beide gebruikelijke GitHub-benamingen.

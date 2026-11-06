@@ -19,7 +19,7 @@ async function prepare(choice,token){
  const head=(await request('/git/ref/heads/main')).object.sha;
  const published=await request('/contents/test3b/publicatie/kandidaat.json?ref='+head);if(published.sha!==await gitsha(raw))throw Error('Deze testversie is verouderd. Open de actuele testsite; er is niets gepubliceerd.');
  const testRuns=await request('/actions/runs?head_sha='+head+'&per_page=30');
- const pages=testRuns.workflow_runs?.find(r=>r.name==='pages-build-deployment');
+ const pages=testRuns.workflow_runs?.find(r=>['pages-build-deployment','pages build and deployment'].includes(r.name));
  if(!pages||pages.conclusion!=='success')throw Error('De actuele testdeployment is nog niet geslaagd. Publiceer pas na een geslaagde testdeployment.');
  const commit=await request('/git/commits/'+head),tree=await request('/git/trees/'+commit.tree.sha+'?recursive=1');if(tree.truncated)throw Error('GitHub-bestandenlijst onvolledig. Geen publicatie gestart.');
  const existing=new Map(tree.tree.map(x=>[x.path,x]));
@@ -53,7 +53,7 @@ async function publish(plan,report){
  catch(e){try{if((await plan.request('/git/ref/heads/main')).object.sha!==commit.sha)throw e;}catch(_){const error=Error('Uitkomst publicatie niet bevestigd. Niet opnieuw klikken. Controleer GitHub voordat je verdergaat.');error.uncertain=true;throw error;}}
  return {sha:commit.sha};
 }
-async function deployment(request,sha){const data=await request('/actions/runs?head_sha='+sha+'&per_page=30');const run=data.workflow_runs?.find(r=>r.name==='pages-build-deployment');if(!run)return {done:false};if(run.status!=='completed')return {done:false,url:run.html_url};if(run.conclusion!=='success')throw Error('GitHub heeft de bestanden ontvangen, maar de websitepublicatie is mislukt. Controleer het publicatieverslag; niet blind opnieuw publiceren.');return {done:true,url:run.html_url};}
+async function deployment(request,sha){const data=await request('/actions/runs?head_sha='+sha+'&per_page=30');const run=data.workflow_runs?.find(r=>['pages-build-deployment','pages build and deployment'].includes(r.name));if(!run)return {done:false};if(run.status!=='completed')return {done:false,url:run.html_url};if(run.conclusion!=='success')throw Error('GitHub heeft de bestanden ontvangen, maar de websitepublicatie is mislukt. Controleer het publicatieverslag; niet blind opnieuw publiceren.');return {done:true,url:run.html_url};}
 window.ThreeBProduction={prepare,publish,deployment};
 if(!document.getElementById('productionForm'))return;
 const $=id=>document.getElementById(id);let plan=null,busy=false,timer=null;const status=s=>$('productionStatus').textContent=s;
