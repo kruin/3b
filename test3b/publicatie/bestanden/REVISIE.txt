@@ -1,5 +1,5 @@
-v208-r105 — ook de Waaier/Parallel-knop op West weg
+v208-r106 — mobiele test op desktop
 7 november 2026
-Alle aparte Waaier/Parallel-bediening op tafel verborgen, ook de westbandknop.
-Beginweergave en instellingen gebruiken dezelfde regel. Laatste versie blijft bereikbaar.
-Bestaande sporen/metingen en cursusvoorbeelden blijven behouden. Alleen test.
+Testinstellingen: Mobiele test op desktop, staand/liggend, met tijdelijke kopie van de actuele tafel.
+Geen toegangstoken of databasebewaring in de testkopie. QR voor echte telefoon behouden.
+Ook de Waaier/Parallel-knop op West is verborgen. Alleen test.

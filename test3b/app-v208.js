@@ -1,5 +1,6 @@
 (async () => {
   "use strict";
+  if(new URLSearchParams(location.search).get("desktopMobile")==="1"&&parent!==window&&!window.THREEB_DESKTOP_MOBILE_PREVIEW)throw Error("De tijdelijke mobiele opslag ontbreekt. Sluit het voorbeeld en open de laatste testversie.");
   await window.ThreeBDatabaseWorkspace?.restore();
   if(window.ThreeBDatabaseWorkspace?.required&&!window.ThreeBDatabaseWorkspace.active)return;
   let previousState=null;
@@ -1539,6 +1540,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
     state.appliedMigrations.push('parallel-only-20261029');save();
   }
 
+  window.getThreeBMobileTestSnapshot=()=>({state:copy({...state,ui}),config:copy(C),values:copy(K)});
   window.ThreeBTableText={get:tableTextPrefs,dimensions(){return C.tables;},update(patch){if(['tables','balls','tracks'].includes(patch.scaleMode)){state.scaleViewMode=patch.scaleMode;state.comparePhysicalSize=patch.scaleMode==='balls';}if(['klein','groot'].includes(patch.courseTable)){state.courseTable=patch.courseTable;if(window.threebVijfCourseScope)ui.editTable=ui.tableMode=patch.courseTable;}state.tableTextSettings={...tableTextPrefs(),...patch};save();render();}};
   const incomingView=window.ThreeBMobileView?.decode(new URLSearchParams(location.hash.slice(1)).get('tableView'));
   if(incomingView){const root=incomingView.k.replace(/[+-]\d+$/,''),known=C.shotLines.includes(root)||Object.values(C.patternFamilies||{}).some(f=>(f.tracks||[]).includes(root))||(C.lineOneVariants.fan.entries||[]).some(v=>v.key===incomingView.k);if(known){ui.playRange=incomingView.p;ui.trackFamily=incomingView.f;chooseCentralTrack(incomingView.k);ui.tableMode=incomingView.t;ui.editTable=incomingView.e;ui.direction=incomingView.d;ui.parallelDisplay=incomingView.w;ui.frameworkView=incomingView.r;ui.parallelPartIndex=incomingView.n;state.scaleViewMode=incomingView.s;state.comparePhysicalSize=incomingView.s==='balls';delete window.THREEB_CHOOSE_USAGE_ON_START;window.THREEB_PHONE_VIEW_APPLIED=true;finishTableStart();forceFreshTableView();save();render();const url=new URL(location.href),hash=new URLSearchParams(url.hash.slice(1));hash.delete('tableView');url.hash=hash.toString();history.replaceState(null,'',url.href);}}
