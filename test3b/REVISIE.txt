@@ -1,4 +1,4 @@
-v208-r100 — duidelijke spoornaam op de cursustafel
+v208-r101 — VIJF en VIJF−2, genummerde aankomsten en Kruis 45°
 6 november 2026
 U begint direct in de cursus.
 Kruin krijgt Cursus, Meetsysteem en Tafel/Config als drie keuzes.

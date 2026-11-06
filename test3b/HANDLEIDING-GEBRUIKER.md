@@ -1,4 +1,4 @@
-# 3B v208-r100 — User-werkwijze
+# 3B v208-r101 — User-werkwijze
 
 # De Waaier — Van Top tot Teen
 
@@ -11,7 +11,7 @@ Oefeningen worden alleen op uitdrukkelijk verzoek toegevoegd.
 Je eigen tafel(s) en eigen metingen volgen later. Ook als je al eigen waarden
 hebt opgeslagen, gebruikt de cursus die niet; ze blijven behouden voor de gewone tafel.
 
-U betekent User: de gebruiker. De uitleg spreekt je aan met jij/je. Ik-zinnen
+De User of Gebruiker is de speler. De uitleg spreekt je aan met jij/je. Ik-zinnen
 zijn het perspectief van jou als speler, bijvoorbeeld: “Waar lig ik met bal 1?”
 
 ## Les 1 — Introductie: De Waaier
@@ -126,18 +126,28 @@ In dit voorbeeld zijn bal 1 en bal 3 voor het gemak precies op hetzelfde Spoor g
 
 Dit is hetzelfde gemeten VIJF als in les 2, met dezelfde Kruinbasis. De gegeven Neus komt uit dat complete Spoor; alleen de Romp bepaalt die Neus niet uniek.
 
-## Les 4 — de parallellen van VIJF
+## Les 4 — de sporen van VIJF
 
-Ik bekijk achtereenvolgens **VIJF−1, VIJF+1, VIJF+2 en VIJF+3**. VIJF blijft mijn herkenbare basis. Ik wissel tussen drie weergaven:
+Ik bekijk achtereenvolgens **VIJF−2, VIJF−1, VIJF, VIJF+1, VIJF+2 en VIJF+3**. VIJF blijft mijn herkenbare basis. Ik wissel tussen drie weergaven:
 
 - **Spoor:** het lijnverloop van de actieve parallel, met de VIJF-karkasreferentie.
 - **Karkas:** Neus en Romp vergelijken met VIJF.
 - **Aankomst:** de bandcontacten en hun waarden bekijken.
 
-De vijfde en laatste stap toont uitsluitend de aankomstballen op de zuidband van VIJF−1, VIJF, VIJF+1, VIJF+2 en VIJF+3. Geen lijnen, hulplijnen, rustpunt of labels bij de ballen. De genummerde stippen blijven als oriëntatie op de banden staan. Het zijn vijf afzonderlijke afstoten, niet vijf gelijktijdige speelballen. Vorige keert terug naar VIJF+3.
+Bij VIJF−2 ligt het theoretische vertrek op de zuidband. Op die plek past geen hele bal. De getoonde bal schuift iets naar binnen langs dezelfde Neuslijn. De richting en meetwaarden blijven gelijk; alleen de getoonde Neus wordt iets korter. De opgeslagen Romp ligt hier bij de hoek buiten de opgegeven band. Zolang dat niet geometrisch bepaald is, toont de cursus alleen het beschikbare voorste deel.
+
+De zevende stap toont de aankomstballen op Zuid van VIJF−1, VIJF, VIJF+1, VIJF+2 en VIJF+3. Ze krijgen de nummers **−1, 0, +1, +2 en +3**; 0 is VIJF zelf. Geen looplijnen of rustpunt in dit overzicht. De genummerde bandstippen blijven staan. Het zijn vijf afzonderlijke afstoten, niet vijf gelijktijdige speelballen. Vorige keert terug naar VIJF+3; Volgende gaat naar de Kruis-les.
 
 De les gebruikt de echte gegevens van elke parallel. Een variant die niet bij LKL hoort krijgt een lege tafel met uitleg; een ontbrekend vervolg wordt niet verzonnen.
 
+
+## Les 5 — Kruis: 45° en de looplijnen
+
+Achtereenvolgens bekijk ik het Kruis van **VIJF, ZES, ZEVEN en ACHT**. Deze Kruinvoorbeelden hebben een Kruis onder 45° met de band: horizontaal en verticaal is de verplaatsing even groot. Een klein hoekplaatje maakt dat zichtbaar.
+
+De Romp blijft gedempt zichtbaar als aanloop. Het roze Kruis begint bij die Romp-aankomst. Omdat dat vertrek per Spoor verschilt, verandert bij dezelfde hoek ook de afstand tot de volgende band. Het getekende Been laat het berekende vervolg zien tot de uitloop. De bandbal aan het einde van het Kruis is tegelijk het beginpunt van het Been, zonder dubbele bal.
+
+Dit vergelijkt Kruins gemeten en berekende lijnen. Het is geen algemene voorspelling dat de bal zonder meer met 45° van iedere band verdergaat: voor het Been gebruikt de cursus zijn eigen vastgelegde gegevens.
 
 ## Les en tafel horen bij elkaar
 
@@ -147,13 +157,13 @@ Met × of Geoefend verlaat ik de cursus en gebruik ik de gewone tafel. Opnieuw s
 
 ## Daarna: de Waaier als brug naar ZES
 
-Eerst rond ik deze VIJF-reeks af. **Daarna vormt de Waaier de brug van VIJF naar ZES en de volgende basissporen.** Dat is de volgende cursusfase; de huidige vier lessen blijven bij VIJF en zijn parallellen. Het Patroon 6–7 banden heeft later een eigen lesreeks.
+Eerst rond ik deze VIJF-reeks af. **Daarna vormt de Waaier de brug van VIJF naar ZES en de volgende basissporen.** Dat is de volgende cursusfase; VIJF blijft de basis; de Kruis-les vergelijkt daarnaast alleen dat lijndeel van ZES, ZEVEN en ACHT. Het Patroon 6–7 banden heeft later een eigen lesreeks.
 
 De rollende bal toont spoorgeometrie, geen voorspelling van snelheid of effect. De schuivende bal hoort bij het latere Pro-niveau.
 
 ## Focus tijdens de VIJF-lessen
 
-Zolang ik de VIJF-cursus bekijk, biedt de tafel alleen VIJF en de behandelde parallellen VIJF−1, VIJF+1, VIJF+2 en VIJF+3. Andere basissporen, de Waaier en 6–7 banden komen later. Met sluiten of Geoefend verlaat ik deze begrenzing.
+Zolang ik de VIJF-cursus bekijk, biedt de tafel alleen VIJF en de behandelde sporen VIJF−2, VIJF−1, VIJF, VIJF+1, VIJF+2 en VIJF+3. In de Kruis-les is de tafel beperkt tot VIJF, ZES, ZEVEN en ACHT. De volledige andere sporen, de Waaier en 6–7 banden komen later. Met sluiten of Geoefend verlaat ik deze begrenzing.
 
 De bal beweegt zonder draaipuntje: effect wordt hier nog niet uitgelegd of voorgesteld. Dat krijgt een latere les. Bij iedere getoonde lijn of aankomst staan de relevante stippen en waarden op de banden. Ze gaan mee naar de tafel en terug naar de les. Bij de uitleg van de Romp staan de Rompstippen; wanneer de Neus erbij komt, wordt ook de Neusstiplijn gemarkeerd.
 
@@ -188,14 +198,14 @@ Op de gewone tafel staat **Namen** naast **Cursus** in het menu. Deze naslag ver
 De ronde menuknop blijft staan en wisselt tussen ☰ en ×. Het compacte paneel opent erbij, met Spoor en daarnaast Cursus, Namen en Instellingen als leesbare knoppen. Vanuit Instellingen gaat ← terug naar hetzelfde compacte menu. × sluit het menu. De bediening blijft versleepbaar en keert bij terugkomst op de tafel naar het midden terug.
 
 
-## Beginnen als U of Kruin
-**U begint direct in de cursus**, bij de Waaier vanuit 0. Opnieuw openen begint weer daar. Sluiten brengt je naar de gewone tafel; de menuknop opent de bediening en Config. Bestaande eigen gegevens blijven bewaard. Een expliciete telefoonlink met tafel-view opent wel direct die tafel.
+## Beginnen als User of Kruin
+**User begint direct in de cursus**, bij de Waaier vanuit 0. Opnieuw openen begint weer daar. Sluiten brengt je naar de gewone tafel; de menuknop opent de bediening en Config. Bestaande eigen gegevens blijven bewaard. Een expliciete telefoonlink met tafel-view opent wel direct die tafel.
 
-**Kruin krijgt via de vaste ingang drie keuzes:** Cursus, Meetsysteem, Tafel/Config. Cursus opent dezelfde lees-/kijkcursus als voor U, met Kruins tafel. Meetsysteem is afzonderlijke naslag over 0, Waaier, parallel, Patroon en spoor. Tafel/Config opent het beheer; daarvoor blijft een geopend GitHub-werkbestand nodig. De keuzepagina en het lezen van de cursus/naslag openen of wijzigen de private database niet.
+**Kruin krijgt via de vaste ingang drie keuzes:** Cursus, Meetsysteem, Tafel/Config. Cursus opent dezelfde lees-/kijkcursus als voor User, met Kruins tafel. Meetsysteem is afzonderlijke naslag over 0, Waaier, parallel, Patroon en spoor. Tafel/Config opent het beheer; daarvoor blijft een geopend GitHub-werkbestand nodig. De keuzepagina en het lezen van de cursus/naslag openen of wijzigen de private database niet.
 
 
-## Meetsysteem is ook voor U
-U begint in Cursus en kan daar **Meetsysteem** openen. Dezelfde uitleg staat in het tafelmenu. De uitleg opent als naslag over de huidige weergave; sluiten brengt je terug naar dezelfde les of tafel. Een lopende demonstratie wordt gepauzeerd. U blijft bij de eigen tafel als die vanuit de zelfstandige uitleg Tafel/Config opent; Kruin heeft daar de afzonderlijke beheerroute.
+## Meetsysteem is ook voor User
+User begint in Cursus en kan daar **Meetsysteem** openen. Dezelfde uitleg staat in het tafelmenu. De uitleg opent als naslag over de huidige weergave; sluiten brengt je terug naar dezelfde les of tafel. Een lopende demonstratie wordt gepauzeerd. User blijft bij de eigen tafel als die vanuit de zelfstandige uitleg Tafel/Config opent; Kruin heeft daar de afzonderlijke beheerroute.
 
 
 ## Later: correcties
@@ -229,6 +239,10 @@ De vergelijking gebruikt de eigen Kruinwaarden per tafelmaat. Ontbreekt een Romp
 ## Spoornaam direct bij de tafel
 
 De VIJF-schermen tonen een vast, goed leesbaar naamlabel op het laken: VIJF, VIJF−1 of bijvoorbeeld VIJF+2. Het label gaat mee naar de tafel-view. Het slotoverzicht met alleen de ballen blijft zonder labels op het laken; daar staat VIJF-reeks onder de tafel.
+
+## Eén cursus, direct Klein/Groot vergelijken
+
+Klein blijft het uitgangspunt. Met de knop **Klein ⇄ / Groot ⇄** bij de stapmelding wissel ik op dezelfde pagina. Les, stap en Spoor blijven behouden; bij een gepauzeerde bal blijft ook de voortgang gelijk. De tekening gebruikt de eigen Kruinmeetwaarden van de gekozen tafelmaat. De standaard schaalweergave houdt de gele speelveldranden even groot. Er komt geen tweede, parallelle cursus.
 
 
 # LKL meten: Neus, Kop en Romp
@@ -287,7 +301,7 @@ Verander je later je eigen basis, dan vervalt de geldigheid van de eerdere overd
 
 ## Taal
 
-We spreken je aan met **je**. **U** is de rol *User*, geen aanspreekvorm.
+We spreken je aan met **je**. **User** en **Gebruiker** benoemen de speler.
 
 ## Het dunne basisspoor vergelijken
 
