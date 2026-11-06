@@ -1,5 +1,5 @@
-v208-r104 — eenvoudiger tafelmenu en Laatste versie
-6 november 2026
-Keuze Waaier/Parallel uit de tafelbediening.
-Laatste versie op Kruin-start en in testinstellingen opent de nieuwste testversie opnieuw.
-Sporen en cursusvoorbeelden behouden; productie uitsluitend via Kruin-testbeheer.
+v208-r105 — ook de Waaier/Parallel-knop op West weg
+7 november 2026
+Alle aparte Waaier/Parallel-bediening op tafel verborgen, ook de westbandknop.
+Beginweergave en instellingen gebruiken dezelfde regel. Laatste versie blijft bereikbaar.
+Bestaande sporen/metingen en cursusvoorbeelden blijven behouden. Alleen test.
