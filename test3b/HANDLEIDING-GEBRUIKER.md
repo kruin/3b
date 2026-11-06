@@ -1,4 +1,4 @@
-# 3B v208-r97 — User-werkwijze
+# 3B v208-r98 — User-werkwijze
 
 # De Waaier — Van Top tot Teen
 
@@ -133,6 +133,8 @@ Ik bekijk achtereenvolgens **VIJF−1, VIJF+1, VIJF+2 en VIJF+3**. VIJF blijft m
 - **Spoor:** het lijnverloop van de actieve parallel, met de VIJF-karkasreferentie.
 - **Karkas:** Neus en Romp vergelijken met VIJF.
 - **Aankomst:** de bandcontacten en hun waarden bekijken.
+
+De vijfde en laatste stap toont alle band-aankomsten van basisspoor VIJF samen: Neus, Kop, Nek, Romp en Kruis. Hun A-waarden blijven herkenbaar op de stiplijnen. Het rustpunt op 45% van Been staat afzonderlijk aangegeven; dat is geen bandcontact. Vorige keert terug naar VIJF+3.
 
 De les gebruikt de echte gegevens van elke parallel. Een variant die niet bij LKL hoort krijgt een lege tafel met uitleg; een ontbrekend vervolg wordt niet verzonnen.
 
