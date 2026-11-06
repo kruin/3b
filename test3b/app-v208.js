@@ -189,7 +189,7 @@
  }
   function ensureTableFilesUi(){
     const box=document.createElement("section");box.className="table-file-tools";
-    box.innerHTML='<strong>Mijn tafel</strong><label>Tafelnaam (optioneel)<input id="tableFileName" type="text" maxlength="120"></label><label>Kruinbasis<select id="tableBasisSelect"></select></label><button id="chooseTableBasis" type="button">Gebruik deze basis</button><button id="downloadTableFile" type="button">Bewaar mijn tafel</button><label class="file-button">Terugladen<input id="importTableFile" type="file" accept=".json"></label><p id="tableFileStatus" role="status"></p>';
+    box.innerHTML='<strong>Mijn tafel</strong><label>Tafelnaam (optioneel)<input id="tableFileName" type="text" maxlength="120" placeholder="Tafel 7 · vanaf de bar" aria-describedby="tableDirectionHelp"></label><p id="tableDirectionHelp">Dezelfde tafel kan per speelrichting een eigen tafelbestand krijgen: bijvoorbeeld Tafel 7 · vanaf de bar en Tafel 7 · naar de bar. Alleen hernoemen maakt geen kopie: bewaar beide bestanden afzonderlijk. West/Oost-metingen blijven binnen ieder bestand apart.</p><label>Kruinbasis<select id="tableBasisSelect"></select></label><button id="chooseTableBasis" type="button">Gebruik deze basis</button><button id="downloadTableFile" type="button">Bewaar mijn tafel</button><label class="file-button">Terugladen<input id="importTableFile" type="file" accept=".json"></label><p id="tableFileStatus" role="status"></p>';
     $("menuSettings").querySelector(".menu-settings-grid").append(box);
     $("tableFileName").oninput=()=>{state.tableName=$("tableFileName").value;save();};
     $("downloadTableFile").onclick=downloadTableFile;

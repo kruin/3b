@@ -1,4 +1,4 @@
-3B v208-r94 — VOLLEDIGE TESTRELEASE
+v208-r95 — Kruinbasis, eigen karkas en afzonderlijke speelrichtingen
 6 november 2026
 U begint direct in de cursus.
 Kruin krijgt Cursus, Meetsysteem en Tafel/Config als drie keuzes.

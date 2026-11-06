@@ -191,7 +191,7 @@ U begint in Cursus en kan daar **Meetsysteem** openen. Dezelfde uitleg staat in 
 
 # LKL meten: Neus, Kop en Romp
 
-Begin met LKL en één basislijn, bijvoorbeeld VIJF op Klein. Je onderzoekt wat je eigen afstoot werkelijk doet. Het zichtbare karkas is Neus en Romp: dat leer je eerst herkennen. In deze latere meetles onderzoek je wat je eigen afstoot doet, met de vraag: waar ligt mijn Kop A? Bouw de complete eigen meetbasis op uit ingevoerde metingen van **Neus, Kop en Romp**. Een getekende basiswaarde of schatting telt nog niet als een eigen meetgegeven. Begin pas aan andere patronen nadat deze werkwijze goed werkt.
+Kruins metingen zijn het uitgangspunt. Begin met LKL en één basislijn: VIJF of ZES op Klein of Groot. Je onderzoekt wat je eigen afstoot werkelijk doet. Het zichtbare karkas is Neus en Romp: hun vertrek V en aankomst A op de stiplijnen kun je rechtstreeks zien en meten. Dat leer je eerst herkennen. In deze latere meetles onderzoek je wat je eigen afstoot doet, met de vraag: waar ligt mijn Kop A? Bouw de complete eigen meetbasis op uit ingevoerde metingen van **Neus, Kop en Romp**. Een getekende basiswaarde of schatting telt nog niet als een eigen meetgegeven. Begin pas aan andere patronen nadat deze werkwijze goed werkt.
 
 ## Verplicht voor User: eerst je eigen basis
 
@@ -252,3 +252,13 @@ We spreken je aan met **je**. **U** is de rol *User*, geen aanspreekvorm.
 Met Toon basis zie je het oorspronkelijke basisspoor, bijvoorbeeld VIJF, naast het gekozen spoor. De dunne referentie gebruikt dezelfde berekening en dezelfde geldige eigen basis als de gewone tafel.
 
 Bij een parallelstand vergelijken we de afstoot met dat basisspoor. Afzonderlijk vastgelegde metingen van het vervolg, zoals Kop A bij VIJF+1, kunnen een andere richting geven dan een zuiver geometrische verplaatsing. Je meting blijft dan behouden; de app maakt het vervolg niet kunstmatig parallel.
+
+## Afzonderlijk meten na spiegelen
+
+Kies in het spoorscherm de richting van de Neus: West of, met Spiegelen, Oost. Meet en bewaar Neus, Kop en Romp voor die richting. Beide meetreeksen blijven afzonderlijk bewaard; een eigen Westmeting wordt niet automatisch een eigen Oostmeting. Zonder complete eigen basis voor de gekozen richting blijft Kruin actief. Ook het +/−-voorstel hoort bij die gekozen richting.
+
+Je afstoot, effectuitvoering en de tafel kunnen linksom en rechtsom verschillend reageren, vooral bij langere of hardere figuren. Meet daarom beide richtingen als dat voor jouw gebruik verschil maakt.
+
+## Dezelfde tafel, andere speelrichting
+
+Onder Mijn tafel kun je de naam gebruiken om spelen vanaf het noordelijke of zuidelijke acquit te onderscheiden. Bijvoorbeeld Tafel 7 · vanaf de bar en Tafel 7 · naar de bar. Bewaar eerst je huidige tafel met Bewaar mijn tafel. Geef de andere speelrichting daarna een eigen naam, pas de metingen aan en bewaar opnieuw. Dat levert twee afzonderlijke JSON-tafelbestanden op. Alleen hernoemen is geen kopie. Terugladen kiest het bestand dat bij je huidige speelrichting hoort. West/Oost blijft binnen elk bestand afzonderlijk bewaard.
