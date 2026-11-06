@@ -1,7 +1,8 @@
-3B v208-r93 — VOLLEDIGE TESTRELEASE
+3B v208-r94 — VOLLEDIGE TESTRELEASE
 6 november 2026
 U begint direct in de cursus.
 Kruin krijgt Cursus, Meetsysteem en Tafel/Config als drie keuzes.
 Meetsysteem is aparte naslag; Tafel/Config blijft werken met het GitHub-werkbestand.
 Expliciete telefoon-tafelviews behouden hun bestemming.
 Persoonlijke metingen en private database blijven behouden. Productie VIJF blijft apart.
+Meetsysteem is ook vanuit de U-cursus en het tafelmenu bereikbaar, met behoud van les en gegevens.

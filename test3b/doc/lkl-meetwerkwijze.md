@@ -185,6 +185,10 @@ De ronde menuknop blijft staan en wisselt tussen ☰ en ×. Het compacte paneel 
 **Kruin krijgt via de vaste ingang drie keuzes:** Cursus, Meetsysteem, Tafel/Config. Cursus opent dezelfde lees-/kijkcursus als voor U, met Kruins tafel. Meetsysteem is afzonderlijke naslag over 0, waaier, parallel, patroon en spoor. Tafel/Config opent het beheer; daarvoor blijft een geopend GitHub-werkbestand nodig. De keuzepagina en het lezen van de cursus/naslag openen of wijzigen de private database niet.
 
 
+## Meetsysteem is ook voor U
+U begint in Cursus en kan daar **Meetsysteem** openen. Dezelfde uitleg staat in het tafelmenu. De uitleg opent als naslag over de huidige weergave; sluiten brengt je terug naar dezelfde les of tafel. Een lopende demonstratie wordt gepauzeerd. U blijft bij de eigen tafel als die vanuit de zelfstandige uitleg Tafel/Config opent; Kruin heeft daar de afzonderlijke beheerroute.
+
+
 # LKL meten: Neus, Kop en Romp
 
 Begin met LKL en één basislijn, bijvoorbeeld VIJF op Klein. Je onderzoekt wat je eigen afstoot werkelijk doet. Het zichtbare karkas is Neus en Romp: dat leer je eerst herkennen. In deze latere meetles onderzoek je wat je eigen afstoot doet, met de vraag: waar ligt mijn Kop A? Bouw de complete eigen meetbasis op uit ingevoerde metingen van **Neus, Kop en Romp**. Een getekende basiswaarde of schatting telt nog niet als een eigen meetgegeven. Begin pas aan andere patronen nadat deze werkwijze goed werkt.

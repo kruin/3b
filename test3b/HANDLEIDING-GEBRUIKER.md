@@ -1,4 +1,4 @@
-# 3B v208-r93 — User-werkwijze
+# 3B v208-r94 — User-werkwijze
 
 # De Waaier — Van Top tot Teen
 
@@ -185,6 +185,10 @@ De ronde menuknop blijft staan en wisselt tussen ☰ en ×. Het compacte paneel 
 **U begint direct in de cursus**, bij de waaier vanuit 0. Opnieuw openen begint weer daar. Sluiten brengt je naar de gewone tafel; de menuknop opent de bediening en Config. Bestaande eigen gegevens blijven bewaard. Een expliciete telefoonlink met tafel-view opent wel direct die tafel.
 
 **Kruin krijgt via de vaste ingang drie keuzes:** Cursus, Meetsysteem, Tafel/Config. Cursus opent dezelfde lees-/kijkcursus als voor U, met Kruins tafel. Meetsysteem is afzonderlijke naslag over 0, waaier, parallel, patroon en spoor. Tafel/Config opent het beheer; daarvoor blijft een geopend GitHub-werkbestand nodig. De keuzepagina en het lezen van de cursus/naslag openen of wijzigen de private database niet.
+
+
+## Meetsysteem is ook voor U
+U begint in Cursus en kan daar **Meetsysteem** openen. Dezelfde uitleg staat in het tafelmenu. De uitleg opent als naslag over de huidige weergave; sluiten brengt je terug naar dezelfde les of tafel. Een lopende demonstratie wordt gepauzeerd. U blijft bij de eigen tafel als die vanuit de zelfstandige uitleg Tafel/Config opent; Kruin heeft daar de afzonderlijke beheerroute.
 
 
 # LKL meten: Neus, Kop en Romp
