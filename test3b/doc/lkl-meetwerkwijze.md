@@ -179,6 +179,12 @@ Op de gewone tafel staat **Namen** naast **Cursus** in het menu. Deze naslag ver
 De ronde menuknop blijft staan en wisselt tussen ☰ en ×. Het compacte paneel opent erbij, met Spoor en daarnaast Cursus, Namen en Instellingen als leesbare knoppen. Vanuit Instellingen gaat ← terug naar hetzelfde compacte menu. × sluit het menu. De bediening blijft versleepbaar en keert bij terugkomst op de tafel naar het midden terug.
 
 
+## Beginnen als U of Kruin
+**U begint direct in de cursus**, bij de waaier vanuit 0. Opnieuw openen begint weer daar. Sluiten brengt je naar de gewone tafel; de menuknop opent de bediening en Config. Bestaande eigen gegevens blijven bewaard. Een expliciete telefoonlink met tafel-view opent wel direct die tafel.
+
+**Kruin krijgt via de vaste ingang drie keuzes:** Cursus, Meetsysteem, Tafel/Config. Cursus opent dezelfde lees-/kijkcursus als voor U, met Kruins tafel. Meetsysteem is afzonderlijke naslag over 0, waaier, parallel, patroon en spoor. Tafel/Config opent het beheer; daarvoor blijft een geopend GitHub-werkbestand nodig. De keuzepagina en het lezen van de cursus/naslag openen of wijzigen de private database niet.
+
+
 # LKL meten: Neus, Kop en Romp
 
 Begin met LKL en één basislijn, bijvoorbeeld VIJF op Klein. Je onderzoekt wat je eigen afstoot werkelijk doet. Het zichtbare karkas is Neus en Romp: dat leer je eerst herkennen. In deze latere meetles onderzoek je wat je eigen afstoot doet, met de vraag: waar ligt mijn Kop A? Bouw de complete eigen meetbasis op uit ingevoerde metingen van **Neus, Kop en Romp**. Een getekende basiswaarde of schatting telt nog niet als een eigen meetgegeven. Begin pas aan andere patronen nadat deze werkwijze goed werkt.

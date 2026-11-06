@@ -1,5 +1,5 @@
-window.THREEB_RELEASE=Object.freeze({"version": "v208-r92", "date": "2026-11-05", "channel": "test", "compatibilityBase": "v208-r15"});
-window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r92", "date": "2026-11-05"});
+window.THREEB_RELEASE=Object.freeze({"version": "v208-r93", "date": "2026-11-06", "channel": "test", "compatibilityBase": "v208-r15"});
+window.THREEB_DB_SOURCE=Object.freeze({"fingerprint": "d5d6ae4d05f9e7fe32d327af82b7199ca034381d9b3cb3b350984c2d62cbe2ca", "version": "v208-r93", "date": "2026-11-06"});
 /* Shared display provenance. Approval and technical pinning are not manual entry. */
 const ThreeBValueOrigin=(()=>{
   function kind(p){
@@ -2905,7 +2905,7 @@ window.installThreeBLklLesson=adapter=>{
   function resumeLesson(){if(document.getElementById('spoorScreen')?.open){alert('Sluit eerst het spoorscherm; je meetinvoer blijft behouden.');return;}const oldProgress=progress;practiceActive=false;adapter.setCourseScope?.(true);document.body.classList.remove('course-table-linked');restoreCanvas();adapter.refreshCourseTable?.();data=readLessonData();render();if(!d.open)d.showModal();if(lesson===0){progress=oldProgress;position(progress);roll();}setMode('course');setBridge();remember('lesson');}
   function launchCourse(){chooser.close();document.getElementById('closeExplanation')?.click();if(startedCourse)resumeLesson();else openLesson(0);}
   const systemIntro=window.ThreeBMeetsysteemIntro?.create({geometry:()=>adapter.courseIntroGeometry(),route:()=>adapter.lesson1Data('VIJF'),onContinue:({parallel=false}={})=>{if(parallel)launchCourse();else{chooser.close();document.getElementById('closeExplanation')?.click();openLesson(0);}},onClose:independent});
-  function startCourse(){if(document.getElementById('spoorScreen')?.open){alert('Sluit eerst het spoorscherm; je meetinvoer blijft behouden.');return;}chooser.close();stop();if(systemIntro)systemIntro.open();else launchCourse();}
+  function startCourse(){if(document.getElementById('spoorScreen')?.open){alert('Sluit eerst het spoorscherm; je meetinvoer blijft behouden.');return;}chooser.close();stop();setMode('course');if(systemIntro)systemIntro.open();else launchCourse();}
   const parallelExamples=document.createElement('button');parallelExamples.id='openParallelExamples';parallelExamples.type='button';parallelExamples.textContent='Voorbeelden · VIJF−2 t/m VIJF+3';parallelExamples.hidden=true;parallelExamples.onclick=()=>{stop();if(d.open)d.close();systemIntro?.open({parallel:true});};$('lklExerciseText').after(parallelExamples);
   function previousIntroduction(){stop();if(d.open)d.close();systemIntro?.open({at:3});}
   document.getElementById('returnToVijfLesson').onclick=resumeLesson;
@@ -2934,8 +2934,10 @@ window.installThreeBLklLesson=adapter=>{
 
   for(const id of ['chooseLklCourse','menuLklCourse','levelLklCourse'])document.getElementById(id).onclick=startCourse;for(const id of ['chooseLklPractice','menuLklPractice','levelLklPractice'])document.getElementById(id).onclick=independent;
   const legacy=document.getElementById('openExplanation');legacy?.addEventListener('click',e=>{if(reference)return;e.preventDefault();e.stopImmediatePropagation();if(!chooser.open)chooser.showModal();},true);chooser.querySelector('#closeLklUseChoice').onclick=()=>chooser.close();chooser.querySelector('#openLklReferences').onclick=()=>{chooser.close();adapter.prepareCourseReference?.();reference=true;try{legacy.click();}finally{reference=false;}};
+  const directTable=!!window.THREEB_PHONE_VIEW_APPLIED||new URLSearchParams(location.search).get('entry')==='table';
   try{const saved=JSON.parse(localStorage.getItem(checkpointKey));if(saved&&Number.isInteger(saved.lesson)&&saved.lesson>=0&&saved.lesson<lessons.length&&Number.isInteger(saved.index)&&saved.index>=0&&saved.index<6){lesson=saved.lesson;index=lesson===1?Math.min(2,saved.index):lesson===2?Math.min(3,saved.index):saved.index;parallelView=['whole','framework','arrivals'].includes(saved.parallelView)?saved.parallelView:'whole';checked=Boolean(saved.checked);startedCourse=true;progress=Number.isFinite(saved.fraction)?Math.max(0,Math.min(1,saved.fraction)):0;if(window.THREEB_PHONE_VIEW_APPLIED){saved.view='normal';localStorage.setItem(checkpointKey,JSON.stringify(saved));}restoreTable=saved.view==='table';bridgeVisible=restoreTable;}}catch(_){}checkpointReady=true;delete window.THREEB_PHONE_VIEW_APPLIED;setBridge();
-  setMode('practice');if(window.THREEB_CHOOSE_USAGE_ON_START){delete window.THREEB_CHOOSE_USAGE_ON_START;chooser.showModal();}
+  setMode('practice');delete window.THREEB_CHOOSE_USAGE_ON_START;
+  if(adapter.inputOwner?.()!=='kruin'&&!directTable){restoreTable=false;bridgeVisible=false;setBridge();startCourse();}
   if(restoreTable)requestAnimationFrame(()=>{adapter.setCourseScope?.(true);if(validSelection()){try{const fraction=progress;practiceActive=true;data=readLessonData();render();if(lesson===0){progress=fraction;position(progress);}dockCanvas();setBridge();}catch(_){practiceActive=false;setBridge();}}});
 };
 
