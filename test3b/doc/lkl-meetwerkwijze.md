@@ -224,6 +224,10 @@ Bekijk de bijbehorende plaatjes in de cursus of bij Meetsysteem.
 
 De vergelijking gebruikt de eigen Kruinwaarden per tafelmaat. Ontbreekt een Rompmeting, dan vermeldt de app dat en tekent zij die lijn niet. Meetwaarden van Klein worden niet gebruikt als vervanging voor Groot.
 
+## Spoornaam direct bij de tafel
+
+De VIJF-schermen tonen een vast, goed leesbaar naamlabel op het laken: VIJF, VIJF−1 of bijvoorbeeld VIJF+2. Het label gaat mee naar de tafel-view. Het slotoverzicht met alleen de ballen blijft zonder labels op het laken; daar staat VIJF-reeks onder de tafel.
+
 
 # LKL meten: Neus, Kop en Romp
 

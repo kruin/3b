@@ -1,4 +1,4 @@
-v208-r99 — alleen de aankomstballen van de VIJF-reeks op Zuid
+v208-r100 — duidelijke spoornaam op de cursustafel
 6 november 2026
 U begint direct in de cursus.
 Kruin krijgt Cursus, Meetsysteem en Tafel/Config als drie keuzes.
