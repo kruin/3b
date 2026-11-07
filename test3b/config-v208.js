@@ -620,6 +620,126 @@ window.THREEB_START_CONFIG = {
           }
         },
         {
+          "key": "double-tracks-overview",
+          "title": {
+            "nl": "Dubbele sporen · meer dan één route",
+            "en": "Double tracks · more than one route"
+          },
+          "text": {
+            "nl": "Een doelbalpositie bepaalt niet altijd één uniek spoor. De Romp van spoor A kan de Kruis-lijn van spoor B snijden. Op die plaats komen twee verschillende routeonderdelen samen: op A is het de derde-bandlijn (Romp), op B de latere Kruis-lijn. Kijk niet alleen naar het snijpunt, maar naar de volgorde van banden, de bereikbaarheid vanuit S en de ligging van de andere bal. Een snijpunt is een kandidaat, geen bewijs voor twee speelbare stoten.",
+            "en": "A target-ball position does not always determine a unique track. The Body of track A may intersect the later Cross of track B. At the intersection two different route sections meet. Check cushion order, reachability from the start and the other ball; an intersection alone does not prove two playable shots."
+          },
+          "image": {
+            "source": "KruinLines",
+            "line": "VIJF",
+            "parts": [
+              "romp",
+              "kruis"
+            ],
+            "tables": [
+              "klein",
+              "groot"
+            ],
+            "emphasize": "romp-kruis"
+          }
+        },
+        {
+          "key": "double-tracks-ball-width",
+          "title": {
+            "nl": "Balbreedte · de lijn is niet het raakbereik",
+            "en": "Ball width · the line is not the contact zone"
+          },
+          "text": {
+            "nl": "Ook bal 1 heeft breedte. Een getekende spoorlijn is idealiter de baan van het middelpunt van bal 1, niet de rand van bal 1. Bij botsing met B3 tellen beide stralen op: contact is geometrisch mogelijk als de kleinste centrumafstand tot het werkelijk bereikbare traject van bal 1 hoogstens r1 + r3 bedraagt. Bij gelijke ballen met diameter d is dat d (niet 2d); precies d is raakcontact, kleiner dan d betekent dat de middelpuntbaan bij ongestoorde voortzetting de bal zou overlappen en de werkelijke botsing eerder plaatsvindt. Een volle botsing heeft een aanlooprichting door het middelpunt van B3, maar bal 1 stopt of wijkt af zodra de buitenkanten elkaar raken; hij rijdt niet door B3 heen. Bij een band ligt het middelpunt van bal 1 op ongeveer één balstraal van het effectieve raakvlak: gebruik dus een middelpuntbaan die rekening houdt met bandcontact en balbreedte. Houd bovendien rekening met bewegingsrichting, eindige baanstukken, B2 en vrije doorgang. De getekende ideale sporen zijn kandidaten, geen gemeten balbanen.",
+            "en": "Ball 1 also has width. The track represents its centre path, not its edge. Ball-3 contact occurs when the centre separation reaches r1 + r3; for equal balls of diameter d, this is d, not 2d. The actual collision happens before the ideal centre path enters ball 3. At cushions, ball 1's centre remains about one radius from the effective cushion face. Check direction, travelled segments, earlier contacts with ball 2 and clearance; an ideal track alone does not prove a playable shot."
+          },
+          "image": {
+            "source": "KruinLines",
+            "line": "VIJF",
+            "parts": [
+              "romp",
+              "kruis"
+            ],
+            "tables": [
+              "klein",
+              "groot"
+            ],
+            "emphasize": "romp-kruis"
+          }
+        },
+        {
+          "key": "double-tracks-cross-example",
+          "title": {
+            "nl": "Voorbeeld 1 · B3 op Romp A ∩ Kruis B",
+            "en": "Example 1 · ball 3 at Body A ∩ Cross B"
+          },
+          "text": {
+            "nl": "Stel dat de middelpuntbanen Romp A en Kruis B elkaar in X snijden, waar het middelpunt van B3 ligt. Bij beide kandidaten raakt de buitenkant van bal 1 B3 al vóór bal 1 met zijn middelpunt X kan bereiken: op afstand r1 + r3, gemeten langs de aanloop naar B3. Daardoor kan B3 een verder verloop van de getekende lijn onderbreken. Spoor A bereikt deze botsing tijdens de Romp, spoor B pas op weg langs het Kruis, mits het hele voorafgaande traject inclusief banden en B2 mogelijk is. Het kruisingspunt is dus geen daadwerkelijk doorlopen middelpuntpositie van bal 1 bij een botsing met B3.",
+            "en": "Suppose the centre paths of Body A and Cross B intersect at X, where ball 3 is centred. On either approach ball 1 contacts ball 3 before its own centre can reach X, at centre separation r1 + r3. This interrupts the unimpeded ideal path. A reaches that contact on Body, B on Cross, provided the earlier cushion and ball-2 sequence is valid."
+          },
+          "image": {
+            "source": "KruinLines",
+            "line": "VIJF",
+            "parts": [
+              "romp",
+              "kruis"
+            ],
+            "tables": [
+              "klein",
+              "groot"
+            ],
+            "emphasize": "romp-kruis"
+          }
+        },
+        {
+          "key": "double-tracks-near-example",
+          "title": {
+            "nl": "Voorbeeld 2 · B3 naast het snijpunt",
+            "en": "Example 2 · ball 3 beside the intersection"
+          },
+          "text": {
+            "nl": "B3 hoeft niet precies op X te liggen. Neem bij gelijke ballen (diameter d) een kortste afstand van B3-centrum tot de ongestoorde middelpuntbaan van bal 1 van 0,6d voor Romp A en 0,8d voor Kruis B. Op beide aanlopen is een botsing mogelijk omdat de som van de beide balstralen d bedraagt; de bal raakt B3 vóór het punt van kleinste afstand. Bij 1,1d tot Kruis B is er langs die ideale baan geen botsing. De waarde 0,6d of 0,8d is de afstand tussen het B3-centrum en de middelpuntlijn van bal 1, NIET tussen de balranden. Controleer of het eerste contactpunt binnen het werkelijk afgelegde traject valt. Dit zijn rekenvoorbeelden, geen tafelmetingen.",
+            "en": "Ball 3 need not lie at X. For equal balls of diameter d, centre-to-path distances of 0.6d and 0.8d can both yield contact because ball 1 has its own radius; the first collision precedes the closest approach. At 1.1d the ideal path misses. Distances refer to ball 3's centre and ball 1's centre path, not the edges. Check that first contact lies on the actual travelled segment. Examples are schematic."
+          },
+          "image": {
+            "source": "KruinLines",
+            "line": "VIJF",
+            "parts": [
+              "romp",
+              "kruis"
+            ],
+            "tables": [
+              "klein",
+              "groot"
+            ],
+            "emphasize": "romp-kruis"
+          }
+        },
+        {
+          "key": "double-tracks-inventory",
+          "title": {
+            "nl": "Inventaris · welke dubbele spoorgevallen?",
+            "en": "Inventory · types of double-track cases"
+          },
+          "text": {
+            "nl": "Onderzoek minstens: (1) Romp A × Kruis B met B3 op het snijpunt; (2) B3 binnen één baldiameter van beide trajecten, maar niet op het snijpunt; (3) B3 binnen bereik van slechts één traject; (4) snijpunt buiten het daadwerkelijk doorlopen lijnstuk; (5) B2 wordt op het ene spoor wel en op het andere niet tijdig geraakt; (6) B3 wordt op een route te vroeg bereikt; (7) banden of andere ballen blokkeren het verloop; (8) bijna parallelle of samenvallende trajectdelen met een gedeelde raakzone. Registreer per kandidaat spoor, onderdeel, bandvolgorde, minimale centrumafstand in eenheden d, raaktype en waarnemingsstatus: geometrisch, geschat of op tafel bevestigd.",
+            "en": "Inventory: exact Body–Cross intersections; near intersections within one ball diameter; single-track contacts; intersections beyond a travelled segment; invalid ball-2 order; premature ball-3 contact; cushion or ball obstruction; and nearly coincident sections. Record segment, cushion order, minimum centre distance in ball diameters, contact type and evidence status."
+          },
+          "image": {
+            "source": "KruinLines",
+            "line": "VIJF",
+            "parts": [
+              "romp",
+              "kruis"
+            ],
+            "tables": [
+              "klein",
+              "groot"
+            ],
+            "emphasize": "romp-kruis"
+          }
+        },
+        {
           "key": "lesson-five-finish",
           "title": {
             "nl": "8 · wat kan ik nu zien en meten?",
@@ -856,126 +976,6 @@ window.THREEB_START_CONFIG = {
               }
             },
             "allowMultipleTracks": true
-          }
-        },
-        {
-          "key": "double-tracks-overview",
-          "title": {
-            "nl": "Dubbele sporen · meer dan één route",
-            "en": "Double tracks · more than one route"
-          },
-          "text": {
-            "nl": "Een doelbalpositie bepaalt niet altijd één uniek spoor. De Romp van spoor A kan de Kruis-lijn van spoor B snijden. Op die plaats komen twee verschillende routeonderdelen samen: op A is het de derde-bandlijn (Romp), op B de latere Kruis-lijn. Kijk niet alleen naar het snijpunt, maar naar de volgorde van banden, de bereikbaarheid vanuit S en de ligging van de andere bal. Een snijpunt is een kandidaat, geen bewijs voor twee speelbare stoten.",
-            "en": "A target-ball position does not always determine a unique track. The Body of track A may intersect the later Cross of track B. At the intersection two different route sections meet. Check cushion order, reachability from the start and the other ball; an intersection alone does not prove two playable shots."
-          },
-          "image": {
-            "source": "KruinLines",
-            "line": "VIJF",
-            "parts": [
-              "romp",
-              "kruis"
-            ],
-            "tables": [
-              "klein",
-              "groot"
-            ],
-            "emphasize": "romp-kruis"
-          }
-        },
-        {
-          "key": "double-tracks-ball-width",
-          "title": {
-            "nl": "Balbreedte · de lijn is niet het raakbereik",
-            "en": "Ball width · the line is not the contact zone"
-          },
-          "text": {
-            "nl": "Ook bal 1 heeft breedte. Een getekende spoorlijn is idealiter de baan van het middelpunt van bal 1, niet de rand van bal 1. Bij botsing met B3 tellen beide stralen op: contact is geometrisch mogelijk als de kleinste centrumafstand tot het werkelijk bereikbare traject van bal 1 hoogstens r1 + r3 bedraagt. Bij gelijke ballen met diameter d is dat d (niet 2d); precies d is raakcontact, kleiner dan d betekent dat de middelpuntbaan bij ongestoorde voortzetting de bal zou overlappen en de werkelijke botsing eerder plaatsvindt. Een volle botsing heeft een aanlooprichting door het middelpunt van B3, maar bal 1 stopt of wijkt af zodra de buitenkanten elkaar raken; hij rijdt niet door B3 heen. Bij een band ligt het middelpunt van bal 1 op ongeveer één balstraal van het effectieve raakvlak: gebruik dus een middelpuntbaan die rekening houdt met bandcontact en balbreedte. Houd bovendien rekening met bewegingsrichting, eindige baanstukken, B2 en vrije doorgang. De getekende ideale sporen zijn kandidaten, geen gemeten balbanen.",
-            "en": "Ball 1 also has width. The track represents its centre path, not its edge. Ball-3 contact occurs when the centre separation reaches r1 + r3; for equal balls of diameter d, this is d, not 2d. The actual collision happens before the ideal centre path enters ball 3. At cushions, ball 1's centre remains about one radius from the effective cushion face. Check direction, travelled segments, earlier contacts with ball 2 and clearance; an ideal track alone does not prove a playable shot."
-          },
-          "image": {
-            "source": "KruinLines",
-            "line": "VIJF",
-            "parts": [
-              "romp",
-              "kruis"
-            ],
-            "tables": [
-              "klein",
-              "groot"
-            ],
-            "emphasize": "romp-kruis"
-          }
-        },
-        {
-          "key": "double-tracks-cross-example",
-          "title": {
-            "nl": "Voorbeeld 1 · B3 op Romp A ∩ Kruis B",
-            "en": "Example 1 · ball 3 at Body A ∩ Cross B"
-          },
-          "text": {
-            "nl": "Stel dat de middelpuntbanen Romp A en Kruis B elkaar in X snijden, waar het middelpunt van B3 ligt. Bij beide kandidaten raakt de buitenkant van bal 1 B3 al vóór bal 1 met zijn middelpunt X kan bereiken: op afstand r1 + r3, gemeten langs de aanloop naar B3. Daardoor kan B3 een verder verloop van de getekende lijn onderbreken. Spoor A bereikt deze botsing tijdens de Romp, spoor B pas op weg langs het Kruis, mits het hele voorafgaande traject inclusief banden en B2 mogelijk is. Het kruisingspunt is dus geen daadwerkelijk doorlopen middelpuntpositie van bal 1 bij een botsing met B3.",
-            "en": "Suppose the centre paths of Body A and Cross B intersect at X, where ball 3 is centred. On either approach ball 1 contacts ball 3 before its own centre can reach X, at centre separation r1 + r3. This interrupts the unimpeded ideal path. A reaches that contact on Body, B on Cross, provided the earlier cushion and ball-2 sequence is valid."
-          },
-          "image": {
-            "source": "KruinLines",
-            "line": "VIJF",
-            "parts": [
-              "romp",
-              "kruis"
-            ],
-            "tables": [
-              "klein",
-              "groot"
-            ],
-            "emphasize": "romp-kruis"
-          }
-        },
-        {
-          "key": "double-tracks-near-example",
-          "title": {
-            "nl": "Voorbeeld 2 · B3 naast het snijpunt",
-            "en": "Example 2 · ball 3 beside the intersection"
-          },
-          "text": {
-            "nl": "B3 hoeft niet precies op X te liggen. Neem bij gelijke ballen (diameter d) een kortste afstand van B3-centrum tot de ongestoorde middelpuntbaan van bal 1 van 0,6d voor Romp A en 0,8d voor Kruis B. Op beide aanlopen is een botsing mogelijk omdat de som van de beide balstralen d bedraagt; de bal raakt B3 vóór het punt van kleinste afstand. Bij 1,1d tot Kruis B is er langs die ideale baan geen botsing. De waarde 0,6d of 0,8d is de afstand tussen het B3-centrum en de middelpuntlijn van bal 1, NIET tussen de balranden. Controleer of het eerste contactpunt binnen het werkelijk afgelegde traject valt. Dit zijn rekenvoorbeelden, geen tafelmetingen.",
-            "en": "Ball 3 need not lie at X. For equal balls of diameter d, centre-to-path distances of 0.6d and 0.8d can both yield contact because ball 1 has its own radius; the first collision precedes the closest approach. At 1.1d the ideal path misses. Distances refer to ball 3's centre and ball 1's centre path, not the edges. Check that first contact lies on the actual travelled segment. Examples are schematic."
-          },
-          "image": {
-            "source": "KruinLines",
-            "line": "VIJF",
-            "parts": [
-              "romp",
-              "kruis"
-            ],
-            "tables": [
-              "klein",
-              "groot"
-            ],
-            "emphasize": "romp-kruis"
-          }
-        },
-        {
-          "key": "double-tracks-inventory",
-          "title": {
-            "nl": "Inventaris · welke dubbele spoorgevallen?",
-            "en": "Inventory · types of double-track cases"
-          },
-          "text": {
-            "nl": "Onderzoek minstens: (1) Romp A × Kruis B met B3 op het snijpunt; (2) B3 binnen één baldiameter van beide trajecten, maar niet op het snijpunt; (3) B3 binnen bereik van slechts één traject; (4) snijpunt buiten het daadwerkelijk doorlopen lijnstuk; (5) B2 wordt op het ene spoor wel en op het andere niet tijdig geraakt; (6) B3 wordt op een route te vroeg bereikt; (7) banden of andere ballen blokkeren het verloop; (8) bijna parallelle of samenvallende trajectdelen met een gedeelde raakzone. Registreer per kandidaat spoor, onderdeel, bandvolgorde, minimale centrumafstand in eenheden d, raaktype en waarnemingsstatus: geometrisch, geschat of op tafel bevestigd.",
-            "en": "Inventory: exact Body–Cross intersections; near intersections within one ball diameter; single-track contacts; intersections beyond a travelled segment; invalid ball-2 order; premature ball-3 contact; cushion or ball obstruction; and nearly coincident sections. Record segment, cushion order, minimum centre distance in ball diameters, contact type and evidence status."
-          },
-          "image": {
-            "source": "KruinLines",
-            "line": "VIJF",
-            "parts": [
-              "romp",
-              "kruis"
-            ],
-            "tables": [
-              "klein",
-              "groot"
-            ],
-            "emphasize": "romp-kruis"
           }
         },
         {
