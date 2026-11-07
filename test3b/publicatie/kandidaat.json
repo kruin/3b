@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "version": "v208-r106",
+  "version": "v208-r107",
   "privateDbSha": "88693866078212dcdb10c2722a05c7712f2bfe0d",
   "files": [
     {
@@ -258,7 +258,7 @@
     {
       "path": "MEETGEGEVENS-VERSIE.json",
       "group": "data",
-      "sha256": "59961b86c5ddc1a49c981d0e14611a74298f13be93f347578ed2c1f143d28bec",
+      "sha256": "c58d83117e8f403fb6070c463dcd8edc846abfb6a78ad379afa7a450172b8458",
       "before": null
     },
     {
@@ -270,7 +270,7 @@
     {
       "path": "spoorscherm-v208.js",
       "group": "app",
-      "sha256": "fba2b950211d1e61d1d550e510e73821de48244807736a9bff6deb660251b62e",
+      "sha256": "53fe29cdc032bd4057d00735b31b30c3b07e3e4138fbf81c49487d1a8fd3acab",
       "before": "ffc7ab8870da87853139ad7904df018cdddc7758"
     },
     {
@@ -306,49 +306,49 @@
     {
       "path": "REVISIE.txt",
       "group": "app",
-      "sha256": "665277cf5f84670927c25428d506e72533eb48dfa757c6a5ca2774aea07846f2",
+      "sha256": "01303edad5ada4c8041164c8f2c820475ff0f3be8e4addace0987febd68c94e9",
       "before": "04a13dfab311fb2c1343c494383741130dc6bf2d"
     },
     {
       "path": "VERSIE.txt",
       "group": "app",
-      "sha256": "fce43bc2336f7aa79d6ef9559eadfb0bc85a17c1b7858ba5d6578e4fb55bc55c",
+      "sha256": "8ce315edb5a1bc99b73b09306aa151cc9c2f5eea891c63b30a70b081b2d843dc",
       "before": "46e2e678240691e0dc10799da03b4c3d677cd857"
     },
     {
       "path": "HANDLEIDING-GEBRUIKER.md",
       "group": "app",
-      "sha256": "8e681f7a7c67c0d4e3e1c46f63c25e794ed30c12546e9c05a7a56ef27ba86807",
+      "sha256": "9df74c0ef35f9b0f4dcef28093bb334cb028acc722cefb8c594f67ebbcd2d070",
       "before": "e86726007537684eec8e1dbd2533e4d94839409b"
     },
     {
       "path": "doc/index.html",
       "group": "app",
-      "sha256": "4447f2d5bd950a9b0dc832e984073765eb8f0e8ecd88c59a84b44bc0bc2f5de2",
+      "sha256": "8a317260dd7e2adb20c95c42ff1dd6212f98dd6e6a87031ac5cace99ab7d9ce4",
       "before": "303192d0ffb386d27c971b89cfe6fecddce877e7"
     },
     {
       "path": "doc/lkl-meetwerkwijze.md",
       "group": "app",
-      "sha256": "cf855dcd938c9e4fa27a49f2689b959908d5e1b5459ad08ae7e04fd9acec3890",
+      "sha256": "13cc2c3f76aafc565d815399eb319e46df86120015e552d6b621bb35f33b0cd2",
       "before": "595e8c43fa4e91ae853452b9ace38df3becc68fa"
     },
     {
       "path": "doc/meetsysteem.html",
       "group": "app",
-      "sha256": "940d655ad2f43e978a066807cba91083d8f4190c9a5fdf81ef6cfc81935105b0",
+      "sha256": "55777930f5aeb01e57b06705d8ba29cfa64de4305ebe64f612e377458e50fa0b",
       "before": null
     },
     {
       "path": "RELEASE.json",
       "group": "app",
-      "sha256": "8b881fb576a36db607869c39b5b5471722dbaca9711b38678b9266c3847104a2",
+      "sha256": "0335df144599b5086a36edd8640fc283b7ebc39a33ef2aeaf4ebe1c47f5c6b95",
       "before": "3811cafbfb49a267415474cedf6419acfccacba9"
     },
     {
       "path": "index.html",
       "group": "app",
-      "sha256": "2ef0fc37c59e1b969112924b4dab7ba0b4562f8f866fa18f2ba1466db9b37296",
+      "sha256": "0443d1e97444bff21bef128082fa4c6bb44f6eb89067ec21bf6768dbf37da594",
       "before": "cae06c2c3cece099a9432564cca2d0ace50c362d"
     },
     {
@@ -360,7 +360,7 @@
     {
       "path": "production-environment-v208.js",
       "group": "app",
-      "sha256": "7196828969407836251684db2582171fa3256ccc75b7e394065bfec890f9d5e1",
+      "sha256": "481173650b17a89ff51ef30b8497b9bfe91e1566ffc12d52bdb3f94565f7ab1e",
       "before": "857dc2d467602a6ce1a9b4c16077735a4a322f1d"
     },
     {
@@ -372,7 +372,7 @@
     {
       "path": "qr-user.html",
       "group": "app",
-      "sha256": "08c57fc748b7721fb147d79f8c2a5039ae72067c676dc01390a2b5845e5aa716",
+      "sha256": "c8eccffd98548243f42c693d8fefe2977ea1ad2b3656a873425065554f9e782c",
       "before": null
     }
   ]

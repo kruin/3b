@@ -1,5 +1,5 @@
-v208-r106 — mobiele test op desktop
+v208-r107 — H2 Via bal 2 bereikbaar
 7 november 2026
-Testinstellingen: Mobiele test op desktop, staand/liggend, met tijdelijke kopie van de actuele tafel.
-Geen toegangstoken of databasebewaring in de testkopie. QR voor echte telefoon behouden.
-Ook de Waaier/Parallel-knop op West is verborgen. Alleen test.
+Volgend hoofdstuk aan het einde van H1 en H2 direct in hoofdmenu.
+H2 opent een introductie over de Sporen, aanloop/Neus, dik/dun, hoog/laag, rollend/schuivend, tempo en klos.
+Laatste versie-knop verwijderd; vaste ingang en versiecontrole blijven. Alleen test.

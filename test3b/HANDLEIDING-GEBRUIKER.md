@@ -1,4 +1,4 @@
-# 3B v208-r106 — User-werkwijze
+# 3B v208-r107 — User-werkwijze
 
 # De Waaier — Van Top tot Teen
 
@@ -243,6 +243,12 @@ De VIJF-schermen tonen een vast, goed leesbaar naamlabel op het laken: VIJF, VIJ
 ## Eén cursus, direct Klein/Groot vergelijken
 
 Klein blijft het uitgangspunt. Met de knop **Klein ⇄ / Groot ⇄** bij de stapmelding wissel ik op dezelfde pagina. Les, stap en Spoor blijven behouden; bij een gepauzeerde bal blijft ook de voortgang gelijk. De tekening gebruikt de eigen Kruinmeetwaarden van de gekozen tafelmaat. De standaard schaalweergave houdt de gele speelveldranden even groot. Er komt geen tweede, parallelle cursus.
+
+## H2 · Via bal 2
+
+Aan het einde van H1 opent Volgend hoofdstuk · H2 Via bal 2 de introductie. Vanuit het hoofdmenu bereik je dezelfde introductie met H2 · Via bal 2. Vorige keert terug naar de laatste Kruis-pagina van H1; sluiten gaat naar tafel.
+
+Het gekozen Spoor blijft het doel. De introductie onderscheidt aanloop naar bal 2 en de gewenste Neus na het contact, en benoemt dik/dun raken, hoog/laag afstoten, rollend/schuivend bij bal 2, tempo, de andere Sporen en mogelijke klossen. VIJF is het eerste voorbeeld, geen beperking van de aanpak. De tafel toont Kruins gemeten Neus; een los schema is geen berekende botsing. Concrete vervolglessen volgen later.
 
 
 # LKL meten: Neus, Kop en Romp
