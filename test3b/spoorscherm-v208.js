@@ -2935,21 +2935,40 @@ window.installThreeBLklLesson=adapter=>{
     return {from:at(start),to:at(end),length:(end-start)*Math.hypot(ax,ay),hit:Math.abs(det)>1e-9&&t>=0&&t<=1&&u>=0&&u<=1?at(t):null};
   }
 
-  let doubleChoice='';
+
+  let doubleChoice='',doubleRomp='',doubleBase='';
+  const doubleTrackCache=new Map();
   function renderDoubles(){
     doubles.replaceChildren();field();
-    const tracks=['VIER','VIJF','ZES','ZEVEN','ACHT'].map(track=>adapter.lesson1Data(track)),rows=[];
-    for(const a of tracks)for(const b of tracks){
-      if(a.track===b.track||!a.rompPart||!b.kruisPart)continue;
-      const zone=doubleZone(a.rompPart,b.kruisPart,a.radiusCm+b.radiusCm);
-      if(zone)rows.push({a,b,zone,key:a.track+'-'+b.track});
+    if(!doubleTrackCache.has(data.table)){
+      const bases=['VIER','VIJF','ZES','ZEVEN','ACHT'],keys=adapter.courseTrackKeys(),tracks=[];
+      keys.sort((a,b)=>{const base=k=>k.replace(/[+-]\d+$/,''),offset=k=>Number(k.match(/[+-]\d+$/)?.[0]||0);return bases.indexOf(base(a))-bases.indexOf(base(b))||offset(a)-offset(b);});
+      for(const track of keys){try{const part=adapter.lesson1Data(track);if(part.rompPart||part.kruisPart)tracks.push(part);}catch(_){}}
+      doubleTrackCache.set(data.table,tracks);
     }
-    const choices=rows.filter(row=>row.a.track===data.track||row.b.track===data.track);
-    const selected=choices.find(row=>row.key===doubleChoice)||choices.find(row=>row.a.track===data.track)||choices[0];
-    const nav=document.createElement('nav');nav.setAttribute('aria-label','Keuze-sporen');nav.style.cssText='display:flex;flex-wrap:wrap;gap:8px';
-    for(const row of choices){const button=document.createElement('button');button.type='button';button.textContent='Romp '+row.a.track+' / Kruis '+row.b.track;button.dataset.doubleChoice=row.key;button.setAttribute('aria-pressed',String(row===selected));button.onclick=()=>{doubleChoice=row.key;render();};nav.append(button);}
+    const tracks=doubleTrackCache.get(data.table),romps=tracks.filter(t=>t.rompPart);
+    if(doubleBase!==data.track){doubleBase=data.track;doubleRomp=data.track;doubleChoice='';}
+    const bodyTrack=romps.find(t=>t.track===doubleRomp)||romps.find(t=>t.track===data.track)||romps[0];
+    doubleRomp=bodyTrack?.track||'';
+    $('lklExerciseTitle').textContent='Romp '+doubleRomp.replace('-','−')+' · keuze-sporen en zones';
+    const choices=[];
+    if(bodyTrack)for(const b of tracks){
+      if(bodyTrack.track===b.track||!b.kruisPart)continue;
+      const zone=doubleZone(bodyTrack.rompPart,b.kruisPart,bodyTrack.radiusCm+b.radiusCm);
+      if(zone)choices.push({a:bodyTrack,b,zone,key:b.track});
+    }
+    const selected=choices.find(row=>row.key===doubleChoice)||choices[0];
+    const nav=document.createElement('nav');nav.setAttribute('aria-label','Keuze-sporen');nav.style.cssText='display:flex;flex-wrap:wrap;gap:12px';
+    const addSelect=(name,id,items,value,change)=>{
+      const label=document.createElement('label');label.textContent=name+' ';
+      const select=document.createElement('select');select.id=id;select.style.cssText='min-height:44px;max-width:100%;font:inherit;padding:6px';
+      for(const item of items){const option=document.createElement('option');option.value=item.key;option.textContent=item.label;select.append(option);}
+      select.value=value;select.disabled=!items.length;select.onchange=()=>change(select.value);label.append(select);nav.append(label);
+    };
+    addSelect('Romp','h1RompChoice',romps.map(t=>({key:t.track,label:t.track.replace('-','−')})),doubleRomp,value=>{doubleRomp=value;doubleChoice='';render();});
+    addSelect('Kruis','h1KruisChoice',choices.map(row=>({key:row.key,label:row.b.track.replace('-','−')})),selected?.key||'',value=>{doubleChoice=value;render();});
     doubles.append(nav);
-    const note=document.createElement('p');note.textContent=selected?'Geel: Romp. Turkoois: Kruis. De gouden zone houdt rekening met de breedte van bal 1 én B3.':'Hier zijn geen dubbele keuze-sporen beschikbaar.';doubles.append(note);
+    const note=document.createElement('p');note.textContent=selected?'Geel: Romp. Turkoois: Kruis. De gouden zone houdt rekening met de breedte van bal 1 én B3.':'Bij deze Romp is geen gedeelde zone met een ander Kruis beschikbaar.';doubles.append(note);
     if(!selected)return;
     const {a,b,zone}=selected,body=a.rompPart,cross=b.kruisPart,g=data.geometry,r=a.radiusCm+b.radiusCm;
     // Intersection of finite capsules: possible B3 centres reachable by both balls.
