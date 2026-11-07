@@ -2932,11 +2932,12 @@ window.installThreeBLklLesson=adapter=>{
     l=mid;h=1;for(let k=0;k<60;k++){const t=(l+h)/2;if(dist(t)<=r)l=t;else h=t;}const end=dist(1)<=r?1:l;
     const ax=a.to.x-a.from.x,ay=a.to.y-a.from.y,bx=b.to.x-b.from.x,by=b.to.y-b.from.y,det=ax*by-ay*bx,dx=b.from.x-a.from.x,dy=b.from.y-a.from.y;
     const t=(dx*by-dy*bx)/det,u=(dx*ay-dy*ax)/det;
-    return {from:at(start),to:at(end),length:(end-start)*Math.hypot(ax,ay),hit:Math.abs(det)>1e-9&&t>=0&&t<=1&&u>=0&&u<=1?at(t):null};
+    const nearA=at(mid),vx=b.to.x-b.from.x,vy=b.to.y-b.from.y,bt=Math.max(0,Math.min(1,((nearA.x-b.from.x)*vx+(nearA.y-b.from.y)*vy)/(vx*vx+vy*vy))),nearB=lerp(b.from,b.to,bt);
+    return {nearA,nearB,from:at(start),to:at(end),length:(end-start)*Math.hypot(ax,ay),hit:Math.abs(det)>1e-9&&t>=0&&t<=1&&u>=0&&u<=1?at(t):null};
   }
 
 
-  let doubleChoice='',doubleRomp='',doubleBase='';
+  let doubleChoice='',doubleRomp='',doubleBase='',doubleAll=true;
   const doubleTrackCache=new Map();
   function renderDoubles(){
     doubles.replaceChildren();field();
@@ -2954,7 +2955,7 @@ window.installThreeBLklLesson=adapter=>{
     const choices=[];
     if(bodyTrack)for(const b of tracks){
       if(bodyTrack.track===b.track||!b.kruisPart)continue;
-      const zone=doubleZone(bodyTrack.rompPart,b.kruisPart,bodyTrack.radiusCm+b.radiusCm);
+      const zone=doubleZone(bodyTrack.rompPart,b.kruisPart,2*(bodyTrack.radiusCm+b.radiusCm));
       if(zone)choices.push({a:bodyTrack,b,zone,key:b.track});
     }
     const selected=choices.find(row=>row.key===doubleChoice)||choices[0];
@@ -2966,9 +2967,11 @@ window.installThreeBLklLesson=adapter=>{
       select.value=value;select.disabled=!items.length;select.onchange=()=>change(select.value);label.append(select);nav.append(label);
     };
     addSelect('Romp','h1RompChoice',romps.map(t=>({key:t.track,label:t.track.replace('-','−')})),doubleRomp,value=>{doubleRomp=value;doubleChoice='';render();});
-    addSelect('Kruis','h1KruisChoice',choices.map(row=>({key:row.key,label:row.b.track.replace('-','−')})),selected?.key||'',value=>{doubleChoice=value;render();});
+    addSelect('Kruis','h1KruisChoice',choices.map(row=>({key:row.key,label:row.b.track.replace('-','−')})),selected?.key||'',value=>{doubleChoice=value;doubleAll=false;render();});
+    const overview=document.createElement('button');overview.type='button';overview.id='h1AllZones';overview.textContent=doubleAll?'Alle zones ✓':'Alle zones';overview.setAttribute('aria-pressed',String(doubleAll));overview.onclick=()=>{doubleAll=!doubleAll;render();};nav.append(overview);
     doubles.append(nav);
-    const note=document.createElement('p');note.textContent=selected?'Geel: Romp. Turkoois: Kruis. De gouden zone houdt rekening met de breedte van bal 1 én B3.':'Bij deze Romp is geen gedeelde zone met een ander Kruis beschikbaar.';doubles.append(note);
+    const total=document.createElement('p');total.id='h1ZoneCount';total.textContent=choices.length+' Kruis-zones bij Romp '+doubleRomp.replace('-','−')+'.';doubles.append(total);
+    const note=document.createElement('p');note.textContent=selected?'Geel: Romp. Turkoois: Kruis. Goud: de gedeelde zones, met de breedte van bal 1 én B3. Gestreept: de aanloop. Pijlen: de speelrichting.':'Bij deze Romp is geen gedeelde zone met een ander Kruis beschikbaar.';doubles.append(note);
     if(!selected)return;
     const {a,b,zone}=selected,body=a.rompPart,cross=b.kruisPart,g=data.geometry,r=a.radiusCm+b.radiusCm;
     // Intersection of finite capsules: possible B3 centres reachable by both balls.
@@ -2979,12 +2982,26 @@ window.installThreeBLklLesson=adapter=>{
     const defs=el('defs'),clip=document.createElementNS(ns,'clipPath'),shape=document.createElementNS(ns,'path');clip.id='h1RompZone';clip.setAttribute('clipPathUnits','userSpaceOnUse');shape.setAttribute('d',capsule(body));clip.append(shape);defs.append(clip);
     const tableClip=document.createElementNS(ns,'clipPath'),rect=document.createElementNS(ns,'rect');tableClip.id='h1ZoneTable';tableClip.setAttribute('clipPathUnits','userSpaceOnUse');for(const [key,value]of Object.entries({x:data.radiusCm,y:data.radiusCm,width:g.widthCm-2*data.radiusCm,height:g.heightCm-2*data.radiusCm}))rect.setAttribute(key,value);tableClip.append(rect);defs.append(tableClip);
     const zoneGroup=el('g',{'clip-path':'url(#h1ZoneTable)'});
-    zoneGroup.append(el('path',{d:capsule(cross),fill:'#ffdc62',opacity:.65,'clip-path':'url(#h1RompZone)','data-h1-zone':'true'}));
+    for(const row of (doubleAll?choices:[selected])){
+      zoneGroup.append(el('path',{d:capsule(row.b.kruisPart),fill:'#ffdc62',opacity:row===selected?.65:.32,'clip-path':'url(#h1RompZone)','data-h1-zone':row.key,'data-selected':String(row===selected)}));
+      if(doubleAll&&row!==selected){const part=row.b.kruisPart;el('line',{x1:part.from.x,y1:part.from.y,x2:part.to.x,y2:part.to.y,stroke:'#8ce2dc','stroke-width':.6,opacity:.45,'data-kz-choice':row.key});}
+    }
+    for(const [part,color]of [[a.journey.find(p=>p.key==='nek'),'#ffdc62'],[b.rompPart,'#8ce2dc']]){
+      if(part)el('line',{x1:part.from.x,y1:part.from.y,x2:part.to.x,y2:part.to.y,stroke:color,'stroke-width':1,opacity:.7,'stroke-dasharray':'3 2','data-kz-approach':'true'});
+    }
+    // Dashed boundaries show the contact reach of both balls around the selected paths.
+    for(const [part,color]of [[body,'#ffdc62'],[cross,'#8ce2dc']]){
+      const group=el('g',{'clip-path':'url(#h1ZoneTable)'});
+      group.append(el('path',{d:capsule(part),fill:'none',stroke:color,'stroke-width':.45,'stroke-dasharray':'2 2',opacity:.65,'data-kz-width':'true'}));
+    }
     for(const [part,color,label]of [[body,'#ffdc62','Romp '+a.track],[cross,'#8ce2dc','Kruis '+b.track]]){
       el('line',{x1:part.from.x,y1:part.from.y,x2:part.to.x,y2:part.to.y,stroke:color,'stroke-width':2,'data-part':part.key,'data-reference':'false'});
+      for(const point of [part.from,part.to])el('circle',{cx:point.x,cy:point.y,r:1.1,fill:color,'data-kz-endpoint':'true'});
+      const tip=lerp(part.from,part.to,.65),dx=part.to.x-part.from.x,dy=part.to.y-part.from.y,len=Math.hypot(dx,dy),ux=dx/len,uy=dy/len;
+      el('polygon',{points:tip.x+','+tip.y+' '+(tip.x-4*ux-1.8*uy)+','+(tip.y-4*uy+1.8*ux)+' '+(tip.x-4*ux+1.8*uy)+','+(tip.y-4*uy-1.8*ux),fill:color,'data-kz-direction':'true'});
       const at=lerp(part.from,part.to,.45);el('text',{x:at.x+3,y:at.y-4,'font-size':6,'data-zone-label':'true',style:'fill:'+color},label);
     }
-    const center=zone.hit||lerp(zone.from,zone.to,.5);
+    const center=zone.hit||lerp(zone.nearA,zone.nearB,.5);
     el('circle',{cx:center.x,cy:center.y,r:data.radiusCm,fill:'#f34d4d',stroke:'#222','stroke-width':.4,'data-h1-b3':'true'});
     requestAnimationFrame(()=>{const m=svg.getScreenCTM();if(m){const unit=Math.hypot(m.a,m.b);for(const label of svg.querySelectorAll('[data-zone-label]'))label.style.fontSize=(11/unit)+'px';}});
     svg.setAttribute('aria-label','Romp '+a.track+' en Kruis '+b.track+' met gedeelde zone voor bal 3');
@@ -2996,7 +3013,7 @@ window.installThreeBLklLesson=adapter=>{
     $('lklExerciseTitle').textContent=data.trackLabel+' · Kruis-zones';
     $('lklExerciseText').textContent='Na drie of vier banden kijk je naar zones. Welke sporen passen bij bal 3?';
     $('lklApproach').textContent='Kies twee sporen en vergelijk hun gedeelde zone.';
-    $('lklCourseSimulationNote').textContent='De rode bal is B3. De zone toont waar beide keuze-sporen hem kunnen raken.';
+    $('lklCourseSimulationNote').textContent='De rode bal is B3. Kies een Kruis voor één zone, of bekijk alle zones samen.';
     angleSketch.hidden=true;renderDoubles();
   }
   function renderBackwards(){

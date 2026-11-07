@@ -9,6 +9,9 @@ assert(Math.abs(z.from.x-8)<1e-7&&Math.abs(z.to.x-12)<1e-7);assert.equal(z.hit.x
 assert.equal(ctx.doubleZone(part(0,0,20,0),part(0,3,20,3),2),null);
 const end=ctx.doubleZone(part(0,0,20,0),part(10,1,10,5),2);
 assert(Math.abs(end.from.x-(10-Math.sqrt(3)))<1e-7);assert.equal(end.hit,null);
+// Two ball-wide corridors overlap even when the B3 centre is off the Romp.
+const near=ctx.doubleZone(part(0,0,20,0),part(0,3,20,3),4);
+assert(near&&Math.abs(near.nearA.y-near.nearB.y)===3);
 const server=http.createServer((req,res)=>{const file=path.resolve(__dirname,'.'+new URL(req.url,'http://local').pathname.replace(/\/$/,'/index.html'));if(!file.startsWith(__dirname+path.sep)){res.writeHead(403).end();return;}fs.readFile(file,(err,data)=>{if(err){res.writeHead(404).end();return;}res.setHeader('Content-Type',file.endsWith('.js')?'text/javascript':file.endsWith('.html')?'text/html':file.endsWith('.css')?'text/css':'application/octet-stream');res.end(data);});});
 (async()=>{await new Promise(r=>server.listen(0,'127.0.0.1',r));const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||chromium.executablePath(),args:['--no-sandbox']});
 try{for(const viewport of [{width:1280,height:900},{width:390,height:844},{width:844,height:390}]){
@@ -19,6 +22,13 @@ try{for(const viewport of [{width:1280,height:900},{width:390,height:844},{width
   assert((await page.locator('#lklExerciseTitle').textContent()).includes('ZEVEN'));
   const romp=page.locator('#h1RompChoice'),kruis=page.locator('#h1KruisChoice');
   const romps=await romp.locator('option').evaluateAll(nodes=>nodes.map(n=>n.value));assert(romps.some(k=>k.includes('+'))&&romps.some(k=>k.includes('-')));
+  const all=page.locator('#h1AllZones');
+  if(await all.getAttribute('aria-pressed')!=='true')await all.click();
+  const available=await kruis.locator('option').count();
+  assert.equal(await page.locator('[data-h1-zone]').count(),available);
+  assert.equal(await page.locator('[data-kz-direction]').count(),2);
+  assert.equal(await page.locator('[data-kz-width]').count(),2);
+  assert(await page.locator('[data-kz-approach]').count()>0);
   assert.equal(await page.locator('[data-h1-naive]').count(),0);
   assert.equal(await page.locator('#h1DoubleTracks table').count(),0);
   const allCrosses=new Set();
@@ -31,6 +41,7 @@ try{for(const viewport of [{width:1280,height:900},{width:390,height:844},{width
   assert(allCrosses.has('VIJF')&&allCrosses.has('ZES')&&allCrosses.has('ZEVEN')&&allCrosses.has('ACHT'));
   assert([...allCrosses].some(k=>/[+-]/.test(k)));
   await romp.selectOption('ZEVEN');
+  if(await all.getAttribute('aria-pressed')!=='true')await all.click();
   console.log(table,viewport.width,'Romp-keuzes',romps.length,'Kruis-keuzes',allCrosses.size);
   const text=await page.locator('#h1DoubleTracks').innerText();assert(!/cm|coördinaten|hoekverschil|r1|r₁/.test(text));assert(text.includes('bal 1 én B3'));
   const box=await page.locator('#lklLesson1').evaluate(d=>({r:d.getBoundingClientRect().toJSON(),scroll:d.scrollWidth,client:d.clientWidth}));assert(box.scroll<=box.client+1);assert(box.r.x>=0&&box.r.y>=0&&box.r.bottom<=viewport.height+1);
