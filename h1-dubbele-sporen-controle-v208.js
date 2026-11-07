@@ -17,13 +17,22 @@ try{for(const viewport of [{width:1280,height:900},{width:390,height:844},{width
  await page.waitForSelector('#h1DoubleTracks',{state:'visible'});
  for(const table of ['klein','groot']){
   assert((await page.locator('#lklExerciseTitle').textContent()).includes('ZEVEN'));
-  const choices=page.locator('[data-double-choice]');assert(await choices.count()>0);
+  const romp=page.locator('#h1RompChoice'),kruis=page.locator('#h1KruisChoice');
+  const romps=await romp.locator('option').evaluateAll(nodes=>nodes.map(n=>n.value));assert(romps.some(k=>k.includes('+'))&&romps.some(k=>k.includes('-')));
   assert.equal(await page.locator('[data-h1-naive]').count(),0);
   assert.equal(await page.locator('#h1DoubleTracks table').count(),0);
-  assert.equal(await page.locator('[data-h1-zone]').count(),1);
-  const text=await page.locator('#h1DoubleTracks').innerText();assert(!/cm|coördinaten|hoekverschil|r1|r₁/.test(text));
-  assert(text.includes('bal 1 én B3'));
-  for(let i=0;i<await choices.count();i++){await choices.nth(i).click();assert.equal(await choices.nth(i).getAttribute('aria-pressed'),'true');assert.equal(await page.locator('[data-h1-zone]').count(),1);}
+  const allCrosses=new Set();
+  for(const key of romps){
+    await romp.selectOption(key);assert.equal(await romp.inputValue(),key);
+    const crosses=await kruis.locator('option').evaluateAll(nodes=>nodes.map(n=>n.value));
+    for(const choice of crosses){allCrosses.add(choice);await kruis.selectOption(choice);assert.equal(await page.locator('[data-h1-zone]').count(),1);}
+    if(!crosses.length)assert.equal(await page.locator('[data-h1-zone]').count(),0);
+  }
+  assert(allCrosses.has('VIJF')&&allCrosses.has('ZES')&&allCrosses.has('ZEVEN')&&allCrosses.has('ACHT'));
+  assert([...allCrosses].some(k=>/[+-]/.test(k)));
+  await romp.selectOption('ZEVEN');
+  console.log(table,viewport.width,'Romp-keuzes',romps.length,'Kruis-keuzes',allCrosses.size);
+  const text=await page.locator('#h1DoubleTracks').innerText();assert(!/cm|coördinaten|hoekverschil|r1|r₁/.test(text));assert(text.includes('bal 1 én B3'));
   const box=await page.locator('#lklLesson1').evaluate(d=>({r:d.getBoundingClientRect().toJSON(),scroll:d.scrollWidth,client:d.clientWidth}));assert(box.scroll<=box.client+1);assert(box.r.x>=0&&box.r.y>=0&&box.r.bottom<=viewport.height+1);
   await page.locator('#h1DoubleTracks').scrollIntoViewIfNeeded();if(process.env.QA_DIR){fs.mkdirSync(process.env.QA_DIR,{recursive:true});await page.screenshot({path:path.join(process.env.QA_DIR,'h1-'+table+'-'+viewport.width+'.png')});}
   await page.locator('#courseTableToggle').click();
