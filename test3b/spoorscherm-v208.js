@@ -3011,8 +3011,8 @@ window.installThreeBLklLesson=adapter=>{
     data=adapter.lesson1Data(courseTrack());quietStep();d.dataset.line='kruis';
     $('lklLessonProgress').textContent='Stap '+(index+1)+' van '+crossTracks.length+' · '+data.trackLabel;
     $('lklExerciseTitle').textContent=data.trackLabel+' · Kruis-zones';
-    $('lklExerciseText').textContent='Na drie of vier banden kijk je naar zones. Welke sporen passen bij bal 3?';
-    $('lklApproach').textContent='Kies twee sporen en vergelijk hun gedeelde zone.';
+    $('lklExerciseText').textContent='De 45-lijn hoort bij het doorlopende spoor en heeft een aanloop. R markeert het raakpunt aan de band; het is geen nieuw afstootpunt.';
+    $('lklApproach').textContent='Volg de gestreepte aanlooplijn en daarna de 45-lijn. Kies de sporen die bij de zone van bal 3 passen.';
     $('lklCourseSimulationNote').textContent='De rode bal is B3. Kies een Kruis voor één zone, of bekijk alle zones samen.';
     angleSketch.hidden=true;renderDoubles();
   }
