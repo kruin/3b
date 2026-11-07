@@ -2782,7 +2782,7 @@ window.installThreeBLklLesson=adapter=>{
   const actions=document.querySelector('#explanationCarousel .course-header-actions');if(!actions)return;
   const names={neus:'Neus',kop:'Kop',nek:'Nek',romp:'Romp',kruis:'Kruis',been:'Been',hiel:'Hiel',uitloop:'Uitloop na Hiel'},order=['neus','kop','nek','romp','kruis','been'],colors={neus:'#59bdec',kop:'#edb55b',nek:'#ad9be5',romp:'#37d3b2',kruis:'#ed88b6',been:'#d2dd68',hiel:'#edb55b',uitloop:'#edb55b'};
   const explanations={neus:'Ik volg mijn speelbal vanaf de afstoot naar de eerste lange band: West.',kop:'Na de Neus volgt de Kop, van West naar de korte noordband. Waar mijn eigen Kop A ligt, meet ik in een latere meetles.',nek:'Na de Kop volgt de Nek, van de noordband naar de lange oostband. De Nek verbindt Kop en Romp.',romp:'Na de Nek volgt de Romp, vanaf de oostband richting de zuidzijde. Neus en Romp vormen het zichtbare Karkas.',kruis:'Na de Romp volgt het Kruis. Ik blijf dezelfde bal volgen; ik spring niet naar een andere lijn.',been:'Na het Kruis volgt het Been. In LKL loopt de bal uit tot 45% van het Been en komt daar tot rust.',hiel:'Na Been volgt Hiel. In het afzonderlijke 6–7-patroon wordt de hele Hiel doorlopen.'};
-  const lessons=[{track:'VIJF',title:'Les 2 · VIJF lijn na lijn'},{track:'VIJF',title:'Les 3 · VIJF terug vanaf de Romp'},{track:'VIJF',title:'Les 4 · sporen van VIJF'},{track:'VIJF',title:'Les 5 · Kruis: 45° en de looplijnen'},{track:'VIJF',title:'H2 · Via bal 2'}];
+  const lessons=[{track:'VIJF',title:'Les 2 · VIJF lijn na lijn'},{track:'VIJF',title:'Les 3 · VIJF terug vanaf de Romp'},{track:'VIJF',title:'Les 4 · sporen van VIJF'},{track:'VIJF',title:'Les 5 · Keuze-sporen en zones'},{track:'VIJF',title:'H2 · Via bal 2'}];
   let lesson=0,index=0,data=null,frame=0,progress=0,started=0,running=false,demoAnimations=[],reference=false,lineNode,ballNode,markNode;
   const d=document.createElement('dialog');d.id='lklLesson1';d.setAttribute('aria-labelledby','lklLessonTitle');
   d.innerHTML=`<header><h2 id="lklLessonTitle"></h2><button type="button" id="closeLklLesson" aria-label="Cursus sluiten">×</button></header><p id="lklLessonSource"></p><p id="lklCourseBasis">Je kijkt naar Kruins tafel. Eigen metingen op je eigen tafel(s) volgen later.</p><p id="lklLessonProgress"></p><p id="lklDiamondCaption" hidden></p><div class="lkl-lesson-layout"><svg id="lklLessonTable" role="img" aria-label="De bal volgt het LKL-spoor lijn na lijn"></svg><section><p id="lklFixedQuestions"><strong>LKL · lang–kort–lang</strong></p><h3 id="lklExerciseTitle"></h3><p id="lklExerciseText"></p><p id="lklRouteSequence" aria-label="Lijnvolgorde"></p><p id="lklApproach">De bal volgt het spoor lijn na lijn.</p><p id="lklAnimationStatus" role="status" aria-live="polite"></p><p id="lklGeometryNotice"></p><fieldset id="courseRunOutConfig" hidden><legend>Config · uitloop van dit basisspoor</legend><label>Na Hiel (cm) <input id="courseRunOutCm" required type="number" min="0" max="100" step="1"></label><button type="button" id="saveCourseRunOut">Bewaar uitloop</button><p id="courseRunOutStatus" role="status"></p></fieldset><button type="button" id="harderLkl">Harder lopende bal → 6–7 banden</button><button type="button" id="lklRoll">Pauze</button><button type="button" id="repeatLklLine">Demo opnieuw</button><p id="lklCourseSimulationNote">Dit is een weergave van het actieve spoor, geen voorspelling van snelheid. Bal 3 staat alvast op de Romp; bal 2 en de volledige carambole komen later.</p></section></div><nav id="lklStepNavigation" aria-label="Lesstappen"><button type="button" id="previousLklExercise">← Vorige stap</button><button type="button" id="nextLklExercise">Volgende stap →</button><button type="button" id="repeatLklLesson">Les opnieuw</button></nav><nav id="lklLessonNavigation" aria-label="Lessen"><button type="button" id="previousLklLesson">← Vorige les</button><button type="button" id="nextLklLesson">Volgende les →</button><button type="button" id="lessonToIndependent">Naar tafel ↔</button></nav>`;
@@ -2881,7 +2881,7 @@ window.installThreeBLklLesson=adapter=>{
   function courseSegment(p,thin=false){const line=el('line',{x1:p.from.x,y1:p.from.y,x2:p.to.x,y2:p.to.y,stroke:thin?'#f5d680':colors[p.key],'stroke-width':thin?.7:3.5,...(thin?{'stroke-dasharray':'3 2',opacity:.7}:{})});line.dataset.part=p.key;line.dataset.reference=String(thin);if(!thin){courseEndpointLabels(p);const q=lerp(p.from,p.to,.5);el('text',{x:q.x+2,y:q.y-4,'font-size':7.5},names[p.key]);}}
   function numberedBall(p,n,color,cls){const circle=el('circle',{cx:p.x,cy:p.y,r:data.radiusCm,fill:color,stroke:'#222','stroke-width':.5,class:cls});el('text',{x:p.x,y:p.y,'dominant-baseline':'middle','font-size':4.5,'text-anchor':'middle',class:'ball-number',style:'fill:#17271f;stroke:none'},String(n));return circle;}
   function stepDemo(){
-    stop();if(lesson===2&&index===parallelTracks.length){$('repeatLklLine').hidden=true;d.dataset.demo='still';return;}$('repeatLklLine').hidden=false;$('repeatLklLine').textContent='Demo opnieuw';
+    stop();if(lesson===3||lesson===2&&index===parallelTracks.length){$('repeatLklLine').hidden=true;d.dataset.demo='still';return;}$('repeatLklLine').hidden=false;$('repeatLklLine').textContent='Demo opnieuw';
     const nodes=[...svg.querySelectorAll(lesson===2&&(index===parallelTracks.length||parallelView==='arrivals')?'.course-arrival':'line[data-part]:not([data-reference=true])')];
     $('repeatLklLine').hidden=nodes.length===0;
     nodes.forEach((node,i)=>{const length=node.tagName.toLowerCase()==='line'?Math.hypot(+node.getAttribute('x2')-+node.getAttribute('x1'),+node.getAttribute('y2')-+node.getAttribute('y1')):0;
@@ -2923,8 +2923,6 @@ window.installThreeBLklLesson=adapter=>{
   // Finite centre trajectories; a stationary B3 can be reached within r1+r3.
   const doubles=document.createElement('section');doubles.id='h1DoubleTracks';
   $('lklExerciseText').after(doubles);
-  const exact=v=>Number(v).toLocaleString('nl-NL',{maximumFractionDigits:6});
-  const xy=p=>'('+p.x.toFixed(2)+', '+p.y.toFixed(2)+')';
   function distanceToPart(p,b){const x=b.to.x-b.from.x,y=b.to.y-b.from.y,t=Math.max(0,Math.min(1,((p.x-b.from.x)*x+(p.y-b.from.y)*y)/(x*x+y*y)));return Math.hypot(p.x-b.from.x-t*x,p.y-b.from.y-t*y);}
   function doubleZone(a,b,r){
     const at=t=>lerp(a.from,a.to,t),dist=t=>distanceToPart(at(t),b);
@@ -2936,55 +2934,51 @@ window.installThreeBLklLesson=adapter=>{
     const t=(dx*by-dy*bx)/det,u=(dx*ay-dy*ax)/det;
     return {from:at(start),to:at(end),length:(end-start)*Math.hypot(ax,ay),hit:Math.abs(det)>1e-9&&t>=0&&t<=1&&u>=0&&u<=1?at(t):null};
   }
-  function renderDoubles(){
-    const g=data.geometry,body=data.rompPart,cross=data.kruisPart;
-    doubles.replaceChildren();if(!body||!cross)return;
-    const paragraph=text=>{const p=document.createElement('p');p.textContent=text;doubles.append(p);};
-    paragraph('Romp en Kruis · echte balmiddelpuntbanen in cm. Oorsprong: noordwest; x naar Oost, y naar Zuid. Geel = Romp, roze = Kruis. V/A zijn stiplijnwaarden; de onderstaande coördinaten liggen op de balbaan.');
-    for(const key of ['romp','kruis']){const part=data[key+'Part'],pair=data.route[key];paragraph(names[key]+': V '+pair.from.band+' '+exact(pair.from.value)+' → A '+pair.to.band+' '+exact(pair.to.value)+'. Balbaan '+xy(part.from)+' → '+xy(part.to)+'.');}
-    if(body.band==='zuid'){
-      const r=SpoorGeometry.contact(data.route.romp.from,data.route.romp.to,g);
-      paragraph('Zuid R = '+exact(r.value)+'; gedeeld balmiddelpunt '+xy(body.to)+'. R volgt de bandcontactconventie van de app (inzet '+g.inset+' cm); R is geen stiplijn-A.');
-      el('line',{x1:body.to.x,y1:body.to.y,x2:body.to.x,y2:g.heightCm,stroke:'#fff','stroke-width':.5});
-      el('circle',{cx:body.to.x,cy:g.heightCm,r:1.4,fill:'#fff','data-h1-south':'true'});
-      el('text',{x:body.to.x+3,y:g.heightCm-5,'font-size':5,style:'fill:#fff'},'R Zuid');
 
-      // Counterfactual: specular reflection of Romp, clipped at first cushion.
-      const v={x:body.to.x-body.from.x,y:body.from.y-body.to.y},a=cross.from;
-      const times=[v.x>0?(g.widthCm-g.inset-a.x)/v.x:v.x<0?(g.inset-a.x)/v.x:Infinity,v.y<0?(g.inset-a.y)/v.y:Infinity].filter(t=>t>1e-8),t=Math.min(...times),end={x:a.x+t*v.x,y:a.y+t*v.y};
-      el('line',{x1:a.x,y1:a.y,x2:end.x,y2:end.y,stroke:'#c2d8ef','stroke-width':1,'stroke-dasharray':'3 3','data-h1-naive':'true'});
-      const angle=Math.acos(Math.max(-1,Math.min(1,(v.x*(cross.to.x-a.x)+v.y*(cross.to.y-a.y))/(Math.hypot(v.x,v.y)*Math.hypot(cross.to.x-a.x,cross.to.y-a.y)))))*180/Math.PI;
-      paragraph('Blauw gestreept = uitsluitend een rekenvergelijking: Romp spiegelend voortzetten na Zuid, zonder effect. Hoekverschil met het werkelijke Kruis: '+angle.toFixed(2)+'°. Een rechte verlenging gaat buiten de tafel. Alleen R op Zuid legt geen vertrekrichting vast. Het roze Kruis gebruikt de opgeslagen Kruis-instelling ('+data.crossAngleDeg+'°), geen nieuwe meting of schatting uit R.');
-    }
+  let doubleChoice='';
+  function renderDoubles(){
+    doubles.replaceChildren();field();
     const tracks=['VIER','VIJF','ZES','ZEVEN','ACHT'].map(track=>adapter.lesson1Data(track)),rows=[];
-    for(const a of tracks)for(const b of tracks){if(a.track===b.track||!a.rompPart||!b.kruisPart)continue;const zone=doubleZone(a.rompPart,b.kruisPart,a.radiusCm+b.radiusCm);if(zone)rows.push({a,b,zone});}
-    paragraph('Dubbele sporen · volledige inventaris van de beschikbare basissporen VIER, VIJF, ZES, ZEVEN en ACHT op '+data.tableLabel+'. Ontbrekende lijnen worden overgeslagen. Elke rij plaatst B3 met zijn middelpunt op de genoemde Romp.');
-    paragraph('Bal 1 en B3: diameter '+(2*data.radiusCm).toFixed(2)+' cm elk. Contact als afstand van B3-middelpunt tot de eindige Kruisbaan ≤ r1+r3 = '+(2*data.radiusCm).toFixed(2)+' cm. De contactzone op de Romp wordt numeriek begrensd met afstand tot lijnstuk, inclusief ronde eindzones. Voor een B3 naast de Romp geldt de overlap van beide afstandszones. Dit zijn geometrische mogelijkheden; tempo en uitvoering bepalen het raken.');
-    const table=document.createElement('table');table.style.cssText='width:100%;font-size:13px;border-collapse:collapse';table.innerHTML='<caption>Romp × Kruis · coördinaten in cm</caption><thead><tr><th>Sporen</th><th>Snijpunt</th><th>B3-zone op Romp</th></tr></thead>';
-    const tbody=document.createElement('tbody');table.append(tbody);
-    for(const {a,b,zone} of rows){const tr=document.createElement('tr');tr.dataset.romp=a.track;tr.dataset.kruis=b.track;for(const text of [a.track+' × '+b.track,zone.hit?xy(zone.hit):'Geen; wel breedtecontact',xy(zone.from)+' → '+xy(zone.to)+' · '+zone.length.toFixed(2)+' cm']){const td=document.createElement('td');td.style.cssText='vertical-align:top;border-top:1px solid #9aad9f;padding:5px;overflow-wrap:anywhere';td.textContent=text;tr.append(td);}tbody.append(tr);}
-    doubles.append(table);
-    const example=rows.find(row=>row.a.track===data.track&&row.zone.hit);
-    if(example){const {b,zone}=example;el('line',{x1:b.kruisPart.from.x,y1:b.kruisPart.from.y,x2:b.kruisPart.to.x,y2:b.kruisPart.to.y,stroke:'#8ce2dc','stroke-width':.8,'data-h1-other':b.track});
-      el('line',{x1:zone.from.x,y1:zone.from.y,x2:zone.to.x,y2:zone.to.y,stroke:'#ffe49d','stroke-width':2*data.radiusCm,opacity:.55,'stroke-linecap':'round','data-h1-zone':'true'});
-      el('circle',{cx:zone.hit.x,cy:zone.hit.y,r:data.radiusCm,fill:'#f34d4d',stroke:'#222','stroke-width':.4,'data-h1-b3':'true'});
-      const dx=b.kruisPart.to.x-b.kruisPart.from.x,dy=b.kruisPart.to.y-b.kruisPart.from.y,length=Math.hypot(dx,dy),contact={x:zone.hit.x-2*data.radiusCm*dx/length,y:zone.hit.y-2*data.radiusCm*dy/length};
-      if(Math.hypot(zone.hit.x-b.kruisPart.from.x,zone.hit.y-b.kruisPart.from.y)>=2*data.radiusCm){el('circle',{cx:contact.x,cy:contact.y,r:data.radiusCm,fill:'white',stroke:'#222','stroke-width':.4,'data-h1-b1':'true'});}
-      paragraph('Voorbeeld op tafel: B3 op '+xy(zone.hit)+' ligt op Romp '+data.track+' én Kruis '+b.track+' (turkoois). Goud markeert het interval voor B3-middelpunten op deze Romp. De rode B3 en witte bal 1 vóór het snijpunt hebben de werkelijke geometrische straal en raken met hun buitenranden; de gewone witte lesballen kunnen voor leesbaarheid groter worden weergegeven.');
+    for(const a of tracks)for(const b of tracks){
+      if(a.track===b.track||!a.rompPart||!b.kruisPart)continue;
+      const zone=doubleZone(a.rompPart,b.kruisPart,a.radiusCm+b.radiusCm);
+      if(zone)rows.push({a,b,zone,key:a.track+'-'+b.track});
     }
-    if(!rows.length)paragraph('Geen snijpunten of contactzones binnen deze beschikbare eindige banen.');
+    const choices=rows.filter(row=>row.a.track===data.track||row.b.track===data.track);
+    const selected=choices.find(row=>row.key===doubleChoice)||choices.find(row=>row.a.track===data.track)||choices[0];
+    const nav=document.createElement('nav');nav.setAttribute('aria-label','Keuze-sporen');nav.style.cssText='display:flex;flex-wrap:wrap;gap:8px';
+    for(const row of choices){const button=document.createElement('button');button.type='button';button.textContent='Romp '+row.a.track+' / Kruis '+row.b.track;button.dataset.doubleChoice=row.key;button.setAttribute('aria-pressed',String(row===selected));button.onclick=()=>{doubleChoice=row.key;render();};nav.append(button);}
+    doubles.append(nav);
+    const note=document.createElement('p');note.textContent=selected?'Geel: Romp. Turkoois: Kruis. De gouden zone houdt rekening met de breedte van bal 1 én B3.':'Hier zijn geen dubbele keuze-sporen beschikbaar.';doubles.append(note);
+    if(!selected)return;
+    const {a,b,zone}=selected,body=a.rompPart,cross=b.kruisPart,g=data.geometry,r=a.radiusCm+b.radiusCm;
+    // Intersection of finite capsules: possible B3 centres reachable by both balls.
+    function capsule(part){
+      const dx=part.to.x-part.from.x,dy=part.to.y-part.from.y,len=Math.hypot(dx,dy),x=-dy*r/len,y=dx*r/len,p=part.from,q=part.to;
+      return 'M '+(p.x+x)+' '+(p.y+y)+' L '+(q.x+x)+' '+(q.y+y)+' A '+r+' '+r+' 0 0 0 '+(q.x-x)+' '+(q.y-y)+' L '+(p.x-x)+' '+(p.y-y)+' A '+r+' '+r+' 0 0 0 '+(p.x+x)+' '+(p.y+y)+' Z';
+    }
+    const defs=el('defs'),clip=document.createElementNS(ns,'clipPath'),shape=document.createElementNS(ns,'path');clip.id='h1RompZone';clip.setAttribute('clipPathUnits','userSpaceOnUse');shape.setAttribute('d',capsule(body));clip.append(shape);defs.append(clip);
+    const tableClip=document.createElementNS(ns,'clipPath'),rect=document.createElementNS(ns,'rect');tableClip.id='h1ZoneTable';tableClip.setAttribute('clipPathUnits','userSpaceOnUse');for(const [key,value]of Object.entries({x:data.radiusCm,y:data.radiusCm,width:g.widthCm-2*data.radiusCm,height:g.heightCm-2*data.radiusCm}))rect.setAttribute(key,value);tableClip.append(rect);defs.append(tableClip);
+    const zoneGroup=el('g',{'clip-path':'url(#h1ZoneTable)'});
+    zoneGroup.append(el('path',{d:capsule(cross),fill:'#ffdc62',opacity:.65,'clip-path':'url(#h1RompZone)','data-h1-zone':'true'}));
+    for(const [part,color,label]of [[body,'#ffdc62','Romp '+a.track],[cross,'#8ce2dc','Kruis '+b.track]]){
+      el('line',{x1:part.from.x,y1:part.from.y,x2:part.to.x,y2:part.to.y,stroke:color,'stroke-width':2,'data-part':part.key,'data-reference':'false'});
+      const at=lerp(part.from,part.to,.45);el('text',{x:at.x+3,y:at.y-4,'font-size':6,'data-zone-label':'true',style:'fill:'+color},label);
+    }
+    const center=zone.hit||lerp(zone.from,zone.to,.5);
+    el('circle',{cx:center.x,cy:center.y,r:data.radiusCm,fill:'#f34d4d',stroke:'#222','stroke-width':.4,'data-h1-b3':'true'});
+    requestAnimationFrame(()=>{const m=svg.getScreenCTM();if(m){const unit=Math.hypot(m.a,m.b);for(const label of svg.querySelectorAll('[data-zone-label]'))label.style.fontSize=(11/unit)+'px';}});
+    svg.setAttribute('aria-label','Romp '+a.track+' en Kruis '+b.track+' met gedeelde zone voor bal 3');
+    $('lklDiamondCaption').hidden=true;
   }
   function renderCross(){
-    data=adapter.lesson1Data(courseTrack());quietStep();d.dataset.line='kruis';d.dataset.crossAngle=String(data.crossAngleDeg);$('lklLessonProgress').textContent=`Stap ${index+1} van ${crossTracks.length} · ${data.trackLabel} · ${data.tableLabel}`;$('lklExerciseTitle').textContent=data.trackLabel+' · Kruis '+data.crossAngleDeg+'°';
-    $('lklExerciseText').textContent=index===0?'Na de Romp volgt het Kruis. In deze Kruinvoorbeelden maakt het Kruis 45° met de band: de horizontale en verticale verplaatsing zijn even groot. De Romp bepaalt waar het Kruis begint; de opgeslagen Kruis-instelling bepaalt de richting.':'Het Kruis van '+data.trackLabel+' begint bij een andere Romp-aankomst. De hoek blijft 45°, maar de afstand tot de volgende band verandert. Daardoor krijg je een andere looplijn.';
-    $('lklExerciseText').textContent+=' De roze lijn is het Kruis; de Romp staat geel als aanloop. Het Been laat het vervolg zien tot de uitloop. De bandbal aan het einde van het Kruis is dezelfde als het beginpunt van het Been.';$('lklApproach').textContent='VIJF → ZES → ZEVEN → ACHT. Het gaat om Kruins meetbasis, niet om een algemene voorspelling van snelheid of effect.';angleSketch.hidden=true;field();const cross=data.kruisPart;
-    if(data.rompPart){const line=courseSegment(data.rompPart);svg.querySelector('line[data-part=romp]').setAttribute('stroke','#ffdc62');drawKarkasDiamonds(data.rompPart,data.geometry,data.route.romp.from);drawKarkasDiamonds(data.rompPart,data.geometry,data.route.romp.to);}
-    if(!cross){$('lklGeometryNotice').textContent='Deze meetbasis bevat nog geen berekenbaar Kruis voor '+data.trackLabel+' op '+data.tableLabel+'. Controleer de Romp en de Kruis-instelling.';return;}
-    const line=el('line',{'data-part':'kruis','data-reference':'false',x1:cross.from.x,y1:cross.from.y,x2:cross.to.x,y2:cross.to.y,stroke:colors.kruis,'stroke-width':3.5});
-    drawKarkasDiamonds(cross,data.geometry,data.route.kruis.from);drawKarkasDiamonds(cross,data.geometry,data.route.kruis.to);
-    if(data.beenPart)el('line',{'data-part':'been','data-reference':'false',x1:data.beenPart.from.x,y1:data.beenPart.from.y,x2:data.beenPart.to.x,y2:data.beenPart.to.y,stroke:colors.been,'stroke-width':2});
-    numberedBall(cross.from,'','white','course-arrival');numberedBall(cross.to,'','white','course-arrival');
-    renderDoubles();
+    data=adapter.lesson1Data(courseTrack());quietStep();d.dataset.line='kruis';
+    $('lklLessonProgress').textContent='Stap '+(index+1)+' van '+crossTracks.length+' · '+data.trackLabel;
+    $('lklExerciseTitle').textContent=data.trackLabel+' · keuze-sporen en zones';
+    $('lklExerciseText').textContent='Na drie of vier banden kijk je naar zones. Welke sporen passen bij bal 3?';
+    $('lklApproach').textContent='Kies twee sporen en vergelijk hun gedeelde zone.';
+    $('lklCourseSimulationNote').textContent='De rode bal is B3. De zone toont waar beide keuze-sporen hem kunnen raken.';
+    angleSketch.hidden=true;renderDoubles();
   }
   function renderBackwards(){
     stop();const body=data.journey.find(p=>p.key==='romp'),nose=data.journey.find(p=>p.key==='neus'),g=data.geometry;if(!body||!nose)throw Error('Neus of Romp is nog niet bepaald.');

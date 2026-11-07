@@ -17,10 +17,13 @@ try{for(const viewport of [{width:1280,height:900},{width:390,height:844},{width
  await page.waitForSelector('#h1DoubleTracks',{state:'visible'});
  for(const table of ['klein','groot']){
   assert((await page.locator('#lklExerciseTitle').textContent()).includes('ZEVEN'));
-  assert.equal(await page.locator('#h1DoubleTracks tbody tr').count(),table==='klein'?10:6);
-  assert.equal(await page.locator('[data-h1-naive]').count(),1);assert.equal(await page.locator('[data-h1-zone]').count(),1);
-  const text=await page.locator('#h1DoubleTracks').innerText();assert(text.includes(table==='klein'?'16.43°':'16.62°'));assert(text.includes('6.15 cm'));assert(text.includes(table==='klein'?'12.82 cm':'12.84 cm'));
-  const geometry=await page.locator('#lklLessonTable').evaluate(svg=>{const line=svg.querySelector('line[data-part=romp]'),cross=svg.querySelector('line[data-part=kruis]');return ['x','y'].every(a=>Math.abs(+line.getAttribute(a+'2')-+cross.getAttribute(a+'1'))<1e-5);});assert(geometry,'Romp/Kruis joint');
+  const choices=page.locator('[data-double-choice]');assert(await choices.count()>0);
+  assert.equal(await page.locator('[data-h1-naive]').count(),0);
+  assert.equal(await page.locator('#h1DoubleTracks table').count(),0);
+  assert.equal(await page.locator('[data-h1-zone]').count(),1);
+  const text=await page.locator('#h1DoubleTracks').innerText();assert(!/cm|coördinaten|hoekverschil|r1|r₁/.test(text));
+  assert(text.includes('bal 1 én B3'));
+  for(let i=0;i<await choices.count();i++){await choices.nth(i).click();assert.equal(await choices.nth(i).getAttribute('aria-pressed'),'true');assert.equal(await page.locator('[data-h1-zone]').count(),1);}
   const box=await page.locator('#lklLesson1').evaluate(d=>({r:d.getBoundingClientRect().toJSON(),scroll:d.scrollWidth,client:d.clientWidth}));assert(box.scroll<=box.client+1);assert(box.r.x>=0&&box.r.y>=0&&box.r.bottom<=viewport.height+1);
   await page.locator('#h1DoubleTracks').scrollIntoViewIfNeeded();if(process.env.QA_DIR){fs.mkdirSync(process.env.QA_DIR,{recursive:true});await page.screenshot({path:path.join(process.env.QA_DIR,'h1-'+table+'-'+viewport.width+'.png')});}
   await page.locator('#courseTableToggle').click();
@@ -28,5 +31,5 @@ try{for(const viewport of [{width:1280,height:900},{width:390,height:844},{width
  await page.locator('#nextLklExercise').click();assert((await page.locator('#lklExerciseTitle').textContent()).includes('ACHT'));
  await page.locator('#nextLklExercise').click();assert(await page.locator('#h1DoubleTracks').isHidden(),'H2 hides H1 inventory');
  assert.deepEqual(errors,[]);await page.close();
-}console.log('H1 OK: capsule boundaries, endpoints, no-contact; direct H1, real ZEVEN joints, inventory and ball widths on Klein/Groot at desktop and portrait/landscape touch viewports; H2 navigation; no JS errors.');
+}console.log('H1 OK: capsule boundaries, endpoints, no-contact; direct H1, ZEVEN choice tracks, zones with both ball widths and no calculation details on Klein/Groot at desktop and portrait/landscape touch viewports; H2 navigation; no JS errors.');
 }finally{await browser.close();server.close();}})().catch(e=>{console.error(e);server.close();process.exitCode=1;});
