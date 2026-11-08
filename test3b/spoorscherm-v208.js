@@ -2861,7 +2861,13 @@ window.installThreeBLklLesson=adapter=>{
   }
   const progressRow=document.createElement('div');progressRow.className='course-progress-row';$('lklLessonProgress').before(progressRow);const tableToggle=document.createElement('button');tableToggle.id='courseTableToggle';tableToggle.type='button';progressRow.append($('lklLessonProgress'),tableToggle);
   tableToggle.onclick=()=>{const fraction=progress,wasRunning=running;stop();window.ThreeBTableText.update({courseTable:data.table==='klein'?'groot':'klein'});data=readLessonData();render();if(lesson===0){stop();progress=fraction;position(progress);if(wasRunning)roll();else $('lklRoll').textContent=progress===1?'Opnieuw rollen':'Verder rollen';}remember();};
-  const parallelTracks=['VIJF-2','VIJF-1','VIJF','VIJF+1','VIJF+2','VIJF+3'],crossTracks=['ZEVEN','ZEVEN','ZEVEN','ZEVEN','ZEVEN','ZEVEN','ZES','ZES','ZES'];
+  const kzDefinitions=[
+    {romp:'VIJF',kruis:'ACHT',miss:'ZEVEN'},
+    {romp:'VIJF',kruis:'ZEVEN',miss:'ZES'},
+    {romp:'VIJF+2',kruis:'ZEVEN',miss:'ZES'},
+    {romp:'VIJF',kruis:'ZES',miss:'ZES-2'}
+  ];
+  const parallelTracks=['VIJF-2','VIJF-1','VIJF','VIJF+1','VIJF+2','VIJF+3'],crossTracks=kzDefinitions.flatMap(c=>[c.miss,c.miss,c.miss]);
   const courseScopeTracks=()=>lesson===4?['VIJF']:lesson===3?adapter.courseTrackKeys():parallelTracks;
   const parallelViews=document.createElement('nav');parallelViews.id='vijfParallelViews';parallelViews.setAttribute('aria-label','Tafelviews');parallelViews.innerHTML='<button type="button" data-vijf-view="whole">Spoor</button><button type="button" data-vijf-view="framework">Karkas</button><button type="button" data-vijf-view="arrivals">Aankomst</button>';parallelViews.hidden=true;$('lklExerciseText').after(parallelViews);
   const checkExercise=document.createElement('button');checkExercise.id='checkVijfExercise';checkExercise.type='button';checkExercise.textContent='Toon Karkas · controle';checkExercise.hidden=true;$('lklExerciseText').after(checkExercise);checkExercise.onclick=()=>{checked=!checked;render();};
@@ -2957,50 +2963,28 @@ window.installThreeBLklLesson=adapter=>{
       const tracks=[];for(const name of adapter.courseTrackKeys()){try{tracks.push(adapter.lesson1Data(name));}catch(_){}}
       kzTrackSets.set(table,tracks);
     }
-    const tracks=kzTrackSets.get(table),base=tracks.find(t=>t.track===baseKey),incoming=base?.rompPart,cross=base?.kruisPart,D=2*(base?.radiusCm||0);
+
+    const definition=kzDefinitions[Math.floor(index/3)],tracks=kzTrackSets.get(table);
+    const base=tracks.find(t=>t.track===definition.miss),one=tracks.find(t=>t.track===definition.romp),two=tracks.find(t=>t.track===definition.kruis);
+    const incoming=base?.rompPart,cross=base?.kruisPart,D=2*(base?.radiusCm||0);
     const projection=(p,part)=>{const dx=part.to.x-part.from.x,dy=part.to.y-part.from.y;return ((p.x-part.from.x)*dx+(p.y-part.from.y)*dy)/(dx*dx+dy*dy);};
-    const contactOnWay=(part,center)=>{const p=kzContact(part,center,D);return p&&projection(p,part)>.35?p:null;};
+    const joined=t=>t.rompPart&&t.kruisPart&&Math.hypot(t.rompPart.to.x-t.kruisPart.from.x,t.rompPart.to.y-t.kruisPart.from.y)<1e-4;
+    const center=one?.rompPart&&two?.kruisPart?doubleZone(one.rompPart,two.kruisPart,D)?.hit:null;
     let result=null;
-
-    // Lead example: construct B3 at the true finite intersection, never estimate it from R.
-    if(Math.floor(index/3)===0){
-      const one=tracks.find(t=>t.track==='VIJF'),two=tracks.find(t=>t.track==='ACHT');
-      const center=one?.rompPart&&two?.kruisPart?doubleZone(one.rompPart,two.kruisPart,D)?.hit:null;
-      if(center&&incoming&&cross&&two.rompPart){
-        const before=distanceToPart(center,incoming),after=distanceToPart(center,cross),t=projection(center,cross);
-        const contact1=contactOnWay(one.rompPart,center),contact2=kzContact(two.kruisPart,center,D);
-        const joined=Math.hypot(two.rompPart.to.x-two.kruisPart.from.x,two.rompPart.to.y-two.kruisPart.from.y)<1e-4;
-        if(contact1&&contact2&&before>D+.25&&after>D+.25&&distanceToPart(center,two.rompPart)>D+.25&&joined&&t>0&&t<1)
-          result={center,before,after,t,contact1,contact2,base,one,two,D};
-      }
-      kzCases.set(key,result);return result;
-    }
-
-    const ones=tracks.filter(t=>t.track!==baseKey&&t.rompPart);
-    const joins=two=>two.rompPart&&two.kruisPart&&Math.hypot(two.rompPart.to.x-two.kruisPart.from.x,two.rompPart.to.y-two.kruisPart.from.y)<1e-4;
-    if(incoming&&cross)for(const one of ones){
-      const body=one.rompPart,dx=body.to.x-body.from.x,dy=body.to.y-body.from.y,length=Math.hypot(dx,dy);
-      for(let i=10;i<390;i++)for(const shift of [-.75,-.375,0,.375,.75]){
-        const origin=lerp(body.from,body.to,i/400),center={x:origin.x-shift*D*dy/length,y:origin.y+shift*D*dx/length};
-        const before=distanceToPart(center,incoming),after=distanceToPart(center,cross),t=projection(center,cross),g=base.geometry,r=base.radiusCm;
-        if(center.x<r||center.x>g.widthCm-r||center.y<r||center.y>g.heightCm-r)continue;
-        if(before<=D+.25||after<=D+.25||t<=.05||t>=.85||center.y>=incoming.to.y-D||projection(center,incoming)<=.35)continue;
-        const contact1=contactOnWay(body,center);if(!contact1)continue;
-        const candidates=tracks.filter(two=>two.track!==baseKey&&two.track!==one.track&&joins(two)&&distanceToPart(center,two.rompPart)>D+.25)
-          .map(two=>({two,contact:kzContact(two.kruisPart,center,D),distance:distanceToPart(center,two.kruisPart)}))
-          .filter(c=>c.contact&&c.distance<D-.25).sort((a,b)=>a.distance-b.distance);
-        if(!candidates.length)continue;
-        const {two,contact:contact2,distance}=candidates[0];
-        const score=Math.abs(before-(D+.6))+Math.abs(after-(D+.6))+.15*(distanceToPart(center,body)+distance);
-        if(!result||score<result.score)result={center,before,after,t,score,contact1,contact2,base,one,two,D};
-      }
+    if(center&&incoming&&cross&&joined(base)&&joined(two)){
+      const before=distanceToPart(center,incoming),after=distanceToPart(center,cross),t=projection(center,cross);
+      const atY=part=>{const u=(center.y-part.from.y)/(part.to.y-part.from.y);return u>=0&&u<=1?part.from.x+u*(part.to.x-part.from.x):null;};
+      const x1=atY(incoming),x2=atY(cross),between=x1!==null&&x2!==null&&center.x>Math.min(x1,x2)&&center.x<Math.max(x1,x2);
+      const contact1=kzContact(one.rompPart,center,D),contact2=kzContact(two.kruisPart,center,D);
+      if(contact1&&contact2&&projection(contact1,one.rompPart)>.35&&projection(center,incoming)>.35&&before>D+.25&&after>D+.25&&distanceToPart(center,two.rompPart)>D+.25&&between&&t>0&&t<1)
+        result={center,before,after,t,contact1,contact2,base,one,two,D};
     }
     kzCases.set(key,result);return result;
   }
   function renderDoubles(){
     doubles.replaceChildren();field();const labels=[];
-    const examples=document.createElement('nav');examples.id='kzExamples';examples.setAttribute('aria-label','Achteromvoorbeelden');examples.style.cssText='display:flex;flex-wrap:wrap;gap:8px';
-    for(const [i,name]of ['ACHT','ZEVEN','ZES'].entries()){const button=document.createElement('button');button.type='button';button.textContent=i===0?'VIJF × ACHT':name;button.dataset.kzExample=name;button.setAttribute('aria-pressed',String(Math.floor(index/3)===i));if(Math.floor(index/3)===i){button.style.background='#176f4f';button.style.color='white';}button.onclick=()=>{index=i*3;render();info.scrollTop=0;};examples.append(button);}doubles.append(examples);
+    const examples=document.createElement('nav');examples.id='kzExamples';examples.setAttribute('aria-label','Achteromvoorbeelden');examples.style.cssText='display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px';
+    for(const [i,definition]of kzDefinitions.entries()){const button=document.createElement('button');button.type='button';button.style.cssText='min-width:0;white-space:normal;font-size:14px';button.textContent=definition.romp.replace('-','−')+' × '+definition.kruis;button.dataset.kzExample='case-'+i;button.setAttribute('aria-pressed',String(Math.floor(index/3)===i));if(Math.floor(index/3)===i){button.style.background='#176f4f';button.style.color='white';}button.onclick=()=>{index=i*3;render();info.scrollTop=0;};examples.append(button);}doubles.append(examples);
 
     const label=(p,text,color)=>{const n=el('text',{x:p.x+4,y:p.y-3,'font-size':6,style:'fill:'+color},text);labels.push(n);return n;};
     const line=(part,color,text,dashed=false)=>{
@@ -3019,7 +3003,7 @@ window.installThreeBLklLesson=adapter=>{
       const contact=stage===1?example.contact1:example.contact2,start=lerp(part.from,part.to,.35);
       let points;
       if(miss){
-        line(part,'#8ce2dc','Aanloop '+base.track);line(base.kruisPart,'#8ce2dc','Kruis '+base.track);
+        line(part,'#8ce2dc','Aanloop '+base.track.replace('-','−'));line(base.kruisPart,'#8ce2dc','Kruis '+base.track.replace('-','−'));
         const cross=base.kruisPart,length=Math.hypot(cross.to.x-cross.from.x,cross.to.y-cross.from.y),end=lerp(cross.from,cross.to,Math.min(1,example.t+2*D/length));
         points=[start,part.to,end];
       }else if(stage===1){
@@ -3032,10 +3016,10 @@ window.installThreeBLklLesson=adapter=>{
       Object.assign(ball.dataset,{clearance:String(example.before),returnClearance:String(example.after),diameter:String(D)});
       const b1=el('circle',{cx:start.x,cy:start.y,r:data.radiusCm,fill:'white',stroke:'#222','stroke-width':.4,'data-kz-b1':'true'});
       const b1Label=label(start,'B1','#fff');label(center,'B3','#fff');
-      svg.dataset.kzStage=miss?'miss':'solution-'+stage;svg.dataset.kzExample=base.track;svg.dataset.kzSolutionKind=miss?'miss':stage===1?'romp':'kruis';
+      svg.dataset.kzStage=miss?'miss':'solution-'+stage;svg.dataset.kzExample=base.track;svg.dataset.kzPair=one.track+'/'+two.track;svg.dataset.kzSolutionKind=miss?'miss':stage===1?'romp':'kruis';
       const text=document.createElement('p');text.id='kzSingleExample';
-      text.textContent=miss?base.track+' loopt langs B3, raakt Zuid en loopt weer langs B3: mis.':'Oplossing '+stage+': '+(stage===1?'Romp ':'Kruis ')+data.track.replace('-','−')+' raakt dezelfde B3.';doubles.append(text);
-      const play=document.createElement('button');play.type='button';play.id='kzFollowB1';play.textContent=miss?'Volg '+base.track+': mist':'Volg '+data.track.replace('-','−')+': raakt';doubles.append(play);
+      text.textContent=miss?base.track.replace('-','−')+' loopt langs B3, raakt Zuid en loopt weer langs B3: mis.':'Oplossing '+stage+': '+(stage===1?'Romp ':'Kruis ')+data.track.replace('-','−')+' raakt dezelfde B3.';doubles.append(text);
+      const play=document.createElement('button');play.type='button';play.id='kzFollowB1';play.textContent=miss?'Volg '+base.track.replace('-','−')+': mist':'Volg '+data.track.replace('-','−')+': raakt';doubles.append(play);
       const at=p=>{b1.setAttribute('cx',p.x);b1.setAttribute('cy',p.y);b1Label.setAttribute('x',p.x+4);b1Label.setAttribute('y',p.y-3);};
       play.onclick=()=>{
         stop();at(start);svg.dataset.kzDemo='running';const begin=performance.now(),lengths=points.slice(1).map((p,i)=>Math.hypot(p.x-points[i].x,p.y-points[i].y)),length=lengths.reduce((a,b)=>a+b,0);
@@ -3051,11 +3035,12 @@ window.installThreeBLklLesson=adapter=>{
   function renderCross(){
     data=adapter.lesson1Data(courseTrack());quietStep();d.dataset.line='kruis';
 
-    const group=Math.floor(index/3),stage=index%3,base=crossTracks[index];
-    $('lklLessonProgress').textContent='Voorbeeld '+(group+1)+' van 3 · stap '+(stage+1)+' van 3 · '+data.tableLabel;
-    $('lklExerciseTitle').textContent=stage===0?(group===0?'Romp VIJF × Kruis ACHT · achterompositie':'Tricky · Achterompositie · '+base+' mist'):'Oplossing '+stage+' · '+(stage===1?'Romp ':'Kruis ')+data.track.replace('-','−');
-    $('lklExerciseText').textContent=stage===0?(group===0?'B3 staat precies op de kruising van Romp VIJF en Kruis ACHT. Eerst zie je hoe ZEVEN achterom mist; daarna beide oplossingen.':'Na de band mist B1 B3 maar nét. Bekijk daarna een oplossing via een Romp en een oplossing via een Kruis.'):stage===1?'Los deze positie op via een Romp. B3 blijft op dezelfde plek.':'Los dezelfde positie nu op via een Kruis. De aanloop passeert B3 vrij.';
-    $('lklApproach').textContent=group===0?'ZEVEN mist → Romp VIJF raakt → Kruis ACHT raakt':'Voorbeeld '+base+': achterompositie → oplossing via Romp → oplossing via Kruis';
+    const group=Math.floor(index/3),stage=index%3,base=crossTracks[index],definition=kzDefinitions[group],pair='Romp '+definition.romp.replace('-','−')+' × Kruis '+definition.kruis;
+    $('lklLessonProgress').textContent='Voorbeeld '+(group+1)+' van '+kzDefinitions.length+' · stap '+(stage+1)+' van 3 · '+data.tableLabel;
+    $('lklExerciseTitle').textContent=stage===0?pair+' · achterompositie':'Oplossing '+stage+' · '+(stage===1?'Romp ':'Kruis ')+data.track.replace('-','−');
+
+    $('lklExerciseText').textContent=stage===0?'B3 staat precies op deze kruising. Eerst zie je hoe '+base.replace('-','−')+' achterom mist; daarna beide oplossingen.':stage===1?'Los deze positie op via een Romp. B3 blijft op dezelfde plek.':'Los dezelfde positie nu op via een Kruis. De aanloop passeert B3 vrij.';
+    $('lklApproach').textContent=definition.miss.replace('-','−')+' mist → Romp '+definition.romp.replace('-','−')+' raakt → Kruis '+definition.kruis+' raakt';
     $('lklCourseSimulationNote').textContent='De gekleurde strook is één bal breed: de ruimte die B1 inneemt. B3 heeft dezelfde schaal en blijft op zijn plek. Meetgegevens van '+data.tableLabel+'.';
     angleSketch.hidden=true;renderDoubles();
   }
@@ -3117,7 +3102,7 @@ window.installThreeBLklLesson=adapter=>{
   $('closeLklLesson').onclick=independent;d.addEventListener('cancel',e=>{e.preventDefault();independent();});d.addEventListener('close',stop);document.addEventListener('visibilitychange',()=>{if(document.hidden&&running){stop();$('lklRoll').textContent='Verder rollen';}});
   function stepNavigation(){
     if(data){tableToggle.textContent=(data.table==='groot'?'Groot':'Klein')+' ⇄';tableToggle.setAttribute('aria-label','Tafel '+(data.table==='groot'?'Groot':'Klein')+'; wissel naar '+(data.table==='groot'?'Klein':'Groot'));$('lklLessonProgress').textContent=$('lklLessonProgress').textContent.replace(/ · (Klein|Groot)$/,'');const overview=lesson===2&&index===parallelTracks.length;$('lklDiamondCaption').style.fontSize=overview?'19px':'';window.ThreeBUniformBalls.trackBadge(svg,data.geometry,overview||lesson===3?null:data.trackLabel);if(overview){$('lklDiamondCaption').hidden=false;$('lklDiamondCaption').textContent='VIJF-reeks';}requestAnimationFrame(()=>window.ThreeBUniformBalls.apply(svg));}
-    $('previousLklExercise').textContent='← Vorige';$('nextLklExercise').textContent=lesson===3?(index===crossTracks.length-1?'Volgend hoofdstuk · H2 Via bal 2 →':index%3===0?'Oplossing 1 →':index%3===1?'Oplossing 2 →':'Volgend voorbeeld · '+crossTracks[index+1]+' →'):'Volgende →';$('nextLklExercise').classList.toggle('next-chapter',lesson===3&&(index===crossTracks.length-1||index%3===2));
+    $('previousLklExercise').textContent='← Vorige';$('nextLklExercise').textContent=lesson===3?(index===crossTracks.length-1?'Volgend hoofdstuk · H2 Via bal 2 →':index%3===0?'Oplossing 1 →':index%3===1?'Oplossing 2 →':'Volgend voorbeeld →'):'Volgende →';$('nextLklExercise').classList.toggle('next-chapter',lesson===3&&(index===crossTracks.length-1||index%3===2));
     $('previousLklExercise').disabled=false;
     $('nextLklExercise').disabled=lesson===lessons.length-1&&index===totalSteps()-1;
   }

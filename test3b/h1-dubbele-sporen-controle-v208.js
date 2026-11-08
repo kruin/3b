@@ -22,32 +22,33 @@ try{for(const viewport of [{width:1280,height:900},{width:390,height:844},{width
 
  for(const table of ['klein','groot']){
   const centers=[];
-  for(let group=0;group<3;group++){
+  const pairs=[['VIJF','ACHT'],['VIJF','ZEVEN'],['VIJF+2','ZEVEN'],['VIJF','ZES']],misses=['ZEVEN','ZES','ZES','ZES-2'];
+  for(let group=0;group<4;group++){
    let fixed=null;
    for(let stage=0;stage<3;stage++){
     const title=await page.locator('#lklExerciseTitle').textContent();
-    assert(title.includes(stage===0?(group===0?'Romp VIJF × Kruis ACHT':'Achterompositie · '+['ACHT','ZEVEN','ZES'][group]):'Oplossing '+stage));
+    assert(title.includes(stage===0?'Romp '+pairs[group][0]+' × Kruis '+pairs[group][1]:'Oplossing '+stage));
     assert.equal(await page.locator('[data-kz-b3]').count(),1);
-    assert.equal(await page.locator('#kzExamples button').count(),3);
+    assert.equal(await page.locator('#kzExamples button').count(),4);
     assert.equal(await page.locator('#h1DoubleTracks select,#h1AllZones,[data-h1-zone]').count(),0);
     const geometry=await page.locator('#lklLessonTable').evaluate(svg=>{
       const ball=svg.querySelector('[data-kz-b3]'),p={x:+ball.getAttribute('cx'),y:+ball.getAttribute('cy')};
-      return {p,diameter:2*Number(ball.getAttribute('r')),widths:[...svg.querySelectorAll('[data-kz-ballwidth]')].map(l=>Number(l.getAttribute('stroke-width'))),example:svg.dataset.kzExample,lines:[...svg.querySelectorAll('line[data-kz-line]')].map(l=>{
+      return {p,diameter:2*Number(ball.getAttribute('r')),widths:[...svg.querySelectorAll('[data-kz-ballwidth]')].map(l=>Number(l.getAttribute('stroke-width'))),example:svg.dataset.kzExample,pair:svg.dataset.kzPair,lines:[...svg.querySelectorAll('line[data-kz-line]')].map(l=>{
         const a={x:+l.getAttribute('x1'),y:+l.getAttribute('y1')},b={x:+l.getAttribute('x2'),y:+l.getAttribute('y2')},dx=b.x-a.x,dy=b.y-a.y,t=((p.x-a.x)*dx+(p.y-a.y)*dy)/(dx*dx+dy*dy),u=Math.max(0,Math.min(1,t));
-        return {name:l.dataset.kzLine,rayDistance:Math.hypot(p.x-a.x-t*dx,p.y-a.y-t*dy),distance:Math.hypot(p.x-a.x-u*dx,p.y-a.y-u*dy),endDistance:Math.hypot(p.x-b.x,p.y-b.y)};
+        return {a,b,name:l.dataset.kzLine,rayDistance:Math.hypot(p.x-a.x-t*dx,p.y-a.y-t*dy),distance:Math.hypot(p.x-a.x-u*dx,p.y-a.y-u*dy),endDistance:Math.hypot(p.x-b.x,p.y-b.y)};
       })};
     });
-    assert.equal(geometry.example,['ZEVEN','ZEVEN','ZES'][group]);
+    assert.equal(geometry.example,misses[group]);assert.equal(geometry.pair,pairs[group].join('/'));
     assert.equal(geometry.widths.length,geometry.lines.length);for(const width of geometry.widths)assert(Math.abs(width-geometry.diameter)<1e-9,'Loopstrook must equal real ball diameter');
     if(fixed)assert.deepEqual(geometry.p,fixed,'B3 must stay exactly fixed within one example');else {fixed=geometry.p;centers.push(fixed);}
     if(stage===0){
       assert.equal(geometry.lines.length,2);for(const l of geometry.lines)assert(l.distance>6.4,'Miss before AND after the band');
-      if(group>0)assert(Math.min(...geometry.lines.map(l=>l.distance))-6.15<1.5,'Tricky: at least one close miss');
+      const xs=geometry.lines.map(l=>{const t=(geometry.p.y-l.a.y)/(l.b.y-l.a.y);assert(t>=0&&t<=1);return l.a.x+t*(l.b.x-l.a.x);});assert(geometry.p.x>Math.min(...xs)&&geometry.p.x<Math.max(...xs),'B3 between outgoing and return paths');
     }else if(stage===1){
-      assert(title.includes('Romp'));if(group===0){assert(title.includes('Romp VIJF'));assert(geometry.lines[0].rayDistance<1e-5,'B3 exactly on Romp VIJF');}assert.equal(geometry.lines.length,1);assert(geometry.lines[0].name.startsWith('Romp '));assert(Math.abs(geometry.lines[0].endDistance-6.15)<1e-5,'First Romp contact');
+      assert(title.includes('Romp'));assert(title.includes('Romp '+pairs[group][0]));assert(geometry.lines[0].rayDistance<1e-5,'B3 exactly on the real Romp');assert.equal(geometry.lines.length,1);assert(geometry.lines[0].name.startsWith('Romp '));assert(Math.abs(geometry.lines[0].endDistance-6.15)<1e-5,'First Romp contact');
     }else{
       assert(title.includes('Kruis'));assert.equal(geometry.lines.length,2);
-      const incoming=geometry.lines.find(l=>l.name.startsWith('Aanloop ')),cross=geometry.lines.find(l=>l.name.startsWith('Kruis '));assert(incoming&&cross);if(group===0){assert(title.includes('Kruis ACHT'));assert(cross.rayDistance<1e-5,'B3 exactly on Kruis ACHT');}
+      const incoming=geometry.lines.find(l=>l.name.startsWith('Aanloop ')),cross=geometry.lines.find(l=>l.name.startsWith('Kruis '));assert(incoming&&cross);assert(title.includes('Kruis '+pairs[group][1]));assert(cross.rayDistance<1e-5,'B3 exactly on the real Kruis');
       assert(incoming.distance>6.4,'Cross solution must clear B3 BEFORE the cushion');
       assert(Math.abs(cross.endDistance-6.15)<1e-5,'First Kruis contact AFTER the cushion');
     }
@@ -58,16 +59,16 @@ try{for(const viewport of [{width:1280,height:900},{width:390,height:844},{width
     }
     const box=await page.locator('#lklLesson1').evaluate(d=>({r:d.getBoundingClientRect().toJSON(),scroll:d.scrollWidth,client:d.clientWidth}));assert(box.scroll<=box.client+1,JSON.stringify({viewport,table,group,stage,box}));assert(box.r.x>=0&&box.r.y>=0&&box.r.bottom<=viewport.height+1);
     if(process.env.QA_DIR){fs.mkdirSync(process.env.QA_DIR,{recursive:true});await page.screenshot({path:path.join(process.env.QA_DIR,'kz-'+group+'-'+stage+'-'+table+'-'+viewport.width+'.png')});}
-    if(group<2||stage<2)await page.locator('#nextLklExercise').click();
+    if(group<3||stage<2)await page.locator('#nextLklExercise').click();
    }
   }
   for(let i=0;i<centers.length;i++)for(let j=0;j<i;j++)assert(Math.hypot(centers[i].x-centers[j].x,centers[i].y-centers[j].y)>3,'Distinct examples');
-  await page.locator('#kzExamples button[data-kz-example="ACHT"]').click();
+  await page.locator('#kzExamples button[data-kz-example="case-0"]').click();
   assert((await page.locator('#lklExerciseTitle').textContent()).includes('Romp VIJF × Kruis ACHT'));
-  console.log(table,viewport.width,'3 tricky achterom positions, each Romp AND Kruis solution, fixed B3');
+  console.log(table,viewport.width,'4 clear constructions, each Romp AND Kruis solution, fixed B3');
   await page.locator('#courseTableToggle').click();
  }
- for(let i=0;i<9;i++)await page.locator('#nextLklExercise').click();assert(await page.locator('#h1DoubleTracks').isHidden());
+ for(let i=0;i<12;i++)await page.locator('#nextLklExercise').click();assert(await page.locator('#h1DoubleTracks').isHidden());
  assert.deepEqual(errors,[]);await page.close();
-}console.log('KZ OK: lead construction Romp VIJF x Kruis ACHT with ZEVEN as miss; 3 achterom positions PER table; each has a Romp solution AND Kruis solution, fixed B3, physical ball-width strokes, clear approach before Kruis contact, real first contact, Klein/Groot desktop/portrait/landscape, navigation and H2.');
+}console.log('KZ OK: retained VIJF x ACHT plus VIJF x ZEVEN, VIJF+2 x ZEVEN and VIJF x ZES; exact intersections, real behind misses on opposite sides, Romp AND Kruis solutions, fixed B3, physical ball widths, Klein/Groot desktop/portrait/landscape and H2.');
 }finally{await browser.close();server.close();}})().catch(e=>{console.error(e);server.close();process.exitCode=1;});
