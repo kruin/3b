@@ -2961,17 +2961,23 @@ window.installThreeBLklLesson=adapter=>{
     const projection=(p,part)=>{const dx=part.to.x-part.from.x,dy=part.to.y-part.from.y;return ((p.x-part.from.x)*dx+(p.y-part.from.y)*dy)/(dx*dx+dy*dy);};
     const contactOnWay=(part,center)=>{const p=kzContact(part,center,D);return p&&projection(p,part)>.35?p:null;};
     let result=null;
-    const ones=baseKey==='ACHT'?tracks.filter(t=>t.track==='ZEVEN'):tracks.filter(t=>t.track!==baseKey&&t.rompPart);
+
+    const ones=tracks.filter(t=>t.track!==baseKey&&t.rompPart);
+    const joins=two=>two.rompPart&&two.kruisPart&&Math.hypot(two.rompPart.to.x-two.kruisPart.from.x,two.rompPart.to.y-two.kruisPart.from.y)<1e-4;
     if(incoming&&cross)for(const one of ones){
-      const body=one.rompPart;if(!body)continue;
-      for(let i=10;i<390;i++){
-        const center=lerp(body.from,body.to,i/400),before=distanceToPart(center,incoming),after=distanceToPart(center,cross),t=projection(center,cross);
-        if(before<=D+.5||after<=D+.5||t<=.05||t>=.85||center.y>=incoming.to.y-D||projection(center,incoming)<=.35)continue;
+      const body=one.rompPart,dx=body.to.x-body.from.x,dy=body.to.y-body.from.y,length=Math.hypot(dx,dy);
+      for(let i=10;i<390;i++)for(const shift of [-.75,-.375,0,.375,.75]){
+        const origin=lerp(body.from,body.to,i/400),center={x:origin.x-shift*D*dy/length,y:origin.y+shift*D*dx/length};
+        const before=distanceToPart(center,incoming),after=distanceToPart(center,cross),t=projection(center,cross),g=base.geometry,r=base.radiusCm;
+        if(center.x<r||center.x>g.widthCm-r||center.y<r||center.y>g.heightCm-r)continue;
+        if(before<=D+.25||after<=D+.25||t<=.05||t>=.85||center.y>=incoming.to.y-D||projection(center,incoming)<=.35)continue;
         const contact1=contactOnWay(body,center);if(!contact1)continue;
-        const candidates=tracks.filter(two=>two.track!==baseKey&&two.track!==one.track&&two.rompPart&&(baseKey!=='ACHT'||two.track==='ACHT-2')).map(two=>({two,contact:contactOnWay(two.rompPart,center),distance:distanceToPart(center,two.rompPart)})).filter(c=>c.contact&&c.distance<D-.25).sort((a,b)=>a.distance-b.distance);
+        const candidates=tracks.filter(two=>two.track!==baseKey&&two.track!==one.track&&joins(two)&&distanceToPart(center,two.rompPart)>D+.25)
+          .map(two=>({two,contact:kzContact(two.kruisPart,center,D),distance:distanceToPart(center,two.kruisPart)}))
+          .filter(c=>c.contact&&c.distance<D-.25).sort((a,b)=>a.distance-b.distance);
         if(!candidates.length)continue;
         const {two,contact:contact2,distance}=candidates[0];
-        const score=Math.abs(before-(D+1))+Math.abs(after-(D+1))+(baseKey==='ACHT'?0:(/[+-]/.test(one.track)?3:0)+distance);
+        const score=Math.abs(before-(D+.6))+Math.abs(after-(D+.6))+.15*(distanceToPart(center,body)+distance);
         if(!result||score<result.score)result={center,before,after,t,score,contact1,contact2,base,one,two,D};
       }
     }
@@ -2988,9 +2994,9 @@ window.installThreeBLklLesson=adapter=>{
       // Swept footprint of B1: stroke width is its physical diameter in table centimetres.
       el('line',{x1:part.from.x,y1:part.from.y,x2:part.to.x,y2:part.to.y,stroke:color,'stroke-width':2*data.radiusCm,'stroke-linecap':'round',opacity:.38,'data-kz-ballwidth':text});
       el('line',{x1:part.from.x,y1:part.from.y,x2:part.to.x,y2:part.to.y,stroke:color,'stroke-width':.55,...(dashed?{'stroke-dasharray':'3 2',opacity:.7}:{}),'data-kz-line':text});
-      const dx=part.to.x-part.from.x,dy=part.to.y-part.from.y,len=Math.hypot(dx,dy),tip=lerp(part.from,part.to,.65),ux=dx/len,uy=dy/len;
-      el('polygon',{points:tip.x+','+tip.y+' '+(tip.x-4*ux-1.8*uy)+','+(tip.y-4*uy+1.8*ux)+' '+(tip.x-4*ux+1.8*uy)+','+(tip.y-4*uy-1.8*ux),fill:color});
-      label(lerp(part.from,part.to,.4),text,color);
+      const dx=part.to.x-part.from.x,dy=part.to.y-part.from.y,len=Math.hypot(dx,dy),tip=lerp(part.from,part.to,.65),ux=dx/len,uy=dy/len,head=Math.min(4,len*.45),half=head*.45;
+      el('polygon',{points:tip.x+','+tip.y+' '+(tip.x-head*ux-half*uy)+','+(tip.y-head*uy+half*ux)+' '+(tip.x-head*ux+half*uy)+','+(tip.y-head*uy-half*ux),fill:color});
+      return label(lerp(part.from,part.to,.4),text,color);
     };
     {
       const example=kzCase();if(!example){$('lklGeometryNotice').textContent='Voor deze tafel is dit voorbeeld nog niet beschikbaar.';return;}
@@ -3002,16 +3008,19 @@ window.installThreeBLklLesson=adapter=>{
         line(part,'#8ce2dc','Aanloop '+base.track);line(base.kruisPart,'#8ce2dc','Kruis '+base.track);
         const cross=base.kruisPart,length=Math.hypot(cross.to.x-cross.from.x,cross.to.y-cross.from.y),end=lerp(cross.from,cross.to,Math.min(1,example.t+2*D/length));
         points=[start,part.to,end];
-      }else{
+      }else if(stage===1){
         line({...part,to:contact},'#ffdc62','Romp '+data.track.replace('-','−'));points=[start,contact];
+      }else{
+        line(part,'#e3e9db','Aanloop '+data.track.replace('-','−'),true);
+        const crossLabel=line({...two.kruisPart,to:contact},'#ed88b6','Kruis '+data.track.replace('-','−'));if(Math.hypot(contact.x-two.kruisPart.from.x,contact.y-two.kruisPart.from.y)<3*D)crossLabel.setAttribute('y',Number(crossLabel.getAttribute('y'))+10);points=[start,part.to,contact];
       }
       const ball=el('circle',{cx:center.x,cy:center.y,r:data.radiusCm,fill:'#f34d4d',stroke:'#222','stroke-width':.4,'data-kz-b3':'true'});
       Object.assign(ball.dataset,{clearance:String(example.before),returnClearance:String(example.after),diameter:String(D)});
       const b1=el('circle',{cx:start.x,cy:start.y,r:data.radiusCm,fill:'white',stroke:'#222','stroke-width':.4,'data-kz-b1':'true'});
       const b1Label=label(start,'B1','#fff');label(center,'B3','#fff');
-      svg.dataset.kzStage=miss?'miss':'solution-'+stage;svg.dataset.kzExample=base.track;
+      svg.dataset.kzStage=miss?'miss':'solution-'+stage;svg.dataset.kzExample=base.track;svg.dataset.kzSolutionKind=miss?'miss':stage===1?'romp':'kruis';
       const text=document.createElement('p');text.id='kzSingleExample';
-      text.textContent=miss?base.track+' loopt langs B3, raakt Zuid en loopt weer langs B3: mis.':'Oplossing '+stage+': Romp '+data.track.replace('-','−')+' raakt dezelfde B3.';doubles.append(text);
+      text.textContent=miss?base.track+' loopt langs B3, raakt Zuid en loopt weer langs B3: mis.':'Oplossing '+stage+': '+(stage===1?'Romp ':'Kruis ')+data.track.replace('-','−')+' raakt dezelfde B3.';doubles.append(text);
       const play=document.createElement('button');play.type='button';play.id='kzFollowB1';play.textContent=miss?'Volg '+base.track+': mist':'Volg '+data.track.replace('-','−')+': raakt';doubles.append(play);
       const at=p=>{b1.setAttribute('cx',p.x);b1.setAttribute('cy',p.y);b1Label.setAttribute('x',p.x+4);b1Label.setAttribute('y',p.y-3);};
       play.onclick=()=>{
@@ -3022,7 +3031,7 @@ window.installThreeBLklLesson=adapter=>{
       };
     }
     requestAnimationFrame(()=>{const m=svg.getScreenCTM();if(m){const unit=Math.hypot(m.a,m.b);for(const n of labels)n.style.fontSize=(11/unit)+'px';}});
-    svg.setAttribute('aria-label',index%3===0?'Achterompositie: '+crossTracks[index]+' mist B3 vóór en na Zuid':'Oplossing '+(index%3)+': Romp '+data.track+' raakt dezelfde B3');
+    svg.setAttribute('aria-label',index%3===0?'Achterompositie: '+crossTracks[index]+' mist B3 vóór en na Zuid':'Oplossing '+(index%3)+': '+(index%3===1?'Romp ':'Kruis ')+data.track+' raakt dezelfde B3');
     $('lklDiamondCaption').hidden=true;
   }
   function renderCross(){
@@ -3030,9 +3039,9 @@ window.installThreeBLklLesson=adapter=>{
 
     const group=Math.floor(index/3),stage=index%3,base=crossTracks[index];
     $('lklLessonProgress').textContent='Voorbeeld '+(group+1)+' van 3 · stap '+(stage+1)+' van 3 · '+data.tableLabel;
-    $('lklExerciseTitle').textContent=stage===0?'Achterompositie · '+base+' mist':'Oplossing '+stage+' · Romp '+data.track.replace('-','−');
-    $('lklExerciseText').textContent=stage===0?'B1 loopt langs B3, raakt de band en loopt opnieuw langs B3. B3 wordt gemist.':'Bekijk nu één oplossing voor precies dezelfde B3-positie.';
-    $('lklApproach').textContent='Voorbeeld '+base+': achterompositie → oplossing 1 → oplossing 2';
+    $('lklExerciseTitle').textContent=stage===0?'Tricky · Achterompositie · '+base+' mist':'Oplossing '+stage+' · '+(stage===1?'Romp ':'Kruis ')+data.track.replace('-','−');
+    $('lklExerciseText').textContent=stage===0?'Na de band mist B1 B3 maar nét. Bekijk daarna een oplossing via een Romp en een oplossing via een Kruis.':stage===1?'Los deze positie op via een Romp. B3 blijft op dezelfde plek.':'Los dezelfde positie nu op via een Kruis. De aanloop passeert B3 vrij.';
+    $('lklApproach').textContent='Voorbeeld '+base+': achterompositie → oplossing via Romp → oplossing via Kruis';
     $('lklCourseSimulationNote').textContent='De gekleurde strook is één bal breed: de ruimte die B1 inneemt. B3 heeft dezelfde schaal en blijft op zijn plek. Meetgegevens van '+data.tableLabel+'.';
     angleSketch.hidden=true;renderDoubles();
   }

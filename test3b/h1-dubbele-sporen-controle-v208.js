@@ -40,8 +40,17 @@ try{for(const viewport of [{width:1280,height:900},{width:390,height:844},{width
     assert.equal(geometry.example,['ACHT','ZEVEN','ZES'][group]);
     assert.equal(geometry.widths.length,geometry.lines.length);for(const width of geometry.widths)assert(Math.abs(width-geometry.diameter)<1e-9,'Loopstrook must equal real ball diameter');
     if(fixed)assert.deepEqual(geometry.p,fixed,'B3 must stay exactly fixed within one example');else {fixed=geometry.p;centers.push(fixed);}
-    if(stage===0){assert.equal(geometry.lines.length,2);for(const l of geometry.lines)assert(l.distance>6.65,'Miss before AND after the band');}
-    else {assert.equal(geometry.lines.length,1);assert(Math.abs(geometry.lines[0].endDistance-6.15)<1e-5,'Real first ball contact');}
+    if(stage===0){
+      assert.equal(geometry.lines.length,2);for(const l of geometry.lines)assert(l.distance>6.4,'Miss before AND after the band');
+      assert(Math.min(...geometry.lines.map(l=>l.distance))-6.15<1.5,'Tricky: at least one close miss');
+    }else if(stage===1){
+      assert(title.includes('Romp'));assert.equal(geometry.lines.length,1);assert(geometry.lines[0].name.startsWith('Romp '));assert(Math.abs(geometry.lines[0].endDistance-6.15)<1e-5,'First Romp contact');
+    }else{
+      assert(title.includes('Kruis'));assert.equal(geometry.lines.length,2);
+      const incoming=geometry.lines.find(l=>l.name.startsWith('Aanloop ')),cross=geometry.lines.find(l=>l.name.startsWith('Kruis '));assert(incoming&&cross);
+      assert(incoming.distance>6.4,'Cross solution must clear B3 BEFORE the cushion');
+      assert(Math.abs(cross.endDistance-6.15)<1e-5,'First Kruis contact AFTER the cushion');
+    }
     if(!process.env.QA_STATIC&&(viewport.width===1280||group===0&&stage===0)){
       await page.locator('#kzFollowB1').click();await page.waitForFunction(expected=>document.querySelector('#lklLessonTable').dataset.kzDemo===expected,stage===0?'miss':'contact');
       const gap=await page.locator('#lklLessonTable').evaluate(svg=>{const a=svg.querySelector('[data-kz-b1]'),b=svg.querySelector('[data-kz-b3]');return Math.hypot(+a.getAttribute('cx')-+b.getAttribute('cx'),+a.getAttribute('cy')-+b.getAttribute('cy'));});
@@ -55,10 +64,10 @@ try{for(const viewport of [{width:1280,height:900},{width:390,height:844},{width
   for(let i=0;i<centers.length;i++)for(let j=0;j<i;j++)assert(Math.hypot(centers[i].x-centers[j].x,centers[i].y-centers[j].y)>3,'Distinct examples');
   await page.locator('#kzExamples button[data-kz-example="ACHT"]').click();
   assert((await page.locator('#lklExerciseTitle').textContent()).includes('ACHT mist'));
-  console.log(table,viewport.width,'3 distinct achterom positions, 6 solutions, fixed B3 per example');
+  console.log(table,viewport.width,'3 tricky achterom positions, each Romp AND Kruis solution, fixed B3');
   await page.locator('#courseTableToggle').click();
  }
  for(let i=0;i<9;i++)await page.locator('#nextLklExercise').click();assert(await page.locator('#h1DoubleTracks').isHidden());
  assert.deepEqual(errors,[]);await page.close();
-}console.log('KZ OK: 3 achterom examples and 6 solutions PER table, ACHT/ZEVEN/ZES, separate real geometries for Klein/Groot, fixed B3 per example, both ball radii, 9 screens, animations, desktop/portrait/landscape, example navigation and H2.');
+}console.log('KZ OK: 3 tricky achterom positions PER table; each has a Romp solution AND Kruis solution, fixed B3, physical ball-width strokes, clear approach before Kruis contact, real first contact, Klein/Groot desktop/portrait/landscape, navigation and H2.');
 }finally{await browser.close();server.close();}})().catch(e=>{console.error(e);server.close();process.exitCode=1;});
