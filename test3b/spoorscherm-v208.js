@@ -2864,7 +2864,6 @@ window.installThreeBLklLesson=adapter=>{
   const kzDefinitions=[
     {romp:'VIJF',kruis:'ACHT',miss:'ZEVEN'},
     {romp:'VIJF',kruis:'ZEVEN',miss:'ZES'},
-    {romp:'VIJF+2',kruis:'ZEVEN',miss:'ZES'},
     {romp:'VIJF',kruis:'ZES',miss:'ZES-2'}
   ];
   const parallelTracks=['VIJF-2','VIJF-1','VIJF','VIJF+1','VIJF+2','VIJF+3'],crossTracks=kzDefinitions.flatMap(c=>[c.miss,c.miss,c.miss]);

@@ -22,14 +22,14 @@ try{for(const viewport of [{width:1280,height:900},{width:390,height:844},{width
 
  for(const table of ['klein','groot']){
   const centers=[];
-  const pairs=[['VIJF','ACHT'],['VIJF','ZEVEN'],['VIJF+2','ZEVEN'],['VIJF','ZES']],misses=['ZEVEN','ZES','ZES','ZES-2'];
-  for(let group=0;group<4;group++){
+  const pairs=[['VIJF','ACHT'],['VIJF','ZEVEN'],['VIJF','ZES']],misses=['ZEVEN','ZES','ZES-2'];
+  for(let group=0;group<3;group++){
    let fixed=null;
    for(let stage=0;stage<3;stage++){
     const title=await page.locator('#lklExerciseTitle').textContent();
     assert(title.includes(stage===0?'Romp '+pairs[group][0]+' × Kruis '+pairs[group][1]:'Oplossing '+stage));
     assert.equal(await page.locator('[data-kz-b3]').count(),1);
-    assert.equal(await page.locator('#kzExamples button').count(),4);
+    assert.equal(await page.locator('#kzExamples button').count(),3);
     assert.equal(await page.locator('#h1DoubleTracks select,#h1AllZones,[data-h1-zone]').count(),0);
     const geometry=await page.locator('#lklLessonTable').evaluate(svg=>{
       const ball=svg.querySelector('[data-kz-b3]'),p={x:+ball.getAttribute('cx'),y:+ball.getAttribute('cy')};
@@ -59,16 +59,16 @@ try{for(const viewport of [{width:1280,height:900},{width:390,height:844},{width
     }
     const box=await page.locator('#lklLesson1').evaluate(d=>({r:d.getBoundingClientRect().toJSON(),scroll:d.scrollWidth,client:d.clientWidth}));assert(box.scroll<=box.client+1,JSON.stringify({viewport,table,group,stage,box}));assert(box.r.x>=0&&box.r.y>=0&&box.r.bottom<=viewport.height+1);
     if(process.env.QA_DIR){fs.mkdirSync(process.env.QA_DIR,{recursive:true});await page.screenshot({path:path.join(process.env.QA_DIR,'kz-'+group+'-'+stage+'-'+table+'-'+viewport.width+'.png')});}
-    if(group<3||stage<2)await page.locator('#nextLklExercise').click();
+    if(group<2||stage<2)await page.locator('#nextLklExercise').click();
    }
   }
   for(let i=0;i<centers.length;i++)for(let j=0;j<i;j++)assert(Math.hypot(centers[i].x-centers[j].x,centers[i].y-centers[j].y)>3,'Distinct examples');
   await page.locator('#kzExamples button[data-kz-example="case-0"]').click();
   assert((await page.locator('#lklExerciseTitle').textContent()).includes('Romp VIJF × Kruis ACHT'));
-  console.log(table,viewport.width,'4 clear constructions, each Romp AND Kruis solution, fixed B3');
+  console.log(table,viewport.width,'3 clear constructions, each Romp AND Kruis solution, fixed B3');
   await page.locator('#courseTableToggle').click();
  }
- for(let i=0;i<12;i++)await page.locator('#nextLklExercise').click();assert(await page.locator('#h1DoubleTracks').isHidden());
+ for(let i=0;i<9;i++)await page.locator('#nextLklExercise').click();assert(await page.locator('#h1DoubleTracks').isHidden());
  assert.deepEqual(errors,[]);await page.close();
-}console.log('KZ OK: retained VIJF x ACHT plus VIJF x ZEVEN, VIJF+2 x ZEVEN and VIJF x ZES; exact intersections, real behind misses on opposite sides, Romp AND Kruis solutions, fixed B3, physical ball widths, Klein/Groot desktop/portrait/landscape and H2.');
+}console.log('KZ OK: retained VIJF x ACHT plus exactly two examples: VIJF x ZEVEN and VIJF x ZES; exact intersections, real behind misses on opposite sides, Romp AND Kruis solutions, fixed B3, physical ball widths, Klein/Groot desktop/portrait/landscape and H2.');
 }finally{await browser.close();server.close();}})().catch(e=>{console.error(e);server.close();process.exitCode=1;});
