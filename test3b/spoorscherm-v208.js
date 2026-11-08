@@ -2861,7 +2861,7 @@ window.installThreeBLklLesson=adapter=>{
   }
   const progressRow=document.createElement('div');progressRow.className='course-progress-row';$('lklLessonProgress').before(progressRow);const tableToggle=document.createElement('button');tableToggle.id='courseTableToggle';tableToggle.type='button';progressRow.append($('lklLessonProgress'),tableToggle);
   tableToggle.onclick=()=>{const fraction=progress,wasRunning=running;stop();window.ThreeBTableText.update({courseTable:data.table==='klein'?'groot':'klein'});data=readLessonData();render();if(lesson===0){stop();progress=fraction;position(progress);if(wasRunning)roll();else $('lklRoll').textContent=progress===1?'Opnieuw rollen':'Verder rollen';}remember();};
-  const parallelTracks=['VIJF-2','VIJF-1','VIJF','VIJF+1','VIJF+2','VIJF+3'],crossTracks=['VIJF','ZES','ZEVEN','ACHT'];
+  const parallelTracks=['VIJF-2','VIJF-1','VIJF','VIJF+1','VIJF+2','VIJF+3'],crossTracks=['ACHT','ZEVEN','ZES'];
   const courseScopeTracks=()=>lesson===4?['VIJF']:lesson===3?crossTracks:parallelTracks;
   const parallelViews=document.createElement('nav');parallelViews.id='vijfParallelViews';parallelViews.setAttribute('aria-label','Tafelviews');parallelViews.innerHTML='<button type="button" data-vijf-view="whole">Spoor</button><button type="button" data-vijf-view="framework">Karkas</button><button type="button" data-vijf-view="arrivals">Aankomst</button>';parallelViews.hidden=true;$('lklExerciseText').after(parallelViews);
   const checkExercise=document.createElement('button');checkExercise.id='checkVijfExercise';checkExercise.type='button';checkExercise.textContent='Toon Karkas · controle';checkExercise.hidden=true;$('lklExerciseText').after(checkExercise);checkExercise.onclick=()=>{checked=!checked;render();};
@@ -2937,83 +2937,43 @@ window.installThreeBLklLesson=adapter=>{
   }
 
 
-  let doubleChoice='',doubleRomp='',doubleBase='',doubleAll=true;
-  const doubleTrackCache=new Map();
+
   function renderDoubles(){
     doubles.replaceChildren();field();
-    if(!doubleTrackCache.has(data.table)){
-      const bases=['VIER','VIJF','ZES','ZEVEN','ACHT'],keys=adapter.courseTrackKeys(),tracks=[];
-      keys.sort((a,b)=>{const base=k=>k.replace(/[+-]\d+$/,''),offset=k=>Number(k.match(/[+-]\d+$/)?.[0]||0);return bases.indexOf(base(a))-bases.indexOf(base(b))||offset(a)-offset(b);});
-      for(const track of keys){try{const part=adapter.lesson1Data(track);if(part.rompPart||part.kruisPart)tracks.push(part);}catch(_){}}
-      doubleTrackCache.set(data.table,tracks);
+    const cross=data.kruisPart;if(!cross){$('lklGeometryNotice').textContent='Dit Kruis is nog niet beschikbaar.';return;}
+    const labels=[];
+    function line(part,color,label,dashed=false){
+      if(!part)return;
+      el('line',{x1:part.from.x,y1:part.from.y,x2:part.to.x,y2:part.to.y,stroke:color,'stroke-width':dashed?1:2,...(dashed?{'stroke-dasharray':'3 2',opacity:.65}:{}),'data-kz-line':label});
+      const dx=part.to.x-part.from.x,dy=part.to.y-part.from.y,len=Math.hypot(dx,dy),tip=lerp(part.from,part.to,.65),ux=dx/len,uy=dy/len;
+      el('polygon',{points:tip.x+','+tip.y+' '+(tip.x-4*ux-1.8*uy)+','+(tip.y-4*uy+1.8*ux)+' '+(tip.x-4*ux+1.8*uy)+','+(tip.y-4*uy-1.8*ux),fill:color});
+      const at=lerp(part.from,part.to,.4);labels.push(el('text',{x:at.x+3,y:at.y-4,'font-size':6,style:'fill:'+color},label));
     }
-    const tracks=doubleTrackCache.get(data.table),romps=tracks.filter(t=>t.rompPart);
-    if(doubleBase!==data.track){doubleBase=data.track;doubleRomp=data.track;doubleChoice='';}
-    const bodyTrack=romps.find(t=>t.track===doubleRomp)||romps.find(t=>t.track===data.track)||romps[0];
-    doubleRomp=bodyTrack?.track||'';
-    $('lklExerciseTitle').textContent='Romp '+doubleRomp.replace('-','−')+' · Kruis-zones';
-    const choices=[];
-    if(bodyTrack)for(const b of tracks){
-      if(bodyTrack.track===b.track||!b.kruisPart)continue;
-      const zone=doubleZone(bodyTrack.rompPart,b.kruisPart,2*(bodyTrack.radiusCm+b.radiusCm));
-      if(zone)choices.push({a:bodyTrack,b,zone,key:b.track});
+    line(data.rompPart,'#e3e9db','Aanloop '+data.track,true);
+    line(cross,'#8ce2dc','Kruis '+data.track);
+    if(data.track==='ACHT'){
+      const other=adapter.lesson1Data('ZEVEN'),body=other.rompPart,zone=body?doubleZone(body,cross,data.radiusCm+other.radiusCm):null;
+      if(zone?.hit){
+        line(body,'#ffdc62','Romp ZEVEN');
+        const center=zone.hit;
+        el('circle',{cx:center.x,cy:center.y,r:data.radiusCm,fill:'#f34d4d',stroke:'#222','stroke-width':.4,'data-kz-b3':'true','data-romp':'ZEVEN','data-kruis':'ACHT'});
+        labels.push(el('text',{x:center.x+5,y:center.y+2,'font-size':6,style:'fill:#fff'},'B3'));
+        const text=document.createElement('p');text.id='kzSingleExample';text.textContent='Eén B3-positie: bereikbaar via Kruis ACHT én via Romp ZEVEN. Turkoois en geel komen bij dezelfde rode bal.';doubles.append(text);
+      }else{$('lklGeometryNotice').textContent='Het voorbeeld Kruis ACHT / Romp ZEVEN is voor deze tafel niet beschikbaar.';}
+    }else{
+      const text=document.createElement('p');text.textContent='Dit is Kruis '+data.track+'. De gestreepte lijn toont de aanloop van hetzelfde spoor.';doubles.append(text);
     }
-    const selected=choices.find(row=>row.key===doubleChoice)||choices[0];
-    const nav=document.createElement('nav');nav.setAttribute('aria-label','Keuze-sporen');nav.style.cssText='display:flex;flex-wrap:wrap;gap:12px';
-    const addSelect=(name,id,items,value,change)=>{
-      const label=document.createElement('label');label.textContent=name+' ';
-      const select=document.createElement('select');select.id=id;select.style.cssText='min-height:44px;max-width:100%;font:inherit;padding:6px';
-      for(const item of items){const option=document.createElement('option');option.value=item.key;option.textContent=item.label;select.append(option);}
-      select.value=value;select.disabled=!items.length;select.onchange=()=>change(select.value);label.append(select);nav.append(label);
-    };
-    addSelect('Romp','h1RompChoice',romps.map(t=>({key:t.track,label:t.track.replace('-','−')})),doubleRomp,value=>{doubleRomp=value;doubleChoice='';render();});
-    addSelect('Kruis','h1KruisChoice',choices.map(row=>({key:row.key,label:row.b.track.replace('-','−')})),selected?.key||'',value=>{doubleChoice=value;doubleAll=false;render();});
-    const overview=document.createElement('button');overview.type='button';overview.id='h1AllZones';overview.textContent=doubleAll?'Alle zones ✓':'Alle zones';overview.setAttribute('aria-pressed',String(doubleAll));overview.onclick=()=>{doubleAll=!doubleAll;render();};nav.append(overview);
-    doubles.append(nav);
-    const total=document.createElement('p');total.id='h1ZoneCount';total.textContent=choices.length+' Kruis-zones bij Romp '+doubleRomp.replace('-','−')+'.';doubles.append(total);
-    const note=document.createElement('p');note.textContent=selected?'Geel: Romp. Turkoois: Kruis. Goud: de gedeelde zones, met de breedte van bal 1 én B3. Gestreept: de aanloop. Pijlen: de speelrichting.':'Bij deze Romp is geen gedeelde zone met een ander Kruis beschikbaar.';doubles.append(note);
-    if(!selected)return;
-    const {a,b,zone}=selected,body=a.rompPart,cross=b.kruisPart,g=data.geometry,r=a.radiusCm+b.radiusCm;
-    // Intersection of finite capsules: possible B3 centres reachable by both balls.
-    function capsule(part){
-      const dx=part.to.x-part.from.x,dy=part.to.y-part.from.y,len=Math.hypot(dx,dy),x=-dy*r/len,y=dx*r/len,p=part.from,q=part.to;
-      return 'M '+(p.x+x)+' '+(p.y+y)+' L '+(q.x+x)+' '+(q.y+y)+' A '+r+' '+r+' 0 0 0 '+(q.x-x)+' '+(q.y-y)+' L '+(p.x-x)+' '+(p.y-y)+' A '+r+' '+r+' 0 0 0 '+(p.x+x)+' '+(p.y+y)+' Z';
-    }
-    const defs=el('defs'),clip=document.createElementNS(ns,'clipPath'),shape=document.createElementNS(ns,'path');clip.id='h1RompZone';clip.setAttribute('clipPathUnits','userSpaceOnUse');shape.setAttribute('d',capsule(body));clip.append(shape);defs.append(clip);
-    const tableClip=document.createElementNS(ns,'clipPath'),rect=document.createElementNS(ns,'rect');tableClip.id='h1ZoneTable';tableClip.setAttribute('clipPathUnits','userSpaceOnUse');for(const [key,value]of Object.entries({x:data.radiusCm,y:data.radiusCm,width:g.widthCm-2*data.radiusCm,height:g.heightCm-2*data.radiusCm}))rect.setAttribute(key,value);tableClip.append(rect);defs.append(tableClip);
-    const zoneGroup=el('g',{'clip-path':'url(#h1ZoneTable)'});
-    for(const row of (doubleAll?choices:[selected])){
-      zoneGroup.append(el('path',{d:capsule(row.b.kruisPart),fill:'#ffdc62',opacity:row===selected?.65:.32,'clip-path':'url(#h1RompZone)','data-h1-zone':row.key,'data-selected':String(row===selected)}));
-      if(doubleAll&&row!==selected){const part=row.b.kruisPart;el('line',{x1:part.from.x,y1:part.from.y,x2:part.to.x,y2:part.to.y,stroke:'#8ce2dc','stroke-width':.6,opacity:.45,'data-kz-choice':row.key});}
-    }
-    for(const [part,color]of [[a.journey.find(p=>p.key==='nek'),'#ffdc62'],[b.rompPart,'#8ce2dc']]){
-      if(part)el('line',{x1:part.from.x,y1:part.from.y,x2:part.to.x,y2:part.to.y,stroke:color,'stroke-width':1,opacity:.7,'stroke-dasharray':'3 2','data-kz-approach':'true'});
-    }
-    // Dashed boundaries show the contact reach of both balls around the selected paths.
-    for(const [part,color]of [[body,'#ffdc62'],[cross,'#8ce2dc']]){
-      const group=el('g',{'clip-path':'url(#h1ZoneTable)'});
-      group.append(el('path',{d:capsule(part),fill:'none',stroke:color,'stroke-width':.45,'stroke-dasharray':'2 2',opacity:.65,'data-kz-width':'true'}));
-    }
-    for(const [part,color,label]of [[body,'#ffdc62','Romp '+a.track],[cross,'#8ce2dc','Kruis '+b.track]]){
-      el('line',{x1:part.from.x,y1:part.from.y,x2:part.to.x,y2:part.to.y,stroke:color,'stroke-width':2,'data-part':part.key,'data-reference':'false'});
-      for(const point of [part.from,part.to])el('circle',{cx:point.x,cy:point.y,r:1.1,fill:color,'data-kz-endpoint':'true'});
-      const tip=lerp(part.from,part.to,.65),dx=part.to.x-part.from.x,dy=part.to.y-part.from.y,len=Math.hypot(dx,dy),ux=dx/len,uy=dy/len;
-      el('polygon',{points:tip.x+','+tip.y+' '+(tip.x-4*ux-1.8*uy)+','+(tip.y-4*uy+1.8*ux)+' '+(tip.x-4*ux+1.8*uy)+','+(tip.y-4*uy-1.8*ux),fill:color,'data-kz-direction':'true'});
-      const at=lerp(part.from,part.to,.45);el('text',{x:at.x+3,y:at.y-4,'font-size':6,'data-zone-label':'true',style:'fill:'+color},label);
-    }
-    const center=zone.hit||lerp(zone.nearA,zone.nearB,.5);
-    el('circle',{cx:center.x,cy:center.y,r:data.radiusCm,fill:'#f34d4d',stroke:'#222','stroke-width':.4,'data-h1-b3':'true'});
-    requestAnimationFrame(()=>{const m=svg.getScreenCTM();if(m){const unit=Math.hypot(m.a,m.b);for(const label of svg.querySelectorAll('[data-zone-label]'))label.style.fontSize=(11/unit)+'px';}});
-    svg.setAttribute('aria-label','Romp '+a.track+' en Kruis '+b.track+' met gedeelde zone voor bal 3');
+    requestAnimationFrame(()=>{const m=svg.getScreenCTM();if(m){const unit=Math.hypot(m.a,m.b);for(const label of labels)label.style.fontSize=(11/unit)+'px';}});
+    svg.setAttribute('aria-label',data.track==='ACHT'?'Kruis ACHT en Romp ZEVEN met één gezamenlijke B3-positie':'Kruis '+data.track+' met aanloop');
     $('lklDiamondCaption').hidden=true;
   }
   function renderCross(){
     data=adapter.lesson1Data(courseTrack());quietStep();d.dataset.line='kruis';
-    $('lklLessonProgress').textContent='Stap '+(index+1)+' van '+crossTracks.length+' · '+data.trackLabel;
-    $('lklExerciseTitle').textContent=data.trackLabel+' · Kruis-zones';
-    $('lklExerciseText').textContent='De 45-lijn hoort bij het doorlopende spoor en heeft een aanloop. R markeert het raakpunt aan de band; het is geen nieuw afstootpunt.';
-    $('lklApproach').textContent='Volg de gestreepte aanlooplijn en daarna de 45-lijn. Kies de sporen die bij de zone van bal 3 passen.';
-    $('lklCourseSimulationNote').textContent='De rode bal is B3. Kies een Kruis voor één zone, of bekijk alle zones samen.';
+    $('lklLessonProgress').textContent='Scherm '+(index+1)+' van 3 · '+data.tableLabel;
+    $('lklExerciseTitle').textContent='Kruis '+data.track;
+    $('lklExerciseText').textContent=data.track==='ACHT'?'Bekijk één voorbeeld bij ACHT. Dezelfde bal 3 is ook via de Romp van een ander spoor bereikbaar.':'Volg de aanloop en daarna het Kruis van '+data.track+'.';
+    $('lklApproach').textContent='ACHT → ZEVEN → ZES';
+    $('lklCourseSimulationNote').textContent='R markeert het raakpunt aan de band. De lijn hoort bij een spoor met een aanloop.';
     angleSketch.hidden=true;renderDoubles();
   }
   function renderBackwards(){
@@ -3100,7 +3060,7 @@ window.installThreeBLklLesson=adapter=>{
   try{const saved=JSON.parse(localStorage.getItem(checkpointKey));if(saved&&Number.isInteger(saved.lesson)&&saved.lesson>=0&&saved.lesson<lessons.length&&Number.isInteger(saved.index)&&saved.index>=0&&saved.index<Math.max(6,parallelTracks.length+1)){lesson=saved.lesson;index=lesson===1?Math.min(3,saved.index):lesson===2?(saved.track?saved.overview?parallelTracks.length:Math.max(0,parallelTracks.indexOf(saved.track)):saved.index===4?parallelTracks.length:parallelTracks.indexOf(['VIJF-1','VIJF+1','VIJF+2','VIJF+3'][saved.index]||'VIJF')):lesson===3?Math.min(crossTracks.length-1,saved.index):Math.min(order.length-1,saved.index);parallelView=['whole','framework','arrivals'].includes(saved.parallelView)?saved.parallelView:'whole';checked=Boolean(saved.checked);startedCourse=true;progress=Number.isFinite(saved.fraction)?Math.max(0,Math.min(1,saved.fraction)):0;if(window.THREEB_PHONE_VIEW_APPLIED){saved.view='normal';localStorage.setItem(checkpointKey,JSON.stringify(saved));}restoreTable=saved.view==='table';bridgeVisible=restoreTable;}}catch(_){}checkpointReady=true;delete window.THREEB_PHONE_VIEW_APPLIED;setBridge();
   setMode('practice');delete window.THREEB_CHOOSE_USAGE_ON_START;
   const directH1=new URLSearchParams(location.search).get('h1')==='romp-kruis';
-  if(directH1){requestAnimationFrame(()=>{for(const dialog of [chooser,systemIntro?.dialog])dialog?.close?.();document.getElementById('meetsysteemIntro')?.close();openLesson(3);index=2;data=readLessonData();render();});}
+  if(directH1){requestAnimationFrame(()=>{for(const dialog of [chooser,systemIntro?.dialog])dialog?.close?.();document.getElementById('meetsysteemIntro')?.close();openLesson(3);});}
   if(!directH1&&adapter.inputOwner?.()!=='kruin'&&!directTable){restoreTable=false;bridgeVisible=false;setBridge();startCourse();}
   if(!directH1&&restoreTable)requestAnimationFrame(()=>{adapter.setCourseScope?.(true,courseScopeTracks());if(validSelection()){try{const fraction=progress;practiceActive=true;data=readLessonData();render();if(lesson===0){progress=fraction;position(progress);}dockCanvas();setBridge();}catch(_){practiceActive=false;setBridge();}}});
 };

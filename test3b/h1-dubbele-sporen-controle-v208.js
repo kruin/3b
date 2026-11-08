@@ -13,43 +13,35 @@ assert(Math.abs(end.from.x-(10-Math.sqrt(3)))<1e-7);assert.equal(end.hit,null);
 const near=ctx.doubleZone(part(0,0,20,0),part(0,3,20,3),4);
 assert(near&&Math.abs(near.nearA.y-near.nearB.y)===3);
 const server=http.createServer((req,res)=>{const file=path.resolve(__dirname,'.'+new URL(req.url,'http://local').pathname.replace(/\/$/,'/index.html'));if(!file.startsWith(__dirname+path.sep)){res.writeHead(403).end();return;}fs.readFile(file,(err,data)=>{if(err){res.writeHead(404).end();return;}res.setHeader('Content-Type',file.endsWith('.js')?'text/javascript':file.endsWith('.html')?'text/html':file.endsWith('.css')?'text/css':'application/octet-stream');res.end(data);});});
+
 (async()=>{await new Promise(r=>server.listen(0,'127.0.0.1',r));const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||chromium.executablePath(),args:['--no-sandbox']});
 try{for(const viewport of [{width:1280,height:900},{width:390,height:844},{width:844,height:390}]){
  const page=await browser.newPage({viewport,isMobile:viewport.width<900,hasTouch:viewport.width<900}),errors=[];page.on('pageerror',e=>errors.push(e.message));
- await page.goto((process.env.QA_URL||'http://127.0.0.1:'+server.address().port+'/')+'?h1=romp-kruis');
- await page.waitForSelector('#h1DoubleTracks',{state:'visible'});
+ await page.goto((process.env.QA_URL||'http://127.0.0.1:'+server.address().port+'/')+'?h1=romp-kruis');await page.waitForSelector('#h1DoubleTracks',{state:'visible'});
  for(const table of ['klein','groot']){
-  assert((await page.locator('#lklExerciseTitle').textContent()).includes('ZEVEN'));
-  const romp=page.locator('#h1RompChoice'),kruis=page.locator('#h1KruisChoice');
-  const romps=await romp.locator('option').evaluateAll(nodes=>nodes.map(n=>n.value));assert(romps.some(k=>k.includes('+'))&&romps.some(k=>k.includes('-')));
-  const all=page.locator('#h1AllZones');
-  if(await all.getAttribute('aria-pressed')!=='true')await all.click();
-  const available=await kruis.locator('option').count();
-  assert.equal(await page.locator('[data-h1-zone]').count(),available);
-  assert.equal(await page.locator('[data-kz-direction]').count(),2);
-  assert.equal(await page.locator('[data-kz-width]').count(),2);
-  assert(await page.locator('[data-kz-approach]').count()>0);
-  assert.equal(await page.locator('[data-h1-naive]').count(),0);
-  assert.equal(await page.locator('#h1DoubleTracks table').count(),0);
-  const allCrosses=new Set();
-  for(const key of romps){
-    await romp.selectOption(key);assert.equal(await romp.inputValue(),key);
-    const crosses=await kruis.locator('option').evaluateAll(nodes=>nodes.map(n=>n.value));
-    for(const choice of crosses){allCrosses.add(choice);await kruis.selectOption(choice);assert.equal(await page.locator('[data-h1-zone]').count(),1);}
-    if(!crosses.length)assert.equal(await page.locator('[data-h1-zone]').count(),0);
+  assert.equal(await page.locator('#lklExerciseTitle').textContent(),'Kruis ACHT');
+  assert.equal(await page.locator('[data-kz-b3]').count(),1);
+  assert.equal(await page.locator('#h1DoubleTracks select,#h1AllZones,[data-h1-zone]').count(),0);
+  assert((await page.locator('#kzSingleExample').textContent()).includes('Romp ZEVEN'));
+  const result=await page.locator('#lklLessonTable').evaluate(svg=>{
+    const ball=svg.querySelector('[data-kz-b3]'),p={x:+ball.getAttribute('cx'),y:+ball.getAttribute('cy')};
+    return [...svg.querySelectorAll('line[data-kz-line]')].filter(l=>['Romp ZEVEN','Kruis ACHT'].includes(l.dataset.kzLine)).map(l=>{
+      const a={x:+l.getAttribute('x1'),y:+l.getAttribute('y1')},b={x:+l.getAttribute('x2'),y:+l.getAttribute('y2')},dx=b.x-a.x,dy=b.y-a.y,t=((p.x-a.x)*dx+(p.y-a.y)*dy)/(dx*dx+dy*dy);
+      return {t,distance:Math.hypot(p.x-a.x-t*dx,p.y-a.y-t*dy)};
+    });
+  });
+  assert.equal(result.length,2);for(const r of result){assert(r.t>=0&&r.t<=1);assert(r.distance<1e-5);}
+  for(const track of ['ACHT','ZEVEN','ZES']){
+    assert.equal(await page.locator('#lklExerciseTitle').textContent(),'Kruis '+track);
+    assert.equal(await page.locator('[data-kz-b3]').count(),track==='ACHT'?1:0);
+    const box=await page.locator('#lklLesson1').evaluate(d=>({r:d.getBoundingClientRect().toJSON(),scroll:d.scrollWidth,client:d.clientWidth}));assert(box.scroll<=box.client+1);assert(box.r.x>=0&&box.r.y>=0&&box.r.bottom<=viewport.height+1);
+    if(process.env.QA_DIR){fs.mkdirSync(process.env.QA_DIR,{recursive:true});await page.screenshot({path:path.join(process.env.QA_DIR,'kruis-'+track+'-'+table+'-'+viewport.width+'.png')});}
+    if(track!=='ZES')await page.locator('#nextLklExercise').click();
   }
-  assert(allCrosses.has('VIJF')&&allCrosses.has('ZES')&&allCrosses.has('ZEVEN')&&allCrosses.has('ACHT'));
-  assert([...allCrosses].some(k=>/[+-]/.test(k)));
-  await romp.selectOption('ZEVEN');
-  if(await all.getAttribute('aria-pressed')!=='true')await all.click();
-  console.log(table,viewport.width,'Romp-keuzes',romps.length,'Kruis-keuzes',allCrosses.size);
-  const text=await page.locator('#h1DoubleTracks').innerText();assert(!/cm|coördinaten|hoekverschil|r1|r₁/.test(text));assert(text.includes('bal 1 én B3'));
-  const box=await page.locator('#lklLesson1').evaluate(d=>({r:d.getBoundingClientRect().toJSON(),scroll:d.scrollWidth,client:d.clientWidth}));assert(box.scroll<=box.client+1);assert(box.r.x>=0&&box.r.y>=0&&box.r.bottom<=viewport.height+1);
-  await page.locator('#h1DoubleTracks').scrollIntoViewIfNeeded();if(process.env.QA_DIR){fs.mkdirSync(process.env.QA_DIR,{recursive:true});await page.screenshot({path:path.join(process.env.QA_DIR,'h1-'+table+'-'+viewport.width+'.png')});}
+  await page.locator('#previousLklExercise').click();await page.locator('#previousLklExercise').click();
   await page.locator('#courseTableToggle').click();
  }
- await page.locator('#nextLklExercise').click();assert((await page.locator('#lklExerciseTitle').textContent()).includes('ACHT'));
- await page.locator('#nextLklExercise').click();assert(await page.locator('#h1DoubleTracks').isHidden(),'H2 hides H1 inventory');
+ await page.locator('#nextLklExercise').click();await page.locator('#nextLklExercise').click();await page.locator('#nextLklExercise').click();assert(await page.locator('#h1DoubleTracks').isHidden());
  assert.deepEqual(errors,[]);await page.close();
-}console.log('H1 OK: capsule boundaries, endpoints, no-contact; direct H1, ZEVEN choice tracks, zones with both ball widths and no calculation details on Klein/Groot at desktop and portrait/landscape touch viewports; H2 navigation; no JS errors.');
+}console.log('KZ OK: ACHT → ZEVEN → ZES, exactly one B3 at the true finite intersection Kruis ACHT / Romp ZEVEN, no selectors or zone overview, Klein/Groot desktop/portrait/landscape, H2 navigation, no JS errors.');
 }finally{await browser.close();server.close();}})().catch(e=>{console.error(e);server.close();process.exitCode=1;});
