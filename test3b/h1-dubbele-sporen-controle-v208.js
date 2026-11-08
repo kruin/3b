@@ -18,34 +18,37 @@ const server=http.createServer((req,res)=>{const file=path.resolve(__dirname,'.'
 try{for(const viewport of [{width:1280,height:900},{width:390,height:844},{width:844,height:390}]){
  const page=await browser.newPage({viewport,isMobile:viewport.width<900,hasTouch:viewport.width<900}),errors=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto((process.env.QA_URL||'http://127.0.0.1:'+server.address().port+'/')+'?h1=romp-kruis');await page.waitForSelector('#h1DoubleTracks',{state:'visible'});
+
  for(const table of ['klein','groot']){
-  assert.equal(await page.locator('#lklExerciseTitle').textContent(),'Kruis ACHT');
-  assert.equal(await page.locator('[data-kz-b3]').count(),1);
-  assert.equal(await page.locator('#h1DoubleTracks select,#h1AllZones,[data-h1-zone]').count(),0);
-  assert((await page.locator('#kzSingleExample').textContent()).includes('Romp ZEVEN'));
-  const result=await page.locator('#lklLessonTable').evaluate(svg=>{
-    const ball=svg.querySelector('[data-kz-b3]'),p={x:+ball.getAttribute('cx'),y:+ball.getAttribute('cy')};
-    return [...svg.querySelectorAll('line[data-kz-line]')].filter(l=>['Romp ZEVEN','Kruis ACHT','Aanloop ACHT'].includes(l.dataset.kzLine)).map(l=>{
-      const a={x:+l.getAttribute('x1'),y:+l.getAttribute('y1')},b={x:+l.getAttribute('x2'),y:+l.getAttribute('y2')},dx=b.x-a.x,dy=b.y-a.y,t=((p.x-a.x)*dx+(p.y-a.y)*dy)/(dx*dx+dy*dy);
-      const u=Math.max(0,Math.min(1,t));return {name:l.dataset.kzLine,t,segmentDistance:Math.hypot(p.x-a.x-u*dx,p.y-a.y-u*dy),distance:Math.hypot(p.x-a.x-t*dx,p.y-a.y-t*dy),endDistance:Math.hypot(p.x-b.x,p.y-b.y)};
-    });
-  });
-  assert.equal(result.length,3);for(const r of result){if(r.name==='Romp ZEVEN'){assert(r.t>1);assert(r.distance<1e-5);assert(Math.abs(r.endDistance-6.15)<1e-5);}else assert(r.segmentDistance>6.65,'ACHT must miss B3 before and after the cushion');}
-  const clearance=await page.locator('[data-kz-b3]').evaluate(b=>Number(b.dataset.clearance)-Number(b.dataset.diameter));assert(clearance>0);
-  assert.equal(await page.locator('[data-kz-b1]').count(),1);
-  await page.locator('#kzFollowB1').click();await page.waitForFunction(()=>document.querySelector('#lklLessonTable').dataset.kzDemo==='miss');
-  const gap=await page.locator('#lklLessonTable').evaluate(svg=>{const a=svg.querySelector('[data-kz-b1]'),b=svg.querySelector('[data-kz-b3]');return Math.hypot(+a.getAttribute('cx')-+b.getAttribute('cx'),+a.getAttribute('cy')-+b.getAttribute('cy'));});assert(gap>6.15);
-  for(const track of ['ACHT','ZEVEN','ZES']){
-    assert.equal(await page.locator('#lklExerciseTitle').textContent(),'Kruis '+track);
-    assert.equal(await page.locator('[data-kz-b3]').count(),track==='ACHT'?1:0);
+  let fixed=null;
+  for(let step=0;step<5;step++){
+    const title=await page.locator('#lklExerciseTitle').textContent();
+    assert(title.includes(['Achterompositie','Oplossing 1','Oplossing 2','Kruis ZEVEN','Kruis ZES'][step]));
+    assert.equal(await page.locator('[data-kz-b3]').count(),step<3?1:0);
+    assert.equal(await page.locator('#h1DoubleTracks select,#h1AllZones,[data-h1-zone]').count(),0);
+    if(step<3){
+      const geometry=await page.locator('#lklLessonTable').evaluate(svg=>{
+        const ball=svg.querySelector('[data-kz-b3]'),p={x:+ball.getAttribute('cx'),y:+ball.getAttribute('cy')};
+        return {p,lines:[...svg.querySelectorAll('line[data-kz-line]')].map(l=>{
+          const a={x:+l.getAttribute('x1'),y:+l.getAttribute('y1')},b={x:+l.getAttribute('x2'),y:+l.getAttribute('y2')},dx=b.x-a.x,dy=b.y-a.y,t=((p.x-a.x)*dx+(p.y-a.y)*dy)/(dx*dx+dy*dy),u=Math.max(0,Math.min(1,t));
+          return {name:l.dataset.kzLine,distance:Math.hypot(p.x-a.x-u*dx,p.y-a.y-u*dy),endDistance:Math.hypot(p.x-b.x,p.y-b.y),a,b};
+        })};
+      });
+      if(fixed)assert.deepEqual(geometry.p,fixed,'B3 must stay exactly fixed');else fixed=geometry.p;
+      if(step===0){assert.equal(geometry.lines.length,2);for(const l of geometry.lines)assert(l.distance>6.65,'ACHT must miss before and after the band');}
+      else {assert.equal(geometry.lines.length,1);assert(Math.abs(geometry.lines[0].endDistance-6.15)<1e-5,'Solution stops at first contact');}
+      await page.locator('#kzFollowB1').click();await page.waitForFunction(expected=>document.querySelector('#lklLessonTable').dataset.kzDemo===expected,step===0?'miss':'contact');
+      const gap=await page.locator('#lklLessonTable').evaluate(svg=>{const a=svg.querySelector('[data-kz-b1]'),b=svg.querySelector('[data-kz-b3]');return Math.hypot(+a.getAttribute('cx')-+b.getAttribute('cx'),+a.getAttribute('cy')-+b.getAttribute('cy'));});
+      if(step===0)assert(gap>6.15);else assert(Math.abs(gap-6.15)<1e-5);
+    }
     const box=await page.locator('#lklLesson1').evaluate(d=>({r:d.getBoundingClientRect().toJSON(),scroll:d.scrollWidth,client:d.clientWidth}));assert(box.scroll<=box.client+1);assert(box.r.x>=0&&box.r.y>=0&&box.r.bottom<=viewport.height+1);
-    if(process.env.QA_DIR){fs.mkdirSync(process.env.QA_DIR,{recursive:true});await page.screenshot({path:path.join(process.env.QA_DIR,'kruis-'+track+'-'+table+'-'+viewport.width+'.png')});}
-    if(track!=='ZES')await page.locator('#nextLklExercise').click();
+    if(process.env.QA_DIR){fs.mkdirSync(process.env.QA_DIR,{recursive:true});await page.screenshot({path:path.join(process.env.QA_DIR,'kz-step-'+step+'-'+table+'-'+viewport.width+'.png')});}
+    if(step<4)await page.locator('#nextLklExercise').click();
   }
-  await page.locator('#previousLklExercise').click();await page.locator('#previousLklExercise').click();
+  for(let i=0;i<4;i++)await page.locator('#previousLklExercise').click();
   await page.locator('#courseTableToggle').click();
  }
- await page.locator('#nextLklExercise').click();await page.locator('#nextLklExercise').click();await page.locator('#nextLklExercise').click();assert(await page.locator('#h1DoubleTracks').isHidden());
+ for(let i=0;i<5;i++)await page.locator('#nextLklExercise').click();assert(await page.locator('#h1DoubleTracks').isHidden());
  assert.deepEqual(errors,[]);await page.close();
-}console.log('KZ OK: ACHT → ZEVEN → ZES, exactly one B3 on Romp ZEVEN; ACHT misses before AND after South with both ball radii, alternative ZEVEN stops at contact, demo ends in a miss, no selectors or zone overview, Klein/Groot desktop/portrait/landscape, H2 navigation, no JS errors.');
+}console.log('KZ OK: achterom miss → solution Romp ZEVEN → solution Romp ACHT-2; one exactly fixed B3, both ball radii, two real first contacts, separate screens, Klein/Groot desktop/portrait/landscape, subsequent ZEVEN/ZES and H2, no JS errors.');
 }finally{await browser.close();server.close();}})().catch(e=>{console.error(e);server.close();process.exitCode=1;});
