@@ -22,12 +22,12 @@ try{for(const viewport of [{width:1280,height:900},{width:390,height:844},{width
 
  for(const table of ['klein','groot']){
   const centers=[];
-  const pairs=[['VIJF','ACHT'],['VIJF','ZEVEN'],['VIJF','ZES']],misses=['ZEVEN','ZES','ZES-2'];
+  const pairs=[['VIJF','ACHT'],['VIJF','ZEVEN'],['VIJF-1','ZES']],misses=['ZEVEN','ZES','ZES-2'];
   for(let group=0;group<3;group++){
    let fixed=null;
    for(let stage=0;stage<3;stage++){
     const title=await page.locator('#lklExerciseTitle').textContent();
-    assert(title.includes(stage===0?'Romp '+pairs[group][0]+' × Kruis '+pairs[group][1]:'Oplossing '+stage));
+    assert(title.includes(stage===0?'Romp '+pairs[group][0].replace('-','−')+' × Kruis '+pairs[group][1]:'Oplossing '+stage));
     assert.equal(await page.locator('[data-kz-b3]').count(),1);
     assert.equal(await page.locator('#kzExamples button').count(),3);
     assert.equal(await page.locator('#h1DoubleTracks select,#h1AllZones,[data-h1-zone]').count(),0);
@@ -45,7 +45,7 @@ try{for(const viewport of [{width:1280,height:900},{width:390,height:844},{width
       assert.equal(geometry.lines.length,2);for(const l of geometry.lines)assert(l.distance>6.4,'Miss before AND after the band');
       const xs=geometry.lines.map(l=>{const t=(geometry.p.y-l.a.y)/(l.b.y-l.a.y);assert(t>=0&&t<=1);return l.a.x+t*(l.b.x-l.a.x);});assert(geometry.p.x>Math.min(...xs)&&geometry.p.x<Math.max(...xs),'B3 between outgoing and return paths');
     }else if(stage===1){
-      assert(title.includes('Romp'));assert(title.includes('Romp '+pairs[group][0]));assert(geometry.lines[0].rayDistance<1e-5,'B3 exactly on the real Romp');assert.equal(geometry.lines.length,1);assert(geometry.lines[0].name.startsWith('Romp '));assert(Math.abs(geometry.lines[0].endDistance-6.15)<1e-5,'First Romp contact');
+      assert(title.includes('Romp'));assert(title.includes('Romp '+pairs[group][0].replace('-','−')));assert(geometry.lines[0].rayDistance<1e-5,'B3 exactly on the real Romp');assert.equal(geometry.lines.length,1);assert(geometry.lines[0].name.startsWith('Romp '));assert(Math.abs(geometry.lines[0].endDistance-6.15)<1e-5,'First Romp contact');
     }else{
       assert(title.includes('Kruis'));assert.equal(geometry.lines.length,2);
       const incoming=geometry.lines.find(l=>l.name.startsWith('Aanloop ')),cross=geometry.lines.find(l=>l.name.startsWith('Kruis '));assert(incoming&&cross);assert(title.includes('Kruis '+pairs[group][1]));assert(cross.rayDistance<1e-5,'B3 exactly on the real Kruis');
@@ -69,6 +69,11 @@ try{for(const viewport of [{width:1280,height:900},{width:390,height:844},{width
   await page.locator('#courseTableToggle').click();
  }
  for(let i=0;i<9;i++)await page.locator('#nextLklExercise').click();assert(await page.locator('#h1DoubleTracks').isHidden());
+ await page.goto((process.env.QA_URL||'http://127.0.0.1:'+server.address().port+'/')+'?h1=romp-kruis&kruis=ZES');
+ await page.waitForSelector('[data-kz-b3]');
+ assert((await page.locator('#lklExerciseTitle').textContent()).includes('Romp VIJF−1 × Kruis ZES'),'Direct ZES link');
+ const directPosition=await page.locator('[data-kz-b3]').evaluate(n=>[n.getAttribute('cx'),n.getAttribute('cy')]);
+ for(const expected of ['Romp VIJF−1','Kruis ZES']){await page.locator('#nextLklExercise').click();assert((await page.locator('#lklExerciseTitle').textContent()).includes(expected));assert.deepEqual(await page.locator('[data-kz-b3]').evaluate(n=>[n.getAttribute('cx'),n.getAttribute('cy')]),directPosition);}
  assert.deepEqual(errors,[]);await page.close();
-}console.log('KZ OK: retained VIJF x ACHT plus exactly two examples: VIJF x ZEVEN and VIJF x ZES; exact intersections, real behind misses on opposite sides, Romp AND Kruis solutions, fixed B3, physical ball widths, Klein/Groot desktop/portrait/landscape and H2.');
+}console.log('KZ OK: retained VIJF x ACHT plus exactly two examples: VIJF x ZEVEN and VIJF-1 x ZES; exact intersections, real behind misses on opposite sides, Romp AND Kruis solutions, fixed B3, physical ball widths, Klein/Groot desktop/portrait/landscape and H2.');
 }finally{await browser.close();server.close();}})().catch(e=>{console.error(e);server.close();process.exitCode=1;});

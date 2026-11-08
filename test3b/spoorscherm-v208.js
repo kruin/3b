@@ -2864,7 +2864,7 @@ window.installThreeBLklLesson=adapter=>{
   const kzDefinitions=[
     {romp:'VIJF',kruis:'ACHT',miss:'ZEVEN'},
     {romp:'VIJF',kruis:'ZEVEN',miss:'ZES'},
-    {romp:'VIJF',kruis:'ZES',miss:'ZES-2'}
+    {romp:'VIJF-1',kruis:'ZES',miss:'ZES-2'}
   ];
   const parallelTracks=['VIJF-2','VIJF-1','VIJF','VIJF+1','VIJF+2','VIJF+3'],crossTracks=kzDefinitions.flatMap(c=>[c.miss,c.miss,c.miss]);
   const courseScopeTracks=()=>lesson===4?['VIJF']:lesson===3?adapter.courseTrackKeys():parallelTracks;
@@ -3127,7 +3127,7 @@ window.installThreeBLklLesson=adapter=>{
   try{const saved=JSON.parse(localStorage.getItem(checkpointKey));if(saved&&Number.isInteger(saved.lesson)&&saved.lesson>=0&&saved.lesson<lessons.length&&Number.isInteger(saved.index)&&saved.index>=0&&saved.index<Math.max(crossTracks.length,parallelTracks.length+1)){lesson=saved.lesson;index=lesson===1?Math.min(3,saved.index):lesson===2?(saved.track?saved.overview?parallelTracks.length:Math.max(0,parallelTracks.indexOf(saved.track)):saved.index===4?parallelTracks.length:parallelTracks.indexOf(['VIJF-1','VIJF+1','VIJF+2','VIJF+3'][saved.index]||'VIJF')):lesson===3?Math.min(crossTracks.length-1,saved.index):Math.min(order.length-1,saved.index);parallelView=['whole','framework','arrivals'].includes(saved.parallelView)?saved.parallelView:'whole';checked=Boolean(saved.checked);startedCourse=true;progress=Number.isFinite(saved.fraction)?Math.max(0,Math.min(1,saved.fraction)):0;if(window.THREEB_PHONE_VIEW_APPLIED){saved.view='normal';localStorage.setItem(checkpointKey,JSON.stringify(saved));}restoreTable=saved.view==='table';bridgeVisible=restoreTable;}}catch(_){}checkpointReady=true;delete window.THREEB_PHONE_VIEW_APPLIED;setBridge();
   setMode('practice');delete window.THREEB_CHOOSE_USAGE_ON_START;
   const directH1=new URLSearchParams(location.search).get('h1')==='romp-kruis';
-  if(directH1){requestAnimationFrame(()=>{for(const dialog of [chooser,systemIntro?.dialog])dialog?.close?.();document.getElementById('meetsysteemIntro')?.close();openLesson(3);});}
+  if(directH1){requestAnimationFrame(()=>{for(const dialog of [chooser,systemIntro?.dialog])dialog?.close?.();document.getElementById('meetsysteemIntro')?.close();openLesson(3);const wanted=new URLSearchParams(location.search).get('kruis')?.toUpperCase(),at=kzDefinitions.findIndex(d=>d.kruis===wanted);if(at>=0){index=at*3;data=readLessonData();render();}});}
   if(!directH1&&adapter.inputOwner?.()!=='kruin'&&!directTable){restoreTable=false;bridgeVisible=false;setBridge();startCourse();}
   if(!directH1&&restoreTable)requestAnimationFrame(()=>{adapter.setCourseScope?.(true,courseScopeTracks());if(validSelection()){try{const fraction=progress;practiceActive=true;data=readLessonData();render();if(lesson===0){progress=fraction;position(progress);}dockCanvas();setBridge();}catch(_){practiceActive=false;setBridge();}}});
 };
