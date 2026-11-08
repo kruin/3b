@@ -2985,7 +2985,9 @@ window.installThreeBLklLesson=adapter=>{
     const label=(p,text,color)=>{const n=el('text',{x:p.x+4,y:p.y-3,'font-size':6,style:'fill:'+color},text);labels.push(n);return n;};
     const line=(part,color,text,dashed=false)=>{
       if(!part)return;
-      el('line',{x1:part.from.x,y1:part.from.y,x2:part.to.x,y2:part.to.y,stroke:color,'stroke-width':dashed?1:2,...(dashed?{'stroke-dasharray':'3 2',opacity:.6}:{}),'data-kz-line':text});
+      // Swept footprint of B1: stroke width is its physical diameter in table centimetres.
+      el('line',{x1:part.from.x,y1:part.from.y,x2:part.to.x,y2:part.to.y,stroke:color,'stroke-width':2*data.radiusCm,'stroke-linecap':'round',opacity:.38,'data-kz-ballwidth':text});
+      el('line',{x1:part.from.x,y1:part.from.y,x2:part.to.x,y2:part.to.y,stroke:color,'stroke-width':.55,...(dashed?{'stroke-dasharray':'3 2',opacity:.7}:{}),'data-kz-line':text});
       const dx=part.to.x-part.from.x,dy=part.to.y-part.from.y,len=Math.hypot(dx,dy),tip=lerp(part.from,part.to,.65),ux=dx/len,uy=dy/len;
       el('polygon',{points:tip.x+','+tip.y+' '+(tip.x-4*ux-1.8*uy)+','+(tip.y-4*uy+1.8*ux)+' '+(tip.x-4*ux+1.8*uy)+','+(tip.y-4*uy-1.8*ux),fill:color});
       label(lerp(part.from,part.to,.4),text,color);
@@ -3031,7 +3033,7 @@ window.installThreeBLklLesson=adapter=>{
     $('lklExerciseTitle').textContent=stage===0?'Achterompositie · '+base+' mist':'Oplossing '+stage+' · Romp '+data.track.replace('-','−');
     $('lklExerciseText').textContent=stage===0?'B1 loopt langs B3, raakt de band en loopt opnieuw langs B3. B3 wordt gemist.':'Bekijk nu één oplossing voor precies dezelfde B3-positie.';
     $('lklApproach').textContent='Voorbeeld '+base+': achterompositie → oplossing 1 → oplossing 2';
-    $('lklCourseSimulationNote').textContent='Binnen dit voorbeeld blijft B3 op dezelfde plek. Elk voorbeeld gebruikt de eigen meetgegevens van '+data.tableLabel+'.';
+    $('lklCourseSimulationNote').textContent='De gekleurde strook is één bal breed: de ruimte die B1 inneemt. B3 heeft dezelfde schaal en blijft op zijn plek. Meetgegevens van '+data.tableLabel+'.';
     angleSketch.hidden=true;renderDoubles();
   }
   function renderBackwards(){

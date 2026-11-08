@@ -32,16 +32,17 @@ try{for(const viewport of [{width:1280,height:900},{width:390,height:844},{width
     assert.equal(await page.locator('#h1DoubleTracks select,#h1AllZones,[data-h1-zone]').count(),0);
     const geometry=await page.locator('#lklLessonTable').evaluate(svg=>{
       const ball=svg.querySelector('[data-kz-b3]'),p={x:+ball.getAttribute('cx'),y:+ball.getAttribute('cy')};
-      return {p,example:svg.dataset.kzExample,lines:[...svg.querySelectorAll('line[data-kz-line]')].map(l=>{
+      return {p,diameter:2*Number(ball.getAttribute('r')),widths:[...svg.querySelectorAll('[data-kz-ballwidth]')].map(l=>Number(l.getAttribute('stroke-width'))),example:svg.dataset.kzExample,lines:[...svg.querySelectorAll('line[data-kz-line]')].map(l=>{
         const a={x:+l.getAttribute('x1'),y:+l.getAttribute('y1')},b={x:+l.getAttribute('x2'),y:+l.getAttribute('y2')},dx=b.x-a.x,dy=b.y-a.y,t=((p.x-a.x)*dx+(p.y-a.y)*dy)/(dx*dx+dy*dy),u=Math.max(0,Math.min(1,t));
         return {name:l.dataset.kzLine,distance:Math.hypot(p.x-a.x-u*dx,p.y-a.y-u*dy),endDistance:Math.hypot(p.x-b.x,p.y-b.y)};
       })};
     });
     assert.equal(geometry.example,['ACHT','ZEVEN','ZES'][group]);
+    assert.equal(geometry.widths.length,geometry.lines.length);for(const width of geometry.widths)assert(Math.abs(width-geometry.diameter)<1e-9,'Loopstrook must equal real ball diameter');
     if(fixed)assert.deepEqual(geometry.p,fixed,'B3 must stay exactly fixed within one example');else {fixed=geometry.p;centers.push(fixed);}
     if(stage===0){assert.equal(geometry.lines.length,2);for(const l of geometry.lines)assert(l.distance>6.65,'Miss before AND after the band');}
     else {assert.equal(geometry.lines.length,1);assert(Math.abs(geometry.lines[0].endDistance-6.15)<1e-5,'Real first ball contact');}
-    if(viewport.width===1280||group===0&&stage===0){
+    if(!process.env.QA_STATIC&&(viewport.width===1280||group===0&&stage===0)){
       await page.locator('#kzFollowB1').click();await page.waitForFunction(expected=>document.querySelector('#lklLessonTable').dataset.kzDemo===expected,stage===0?'miss':'contact');
       const gap=await page.locator('#lklLessonTable').evaluate(svg=>{const a=svg.querySelector('[data-kz-b1]'),b=svg.querySelector('[data-kz-b3]');return Math.hypot(+a.getAttribute('cx')-+b.getAttribute('cx'),+a.getAttribute('cy')-+b.getAttribute('cy'));});
       if(stage===0)assert(gap>6.15);else assert(Math.abs(gap-6.15)<1e-5);
