@@ -2950,28 +2950,48 @@ window.installThreeBLklLesson=adapter=>{
       const at=lerp(part.from,part.to,.4);labels.push(el('text',{x:at.x+3,y:at.y-4,'font-size':6,style:'fill:'+color},label));
     }
     line(data.rompPart,'#e3e9db','Aanloop '+data.track,true);
-    line(cross,'#8ce2dc','Kruis '+data.track);
+    if(data.track!=='ACHT')line(cross,'#8ce2dc','Kruis '+data.track);
     if(data.track==='ACHT'){
-      const other=adapter.lesson1Data('ZEVEN'),body=other.rompPart,zone=body?doubleZone(body,cross,data.radiusCm+other.radiusCm):null;
-      if(zone?.hit){
-        line(body,'#ffdc62','Romp ZEVEN');
-        const center=zone.hit;
-        el('circle',{cx:center.x,cy:center.y,r:data.radiusCm,fill:'#f34d4d',stroke:'#222','stroke-width':.4,'data-kz-b3':'true','data-romp':'ZEVEN','data-kruis':'ACHT'});
-        labels.push(el('text',{x:center.x+5,y:center.y+2,'font-size':6,style:'fill:#fff'},'B3'));
-        const text=document.createElement('p');text.id='kzSingleExample';text.textContent='Eén B3-positie: bereikbaar via Kruis ACHT én via Romp ZEVEN. Turkoois en geel komen bij dezelfde rode bal.';doubles.append(text);
-      }else{$('lklGeometryNotice').textContent='Het voorbeeld Kruis ACHT / Romp ZEVEN is voor deze tafel niet beschikbaar.';}
+      const other=adapter.lesson1Data('VIJF'),body=other.rompPart,zone=body?doubleZone(body,cross,data.radiusCm+other.radiusCm):null;
+      if(zone?.hit&&data.rompPart){
+        const center=zone.hit,D=data.radiusCm+other.radiusCm,incoming=data.rompPart;
+        const beforeContact=part=>{const dx=part.to.x-part.from.x,dy=part.to.y-part.from.y,len=Math.hypot(dx,dy);return {x:center.x-D*dx/len,y:center.y-D*dy/len};};
+        const crossContact=beforeContact(cross),bodyContact=beforeContact(body);
+        const clear=distanceToPart(center,incoming)>D+1e-5;
+        const valid=(part,p)=>{const dx=part.to.x-part.from.x,dy=part.to.y-part.from.y,t=((p.x-part.from.x)*dx+(p.y-part.from.y)*dy)/(dx*dx+dy*dy);return t>=0&&t<=1;};
+        if(!clear||!valid(cross,crossContact)||!valid(body,bodyContact)){$('lklGeometryNotice').textContent='Dit voorbeeld is niet vrij bereikbaar met de gebruikte balbreedte.';return;}
+        line({...body,to:bodyContact},'#ffdc62','Romp VIJF');
+        line({...cross,to:crossContact},'#8ce2dc','Kruis ACHT');
+        const start=lerp(incoming.from,incoming.to,.35);
+        el('line',{x1:start.x,y1:start.y,x2:incoming.to.x,y2:incoming.to.y,stroke:'#8ce2dc','stroke-width':2,'data-kz-behind':'true'});
+        const b3=el('circle',{cx:center.x,cy:center.y,r:data.radiusCm,fill:'#f34d4d',stroke:'#222','stroke-width':.4,'data-kz-b3':'true','data-romp':'VIJF','data-kruis':'ACHT'});
+        b3.dataset.clearance=String(distanceToPart(center,incoming));b3.dataset.diameter=String(D);
+        const b1=el('circle',{cx:start.x,cy:start.y,r:data.radiusCm,fill:'white',stroke:'#222','stroke-width':.4,'data-kz-b1':'true'});
+        const b1Label=el('text',{x:start.x+5,y:start.y,'font-size':6,style:'fill:#fff'},'B1');labels.push(b1Label);
+        labels.push(el('text',{x:center.x-12,y:center.y-4,'font-size':6,style:'fill:#fff'},'B3'));
+        const text=document.createElement('p');text.id='kzSingleExample';text.textContent='B1 is onderweg op ACHT: langs B3 naar Zuid en via het Kruis terug. Alternatief: Romp VIJF bereikt dezelfde B3 via de gele lijn.';doubles.append(text);
+        const play=document.createElement('button');play.type='button';play.id='kzFollowB1';play.textContent='Volg B1';doubles.append(play);
+        const at=p=>{b1.setAttribute('cx',p.x);b1.setAttribute('cy',p.y);b1Label.setAttribute('x',p.x+5);b1Label.setAttribute('y',p.y);};
+        play.onclick=()=>{
+          stop();at(start);svg.dataset.kzDemo='running';const begin=performance.now(),first=Math.hypot(incoming.to.x-start.x,incoming.to.y-start.y),second=Math.hypot(crossContact.x-incoming.to.x,crossContact.y-incoming.to.y),length=first+second;
+          const tick=now=>{const fraction=Math.min(1,(now-begin)/2400),distance=fraction*length;
+            at(distance<=first?lerp(start,incoming.to,distance/first):lerp(incoming.to,crossContact,(distance-first)/second));
+            if(fraction<1)frame=requestAnimationFrame(tick);else{frame=0;svg.dataset.kzDemo='contact';}
+          };frame=requestAnimationFrame(tick);
+        };
+      }else{$('lklGeometryNotice').textContent='Het voorbeeld Kruis ACHT / Romp VIJF is voor deze tafel niet beschikbaar.';}
     }else{
       const text=document.createElement('p');text.textContent='Dit is Kruis '+data.track+'. De gestreepte lijn toont de aanloop van hetzelfde spoor.';doubles.append(text);
     }
     requestAnimationFrame(()=>{const m=svg.getScreenCTM();if(m){const unit=Math.hypot(m.a,m.b);for(const label of labels)label.style.fontSize=(11/unit)+'px';}});
-    svg.setAttribute('aria-label',data.track==='ACHT'?'Kruis ACHT en Romp ZEVEN met één gezamenlijke B3-positie':'Kruis '+data.track+' met aanloop');
+    svg.setAttribute('aria-label',data.track==='ACHT'?'B1 loopt achter B3 om via Kruis ACHT; Romp VIJF is het alternatief voor dezelfde B3':'Kruis '+data.track+' met aanloop');
     $('lklDiamondCaption').hidden=true;
   }
   function renderCross(){
     data=adapter.lesson1Data(courseTrack());quietStep();d.dataset.line='kruis';
     $('lklLessonProgress').textContent='Scherm '+(index+1)+' van 3 · '+data.tableLabel;
     $('lklExerciseTitle').textContent='Kruis '+data.track;
-    $('lklExerciseText').textContent=data.track==='ACHT'?'Bekijk één voorbeeld bij ACHT. Dezelfde bal 3 is ook via de Romp van een ander spoor bereikbaar.':'Volg de aanloop en daarna het Kruis van '+data.track+'.';
+    $('lklExerciseText').textContent=data.track==='ACHT'?'B3 ligt vóór Zuid. B1 kan er via ACHT achterom naartoe. Bekijk ook het alternatieve spoor.':'Volg de aanloop en daarna het Kruis van '+data.track+'.';
     $('lklApproach').textContent='ACHT → ZEVEN → ZES';
     $('lklCourseSimulationNote').textContent='R markeert het raakpunt aan de band. De lijn hoort bij een spoor met een aanloop.';
     angleSketch.hidden=true;renderDoubles();
