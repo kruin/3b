@@ -55,6 +55,9 @@ const server=http.createServer((req,res)=>{
       const box=await page.locator('#lklLesson1').evaluate(d=>({r:d.getBoundingClientRect().toJSON(),w:d.scrollWidth,c:d.clientWidth}));assert(box.w<=box.c+1);assert(box.r.x>=0&&box.r.y>=0&&box.r.bottom<=viewport.height+1);
       return found;
     };
+    const nearby=await page.locator('#kzResults').evaluate(n=>{const r=n.getBoundingClientRect(),info=n.closest('.lkl-course-info').getBoundingClientRect(),table=document.querySelector('#lklLessonTable').getBoundingClientRect();return {top:r.top,infoTop:info.top,bottom:r.bottom,infoBottom:info.bottom,tableBottom:table.bottom};});
+    assert(Math.abs(nearby.top-nearby.infoTop)<3,'solution buttons start next to table, before explanatory text');
+    if(viewport.width===390)assert(nearby.top-nearby.tableBottom<15&&nearby.bottom<=nearby.infoBottom,'mobile solutions visible immediately below table');
     const samples=[];
     for(const [i,[romp,kruis]]of [['VIJF','ACHT'],['VIJF','ZEVEN'],['VIJF-1','ZES']].entries()){
       await page.locator('[data-kz-example="case-'+i+'"]').click();
