@@ -67,6 +67,16 @@ const server=http.createServer((req,res)=>{
       if(found.length===2){const alternative=page.locator('[data-kz-alternative]'),key=await alternative.getAttribute('data-kz-alternative');assert.equal(await alternative.locator('[data-kz-ballwidth]').count(),0);await alternative.focus();await page.keyboard.press('Enter');assert.equal(await page.locator('[data-kz-match=\"'+key+'\"]').getAttribute('aria-pressed'),'true');assert.deepEqual(await position(),samples.at(-1));await verify();}
       await page.locator('[data-kz-match="kruis:'+kruis+'"]').click();assert.deepEqual(await position(),samples.at(-1));await verify();
     }
+    await page.locator('#kzAlternativeConfig summary').click();
+    const limit=page.locator('#kzAlternativeLimit'),beforeConfig=await position(),available=Math.max(0,(await keys()).length-1);
+    await limit.selectOption('all');assert.equal(await page.locator('[data-kz-alternative]').count(),available);assert.equal(await page.locator('[data-kz-alternatives-alert]').count(),0);
+    if(available){const alt=page.locator('[data-kz-alternative]').first(),key=await alt.getAttribute('data-kz-alternative');await alt.focus();await page.keyboard.press('Enter');assert.equal(await page.locator('[data-kz-match="'+key+'"]').getAttribute('aria-pressed'),'true');}
+    await limit.selectOption('0');assert.equal(await page.locator('[data-kz-alternative]').count(),0);assert.equal(await page.locator('[data-kz-alternatives-alert]').count(),0);
+    await limit.selectOption('2');assert.equal(await page.locator('[data-kz-alternative]').count(),available<=2?available:0);assert.equal(await page.locator('[data-kz-alternatives-alert]').count(),available>2?1:0);
+    assert.deepEqual(await position(),beforeConfig,'display config preserves B3');
+    await page.reload();await page.waitForSelector('[data-kz-b3]');assert.equal(await limit.inputValue(),'2','alternative limit persists');
+    if(!await page.locator('#kzAlternativeConfig').getAttribute('open'))await page.locator('#kzAlternativeConfig summary').click();
+    await limit.selectOption('1');await page.locator('#kzAlternativeConfig summary').click();await verify();
     const geometry=await page.evaluate(()=>{const a=window.__kzQaAdapter;if(a)return a.lesson1Data('VIJF').geometry;const c=window.THREEB_START_CONFIG;return c.tables[document.querySelector('#lklLesson1').dataset.table];});
     const screen=async p=>page.locator('#lklLessonTable').evaluate((svg,p)=>{const q=new DOMPoint(p.x,p.y).matrixTransform(svg.getScreenCTM());return {x:q.x,y:q.y};},p);
     const tap=async p=>{const q=await screen(p);if(viewport.width===390)await page.touchscreen.tap(q.x,q.y);else await page.mouse.click(q.x,q.y);};

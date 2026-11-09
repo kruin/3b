@@ -2987,6 +2987,9 @@ window.installThreeBLklLesson=adapter=>{
     return travel>=0&&travel<=length?{x:part.from.x+travel*ux,y:part.from.y+travel*uy}:null;
   }
 
+  const kzAlternativeSettingKey='3b-kz-alternative-limit-v1';
+  let kzAlternativeLimit=1,kzConfigOpen=false;
+  try{const saved=localStorage.getItem(kzAlternativeSettingKey);if(saved==='all')kzAlternativeLimit=Infinity;else if(saved!==null&&Number.isInteger(+saved)&&+saved>=0&&+saved<=10)kzAlternativeLimit=+saved;}catch(_){}
   const kzTrackSets=new Map();
   function kzCase(){
     const table=adapter.tableTextSettings?.().courseTable||'klein',baseKey=crossTracks[index],key=table+':'+index+':'+baseKey;
@@ -3030,6 +3033,7 @@ window.installThreeBLklLesson=adapter=>{
     const selected=matches.find(m=>kzSelected?.table===table&&m.track===kzSelected.track&&m.kind===kzSelected.kind)||matches[0];
     kzSelected=selected?{table,track:selected.track,kind:selected.kind}:null;
     if(selected)data=selected.trackData;
+    const alternatives=matches.filter(item=>item!==selected),showAlternatives=kzAlternativeLimit>0&&alternatives.length<=kzAlternativeLimit;
     const name=key=>key.replace('-','−');
     const presets=document.createElement('nav');presets.id='kzExamples';presets.setAttribute('aria-label','Startposities');presets.style.cssText='display:flex;flex-wrap:wrap;gap:6px';
     for(const [i,definition]of kzDefinitions.entries()){
@@ -3055,7 +3059,18 @@ window.installThreeBLklLesson=adapter=>{
       group.append(list);results.append(group);
     }
     doubles.prepend(results);
-    if(matches.length>2){const alert=document.createElement('p');alert.dataset.kzAlternativesAlert='true';alert.setAttribute('role','status');alert.style.cssText='padding:8px;border:2px solid #b86e00;border-radius:6px;font-weight:bold';alert.textContent='Te veel alternatieve paden ('+(matches.length-1)+'). Kies een spoor via de knoppen; de alternatieve lijnen blijven verborgen.';results.after(alert);}
+    const config=document.createElement('details');config.id='kzAlternativeConfig';config.open=kzConfigOpen;
+    const summary=document.createElement('summary');summary.textContent='⚙ Config · alternatieve paden';summary.style.cssText='cursor:pointer;padding:8px 0';config.append(summary);
+    const setting=document.createElement('label');setting.textContent='Toon dunne, klikbare lijnen bij ';setting.style.cssText='display:block;margin:6px 0';
+    const limit=document.createElement('select');limit.id='kzAlternativeLimit';limit.setAttribute('aria-label','Aantal alternatieve paden');limit.style.cssText='max-width:100%;min-height:44px;font:inherit';
+    for(const [value,text]of [['0','Uit'],...Array.from({length:10},(_,i)=>[String(i+1),'maximaal '+(i+1)+(i?' alternatieven':' alternatief')]),['all','alle aantallen']])limit.add(new Option(text,value));
+    limit.value=Number.isFinite(kzAlternativeLimit)?String(kzAlternativeLimit):'all';setting.append(limit);config.append(setting);
+    const note=document.createElement('p');note.textContent='Boven dit aantal blijven de alternatieve lijnen verborgen. De spoorknoppen blijven beschikbaar.';config.append(note);
+    config.ontoggle=()=>{kzConfigOpen=config.open;};
+    limit.onchange=()=>{kzAlternativeLimit=limit.value==='all'?Infinity:Number(limit.value);kzConfigOpen=true;try{localStorage.setItem(kzAlternativeSettingKey,limit.value);}catch(_){}render();};
+    results.after(config);
+    if(kzAlternativeLimit>0&&!showAlternatives){const alert=document.createElement('p');alert.dataset.kzAlternativesAlert='true';alert.setAttribute('role','status');alert.style.cssText='padding:8px;border:2px solid #b86e00;border-radius:6px;font-weight:bold';alert.textContent='Te veel alternatieve paden ('+alternatives.length+'). Ingesteld maximum: '+kzAlternativeLimit+'. Kies een spoor via de knoppen of wijzig Config.';results.after(alert);}
+
     const label=(p,text,color)=>{const n=el('text',{x:p.x+4,y:p.y-3,'font-size':6,style:'fill:'+color},text);labels.push(n);return n;};
     const line=(part,color,text,dashed=false)=>{
       el('line',{x1:part.from.x,y1:part.from.y,x2:part.to.x,y2:part.to.y,stroke:color,'stroke-width':2*r,'stroke-linecap':'round',opacity:.38,'data-kz-ballwidth':text});
@@ -3066,9 +3081,9 @@ window.installThreeBLklLesson=adapter=>{
     };
     const selectedNose=selected?.trackData.neusPart||selected?.trackData.journey?.find(part=>part.key==='neus');
     if(selectedNose)line(selectedNose,'#82dcd4','Neus '+name(selected.track));
-    // Show a single alternative without obscuring the chosen ball-width path.
-    if(selected&&matches.length===2){
-      const alternative=matches.find(item=>item!==selected),{track,kind,part,contact,trackData}=alternative;
+    // Display all alternatives only when their count fits the configured limit.
+    for(const alternative of (showAlternatives?alternatives:[])){
+      const {track,kind,part,contact,trackData}=alternative;
       const group=el('g',{'data-kz-alternative':kind+':'+track,role:'button',tabindex:'0','aria-label':'Kies '+(kind==='romp'?'Romp ':'Kruis ')+name(track),style:'cursor:pointer'});
       const choose=event=>{event.preventDefault();event.stopPropagation();kzSelected={table,track,kind};render();};
       group.onpointerdown=event=>event.stopPropagation();group.onclick=choose;group.onkeydown=event=>{if(event.key==='Enter'||event.key===' ')choose(event);};
