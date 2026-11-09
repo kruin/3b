@@ -75,12 +75,13 @@ const server=http.createServer((req,res)=>{
     }
     await page.locator('#courseScreenConfig').click();
     const limit=page.locator('#kzAlternativeLimit'),beforeConfig=await position(),available=Math.max(0,(await keys()).length-1);
+    await page.locator('#courseCorrectionDraft').fill('Concept losbander: invulling volgt.');assert((await page.locator('#courseCorrectionStatus').textContent()).includes('nog niet toegepast'));
     await limit.selectOption('all');assert.equal(await page.locator('[data-kz-alternative]').count(),available);assert.equal(await page.locator('[data-kz-alternatives-alert]').count(),0);
     if(available){const alt=page.locator('[data-kz-alternative]').first(),key=await alt.getAttribute('data-kz-alternative');await alt.focus();await page.keyboard.press('Enter');assert.equal(await page.locator('[data-kz-match="'+key+'"]').getAttribute('aria-pressed'),'true');}
     await limit.selectOption('0');assert.equal(await page.locator('[data-kz-alternative]').count(),0);assert.equal(await page.locator('[data-kz-alternatives-alert]').count(),0);
     await limit.selectOption('2');assert.equal(await page.locator('[data-kz-alternative]').count(),available<=2?available:0);assert.equal(await page.locator('[data-kz-alternatives-alert]').count(),available>2?1:0);
     assert.deepEqual(await position(),beforeConfig,'display config preserves B3');
-    await page.reload();await page.waitForSelector('[data-kz-b3]');assert.equal(await limit.inputValue(),'2','alternative limit persists');
+    await page.reload();await page.waitForSelector('[data-kz-b3]');assert.equal(await limit.inputValue(),'2','alternative limit persists');assert.equal(await page.locator('#courseCorrectionDraft').inputValue(),'Concept losbander: invulling volgt.','losbander draft persists');
     if(!await page.locator('#kzAlternativeConfig').getAttribute('open'))await page.locator('#courseScreenConfig').click();
     await limit.selectOption('1');await page.locator('#courseScreenConfig').click();await verify();
     const geometry=await page.evaluate(()=>{const a=window.__kzQaAdapter;if(a)return a.lesson1Data('VIJF').geometry;const c=window.THREEB_START_CONFIG;return c.tables[document.querySelector('#lklLesson1').dataset.table];});
@@ -105,8 +106,9 @@ const server=http.createServer((req,res)=>{
     console.log(table,viewport.width,'dynamic matches, drag/tap, first contacts, ball widths');
     await page.locator('#courseTableToggle').click();
    }
-   for(let i=0;i<3;i++)await page.locator('#nextLklExercise').click();assert(await page.locator('#h1DoubleTracks').isHidden(),'H2 navigation');assert(await page.locator('#courseScreenConfig').isHidden());assert(await page.locator('#lklExerciseText').isVisible(),'H2 lesson explanation restored');assert.equal(await page.locator('#lklLessonTable').evaluate(svg=>svg.style.touchAction),'');
-   await page.goto((process.env.QA_URL||'http://127.0.0.1:'+server.address().port+'/')+'?h1=romp-kruis&kruis=ZES');await page.waitForSelector('[data-kz-b3]');assert(await page.locator('[data-kz-match="kruis:ZES"]').count());assert(await page.locator('[data-kz-match="romp:VIJF-1"]').count());
+   for(let i=0;i<3;i++)await page.locator('#nextLklExercise').click();assert(await page.locator('#h1DoubleTracks').isHidden(),'H2 navigation');assert(await page.locator('#courseScreenConfig').isVisible());assert(await page.locator('#lklExerciseText').isVisible(),'H2 lesson explanation restored');assert.equal(await page.locator('#lklLessonTable').evaluate(svg=>svg.style.touchAction),'');
+   await page.locator('#courseScreenConfig').click();assert.equal(await page.locator('#courseCorrectionTitle').textContent(),'Correcties · via bal 2');assert.equal(await page.locator('#courseCorrectionDraft').inputValue(),'');await page.locator('#courseCorrectionDraft').fill('Concept via bal 2: invulling volgt.');await page.locator('#courseScreenConfig').click();
+   await page.goto((process.env.QA_URL||'http://127.0.0.1:'+server.address().port+'/')+'?h1=romp-kruis&kruis=ZES');await page.waitForSelector('[data-kz-b3]');assert(await page.locator('[data-kz-match="kruis:ZES"]').count());assert(await page.locator('[data-kz-match="romp:VIJF-1"]').count());assert.equal(await page.locator('#courseCorrectionDraft').inputValue(),'Concept losbander: invulling volgt.','contexts stay separate');
    await page.locator('#closeLklLesson').click();await page.locator('#bandMenu').click();await page.locator('#cleanConfigMore>summary').click();
    assert(await page.locator('#generalDisplayConfig>summary').isVisible());assert(await page.locator('#generalMeasureConfig>summary').isVisible());assert(await page.locator('#generalAdminConfig>summary').isVisible());
    assert(await page.locator('#mobilePreview').isHidden(),'test tools collapsed separately');
