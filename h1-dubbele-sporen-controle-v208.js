@@ -50,6 +50,8 @@ const server=http.createServer((req,res)=>{
       });
       assert.equal(await page.locator('[data-kz-alternative]').count(),found.length===2?1:0,'only one alternative gets a thin path');
       assert.equal(await page.locator('[data-kz-alternatives-alert]').count(),found.length>2?1:0,'alert for multiple alternatives');
+      const nose=page.locator('[data-kz-line^="Neus "]');assert.equal(await nose.count(),found.length?1:0,'Neus follows the selected solution');
+      if(found.length){const selected=await page.locator('#lklLessonTable').getAttribute('data-kz-solution-track');assert.equal(await nose.getAttribute('data-kz-line'),'Neus '+selected.replace('-','−'));}
       assert.equal(drawing.count,found.length);for(const w of drawing.widths)assert(Math.abs(w-drawing.diameter)<1e-9);
       if(found.length)assert(Math.abs(drawing.gap-drawing.D)<1e-5,'display B1 at physical first contact');
       const box=await page.locator('#lklLesson1').evaluate(d=>({r:d.getBoundingClientRect().toJSON(),w:d.scrollWidth,c:d.clientWidth}));assert(box.w<=box.c+1);assert(box.r.x>=0&&box.r.y>=0&&box.r.bottom<=viewport.height+1);

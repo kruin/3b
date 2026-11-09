@@ -3065,6 +3065,8 @@ window.installThreeBLklLesson=adapter=>{
       el('polygon',{points:tip.x+','+tip.y+' '+(tip.x-head*ux-half*uy)+','+(tip.y-head*uy+half*ux)+' '+(tip.x-head*ux+half*uy)+','+(tip.y-head*uy-half*ux),fill:color});
       return label(lerp(part.from,part.to,.4),text,color);
     };
+    const selectedNose=selected?.trackData.neusPart||selected?.trackData.journey?.find(part=>part.key==='neus');
+    if(selectedNose)line(selectedNose,'#82dcd4','Neus '+name(selected.track));
     // Show a single alternative without obscuring the chosen ball-width path.
     if(selected&&matches.length===2){
       const alternative=matches.find(item=>item!==selected),{track,kind,part,contact,trackData}=alternative;
