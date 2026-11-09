@@ -2959,7 +2959,7 @@ window.installThreeBLklLesson=adapter=>{
   // Finite centre trajectories; a stationary B3 can be reached within r1+r3.
   const doubles=document.createElement('section');doubles.id='h1DoubleTracks';
   info.prepend(doubles);
-  style.textContent+=`#lklLesson1[data-kz-active=true] .lkl-course-stage{grid-template-rows:minmax(0,1fr);gap:0}#lklLesson1[data-kz-active=true] #lklDiamondCaption{display:none}#lklLesson1 #kzResults button{margin:0;min-height:44px}#lklLesson1 #h1DoubleTracks{margin:0}#lklLesson1[data-kz-active=true] .lkl-course-info{padding-top:0}`;
+  style.textContent+=`#lklLesson1[data-kz-active=true] .lkl-course-stage{grid-template-rows:minmax(0,1fr);gap:0}#lklLesson1[data-kz-active=true] #lklDiamondCaption{display:none}#lklLesson1 #kzResults{position:sticky;top:0;z-index:1;background:#faf8ef;padding-bottom:4px}#lklLesson1 #kzResults button{margin:0;min-height:44px}#lklLesson1 #h1DoubleTracks{margin:0}#lklLesson1[data-kz-active=true] .lkl-course-info{padding-top:0}`;
   function distanceToPart(p,b){const x=b.to.x-b.from.x,y=b.to.y-b.from.y,t=Math.max(0,Math.min(1,((p.x-b.from.x)*x+(p.y-b.from.y)*y)/(x*x+y*y)));return Math.hypot(p.x-b.from.x-t*x,p.y-b.from.y-t*y);}
   function doubleZone(a,b,r){
     const at=t=>lerp(a.from,a.to,t),dist=t=>distanceToPart(at(t),b);
