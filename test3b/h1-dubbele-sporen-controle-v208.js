@@ -28,7 +28,13 @@ const server=http.createServer((req,res)=>{
   for(const viewport of [{width:1280,height:900},{width:390,height:844},{width:844,height:390}].filter(v=>!process.env.QA_WIDTH||v.width===+process.env.QA_WIDTH)){
    const page=await browser.newPage({viewport,isMobile:viewport.width<900,hasTouch:viewport.width<900}),errors=[];page.on('pageerror',e=>errors.push(e.message));
    await page.goto((process.env.QA_URL||'http://127.0.0.1:'+server.address().port+'/')+'?h1=romp-kruis');
-   await page.waitForSelector('[data-kz-b3]');assert.equal(await page.locator('#lklLessonTitle').textContent(),'kruis 0.1');assert((await page.title()).includes('kruis 0.1'));
+   await page.waitForSelector('[data-kz-b3]');
+   assert(await page.locator('#courseScreenConfig').isVisible());assert(await page.locator('#lklExerciseText').isHidden(),'Kruis explanation collapsed');
+   await page.locator('#kzExplanation summary').click();assert(await page.locator('#lklExerciseText').isVisible());await page.locator('#kzExplanation summary').click();
+   assert.equal(await page.locator('#tableTextConfig').evaluate(n=>n.parentElement.id),'generalDisplaySettings');
+   assert.equal(await page.locator('#mobilePreview').evaluate(n=>n.parentElement.id),'generalAdminSettings');
+   assert.equal(await page.locator('#bandCore').evaluate(n=>n.parentElement.id),'generalMeasureSettings');
+   assert.equal(await page.locator('#lklLessonTitle').textContent(),'kruis 0.1');assert((await page.title()).includes('kruis 0.1'));
    for(const table of ['klein','groot']){
     const savedData=await page.evaluate(()=>{const s=JSON.parse(localStorage.getItem('3b-canonical-west-v2')||'{}');return JSON.stringify([s.data,s.startAcquitRoutes,s.variantData]);});
     const position=()=>page.locator('[data-kz-b3]').evaluate(n=>({x:+n.getAttribute('cx'),y:+n.getAttribute('cy'),r:+n.getAttribute('r')}));
@@ -67,7 +73,7 @@ const server=http.createServer((req,res)=>{
       if(found.length===2){const alternative=page.locator('[data-kz-alternative]'),key=await alternative.getAttribute('data-kz-alternative');assert.equal(await alternative.locator('[data-kz-ballwidth]').count(),0);await alternative.focus();await page.keyboard.press('Enter');assert.equal(await page.locator('[data-kz-match=\"'+key+'\"]').getAttribute('aria-pressed'),'true');assert.deepEqual(await position(),samples.at(-1));await verify();}
       await page.locator('[data-kz-match="kruis:'+kruis+'"]').click();assert.deepEqual(await position(),samples.at(-1));await verify();
     }
-    await page.locator('#kzAlternativeConfig summary').click();
+    await page.locator('#courseScreenConfig').click();
     const limit=page.locator('#kzAlternativeLimit'),beforeConfig=await position(),available=Math.max(0,(await keys()).length-1);
     await limit.selectOption('all');assert.equal(await page.locator('[data-kz-alternative]').count(),available);assert.equal(await page.locator('[data-kz-alternatives-alert]').count(),0);
     if(available){const alt=page.locator('[data-kz-alternative]').first(),key=await alt.getAttribute('data-kz-alternative');await alt.focus();await page.keyboard.press('Enter');assert.equal(await page.locator('[data-kz-match="'+key+'"]').getAttribute('aria-pressed'),'true');}
@@ -75,8 +81,8 @@ const server=http.createServer((req,res)=>{
     await limit.selectOption('2');assert.equal(await page.locator('[data-kz-alternative]').count(),available<=2?available:0);assert.equal(await page.locator('[data-kz-alternatives-alert]').count(),available>2?1:0);
     assert.deepEqual(await position(),beforeConfig,'display config preserves B3');
     await page.reload();await page.waitForSelector('[data-kz-b3]');assert.equal(await limit.inputValue(),'2','alternative limit persists');
-    if(!await page.locator('#kzAlternativeConfig').getAttribute('open'))await page.locator('#kzAlternativeConfig summary').click();
-    await limit.selectOption('1');await page.locator('#kzAlternativeConfig summary').click();await verify();
+    if(!await page.locator('#kzAlternativeConfig').getAttribute('open'))await page.locator('#courseScreenConfig').click();
+    await limit.selectOption('1');await page.locator('#courseScreenConfig').click();await verify();
     const geometry=await page.evaluate(()=>{const a=window.__kzQaAdapter;if(a)return a.lesson1Data('VIJF').geometry;const c=window.THREEB_START_CONFIG;return c.tables[document.querySelector('#lklLesson1').dataset.table];});
     const screen=async p=>page.locator('#lklLessonTable').evaluate((svg,p)=>{const q=new DOMPoint(p.x,p.y).matrixTransform(svg.getScreenCTM());return {x:q.x,y:q.y};},p);
     const tap=async p=>{const q=await screen(p);if(viewport.width===390)await page.touchscreen.tap(q.x,q.y);else await page.mouse.click(q.x,q.y);};
@@ -99,8 +105,13 @@ const server=http.createServer((req,res)=>{
     console.log(table,viewport.width,'dynamic matches, drag/tap, first contacts, ball widths');
     await page.locator('#courseTableToggle').click();
    }
-   for(let i=0;i<3;i++)await page.locator('#nextLklExercise').click();assert(await page.locator('#h1DoubleTracks').isHidden(),'H2 navigation');assert.equal(await page.locator('#lklLessonTable').evaluate(svg=>svg.style.touchAction),'');
+   for(let i=0;i<3;i++)await page.locator('#nextLklExercise').click();assert(await page.locator('#h1DoubleTracks').isHidden(),'H2 navigation');assert(await page.locator('#courseScreenConfig').isHidden());assert(await page.locator('#lklExerciseText').isVisible(),'H2 lesson explanation restored');assert.equal(await page.locator('#lklLessonTable').evaluate(svg=>svg.style.touchAction),'');
    await page.goto((process.env.QA_URL||'http://127.0.0.1:'+server.address().port+'/')+'?h1=romp-kruis&kruis=ZES');await page.waitForSelector('[data-kz-b3]');assert(await page.locator('[data-kz-match="kruis:ZES"]').count());assert(await page.locator('[data-kz-match="romp:VIJF-1"]').count());
+   await page.locator('#closeLklLesson').click();await page.locator('#bandMenu').click();await page.locator('#cleanConfigMore>summary').click();
+   assert(await page.locator('#generalDisplayConfig>summary').isVisible());assert(await page.locator('#generalMeasureConfig>summary').isVisible());assert(await page.locator('#generalAdminConfig>summary').isVisible());
+   assert(await page.locator('#mobilePreview').isHidden(),'test tools collapsed separately');
+   for(const id of ['generalDisplayConfig','generalMeasureConfig','generalAdminConfig']){await page.locator('#'+id+'>summary').click();const size=await page.locator('#cleanConfigDialog').evaluate(d=>({x:d.getBoundingClientRect().x,width:d.getBoundingClientRect().width}));assert(size.x>=0&&size.x+size.width<=viewport.width+1,'general config fits mobile');await page.locator('#'+id+'>summary').click();}
+   await page.locator('#closeCleanConfig').click();
    assert.deepEqual(errors,[]);await page.close();
   }
   console.log('USER KZ OK: moving B3 dynamically recomputes all matching Rompen/Kruisen; independent contact oracle, unequal radii, early Romp-hit rejection, empty positions, real ball-width paths, Klein/Groot desktop and touch viewports.');
