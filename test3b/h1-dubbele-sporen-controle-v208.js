@@ -28,7 +28,7 @@ const server=http.createServer((req,res)=>{
   for(const viewport of [{width:1280,height:900},{width:390,height:844},{width:844,height:390}].filter(v=>!process.env.QA_WIDTH||v.width===+process.env.QA_WIDTH)){
    const page=await browser.newPage({viewport,isMobile:viewport.width<900,hasTouch:viewport.width<900}),errors=[];page.on('pageerror',e=>errors.push(e.message));
    await page.goto((process.env.QA_URL||'http://127.0.0.1:'+server.address().port+'/')+'?h1=romp-kruis');
-   await page.waitForSelector('[data-kz-b3]');
+   await page.waitForSelector('[data-kz-b3]');assert.equal(await page.locator('#lklLessonTitle').textContent(),'kruis 0.1');assert((await page.title()).includes('kruis 0.1'));
    for(const table of ['klein','groot']){
     const savedData=await page.evaluate(()=>{const s=JSON.parse(localStorage.getItem('3b-canonical-west-v2')||'{}');return JSON.stringify([s.data,s.startAcquitRoutes,s.variantData]);});
     const position=()=>page.locator('[data-kz-b3]').evaluate(n=>({x:+n.getAttribute('cx'),y:+n.getAttribute('cy'),r:+n.getAttribute('r')}));
@@ -48,6 +48,8 @@ const server=http.createServer((req,res)=>{
        const b=svg.querySelector('[data-kz-b3]'),a=svg.querySelector('[data-kz-b1]');
        return {count:+svg.dataset.kzMatchCount,kind:svg.dataset.kzSolutionKind,gap:a?Math.hypot(+a.getAttribute('cx')-+b.getAttribute('cx'),+a.getAttribute('cy')-+b.getAttribute('cy')):null,D:a?+a.getAttribute('r')+ +b.getAttribute('r'):null,widths:[...svg.querySelectorAll('[data-kz-ballwidth]')].map(n=>+n.getAttribute('stroke-width')),diameter:a?2* +a.getAttribute('r'):null};
       });
+      assert.equal(await page.locator('[data-kz-alternative]').count(),found.length===2?1:0,'only one alternative gets a thin path');
+      assert.equal(await page.locator('[data-kz-alternatives-alert]').count(),found.length>2?1:0,'alert for multiple alternatives');
       assert.equal(drawing.count,found.length);for(const w of drawing.widths)assert(Math.abs(w-drawing.diameter)<1e-9);
       if(found.length)assert(Math.abs(drawing.gap-drawing.D)<1e-5,'display B1 at physical first contact');
       const box=await page.locator('#lklLesson1').evaluate(d=>({r:d.getBoundingClientRect().toJSON(),w:d.scrollWidth,c:d.clientWidth}));assert(box.w<=box.c+1);assert(box.r.x>=0&&box.r.y>=0&&box.r.bottom<=viewport.height+1);
@@ -57,6 +59,7 @@ const server=http.createServer((req,res)=>{
     for(const [i,[romp,kruis]]of [['VIJF','ACHT'],['VIJF','ZEVEN'],['VIJF-1','ZES']].entries()){
       await page.locator('[data-kz-example="case-'+i+'"]').click();
       const found=await verify();assert(found.includes('romp:'+romp));assert(found.includes('kruis:'+kruis));samples.push(await position());
+      if(found.length===2){const alternative=page.locator('[data-kz-alternative]'),key=await alternative.getAttribute('data-kz-alternative');assert.equal(await alternative.locator('[data-kz-ballwidth]').count(),0);await alternative.focus();await page.keyboard.press('Enter');assert.equal(await page.locator('[data-kz-match=\"'+key+'\"]').getAttribute('aria-pressed'),'true');assert.deepEqual(await position(),samples.at(-1));await verify();}
       await page.locator('[data-kz-match="kruis:'+kruis+'"]').click();assert.deepEqual(await position(),samples.at(-1));await verify();
     }
     const geometry=await page.evaluate(()=>{const a=window.__kzQaAdapter;if(a)return a.lesson1Data('VIJF').geometry;const c=window.THREEB_START_CONFIG;return c.tables[document.querySelector('#lklLesson1').dataset.table];});

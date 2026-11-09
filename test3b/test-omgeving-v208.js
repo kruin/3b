@@ -24,7 +24,7 @@
     banner.style.cssText='padding:10px;background:#ffdf75;color:#302500;font:600 14px system-ui;text-align:center';
     banner.textContent='TEST v208-r15 · aparte browseropslag · geen databaseverbinding';
     const link=document.createElement('a');link.href=location.pathname+'#owner=kruin';link.textContent=' · Kruin-testbediening';banner.append(link);
-    document.body.prepend(banner);document.title='TEST · 3B v208-r15';
+    document.body.prepend(banner);document.title=new URLSearchParams(location.search).get('h1')==='romp-kruis'?'TEST · kruis 0.1':'TEST · 3B v208-r15';
     if(preview){const mark=()=>{if(banner.textContent!=='Mobiele test · tijdelijke kopie')banner.textContent='Mobiele test · tijdelijke kopie';};mark();new MutationObserver(mark).observe(banner,{childList:true,subtree:true,characterData:true});}
   });
 })();
