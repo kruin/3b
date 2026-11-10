@@ -2988,7 +2988,7 @@ window.installThreeBLklLesson=adapter=>{
     const tracks=['VIJF','VIJF+2','VIJF-2'],track=tracks[Math.floor(index/3)],lengthKind=['gewoon','kort','lang'][index%3];
     const base=adapter.lesson1Data('VIJF'),candidate=adapter.lesson1Data(track);data=candidate;quietStep();field();
     const nose=candidate.neusPart,body=candidate.rompPart,red=lerp(base.rompPart.from,base.rompPart.to,.55);
-    $('lklExerciseTitle').textContent=track+' · '+lengthKind+'e Neus';
+    $('lklExerciseTitle').textContent=track+' · '+({gewoon:'gewone',kort:'korte',lang:'lange'}[lengthKind])+' Neus';
     $('lklLessonProgress').textContent='Voorbeeld '+(index+1)+' van 9 · '+candidate.tableLabel;
     $('lklExerciseText').textContent='Rood blijft op de Romp van VIJF. Ik lig met bal 1 op '+track+'. '+(track==='VIJF'?(lengthKind==='gewoon'?'Bij de opgeslagen standaarduitvoering past VIJF: geen richtingcorrectie nodig.':'Ik lig in de richting van VIJF. Bij deze veranderde Neuslengte test ik eerst of de aankomst nog past.'):'Speel ik mijn eigen parallel zonder correctie, dan hoort daar zijn eigen vastgelegde Romp bij. Op Klein beschrijft Kruin bij VIJF+2 een misser van ongeveer twee balbreedtes.')+' De getoonde Romp is de opgeslagen referentie; bij een veranderde Neuslengte moet het werkelijke resultaat opnieuw worden getest.';
     $('lklApproach').textContent='Volle Romp: VIJF bij Rood. Dunne Romp: de gekozen referentie. Indicatieve vuistregel: gewone Neus ongeveer een kwart stip; lange Neus ongeveer een halve stip; korte Neus een minimale richtingverandering. Richting en grootte ijk je aan tafel.';
