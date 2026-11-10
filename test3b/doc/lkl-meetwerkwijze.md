@@ -134,14 +134,7 @@ Na het aankomstenoverzicht zie je kort de eigen Neus en beschikbare Romp van **V
 
 ## H3 — Correctie
 
-Rood blijft op VIJF, ZES of ZEVEN. Bal 1 staat op dat basispatroon of een beschikbare parallel: VIJF en ZES met +2/-2, ZEVEN met +1/-2. Voor ZEVEN+2 zijn geen gegevens aanwezig. Elk met gewone, korte en lange Neus: 27 voorbeelden. De Rompen zijn opgeslagen referenties; veranderde Neuslengten moeten aan tafel worden getest. De vuistregels (kwart stip, halve stip, minimaal) blijven indicatief. De circa twee balbreedtes op Klein horen uitsluitend bij Kruins voorbeeld VIJF+2.
-
-### BIBU / BUBI: twee kijkvoorbeelden
-
-- BUBI bij VIER-1: Neus buiten, Kop binnen, Nek buiten, Romp binnen.
-- BIBU bij ZEVEN+1: Neus binnen, Kop buiten, Nek binnen, Romp buiten.
-
-Binnen/buiten is ten opzichte van het basispatroon. Volg per bandcontact de afwisseling, of werk vanaf de gewenste Romp terug naar de Neus. Dit helpt de kant kiezen en geeft geen correctiegrootte. De cursus focust telkens één lijn, met de basis als dunne referentie en de parallel op balbreedte. Alleen beschikbare echte lijnen worden getekend. VIER-1 heeft op Klein geen geldige Romp; ZEVEN+1 heeft daar de eerste vier lijnen. Op Groot ontbreken de tussenlijnen. Een ontbrekende stap blijft als kijkregel benoemd, zonder verzonnen geometrie.
+Twee voorbeelden met lange Neus en Rood ver op de lange Romp: VIJF+2 en ZES-2. Blauw is de oorspronkelijke Neus; oranje is een indicatieve proefcorrectie van een halve stip (respectievelijk −5 en +5 op de westelijke stiplijn). De oorspronkelijke beschikbare spoorlijnen blijven dun zichtbaar. De correctieneus eindigt bij de eerste band; het gecorrigeerde vervolgspoor is nog niet gemeten en wordt niet voorspeld. BIBU/BUBI blijven als eigen kijkvoorbeelden bereikbaar.
 
 ## H4 — Via bal 2
 
