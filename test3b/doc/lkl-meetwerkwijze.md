@@ -132,7 +132,11 @@ Je wisselt tussen Spoor, Karkas en Aankomst. Bij onvolledige geometrie toont de 
 
 Na het aankomstenoverzicht zie je kort de eigen Neus en beschikbare Romp van **VIER, ZES, ZEVEN en ACHT**. Die voorbeelden gebruiken de bestaande meetbasis; ontbrekende Romplijnen blijven onbekend.
 
-## H3 — Via bal 2
+## H3 — Correctie
+
+Rood blijft op VIJF. Bal 1 ligt op VIJF, VIJF+2 of VIJF-2. De voorbeelden vergelijken gewone, korte en lange Neuzen met de opgeslagen referentie-Rompen. Indicatieve vuistregel: gewoon een kwart stip, lang een halve, kort minimaal. Bij een korte Neus test je ook hoe je de bal rollend op de band krijgt. Een gewijzigde Neuslengte krijgt geen voorspelde nieuwe Romp.
+
+## H4 — Via bal 2
 
 Je kiest eerst het patroon dat bij Rood past. Daarna bekijk je hoe bal 1 via bal 2 op de bijbehorende Neus kan vertrekken. Dik/dun, afstoothoogte, rol en tempo horen bij de uitvoering; precieze correcties volgen later.
 
