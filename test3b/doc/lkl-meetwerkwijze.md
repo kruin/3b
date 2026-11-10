@@ -275,6 +275,16 @@ De User-werkwijze gebruikt alleen je eigen ingevoerde metingen voor voltooiing. 
 Na complete eigen meetinvoer en Bewaar Spoor is je eigen basis actief. De gewone User-gegevens blijven in je persoonlijke tafelbestand (JSON); dit schrijft niet in Kruins private database. Kruin-beheer kan officiële meetgegevens wel rechtstreeks configureren en blijft gedeeltelijke invoer kunnen bewaren.
 
 
+## Meten met lijnwaarden: zo doe je dat
+
+In de introductie leer je eerst: **V en A beschrijven de lijn op de stiplijnen; het bandcontact R is afgeleid.** Bij één bandcontact horen A van de aankomende lijn en V van de vertrekkende lijn.
+
+1. Kies het patroon, de tafel en de lijn.
+2. Kijk in de gespeelde lijn en bepaal de benodigde V- of A-waarde.
+3. Voer de lijnwaarde in; met de bekende referentie berekent de app R.
+4. Is R praktischer waar te nemen, gebruik het als meetanker. De app rekent de bijbehorende lijnwaarde uit.
+5. Controleer de lijn en bewaar de meting. A en R hoeven niet beide onafhankelijk te worden gemeten.
+
 ## Neus
 
 Meet de Neus van je gekozen afstoot en voer R of A in. De startpositie is bekend. De app berekent de bijbehorende stiplijn- en contactwaarden. Bewaar ook een gedeeltelijke meetreeks; de eigen meetbasis blijft dan als onvolledig aangeduid.
