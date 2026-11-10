@@ -134,7 +134,7 @@ De Parallel van VIJF bevat VIJF-2, VIJF-1, VIJF, VIJF+1, VIJF+2 en VIJF+3, plus 
 
 ### H3 — Correctie
 
-H3 bevat alleen Correctie: VIJF+2 en ZES-2 met lange Neus en lange Romp. Indicatieve richtkeuzes in kloktaal: half, kwart, tien of vijf, vóór of over. Namen bevat de vaste uitleg. Het opgeslagen referentiespoor blijft dun zichtbaar.
+H3 begint bij de probleemstelling: ik sta aan tafel en zie geen oplossing. Eerst alleen bal 1 en Rood; met Toon de aanpak worden de spoorvergelijking en correctieneus zichtbaar. H3 bevat alleen Correctie: VIJF+2 en ZES-2 met lange Neus en lange Romp. Indicatieve richtkeuzes in kloktaal: half, kwart, tien of vijf, vóór of over. Namen bevat de vaste uitleg. Het opgeslagen referentiespoor blijft dun zichtbaar.
 
 ### Later — Via bal 2
 
