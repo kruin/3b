@@ -351,3 +351,11 @@ Onder Mijn tafel kun je de naam gebruiken om spelen vanaf het noordelijke of zui
 ## Cursus openen
 
 De knop Cursus opent de inhoudsopgave: H1 met de introductie, lijnlessen en Kruis-zones; H2 De Parallel van VIJF; H3 Correctie met BIBU/BUBI; H4 Via bal 2. De losse H2-knop is opgenomen in deze inhoudsopgave.
+
+### H2: afzonderlijke lessen
+
+H2 heeft aparte lessen: De Parallel van VIJF, Aankomsten en Neuzen. Neuzen bevat uitsluitend ZES met een gewone, korte en lange Neus, indicatief en op dezelfde vastgelegde Neuslijn. BIBU/BUBI toont beide beschikbare sporen met de gekozen lijn benadrukt; ontbrekende lijnen worden niet ingevuld.
+
+### LKL: het eindpunt
+
+Binnen LKL volgen we bal 1 maximaal tot het getoonde eindpunt op het Been. Voor een vervolg over meer banden ga je naar het aparte patroon ZES/ZEVEN (6–7 banden), met eigen meetgegevens.
