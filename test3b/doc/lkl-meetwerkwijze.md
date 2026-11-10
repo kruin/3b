@@ -120,25 +120,25 @@ In dit voorbeeld zijn bal 1 en Rood voor het gemak precies op hetzelfde Spoor ge
 
 Dit is hetzelfde gemeten VIJF als in les 2, met dezelfde Kruinbasis. De gegeven Neus komt uit dat complete Spoor; alleen de Romp bepaalt die Neus niet uniek.
 
-### Les 3 · Kruis-zones
+## Cursus: drie hoofdstukken
 
-Kruis-zones blijven binnen H1. Je verplaatst Rood en het systeem toont de passende Rompen en Kruisen. De geselecteerde lijn krijgt zijn Neus en de echte balbreedte. Alternatieve lijnen zijn dun en klikbaar volgens het ingestelde maximum.
+### H1 — Herkennen
 
-## H2 — De Parallel van VIJF
+Waaier en stipwaarden → VIJF lijn na lijn → Romp en Neus → Karkas met voorbeelden.
 
-Na les 3 en Kruis-zones begint H2. Je bekijkt **VIJF-2, VIJF-1, VIJF, VIJF+1, VIJF+2 en VIJF+3**. De namen blijven aaneengeschreven, ook bij de aankomstballen op Zuid. VIJF blijft de herkenbare basis.
+### H2 — Kiezen
 
-Je wisselt tussen Spoor, Karkas en Aankomst. Bij onvolledige geometrie toont de cursus alleen het beschikbare deel en vermeldt wat ontbreekt.
+De Parallel van VIJF → Aankomsten → Neuzen → Kruis-zones → BIBU/BUBI.
 
-Na het aankomstenoverzicht zie je kort de eigen Neus en beschikbare Romp van **VIER, ZES, ZEVEN en ACHT**. Die voorbeelden gebruiken de bestaande meetbasis; ontbrekende Romplijnen blijven onbekend.
+De Parallel van VIJF bevat VIJF-2, VIJF-1, VIJF, VIJF+1, VIJF+2 en VIJF+3, plus kort VIER, ZES, ZEVEN en ACHT. Aankomsten en Neuzen zijn eigen lessen. Bij Kruis-zones verplaats je Rood; het systeem toont passende Rompen en Kruisen. BIBU/BUBI vergelijkt de beschikbare sporen.
 
-## H3 — Correctie
+### H3 — Correctie
 
-Correctie gebruikt indicatieve richtnamen in kloktaal: half, kwart, tien en vijf vóór/over een patroonnaam. VIJF+2 begint bij half ZEVEN; ZES-2 bij half VIJF. Met de vier knoppen verfijn je de richtkeuze van de correctieneus. Het opgeslagen referentiespoor blijft dun zichtbaar. Het verdere verloop wordt niet automatisch voorspeld. De uitleg van de kloktaal staat één keer bij Namen.
+H3 bevat alleen Correctie: VIJF+2 en ZES-2 met lange Neus en lange Romp. Indicatieve richtkeuzes in kloktaal: half, kwart, tien of vijf, vóór of over. Namen bevat de vaste uitleg. Het opgeslagen referentiespoor blijft dun zichtbaar.
 
-## H4 — Via bal 2
+### Later — Via bal 2
 
-Je kiest eerst het patroon dat bij Rood past. Daarna bekijk je hoe bal 1 via bal 2 op de bijbehorende Neus kan vertrekken. Dik/dun, afstoothoogte, rol en tempo horen bij de uitvoering; precieze correcties volgen later.
+De bestaande introductie staat apart onder Later, buiten de doorlopende cursus. Na het laatste correctievoorbeeld is H3 afgerond.
 
 ## Les en tafel horen bij elkaar
 
