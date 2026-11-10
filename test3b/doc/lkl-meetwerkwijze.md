@@ -134,7 +134,14 @@ Na het aankomstenoverzicht zie je kort de eigen Neus en beschikbare Romp van **V
 
 ## H3 — Correctie
 
-Rood blijft op VIJF. Bal 1 ligt op VIJF, VIJF+2 of VIJF-2. De voorbeelden vergelijken gewone, korte en lange Neuzen met de opgeslagen referentie-Rompen. Indicatieve vuistregel: gewoon een kwart stip, lang een halve, kort minimaal. Bij een korte Neus test je ook hoe je de bal rollend op de band krijgt. Een gewijzigde Neuslengte krijgt geen voorspelde nieuwe Romp.
+Rood blijft op VIJF, ZES of ZEVEN. Bal 1 staat op dat basispatroon of een beschikbare parallel: VIJF en ZES met +2/-2, ZEVEN met +1/-2. Voor ZEVEN+2 zijn geen gegevens aanwezig. Elk met gewone, korte en lange Neus: 27 voorbeelden. De Rompen zijn opgeslagen referenties; veranderde Neuslengten moeten aan tafel worden getest. De vuistregels (kwart stip, halve stip, minimaal) blijven indicatief. De circa twee balbreedtes op Klein horen uitsluitend bij Kruins voorbeeld VIJF+2.
+
+### BIBU / BUBI: twee kijkvoorbeelden
+
+- BUBI bij VIER-1: Neus buiten, Kop binnen, Nek buiten, Romp binnen.
+- BIBU bij ZEVEN+1: Neus binnen, Kop buiten, Nek binnen, Romp buiten.
+
+Binnen/buiten is ten opzichte van het basispatroon. Volg per bandcontact de afwisseling, of werk vanaf de gewenste Romp terug naar de Neus. Dit helpt de kant kiezen en geeft geen correctiegrootte. De cursus focust telkens één lijn, met de basis als dunne referentie en de parallel op balbreedte. Alleen beschikbare echte lijnen worden getekend. VIER-1 heeft op Klein geen geldige Romp; ZEVEN+1 heeft daar de eerste vier lijnen. Op Groot ontbreken de tussenlijnen. Een ontbrekende stap blijft als kijkregel benoemd, zonder verzonnen geometrie.
 
 ## H4 — Via bal 2
 
@@ -340,3 +347,7 @@ Je afstoot, effectuitvoering en de tafel kunnen linksom en rechtsom verschillend
 ## Dezelfde tafel, andere speelrichting
 
 Onder Mijn tafel kun je de naam gebruiken om spelen vanaf het noordelijke of zuidelijke acquit te onderscheiden. Bijvoorbeeld Tafel 7 · vanaf de bar en Tafel 7 · naar de bar. Bewaar eerst je huidige tafel met Bewaar mijn tafel. Geef de andere speelrichting daarna een eigen naam, pas de metingen aan en bewaar opnieuw. Dat levert twee afzonderlijke JSON-tafelbestanden op. Alleen hernoemen is geen kopie. Terugladen kiest het bestand dat bij je huidige speelrichting hoort. West/Oost blijft binnen elk bestand afzonderlijk bewaard.
+
+## Cursus openen
+
+De knop Cursus opent de inhoudsopgave: H1 met de introductie, lijnlessen en Kruis-zones; H2 De Parallel van VIJF; H3 Correctie met BIBU/BUBI; H4 Via bal 2. De losse H2-knop is opgenomen in deze inhoudsopgave.

@@ -20,7 +20,7 @@ const root=__dirname,server=http.createServer((req,res)=>{const file=path.resolv
    assert.equal(await page.locator('#patternSelect').inputValue(),'VIJF','old DRIE LKL selection falls back to VIJF');assert.equal(await page.locator('#lineSelectLabel').textContent(),'Patroon');assert.equal(await page.locator('#patternSelect option[value="DRIE"]').count(),0,'old saved basis uses current LKL scope');
    assert.equal(await page.evaluate(()=>JSON.stringify(JSON.parse(localStorage.getItem('3b-canonical-west-v2')).data.klein.DRIE)),baseline,'excluded pattern data remains stored');
    await setRange('vrij');assert(await page.locator('#patternSelect option[value="DRIE"]').count(),'free play retains DRIE');await setRange('lkl');
-   await page.locator('#bandMenu').click();await page.locator('#levelLklCourse').click();await page.waitForSelector('#meetsysteemIntro[open]');
+   await page.locator('#bandMenu').click();await page.locator('#levelLklCourse').click();await page.waitForSelector('#courseContentsDialog[open]');assert.equal(await page.locator('#openChapterTwo').count(),0);await page.locator('[data-course-intro]').click();await page.waitForSelector('#meetsysteemIntro[open]');
    assert.equal(await page.locator('[data-intro-line="W"]').count(),5,'intro draws VIER through ACHT');
    assert.deepEqual(await page.locator('#meetIntroExample option').evaluateAll(options=>options.map(o=>o.value)),['4','5','6','7','8']);
    assert.equal(await page.locator('[data-line-values-principle]').count(),0,'Waaier comes first');
