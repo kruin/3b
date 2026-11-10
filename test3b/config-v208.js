@@ -2106,3 +2106,8 @@ window.THREEB_START_CONFIG.bandBallView={defaultExtensionCm:{V:20,A:10},guideCol
 // Static test: no production accounts, telemetry or payments.
 window.THREEB_START_CONFIG.userAccess.supabase={...window.THREEB_START_CONFIG.userAccess.supabase,url:'',anonKey:'',paymentEnabled:false,paymentUrl:'',paymentAnonKey:''};
 window.THREEB_START_CONFIG.userAccess.sessionTracking.enabled=false;
+
+// Named LKL patterns: start at VIER while DRIE has no Kop/Romp measurements.
+window.THREEB_START_CONFIG.terminology.trackName.default='patroon';
+window.THREEB_START_CONFIG.patternFamilies.lkl.tracks=window.THREEB_START_CONFIG.patternFamilies.lkl.tracks.filter(name=>!['NUL','EEN','TWEE','DRIE'].includes(name));
+window.THREEB_START_CONFIG.lklTrackRules.panelTracks=[...window.THREEB_START_CONFIG.patternFamilies.lkl.tracks];
