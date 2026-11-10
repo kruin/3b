@@ -359,3 +359,7 @@ H2 heeft aparte lessen: De Parallel van VIJF, Aankomsten en Neuzen. Neuzen bevat
 ### LKL: het eindpunt
 
 Binnen LKL volgen we bal 1 maximaal tot het getoonde eindpunt op het Been. Voor een vervolg over meer banden ga je naar het aparte patroon ZES/ZEVEN (6–7 banden), met eigen meetgegevens.
+
+## Karkas en namen
+
+Karkas heeft een eigen scherm binnen H1, met voorbeelden VIJF, ZES en ZEVEN. De definitie staat bij het eerste voorbeeld; daarna gebruiken we de naam. Namen verwijst naar de bijbehorende lessen en bevat ook Aanloop, Parallel, Aankomsten, Neuslengte, BIBU/BUBI en LKL-eindpunt. Algemene uitleg staat op één vaste plek.
