@@ -2,6 +2,8 @@
 
 *Meetsysteem en cursus voor driebanden.*
 
+De **doelbal (de rode bal)** noemen we na de introductie **Rood**.
+
 De cursus geeft uitleg en voorbeelden, zonder oefeningen of opdrachten.
 Oefeningen worden alleen op uitdrukkelijk verzoek toegevoegd.
 
@@ -34,20 +36,13 @@ stiplijnen. Acquit0 is een referentiepunt; bandgetallen benoemen plaatsen en
 NUL is een afzonderlijke spoornaam.
 
 
-### 2. De Waaier 0 t/m 8
+### 2. Stipwaarden: begin en eind van een lijn
 
-Het vertrekpunt blijft 0; de richting verandert. Kies in de interactieve
-introductie een lijn uit de reeks **0–8** (stiplijnwaarden0–80). De gekozen eerste lijn licht op.
+Direct na de eerste Waaier-introductie leggen we V en A uit. Een stipwaarde hoort bij het vertrek of de aankomst van een lijn. Het bandcontact R is afgeleid uit die lijn en de balbreedte.
 
+Bij één bandcontact komen twee lijnen samen: de aankomende lijn heeft A, de vertrekkende lijn heeft V. Het detailplaatje van VIJF laat Neus A = 50 en de bijbehorende Kop V zien. Klein en Groot gebruiken hun eigen appgeometrie.
 
-Zo’n eerste lijn hoort bij een **Patroon**: de volgorde van de geraakte banden.
-De lijn vanuit 0 naar **50 (stip 5)** bespreken we hier binnen **LKL:
-lang–kort–lang**. Eerst raakt de bal een lange band, dan een korte band,
-dan weer een lange band. We beginnen met LKL en lichten daaruit VIJF uit.
-Andere patronen volgen later. In dezezelfde stap demonstreert de gele lijn
-het hele Spoor VIJF binnen LKL, in de volgorde Neus → Kop → Nek → Romp → Kruis → Been.
-**Demo opnieuw** herhaalt de demonstratie. Het blijft stap 2, geen extra pagina.
-De waaierkeuze toont weer de gekozen eerste lijn.
+De LKL-keuze begint bij VIER. We lichten VIJF uit en geven vervolgens namen aan de lijnen. De praktische meetwerkwijze volgt later.
 
 ### 3. VIJF is één van de mogelijkheden
 
@@ -92,15 +87,15 @@ Ik ben de speler (User). De cursus begint standaard op Klein; via Config → Cur
 
 ## Eerst het Patroon, dan het Spoor
 
-Binnen deze LKL-reeks vergelijk ik een beperkt aantal Rompen: VIER, VIJF, ZES, ZEVEN en ACHT. De cursus tekent ze samen. De Romp van VIJF past bij bal 3: bal 3 ligt op VIJF.
+Binnen deze LKL-reeks vergelijk ik een beperkt aantal Rompen: VIER, VIJF, ZES, ZEVEN en ACHT. De cursus tekent ze samen. De Romp van VIJF past bij Rood: Rood ligt op VIJF.
 
 **Het Patroon is leidend.** In deze lessen kies ik LKL: de bal gaat eerst naar de lange westband, dan naar de korte noordband en vervolgens naar de lange oostband. Binnen dat bandverloop zoek ik een passend spoor. Bij VIJF horen Neus, Kop, Nek en Romp bij elkaar; ik controleer het hele verloop met het karkas.
 
-Ik kies dus uit de Rompen die bij deze LKL-reeks horen. Ik vraag: **binnen LKL, op welk Spoor ligt bal 3, en lig ik met bal 1 op de bijbehorende Neus?** Een andere lijn door bal 3 kan bij een andere oplossing horen. Die onderzoeken we later.
+Ik kies dus uit de Rompen die bij deze LKL-reeks horen. Ik vraag: **binnen LKL, op welk Spoor ligt Rood, en lig ik met bal 1 op de bijbehorende Neus?** Een andere lijn door Rood kan bij een andere oplossing horen. Die onderzoeken we later.
 
 Mijn twee vaste vragen zijn:
 
-1. **Binnen het gekozen Patroon LKL: op welk Spoor ligt bal 3?**
+1. **Binnen het gekozen Patroon LKL: op welk Spoor ligt Rood?**
 2. **Lig ik met bal 1 op hetzelfde Spoor?**
 
 Neus en Romp vormen het zichtbare **Karkas**. De Kop en Nek verbinden die lijnen. Ik leer eerst zien en herhalen; mijn eigen Kop meten volgt later. Een complete eigen meetbasis bevat Neus, Kop (R of A) en Romp. Tot die compleet is, blijft Kruins configuratie gelden en is mijn invoer concept.
@@ -114,38 +109,32 @@ Tijdens de Neus verschijnt de genummerde westelijke stiplijn, met de actieve Neu
 
 ## Les 3 — van twee ballen naar de stootrichting
 
-1. Alleen bal 1 en bal 3. Binnen deze LKL-reeks zijn de mogelijke Rompen beperkt tot VIER, VIJF, ZES, ZEVEN en ACHT.
-2. Op Klein worden alle vijf Rompen getekend. De Romp van VIJF past bij bal 3 en licht op: bal 3 ligt op VIJF.
+1. Alleen bal 1 en Rood. Binnen deze LKL-reeks zijn de mogelijke Rompen beperkt tot VIER, VIJF, ZES, ZEVEN en ACHT.
+2. Op Klein worden alle vijf Rompen getekend. De Romp van VIJF past bij Rood en licht op: Rood ligt op VIJF.
 3. Het Karkas van VIJF: de Neus en Romp laten zien hoe beide ballen bij dit Spoor horen. Kop en Nek verbinden ze in het bandverloop.
 4. De Neus van VIJF als stootrichting naar 50 op West.
+5. Extra voorbeeld: Rood op de Romp van ZES en bal 1 aan het begin van de volledige, lange Neus van ZES. De lijnen zijn uit de bestaande meetbasis overgenomen.
 
-In dit voorbeeld zijn bal 1 en bal 3 voor het gemak precies op hetzelfde Spoor geplaatst. Correcties als bal 1 niet helemaal bij het Spoor past, komen later. Dit zijn vier kijkstappen, geen oefeningen.
+In dit voorbeeld zijn bal 1 en Rood voor het gemak precies op hetzelfde Spoor geplaatst. Correcties als bal 1 niet helemaal bij het Spoor past, komen later. Dit zijn kijkvoorbeelden met de opgeslagen lijngeometrie.
 
 
 Dit is hetzelfde gemeten VIJF als in les 2, met dezelfde Kruinbasis. De gegeven Neus komt uit dat complete Spoor; alleen de Romp bepaalt die Neus niet uniek.
 
-## Les 4 — de sporen van VIJF
+### Les 3 · Kruis-zones
 
-Ik bekijk achtereenvolgens **VIJF−2, VIJF−1, VIJF, VIJF+1, VIJF+2 en VIJF+3**. VIJF blijft mijn herkenbare basis. Ik wissel tussen drie weergaven:
+Kruis-zones blijven binnen H1. Je verplaatst Rood en het systeem toont de passende Rompen en Kruisen. De geselecteerde lijn krijgt zijn Neus en de echte balbreedte. Alternatieve lijnen zijn dun en klikbaar volgens het ingestelde maximum.
 
-- **Spoor:** het lijnverloop van de actieve parallel, met de VIJF-karkasreferentie.
-- **Karkas:** Neus en Romp vergelijken met VIJF.
-- **Aankomst:** de bandcontacten en hun waarden bekijken.
+## H2 — De Parallel van VIJF
 
-Bij VIJF−2 ligt het theoretische vertrek op de zuidband. Op die plek past geen hele bal. De getoonde bal schuift iets naar binnen langs dezelfde Neuslijn. De richting en meetwaarden blijven gelijk; alleen de getoonde Neus wordt iets korter. De opgeslagen Romp ligt hier bij de hoek buiten de opgegeven band. Zolang dat niet geometrisch bepaald is, toont de cursus alleen het beschikbare voorste deel.
+Na les 3 en Kruis-zones begint H2. Je bekijkt **VIJF-2, VIJF-1, VIJF, VIJF+1, VIJF+2 en VIJF+3**. De namen blijven aaneengeschreven, ook bij de aankomstballen op Zuid. VIJF blijft de herkenbare basis.
 
-De zevende stap toont de aankomstballen op Zuid van VIJF−1, VIJF, VIJF+1, VIJF+2 en VIJF+3. Ze krijgen de nummers **−1, 0, +1, +2 en +3**; 0 is VIJF zelf. Geen looplijnen of rustpunt in dit overzicht. De genummerde bandstippen blijven staan. Het zijn vijf afzonderlijke afstoten, niet vijf gelijktijdige speelballen. Vorige keert terug naar VIJF+3; Volgende gaat naar de Kruis-les.
+Je wisselt tussen Spoor, Karkas en Aankomst. Bij onvolledige geometrie toont de cursus alleen het beschikbare deel en vermeldt wat ontbreekt.
 
-De les gebruikt de echte gegevens van elke parallel. Een variant die niet bij LKL hoort krijgt een lege tafel met uitleg; een ontbrekend vervolg wordt niet verzonnen.
+Na het aankomstenoverzicht zie je kort de eigen Neus en beschikbare Romp van **VIER, ZES, ZEVEN en ACHT**. Die voorbeelden gebruiken de bestaande meetbasis; ontbrekende Romplijnen blijven onbekend.
 
+## H3 — Via bal 2
 
-## Les 5 — Kruis: 45° en de looplijnen
-
-Achtereenvolgens bekijk ik het Kruis van **VIJF, ZES, ZEVEN en ACHT**. Deze Kruinvoorbeelden hebben een Kruis onder 45° met de band: horizontaal en verticaal is de verplaatsing even groot. Een klein hoekplaatje maakt dat zichtbaar.
-
-De Romp blijft gedempt zichtbaar als aanloop. Het roze Kruis begint bij die Romp-aankomst. Omdat dat vertrek per Spoor verschilt, verandert bij dezelfde hoek ook de afstand tot de volgende band. Het getekende Been laat het berekende vervolg zien tot de uitloop. De bandbal aan het einde van het Kruis is tegelijk het beginpunt van het Been, zonder dubbele bal.
-
-Dit vergelijkt Kruins gemeten en berekende lijnen. Het is geen algemene voorspelling dat de bal zonder meer met 45° van iedere band verdergaat: voor het Been gebruikt de cursus zijn eigen vastgelegde gegevens.
+Je kiest eerst het patroon dat bij Rood past. Daarna bekijk je hoe bal 1 via bal 2 op de bijbehorende Neus kan vertrekken. Dik/dun, afstoothoogte, rol en tempo horen bij de uitvoering; precieze correcties volgen later.
 
 ## Les en tafel horen bij elkaar
 
@@ -181,7 +170,7 @@ Eén paar **Vorige · Volgende** volgt de hele cursus, ook tussen de lessen en d
 
 
 ## Demo bij elke stap
-Iedere stap heeft een passende demonstratie: eerst de Waaier vanuit het vaste referentiepunt0, dan VIJF binnen de waaierstap, vervolgens de Neus en de Romp. In les2 rolt de bal lijn na lijn. Les3 toont twee ballen, de Romp, het Karkas en de Neus als stootrichting; les4 toont het Spoor, Karkas of de aankomstpunten van de gekozen parallel. **Demo opnieuw** herhaalt dezelfde uitleg zonder een extra stap of opdracht. Alle demos gebruiken Kruins meetbasis.
+Iedere stap heeft een passende demonstratie: eerst de Waaier vanuit het vaste referentiepunt0, dan VIJF binnen de waaierstap, vervolgens de Neus en de Romp. In les2 rolt de bal lijn na lijn. Les3 toont twee ballen, de Romp, het Karkas en de Neus als stootrichting; H2 toont het Spoor, Karkas of de aankomstpunten van de gekozen parallel. **Demo opnieuw** herhaalt dezelfde uitleg zonder een extra stap of opdracht. Alle demos gebruiken Kruins meetbasis.
 
 
 ## Namen en lesindeling bij de tafel
@@ -226,7 +215,7 @@ Soms is de Romp niet duidelijk aan VIJF of ZES toe te wijzen: het Spoor lijkt er
 Dit is een eerste keuze voor de Neusrichting. Het volledige verloop volgt niet automatisch uit het middelen van de twee Spoornamen of alle aankomsten. Bij een andere vertrekpositie blijft ook de Neuslengte van belang. Het tussenliggende Spoor kun je later zelf meten.
 
 
-Meerdere lijnen door bal 3; onderaan 55 als tussenliggend richtpunt tussen VIJF en ZES. Geen voorspeld volledig tussenspoor.
+Meerdere lijnen door Rood; onderaan 55 als tussenliggend richtpunt tussen VIJF en ZES. Geen voorspeld volledig tussenspoor.
 
 
 Bekijk de bijbehorende plaatjes in de cursus of bij Meetsysteem.

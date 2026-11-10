@@ -21,13 +21,15 @@ const root=__dirname,server=http.createServer((req,res)=>{const file=path.resolv
    assert.equal(await page.evaluate(()=>JSON.stringify(JSON.parse(localStorage.getItem('3b-canonical-west-v2')).data.klein.DRIE)),baseline,'excluded pattern data remains stored');
    await setRange('vrij');assert(await page.locator('#patternSelect option[value="DRIE"]').count(),'free play retains DRIE');await setRange('lkl');
    await page.locator('#bandMenu').click();await page.locator('#levelLklCourse').click();await page.waitForSelector('#meetsysteemIntro[open]');
+   assert.equal(await page.locator('[data-intro-line="W"]').count(),5,'intro draws VIER through ACHT');
+   assert.deepEqual(await page.locator('#meetIntroExample option').evaluateAll(options=>options.map(o=>o.value)),['4','5','6','7','8']);
+   assert.equal(await page.locator('[data-line-values-principle]').count(),0,'Waaier comes first');
+   await page.locator('#nextMeetIntro').click();
    assert((await page.locator('#meetIntroText>p').first().textContent()).includes('afgeleide waarde'),'R is explained before other introductory text');
    const detail=page.locator('[data-intro-line-values] img');await detail.evaluate(img=>img.decode());assert(await detail.isVisible(),'real contact detail already in first Waaier page');
    if(process.env.QA_DIR){fs.mkdirSync(process.env.QA_DIR,{recursive:true});await page.screenshot({path:path.join(process.env.QA_DIR,'lijnwaarden-eerste-waaier-'+viewport.width+'.png')});}
    const firstTable=await detail.getAttribute('src');await page.locator('#meetIntroTableSize').click();await detail.evaluate(img=>img.decode());assert.notEqual(await detail.getAttribute('src'),firstTable,'detail follows Klein/Groot');await page.locator('#meetIntroTableSize').click();
-   assert.equal(await page.locator('[data-intro-line="W"]').count(),5,'intro draws VIER through ACHT');
-   assert.deepEqual(await page.locator('#meetIntroExample option').evaluateAll(options=>options.map(o=>o.value)),['4','5','6','7','8']);
-   await page.locator('#nextMeetIntro').click();await page.locator('#nextMeetIntro').click();
+   await page.locator('#nextMeetIntro').click();
    const text=await page.locator('#meetIntroText').innerText();assert(text.includes('VIJF is de naam van dit patroon'));assert(text.includes('LKL benoemt de familie'));assert(text.includes('afgeleide waarde'));assert(text.includes('twee lijnen'));
    if(process.env.QA_DIR){fs.mkdirSync(process.env.QA_DIR,{recursive:true});await page.screenshot({path:path.join(process.env.QA_DIR,'lijnwaarden-intro-'+viewport.width+'.png')});}
    await page.locator('#nextMeetIntro').click();await page.locator('#nextMeetIntro').click();await page.waitForSelector('#lklLesson1[open]');assert((await page.locator('#lklApproach').textContent()).includes('afgeleid'),'line lesson repeats principle');
