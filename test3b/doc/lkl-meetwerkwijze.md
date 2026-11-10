@@ -134,7 +134,7 @@ Na het aankomstenoverzicht zie je kort de eigen Neus en beschikbare Romp van **V
 
 ## H3 — Correctie
 
-Twee voorbeelden met lange Neus en Rood ver op de lange Romp: VIJF+2 en ZES-2. Blauw is de oorspronkelijke Neus; oranje is een indicatieve proefcorrectie van een halve stip (respectievelijk −5 en +5 op de westelijke stiplijn). De oorspronkelijke beschikbare spoorlijnen blijven dun zichtbaar. De correctieneus eindigt bij de eerste band; het gecorrigeerde vervolgspoor is nog niet gemeten en wordt niet voorspeld. BIBU/BUBI blijven als eigen kijkvoorbeelden bereikbaar.
+Correctie gebruikt indicatieve richtnamen in kloktaal: half, kwart, tien en vijf vóór/over een patroonnaam. VIJF+2 begint bij half ZEVEN; ZES-2 bij half VIJF. Met de vier knoppen verfijn je de richtkeuze van de correctieneus. Het opgeslagen referentiespoor blijft dun zichtbaar. Het verdere verloop wordt niet automatisch voorspeld. De uitleg van de kloktaal staat één keer bij Namen.
 
 ## H4 — Via bal 2
 
@@ -209,7 +209,7 @@ Als bal 1 niet precies bij het gekozen Spoor past, komt een richtingcorrectie aa
 Het maakt veel uit of je van dichtbij naar 51 in plaats van 50 speelt, of van veraf. Dezelfde verschuiving op de stiplijn geeft bij een korte Neus een grotere hoekverandering dan bij een lange Neus. Daardoor kan het verdere verloop sterk veranderen. Dit vergelijkt hetzelfde richtpuntverschil; het is geen algemene correctieformule voor iedere hoekfout.
 
 
-Dezelfde verschuiving 50 → 51, met verschillende Neuslengten. Schematische richtlijnen; verdere correcties vragen eigen metingen.
+Dezelfde verschuiving 50 → 51, met verschillende Neuslengten. Schematische richtlijnen; de correctiekeuze benoem je met richtnamen.
 
 
 ### Tussen VIJF en ZES
