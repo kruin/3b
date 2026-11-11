@@ -3392,8 +3392,24 @@ window.installThreeBLklLesson=adapter=>{
     {chapter:2,title:'H2 · Kiezen',groups:[{terms:['Parallel','Aankomsten','Neuslengte','Aanloop','Kruis-zones','BIBU / BUBI']}]},
     {chapter:3,title:'H3 · Correctie',groups:[{terms:['Correctie','Klok']}]}
   ];
-  for(const group of nameGroups){const section=document.createElement('section');section.dataset.namesChapter=group.chapter;const heading=document.createElement('h3');heading.textContent=group.title;section.append(heading);for(const list of group.groups){if(list.title){const subheading=document.createElement('h4');subheading.textContent=list.title;section.append(subheading);}const dl=document.createElement('dl');for(const name of list.terms){const entry=nameDefinitions.get(name);if(entry)dl.append(entry.term,entry.description);}section.append(dl);}namesDialog.append(section);}
-  for(const dl of namesDialog.querySelectorAll(':scope > dl'))if(!dl.children.length)dl.remove();
+  const playerNameGroups=[
+    {title:'Aan tafel',groups:[{terms:['Rood','Romp','Karkas','Neus','Aanloop']}]},
+    {title:'Spoor kiezen',groups:[{terms:['Patroon','Spoor','Parallel','Aankomsten','Neuslengte','Kruis-zones','BIBU / BUBI']}]},
+    {title:'Bijsturen',groups:[{terms:['Correctie','Klok']}]},
+    {title:'Overige begrippen',groups:[{terms:['Waaier','LKL','Stipwaarden V en A','Raakpunt R','Kop','Nek','Kruis','Been','LKL-eindpunt']}]}
+  ];
+  let namesView='course';try{const saved=localStorage.getItem('3b-names-view-v1');if(['course','player','alpha'].includes(saved))namesView=saved;}catch(_){}
+  const namesViewDescription=namesDialog.querySelector(':scope > p'),namesViewNav=document.createElement('nav');namesViewNav.id='namesViewNav';namesViewNav.setAttribute('aria-label','Volgorde van namen');namesViewDescription.after(namesViewNav);
+  const namesBody=document.createElement('div');namesBody.id='namesDefinitions';namesDialog.append(namesBody);
+  function renderNamesView(){
+    namesBody.replaceChildren();namesViewNav.replaceChildren();namesDialog.dataset.namesView=namesView;
+    namesViewDescription.textContent={course:'Begrippen in de volgorde van de cursus.',player:'Vanuit de ligging aan tafel.',alpha:'Begrippen op alfabet.'}[namesView];
+    for(const [view,label]of [['course','Cursus'],['player','Speler'],['alpha','A–Z']]){const button=document.createElement('button');button.type='button';button.textContent=label;button.dataset.namesView=view;button.setAttribute('aria-pressed',String(view===namesView));button.onclick=()=>{namesView=view;try{localStorage.setItem('3b-names-view-v1',view);}catch(_){}renderNamesView();namesDialog.scrollTop=0;};namesViewNav.append(button);}
+    const groups=namesView==='course'?nameGroups:namesView==='player'?playerNameGroups:[{groups:[{terms:[...nameDefinitions.keys()].sort((a,b)=>a.localeCompare(b,'nl',{sensitivity:'base'}))}]}];
+    for(const group of groups){const section=document.createElement('section');if(group.chapter)section.dataset.namesChapter=group.chapter;if(group.title){const heading=document.createElement('h3');heading.textContent=group.title;section.append(heading);}for(const list of group.groups){if(list.title){const subheading=document.createElement('h4');subheading.textContent=list.title;section.append(subheading);}const dl=document.createElement('dl');for(const name of list.terms){const entry=nameDefinitions.get(name);if(entry)dl.append(entry.term,entry.description);}section.append(dl);}namesBody.append(section);}
+    for(const dl of namesDialog.querySelectorAll(':scope > dl'))if(!dl.children.length)dl.remove();
+  }
+  renderNamesView();
   const namesContentsButton=document.createElement('button');namesContentsButton.type='button';namesContentsButton.id='namesToContents';namesContentsButton.textContent='Cursus · inhoudsopgave';namesContentsButton.onclick=()=>{namesDialog.close();document.getElementById('meetsysteemIntro')?.close();openCourseContents();};namesDialog.append(namesContentsButton);
   contentsDialog.querySelector('[data-course-names]').onclick=()=>{contentsDialog.close();namesDialog.showModal();namesDialog.scrollTop=0;};
   namesDialog.querySelectorAll('[data-named-lesson]').forEach(button=>button.onclick=()=>{namesDialog.close();openLesson(Number(button.dataset.namedLesson));});namesDialog.querySelector('[data-named-bibu]').onclick=()=>{namesDialog.close();openBibuExample();};
@@ -3434,7 +3450,7 @@ window.installThreeBLklLesson=adapter=>{
     }
   }
   window.ThreeBLinkNamedTerms=linkNamedTerms;linkNamedTerms(namesDialog);linkNamedTerms(systemDialog);
-  namesStyle.textContent+='#clockNamesTitle{scroll-margin-top:64px}.course-name-link{color:#176f4f;text-decoration:underline;text-underline-offset:2px;cursor:pointer}.course-name-link:focus-visible{outline:2px solid #176f4f;outline-offset:2px}';
+  namesStyle.textContent+='#clockNamesTitle{scroll-margin-top:112px}#namesViewNav{display:flex;gap:6px;position:sticky;top:44px;z-index:1;background:#faf8ef;padding:6px 0}#namesViewNav button{padding:6px 12px}#namesViewNav [aria-pressed=true]{background:#173b30;color:white}.course-name-link{color:#176f4f;text-decoration:underline;text-underline-offset:2px;cursor:pointer}.course-name-link:focus-visible{outline:2px solid #176f4f;outline-offset:2px}';
   for(const id of ['chooseLklCourse','menuLklCourse','levelLklCourse'])document.getElementById(id).onclick=openCourseContents;for(const id of ['chooseLklPractice','menuLklPractice','levelLklPractice'])document.getElementById(id).onclick=independent;
   const legacy=document.getElementById('openExplanation');legacy?.addEventListener('click',e=>{if(reference)return;e.preventDefault();e.stopImmediatePropagation();if(!chooser.open)chooser.showModal();},true);chooser.querySelector('#closeLklUseChoice').onclick=()=>chooser.close();chooser.querySelector('#openLklReferences').onclick=()=>{chooser.close();adapter.prepareCourseReference?.();reference=true;try{legacy.click();}finally{reference=false;}};
   const directTable=!!window.THREEB_PHONE_VIEW_APPLIED||new URLSearchParams(location.search).get('entry')==='table';
