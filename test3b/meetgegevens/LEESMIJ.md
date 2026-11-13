@@ -17,7 +17,7 @@ Klein-ingespeeld VIJF: de sheetnotitie R 37 blijft bewaard, evenals de oorspronk
 
 **Lijn 5 (Kruis), kolom P** bevat aankomsten: L = lange band **Oost**, K = korte band **Noord**. In het tabblad nieuw laken staat dezelfde rubriek in kolom N. VIJF → Oost 10, ZES → Oost 5, ZEVEN → Oost 0, ACHT → Noord 0. De groot-waarden komen uit LKL GROOT; Raedthuys bevat daar geen ingevulde Lijn 5.
 
-**Lijn 5 hoort ook bij het patroon 6–7 banden.** Die sporen hebben dezelfde lijnnaam en afzonderlijke V/A-velden. Hun bestaande referentie- en schatwaarden behouden hun meetstatus; LKL-metingen worden niet zonder meting naar dit andere patroon gekopieerd.
+**Lijn 5 hoort ook bij het patroon 6–7 banden.** Die sporen hebben dezelfde lijnnaam en afzonderlijke V/A-velden. Kruin heeft bevestigd dat de geteste Lijn 5 ook hier geldt. Daarom worden de aankomsten van VIJF, ZES en ZEVEN overgenomen naar respectievelijk ZESZEVEN, ZESZEVEN_ZES en ZESZEVEN_ZEVEN, met bronverwijzing en bevestiging. Overige bestaande schatwaarden worden daarmee niet tot meting verklaard.
 
 De Kruislijn wordt vanuit de echte aankomstbal van de Romp naar deze gemeten A opgebouwd. Een getekend schuin label in de sheet levert geen hoekmeting. De eerdere algemene 45°-regel wordt voor deze gemeten lijnen niet gebruikt. De sheet levert geen volgende aankomst voor Been; het oude vaste getal 10 wordt daarom voor deze sporen niet als nieuwe vervolgmeting gebruikt.
 

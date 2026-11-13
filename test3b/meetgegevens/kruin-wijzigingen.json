@@ -1,6 +1,6 @@
 {
   "sourceRevision": "5e59ca62ab00b395bdf511a101e15eac6d1ce0fba1106cc88efb57ed643a93e8",
-  "measurementRevision": "1d856ad31cfaada193401c7503b3e24aeeebfb7005fc7bd7338a2ca68e501eac",
+  "measurementRevision": "5797725621f5b6b8c37ad91c5eaf127000936cbfef100ac545169274e2a8d78f",
   "changes": [
     {
       "profile": "klein-ingespeeld",
@@ -2320,6 +2320,294 @@
           "cell": "P43"
         },
         "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "ZESZEVEN",
+      "field": "kruisA",
+      "before": {
+        "band": "west",
+        "calculationBasis": "six_seven_trial",
+        "source": "estimate",
+        "status": "calculated",
+        "value": 55.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 10.0,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "P43"
+        },
+        "confirmedBy": "Kruin",
+        "sharedTestedLine": {
+          "fromPattern": "LKL",
+          "fromTrack": "VIJF",
+          "toPattern": "sixSeven",
+          "confirmedBy": "Kruin"
+        }
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "ZESZEVEN_ZES",
+      "field": "kruisA",
+      "before": {
+        "band": "west",
+        "calculationBasis": "six_seven_trial",
+        "source": "estimate",
+        "status": "calculated",
+        "value": 55.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 5.0,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "P51"
+        },
+        "confirmedBy": "Kruin",
+        "sharedTestedLine": {
+          "fromPattern": "LKL",
+          "fromTrack": "ZES",
+          "toPattern": "sixSeven",
+          "confirmedBy": "Kruin"
+        }
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "ZESZEVEN_ZEVEN",
+      "field": "kruisA",
+      "before": {
+        "band": "west",
+        "calculationBasis": "six_seven_trial",
+        "source": "estimate",
+        "status": "calculated",
+        "value": 55.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 0.0,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "P57"
+        },
+        "confirmedBy": "Kruin",
+        "sharedTestedLine": {
+          "fromPattern": "LKL",
+          "fromTrack": "ZEVEN",
+          "toPattern": "sixSeven",
+          "confirmedBy": "Kruin"
+        }
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "ZESZEVEN",
+      "field": "kruisA",
+      "before": {
+        "band": "west",
+        "calculationBasis": "six_seven_trial",
+        "source": "estimate",
+        "status": "calculated",
+        "value": 55.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 10.0,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "N53"
+        },
+        "confirmedBy": "Kruin",
+        "sharedTestedLine": {
+          "fromPattern": "LKL",
+          "fromTrack": "VIJF",
+          "toPattern": "sixSeven",
+          "confirmedBy": "Kruin"
+        }
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "ZESZEVEN_ZES",
+      "field": "kruisA",
+      "before": {
+        "band": "west",
+        "calculationBasis": "six_seven_trial",
+        "source": "estimate",
+        "status": "calculated",
+        "value": 55.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 5.0,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "N60"
+        },
+        "confirmedBy": "Kruin",
+        "sharedTestedLine": {
+          "fromPattern": "LKL",
+          "fromTrack": "ZES",
+          "toPattern": "sixSeven",
+          "confirmedBy": "Kruin"
+        }
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "ZESZEVEN_ZEVEN",
+      "field": "kruisA",
+      "before": {
+        "band": "west",
+        "calculationBasis": "six_seven_trial",
+        "source": "estimate",
+        "status": "calculated",
+        "value": 55.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 0.0,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "N66"
+        },
+        "confirmedBy": "Kruin",
+        "sharedTestedLine": {
+          "fromPattern": "LKL",
+          "fromTrack": "ZEVEN",
+          "toPattern": "sixSeven",
+          "confirmedBy": "Kruin"
+        }
+      }
+    },
+    {
+      "profile": "groot-lkl",
+      "track": "ZESZEVEN",
+      "field": "kruisA",
+      "before": {
+        "band": "west",
+        "calculationBasis": "six_seven_trial",
+        "source": "estimate",
+        "status": "calculated",
+        "value": 55.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 10.0,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=130350200",
+          "tab": "LKL GROOT",
+          "cell": "P24"
+        },
+        "confirmedBy": "Kruin",
+        "sharedTestedLine": {
+          "fromPattern": "LKL",
+          "fromTrack": "VIJF",
+          "toPattern": "sixSeven",
+          "confirmedBy": "Kruin"
+        }
+      }
+    },
+    {
+      "profile": "groot-lkl",
+      "track": "ZESZEVEN_ZES",
+      "field": "kruisA",
+      "before": {
+        "band": "west",
+        "calculationBasis": "six_seven_trial",
+        "source": "estimate",
+        "status": "calculated",
+        "value": 55.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 5.0,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=130350200",
+          "tab": "LKL GROOT",
+          "cell": "P32"
+        },
+        "confirmedBy": "Kruin",
+        "sharedTestedLine": {
+          "fromPattern": "LKL",
+          "fromTrack": "ZES",
+          "toPattern": "sixSeven",
+          "confirmedBy": "Kruin"
+        }
+      }
+    },
+    {
+      "profile": "groot-lkl",
+      "track": "ZESZEVEN_ZEVEN",
+      "field": "kruisA",
+      "before": {
+        "band": "west",
+        "calculationBasis": "six_seven_trial",
+        "source": "estimate",
+        "status": "calculated",
+        "value": 55.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 0.0,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=130350200",
+          "tab": "LKL GROOT",
+          "cell": "P38"
+        },
+        "confirmedBy": "Kruin",
+        "sharedTestedLine": {
+          "fromPattern": "LKL",
+          "fromTrack": "ZEVEN",
+          "toPattern": "sixSeven",
+          "confirmedBy": "Kruin"
+        }
       }
     }
   ],

@@ -80,16 +80,23 @@ for profile, rows in cross_rows.items():
 k['measurementTables']=profiles;k['defaultMeasurementTables']={'klein':'klein-ingespeeld','groot':'groot-lkl'}
 k['tracks']['klein']=copy.deepcopy(profiles['klein-ingespeeld']['tracks']);k['tracks']['groot']=copy.deepcopy(profiles['groot-lkl']['tracks'])
 # Lijn 5 is een gemeenschappelijke lijnnaam, ook binnen de 6–7-bander.
-# Bestaande 6–7-benaderingen behouden hun bron/status; geen LKL-aankomst kopieren.
+# Kruin bevestigt: de geteste Lijn 5 geldt ook voor het bijbehorende 6–7-patroon.
 for profile in profiles.values():
  for name,track in profile['tracks'].items():
   if name.startswith('ZESZEVEN'):
+   tested_name={'ZESZEVEN':'VIJF','ZESZEVEN_ZES':'ZES','ZESZEVEN_ZEVEN':'ZEVEN'}.get(name)
+   tested=profile['tracks'].get(tested_name,{}).get('kruisA') if tested_name else None
+   if tested and tested.get('measurement'):
+    imported=copy.deepcopy(tested)
+    imported['sharedTestedLine']={'fromPattern':'LKL','fromTrack':tested_name,'toPattern':'sixSeven','confirmedBy':'Kruin'}
+    assign(track,'kruisA',imported)
+    changes.append({'profile':track['tableProfile'],'track':name,'field':'kruisA','before':old['tracks'][profile['size']].get(name,{}).get('linePoints',{}).get('kruis',{}).get('to'),'after':imported})
    pair=track.get('linePoints',{}).get('kruis',{})
    if pair.get('to'):track['kruisA']=copy.deepcopy(pair['to'])
    if pair.get('from'):track['kruisV']=copy.deepcopy(pair['from'])
    track['lineFiveStatus']='measured' if pair.get('to',{}).get('measurement') else 'existing_reference_or_estimate'
 k['tracks']['klein']=copy.deepcopy(profiles['klein-ingespeeld']['tracks']);k['tracks']['groot']=copy.deepcopy(profiles['groot-lkl']['tracks'])
-k['sourceNotes']={'bibliography':[{'author':'A. Duon','title':'Modern Biljarten','tableSize':'klein','pages':[27]}],'lineDefinitions':{'5':{'key':'kruis','name':'Lijn 5','appliesTo':['lkl','sixSeven'],'values':['V','A'],'arrivalBandCodes':{'L':'oost','K':'noord'},'keepMeasurementsPerPattern':True}},'notation':{'triangleDown':'R: raakpunt op de band; geen V/A-stipwaarde','V':'Vertrek van de lijn op de stiplijn','A':'Aankomst van de lijn op de stiplijn'},'missingValues':'Bestaande Kruinreferentie behouden waar geen nieuwe zekere meting is opgegeven; retainedReferenceRevision identificeert de oude basis.'}
+k['sourceNotes']={'bibliography':[{'author':'A. Duon','title':'Modern Biljarten','tableSize':'klein','pages':[27]}],'lineDefinitions':{'5':{'key':'kruis','name':'Lijn 5','appliesTo':['lkl','sixSeven'],'values':['V','A'],'arrivalBandCodes':{'L':'oost','K':'noord'},'keepMeasurementsPerPattern':True,'shareTestedLineWithSixSeven':True}},'notation':{'triangleDown':'R: raakpunt op de band; geen V/A-stipwaarde','V':'Vertrek van de lijn op de stiplijn','A':'Aankomst van de lijn op de stiplijn'},'missingValues':'Bestaande Kruinreferentie behouden waar geen nieuwe zekere meting is opgegeven; retainedReferenceRevision identificeert de oude basis.'}
 k['patternSettings']['felleAfstoot']={'labels':{'nl':'Felle afstoot'},'framework':['neus','romp'],'tracks':['VIER'],'table':'groot','rompArrival':60,'source':'Raedthuys-Ingespeeld!N35','incomplete':True}
 k['source']='kruin_spreadsheet_confirmed';k['measurementRevision']=hashlib.sha256(json.dumps({'profiles':profiles,'sourceNotes':k['sourceNotes']},sort_keys=True,ensure_ascii=False).encode()).hexdigest()
 k['beheerRevision']=k['measurementRevision']
