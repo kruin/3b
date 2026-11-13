@@ -1,0 +1,2335 @@
+{
+  "sourceRevision": "5e59ca62ab00b395bdf511a101e15eac6d1ce0fba1106cc88efb57ed643a93e8",
+  "measurementRevision": "1d856ad31cfaada193401c7503b3e24aeeebfb7005fc7bd7338a2ca68e501eac",
+  "changes": [
+    {
+      "profile": "klein-ingespeeld",
+      "track": "VIER-2",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 0.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 0,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "L33"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "VIER-2",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 74.278
+      },
+      "after": {
+        "band": "west",
+        "value": 70,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "M33"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "VIER-1",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 3.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 2,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "L34"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "VIER-1",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 72.14
+      },
+      "after": {
+        "band": "west",
+        "value": 70,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "M34"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "VIER",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 10.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 5,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "L35"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "VIER",
+      "field": "rompA",
+      "before": {
+        "band": "west",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 10.0
+      },
+      "after": {
+        "band": "west",
+        "value": 70,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "M35"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "VIER+1",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 7.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 10,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "L36"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "VIER+1",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 67.861
+      },
+      "after": {
+        "band": "west",
+        "value": 75,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "M36"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "VIER+2",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 10.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 13,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "L37"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "VIER+2",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 65.722
+      },
+      "after": {
+        "band": "west",
+        "value": 80,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "M37"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "VIER+3",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 12.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 20,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "L38"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "VIER+3",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 63.583
+      },
+      "after": {
+        "band": "west",
+        "value": 85,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "M38"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "VIJF-2",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 13.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 5,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "L41"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "VIJF-2",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 42.278
+      },
+      "after": {
+        "band": "west",
+        "value": 75,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "M41"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "VIJF",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 20.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 20,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "L43"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "VIJF",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 38.0
+      },
+      "after": {
+        "band": "zuid",
+        "value": 38,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "O43"
+        },
+        "confirmedBy": "Kruin",
+        "note": "Kruin kiest A 38; sheetnotitie R 37 en A 40 afzonderlijk bewaard."
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "VIJF+2",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 27.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 25,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "L45"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "VIJF+2",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 33.722
+      },
+      "after": {
+        "band": "zuid",
+        "value": 35,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "O45"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "VIJF+3",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 30.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 33,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "L46"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "ZES-2",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 23.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 22,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "L48"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "ZES-2",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 34.278
+      },
+      "after": {
+        "band": "zuid",
+        "value": 32,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "O48"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "ZES-1",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 27.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 28,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "L49"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "ZES-1",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 32.14
+      },
+      "after": {
+        "band": "zuid",
+        "value": 31,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "O49"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "ZES",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 30.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 30,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "L51"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "ZES",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 30.0
+      },
+      "after": {
+        "band": "zuid",
+        "value": 30,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "O51"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "ZES+1",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 33.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 32,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "L52"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "ZES+1",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 27.861
+      },
+      "after": {
+        "band": "zuid",
+        "value": 28,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "O52"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "ZES+2",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 37.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 35,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "L53"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "ZES+2",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 25.722
+      },
+      "after": {
+        "band": "zuid",
+        "value": 27,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "O53"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "ACHT-2",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 35.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 37,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "L60"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "ACHT-2",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 23.278
+      },
+      "after": {
+        "band": "zuid",
+        "value": 23,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "M60"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "ACHT-1",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 39.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 40,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "L61"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "ACHT-1",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 21.14
+      },
+      "after": {
+        "band": "zuid",
+        "value": 22,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "M61"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "ACHT",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 43.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 45,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "L62"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "ACHT",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 19.0
+      },
+      "after": {
+        "band": "zuid",
+        "value": 20,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "M62"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIER-2",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 0.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 0,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "J43"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIER-2",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 74.278
+      },
+      "after": {
+        "band": "west",
+        "value": 60,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "K43"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIER-1",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 3.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 5,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "J44"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIER-1",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 72.14
+      },
+      "after": {
+        "band": "west",
+        "value": 70,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "K44"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIER",
+      "field": "rompA",
+      "before": {
+        "band": "west",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 10.0
+      },
+      "after": {
+        "band": "west",
+        "value": 80,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "K45"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIER+1",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 7.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 13,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "J46"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIER+1",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 67.861
+      },
+      "after": {
+        "band": "west",
+        "value": 90,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "K46"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIER+2",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 65.722
+      },
+      "after": {
+        "band": "west",
+        "value": 85,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "K47"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIER+3",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 12.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 20,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "J48"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIER+3",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 63.583
+      },
+      "after": {
+        "band": "zuid",
+        "value": 40,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "M48"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIJF-2",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 13.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 10,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "J51"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIJF-2",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 42.278
+      },
+      "after": {
+        "band": "west",
+        "value": 85,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "K51"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIJF-1",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 17.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 15,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "J52"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIJF-1",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 40.14
+      },
+      "after": {
+        "band": "west",
+        "value": 80,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "K52"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIJF",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 20.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 20,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "J53"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIJF",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 38.0
+      },
+      "after": {
+        "band": "zuid",
+        "value": 38,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "M53"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIJF+1",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 23.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 25,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "J54"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIJF+1",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 35.861
+      },
+      "after": {
+        "band": "zuid",
+        "value": 35,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "M54"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIJF+2",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 27.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 30,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "J55"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIJF+2",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 33.722
+      },
+      "after": {
+        "band": "zuid",
+        "value": 30,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "M55"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIJF+3",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 30.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 35,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "J56"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIJF+3",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 31.583
+      },
+      "after": {
+        "band": "zuid",
+        "value": 25,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "M56"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "ZES-2",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 34.278
+      },
+      "after": {
+        "band": "zuid",
+        "value": 31,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "M58"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "ZES-1",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 32.14
+      },
+      "after": {
+        "band": "zuid",
+        "value": 32,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "M59"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "ZES",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 30.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 30,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "J60"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "ZES",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 30.0
+      },
+      "after": {
+        "band": "zuid",
+        "value": 28,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "M60"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "ZES+1",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 33.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 32,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "J61"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "ZES+1",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 27.861
+      },
+      "after": {
+        "band": "zuid",
+        "value": 25,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "M61"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "ZES+2",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 37.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 35,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "J62"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "ZES+2",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 25.722
+      },
+      "after": {
+        "band": "zuid",
+        "value": 22,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "M62"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "ZEVEN-2",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 26.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 30,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "J64"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "ZEVEN-1",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 31.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 32,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "J65"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "ZEVEN",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 35.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 35,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "J66"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "ZEVEN+1",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 39.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 40,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "J67"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "ACHT-2",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 35.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 34,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "J69"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "ACHT",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 43.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 43,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "J71"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "groot-lkl",
+      "track": "VIER",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "source": "automatic",
+        "status": "approved",
+        "value": null
+      },
+      "after": {
+        "band": "west",
+        "value": 70,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=1691958707",
+          "tab": "Raedthuys-Ingespeeld",
+          "cell": "N35"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "groot-lkl",
+      "track": "VIJF",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 20.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 20,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=1691958707",
+          "tab": "Raedthuys-Ingespeeld",
+          "cell": "M43"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "groot-lkl",
+      "track": "VIJF",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 36.0
+      },
+      "after": {
+        "band": "zuid",
+        "value": 36,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=1691958707",
+          "tab": "Raedthuys-Ingespeeld",
+          "cell": "N43"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "groot-lkl",
+      "track": "ZES",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 30.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 30,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=1691958707",
+          "tab": "Raedthuys-Ingespeeld",
+          "cell": "M51"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "groot-lkl",
+      "track": "ZES",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 28.0
+      },
+      "after": {
+        "band": "zuid",
+        "value": 28,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=1691958707",
+          "tab": "Raedthuys-Ingespeeld",
+          "cell": "N51"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "groot-lkl",
+      "track": "ZEVEN",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 37.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 37,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=1691958707",
+          "tab": "Raedthuys-Ingespeeld",
+          "cell": "M57"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "groot-lkl",
+      "track": "ZEVEN",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 22.0
+      },
+      "after": {
+        "band": "zuid",
+        "value": 22,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=1691958707",
+          "tab": "Raedthuys-Ingespeeld",
+          "cell": "N57"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "groot-lkl",
+      "track": "ACHT",
+      "field": "rompV",
+      "before": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 48.0
+      },
+      "after": {
+        "band": "oost",
+        "value": 48,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=1691958707",
+          "tab": "Raedthuys-Ingespeeld",
+          "cell": "M62"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "groot-lkl",
+      "track": "ACHT",
+      "field": "rompA",
+      "before": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 18.0
+      },
+      "after": {
+        "band": "zuid",
+        "value": 18,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=1691958707",
+          "tab": "Raedthuys-Ingespeeld",
+          "cell": "O62"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "VIJF",
+      "field": "kruisA",
+      "before": null,
+      "after": {
+        "band": "oost",
+        "value": 10.0,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "P43"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "ZES",
+      "field": "kruisA",
+      "before": null,
+      "after": {
+        "band": "oost",
+        "value": 5.0,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "P51"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "ZEVEN",
+      "field": "kruisA",
+      "before": null,
+      "after": {
+        "band": "oost",
+        "value": 0.0,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "P57"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "ACHT",
+      "field": "kruisA",
+      "before": null,
+      "after": {
+        "band": "noord",
+        "value": 0.0,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "P62"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIJF",
+      "field": "kruisA",
+      "before": null,
+      "after": {
+        "band": "oost",
+        "value": 10.0,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "N53"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "ZES",
+      "field": "kruisA",
+      "before": null,
+      "after": {
+        "band": "oost",
+        "value": 5.0,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "N60"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "ZEVEN",
+      "field": "kruisA",
+      "before": null,
+      "after": {
+        "band": "oost",
+        "value": 0.0,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "N66"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "ACHT",
+      "field": "kruisA",
+      "before": null,
+      "after": {
+        "band": "noord",
+        "value": 0.0,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=836382332",
+          "tab": "v 0.1- nieuw laken",
+          "cell": "N71"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "groot-lkl",
+      "track": "VIJF",
+      "field": "kruisA",
+      "before": null,
+      "after": {
+        "band": "oost",
+        "value": 10.0,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=130350200",
+          "tab": "LKL GROOT",
+          "cell": "P24"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "groot-lkl",
+      "track": "ZES",
+      "field": "kruisA",
+      "before": null,
+      "after": {
+        "band": "oost",
+        "value": 5.0,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=130350200",
+          "tab": "LKL GROOT",
+          "cell": "P32"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "groot-lkl",
+      "track": "ZEVEN",
+      "field": "kruisA",
+      "before": null,
+      "after": {
+        "band": "oost",
+        "value": 0.0,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=130350200",
+          "tab": "LKL GROOT",
+          "cell": "P38"
+        },
+        "confirmedBy": "Kruin"
+      }
+    },
+    {
+      "profile": "groot-lkl",
+      "track": "ACHT",
+      "field": "kruisA",
+      "before": null,
+      "after": {
+        "band": "noord",
+        "value": 0.0,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=130350200",
+          "tab": "LKL GROOT",
+          "cell": "P43"
+        },
+        "confirmedBy": "Kruin"
+      }
+    }
+  ],
+  "pending": [],
+  "confirmations": {
+    "VIJF klein ingespeeld": "V20 A38; R37 los bewaren",
+    "ACHT-1 klein ingespeeld": "A22",
+    "ZES groot": "A28",
+    "ACHT groot": "V48",
+    "VIER groot": "LKL A70, Felle afstoot A60",
+    "Duon": "Modern Biljarten, A. Duon, p.27; R15 op klein nieuw"
+  }
+}
