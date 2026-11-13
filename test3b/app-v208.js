@@ -1590,6 +1590,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
     derivedTrackCache={};initExperimentSession();save();render();
   }
   window.ThreeBMeasurementTables={options:measurementTableOptions,selected(t){return measurementSelection[t]||null;},select:selectMeasurementTable};
+  window.addEventListener('threeb-parallel-display',()=>render());
   window.ThreeBTableText={get:tableTextPrefs,dimensions(){return C.tables;},update(patch){if(['tables','balls','tracks'].includes(patch.scaleMode)){state.scaleViewMode=patch.scaleMode;state.comparePhysicalSize=patch.scaleMode==='balls';}if(['klein','groot'].includes(patch.courseTable)){state.courseTable=patch.courseTable;if(window.threebVijfCourseScope)ui.editTable=ui.tableMode=patch.courseTable;}state.tableTextSettings={...tableTextPrefs(),...patch};save();render();}};
   const incomingView=window.ThreeBMobileView?.decode(new URLSearchParams(location.hash.slice(1)).get('tableView'));
   if(incomingView){const root=incomingView.k.replace(/[+-]\d+$/,''),known=C.shotLines.includes(root)||Object.values(C.patternFamilies||{}).some(f=>(f.tracks||[]).includes(root))||(C.lineOneVariants.fan.entries||[]).some(v=>v.key===incomingView.k);if(known){ui.playRange=incomingView.p;ui.trackFamily=incomingView.f;chooseCentralTrack(incomingView.k);ui.tableMode=incomingView.t;ui.editTable=incomingView.e;ui.direction=incomingView.d;ui.parallelDisplay=incomingView.w;ui.frameworkView=incomingView.r;ui.parallelPartIndex=incomingView.n;state.scaleViewMode=incomingView.s;state.comparePhysicalSize=incomingView.s==='balls';delete window.THREEB_CHOOSE_USAGE_ON_START;window.THREEB_PHONE_VIEW_APPLIED=true;finishTableStart();forceFreshTableView();save();render();const url=new URL(location.href),hash=new URLSearchParams(url.hash.slice(1));hash.delete('tableView');url.hash=hash.toString();history.replaceState(null,'',url.href);}}
@@ -1797,6 +1798,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
         for(const id of ['bandPatternSelect','trackFamilySelect'])for(const option of $(id)?.options||[]){option.dataset.vijfDisabled??=String(option.disabled);option.disabled=option.value!==(id==='bandPatternSelect'?'lkl':'parallel');}
       }
       const texts=tableTextPrefs();for(const id of ['bandFamily','bandTable','bandCompare','bandCompareSize','bandFeedback'])if($(id)){$(id).style.fontSize=texts.bandSize+'px';}
+      if(ui.trackFamily==='parallel'&&window.ThreeBParallelDisplay)for(const line of document.querySelectorAll('#svgMount g[data-part][data-table] .route-line')){const part=line.closest('[data-part]').dataset.part,table=line.closest('[data-table]').dataset.table,attrs=window.ThreeBParallelDisplay.attrs(selectedTrackKey(),part,C.parts.find(p=>p.key===part)?.color,340/C.tables[table].widthCm);for(const [key,value]of Object.entries(attrs))line.setAttribute(key,value);}
       window.dispatchEvent(new Event('threeb-spoor-state'));return result;};
     $('ownerEditLines').onclick=()=>window.openThreeBSpoorScreen({recenter:true});
     render();
