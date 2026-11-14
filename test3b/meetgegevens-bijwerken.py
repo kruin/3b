@@ -10,9 +10,19 @@ confirmed={
 }
 profiles={}
 changes=[]
+west_normalizations=[]
 def point(band,value,tab,cell,kind='stipwaarde',note=None):
  p={'band':band,'value':value,'status':'approved','source':'kruin_sqlite','measurement':True,'measurementKind':kind,'sourceRef':{'url':s['tabs'][tab]['url'],'tab':s['tabs'][tab]['title'],'cell':cell},'confirmedBy':'Kruin'}
  if note:p['note']=note
+ return p
+
+def romp_arrival(band,value,tab,cell,note=None):
+ # Alleen opnieuw uit de sheet gelezen West-Rompen hebben Noord als nulpunt.
+ # Bestaande appwaarden, eigen metingen en de bevestigde Kruis-A blijven canoniek.
+ p=point(band,80-value if band=='west' else value,tab,cell,'stipwaarde',note)
+ if band=='west':
+  p['sheetPoint']={'band':'west','value':value,'zero':'noord'}
+  p['numberingConversion']='80 - sheetValue'
  return p
 
 def assign(track,key,p):
@@ -35,7 +45,8 @@ for profile,records in confirmed.items():
    changes.append({'profile':profile,'track':name,'field':'rompV','before':old['tracks'][table][name].get('rompV'),'after':p})
   if band:
    col=('M' if band=='west' or name.startswith('ACHT') else 'O') if profile=='klein-ingespeeld' else ('K' if band=='west' else 'M') if profile=='klein-nieuw' else ('O' if name=='ACHT' else 'N')
-   p=point(band,a,tab,col+str(row),'stipwaarde','Kruin kiest A 38; sheetnotitie R 37 en A 40 afzonderlijk bewaard.' if profile=='klein-ingespeeld' and name=='VIJF' else None)
+   p=romp_arrival(band,a,tab,col+str(row),'Kruin kiest A 38; sheetnotitie R 37 en A 40 afzonderlijk bewaard.' if profile=='klein-ingespeeld' and name=='VIJF' else None)
+   if band=='west':west_normalizations.append({'profile':profile,'track':name,'field':'rompA','cell':col+str(row),'sheetValue':a,'appValue':p['value']})
    assign(track,'rompA',p);changes.append({'profile':profile,'track':name,'field':'rompA','before':old['tracks'][table][name].get('rompA'),'after':p})
   # De driehoekkolom is R op de band, nooit rechtstreeks Kop A op de stiplijn.
   if profile=='klein-nieuw':
@@ -56,7 +67,8 @@ for profile,records in confirmed.items():
  profiles[profile]={'size':table,'label':{'klein-ingespeeld':'Klein · ingespeeld','klein-nieuw':'Klein · nieuw laken','groot-lkl':'Groot · LKL / Raedthuys'}[profile],'sourceTab':s['tabs'][tab]['title'],'sourceUrl':s['tabs'][tab]['url'],'tracks':tracks}
 
 fel=copy.deepcopy(profiles['groot-lkl']['tracks']['VIER'])
-assign(fel,'rompA',point('west',60,'raedthuys','N35','stipwaarde','Felle afstoot; LKL rollend gebruikt 70.'))
+assign(fel,'rompA',romp_arrival('west',60,'raedthuys','N35','Felle afstoot: sheet 60 = West 20; rollend LKL: sheet 70 = West 10.'))
+west_normalizations.append({'profile':'groot-felle-afstoot','track':'VIER','field':'rompA','cell':'N35','sheetValue':60,'appValue':20})
 fel['patternName']='Felle afstoot';fel['tableProfile']='groot-felle-afstoot'
 profiles['groot-felle-afstoot']={'size':'groot','label':'Groot · Felle afstoot','pattern':'felleAfstoot','sourceTab':'Raedthuys-Ingespeeld','sourceUrl':s['tabs']['raedthuys']['url'],'tracks':{'VIER':fel},'incomplete':'Vertrek Romp V is nog niet gemeten; geen volledig spoor afleiden.'}
 # Lijn 5 is Kruis A. Laatste expliciete correctie: VIJF naar West 10, niet Oost.
@@ -98,13 +110,15 @@ for profile in profiles.values():
    if pair.get('from'):track['kruisV']=copy.deepcopy(pair['from'])
    track['lineFiveStatus']='measured' if pair.get('to',{}).get('measurement') else 'existing_reference_or_estimate'
 k['tracks']['klein']=copy.deepcopy(profiles['klein-ingespeeld']['tracks']);k['tracks']['groot']=copy.deepcopy(profiles['groot-lkl']['tracks'])
-k['sourceNotes']={'bibliography':[{'author':'A. Duon','title':'Modern Biljarten','tableSize':'klein','pages':[27]}],'lineDefinitions':{'5':{'key':'kruis','name':'Lijn 5','appliesTo':['lkl','sixSeven'],'values':['V','A'],'arrivalBandCodes':{'L':'oost','K':'noord'},'arrivalBandOverrides':{'VIJF':'west'},'keepMeasurementsPerPattern':True,'shareTestedLineWithSixSeven':True}},'notation':{'triangleDown':'R: raakpunt op de band; geen V/A-stipwaarde','V':'Vertrek van de lijn op de stiplijn','A':'Aankomst van de lijn op de stiplijn'},'missingValues':'Bestaande Kruinreferentie behouden waar geen nieuwe zekere meting is opgegeven; retainedReferenceRevision identificeert de oude basis.'}
-k['patternSettings']['felleAfstoot']={'labels':{'nl':'Felle afstoot'},'framework':['neus','romp'],'tracks':['VIER'],'table':'groot','rompArrival':60,'source':'Raedthuys-Ingespeeld!N35','incomplete':True}
+k['sourceNotes']={'bibliography':[{'author':'A. Duon','title':'Modern Biljarten','tableSize':'klein','pages':[27]}],'lineDefinitions':{'5':{'key':'kruis','name':'Lijn 5','appliesTo':['lkl','sixSeven'],'values':['V','A'],'arrivalBandCodes':{'L':'oost','K':'noord'},'arrivalBandOverrides':{'VIJF':'west'},'keepMeasurementsPerPattern':True,'shareTestedLineWithSixSeven':True}},'numbering':{'westRomp':{'sheetZero':'noord','appZero':'zuid','conversion':'80 - sheetValue','keepExtendedValues':True,'scope':'newly imported Romp A only'}},'notation':{'triangleDown':'R: raakpunt op de band; geen V/A-stipwaarde','V':'Vertrek van de lijn op de stiplijn','A':'Aankomst van de lijn op de stiplijn'},'missingValues':'Bestaande Kruinreferentie behouden waar geen nieuwe zekere meting is opgegeven; retainedReferenceRevision identificeert de oude basis.'}
+k['patternSettings']['felleAfstoot']={'labels':{'nl':'Felle afstoot'},'framework':['neus','romp'],'tracks':['VIER'],'table':'groot','rompArrival':20,'sheetRompArrival':60,'source':'Raedthuys-Ingespeeld!N35','incomplete':True}
 k['source']='kruin_spreadsheet_confirmed';k['measurementRevision']=hashlib.sha256(json.dumps({'profiles':profiles,'sourceNotes':k['sourceNotes']},sort_keys=True,ensure_ascii=False).encode()).hexdigest()
 k['beheerRevision']=k['measurementRevision']
 (base/'kruinwaarden-generated-v208.js').write_text('window.THREEB_KRUIN_VALUES='+json.dumps(k,ensure_ascii=False,separators=(',',':'))+';\n')
-(out/'kruin-wijzigingen.json').write_text(json.dumps({'sourceRevision':old['beheerRevision'],'measurementRevision':k['measurementRevision'],'changes':changes,'pending':[],'confirmations':{'VIJF klein ingespeeld':'V20 A38; R37 los bewaren','VIJF Kruis':'A West 10; herstelt foutieve Oost-koppeling, ook in de overgenomen lijn van ZESZEVEN','ACHT-1 klein ingespeeld':'A22','ZES groot':'A28','ACHT groot':'V48','VIER groot':'LKL A70, Felle afstoot A60','Duon':'Modern Biljarten, A. Duon, p.27; R15 op klein nieuw'}},ensure_ascii=False,indent=2)+'\n')
+(out/'kruin-wijzigingen.json').write_text(json.dumps({'sourceRevision':old['beheerRevision'],'measurementRevision':k['measurementRevision'],'changes':changes,'westNumberingCorrections':west_normalizations,'pending':[],'confirmations':{'VIJF klein ingespeeld':'V20 A38; R37 los bewaren','VIJF Kruis':'A West 10; herstelt foutieve Oost-koppeling, ook in de overgenomen lijn van ZESZEVEN','ACHT-1 klein ingespeeld':'A22','ZES groot':'A28','ACHT groot':'V48','VIER groot':'LKL West 10 (sheet 70), Felle afstoot West 20 (sheet 60)','Duon':'Modern Biljarten, A. Duon, p.27; R15 op klein nieuw'}},ensure_ascii=False,indent=2)+'\n')
 print('Profielen:',list(profiles),'bevestigde V/A-updates:',len(changes),'revision',k['measurementRevision'][:12])
+print('West-Rompen genormaliseerd:',len(west_normalizations))
+for row in west_normalizations:print(row['profile'],row['track'],str(row['sheetValue'])+' -> West '+str(row['appValue']))
 
 # Zelfstandige SQLite-meeteditie, met dezelfde basisstructuur als de Kruinarchieven.
 import subprocess

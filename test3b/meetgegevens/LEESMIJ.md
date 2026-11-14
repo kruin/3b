@@ -4,10 +4,10 @@ Bron: [Biljart klein en groot](https://docs.google.com/spreadsheets/d/1CKztHLnXb
 
 ## Tafels en patronen
 
-- **Klein · ingespeeld** is standaard. Onder meer VIER 5 → 70, VIJF 20 → 38 en ACHT−1 met A 22.
+- **Klein · ingespeeld** is standaard. Onder meer VIER Oost 5 → West 10 (sheet: 70), VIJF 20 → 38 en ACHT−1 met A 22.
 - **Klein · nieuw laken** heeft eigen meetgegevens en eigen bewaarde gebruikerswijzigingen. De tafelafmetingen blijven 115 × 230 cm.
-- **Groot · LKL / Raedthuys** gebruikt bij ZES A 28, bij ACHT V 48 en bij VIER A 70.
-- **Felle afstoot** is afzonderlijk geregistreerd: groot, VIER, A 60. Romp V ontbreekt nog, dus er wordt geen volledig spoor verzonnen. In de configuratie staat deze meetnotitie bij het patroon.
+- **Groot · LKL / Raedthuys** gebruikt bij ZES A 28, bij ACHT V 48 en bij VIER West 10 (sheet: 70).
+- **Felle afstoot** is afzonderlijk geregistreerd: groot, VIER, West 20 (sheet: 60). Romp V ontbreekt nog, dus er wordt geen volledig spoor verzonnen. In de configuratie staat deze meetnotitie bij het patroon.
 
 ## V, A, R en Lijn 5
 
@@ -23,7 +23,9 @@ De specifieke bandcorrectie voor VIJF gaat voor de eerdere algemene interpretati
 
 De Kruislijn wordt vanuit de echte aankomstbal van de Romp naar deze gemeten A opgebouwd. Een getekend schuin label in de sheet levert geen hoekmeting. De eerdere algemene 45°-regel wordt voor deze gemeten lijnen niet gebruikt. De sheet levert geen volgende aankomst voor Been; het oude vaste getal 10 wordt daarom voor deze sporen niet als nieuwe vervolgmeting gebruikt.
 
-Ontbrekende of onzekere nieuwe waarden wissen geen bestaande Kruinreferentie. Zulke bewaarde referenties houden hun oorspronkelijke meetstatus; `retainedReferenceRevision` vermeldt de vorige basis. Waarden met vraagtekens worden niet afgerond of als bevestigde meting ingevoerd. VIER-parallellen 80 en 85 behouden de door Kruin bevestigde doorlopende West-notatie, zonder afkappen.
+Ontbrekende of onzekere nieuwe waarden wissen geen bestaande Kruinreferentie. Zulke bewaarde referenties houden hun oorspronkelijke meetstatus; `retainedReferenceRevision` vermeldt de vorige basis. Waarden met vraagtekens worden niet afgerond of als bevestigde meting ingevoerd. West-Rompwaarden uit de sheet tellen vanaf Noord; de app telt op West vanaf Zuid. De import zet daarom uitsluitend deze bronwaarden om met **80 − sheetwaarde**. Zo wordt 70 → West 10, 75 → West 5, 80 → West 0 en 85 → West −5. De oorspronkelijke waarde en het nulpunt blijven in `sheetPoint` bewaard. Er zijn 16 profielmetingen gecorrigeerd; `westNumberingCorrections` somt ze op. Bestaande appwaarden, eigen metingen en de afzonderlijk bevestigde Kruis-aankomsten worden niet nogmaals omgekeerd.
+
+Doorlopende projecties blijven behouden, inclusief −5 en −10. Als dezelfde gemeten lijn eerst de Zuidband raakt, berekent de weergave de aankomst op die eerste band uit de bestaande lijn en balmiddelpuntgeometrie. De oorspronkelijke West-projectie blijft in `projectionReference` staan; er wordt geen nieuwe meting of spiegelhoek verzonnen.
 
 ## Bronvermelding Duon
 
@@ -40,3 +42,7 @@ Vanuit de repository:
 3. `CHROMIUM_PATH=/usr/bin/chromium node test3b/meetprofielen-controle-v208.js` controleert desktop en telefoon, V/A/R, Lijn 5, profielisolatie, herladen en fullscreen.
 
 De tweede stap gebruikt het oorspronkelijke SQLite-archief alleen-lezen als basis. Nieuwe sheetwijzigingen moeten eerst inhoudelijk worden vergeleken; het script is geen blinde import van alle ingevulde cellen.
+
+Bij het terughalen van een bewaarde tafelstand worden de gepubliceerde bronpunten opnieuw toegepast, met behoud van eigen wijzigingen. De QR-testlink gebruikt `meetprofiel=klein-ingespeeld`, zodat ook een telefoon die eerder Groot of nieuw laken toonde direct het bedoelde voorbeeld opent.
+
+Controle West-nummering: `CHROMIUM_PATH=/usr/bin/chromium node test3b/west-nummering-controle-v208.js`. Deze controle toetst alle 16 omzettingen, behoud van bronwaarden, correcte bandwissels voor doorlopende projecties, SQLite-gelijkheid, weergave op desktop/telefoon, oudere bewaarde tafelstanden en het behoud van eigen metingen.

@@ -1396,8 +1396,16 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
   }
   function noseVisualDeparture(table,route){const n=route.neus;if(!n||![n.from,n.to].every(complete))return {band:'oost',value:null};return {band:'oost',value:diamondValueThroughBall('oost',point(n.from,table),bandBall(n.to,n.from,table,C.ballDiameterMm/20),table,.000001),status:'calculated',source:'automatic'};}
   function skeletonEditable(line,side){return line==='neus'&&side==='to'||line==='romp'||line==='kop'&&side==='to'||line==='been'&&side==='to';}
+  function normalizeSheetBodyArrival(table,route){
+    const body=route.romp,p=body?.to;
+    if(!body||p?.band!=='west'||!p.sheetPoint||p.sheetPoint.zero!=='noord'||!Number.isFinite(p.value)||p.value>=0&&p.value<=80||p.userAdjusted||p.status==='edited'||p.source==='user'||![body.from,p].every(complete))return;
+    const start=bandBall(body.from,p,table,C.ballDiameterMm/20),aim=point(p,table),hit=firstCushionContact(table,start,{x:aim.x-start.x,y:aim.y-start.y});
+    if(!hit||hit.band===p.band)return;
+    const value=diamondValueThroughBall(hit.band,start,aim,table,.000001);if(value===null)return;
+    body.to={...copy(p),band:hit.band,value,status:'calculated',source:'automatic',measurement:false,calculationBasis:'sheet_projection_first_cushion',projectionReference:copy(p)};
+  }
   function calculateSkeletonRoute(table,input){
-    const route=copy(input);
+    const route=copy(input);normalizeSheetBodyArrival(table,route);
     for(const [line,points] of Object.entries(route))for(const side of ['from','to']){
       const p=points[side];if(!p||skeletonEditable(line,side)||line==='neus'||line==='kruis'&&side==='to'&&p.measurement===true)continue;
       const ref=p.inputReference||(p.userAdjusted||p.status==='edited'||p.measurement===true||p.source==='user'?copy(p):null);
@@ -1583,6 +1591,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
     C.lklTrackRules.experienceAnchors[t]={};prepareKruinSource();
     for(const field of measurementStores){state[field]??={};for(const key of Object.keys(state[field]))if(belongsToMeasurementTable(key,t))delete state[field][key];Object.assign(state[field],copy(restored?.[field]||{}));}
     if(!restored){state.data[t]=initial().data[t];}
+    for(const [track,spec]of Object.entries(K.tracks[t]||{}))applyKruinSource(state.data[t]?.[track],spec,false);
     state.history={undo:[],redo:[]};derivedTrackCache={};originRayCache=new Map();selectedBall=null;spoorPreview=null;spoorCalculation=null;bodyEditSessions={};tableScreenContext='';tableScreenHistories={};
     const oldUi=copy(ui);ui.lineOneMode='basis';ui.parallelOffset=0;
     for(const pattern of C.shotLines){ui.pattern=pattern;applyAutomaticCalculations(t);}
@@ -1592,6 +1601,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
   window.ThreeBMeasurementTables={options:measurementTableOptions,selected(t){return measurementSelection[t]||null;},select:selectMeasurementTable};
   window.addEventListener('threeb-parallel-display',()=>render());
   window.ThreeBTableText={get:tableTextPrefs,dimensions(){return C.tables;},update(patch){if(['tables','balls','tracks'].includes(patch.scaleMode)){state.scaleViewMode=patch.scaleMode;state.comparePhysicalSize=patch.scaleMode==='balls';}if(['klein','groot'].includes(patch.courseTable)){state.courseTable=patch.courseTable;if(window.threebVijfCourseScope)ui.editTable=ui.tableMode=patch.courseTable;}state.tableTextSettings={...tableTextPrefs(),...patch};save();render();}};
+  const linkedMeasurementProfile=K.measurementTables?.[new URLSearchParams(location.search).get('meetprofiel')];if(linkedMeasurementProfile&&!linkedMeasurementProfile.pattern){const id=new URLSearchParams(location.search).get('meetprofiel');selectMeasurementTable(id);state.courseTable=linkedMeasurementProfile.size;ui.editTable=ui.tableMode=linkedMeasurementProfile.size;save();render();}
   const incomingView=window.ThreeBMobileView?.decode(new URLSearchParams(location.hash.slice(1)).get('tableView'));
   if(incomingView){const root=incomingView.k.replace(/[+-]\d+$/,''),known=C.shotLines.includes(root)||Object.values(C.patternFamilies||{}).some(f=>(f.tracks||[]).includes(root))||(C.lineOneVariants.fan.entries||[]).some(v=>v.key===incomingView.k);if(known){ui.playRange=incomingView.p;ui.trackFamily=incomingView.f;chooseCentralTrack(incomingView.k);ui.tableMode=incomingView.t;ui.editTable=incomingView.e;ui.direction=incomingView.d;ui.parallelDisplay=incomingView.w;ui.frameworkView=incomingView.r;ui.parallelPartIndex=incomingView.n;state.scaleViewMode=incomingView.s;state.comparePhysicalSize=incomingView.s==='balls';delete window.THREEB_CHOOSE_USAGE_ON_START;window.THREEB_PHONE_VIEW_APPLIED=true;finishTableStart();forceFreshTableView();save();render();const url=new URL(location.href),hash=new URLSearchParams(url.hash.slice(1));hash.delete('tableView');url.hash=hash.toString();history.replaceState(null,'',url.href);}}
   // Course reads the Kruin reference in isolation; user measurements stay untouched.

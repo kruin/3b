@@ -1,6 +1,6 @@
 {
   "sourceRevision": "5e59ca62ab00b395bdf511a101e15eac6d1ce0fba1106cc88efb57ed643a93e8",
-  "measurementRevision": "c83057cc315447abab5cdd2d3da5e6d7462d2bc6bf28b7ef10f6d4d13abc49f7",
+  "measurementRevision": "6798dbd09fb462ae9bfe0d15128fb24314b106349e59bff819e9836b97b0da6d",
   "changes": [
     {
       "profile": "klein-ingespeeld",
@@ -41,7 +41,7 @@
       },
       "after": {
         "band": "west",
-        "value": 70,
+        "value": 10,
         "status": "approved",
         "source": "kruin_sqlite",
         "measurement": true,
@@ -51,7 +51,13 @@
           "tab": "Klein-Ingespeeld",
           "cell": "M33"
         },
-        "confirmedBy": "Kruin"
+        "confirmedBy": "Kruin",
+        "sheetPoint": {
+          "band": "west",
+          "value": 70,
+          "zero": "noord"
+        },
+        "numberingConversion": "80 - sheetValue"
       }
     },
     {
@@ -93,7 +99,7 @@
       },
       "after": {
         "band": "west",
-        "value": 70,
+        "value": 10,
         "status": "approved",
         "source": "kruin_sqlite",
         "measurement": true,
@@ -103,7 +109,13 @@
           "tab": "Klein-Ingespeeld",
           "cell": "M34"
         },
-        "confirmedBy": "Kruin"
+        "confirmedBy": "Kruin",
+        "sheetPoint": {
+          "band": "west",
+          "value": 70,
+          "zero": "noord"
+        },
+        "numberingConversion": "80 - sheetValue"
       }
     },
     {
@@ -145,7 +157,7 @@
       },
       "after": {
         "band": "west",
-        "value": 70,
+        "value": 10,
         "status": "approved",
         "source": "kruin_sqlite",
         "measurement": true,
@@ -155,7 +167,13 @@
           "tab": "Klein-Ingespeeld",
           "cell": "M35"
         },
-        "confirmedBy": "Kruin"
+        "confirmedBy": "Kruin",
+        "sheetPoint": {
+          "band": "west",
+          "value": 70,
+          "zero": "noord"
+        },
+        "numberingConversion": "80 - sheetValue"
       }
     },
     {
@@ -197,7 +215,7 @@
       },
       "after": {
         "band": "west",
-        "value": 75,
+        "value": 5,
         "status": "approved",
         "source": "kruin_sqlite",
         "measurement": true,
@@ -207,7 +225,13 @@
           "tab": "Klein-Ingespeeld",
           "cell": "M36"
         },
-        "confirmedBy": "Kruin"
+        "confirmedBy": "Kruin",
+        "sheetPoint": {
+          "band": "west",
+          "value": 75,
+          "zero": "noord"
+        },
+        "numberingConversion": "80 - sheetValue"
       }
     },
     {
@@ -249,7 +273,7 @@
       },
       "after": {
         "band": "west",
-        "value": 80,
+        "value": 0,
         "status": "approved",
         "source": "kruin_sqlite",
         "measurement": true,
@@ -259,7 +283,13 @@
           "tab": "Klein-Ingespeeld",
           "cell": "M37"
         },
-        "confirmedBy": "Kruin"
+        "confirmedBy": "Kruin",
+        "sheetPoint": {
+          "band": "west",
+          "value": 80,
+          "zero": "noord"
+        },
+        "numberingConversion": "80 - sheetValue"
       }
     },
     {
@@ -301,7 +331,7 @@
       },
       "after": {
         "band": "west",
-        "value": 85,
+        "value": -5,
         "status": "approved",
         "source": "kruin_sqlite",
         "measurement": true,
@@ -311,7 +341,13 @@
           "tab": "Klein-Ingespeeld",
           "cell": "M38"
         },
-        "confirmedBy": "Kruin"
+        "confirmedBy": "Kruin",
+        "sheetPoint": {
+          "band": "west",
+          "value": 85,
+          "zero": "noord"
+        },
+        "numberingConversion": "80 - sheetValue"
       }
     },
     {
@@ -353,7 +389,7 @@
       },
       "after": {
         "band": "west",
-        "value": 75,
+        "value": 5,
         "status": "approved",
         "source": "kruin_sqlite",
         "measurement": true,
@@ -363,7 +399,13 @@
           "tab": "Klein-Ingespeeld",
           "cell": "M41"
         },
-        "confirmedBy": "Kruin"
+        "confirmedBy": "Kruin",
+        "sheetPoint": {
+          "band": "west",
+          "value": 75,
+          "zero": "noord"
+        },
+        "numberingConversion": "80 - sheetValue"
       }
     },
     {
@@ -952,7 +994,7 @@
       },
       "after": {
         "band": "west",
-        "value": 60,
+        "value": 20,
         "status": "approved",
         "source": "kruin_sqlite",
         "measurement": true,
@@ -962,7 +1004,13 @@
           "tab": "v 0.1- nieuw laken",
           "cell": "K43"
         },
-        "confirmedBy": "Kruin"
+        "confirmedBy": "Kruin",
+        "sheetPoint": {
+          "band": "west",
+          "value": 60,
+          "zero": "noord"
+        },
+        "numberingConversion": "80 - sheetValue"
       }
     },
     {
@@ -1004,7 +1052,7 @@
       },
       "after": {
         "band": "west",
-        "value": 70,
+        "value": 10,
         "status": "approved",
         "source": "kruin_sqlite",
         "measurement": true,
@@ -1014,7 +1062,13 @@
           "tab": "v 0.1- nieuw laken",
           "cell": "K44"
         },
-        "confirmedBy": "Kruin"
+        "confirmedBy": "Kruin",
+        "sheetPoint": {
+          "band": "west",
+          "value": 70,
+          "zero": "noord"
+        },
+        "numberingConversion": "80 - sheetValue"
       }
     },
     {
@@ -1030,7 +1084,7 @@
       },
       "after": {
         "band": "west",
-        "value": 80,
+        "value": 0,
         "status": "approved",
         "source": "kruin_sqlite",
         "measurement": true,
@@ -1040,7 +1094,13 @@
           "tab": "v 0.1- nieuw laken",
           "cell": "K45"
         },
-        "confirmedBy": "Kruin"
+        "confirmedBy": "Kruin",
+        "sheetPoint": {
+          "band": "west",
+          "value": 80,
+          "zero": "noord"
+        },
+        "numberingConversion": "80 - sheetValue"
       }
     },
     {
@@ -1082,7 +1142,7 @@
       },
       "after": {
         "band": "west",
-        "value": 90,
+        "value": -10,
         "status": "approved",
         "source": "kruin_sqlite",
         "measurement": true,
@@ -1092,7 +1152,13 @@
           "tab": "v 0.1- nieuw laken",
           "cell": "K46"
         },
-        "confirmedBy": "Kruin"
+        "confirmedBy": "Kruin",
+        "sheetPoint": {
+          "band": "west",
+          "value": 90,
+          "zero": "noord"
+        },
+        "numberingConversion": "80 - sheetValue"
       }
     },
     {
@@ -1108,7 +1174,7 @@
       },
       "after": {
         "band": "west",
-        "value": 85,
+        "value": -5,
         "status": "approved",
         "source": "kruin_sqlite",
         "measurement": true,
@@ -1118,7 +1184,13 @@
           "tab": "v 0.1- nieuw laken",
           "cell": "K47"
         },
-        "confirmedBy": "Kruin"
+        "confirmedBy": "Kruin",
+        "sheetPoint": {
+          "band": "west",
+          "value": 85,
+          "zero": "noord"
+        },
+        "numberingConversion": "80 - sheetValue"
       }
     },
     {
@@ -1212,7 +1284,7 @@
       },
       "after": {
         "band": "west",
-        "value": 85,
+        "value": -5,
         "status": "approved",
         "source": "kruin_sqlite",
         "measurement": true,
@@ -1222,7 +1294,13 @@
           "tab": "v 0.1- nieuw laken",
           "cell": "K51"
         },
-        "confirmedBy": "Kruin"
+        "confirmedBy": "Kruin",
+        "sheetPoint": {
+          "band": "west",
+          "value": 85,
+          "zero": "noord"
+        },
+        "numberingConversion": "80 - sheetValue"
       }
     },
     {
@@ -1264,7 +1342,7 @@
       },
       "after": {
         "band": "west",
-        "value": 80,
+        "value": 0,
         "status": "approved",
         "source": "kruin_sqlite",
         "measurement": true,
@@ -1274,7 +1352,13 @@
           "tab": "v 0.1- nieuw laken",
           "cell": "K52"
         },
-        "confirmedBy": "Kruin"
+        "confirmedBy": "Kruin",
+        "sheetPoint": {
+          "band": "west",
+          "value": 80,
+          "zero": "noord"
+        },
+        "numberingConversion": "80 - sheetValue"
       }
     },
     {
@@ -1861,7 +1945,7 @@
       },
       "after": {
         "band": "west",
-        "value": 70,
+        "value": 10,
         "status": "approved",
         "source": "kruin_sqlite",
         "measurement": true,
@@ -1871,7 +1955,13 @@
           "tab": "Raedthuys-Ingespeeld",
           "cell": "N35"
         },
-        "confirmedBy": "Kruin"
+        "confirmedBy": "Kruin",
+        "sheetPoint": {
+          "band": "west",
+          "value": 70,
+          "zero": "noord"
+        },
+        "numberingConversion": "80 - sheetValue"
       }
     },
     {
@@ -2617,6 +2707,136 @@
       }
     }
   ],
+  "westNumberingCorrections": [
+    {
+      "profile": "klein-ingespeeld",
+      "track": "VIER-2",
+      "field": "rompA",
+      "cell": "M33",
+      "sheetValue": 70,
+      "appValue": 10
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "VIER-1",
+      "field": "rompA",
+      "cell": "M34",
+      "sheetValue": 70,
+      "appValue": 10
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "VIER",
+      "field": "rompA",
+      "cell": "M35",
+      "sheetValue": 70,
+      "appValue": 10
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "VIER+1",
+      "field": "rompA",
+      "cell": "M36",
+      "sheetValue": 75,
+      "appValue": 5
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "VIER+2",
+      "field": "rompA",
+      "cell": "M37",
+      "sheetValue": 80,
+      "appValue": 0
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "VIER+3",
+      "field": "rompA",
+      "cell": "M38",
+      "sheetValue": 85,
+      "appValue": -5
+    },
+    {
+      "profile": "klein-ingespeeld",
+      "track": "VIJF-2",
+      "field": "rompA",
+      "cell": "M41",
+      "sheetValue": 75,
+      "appValue": 5
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIER-2",
+      "field": "rompA",
+      "cell": "K43",
+      "sheetValue": 60,
+      "appValue": 20
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIER-1",
+      "field": "rompA",
+      "cell": "K44",
+      "sheetValue": 70,
+      "appValue": 10
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIER",
+      "field": "rompA",
+      "cell": "K45",
+      "sheetValue": 80,
+      "appValue": 0
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIER+1",
+      "field": "rompA",
+      "cell": "K46",
+      "sheetValue": 90,
+      "appValue": -10
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIER+2",
+      "field": "rompA",
+      "cell": "K47",
+      "sheetValue": 85,
+      "appValue": -5
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIJF-2",
+      "field": "rompA",
+      "cell": "K51",
+      "sheetValue": 85,
+      "appValue": -5
+    },
+    {
+      "profile": "klein-nieuw",
+      "track": "VIJF-1",
+      "field": "rompA",
+      "cell": "K52",
+      "sheetValue": 80,
+      "appValue": 0
+    },
+    {
+      "profile": "groot-lkl",
+      "track": "VIER",
+      "field": "rompA",
+      "cell": "N35",
+      "sheetValue": 70,
+      "appValue": 10
+    },
+    {
+      "profile": "groot-felle-afstoot",
+      "track": "VIER",
+      "field": "rompA",
+      "cell": "N35",
+      "sheetValue": 60,
+      "appValue": 20
+    }
+  ],
   "pending": [],
   "confirmations": {
     "VIJF klein ingespeeld": "V20 A38; R37 los bewaren",
@@ -2624,7 +2844,7 @@
     "ACHT-1 klein ingespeeld": "A22",
     "ZES groot": "A28",
     "ACHT groot": "V48",
-    "VIER groot": "LKL A70, Felle afstoot A60",
+    "VIER groot": "LKL West 10 (sheet 70), Felle afstoot West 20 (sheet 60)",
     "Duon": "Modern Biljarten, A. Duon, p.27; R15 op klein nieuw"
   }
 }

@@ -17,7 +17,7 @@ const server=http.createServer((req,res)=>{
     await page.goto('http://127.0.0.1:'+server.address().port+'/?h3=correctie');
     await page.waitForSelector('#courseMeasurementTable');
     const read=track=>page.evaluate(track=>{const d=window.__qa.lesson1Data(track);return {profile:d.measurementTable,label:d.tableLabel,body:d.route.romp,cross:d.route.kruis,bodyPart:d.rompPart,crossPart:d.kruisPart,head:d.journey.find(p=>p.key==='kop'),geometry:d.geometry,been:d.beenPart};},track);
-    let d=await read('VIER');assert.equal(d.profile,'klein-ingespeeld');assert.equal(d.body.from.value,5);assert.equal(d.body.to.band,'west');assert.equal(d.body.to.value,70);
+    let d=await read('VIER');assert.equal(d.profile,'klein-ingespeeld');assert.equal(d.body.from.value,5);assert.equal(d.body.to.band,'west');assert.equal(d.body.to.value,10);
     for(const [track,band,value]of [['VIJF','west',10],['ZES','oost',5],['ZEVEN','oost',0],['ACHT','noord',0]]){
       d=await read(track);assert.equal(d.cross.to.band,band);assert.equal(d.cross.to.value,value);assert.equal(d.cross.to.measurement,true);assert.equal(d.cross.from.calculationBasis,'measured_cross_arrival');
       assert(d.crossPart,track+' measured cross available');if(track==='VIJF')assert(Math.abs(d.crossPart.to.x-d.geometry.inset)<.000001,'VIJF really ends at West in the drawn geometry');
@@ -43,7 +43,7 @@ const server=http.createServer((req,res)=>{
     await page.locator('#courseFullscreen').click();assert(await page.locator('#courseMeasurementTable').isHidden());await page.locator('#courseFullscreen').click();
     await page.evaluate(()=>window.ThreeBTableText.update({courseTable:'groot'}));
     d=await read('ZES');assert.equal(d.body.to.value,28);d=await read('ACHT');assert.equal(d.body.from.value,48);
-    const groot=await page.evaluate(()=>{const k=window.THREEB_KRUIN_VALUES;return {lkl:k.measurementTables['groot-lkl'].tracks.VIER,fel:k.measurementTables['groot-felle-afstoot'].tracks.VIER};});assert.equal(groot.lkl.rompA.value,70);assert.equal(groot.fel.rompA.value,60);assert.equal(groot.fel.rompV.value,null,'missing departure never invented');
+    const groot=await page.evaluate(()=>{const k=window.THREEB_KRUIN_VALUES;return {lkl:k.measurementTables['groot-lkl'].tracks.VIER,fel:k.measurementTables['groot-felle-afstoot'].tracks.VIER};});assert.equal(groot.lkl.rompA.value,10);assert.equal(groot.fel.rompA.value,20);assert.equal(groot.fel.rompV.value,null,'missing departure never invented');
     assert.deepEqual(errors,[]);console.log(width,'profiles, actual V/A, measured fifth-line continuity, R/A distinction, Duon, edit isolation, reload, fullscreen, groot and Felle afstoot: OK');await page.close();
   }}finally{await browser.close();server.close();}
 })().catch(error=>{console.error(error);process.exitCode=1;server.close();});
