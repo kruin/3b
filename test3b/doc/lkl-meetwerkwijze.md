@@ -136,6 +136,10 @@ De Parallel van VIJF bevat VIJF-2, VIJF-1, VIJF, VIJF+1, VIJF+2 en VIJF+3, plus 
 
 H3 begint bij de probleemstelling: ik vergelijk de Romp bij Rood met mijn vertrek. Eerst alleen bal 1 en Rood; Toon Rompen vergelijkt de beschikbare Rompen en licht de Romp bij Rood uit. Pas daarna volgen de Neus en correctiekeuze. H3 bevat alleen Correctie: VIJF+2 en ZES-2 met lange Neus en lange Romp. Indicatieve richtkeuzes in kloktaal: half, kwart, tien of vijf, vóór of over. Namen bevat de vaste uitleg. Het opgeslagen referentiespoor blijft dun zichtbaar.
 
+## H4 · Vergelijk Klein en Groot
+
+VIJF: Kop A **19 op Klein ingespeeld en 15 op Groot**. Het aparte cursushoofdstuk toont de meetlijnen, vergelijkt de geometrie en onderscheidt fysieke aannemelijkheid van een bewezen oorzaak. [Onderbouwing en meetafspraken](vergelijk-klein-groot.md).
+
 ### Later — Via bal 2
 
 De bestaande introductie staat apart onder Later, buiten de doorlopende cursus. Na het laatste correctievoorbeeld is H3 afgerond.
