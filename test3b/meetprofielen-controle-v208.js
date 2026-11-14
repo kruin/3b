@@ -18,14 +18,14 @@ const server=http.createServer((req,res)=>{
     await page.waitForSelector('#courseMeasurementTable');
     const read=track=>page.evaluate(track=>{const d=window.__qa.lesson1Data(track);return {profile:d.measurementTable,label:d.tableLabel,body:d.route.romp,cross:d.route.kruis,bodyPart:d.rompPart,crossPart:d.kruisPart,head:d.journey.find(p=>p.key==='kop'),geometry:d.geometry,been:d.beenPart};},track);
     let d=await read('VIER');assert.equal(d.profile,'klein-ingespeeld');assert.equal(d.body.from.value,5);assert.equal(d.body.to.band,'west');assert.equal(d.body.to.value,70);
-    for(const [track,band,value]of [['VIJF','oost',10],['ZES','oost',5],['ZEVEN','oost',0],['ACHT','noord',0]]){
+    for(const [track,band,value]of [['VIJF','west',10],['ZES','oost',5],['ZEVEN','oost',0],['ACHT','noord',0]]){
       d=await read(track);assert.equal(d.cross.to.band,band);assert.equal(d.cross.to.value,value);assert.equal(d.cross.to.measurement,true);assert.equal(d.cross.from.calculationBasis,'measured_cross_arrival');
-      assert(d.crossPart,track+' measured cross available');
+      assert(d.crossPart,track+' measured cross available');if(track==='VIJF')assert(Math.abs(d.crossPart.to.x-d.geometry.inset)<.000001,'VIJF really ends at West in the drawn geometry');
       // The measured cross begins at the body arrival ball, not at a separate guessed point.
       assert(Math.hypot(d.crossPart.from.x-d.bodyPart.to.x,d.crossPart.from.y-d.bodyPart.to.y)<.001,track+' body/cross shared ball centre');
     }
     d=await read('VIJF');assert.equal(d.body.to.value,38);
-    const fifth=await page.evaluate(()=>{const k=window.THREEB_KRUIN_VALUES;return {definition:k.sourceNotes.lineDefinitions['5'],six:k.tracks.klein.ZESZEVEN};});assert(fifth.definition.appliesTo.includes('sixSeven'));assert.deepEqual(fifth.six.kruisA,fifth.six.linePoints.kruis.to);assert.equal(fifth.six.kruisA.band,'oost');assert.equal(fifth.six.kruisA.value,10);assert.equal(fifth.six.kruisA.measurement,true);for(const [track,value]of [['ZESZEVEN',10],['ZESZEVEN_ZES',5],['ZESZEVEN_ZEVEN',0]]){const inherited=await read(track);assert.equal(inherited.cross.to.band,'oost');assert.equal(inherited.cross.to.value,value);assert.equal(inherited.cross.to.measurement,true);}
+    const fifth=await page.evaluate(()=>{const k=window.THREEB_KRUIN_VALUES;return {definition:k.sourceNotes.lineDefinitions['5'],six:k.tracks.klein.ZESZEVEN};});assert(fifth.definition.appliesTo.includes('sixSeven'));assert.deepEqual(fifth.six.kruisA,fifth.six.linePoints.kruis.to);assert.equal(fifth.six.kruisA.band,'west');assert.equal(fifth.six.kruisA.value,10);assert.equal(fifth.six.kruisA.measurement,true);for(const [track,value]of [['ZESZEVEN',10],['ZESZEVEN_ZES',5],['ZESZEVEN_ZEVEN',0]]){const inherited=await read(track);assert.equal(inherited.cross.to.band,track==='ZESZEVEN'?'west':'oost');assert.equal(inherited.cross.to.value,value);assert.equal(inherited.cross.to.measurement,true);}
     d=await read('ACHT-1');assert.equal(d.body.to.value,22);
     // A profile switch must isolate user edits, including origin-route stores.
     await page.evaluate(()=>{const s=JSON.parse(localStorage.getItem('3b-canonical-west-v2'));s.data.klein.VIJF.romp.to={band:'zuid',value:37.25,status:'edited',source:'user',userAdjusted:true};s.startAcquitRoutes??={};s.startAcquitRoutes['omb:0:klein:VIJF']={userFixture:true};s.basis.id='kruin-v208-meetprofielen-1d856ad31cfa';s.basis.values.measurementRevision='older-live-edition';localStorage.setItem('3b-canonical-west-v2',JSON.stringify(s));});

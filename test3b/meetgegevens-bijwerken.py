@@ -59,7 +59,7 @@ fel=copy.deepcopy(profiles['groot-lkl']['tracks']['VIER'])
 assign(fel,'rompA',point('west',60,'raedthuys','N35','stipwaarde','Felle afstoot; LKL rollend gebruikt 70.'))
 fel['patternName']='Felle afstoot';fel['tableProfile']='groot-felle-afstoot'
 profiles['groot-felle-afstoot']={'size':'groot','label':'Groot · Felle afstoot','pattern':'felleAfstoot','sourceTab':'Raedthuys-Ingespeeld','sourceUrl':s['tabs']['raedthuys']['url'],'tracks':{'VIER':fel},'incomplete':'Vertrek Romp V is nog niet gemeten; geen volledig spoor afleiden.'}
-# Lijn 5 is Kruis A: L = Oost, K = Noord (Kruins bevestiging).
+# Lijn 5 is Kruis A. Laatste expliciete correctie: VIJF naar West 10, niet Oost.
 import re
 cross_rows={'klein-ingespeeld':{'VIJF':43,'ZES':51,'ZEVEN':57,'ACHT':62},'klein-nieuw':{'VIJF':53,'ZES':60,'ZEVEN':66,'ACHT':71},'groot-lkl':{'VIJF':24,'ZES':32,'ZEVEN':38,'ACHT':43}}
 for profile, rows in cross_rows.items():
@@ -69,7 +69,9 @@ for profile, rows in cross_rows.items():
   raw=s['tabs'][tab]['cells'].get(col+str(row),'')
   m=re.search(r'([LK])\s*(\d+)',raw.replace('●','').replace(' ',''))
   if not m:raise ValueError((profile,name,raw))
-  p=point('oost' if m[1]=='L' else 'noord',float(m[2]),tab,col+str(row))
+  arrival_band='west' if name=='VIJF' else 'oost' if m[1]=='L' else 'noord'
+  p=point(arrival_band,float(m[2]),tab,col+str(row))
+  if name=='VIJF':p['bandCorrection']='Kruin: Kruis VIJF naar West; eerdere Oost-koppeling vervalt.'
   assign(profiles[profile]['tracks'][name],'kruisA',p)
   # De sheet bevat geen Been A. Een oud standaardgetal 10 mag deze nieuwe A niet verlengen.
   track=profiles[profile]['tracks'][name]
@@ -96,12 +98,12 @@ for profile in profiles.values():
    if pair.get('from'):track['kruisV']=copy.deepcopy(pair['from'])
    track['lineFiveStatus']='measured' if pair.get('to',{}).get('measurement') else 'existing_reference_or_estimate'
 k['tracks']['klein']=copy.deepcopy(profiles['klein-ingespeeld']['tracks']);k['tracks']['groot']=copy.deepcopy(profiles['groot-lkl']['tracks'])
-k['sourceNotes']={'bibliography':[{'author':'A. Duon','title':'Modern Biljarten','tableSize':'klein','pages':[27]}],'lineDefinitions':{'5':{'key':'kruis','name':'Lijn 5','appliesTo':['lkl','sixSeven'],'values':['V','A'],'arrivalBandCodes':{'L':'oost','K':'noord'},'keepMeasurementsPerPattern':True,'shareTestedLineWithSixSeven':True}},'notation':{'triangleDown':'R: raakpunt op de band; geen V/A-stipwaarde','V':'Vertrek van de lijn op de stiplijn','A':'Aankomst van de lijn op de stiplijn'},'missingValues':'Bestaande Kruinreferentie behouden waar geen nieuwe zekere meting is opgegeven; retainedReferenceRevision identificeert de oude basis.'}
+k['sourceNotes']={'bibliography':[{'author':'A. Duon','title':'Modern Biljarten','tableSize':'klein','pages':[27]}],'lineDefinitions':{'5':{'key':'kruis','name':'Lijn 5','appliesTo':['lkl','sixSeven'],'values':['V','A'],'arrivalBandCodes':{'L':'oost','K':'noord'},'arrivalBandOverrides':{'VIJF':'west'},'keepMeasurementsPerPattern':True,'shareTestedLineWithSixSeven':True}},'notation':{'triangleDown':'R: raakpunt op de band; geen V/A-stipwaarde','V':'Vertrek van de lijn op de stiplijn','A':'Aankomst van de lijn op de stiplijn'},'missingValues':'Bestaande Kruinreferentie behouden waar geen nieuwe zekere meting is opgegeven; retainedReferenceRevision identificeert de oude basis.'}
 k['patternSettings']['felleAfstoot']={'labels':{'nl':'Felle afstoot'},'framework':['neus','romp'],'tracks':['VIER'],'table':'groot','rompArrival':60,'source':'Raedthuys-Ingespeeld!N35','incomplete':True}
 k['source']='kruin_spreadsheet_confirmed';k['measurementRevision']=hashlib.sha256(json.dumps({'profiles':profiles,'sourceNotes':k['sourceNotes']},sort_keys=True,ensure_ascii=False).encode()).hexdigest()
 k['beheerRevision']=k['measurementRevision']
 (base/'kruinwaarden-generated-v208.js').write_text('window.THREEB_KRUIN_VALUES='+json.dumps(k,ensure_ascii=False,separators=(',',':'))+';\n')
-(out/'kruin-wijzigingen.json').write_text(json.dumps({'sourceRevision':old['beheerRevision'],'measurementRevision':k['measurementRevision'],'changes':changes,'pending':[],'confirmations':{'VIJF klein ingespeeld':'V20 A38; R37 los bewaren','ACHT-1 klein ingespeeld':'A22','ZES groot':'A28','ACHT groot':'V48','VIER groot':'LKL A70, Felle afstoot A60','Duon':'Modern Biljarten, A. Duon, p.27; R15 op klein nieuw'}},ensure_ascii=False,indent=2)+'\n')
+(out/'kruin-wijzigingen.json').write_text(json.dumps({'sourceRevision':old['beheerRevision'],'measurementRevision':k['measurementRevision'],'changes':changes,'pending':[],'confirmations':{'VIJF klein ingespeeld':'V20 A38; R37 los bewaren','VIJF Kruis':'A West 10; herstelt foutieve Oost-koppeling, ook in de overgenomen lijn van ZESZEVEN','ACHT-1 klein ingespeeld':'A22','ZES groot':'A28','ACHT groot':'V48','VIER groot':'LKL A70, Felle afstoot A60','Duon':'Modern Biljarten, A. Duon, p.27; R15 op klein nieuw'}},ensure_ascii=False,indent=2)+'\n')
 print('Profielen:',list(profiles),'bevestigde V/A-updates:',len(changes),'revision',k['measurementRevision'][:12])
 
 # Zelfstandige SQLite-meeteditie, met dezelfde basisstructuur als de Kruinarchieven.

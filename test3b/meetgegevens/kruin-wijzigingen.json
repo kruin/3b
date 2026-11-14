@@ -1,6 +1,6 @@
 {
   "sourceRevision": "5e59ca62ab00b395bdf511a101e15eac6d1ce0fba1106cc88efb57ed643a93e8",
-  "measurementRevision": "5797725621f5b6b8c37ad91c5eaf127000936cbfef100ac545169274e2a8d78f",
+  "measurementRevision": "c83057cc315447abab5cdd2d3da5e6d7462d2bc6bf28b7ef10f6d4d13abc49f7",
   "changes": [
     {
       "profile": "klein-ingespeeld",
@@ -2088,7 +2088,7 @@
       "field": "kruisA",
       "before": null,
       "after": {
-        "band": "oost",
+        "band": "west",
         "value": 10.0,
         "status": "approved",
         "source": "kruin_sqlite",
@@ -2099,7 +2099,8 @@
           "tab": "Klein-Ingespeeld",
           "cell": "P43"
         },
-        "confirmedBy": "Kruin"
+        "confirmedBy": "Kruin",
+        "bandCorrection": "Kruin: Kruis VIJF naar West; eerdere Oost-koppeling vervalt."
       }
     },
     {
@@ -2168,7 +2169,7 @@
       "field": "kruisA",
       "before": null,
       "after": {
-        "band": "oost",
+        "band": "west",
         "value": 10.0,
         "status": "approved",
         "source": "kruin_sqlite",
@@ -2179,7 +2180,8 @@
           "tab": "v 0.1- nieuw laken",
           "cell": "N53"
         },
-        "confirmedBy": "Kruin"
+        "confirmedBy": "Kruin",
+        "bandCorrection": "Kruin: Kruis VIJF naar West; eerdere Oost-koppeling vervalt."
       }
     },
     {
@@ -2248,7 +2250,7 @@
       "field": "kruisA",
       "before": null,
       "after": {
-        "band": "oost",
+        "band": "west",
         "value": 10.0,
         "status": "approved",
         "source": "kruin_sqlite",
@@ -2259,7 +2261,8 @@
           "tab": "LKL GROOT",
           "cell": "P24"
         },
-        "confirmedBy": "Kruin"
+        "confirmedBy": "Kruin",
+        "bandCorrection": "Kruin: Kruis VIJF naar West; eerdere Oost-koppeling vervalt."
       }
     },
     {
@@ -2334,7 +2337,7 @@
         "value": 55.0
       },
       "after": {
-        "band": "oost",
+        "band": "west",
         "value": 10.0,
         "status": "approved",
         "source": "kruin_sqlite",
@@ -2346,6 +2349,7 @@
           "cell": "P43"
         },
         "confirmedBy": "Kruin",
+        "bandCorrection": "Kruin: Kruis VIJF naar West; eerdere Oost-koppeling vervalt.",
         "sharedTestedLine": {
           "fromPattern": "LKL",
           "fromTrack": "VIJF",
@@ -2430,7 +2434,7 @@
         "value": 55.0
       },
       "after": {
-        "band": "oost",
+        "band": "west",
         "value": 10.0,
         "status": "approved",
         "source": "kruin_sqlite",
@@ -2442,6 +2446,7 @@
           "cell": "N53"
         },
         "confirmedBy": "Kruin",
+        "bandCorrection": "Kruin: Kruis VIJF naar West; eerdere Oost-koppeling vervalt.",
         "sharedTestedLine": {
           "fromPattern": "LKL",
           "fromTrack": "VIJF",
@@ -2526,7 +2531,7 @@
         "value": 55.0
       },
       "after": {
-        "band": "oost",
+        "band": "west",
         "value": 10.0,
         "status": "approved",
         "source": "kruin_sqlite",
@@ -2538,6 +2543,7 @@
           "cell": "P24"
         },
         "confirmedBy": "Kruin",
+        "bandCorrection": "Kruin: Kruis VIJF naar West; eerdere Oost-koppeling vervalt.",
         "sharedTestedLine": {
           "fromPattern": "LKL",
           "fromTrack": "VIJF",
@@ -2614,6 +2620,7 @@
   "pending": [],
   "confirmations": {
     "VIJF klein ingespeeld": "V20 A38; R37 los bewaren",
+    "VIJF Kruis": "A West 10; herstelt foutieve Oost-koppeling, ook in de overgenomen lijn van ZESZEVEN",
     "ACHT-1 klein ingespeeld": "A22",
     "ZES groot": "A28",
     "ACHT groot": "V48",
