@@ -6,7 +6,7 @@ De voormalige H2-les Aankomsten is een **zelfstandig cursusonderdeel** geworden.
 
 ## De ballen naast elkaar op Zuid
 
-Het gezamenlijke overzicht toont de echte aankomstballen van het hoofdspoor en zijn parallellen op **Klein en Groot, op dezelfde fysieke schaal**. De baldiameter is gelijk; de posities volgen per tafel de eigen brongeometrie. Overlap blijft zichtbaar en wordt niet kunstmatig uit elkaar getrokken. De gekozen stand is geel.
+Het gezamenlijke overzicht toont de echte aankomstballen van het hoofdspoor en zijn parallellen op **Klein en Groot, op dezelfde fysieke schaal**. De baldiameter is gelijk; de posities volgen per tafel de eigen brongeometrie. Overlap blijft zichtbaar en wordt niet kunstmatig uit elkaar getrokken. De gekozen stand is geel. De ballen bevatten geen cijfer; elke getoonde bal is bal 1 bij een andere afstoot.
 
 Let op de ruimere spreiding op Groot. Het overzicht vermeldt de werkelijke afstand in balbreedtes: voor een gekozen parallel ten opzichte van het hoofdspoor, of bij het hoofdspoor de totale spreiding van dezelfde beschikbare standen. De brongegevens bepalen of Groot voor die vergelijking inderdaad ruimer is; dat wordt niet voor iedere stand aangenomen. Beide rijen gebruiken de huidige meetbasis van de betreffende tafel.
 
