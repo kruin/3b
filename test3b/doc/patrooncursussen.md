@@ -1,6 +1,6 @@
 # Een eigen cursus per patroon
 
-**VIJF is de hoofdcursus.** VIER, ZES, ZEVEN en ACHT hebben elk een eigen cursusroute. Via de knop Cursus kies je het patroon en zie je alleen de hoofdstukken die daarbij horen.
+**VIJF is de hoofdcursus.** VIER, ZES, ZEVEN en ACHT hebben elk een eigen cursusroute. Via de knop Cursus kies je het patroon en zie je alleen de hoofdstukken die daarbij horen. Het hoofdscherm neemt dat patroon meteen over, inclusief de patroonkeuze en het spoorlabel. Naar tafel en terug naar de les behouden dezelfde keuze.
 
 - [Cursus VIJF](../?cursus=inhoud&leerspoor=VIJF#owner=user)
 - [Cursus VIER](../?cursus=inhoud&leerspoor=VIER#owner=user)
@@ -51,3 +51,5 @@ De afzonderlijke H4-controles blijven:
 
 - `klein-groot-controle-v208.js`: VIJF 19/15.
 - `acht-klein-groot-controle-v208.js`: ACHT 45/48 en nieuw laken 43 apart.
+
+`CHROMIUM_PATH=/usr/bin/chromium node test3b/cursus-hoofdscherm-controle-v208.js` controleert de echte cursuskeuzeklikken voor alle vijf patronen, de hoofdschermselectie, terugkeer vanuit de les, herladen en behoud van meetgegevens op desktop en telefoon.
