@@ -1,5 +1,7 @@
 # De Waaier — Van Top tot Teen
 
+**Cursus VIJF staat op zichzelf.** VIER, ZES, ZEVEN en ACHT hebben eigen cursussen; Kruis-zones en BIBU blijven bij de betreffende patronen. [Actuele cursusindeling](patrooncursussen.md).
+
 *Meetsysteem en cursus voor driebanden.*
 
 De **doelbal (de rode bal)** noemen we na de introductie **Rood**.
@@ -361,4 +363,4 @@ Binnen LKL volgen we bal 1 maximaal tot het getoonde eindpunt op het Been. Voor 
 
 ## Karkas en namen
 
-Karkas heeft een eigen scherm binnen H1, met voorbeelden VIJF, ZES en ZEVEN. De definitie staat bij het eerste voorbeeld; daarna gebruiken we de naam. Namen verwijst naar de bijbehorende lessen en bevat ook Aanloop, Parallel, Aankomsten, Neuslengte, BIBU/BUBI en LKL-eindpunt. Algemene uitleg staat op één vaste plek.
+Karkas heeft een eigen scherm binnen H1 van VIJF. Andere patronen staan in hun eigen cursus. De definitie staat bij het eerste voorbeeld; daarna gebruiken we de naam. Namen verwijst naar de bijbehorende lessen en bevat ook Aanloop, Parallel, Aankomsten, Neuslengte, BIBU/BUBI en LKL-eindpunt. Algemene uitleg staat op één vaste plek.
