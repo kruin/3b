@@ -14,6 +14,20 @@ Bij een bandcontact eindigt de ene lijn en begint de volgende. Hun richtingen ve
 
 De cursus laat dit op schaal zien met de echte balbreedte en bestaande lijngeometrie. Ontbrekende lijnen krijgen een melding; referenties en berekende waarden krijgen hun eigen herkomstlabel.
 
+## Eigen tafel: eerst VIJF, daarna ZES
+
+Begin met het **hoofdspoor VIJF**, zonder +/−-stand, op de eigen tafel. Meet Neus, Kop en Romp in het bestaande Spoorscherm. Controleer het spoor met herhaalde stoten aan de echte tafel en bewaar de volledige eigen basis. Doe **daarna hetzelfde met ZES**.
+
+Twee vastgelegde balmiddelpunten op dezelfde rechte lijn bepalen de richting. Hun verlenging naar de stiplijnen geeft V en A; het bandcontact R volgt met de balbreedte. Een bekende vertrekbal samen met een gemeten R kan diezelfde lijn ook bepalen. Dat bepaalt niet automatisch de richting na een volgende botsing.
+
+### Parallellen: berekenen, controleren naar behoefte
+
+De app berekent parallelstanden al. Waar afzonderlijke meetwaarden aanwezig zijn, worden die gebruikt; gemeten vervolglijnen hoeven niet strikt parallel te lopen.
+
+Voor jouw eigen tafel: bewaar eerst Neus, Kop en Romp van het hoofdspoor. Kies vervolgens **Voorstel +/− bekijken** en **Neem beschikbare voorstellen over**. Het voorstel gebruikt je eigen basis en Kruins gemeten verschillen. Afgeleide waarden blijven herkenbaar als afgeleid; bestaande eigen metingen blijven behouden. Je hoeft niet alle parallellen opnieuw te meten. Controleer naar behoefte en voeg bij afwijkingen gericht eigen metingen toe.
+
+Vergelijk hun aankomsten in [Aankomsten op ZUID](aankomsten-zuid.md): zonder +/− het hoofdspoor, met +/− de parallelstanden.
+
 ## Hoe U V en A gaat meten
 
 1. Kies de eigen tafel, het patroon en het spoor. Leg het vertrek vast zodat de afstoot herhaalbaar is.
