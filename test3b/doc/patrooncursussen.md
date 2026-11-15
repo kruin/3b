@@ -10,7 +10,7 @@
 
 ## VIJF
 
-H1 bevat VIJF lijn na lijn, Rood op de Romp en het Karkas van VIJF. Het extra ZES-voorbeeld is uit deze leerroute gehaald. H2 gebruikt alleen de parallellen en Neus van VIJF. De korte uitstapjes naar VIER, ZES, ZEVEN en ACHT zijn vervangen door de eigen cursussen. H3 beperkt de correctiekeuze tot de VIJF-familie. H4 vergelijkt bij VIJF Kop A 19 op Klein met 15 op Groot.
+H1 bevat VIJF lijn na lijn, Rood op de Romp en het Karkas van VIJF. Het extra ZES-voorbeeld is uit deze leerroute gehaald. Vóór H1 staat het zelfstandige onderdeel Lijnen · V, R en A, inclusief zelf meten en R op Noord als meetanker. H2 gebruikt de parallellen en Neus van VIJF. Aankomsten op ZUID staat na H2 als eigen onderdeel met detailbeelden per spoor. De korte uitstapjes naar VIER, ZES, ZEVEN en ACHT zijn vervangen door de eigen cursussen. H3 beperkt de correctiekeuze tot de VIJF-familie. H4 vergelijkt bij VIJF Kop A 19 op Klein met 15 op Groot.
 
 De volgende stap aan het einde van een VIJF-hoofdstuk blijft binnen deze cursus. H4 loopt dus niet door naar ACHT. De voortgang wordt per cursus apart bewaard.
 
@@ -53,3 +53,9 @@ De afzonderlijke H4-controles blijven:
 - `acht-klein-groot-controle-v208.js`: ACHT 45/48 en nieuw laken 43 apart.
 
 `CHROMIUM_PATH=/usr/bin/chromium node test3b/cursus-hoofdscherm-controle-v208.js` controleert de echte cursuskeuzeklikken voor alle vijf patronen, de hoofdschermselectie, terugkeer vanuit de les, herladen en behoud van meetgegevens op desktop en telefoon.
+
+## Lijnen en ZUID
+
+Alle patrooncursussen hebben de zelfstandige onderdelen [Lijnen · V, R en A](lijnen-vra.md) en [Aankomsten op ZUID](aankomsten-zuid.md). De voorbeelden gebruiken hun eigen bronwaarden. Meetsysteem is teruggebracht tot de algemene meetvolgorde; specifieke uitleg staat in de eigen cursus.
+
+Controle: `CHROMIUM_PATH=/usr/bin/chromium node test3b/lijnen-zuid-controle-v208.js`.

@@ -1,0 +1,42 @@
+# Lijnen · V, R en A
+
+Dit is een zelfstandig onderdeel in iedere patrooncursus, vóór H1. De voorbeelden lezen de **eigen waarden van het gekozen patroon en de gekozen meetbasis**.
+
+[Open bij VIJF](../?cursus=les&les=13&leerspoor=VIJF#owner=user) · [ZES](../?cursus=les&les=13&leerspoor=ZES#owner=user) · [ZEVEN](../?cursus=les&les=13&leerspoor=ZEVEN#owner=user) · [ACHT](../?cursus=les&les=13&leerspoor=ACHT#owner=user) · [VIER](../?cursus=les&les=13&leerspoor=VIER#owner=user).
+
+## De waarde hoort bij de lijn
+
+**V is het beginpunt van een lijn op een stiplijn. A is het eindpunt van diezelfde lijn op een stiplijn.** Schrijf steeds de lijnnaam erbij: Romp V, Romp A, Kop V, Kop A, Kruis V.
+
+Bij een bandcontact eindigt de ene lijn en begint de volgende. Hun richtingen verschillen. Daarom kunnen bijvoorbeeld **Romp A en Kruis V twee verschillende stipwaarden op dezelfde stiplijn** zijn, terwijl ze bij dezelfde bandbal horen.
+
+**R is het raakpunt op de band**, geen stipwaarde van een lijn. Een positie op de band en een eindpunt op de stiplijn zijn verschillende meetgegevens. Het bestaande R-veld in het Spoorscherm gebruikt een bandpositieschaal; V/A gebruiken de punten waar de betreffende lijn de stiplijnen bereikt.
+
+De cursus laat dit op schaal zien met de echte balbreedte en bestaande lijngeometrie. Ontbrekende lijnen krijgen een melding; referenties en berekende waarden krijgen hun eigen herkomstlabel.
+
+## Hoe U V en A gaat meten
+
+1. Kies de eigen tafel, het patroon en het spoor. Leg het vertrek vast zodat de afstoot herhaalbaar is.
+2. Herken de te meten rechte looplijn. Gebruik twee waarneembare posities van het balmiddelpunt op die lijn om haar richting vast te leggen.
+3. Verleng de lijn terug tot de eerste stiplijn: dat is **V van die lijn**. Verleng haar vooruit tot de volgende stiplijn: dat is **A van die lijn**.
+4. Noteer lijnnaam, V en A, tafel en waarnemingsomstandigheden. Voor de volgende lijn bepaal je opnieuw V en A.
+5. Open het bestaande Spoorscherm op de eigen tafel en kies de lijn. Voer de beschikbare meetvelden in; controleer de getekende lijn en de aansluitende bandballen. Gekoppelde beginwaarden worden berekend. Bij de Kop kies je A of R als invoer; Kop V volgt uit de Neus.
+6. Herhaal de waarneming en bewaar de meting. Als User blijven de gegevens in het eigen tafelbestand. Kruin bewaart officiële metingen via het verbonden werkbestand.
+
+## R op Noord kan het uitgangspunt zijn
+
+Bij de **Kop** kan juist **R op Noord** goed meetbaar zijn. Dan begint de meetroute bij R:
+
+1. Leg eerst de Neus vast. Daarmee is de vertrekbal van de Kop bij West bekend.
+2. Observeer het raakpunt op Noord, bijvoorbeeld met pionnen op de bandrand. In de bestaande meetwerkwijze markeert de pion die loodrecht omvalt de waargenomen positie. Noteer dit als **Kop R, band Noord**.
+3. Kies in het Spoorscherm bij de Kop de **R-invoer**. Neem de bandpositie over in het R-veld. Voer R niet rechtstreeks als Kop A in.
+4. De bekende vertrekbal en het gemeten R bepalen de Koplijn. De app verlengt die lijn naar de stiplijnen en bepaalt **Kop V en Kop A**.
+5. Controleer deze berekende Koplijn met een herhaalde waarneming en bewaar de meting.
+
+De cursus toont deze omgekeerde meetroute met de eigen geometrie. Als R in het voorbeeld uit bestaande V/A is teruggerekend, staat er **hier berekend**. Dat is een demonstratie van de meetroute, geen nieuw bevestigde R-meting. Bij een bestaande R-bronmeting wordt die herkomst vermeld.
+
+Als voor het gekozen patroon nog geen Kop naar Noord beschikbaar is, tekent de cursus geen vervangende Kop. De meetstappen blijven wel zichtbaar: het nog te meten R kan de ontbrekende lijn helpen vastleggen.
+
+## Kort Meetsysteem
+
+Meetsysteem bevat de algemene meetvolgorde en verwijst naar dit onderdeel en de patrooncursussen. Specifieke meetwaarden, correctievoorbeelden en tafelvergelijkingen staan in de eigen cursussen.

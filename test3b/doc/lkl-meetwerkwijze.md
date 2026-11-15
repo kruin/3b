@@ -4,6 +4,9 @@
 
 *Meetsysteem en cursus voor driebanden.*
 
+Actuele zelfstandige onderdelen: [Lijnen · V, R en A en zelf meten](lijnen-vra.md), met R op Noord als mogelijke meetinvoer, en [Aankomsten op ZUID](aankomsten-zuid.md), met detailbeelden per spoor. De korte algemene werkwijze staat bij [Meetsysteem](meetsysteem.html).
+
+
 De **doelbal (de rode bal)** noemen we na de introductie **Rood**.
 
 De cursus geeft uitleg en voorbeelden, zonder oefeningen of opdrachten.
@@ -130,13 +133,13 @@ Waaier en stipwaarden → VIJF lijn na lijn → Romp en Neus → Karkas met voor
 
 ### H2 — Kiezen
 
-De Parallel van VIJF → Aankomsten → Neuzen → Kruis-zones → BIBU/BUBI.
+De Parallel van VIJF → Neuzen → Kruis-zones. Aankomsten op ZUID staat als zelfstandig onderdeel na H2. BIBU/BUBI staat bij de betreffende patrooncursussen.
 
-De Parallel van VIJF bevat VIJF-2, VIJF-1, VIJF, VIJF+1, VIJF+2 en VIJF+3, plus kort VIER, ZES, ZEVEN en ACHT. Aankomsten en Neuzen zijn eigen lessen. Bij Kruis-zones verplaats je Rood; het systeem toont passende Rompen en Kruisen. BIBU/BUBI vergelijkt de beschikbare sporen.
+De Parallel van VIJF bevat VIJF-2, VIJF-1, VIJF, VIJF+1, VIJF+2 en VIJF+3. Andere patronen hebben hun eigen cursus. Aankomsten op ZUID heeft per spoor een detailbeeld. Neuzen gebruikt het eigen patroon. Bij Kruis-zones verplaats je Rood; het systeem toont passende Rompen en Kruisen. BIBU/BUBI vergelijkt de beschikbare sporen.
 
 ### H3 — Correctie
 
-H3 begint bij de probleemstelling: ik vergelijk de Romp bij Rood met mijn vertrek. Eerst alleen bal 1 en Rood; Toon Rompen vergelijkt de beschikbare Rompen en licht de Romp bij Rood uit. Pas daarna volgen de Neus en correctiekeuze. H3 bevat alleen Correctie: VIJF+2 en ZES-2 met lange Neus en lange Romp. Indicatieve richtkeuzes in kloktaal: half, kwart, tien of vijf, vóór of over. Namen bevat de vaste uitleg. Het opgeslagen referentiespoor blijft dun zichtbaar.
+H3 begint bij de probleemstelling: ik vergelijk de Romp bij Rood met mijn vertrek. Eerst alleen bal 1 en Rood; Toon Rompen vergelijkt de beschikbare Rompen en licht de Romp bij Rood uit. Pas daarna volgen de Neus en correctiekeuze. H3 bevat alleen Correctie met de eigen parallellen. De voorbeelden van ZES staan in cursus ZES. Indicatieve richtkeuzes in kloktaal: half, kwart, tien of vijf, vóór of over. Namen bevat de vaste uitleg. Het opgeslagen referentiespoor blijft dun zichtbaar.
 
 ## H4 · Vergelijk Klein en Groot
 
@@ -168,7 +171,7 @@ De bal beweegt zonder draaipuntje: effect wordt hier nog niet uitgelegd of voorg
 
 ## Alle banden blijven herkenbaar
 
-Op de tafel én in elke cursusles staan altijd alle stippen en nummers op de vier banden. Voor LKL naar West loopt de nummering met de bal mee: West van Zuid naar Noord (0–80), Noord van West naar Oost (0–40), Oost van Noord naar Zuid (0–80), Zuid van Oost naar West (0–40). Bij een volgende passage op dezelfde band blijven die oorspronkelijke nummers staan. Bij spiegelen spiegelen de fysieke plaatsen mee; er wordt niet per lijn opnieuw genummerd.
+In de hele-tafelweergave staan de stippen en nummers op de vier stiplijnen rond de tafel. Ze benoemen plaatsen voor V/A van lijnen. Detailbeelden zoomen in op de relevante lijnpunten en de bandbal. Voor LKL naar West loopt de nummering met de bal mee: West van Zuid naar Noord (0–80), Noord van West naar Oost (0–40), Oost van Noord naar Zuid (0–80), Zuid van Oost naar West (0–40). Bij een volgende passage op dezelfde band blijven die oorspronkelijke nummers staan. Bij spiegelen spiegelen de fysieke plaatsen mee; er wordt niet per lijn opnieuw genummerd.
 
 De relevante V/A-waarde krijgt een extra markering. De overige stippen verdwijnen niet bij een volgende lijn, een andere les, een karkascontrole of bij les ↔ tafel. Nummering en herkenningspunten blijven dus beschikbaar vóórdat ik het Karkas toon. Klein en Groot gebruiken dezelfde stipwaarden, met hun eigen gemeten lijngegevens.
 
@@ -351,11 +354,11 @@ Onder Mijn tafel kun je de naam gebruiken om spelen vanaf het noordelijke of zui
 
 ## Cursus openen
 
-De knop Cursus opent de inhoudsopgave: H1 met de introductie, lijnlessen en Kruis-zones; H2 De Parallel van VIJF; H3 Correctie met BIBU/BUBI; H4 Via bal 2. De losse H2-knop is opgenomen in deze inhoudsopgave.
+De knop Cursus opent de eigen patrooncursus. Lijnen · V, R en A staat zelfstandig vóór H1; Aankomsten op ZUID staat zelfstandig na H2. De overige hoofdstukken blijven patrooneigen. Via bal 2 blijft onder Later.
 
 ### H2: afzonderlijke lessen
 
-H2 heeft aparte lessen: De Parallel van VIJF, Aankomsten en Neuzen. Neuzen bevat uitsluitend ZES met een gewone, korte en lange Neus, indicatief en op dezelfde vastgelegde Neuslijn. BIBU/BUBI toont beide beschikbare sporen met de gekozen lijn benadrukt; ontbrekende lijnen worden niet ingevuld.
+H2 bevat de patrooneigen lessen. Neuzen toont een midden-, korte en lange Neus op de eigen vastgelegde Neuslijn, indicatief. Aankomsten op ZUID is een zelfstandig onderdeel met bladeren per spoor. BIBU/BUBI staat bij de eigen bestaande voorbeelden van VIER en ZEVEN; ontbrekende lijnen worden niet ingevuld.
 
 ### LKL: het eindpunt
 
