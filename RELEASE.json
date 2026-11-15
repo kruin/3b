@@ -1,7 +1,9 @@
 {
-  "version": "v208-r89",
-  "date": "2026-11-05",
+  "version": "v208-r108",
+  "date": "2026-11-15",
   "channel": "production",
   "compatibilityBase": "v208-r15",
-  "name": "VIJF"
+  "name": "De Waaier",
+  "sourceCommit": "0e12753573522d5392480a7c6f1663b8d931cd45",
+  "measurementRevision": "6798dbd09fb462ae9bfe0d15128fb24314b106349e59bff819e9836b97b0da6d"
 }
