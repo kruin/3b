@@ -53,3 +53,37 @@ Uit alleen de absolute neuslengte volgt niet of de bal bij West nog schuift. Daa
 Herhaal meerdere stoten per tafel en noteer afstoot, effect, tempo en spreiding van Kop A. Houd ook de vertrekpositie en Neus A gelijk aan het beschreven patroon. Zo wordt duidelijk of 19/15 een herhaalbaar resultaat is en welke omstandigheden verschil maken.
 
 Bronnen: Kruins bevestigde tests en de gepubliceerde profielen **klein-ingespeeld** en **groot-lkl**. De berekeningen gebruiken dezelfde geometrie als de zichtbare cursus. VIJF 19/15 is geen universele correctieregel voor de andere sporen.
+
+## ACHT · Romp V 45 op Klein, 48 op Groot
+
+[Open ACHT in H4](../?cursus=les&les=11&meetprofiel=klein-ingespeeld#owner=user).
+
+Bij ACHT vergelijken we het **vertrek van de Romp op de oostelijke stiplijn**. Dit is een andere lijnwaarde dan Kop A 19/15 bij VIJF.
+
+| Meetgegeven ACHT | Klein · ingespeeld | Groot · LKL / Raedthuys |
+|---|---:|---:|
+| Romp V · Oost | **45** | **48** |
+| Romp A · Zuid | **20** | **18** |
+
+Dit zijn de standaardmeetwaarden voor deze uitleg. De cursus tekent alleen de bekende Romp, op basis van de werkelijke V en A en de balmiddelpuntgeometrie. De dunne verlengingen laten zien waar de lijn begint en eindigt op de stiplijnen. Het bandraakpunt R is daarvan afgeleid.
+
+Een volledige vergelijkbare aanloop via Neus, Kop en Nek is niet voor beide tafels volledig gemeten beschikbaar. Die wordt hier niet bijgetekend. Het vergelijkingsmodel van VIJF, dat één botsing bij West onderzoekt, wordt niet op deze Romp na meerdere banden toegepast.
+
+### Speciaal geval · nieuw laken
+
+**Klein · nieuw laken heeft Romp V = 43 op Oost.** Kruin bevestigt dat deze waarde als speciaal geval wordt behandeld. Ze vervangt de standaardmeting 45 van Klein ingespeeld niet.
+
+In dat profiel is Romp A = 19 nog een bewaarde referentie, zonder bevestigde meetstatus. Daarom toont dit onderdeel 43 als afzonderlijke meetnotitie; er komt geen extra getekende, zogenaamd gemeten Romp 43 → 19 bij.
+
+### Mister 100 · voorbereid, bron volgt
+
+Kruin levert de bedoelde passage uit **Mister 100 van Raymond Ceulemans** later aan. Er is hier nog geen inhoudelijke uitspraak aan Ceulemans toegeschreven.
+
+De aanvulling krijgt deze opbouw:
+
+1. De bedoelde passage, editie en paginaverwijzing vastleggen.
+2. Vaststellen welke lijn, nummering en afstoot de passage beschrijft.
+3. Die uitleg vergelijken met Kruins standaardmetingen **45/48**.
+4. Het speciale geval **nieuw laken 43** afzonderlijk bespreken.
+
+Bronnen van de huidige meetwaarden: de gedeelde Kruin-sheet, **Klein-Ingespeeld L62/M62**, **Raedthuys-Ingespeeld M62/O62**, en voor het speciale geval **v 0.1- nieuw laken J71**. De bevestigde metingen zijn ook opgeslagen in de gepubliceerde profielen.

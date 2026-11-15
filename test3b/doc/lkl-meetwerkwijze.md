@@ -138,6 +138,8 @@ H3 begint bij de probleemstelling: ik vergelijk de Romp bij Rood met mijn vertre
 
 ## H4 · Vergelijk Klein en Groot
 
+Ook voorbereid: **ACHT, Romp V 45 op Klein ingespeeld / 48 op Groot**. Nieuw laken 43 blijft een apart geval; de passage uit Mister 100 volgt van Kruin.
+
 VIJF: Kop A **19 op Klein ingespeeld en 15 op Groot**. Het aparte cursushoofdstuk toont de meetlijnen, vergelijkt de geometrie en onderscheidt fysieke aannemelijkheid van een bewezen oorzaak. [Onderbouwing en meetafspraken](vergelijk-klein-groot.md).
 
 ### Later — Via bal 2
