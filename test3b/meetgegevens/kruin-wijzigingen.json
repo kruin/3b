@@ -1,6 +1,6 @@
 {
   "sourceRevision": "5e59ca62ab00b395bdf511a101e15eac6d1ce0fba1106cc88efb57ed643a93e8",
-  "measurementRevision": "6798dbd09fb462ae9bfe0d15128fb24314b106349e59bff819e9836b97b0da6d",
+  "measurementRevision": "af0db7f79b00c741b35ed19da2437fdbd629b07c079bcc5eecfc9d9ecc8a447f",
   "changes": [
     {
       "profile": "klein-ingespeeld",
@@ -2837,6 +2837,14 @@
       "appValue": 20
     }
   ],
+  "activeReference": {
+    "repository": "kruin/3b-kruin-beheer",
+    "path": "Kruinconfig.sqlite3",
+    "gitBlobSha": "6345a0c518103237aa7803f840b7485227bdc6c6",
+    "sha256": "901655fa55ebafa39f6a89a1ab3a08b72e91f8389439681198f24adbf1241e5f",
+    "basis": "standaard"
+  },
+  "archivedSheetValues": "klein-vijf-sheet-6798dbd09fb4.json",
   "pending": [],
   "confirmations": {
     "VIJF klein ingespeeld": "V20 A38; R37 los bewaren",

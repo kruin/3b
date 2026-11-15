@@ -1,0 +1,1241 @@
+{
+  "measurementRevision": "6798dbd09fb462ae9bfe0d15128fb24314b106349e59bff819e9836b97b0da6d",
+  "tableProfile": "klein-ingespeeld",
+  "tracks": {
+    "VIJF": {
+      "beenA": {
+        "band": "oost",
+        "value": null,
+        "status": "calculated",
+        "source": "automatic"
+      },
+      "crossAngleDeg": 45.0,
+      "crossArrivalBand": "west",
+      "kopA": {
+        "band": "noord",
+        "measurement": true,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 19.0
+      },
+      "linePoints": {
+        "been": {
+          "from": {
+            "band": "west",
+            "value": null,
+            "status": "calculated",
+            "source": "automatic"
+          },
+          "to": {
+            "band": "oost",
+            "value": null,
+            "status": "calculated",
+            "source": "automatic"
+          }
+        },
+        "hiel": {
+          "from": {
+            "band": "oost",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "noord",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          }
+        },
+        "kop": {
+          "from": {
+            "band": "west",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "noord",
+            "measurement": true,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 19.0
+          }
+        },
+        "kruis": {
+          "from": {
+            "band": "zuid",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "west",
+            "value": 10.0,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "P43"
+            },
+            "confirmedBy": "Kruin",
+            "bandCorrection": "Kruin: Kruis VIJF naar West; eerdere Oost-koppeling vervalt."
+          }
+        },
+        "nek": {
+          "from": {
+            "band": "noord",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "oost",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          }
+        },
+        "neus": {
+          "from": {
+            "kind": "acquit",
+            "offset": 0,
+            "value": "S"
+          },
+          "to": {
+            "band": "west",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 50.0
+          }
+        },
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": 20,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "L43"
+            },
+            "confirmedBy": "Kruin"
+          },
+          "to": {
+            "band": "zuid",
+            "value": 38,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "O43"
+            },
+            "confirmedBy": "Kruin",
+            "note": "Kruin kiest A 38; sheetnotitie R 37 en A 40 afzonderlijk bewaard."
+          }
+        },
+        "teen": {
+          "from": {
+            "band": "zuid",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "west",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          }
+        },
+        "voet": {
+          "from": {
+            "band": "noord",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "zuid",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          }
+        }
+      },
+      "nekA": {
+        "band": "oost",
+        "source": "automatic",
+        "status": "calculated",
+        "value": null
+      },
+      "neusA": {
+        "band": "west",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 50.0
+      },
+      "rompA": {
+        "band": "zuid",
+        "value": 38,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "O43"
+        },
+        "confirmedBy": "Kruin",
+        "note": "Kruin kiest A 38; sheetnotitie R 37 en A 40 afzonderlijk bewaard."
+      },
+      "rompV": {
+        "band": "oost",
+        "value": 20,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "L43"
+        },
+        "confirmedBy": "Kruin"
+      },
+      "tableProfile": "klein-ingespeeld",
+      "retainedReferenceRevision": "5e59ca62ab00b395bdf511a101e15eac6d1ce0fba1106cc88efb57ed643a93e8",
+      "railContactMeasurements": {
+        "romp": {
+          "band": "zuid",
+          "value": 37,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true,
+          "measurementKind": "raakpunt",
+          "sourceRef": {
+            "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+            "tab": "Klein-Ingespeeld",
+            "cell": "N43"
+          },
+          "confirmedBy": "Kruin"
+        }
+      },
+      "kruisA": {
+        "band": "west",
+        "value": 10.0,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "P43"
+        },
+        "confirmedBy": "Kruin",
+        "bandCorrection": "Kruin: Kruis VIJF naar West; eerdere Oost-koppeling vervalt."
+      }
+    },
+    "VIJF+1": {
+      "beenA": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 10.0
+      },
+      "crossAngleDeg": 45.0,
+      "crossArrivalBand": "west",
+      "kopA": {
+        "band": "noord",
+        "measurement": true,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 17.0
+      },
+      "linePoints": {
+        "been": {
+          "from": {
+            "band": "west",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 10.0
+          }
+        },
+        "hiel": {
+          "from": {
+            "band": "oost",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "noord",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          }
+        },
+        "kop": {
+          "from": {
+            "band": "west",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "noord",
+            "measurement": true,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 17.0
+          }
+        },
+        "kruis": {
+          "from": {
+            "band": "zuid",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "west",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          }
+        },
+        "nek": {
+          "from": {
+            "band": "noord",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 35.0
+          }
+        },
+        "neus": {
+          "from": {
+            "kind": "acquit",
+            "offset": 1,
+            "value": "S"
+          },
+          "to": {
+            "band": "west",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 60.0
+          }
+        },
+        "romp": {
+          "from": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 23.0
+          },
+          "to": {
+            "band": "zuid",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 35.861
+          }
+        },
+        "teen": {
+          "from": {
+            "band": "zuid",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "west",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          }
+        },
+        "voet": {
+          "from": {
+            "band": "noord",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "zuid",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          }
+        }
+      },
+      "nekA": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 35.0
+      },
+      "neusA": {
+        "band": "west",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 60.0
+      },
+      "rompA": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 35.861
+      },
+      "rompV": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 23.0
+      },
+      "tableProfile": "klein-ingespeeld",
+      "retainedReferenceRevision": "5e59ca62ab00b395bdf511a101e15eac6d1ce0fba1106cc88efb57ed643a93e8"
+    },
+    "VIJF+2": {
+      "beenA": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 10.0
+      },
+      "crossAngleDeg": 45.0,
+      "crossArrivalBand": "west",
+      "kopA": {
+        "band": "noord",
+        "measurement": true,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 13.0
+      },
+      "linePoints": {
+        "been": {
+          "from": {
+            "band": "west",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 10.0
+          }
+        },
+        "hiel": {
+          "from": {
+            "band": "oost",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "noord",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          }
+        },
+        "kop": {
+          "from": {
+            "band": "west",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "noord",
+            "measurement": true,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 13.0
+          }
+        },
+        "kruis": {
+          "from": {
+            "band": "zuid",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "west",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          }
+        },
+        "nek": {
+          "from": {
+            "band": "noord",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 39.0
+          }
+        },
+        "neus": {
+          "from": {
+            "kind": "acquit",
+            "offset": 2,
+            "value": "S"
+          },
+          "to": {
+            "band": "west",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 70.0
+          }
+        },
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": 25,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "L45"
+            },
+            "confirmedBy": "Kruin"
+          },
+          "to": {
+            "band": "zuid",
+            "value": 35,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "O45"
+            },
+            "confirmedBy": "Kruin"
+          }
+        },
+        "teen": {
+          "from": {
+            "band": "zuid",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "west",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          }
+        },
+        "voet": {
+          "from": {
+            "band": "noord",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "zuid",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          }
+        }
+      },
+      "nekA": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 39.0
+      },
+      "neusA": {
+        "band": "west",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 70.0
+      },
+      "rompA": {
+        "band": "zuid",
+        "value": 35,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "O45"
+        },
+        "confirmedBy": "Kruin"
+      },
+      "rompV": {
+        "band": "oost",
+        "value": 25,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "L45"
+        },
+        "confirmedBy": "Kruin"
+      },
+      "tableProfile": "klein-ingespeeld",
+      "retainedReferenceRevision": "5e59ca62ab00b395bdf511a101e15eac6d1ce0fba1106cc88efb57ed643a93e8"
+    },
+    "VIJF+3": {
+      "beenA": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 10.0
+      },
+      "crossAngleDeg": 45.0,
+      "crossArrivalBand": "west",
+      "kopA": {
+        "band": "noord",
+        "measurement": true,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 11.0
+      },
+      "linePoints": {
+        "been": {
+          "from": {
+            "band": "west",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 10.0
+          }
+        },
+        "hiel": {
+          "from": {
+            "band": "oost",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "noord",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          }
+        },
+        "kop": {
+          "from": {
+            "band": "west",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "noord",
+            "measurement": true,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 11.0
+          }
+        },
+        "kruis": {
+          "from": {
+            "band": "zuid",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "west",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          }
+        },
+        "nek": {
+          "from": {
+            "band": "noord",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 42.0
+          }
+        },
+        "neus": {
+          "from": {
+            "kind": "acquit",
+            "offset": 3,
+            "value": "S"
+          },
+          "to": {
+            "band": "west",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 80.0
+          }
+        },
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": 33,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "L46"
+            },
+            "confirmedBy": "Kruin"
+          },
+          "to": {
+            "band": "zuid",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 31.583
+          }
+        },
+        "teen": {
+          "from": {
+            "band": "zuid",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "west",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          }
+        },
+        "voet": {
+          "from": {
+            "band": "noord",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "zuid",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          }
+        }
+      },
+      "nekA": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 42.0
+      },
+      "neusA": {
+        "band": "west",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 80.0
+      },
+      "rompA": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 31.583
+      },
+      "rompV": {
+        "band": "oost",
+        "value": 33,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "L46"
+        },
+        "confirmedBy": "Kruin"
+      },
+      "tableProfile": "klein-ingespeeld",
+      "retainedReferenceRevision": "5e59ca62ab00b395bdf511a101e15eac6d1ce0fba1106cc88efb57ed643a93e8"
+    },
+    "VIJF-1": {
+      "beenA": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 10.0
+      },
+      "crossAngleDeg": 45.0,
+      "crossArrivalBand": "west",
+      "kopA": {
+        "band": "noord",
+        "measurement": true,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 22.0
+      },
+      "linePoints": {
+        "been": {
+          "from": {
+            "band": "west",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 10.0
+          }
+        },
+        "hiel": {
+          "from": {
+            "band": "oost",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "noord",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          }
+        },
+        "kop": {
+          "from": {
+            "band": "west",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "noord",
+            "measurement": true,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 22.0
+          }
+        },
+        "kruis": {
+          "from": {
+            "band": "zuid",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "west",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          }
+        },
+        "nek": {
+          "from": {
+            "band": "noord",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 29.0
+          }
+        },
+        "neus": {
+          "from": {
+            "kind": "acquit",
+            "offset": -1,
+            "value": "S"
+          },
+          "to": {
+            "band": "west",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 40.0
+          }
+        },
+        "romp": {
+          "from": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 17.0
+          },
+          "to": {
+            "band": "zuid",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 40.14
+          }
+        },
+        "teen": {
+          "from": {
+            "band": "zuid",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "west",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          }
+        },
+        "voet": {
+          "from": {
+            "band": "noord",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "zuid",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          }
+        }
+      },
+      "nekA": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 29.0
+      },
+      "neusA": {
+        "band": "west",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 40.0
+      },
+      "rompA": {
+        "band": "zuid",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 40.14
+      },
+      "rompV": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 17.0
+      },
+      "tableProfile": "klein-ingespeeld",
+      "retainedReferenceRevision": "5e59ca62ab00b395bdf511a101e15eac6d1ce0fba1106cc88efb57ed643a93e8"
+    },
+    "VIJF-2": {
+      "beenA": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 10.0
+      },
+      "crossAngleDeg": 45.0,
+      "crossArrivalBand": "west",
+      "kopA": {
+        "band": "noord",
+        "measurement": true,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 25.0
+      },
+      "linePoints": {
+        "been": {
+          "from": {
+            "band": "west",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 10.0
+          }
+        },
+        "hiel": {
+          "from": {
+            "band": "oost",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "noord",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          }
+        },
+        "kop": {
+          "from": {
+            "band": "west",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "noord",
+            "measurement": true,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 25.0
+          }
+        },
+        "kruis": {
+          "from": {
+            "band": "zuid",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "west",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          }
+        },
+        "nek": {
+          "from": {
+            "band": "noord",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 25.0
+          }
+        },
+        "neus": {
+          "from": {
+            "kind": "acquit",
+            "offset": -2,
+            "value": "S"
+          },
+          "to": {
+            "band": "west",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 30.0
+          }
+        },
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": 5,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "L41"
+            },
+            "confirmedBy": "Kruin"
+          },
+          "to": {
+            "band": "west",
+            "value": 5,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "M41"
+            },
+            "confirmedBy": "Kruin",
+            "sheetPoint": {
+              "band": "west",
+              "value": 75,
+              "zero": "noord"
+            },
+            "numberingConversion": "80 - sheetValue"
+          }
+        },
+        "teen": {
+          "from": {
+            "band": "zuid",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "west",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          }
+        },
+        "voet": {
+          "from": {
+            "band": "noord",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "zuid",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          }
+        }
+      },
+      "nekA": {
+        "band": "oost",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 25.0
+      },
+      "neusA": {
+        "band": "west",
+        "measurement": false,
+        "source": "kruin_sqlite",
+        "status": "approved",
+        "value": 30.0
+      },
+      "rompA": {
+        "band": "west",
+        "value": 5,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "M41"
+        },
+        "confirmedBy": "Kruin",
+        "sheetPoint": {
+          "band": "west",
+          "value": 75,
+          "zero": "noord"
+        },
+        "numberingConversion": "80 - sheetValue"
+      },
+      "rompV": {
+        "band": "oost",
+        "value": 5,
+        "status": "approved",
+        "source": "kruin_sqlite",
+        "measurement": true,
+        "measurementKind": "stipwaarde",
+        "sourceRef": {
+          "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+          "tab": "Klein-Ingespeeld",
+          "cell": "L41"
+        },
+        "confirmedBy": "Kruin"
+      },
+      "tableProfile": "klein-ingespeeld",
+      "retainedReferenceRevision": "5e59ca62ab00b395bdf511a101e15eac6d1ce0fba1106cc88efb57ed643a93e8"
+    }
+  },
+  "note": "Voorgaande sheet/referentie-combinatie, bewaard voor bronvergelijking; test-Kruin bepaalt nu de actieve VIJF-reeks op Klein."
+}

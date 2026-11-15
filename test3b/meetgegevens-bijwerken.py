@@ -109,13 +109,21 @@ for profile in profiles.values():
    if pair.get('to'):track['kruisA']=copy.deepcopy(pair['to'])
    if pair.get('from'):track['kruisV']=copy.deepcopy(pair['from'])
    track['lineFiveStatus']='measured' if pair.get('to',{}).get('measurement') else 'existing_reference_or_estimate'
+# Kruin kiest de werkende test-Kruin-geometrie als actieve VIJF-referentie op Klein.
+# Dit is een bronkeuze, geen nieuwe meting en geen visuele verschuiving van ballen.
+active_reference=json.loads((out/'test-kruin-vijf-klein.json').read_text())
+for name,reference in active_reference['tracks'].items():
+ track=profiles['klein-ingespeeld']['tracks'][name]
+ for field,value in reference.items():track[field]=copy.deepcopy(value)
+ track['activeReference']={'kind':'test-kruin','sourceDbSha':active_reference['source']['gitBlobSha'],'geometryFile':'meetgegevens/test-kruin-vijf-klein.json'}
 k['tracks']['klein']=copy.deepcopy(profiles['klein-ingespeeld']['tracks']);k['tracks']['groot']=copy.deepcopy(profiles['groot-lkl']['tracks'])
 k['sourceNotes']={'bibliography':[{'author':'A. Duon','title':'Modern Biljarten','tableSize':'klein','pages':[27]}],'lineDefinitions':{'5':{'key':'kruis','name':'Lijn 5','appliesTo':['lkl','sixSeven'],'values':['V','A'],'arrivalBandCodes':{'L':'oost','K':'noord'},'arrivalBandOverrides':{'VIJF':'west'},'keepMeasurementsPerPattern':True,'shareTestedLineWithSixSeven':True}},'numbering':{'westRomp':{'sheetZero':'noord','appZero':'zuid','conversion':'80 - sheetValue','keepExtendedValues':True,'scope':'newly imported Romp A only'}},'notation':{'triangleDown':'R: raakpunt op de band; geen V/A-stipwaarde','V':'Vertrek van de lijn op de stiplijn','A':'Aankomst van de lijn op de stiplijn'},'missingValues':'Bestaande Kruinreferentie behouden waar geen nieuwe zekere meting is opgegeven; retainedReferenceRevision identificeert de oude basis.'}
 k['patternSettings']['felleAfstoot']={'labels':{'nl':'Felle afstoot'},'framework':['neus','romp'],'tracks':['VIER'],'table':'groot','rompArrival':20,'sheetRompArrival':60,'source':'Raedthuys-Ingespeeld!N35','incomplete':True}
-k['source']='kruin_spreadsheet_confirmed';k['measurementRevision']=hashlib.sha256(json.dumps({'profiles':profiles,'sourceNotes':k['sourceNotes']},sort_keys=True,ensure_ascii=False).encode()).hexdigest()
+k['sourceNotes']['activeVijfKleinReference']={'source':active_reference['source'],'selectedBy':active_reference['selectedBy'],'previousSheetValues':'meetgegevens/klein-vijf-sheet-6798dbd09fb4.json'}
+k['source']='kruin_sheet_with_test_kruin_vijf_reference';k['measurementRevision']=hashlib.sha256(json.dumps({'profiles':profiles,'sourceNotes':k['sourceNotes']},sort_keys=True,ensure_ascii=False).encode()).hexdigest()
 k['beheerRevision']=k['measurementRevision']
 (base/'kruinwaarden-generated-v208.js').write_text('window.THREEB_KRUIN_VALUES='+json.dumps(k,ensure_ascii=False,separators=(',',':'))+';\n')
-(out/'kruin-wijzigingen.json').write_text(json.dumps({'sourceRevision':old['beheerRevision'],'measurementRevision':k['measurementRevision'],'changes':changes,'westNumberingCorrections':west_normalizations,'pending':[],'confirmations':{'VIJF klein ingespeeld':'V20 A38; R37 los bewaren','VIJF Kruis':'A West 10; herstelt foutieve Oost-koppeling, ook in de overgenomen lijn van ZESZEVEN','ACHT-1 klein ingespeeld':'A22','ZES groot':'A28','ACHT groot':'V48','VIER groot':'LKL West 10 (sheet 70), Felle afstoot West 20 (sheet 60)','Duon':'Modern Biljarten, A. Duon, p.27; R15 op klein nieuw'}},ensure_ascii=False,indent=2)+'\n')
+(out/'kruin-wijzigingen.json').write_text(json.dumps({'sourceRevision':old['beheerRevision'],'measurementRevision':k['measurementRevision'],'changes':changes,'westNumberingCorrections':west_normalizations,'activeReference':active_reference['source'],'archivedSheetValues':'klein-vijf-sheet-6798dbd09fb4.json','pending':[],'confirmations':{'VIJF klein ingespeeld':'V20 A38; R37 los bewaren','VIJF Kruis':'A West 10; herstelt foutieve Oost-koppeling, ook in de overgenomen lijn van ZESZEVEN','ACHT-1 klein ingespeeld':'A22','ZES groot':'A28','ACHT groot':'V48','VIER groot':'LKL West 10 (sheet 70), Felle afstoot West 20 (sheet 60)','Duon':'Modern Biljarten, A. Duon, p.27; R15 op klein nieuw'}},ensure_ascii=False,indent=2)+'\n')
 print('Profielen:',list(profiles),'bevestigde V/A-updates:',len(changes),'revision',k['measurementRevision'][:12])
 print('West-Rompen genormaliseerd:',len(west_normalizations))
 for row in west_normalizations:print(row['profile'],row['track'],str(row['sheetValue'])+' -> West '+str(row['appValue']))

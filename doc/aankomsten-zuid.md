@@ -36,6 +36,12 @@ Kies een spoor met de knoppen direct bij het beeld of blader met Vorige en Volge
 
 Alleen sporen met een geldige Romp naar Zuid krijgen een detailbeeld. Bij een Romp naar een andere band is de betreffende knop niet beschikbaar en staat de reden bij de uitleg. Ontbreekt het aansluitende Kruis, dan wordt daarvan geen lijn of V verzonnen.
 
+## Actieve VIJF-referentie op Klein
+
+Voor VIJF · Klein-ingespeeld is de werkende **test-Kruin-database** de door Kruin gekozen referentie. Diezelfde VIJF-geometrie wordt gebruikt voor User en productie. Dit geldt voor de hele reeks, inclusief het aansluitende Kruis; de tekening verschuift geen ballen om overlap te verbergen.
+
+De voorafgaande sheet/referentie-combinatie is [apart bewaard](../meetgegevens/klein-vijf-sheet-6798dbd09fb4.json). De [actieve bron en gecontroleerde posities](../meetgegevens/test-kruin-vijf-klein.json) vermelden de database-revisie en de numerieke vergelijkingspunten. Dit zijn overgenomen referentiewaarden; ze worden niet als nieuwe metingen gemarkeerd. Andere patronen en tafelprofielen zijn niet gewijzigd.
+
 ## Herkomst
 
 De cursus leest de bestaande bronlijnen, balmaat, effectieve bandmiddelpuntlijn en stiplijnafstand. De zichtbare detailbeelden blijven op beide assen gelijk geschaald. **Gemeten**, **berekend** en **referentie** staan bij de eigen lijnwaarden.

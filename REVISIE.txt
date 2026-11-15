@@ -1,4 +1,4 @@
-De Waaier — productierelease v208-r108
+De Waaier — productierelease v208-r109
 15 november 2026
-App, cursus en meetgegevens uit geteste versie 0e12753573522d5392480a7c6f1663b8d931cd45.
-Productie-instellingen en telefoonlink afzonderlijk.
+VIJF op Klein gebruikt de werkende test-Kruin-geometrie uit bronbestand 6345a0c518103237aa7803f840b7485227bdc6c6.
+Posities en Kruis zijn numeriek tegen die bron gecontroleerd. Andere patronen en tafels zijn gelijk gebleven.
