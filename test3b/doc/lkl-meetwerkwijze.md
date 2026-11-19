@@ -4,6 +4,8 @@
 
 *Meetsysteem en cursus voor driebanden.*
 
+Nieuw in test: [Mijn spoor · mobiele invoer voor Kruin](mijn-spoor.md).
+
 Actuele zelfstandige onderdelen: [Lijnen · V, R en A en zelf meten](lijnen-vra.md), met R op Noord als mogelijke meetinvoer, en [Aankomsten op ZUID](aankomsten-zuid.md), met detailbeelden per spoor. De korte algemene werkwijze staat bij [Meetsysteem](meetsysteem.html).
 
 
@@ -22,7 +24,7 @@ zijn het perspectief van jou als speler, bijvoorbeeld: “Waar lig ik met bal 1?
 ## Les 1 — Introductie: De Waaier
 
 **De Waaier — meetsysteem en cursus voor driebanden.** Eerst kijk je vanuit
-één vast punt, daarna leer je één Spoor kennen. Parallel komt pas later.
+één vast punt. De nieuwe gefaseerde introductie laat W, W+1 en daarna P, P+1 zien met de werkelijke Neuslijnen van VIJF, ZES en VIJF+1. Groot is een afzonderlijke vervolgstap. De uitgebreide parallelles blijft later in de cursus.
 
 ### 1. De Waaier vanuit benedenacquit 0
 

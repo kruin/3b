@@ -1619,6 +1619,8 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
   }
   if(window.installThreeBSpoorScreen)window.installThreeBSpoorScreen({
     mobileTableView(){return {v:1,t:ui.tableMode,e:ui.editTable,s:scaleViewMode(),p:ui.playRange,k:selectedTrackKey(),d:ui.direction,f:ui.trackFamily,w:ui.parallelDisplay,r:!!ui.frameworkView,n:ui.parallelPartIndex};},
+    measurementSetup(){return copy(state.measurementSetup||null);},
+    saveMeasurementSetup(table){if(PRIVATE_OWNER)throw Error('Kruin gebruikt de referentie uit Config.');if(!['klein','groot'].includes(table))throw Error('Kies Klein of Groot.');state.measurementSetup={table,origin:'benedenacquit',value:0,version:1};save();},
     courseIntroGeometry(){const table=state.courseTable==='groot'?'groot':'klein';return {...C.tables[table],table};},
     tableTextSettings(){return tableTextPrefs();},
     neusArrivalLabel(value,track){return formatNeusArrivalLabel(value,track);},
