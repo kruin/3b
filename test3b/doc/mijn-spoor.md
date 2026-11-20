@@ -92,3 +92,43 @@ SQL-waarden, velden wijzigen, gedeeltelijke invoer, atomair bewaren, ongeldige
 invoer, herladen, conceptmigratie, ontbrekende/conflicterende waarden, onzekere
 GitHub-opslag en onveranderde actieve SQL-tabellen. GitHub-opslag wordt
 uitsluitend gesimuleerd; er zijn geen echte private databasewijzigingen.
+
+
+## Kruin: QR naar de U-cursus
+
+In het **Kruin-menu** staat **QR · U-cursus**. Voordat een database is
+geopend staat die knop bij **GitHub-werkbestand**. De QR en de klikbare afbeelding openen de U-cursus in een nieuw
+tabblad. Alleen cursusstart, actuele testversie en `owner=user` worden gedeeld;
+geen database, meetwaarden, tafel-view of token. Deze U-cursusstand gebruikt
+eigen browseropslag; QR openen op hetzelfde apparaat verandert de Kruin-werkstand niet.
+
+## Voorstel voor de U-route — nog niet omgebouwd
+
+De huidige eigen JSON-meetroute voor U is nog niet gebouwd. Het voorstel is:
+
+1. Tafel voorop. Kort de waaier en parallellen laten zien.
+2. VIJF als eerste spoornaam: één herkenbaar geheel op de tafel.
+3. Jouw VIJF op jouw tafel meten, lijn voor lijn; bekende berekeningen vullen
+   vanzelf aan. Kort: eigen gegevens blijven gescheiden van Kruins referentie.
+4. Bewaren: direct zichtbaar dat de eigen tafel behouden is. JSON-bestand en
+   herladen worden later uitgelegd; een lokaal concept kan ondertussen bestaan.
+5. ZUID — **Kijk!** Eerst de aankomstbal van jouw VIJF.
+6. VIJF+1 vanuit de gemeten basis berekenen en aan tafel controleren. Bewaren.
+   Eindigen op ZUID: VIJF en VIJF+1 als twee aankomstposities.
+7. +2, +3 enzovoort herhalen: de reeks aankomstballen groeit pas wanneer het
+   volgende spoor aan bod is geweest. De nieuwe bal valt op; oudere blijven
+   zichtbaar. Werkelijke schaal en balbreedte, zonder geforceerde tussenruimte.
+
+Begin op één tafelformaat. Vergelijk Groot/Klein later. Toon alleen de actuele
+stap en de benodigde bediening. Benoem afzonderlijk wat gemeten en wat
+berekend is. Voor +1 hoeft U niet het hele spoor opnieuw in te voeren: het
+systeem doet een voorstel op basis van VIJF en de beschikbare meetregels.
+Bij het bewaren moet helder blijven wat alleen op het apparaat staat en wat
+als eigen JSON-bestand veilig is meegenomen.
+
+ZUID wordt ook een zelfstandig herkenningspunt: **spoor → aankomst**, maar
+ook **positie op ZUID → spoornaam**. U hoeft daarvoor niet telkens de hele
+Romp te bekijken. Een balpositie kan de spoornaam tonen; het hele spoor is
+vervolgens desgewenst op te roepen. Bij aankomsten die qua balbreedte dicht
+bijeen liggen moet de app de mogelijke sporen tonen, zonder schijnzekerheid.
+Dit hoort bij het voorstel voor de nieuwe U-route; het is nog niet omgebouwd.

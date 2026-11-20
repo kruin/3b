@@ -1,9 +1,10 @@
 (() => {
   'use strict';
-  window.THREEB_TEST_ENVIRONMENT = Object.freeze({release:'v208-r15',storagePrefix:'3b:test3b:'});
+  const userCoursePrefix='3b:test3b:u-course:',userCourse=new URLSearchParams(location.search).get('uCourse')==='1'&&new URLSearchParams(location.hash.slice(1)).get('owner')==='user';
+  window.THREEB_TEST_ENVIRONMENT = Object.freeze({release:'v208-r15',storagePrefix:userCourse?userCoursePrefix:'3b:test3b:'});
   function isolated(native) {
     const prefix=window.THREEB_TEST_ENVIRONMENT.storagePrefix;
-    const keys=()=>Array.from({length:native.length},(_,i)=>native.key(i)).filter(k=>k&&k.startsWith(prefix));
+    const keys=()=>Array.from({length:native.length},(_,i)=>native.key(i)).filter(k=>k&&k.startsWith(prefix)&&(userCourse||!k.startsWith(userCoursePrefix)));
     return Object.freeze({
       get length(){return keys().length;},
       key(i){return keys()[i]?.slice(prefix.length)??null;},
