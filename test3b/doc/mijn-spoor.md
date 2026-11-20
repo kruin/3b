@@ -152,3 +152,7 @@ Cursuslinks behouden de afzonderlijke U-cursusopslag.
 ### U-instap v208-r118
 
 De eerste vijf introductieschermen en de eerste VIJF-les tonen tafel en lijnnaam. Uitleg staat dicht achter ‘Uitleg’ en blijft opvraagbaar. ‘Volgende’ staat centraal onder de tafel, op een vaste plek; doorklikken hoeft niet op de animatie te wachten. Terugredeneren blijft een zelfstandige visuele les; deze wijziging verwijdert die les niet.
+
+### W en P proberen (v208-r119)
+
+In het W-scherm kan U kiezen tussen VIJF, ZES en ZEVEN, met vertrek vanuit dezelfde 0. In het P-scherm kan U VIJF, VIJF+1 en VIJF+2 kiezen; de richting blijft gelijk en het vertrek verschuift. VIJF blijft als dunne referentielijn zichtbaar. Alle lijnen komen rechtstreeks uit de actieve cursusmeetbasis. Proberen is optioneel; Volgende blijft onmiddellijk beschikbaar.
