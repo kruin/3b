@@ -156,3 +156,7 @@ De eerste vijf introductieschermen en de eerste VIJF-les tonen tafel en lijnnaam
 ### W en P proberen (v208-r119)
 
 In het W-scherm kan U kiezen tussen VIJF, ZES en ZEVEN, met vertrek vanuit dezelfde 0. In het P-scherm kan U VIJF, VIJF+1 en VIJF+2 kiezen; de richting blijft gelijk en het vertrek verschuift. VIJF blijft als dunne referentielijn zichtbaar. Alle lijnen komen rechtstreeks uit de actieve cursusmeetbasis. Proberen is optioneel; Volgende blijft onmiddellijk beschikbaar.
+
+### Essentiële W/P-uitleg (v208-r120)
+
+De start kondigt W en daarna P aan. Per stap is één korte instructie zichtbaar; verdiepende uitleg blijft opvraagbaar. Bij W maken W → VIJF, W+1 → ZES en W+2 → ZEVEN de notatie zichtbaar bij de gekozen richting. Bij P zijn −1, 0, +1 en +2 beschikbaar; P−1 → VIJF−1 enzovoort. De live tabel gebruikt steeds de eigen cursuslijn uit de meetbasis; proberen blijft optioneel.
