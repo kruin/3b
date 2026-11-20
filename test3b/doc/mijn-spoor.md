@@ -159,4 +159,8 @@ In het W-scherm kan U kiezen tussen VIJF, ZES en ZEVEN, met vertrek vanuit dezel
 
 ### Essentiële W/P-uitleg (v208-r120)
 
-De start kondigt W en daarna P aan. Per stap is één korte instructie zichtbaar; verdiepende uitleg blijft opvraagbaar. Bij W maken W → VIJF, W+1 → ZES en W+2 → ZEVEN de notatie zichtbaar bij de gekozen richting. Bij P zijn −1, 0, +1 en +2 beschikbaar; P−1 → VIJF−1 enzovoort. De live tabel gebruikt steeds de eigen cursuslijn uit de meetbasis; proberen blijft optioneel.
+De start kondigt W en daarna P aan. Per stap is één korte instructie zichtbaar; verdiepende uitleg blijft opvraagbaar. Bij W verschijnen de spoornamen VIJF, ZES en ZEVEN bij de gekozen richting. Bij P zijn −1, 0, +1 en +2 beschikbaar; P−1 → VIJF−1 enzovoort. De live tabel gebruikt steeds de eigen cursuslijn uit de meetbasis; proberen blijft optioneel.
+
+### Eerst proberen (v208-r121)
+
+Bij W verschijnt Volgende nadat U ZES én ZEVEN heeft gekozen. Bij P geldt dat voor VIJF−1 én VIJF+1. De aanwijzing noemt de nog te proberen keuze; er is geen wachttijd. W gebruikt uitsluitend spoornamen. Terugkeren bewaart de keuzes binnen deze introductie; een nieuwe start of een andere tafel begint opnieuw.
