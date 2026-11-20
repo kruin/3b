@@ -1,80 +1,73 @@
-# Mijn spoor · 0.3 · test
+# Mijn spoor · 0.4 · test
 
-Mobiele invoertool in de app, voorlopig alleen voor Kruin en alleen LKL.
-Open **Mijn spoor** bij de tafel, of gebruik `?meten=lkl#owner=kruin`.
-Een geopend volledig Kruin-werkbestand is nodig. Productie is niet gewijzigd.
+Alleen Kruin, alleen LKL. Open **Mijn spoor** bij de tafel of via
+`?meten=lkl#owner=kruin`, met een volledig Kruin-werkbestand geopend.
 
-1. Kies Klein of Groot van de huidige werkdatabase. Begin bij VIJF. Andere sporen en parallellen staan onder **Later**.
-2. Kies in het hele spoor Neus, Kop, Nek, Romp, Kruis of Been; kies V, A of R, band en stipwaarde. De invoer begint bij Neus/West. Vorige/Volgende toont telkens één lijn; zo doorloop je heel VIJF zonder alles tegelijk op het scherm.
-3. Bewaar. Ook één losse waarneming is geldig. Decimalen mogen met een komma.
-4. Lees de bewaarstatus. Ga verder met een volgende meting of wissel lijn/soort.
+## Eén lijn tegelijk
 
-Concepten blijven per tafel, spoor, lijn en V/A/R op deze telefoon staan.
-Zij zijn nog geen opgeslagen databasewaarnemingen. Bij een fout blijft het
-concept beschikbaar. Browsergegevens verwijderen verwijdert ook lokale concepten.
+1. Kies Klein/Groot. Begin met VIJF; andere sporen staan onder **Later**.
+2. Eerst verschijnt **Neus**, met **V, R en A samen** op één formulier.
+3. De velden bevatten de opgeslagen waarden uit de geopende database.
+   Ontbrekende waarden blijven leeg. Het vaste vertrekpunt acquit S is leesbaar.
+4. Vul de gemeten wijzigingen in en kies **Bewaar lijnmetingen**.
+5. Met Vorige/Volgende ga je naar Kop, Nek, Romp, Kruis en Been.
 
-Elke bewaarde waarneming heeft een uniek ID, tijdstip, basis, tafel, spoor,
-lijn, soort, band, exacte numerieke waarde en optionele notitie. Zij wordt in
-`instellingen.lkl-meetlog-v1` van de volledige SQLite-werkdatabase toegevoegd.
-De overige instellingen en alle actieve lijnpunten blijven ongewijzigd.
-Een ID kan niet stilzwijgend voor een andere waarneming worden hergebruikt.
+Er zijn geen losse V/A/R-schermen meer. Alleen velden waarin je zelf invoert
+worden als waarneming bewaard; een getoonde databasewaarde wordt niet vanzelf
+een nieuwe meting. Decimalen mogen met een komma. Ook een gedeeltelijke
+lijnmeting mag. Het huidige LKL-Been eindigt vóór de volgende band; een A op
+die volgende band is geen verplichte meting.
 
-Bij een GitHub-werkbestand gebruikt bewaren de bestaande gecontroleerde
-schrijfprocedure. Alleen na bevestiging staat er **Op GitHub bevestigd**.
-Zonder GitHub-koppeling staat de waarneming uitsluitend in de lokale
-werkdatabase op dit apparaat; maak een databaseback-up via Beheer.
-Bij onzekere synchronisatie worden verdere logwijzigingen tegengehouden:
-controleer/heropen het werkbestand. Een concept kan dan nog niet als
-bevestigde GitHub-opslag worden aangemerkt.
+## Database, concepten en bewaarstatus
 
-Bij iedere lijn staan V, A en R tegelijk op de drie keuzeknoppen. Zij komen uit het geopende werkbestand en wisselen mee van Neus naar Kop enzovoort. Voor Kruin worden de V/A-punten rechtstreeks uit de geopende SQLite-database gelezen; R wordt alleen getoond als er een opgeslagen raakpunt is. Ontbrekende waarden blijven **niet opgeslagen**. Berekende waarden komen alleen apart bij het voorstel. Een databasewaarde die al als berekend is opgeslagen behoudt die aanduiding. Het eigen invoerveld blijft apart en wordt niet met referentiewaarden gevuld.
-Ontbrekende waarden, een verschil tussen opgeslagen R en V/A (inventarisgrens 0,5 stip) en een afwijkende laatste waarneming uit het meetlog krijgen per lijn een melding. Een verschil is een controle-/beslisvraag, geen automatische bronwijziging.
-Een voorwaardelijk V/R/A-voorstel gebruikt de huidige appgeometrie, maar
-wordt nooit als gemeten waarde opgeslagen. Geen geldig voorstel betekent
-niet dat een geldige losse waarneming verloren moet gaan.
+V/A komen rechtstreeks uit `lijnpunten` van de geopende SQLite-database.
+R wordt alleen getoond als er een opgeslagen raakpunt is, rechtstreeks of
+als contactmetadata bij de lijn. Er is geen automatische invulling met een
+berekende waarde. Eventuele berekeningen staan apart en zijn herkenbaar.
 
-De huidige tool verzamelt waarnemingen. Een toepassing/goedkeuring vanuit
-het log en een automatische openbare JSON-export zijn nog niet gebouwd.
-De huidige spoor-editor blijft apart. Ruwe metingen worden nooit vanzelf
-actieve of openbare spoorgegevens.
+Concepten blijven per lijn op deze telefoon bewaard. Ook eerdere concepten
+uit de oude invoer per V/A/R worden ingelezen. Browsergegevens wissen kan
+lokale concepten verwijderen; bewaar daarom de lijnmetingen.
 
-## Meetcontrole
+Alle ingevoerde waarden van één lijn worden in **één transactie** toegevoegd
+aan `instellingen.lkl-meetlog-v1`. Zij behouden ieder een uniek ID, tijdstip,
+basis, tafel, spoor, lijn, V/R/A, band, exacte waarde en notitie. De bestaande
+actieve lijnpunten worden niet overschreven. Toepassing vanuit het meetlog
+en automatische openbare JSON-export zijn nog niet gebouwd.
 
-Config → **LKL · meten en beslissen** inventariseert de geopende werkbasis,
-per tafel/patroon, met optioneel parallellen. Er is een directe knop naar
-Mijn spoor zonder berekende voorstellen in het invoerveld te zetten.
-Een ontbrekende meetvlag bewijst niet dat Kruin nooit heeft gemeten:
-bevestig de bron of meet opnieuw. Gekoppelde V-waarden en Nek mogen worden
-afgeleid. Het huidige Been eindigt vóór de volgende band; Been A wordt niet
-ten onrechte als ontbrekende meting gevraagd.
+Bij een gekoppeld GitHub-werkbestand gebruikt de gehele lijn één gecontroleerde
+GitHub-schrijfactie. Alleen na bevestiging staat er **Op GitHub bevestigd**.
+Zonder koppeling staat de lijnmeting uitsluitend in de lokale werkdatabase;
+maak desgewenst een databaseback-up via Beheer. Bij onzekere synchronisatie
+blijft de batch lokaal aanwezig en wordt blind opnieuw toevoegen voorkomen.
+Controleer of heropen dan het GitHub-werkbestand. De invoer blijft bewaard.
 
-De controle draait lokaal op het geopende werkbestand. Een uitgebreid
-extern auditbestand wordt niet openbaar gepubliceerd. Verschillen tussen
-een opgegeven R en V/A vragen ook controle van de meetprecisie; de grens
-0,5 stip is een inventarisgrens, geen bewijs dat een meting fysiek fout is.
+## Ontbrekende waarden en verschillen
 
-## Uitgangspunt en fasering
+Elke lijn toont wat niet is opgeslagen. Gekoppelde V-waarden en Nek hoeven
+niet allemaal apart te worden gemeten. Een opgeslagen R dat meer dan 0,5 stip
+van het uit V/A berekende contact verschilt, vraagt om controle van bron en
+meetprecisie. Dit is een inventarisgrens, geen bewijs van een fysieke fout.
+Een laatste waarneming in het meetlog die van de actieve databasewaarde
+verschilt, krijgt eveneens een melding. Geen van deze verschillen verandert
+automatisch een referentie.
 
-U kiest aan het begin van de Meetbasis eerst Klein/Groot voor de eigen tafel
-en bevestigt benedenacquit 0. Die keuze wordt afzonderlijk bewaard; zij maakt
-van de cursusreferentie geen eigen meting. Andere oorsprongen zijn nog niet
-ondersteund. Kruin vindt de huidige referentie bij Config.
-De introductie bouwt één tafel op: 0, W, W+1, P, P+1; de andere tafel is een
-afzonderlijke vervolgstap. Aankomsten op ZUID heeft Bekijken, Vergelijken en
-Uitleg, zodat niet alle controls en berekeningen tegelijk verschijnen.
+Config → **LKL · meten en beslissen** inventariseert de actuele werkbasis,
+per tafel/patroon en desgewenst parallellen. De knop naar Mijn spoor opent
+rechtstreeks de betreffende lijn. Een uitgebreid extern auditbestand wordt
+niet openbaar gepubliceerd.
 
 ## Later: U
 
-U leest de vrijgegeven Kruin-JSON en bewaart eigen tafelmetingen afzonderlijk
-in een eigen JSON. U schrijft niet in de Kruin-database. Deze versie biedt U
-nog geen Mijn spoor-knop. Database en JSON krijgen dezelfde begrippen en
-expliciete formaatversies. Een nieuwe Kruin-publicatie mag eigen waarden
-niet overschrijven.
+U leest vrijgegeven Kruin-JSON en bewaart eigen tafelmetingen in een eigen
+JSON. U schrijft nooit in de Kruin-database. De huidige tool blijft alleen
+voor Kruin; de U-cursus houdt haar eigen gefaseerde introductie.
 
 ## Verificatie
 
 `KRUIN_TEST_DB=/pad/naar/wegwerpkopie.sqlite3 node mijn-spoor-controle-v208.cjs`
-controleert mobiel staand/liggend en desktop: concepten, A/R los bewaren,
-herladen van SQLite, idempotentie, validatie, onderbroken opslag, alle
-bestaande SQL-tabellen/instellingen en een GitHub-simulatie. Deze controle
-schrijft nooit naar de echte private GitHub-database.
+controleert mobiel staand/liggend en desktop: V/R/A samen per lijn, exacte
+SQL-waarden, velden wijzigen, gedeeltelijke invoer, atomair bewaren, ongeldige
+invoer, herladen, conceptmigratie, ontbrekende/conflicterende waarden, onzekere
+GitHub-opslag en onveranderde actieve SQL-tabellen. GitHub-opslag wordt
+uitsluitend gesimuleerd; er zijn geen echte private databasewijzigingen.
