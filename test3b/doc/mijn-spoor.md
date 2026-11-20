@@ -1,11 +1,11 @@
-# Mijn spoor · 0.1 · test
+# Mijn spoor · 0.2 · test
 
 Mobiele invoertool in de app, voorlopig alleen voor Kruin en alleen LKL.
 Open **Mijn spoor** bij de tafel, of gebruik `?meten=lkl#owner=kruin`.
 Een geopend volledig Kruin-werkbestand is nodig. Productie is niet gewijzigd.
 
-1. Kies Klein of Groot van de huidige werkdatabase en het spoor.
-2. Kies Neus, Kop, Romp of Kruis; kies V, A of R, band en stipwaarde.
+1. Kies Klein of Groot van de huidige werkdatabase. Begin bij VIJF. Andere sporen en parallellen staan onder **Later**.
+2. Kies in het hele spoor Neus, Kop, Nek, Romp, Kruis of Been; kies V, A of R, band en stipwaarde. De invoer begint bij Neus/West. Vorige/Volgende toont telkens één lijn; zo doorloop je heel VIJF zonder alles tegelijk op het scherm.
 3. Bewaar. Ook één losse waarneming is geldig. Decimalen mogen met een komma.
 4. Lees de bewaarstatus. Ga verder met een volgende meting of wissel lijn/soort.
 
