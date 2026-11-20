@@ -148,3 +148,7 @@ Na het vijfde scherm gaat U direct naar VIJF, vanaf de Neus, zonder een
 inhoudsopgave ertussen. De eerste VIJF-weergave heeft één primaire vervolgknop;
 extra bediening blijft voor later. Ook de Cursus-knop hervat in deze U-beginstand de les, in plaats van meteen een onderdelenmenu te openen. De berekeningen en meetwaarden veranderen niet.
 Cursuslinks behouden de afzonderlijke U-cursusopslag.
+
+### U-instap v208-r118
+
+De eerste vijf introductieschermen en de eerste VIJF-les tonen tafel en lijnnaam. Uitleg staat dicht achter ‘Uitleg’ en blijft opvraagbaar. ‘Volgende’ staat centraal onder de tafel, op een vaste plek; doorklikken hoeft niet op de animatie te wachten. Terugredeneren blijft een zelfstandige visuele les; deze wijziging verwijdert die les niet.
