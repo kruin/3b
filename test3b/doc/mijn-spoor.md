@@ -1,22 +1,37 @@
-# Mijn spoor · 0.4 · test
+# Mijn spoor · 0.5 · test
 
 Alleen Kruin, alleen LKL. Open **Mijn spoor** bij de tafel of via
 `?meten=lkl#owner=kruin`, met een volledig Kruin-werkbestand geopend.
 
-## Eén lijn tegelijk
+## Tafel eerst, één lijn tegelijk
 
 1. Kies Klein/Groot. Begin met VIJF; andere sporen staan onder **Later**.
-2. Eerst verschijnt **Neus**, met **V, R en A samen** op één formulier.
-3. De velden bevatten de opgeslagen waarden uit de geopende database.
-   Ontbrekende waarden blijven leeg. Het vaste vertrekpunt acquit S is leesbaar.
-4. Vul de gemeten wijzigingen in en kies **Bewaar lijnmetingen**.
-5. Met Vorige/Volgende ga je naar Kop, Nek, Romp, Kruis en Been.
+2. De echte tafel en het hele spoor staan voorop. De huidige lijn is gemarkeerd.
+3. Open **Waarden van Neus aanpassen**. V, R en A staan samen; de tafel blijft
+   zichtbaar. Op desktop staan tafel en velden naast elkaar.
+4. Wijzig een waarde: **Mijn spoor** verandert direct. Ook eerdere wijzigingen
+   aan andere lijnen uit dezelfde meetreeks blijven in de voorvertoning.
+5. Kies **Kruin-spoor** om de huidige referentie te zien en **Mijn spoor** om
+   terug te keren. Schaal, gekozen lijn en alle invoer blijven behouden.
+6. **Tafel vergroten** sluit op mobiel de velden; de invoer blijft bewaard.
+7. Bewaar de lijnmetingen. Vorige/Volgende gaat naar Kop, Nek, Romp, Kruis en Been.
 
-Er zijn geen losse V/A/R-schermen meer. Alleen velden waarin je zelf invoert
-worden als waarneming bewaard; een getoonde databasewaarde wordt niet vanzelf
-een nieuwe meting. Decimalen mogen met een komma. Ook een gedeeltelijke
-lijnmeting mag. Het huidige LKL-Been eindigt vóór de volgende band; een A op
-die volgende band is geen verplichte meting.
+De tekening gebruikt de werkelijke appgeometrie, meetbasis en bestaande
+karkas-/Kruisberekening. Zij is een **berekende voorvertoning**, geen nieuwe
+meting. Bandballen hebben de werkelijke balbreedte. LKL stopt op de huidige
+uitloop van Been. Stipwaarden worden als projecties van lijnen getekend.
+
+Bij conflicterende V/A/R wordt geen schijnbaar geldig werkspoor getoond.
+Bij een losse lijnwaarneming die niet aan de vorige lijn aansluit stopt het
+verbonden spoor; de losse huidige lijn kan gestippeld worden getoond.
+Er wordt geen aansluitende lijn of uitloop verzonnen. De expliciete
+Kruin-weergave blijft beschikbaar als vergelijking. Deze voorvertoning
+wijzigt geen actieve lijnwaarden, hoofdtafel of databasepunten.
+
+Alleen velden waarin je zelf invoert worden als waarneming bewaard; een
+getoonde databasewaarde wordt niet vanzelf een nieuwe meting. Decimalen
+mogen met een komma. Ook een gedeeltelijke lijnmeting mag. Het huidige
+LKL-Been eindigt vóór de volgende band; een A daar is geen verplichte meting.
 
 ## Database, concepten en bewaarstatus
 
