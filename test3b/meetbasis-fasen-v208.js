@@ -6,7 +6,7 @@
     const ns='http://www.w3.org/2000/svg',completionKey='3b-meetbasis-fasen-v1';let step=0,legacy=null,fanTrack='ZES',parallelTrack='VIJF+1',baseTable=options.setup?.()?.table||'klein';
     const guided=options.owner==='user'&&new URLSearchParams(location.search).get('uCourse')==='1';
     const phases=[
-      {title:'Start bij acquit 0',text:'Het onderste acquit noemen we 0. Daar begint de Neus. De stippen liggen op de stiplijnen.',lines:[]},
+      {title:'Meten is weten',text:'Kruin speelde de sporen aan de biljarttafel en mat de lijnen. Eerst VIJF, ook de parallellen + en −, en andere sporen zoals ZES. Die metingen vormen de basis van deze cursus. Het onderste acquit noemen we 0. Gemeten en berekende waarden blijven onderscheiden; een berekende waarde is geen nieuwe meting.',lines:[]},
       {title:'De waaier: VIJF',text:'Dit is de Neus van spoor VIJF. De lijn vertrekt bij 0 en eindigt bij A op de stiplijn; het raakpunt R op de band volgt daaruit.',lines:[['VIJF','VIJF']]},
       {title:'De waaier: VIJF en ZES',text:'Het vertrekpunt blijft 0, de richting verandert. Het volgende hoofdspoor heet ZES.',lines:[['VIJF','VIJF'],['ZES','ZES']]},
       {title:'De parallel van VIJF',text:'Bij een parallel blijft de richting gelijk. We nemen VIJF als basis. P staat voor parallel.',lines:[['VIJF','VIJF']]},
@@ -48,10 +48,10 @@
     const triedFan=new Set(),triedParallel=new Set();
     const practiceReady=()=>!guided||(step!==2&&step!==4)||(step===2?['ZES','ZEVEN'].every(t=>triedFan.has(t)):['VIJF-1','VIJF+1'].every(t=>triedParallel.has(t)));
     const prompts=[
-      'Eerst W: de waaier. Probeer straks ZES en ZEVEN. Daarna P: probeer − en + bij VIJF.',
-      'W staat voor waaier. Dit is VIJF, vanuit 0.',
+      'Kruin begon aan de biljarttafel: VIJF, de parallellen + en −, daarna ZES. Je bekijkt zijn meetbasis. Eerst W, daarna P.',
+      'VIJF komt uit Kruins meetbasis. W is de waaier vanuit 0.',
       'Probeer ZES en ZEVEN: dezelfde 0, een andere richting.',
-      'P staat voor parallel. De lijn verschuift; de richting blijft gelijk.',
+      'Kruin onderzocht aan tafel ook de parallellen. P: de lijn verschuift, de richting blijft gelijk.',
       'Probeer −1 en +1: parallellen van VIJF.'
     ];
     const shownLines=()=>guided&&step===2?(fanTrack==='VIJF'?[['VIJF','VIJF']]:[['VIJF','VIJF'],[fanTrack,fanTrack]]):guided&&step===4?(parallelTrack==='VIJF'?[['VIJF','VIJF']]:[['VIJF','VIJF'],[parallelTrack,parallelTrack]]):phases[step].lines;

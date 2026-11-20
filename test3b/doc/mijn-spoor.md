@@ -164,3 +164,7 @@ De start kondigt W en daarna P aan. Per stap is één korte instructie zichtbaar
 ### Eerst proberen (v208-r121)
 
 Bij W verschijnt Volgende nadat U ZES én ZEVEN heeft gekozen. Bij P geldt dat voor VIJF−1 én VIJF+1. De aanwijzing noemt de nog te proberen keuze; er is geen wachttijd. W gebruikt uitsluitend spoornamen. Terugkeren bewaart de keuzes binnen deze introductie; een nieuwe start of een andere tafel begint opnieuw.
+
+### Meten is weten — aan de tafel (v208-r122)
+
+De cursus begint met Kruins werkwijze aan de echte biljarttafel: spelen, lijnen meten en controleren. VIJF, de parallellen +/− en andere hoofdsporen zoals ZES vormen de meetbasis die de app laat zien. Gemeten en berekende waarden blijven onderscheiden. De U-cursus geeft dit eerst als korte oorsprong bij de tafel; de praktische meetles voor de eigen tafel volgt later.
