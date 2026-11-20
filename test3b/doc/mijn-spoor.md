@@ -132,3 +132,19 @@ Romp te bekijken. Een balpositie kan de spoornaam tonen; het hele spoor is
 vervolgens desgewenst op te roepen. Bij aankomsten die qua balbreedte dicht
 bijeen liggen moet de app de mogelijke sporen tonen, zonder schijnzekerheid.
 Dit hoort bij het voorstel voor de nieuwe U-route; het is nog niet omgebouwd.
+
+
+## U-intro op test v208-r117
+
+Vijf korte schermen tonen achtereenvolgens 0, VIJF uit de waaier, VIJF/ZES,
+parallel VIJF en VIJF+1. De gecombineerde zesde overzichtsstap en de teller
+zijn verwijderd. W+1 wordt niet meer als spoornaam gebruikt; +1 verwijst
+uitsluitend naar P, bijvoorbeeld de parallel VIJF+1 van VIJF.
+
+De tafel toont de drie acquits op de lengteas zoals gedefinieerd door de
+appgeometrie en alle stippen/waarden op de vier stiplijnen. Tekengrootte wordt
+op pixels afgestemd, met ruimte rondom de tafel zodat waarden leesbaar zijn.
+Na het vijfde scherm gaat U direct naar VIJF, vanaf de Neus, zonder een
+inhoudsopgave ertussen. De eerste VIJF-weergave heeft één primaire vervolgknop;
+extra bediening blijft voor later. Ook de Cursus-knop hervat in deze U-beginstand de les, in plaats van meteen een onderdelenmenu te openen. De berekeningen en meetwaarden veranderen niet.
+Cursuslinks behouden de afzonderlijke U-cursusopslag.
