@@ -1,4 +1,4 @@
-# Mijn spoor · 0.5 · test
+# Mijn spoor · 0.6 · test
 
 Alleen Kruin, alleen LKL. Open **Mijn spoor** bij de tafel of via
 `?meten=lkl#owner=kruin`, met een volledig Kruin-werkbestand geopend.
@@ -28,7 +28,7 @@ Er wordt geen aansluitende lijn of uitloop verzonnen. De expliciete
 Kruin-weergave blijft beschikbaar als vergelijking. Deze voorvertoning
 wijzigt geen actieve lijnwaarden, hoofdtafel of databasepunten.
 
-Alleen velden waarin je zelf invoert worden als waarneming bewaard; een
+Automatisch ingevulde berekeningen worden niet als waarneming opgeslagen. Alleen velden waarin je zelf invoert worden als waarneming bewaard; een
 getoonde databasewaarde wordt niet vanzelf een nieuwe meting. Decimalen
 mogen met een komma. Ook een gedeeltelijke lijnmeting mag. Het huidige
 LKL-Been eindigt vóór de volgende band; een A daar is geen verplichte meting.
@@ -36,9 +36,15 @@ LKL-Been eindigt vóór de volgende band; een A daar is geen verplichte meting.
 ## Database, concepten en bewaarstatus
 
 V/A komen rechtstreeks uit `lijnpunten` van de geopende SQLite-database.
-R wordt alleen getoond als er een opgeslagen raakpunt is, rechtstreeks of
-als contactmetadata bij de lijn. Er is geen automatische invulling met een
-berekende waarde. Eventuele berekeningen staan apart en zijn herkenbaar.
+R uit de database blijft herkenbaar als opgeslagen raakpunt, rechtstreeks
+of als contactmetadata bij de lijn. Wat ontbreekt maar uit bekende lijnen
+berekend kan worden, wordt automatisch ingevuld: onder meer Kop V, Nek V/A,
+Kruis V/A en de berekenbare raakpunten. De velden krijgen **Berekend · niet
+gemeten** als herkomst. Zij volgen ook eerdere wijzigingen in Mijn spoor.
+Bij een opgeslagen R kan de ontbrekende V of A worden afgeleid wanneer er
+voldoende onafhankelijke gegevens zijn. Wat niet bepaald kan worden,
+blijft leeg; een ongemeten standaardwaarde wordt niet als berekening ingevuld.
+Bestaande databasewaarden en eigen invoer worden behouden.
 
 Concepten blijven per lijn op deze telefoon bewaard. Ook eerdere concepten
 uit de oude invoer per V/A/R worden ingelezen. Browsergegevens wissen kan
@@ -59,7 +65,7 @@ Controleer of heropen dan het GitHub-werkbestand. De invoer blijft bewaard.
 
 ## Ontbrekende waarden en verschillen
 
-Elke lijn toont wat niet is opgeslagen. Gekoppelde V-waarden en Nek hoeven
+Elke lijn meldt alleen wat nog niet bepaald kan worden; een berekend veld vraagt geen handmatige meting. Gekoppelde V-waarden en Nek hoeven
 niet allemaal apart te worden gemeten. Een opgeslagen R dat meer dan 0,5 stip
 van het uit V/A berekende contact verschilt, vraagt om controle van bron en
 meetprecisie. Dit is een inventarisgrens, geen bewijs van een fysieke fout.
