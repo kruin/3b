@@ -1,4 +1,4 @@
-# Mijn spoor · 0.2 · test
+# Mijn spoor · 0.3 · test
 
 Mobiele invoertool in de app, voorlopig alleen voor Kruin en alleen LKL.
 Open **Mijn spoor** bij de tafel, of gebruik `?meten=lkl#owner=kruin`.
@@ -27,7 +27,8 @@ Bij onzekere synchronisatie worden verdere logwijzigingen tegengehouden:
 controleer/heropen het werkbestand. Een concept kan dan nog niet als
 bevestigde GitHub-opslag worden aangemerkt.
 
-De referentie en het uit V/A berekende R worden herkenbaar getoond.
+Bij iedere lijn staan V, A en R tegelijk op de drie keuzeknoppen. Zij komen uit het geopende werkbestand en wisselen mee van Neus naar Kop enzovoort. Voor Kruin worden de V/A-punten rechtstreeks uit de geopende SQLite-database gelezen; R wordt alleen getoond als er een opgeslagen raakpunt is. Ontbrekende waarden blijven **niet opgeslagen**. Berekende waarden komen alleen apart bij het voorstel. Een databasewaarde die al als berekend is opgeslagen behoudt die aanduiding. Het eigen invoerveld blijft apart en wordt niet met referentiewaarden gevuld.
+Ontbrekende waarden, een verschil tussen opgeslagen R en V/A (inventarisgrens 0,5 stip) en een afwijkende laatste waarneming uit het meetlog krijgen per lijn een melding. Een verschil is een controle-/beslisvraag, geen automatische bronwijziging.
 Een voorwaardelijk V/R/A-voorstel gebruikt de huidige appgeometrie, maar
 wordt nooit als gemeten waarde opgeslagen. Geen geldig voorstel betekent
 niet dat een geldige losse waarneming verloren moet gaan.
