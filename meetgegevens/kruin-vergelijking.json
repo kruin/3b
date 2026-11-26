@@ -1,0 +1,5459 @@
+{
+  "status": "Ter overleg; geen actieve meetwaarden overschreven",
+  "databaseRevision": "5e59ca62ab00b395bdf511a101e15eac6d1ce0fba1106cc88efb57ed643a93e8",
+  "databaseSource": "Kruinconfig.sqlite3",
+  "records": [
+    {
+      "tab": "klein-ingespeeld",
+      "pattern": "VIER-2",
+      "sourceRow": 33,
+      "sheetCells": {
+        "A33": "- ●●",
+        "D33": "-2",
+        "E33": "2",
+        "F33": "2●⇐●-2",
+        "G33": "?",
+        "L33": "0",
+        "M33": "70"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 20.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 36.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 7.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 0.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 74.278,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-ingespeeld",
+      "pattern": "VIER-1",
+      "sourceRow": 34,
+      "sheetCells": {
+        "A34": "- ●",
+        "D34": "-1",
+        "E34": "3",
+        "F34": "3●⇐●-1",
+        "G34": "?",
+        "L34": "2",
+        "M34": "70"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 30.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 32.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 3.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 72.14,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-ingespeeld",
+      "pattern": "VIER",
+      "sourceRow": 35,
+      "sheetCells": {
+        "A35": "VIER",
+        "D35": "0",
+        "E35": "4",
+        "F35": "4●⇐●0",
+        "G35": "?",
+        "L35": "5",
+        "M35": "70"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 40.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 28.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "west",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-ingespeeld",
+      "pattern": "VIER+1",
+      "sourceRow": 36,
+      "sheetCells": {
+        "A36": "+●",
+        "D36": "1",
+        "E36": "5",
+        "F36": "5●⇐●1",
+        "G36": "?",
+        "L36": "10",
+        "M36": "75"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 50.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 25.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 14.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 7.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 67.861,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-ingespeeld",
+      "pattern": "VIER+2",
+      "sourceRow": 37,
+      "sheetCells": {
+        "A37": "+●●",
+        "D37": "2",
+        "E37": "6",
+        "F37": "6●⇐●2",
+        "G37": "?",
+        "L37": "13",
+        "M37": "80"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 60.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 20.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 17.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 65.722,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-ingespeeld",
+      "pattern": "VIER+3",
+      "sourceRow": 38,
+      "sheetCells": {
+        "A38": "+●●●",
+        "D38": "3",
+        "E38": "7",
+        "F38": "7●⇐●3",
+        "G38": "?",
+        "L38": "20",
+        "M38": "85",
+        "O38": "45"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 70.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 17.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 19.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 12.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 63.583,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-ingespeeld",
+      "pattern": "VIER+4",
+      "sourceRow": 39,
+      "sheetCells": {
+        "A39": "+●●●●",
+        "D39": "4",
+        "E39": "8",
+        "F39": "8●⇐●4",
+        "G39": "?",
+        "L39": "30",
+        "M39": "35"
+      },
+      "currentDatabase": {
+        "neusA": {},
+        "kopA": {},
+        "nekA": {},
+        "rompV": {},
+        "rompA": {},
+        "beenA": {}
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-ingespeeld",
+      "pattern": "VIJF-2",
+      "sourceRow": 41,
+      "sheetCells": {
+        "F41": "3",
+        "G41": "2,25",
+        "L41": "5",
+        "M41": "75"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 30.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 25.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 25.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 13.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 42.278,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-ingespeeld",
+      "pattern": "VIJF-1",
+      "sourceRow": 42,
+      "sheetCells": {
+        "A42": "- ●",
+        "F42": "4",
+        "G42": "●3"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 40.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 22.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 29.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 17.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 40.14,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-ingespeeld",
+      "pattern": "VIJF",
+      "sourceRow": 43,
+      "sheetCells": {
+        "A43": "VIJF\nA-MARGE = 5\nA-LIJNEN:parallel",
+        "F43": "5●⇐●-1",
+        "L43": "20?15?",
+        "N43": "⇓37",
+        "O43": "40",
+        "P43": "--⇒●L 10"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 50.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 19.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 20.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 38.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-ingespeeld",
+      "pattern": "VIJF+1",
+      "sourceRow": 44,
+      "sheetCells": {
+        "A44": "+●",
+        "F44": "6",
+        "G44": "●5"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 60.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 17.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 35.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 23.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 35.861,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-ingespeeld",
+      "pattern": "VIJF+2",
+      "sourceRow": 45,
+      "sheetCells": {
+        "A45": "+●●",
+        "F45": "7",
+        "G45": "●6",
+        "L45": "25",
+        "O45": "35"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 70.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 13.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 39.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 27.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 33.722,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-ingespeeld",
+      "pattern": "VIJF+3",
+      "sourceRow": 46,
+      "sheetCells": {
+        "A46": "+●●●",
+        "F46": "8",
+        "G46": "●7",
+        "L46": "33",
+        "O46": "32?"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 80.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 11.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 42.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 30.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 31.583,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-ingespeeld",
+      "pattern": "ZES-2",
+      "sourceRow": 48,
+      "sheetCells": {
+        "A48": "- ●●",
+        "F48": "4",
+        "G48": "●3",
+        "L48": "22",
+        "O48": "32"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 40.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 16.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 35.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 23.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 34.278,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-ingespeeld",
+      "pattern": "ZES-1",
+      "sourceRow": 49,
+      "sheetCells": {
+        "A49": "- ●",
+        "C49": "(●'◡'●)",
+        "F49": "5",
+        "G49": "●4",
+        "L49": "28",
+        "O49": "31"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 50.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 12.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 39.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 27.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 32.14,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-ingespeeld",
+      "pattern": "ZES",
+      "sourceRow": 51,
+      "sheetCells": {
+        "A51": "NULLIJN ZES\nA-MARGE = 2,5\nA-LIJNEN:parallel",
+        "F51": "6",
+        "G51": "●5",
+        "L51": "30",
+        "O51": "30",
+        "P51": "--⇒●L 5"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 60.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 30.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 30.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-ingespeeld",
+      "pattern": "ZES+1",
+      "sourceRow": 52,
+      "sheetCells": {
+        "A52": "+●",
+        "C52": "(●'◡'●)",
+        "F52": "7",
+        "G52": "●6",
+        "L52": "32",
+        "O52": "28"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 70.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 7.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 45.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 33.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 27.861,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-ingespeeld",
+      "pattern": "ZES+2",
+      "sourceRow": 53,
+      "sheetCells": {
+        "A53": "+●●",
+        "F53": "8",
+        "G53": "●7",
+        "L53": "35",
+        "O53": "27"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 80.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 5.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 49.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 37.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 25.722,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-ingespeeld",
+      "pattern": "ZEVEN-2",
+      "sourceRow": 55,
+      "sheetCells": {
+        "A55": "- ●●",
+        "F55": "5",
+        "G55": "?"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 50.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 26.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 24.278,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-ingespeeld",
+      "pattern": "ZEVEN-1",
+      "sourceRow": 56,
+      "sheetCells": {
+        "A56": "- ●",
+        "F56": "6",
+        "G56": "?"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 60.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 31.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 22.14,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-ingespeeld",
+      "pattern": "ZEVEN",
+      "sourceRow": 57,
+      "sheetCells": {
+        "A57": "ZEVEN",
+        "F57": "7",
+        "G57": "?",
+        "P57": "--⇒\n● L0"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 70.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 5.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 35.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 23.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-ingespeeld",
+      "pattern": "ZEVEN+1",
+      "sourceRow": 58,
+      "sheetCells": {
+        "A58": "+●",
+        "F58": "8",
+        "G58": "?"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 80.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 39.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 17.861,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-ingespeeld",
+      "pattern": "ACHT-2",
+      "sourceRow": 60,
+      "sheetCells": {
+        "A60": "- ●●",
+        "F60": "6",
+        "G60": "?",
+        "H60": "(●'◡'●)",
+        "L60": "37",
+        "M60": "23"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 60.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 35.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 23.278,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-ingespeeld",
+      "pattern": "ACHT-1",
+      "sourceRow": 61,
+      "sheetCells": {
+        "A61": "- ●",
+        "F61": "7",
+        "G61": "?",
+        "L61": "40",
+        "M61": "21/22"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 70.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 39.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 21.14,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-ingespeeld",
+      "pattern": "ACHT",
+      "sourceRow": 62,
+      "sheetCells": {
+        "A62": "ACHT",
+        "F62": "8",
+        "G62": "?",
+        "L62": "45",
+        "M62": "20",
+        "P62": "--⇒\n● K0"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 80.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 2.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 43.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 19.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-nieuw",
+      "pattern": "VIER-2",
+      "sourceRow": 43,
+      "sheetCells": {
+        "A43": "●● - P",
+        "D43": "2●⇐●-2",
+        "E43": "?",
+        "G43": "40?",
+        "H43": "0",
+        "J43": "0 ●",
+        "K43": "L●60",
+        "L43": "⇐",
+        "M43": "●65?",
+        "O43": "L●77"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 20.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 36.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 7.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 0.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 74.278,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-nieuw",
+      "pattern": "VIER-1",
+      "sourceRow": 44,
+      "sheetCells": {
+        "A44": "● - P",
+        "D44": "3●⇐●-1",
+        "E44": "?",
+        "G44": "37?",
+        "H44": "2",
+        "J44": "5●",
+        "K44": "L●70",
+        "L44": "⇐",
+        "M44": "K●55"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 30.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 32.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 3.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 72.14,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-nieuw",
+      "pattern": "VIER",
+      "sourceRow": 45,
+      "sheetCells": {
+        "A45": "VIER",
+        "C45": "L●0⇒P⇒●4",
+        "D45": "4●⇐●0",
+        "E45": "?",
+        "G45": "25",
+        "H45": "9",
+        "K45": "L●80",
+        "L45": "⇐",
+        "M45": "K●45"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 40.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 28.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "west",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-nieuw",
+      "pattern": "VIER+1",
+      "sourceRow": 46,
+      "sheetCells": {
+        "A46": "P + ●",
+        "D46": "5●⇐●1",
+        "E46": "?",
+        "G46": "18",
+        "H46": "12",
+        "J46": "13●",
+        "K46": "L●90",
+        "L46": "⇐",
+        "M46": "K●39",
+        "O46": "L●60"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 50.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 25.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 14.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 7.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 67.861,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-nieuw",
+      "pattern": "VIER+2",
+      "sourceRow": 47,
+      "sheetCells": {
+        "A47": "P + ●●",
+        "D47": "6●⇐●2",
+        "E47": "?",
+        "K47": "L ●85",
+        "L47": "Hoek\n⇓⇐",
+        "M47": "K●45"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 60.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 20.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 17.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 65.722,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-nieuw",
+      "pattern": "VIER+3",
+      "sourceRow": 48,
+      "sheetCells": {
+        "A48": "P + ●●●",
+        "D48": "7●⇐●3",
+        "E48": "?",
+        "J48": "20",
+        "K48": "-",
+        "M48": "K●40"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 70.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 17.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 19.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 12.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 63.583,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-nieuw",
+      "pattern": "VIER+4",
+      "sourceRow": 49,
+      "sheetCells": {
+        "A49": "P + ●●●●",
+        "D49": "8●⇐●4",
+        "E49": "?",
+        "J49": "29",
+        "K49": "-",
+        "M49": "K●34"
+      },
+      "currentDatabase": {
+        "neusA": {},
+        "kopA": {},
+        "nekA": {},
+        "rompV": {},
+        "rompA": {},
+        "beenA": {}
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-nieuw",
+      "pattern": "VIJF-2",
+      "sourceRow": 51,
+      "sheetCells": {
+        "A51": "●● - P",
+        "D51": "3",
+        "E51": "2,25",
+        "G51": "27",
+        "J51": "10●",
+        "K51": "L●85",
+        "L51": "L⇐2"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 30.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 25.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 25.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 13.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 42.278,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-nieuw",
+      "pattern": "VIJF-1",
+      "sourceRow": 52,
+      "sheetCells": {
+        "A52": "● - P",
+        "D52": "4",
+        "E52": "●3",
+        "G52": "22",
+        "H52": "10",
+        "J52": "15●",
+        "K52": "L●80",
+        "L52": "38 ⇓ kort"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 40.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 22.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 29.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 17.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 40.14,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-nieuw",
+      "pattern": "VIJF",
+      "sourceRow": 53,
+      "sheetCells": {
+        "A53": "VIJF",
+        "B53": "A-MARGE = 5\nA-LIJNEN:parallel\nCeul p 100",
+        "C53": "P⇒●5",
+        "D53": "5",
+        "E53": "●4",
+        "G53": "16",
+        "H53": "18",
+        "I53": "27",
+        "J53": "20●",
+        "K53": "L●90-85?",
+        "L53": "35 ⇓",
+        "M53": "K●38",
+        "N53": "--⇒●L 10",
+        "O53": "L●85\nK●42"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 50.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 19.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 20.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 38.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-nieuw",
+      "pattern": "VIJF+1",
+      "sourceRow": 54,
+      "sheetCells": {
+        "A54": "P + ●",
+        "D54": "6",
+        "E54": "●5",
+        "G54": "12",
+        "H54": "20",
+        "I54": "31",
+        "J54": "25●",
+        "K54": "-",
+        "L54": "32 ⇓",
+        "M54": "K●35"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 60.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 17.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 35.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 23.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 35.861,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-nieuw",
+      "pattern": "VIJF+2",
+      "sourceRow": 55,
+      "sheetCells": {
+        "A55": "P + ●●",
+        "D55": "7",
+        "E55": "●6",
+        "G55": "7",
+        "H55": "25",
+        "I55": "36",
+        "J55": "30●",
+        "K55": "-",
+        "L55": "28 ⇓",
+        "M55": "K●30"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 70.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 13.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 39.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 27.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 33.722,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-nieuw",
+      "pattern": "VIJF+3",
+      "sourceRow": 56,
+      "sheetCells": {
+        "A56": "P + ●●●",
+        "D56": "8",
+        "E56": "●7",
+        "G56": "2",
+        "H56": "30",
+        "J56": "35●",
+        "K56": "-",
+        "L56": "23 ⇓",
+        "M56": "K●25"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 80.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 11.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 42.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 30.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 31.583,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-nieuw",
+      "pattern": "ZES-2",
+      "sourceRow": 58,
+      "sheetCells": {
+        "A58": "●● - P",
+        "D58": "4",
+        "E58": "●3",
+        "G58": "⇨14",
+        "H58": "15⇨",
+        "I58": "⇨26",
+        "J58": "K●22?",
+        "L58": "30 ⇓",
+        "M58": "K●31",
+        "O58": "K●30"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 40.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 16.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 35.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 23.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 34.278,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-nieuw",
+      "pattern": "ZES-1",
+      "sourceRow": 59,
+      "sheetCells": {
+        "A59": "● - P",
+        "C59": "(●'◡'●)",
+        "D59": "5",
+        "E59": "●4",
+        "G59": "⇨12",
+        "H59": "13⇨",
+        "I59": "⇨30",
+        "J59": "K●26",
+        "L59": "30 ⇓",
+        "M59": "K●32"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 50.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 12.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 39.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 27.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 32.14,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-nieuw",
+      "pattern": "ZES",
+      "sourceRow": 60,
+      "sheetCells": {
+        "A60": "ZES\nA-MARGE = 2,5\nA-LIJNEN:parallel\nCeul p 101",
+        "D60": "6",
+        "E60": "●5",
+        "G60": "15\nDuon 27",
+        "I60": "36",
+        "J60": "30●",
+        "K60": "-",
+        "L60": "26⇓",
+        "M60": "K●28",
+        "N60": "--⇒●L 5"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 60.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 30.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 30.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-nieuw",
+      "pattern": "ZES+1",
+      "sourceRow": 61,
+      "sheetCells": {
+        "A61": "P + ●",
+        "C61": "(●'◡'●)",
+        "D61": "7",
+        "E61": "●6",
+        "G61": "13",
+        "I61": "40",
+        "J61": "32●",
+        "K61": "-",
+        "L61": "23⇓",
+        "M61": "K●25"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 70.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 7.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 45.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 33.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 27.861,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-nieuw",
+      "pattern": "ZES+2",
+      "sourceRow": 62,
+      "sheetCells": {
+        "A62": "P + ●●",
+        "D62": "8",
+        "E62": "●7",
+        "G62": "10",
+        "I62": "44",
+        "J62": "35●",
+        "K62": "-",
+        "L62": "20 ⇓",
+        "M62": "K●22"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 80.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 5.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 49.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 37.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 25.722,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-nieuw",
+      "pattern": "ZEVEN-2",
+      "sourceRow": 64,
+      "sheetCells": {
+        "A64": "●● - P",
+        "D64": "5",
+        "E64": "?",
+        "H64": "25",
+        "J64": "30●",
+        "K64": "●",
+        "L64": "29 ⇓"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 50.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 26.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 24.278,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-nieuw",
+      "pattern": "ZEVEN-1",
+      "sourceRow": 65,
+      "sheetCells": {
+        "A65": "● - P",
+        "D65": "6",
+        "E65": "?",
+        "H65": "27",
+        "J65": "32●",
+        "K65": "28●",
+        "L65": "26 ⇓"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 60.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 31.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 22.14,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-nieuw",
+      "pattern": "ZEVEN",
+      "sourceRow": 66,
+      "sheetCells": {
+        "A66": "ZEVEN",
+        "D66": "7",
+        "E66": "?",
+        "H66": "30",
+        "J66": "35●",
+        "K66": "23●",
+        "L66": "22 ⇓",
+        "N66": "--⇒\n● L0",
+        "O66": "K●22"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 70.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 5.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 35.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 23.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-nieuw",
+      "pattern": "ZEVEN+1",
+      "sourceRow": 67,
+      "sheetCells": {
+        "A67": "P + ●",
+        "D67": "8",
+        "E67": "?",
+        "H67": "35",
+        "J67": "40●",
+        "K67": "21●",
+        "L67": "19⇓",
+        "O67": "K●20"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 80.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 39.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 17.861,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-nieuw",
+      "pattern": "ACHT-2",
+      "sourceRow": 69,
+      "sheetCells": {
+        "A69": "●● - P",
+        "D69": "6",
+        "E69": "?",
+        "F69": "(●'◡'●)",
+        "H69": "29",
+        "I69": "35",
+        "J69": "34●",
+        "K69": "25●",
+        "L69": "22⇓"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 60.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 35.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 23.278,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-nieuw",
+      "pattern": "ACHT-1",
+      "sourceRow": 70,
+      "sheetCells": {
+        "A70": "● - P",
+        "D70": "7",
+        "E70": "?",
+        "H70": "36",
+        "I70": "38",
+        "J70": "40+●",
+        "K70": "22●",
+        "L70": "20⇓"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 70.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 39.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 21.14,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "klein-nieuw",
+      "pattern": "ACHT",
+      "sourceRow": 71,
+      "sheetCells": {
+        "A71": "ACHT",
+        "D71": "8",
+        "E71": "?",
+        "H71": "37",
+        "J71": "43●",
+        "K71": "19●",
+        "L71": "17⇓",
+        "N71": "--⇒\n● K0",
+        "O71": "K●19"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 80.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 2.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 43.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 19.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "raedthuys",
+      "pattern": "VIER-2",
+      "sourceRow": 33,
+      "sheetCells": {
+        "A33": "- ●●"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 20.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "raedthuys",
+      "pattern": "VIER-1",
+      "sourceRow": 34,
+      "sheetCells": {
+        "A34": "- ●"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 30.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "raedthuys",
+      "pattern": "VIER",
+      "sourceRow": 35,
+      "sheetCells": {
+        "A35": "VIER",
+        "C35": "rol/fel",
+        "N35": "70/60"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 40.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 25.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "raedthuys",
+      "pattern": "VIER+1",
+      "sourceRow": 36,
+      "sheetCells": {
+        "A36": "+●"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 50.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "raedthuys",
+      "pattern": "VIER+2",
+      "sourceRow": 37,
+      "sheetCells": {
+        "A37": "+●●"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 60.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "raedthuys",
+      "pattern": "VIER+3",
+      "sourceRow": 38,
+      "sheetCells": {
+        "A38": "+●●●"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 70.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "raedthuys",
+      "pattern": "VIER+4",
+      "sourceRow": 39,
+      "sheetCells": {
+        "A39": "+●●●●"
+      },
+      "currentDatabase": {
+        "neusA": {},
+        "kopA": {},
+        "nekA": {},
+        "rompV": {},
+        "rompA": {},
+        "beenA": {}
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "raedthuys",
+      "pattern": "VIJF-2",
+      "sourceRow": 41,
+      "sheetCells": {
+        "A41": "- ●●"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 30.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 16.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 20.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 12.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 41.197,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "raedthuys",
+      "pattern": "VIJF-1",
+      "sourceRow": 42,
+      "sheetCells": {
+        "A42": "- ●",
+        "N42": "hoek"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 40.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 24.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 16.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 38.599,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "raedthuys",
+      "pattern": "VIJF",
+      "sourceRow": 43,
+      "sheetCells": {
+        "A43": "VIJF\nA-MARGE = 5\nA-LIJNEN:parallel",
+        "M43": "20",
+        "N43": "36"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 50.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 15.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 20.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 20.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 36.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "raedthuys",
+      "pattern": "VIJF+1",
+      "sourceRow": 44,
+      "sheetCells": {
+        "A44": "+●"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 60.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 6.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 32.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 24.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 33.401,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "raedthuys",
+      "pattern": "VIJF+2",
+      "sourceRow": 45,
+      "sheetCells": {
+        "A45": "+●●"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 70.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 5.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 36.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 28.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 30.803,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "raedthuys",
+      "pattern": "VIJF+3",
+      "sourceRow": 46,
+      "sheetCells": {
+        "A46": "+●●●"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 80.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 5.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 41.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 33.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 28.204,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "raedthuys",
+      "pattern": "ZES-2",
+      "sourceRow": 48,
+      "sheetCells": {
+        "A48": "- ●●"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 40.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 11.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 30.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 21.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 33.197,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "raedthuys",
+      "pattern": "ZES-1",
+      "sourceRow": 49,
+      "sheetCells": {
+        "A49": "- ●"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 50.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 5.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 35.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 26.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 30.599,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "raedthuys",
+      "pattern": "ZES",
+      "sourceRow": 51,
+      "sheetCells": {
+        "A51": "NULLIJN ZES\nA-MARGE = 2,5\nA-LIJNEN:parallel",
+        "M51": "30",
+        "N51": "27/28"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 60.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 30.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 30.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 28.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "raedthuys",
+      "pattern": "ZES+1",
+      "sourceRow": 52,
+      "sheetCells": {
+        "A52": "+●"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 70.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 4.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 43.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 34.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 25.401,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "raedthuys",
+      "pattern": "ZES+2",
+      "sourceRow": 53,
+      "sheetCells": {
+        "A53": "+●●"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 80.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 4.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 48.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 39.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 22.803,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "raedthuys",
+      "pattern": "ZEVEN-2",
+      "sourceRow": 55,
+      "sheetCells": {
+        "A55": "- ●●"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 50.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 27.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 27.197,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "raedthuys",
+      "pattern": "ZEVEN-1",
+      "sourceRow": 56,
+      "sheetCells": {
+        "A56": "- ●"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 60.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 32.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 24.599,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "raedthuys",
+      "pattern": "ZEVEN",
+      "sourceRow": 57,
+      "sheetCells": {
+        "A57": "ZEVEN",
+        "M57": "37",
+        "N57": "22"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 70.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 37.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 22.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "raedthuys",
+      "pattern": "ZEVEN+1",
+      "sourceRow": 58,
+      "sheetCells": {
+        "A58": "+●"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 80.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 42.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 19.401,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "raedthuys",
+      "pattern": "ACHT-2",
+      "sourceRow": 60,
+      "sheetCells": {
+        "A60": "- ●●"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 60.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 39.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 23.197,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "raedthuys",
+      "pattern": "ACHT-1",
+      "sourceRow": 61,
+      "sheetCells": {
+        "A61": "- ●"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 70.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 44.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 20.599,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "raedthuys",
+      "pattern": "ACHT",
+      "sourceRow": 62,
+      "sheetCells": {
+        "A62": "ACHT",
+        "M62": "48/50",
+        "O62": "18"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 80.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 48.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 18.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "groot",
+      "pattern": "VIER-2",
+      "sourceRow": 14,
+      "sheetCells": {
+        "A14": "●● - P",
+        "B14": "⇢⇢⇢⇢⇢⇢",
+        "D14": "-2",
+        "E14": "2",
+        "F14": "2●⇐●-2",
+        "G14": "?"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 20.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "groot",
+      "pattern": "VIER-1",
+      "sourceRow": 15,
+      "sheetCells": {
+        "A15": "● - P",
+        "B15": "&&&&&&",
+        "D15": "-1",
+        "E15": "3",
+        "F15": "3●⇐●-1",
+        "G15": "?"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 30.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "groot",
+      "pattern": "VIER",
+      "sourceRow": 16,
+      "sheetCells": {
+        "A16": "NULLIJN VIER",
+        "B16": "&&&&&&",
+        "D16": "0",
+        "E16": "4",
+        "F16": "4●⇐●0",
+        "G16": "?"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 40.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 25.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "groot",
+      "pattern": "VIER+1",
+      "sourceRow": 17,
+      "sheetCells": {
+        "A17": "P + ●",
+        "B17": "&&&&L ● 60&&",
+        "D17": "1",
+        "E17": "5",
+        "F17": "5●⇐●1",
+        "G17": "?",
+        "M17": "L ● 60"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 50.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "groot",
+      "pattern": "VIER+2",
+      "sourceRow": 18,
+      "sheetCells": {
+        "A18": "P + ●●",
+        "B18": "&&&&&&",
+        "D18": "2",
+        "E18": "6",
+        "F18": "6●⇐●2",
+        "G18": "?"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 60.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "groot",
+      "pattern": "VIER+3",
+      "sourceRow": 19,
+      "sheetCells": {
+        "A19": "P + ●●●",
+        "B19": "&&&&&&",
+        "D19": "3",
+        "E19": "7",
+        "F19": "7●⇐●3",
+        "G19": "?"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 70.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "groot",
+      "pattern": "VIER+4",
+      "sourceRow": 20,
+      "sheetCells": {
+        "A20": "P + ●●●●",
+        "B20": "&&&&&&",
+        "D20": "4",
+        "E20": "8",
+        "F20": "8●⇐●4",
+        "G20": "?"
+      },
+      "currentDatabase": {
+        "neusA": {},
+        "kopA": {},
+        "nekA": {},
+        "rompV": {},
+        "rompA": {},
+        "beenA": {}
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "groot",
+      "pattern": "VIJF-2",
+      "sourceRow": 22,
+      "sheetCells": {
+        "A22": "●● - P",
+        "F22": "3",
+        "G22": "2,25"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 30.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 16.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 20.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 12.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 41.197,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "groot",
+      "pattern": "VIJF-1",
+      "sourceRow": 23,
+      "sheetCells": {
+        "A23": "● - P",
+        "F23": "4",
+        "G23": "●3"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 40.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 24.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 16.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 38.599,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "groot",
+      "pattern": "VIJF",
+      "sourceRow": 24,
+      "sheetCells": {
+        "A24": "NULLIJN VIJF\nA-MARGE = 5\nA-LIJNEN:parallel",
+        "F24": "5●⇐●-1",
+        "G24": "#VALUE!",
+        "M24": "L ● 80",
+        "P24": "--⇒●L 10"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 50.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 15.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 20.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 20.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 36.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "groot",
+      "pattern": "VIJF+1",
+      "sourceRow": 25,
+      "sheetCells": {
+        "A25": "P + ●",
+        "F25": "6",
+        "G25": "●5"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 60.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 6.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 32.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 24.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 33.401,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "groot",
+      "pattern": "VIJF+2",
+      "sourceRow": 26,
+      "sheetCells": {
+        "A26": "P + ●●",
+        "F26": "7",
+        "G26": "●6"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 70.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 5.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 36.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 28.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 30.803,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "groot",
+      "pattern": "VIJF+3",
+      "sourceRow": 27,
+      "sheetCells": {
+        "A27": "P + ●●●",
+        "F27": "8",
+        "G27": "●7"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 80.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 5.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 41.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 33.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 28.204,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "groot",
+      "pattern": "ZES-2",
+      "sourceRow": 29,
+      "sheetCells": {
+        "A29": "●● - P",
+        "F29": "4",
+        "G29": "●3",
+        "M29": "K ● 30"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 40.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 11.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 30.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 21.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 33.197,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "groot",
+      "pattern": "ZES-1",
+      "sourceRow": 30,
+      "sheetCells": {
+        "A30": "● - P",
+        "C30": "(●'◡'●)",
+        "F30": "5",
+        "G30": "●4"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 50.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 5.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 35.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 26.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 30.599,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "groot",
+      "pattern": "ZES",
+      "sourceRow": 32,
+      "sheetCells": {
+        "A32": "NULLIJN ZES\nA-MARGE = 2,5\nA-LIJNEN:parallel",
+        "F32": "6",
+        "G32": "●5",
+        "P32": "--⇒●L 5"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 60.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 30.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 30.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 28.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "groot",
+      "pattern": "ZES+1",
+      "sourceRow": 33,
+      "sheetCells": {
+        "A33": "P + ●",
+        "C33": "(●'◡'●)",
+        "F33": "7",
+        "G33": "●6"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 70.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 4.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 43.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 34.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 25.401,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "groot",
+      "pattern": "ZES+2",
+      "sourceRow": 34,
+      "sheetCells": {
+        "A34": "P + ●●",
+        "F34": "8",
+        "G34": "●7"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 80.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": 4.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        },
+        "nekA": {
+          "band": "oost",
+          "value": 48.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 39.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 22.803,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "groot",
+      "pattern": "ZEVEN-2",
+      "sourceRow": 36,
+      "sheetCells": {
+        "A36": "●● - P",
+        "F36": "5",
+        "G36": "?"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 50.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 27.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 27.197,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "groot",
+      "pattern": "ZEVEN-1",
+      "sourceRow": 37,
+      "sheetCells": {
+        "A37": "● - P",
+        "F37": "6",
+        "G37": "?"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 60.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 32.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 24.599,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "groot",
+      "pattern": "ZEVEN",
+      "sourceRow": 38,
+      "sheetCells": {
+        "A38": "NULLIJN ZEVEN",
+        "F38": "7",
+        "G38": "?",
+        "M38": "K ● 22",
+        "P38": "--⇒\n● L0"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 70.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 37.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 22.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "groot",
+      "pattern": "ZEVEN+1",
+      "sourceRow": 39,
+      "sheetCells": {
+        "A39": "P + ●",
+        "F39": "8",
+        "G39": "?",
+        "M39": "K ● 20"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 80.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 42.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 19.401,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "groot",
+      "pattern": "ACHT-2",
+      "sourceRow": 41,
+      "sheetCells": {
+        "A41": "●● - P",
+        "F41": "6",
+        "G41": "?",
+        "H41": "(●'◡'●)"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 60.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 39.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 23.197,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "groot",
+      "pattern": "ACHT-1",
+      "sourceRow": 42,
+      "sheetCells": {
+        "A42": "● - P",
+        "F42": "7",
+        "G42": "?"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 70.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 44.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 20.599,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    },
+    {
+      "tab": "groot",
+      "pattern": "ACHT",
+      "sourceRow": 43,
+      "sheetCells": {
+        "A43": "NULLIJN ACHT",
+        "F43": "8",
+        "G43": "?",
+        "P43": "--⇒\n● K0"
+      },
+      "currentDatabase": {
+        "neusA": {
+          "band": "west",
+          "value": 80.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "kopA": {
+          "band": "noord",
+          "value": null,
+          "status": "approved",
+          "source": "automatic"
+        },
+        "nekA": {
+          "band": "oost",
+          "value": null,
+          "status": "calculated",
+          "source": "automatic"
+        },
+        "rompV": {
+          "band": "oost",
+          "value": 48.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "rompA": {
+          "band": "zuid",
+          "value": 18.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        },
+        "beenA": {
+          "band": "oost",
+          "value": 10.0,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "mappingStatus": "Kolombetekenis en onzekere notaties nog te bevestigen"
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "source": {
+    "repository": "kruin/3b",
+    "commit": "ee166092d06293ca2c189508dd6814747d74c2d7",
+    "measurementFile": "kruinwaarden-generated-v208.js",
+    "geometry": "app-v208.js · lesson1Data(VIJF)",
+    "note": "Kop A is gemeten; Kop V en de balmiddelpunten zijn uit de bestaande applicatiegeometrie afgeleid."
+  },
+  "examples": {
+    "klein": {
+      "label": "Klein",
+      "pattern": "VIJF",
+      "geometry": {
+        "labels": {
+          "en": "Small",
+          "nl": "Klein"
+        },
+        "widthCm": 115,
+        "heightCm": 230,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "incoming": {
+        "name": "Neus",
+        "from": {
+          "x": 57.5,
+          "y": 172.5
+        },
+        "to": {
+          "x": 3,
+          "y": 102.34141791044776
+        },
+        "arrival": {
+          "band": "west",
+          "value": 50,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "outgoing": {
+        "name": "Kop",
+        "from": {
+          "x": 3,
+          "y": 102.34141791044776
+        },
+        "to": {
+          "x": 48.855111588076255,
+          "y": 3
+        },
+        "departure": {
+          "band": "west",
+          "value": 34.983768999999995,
+          "status": "calculated",
+          "source": "automatic",
+          "calculationBasis": "karkas_contact",
+          "userAdjusted": false,
+          "measurement": false
+        },
+        "arrival": {
+          "band": "noord",
+          "value": 19,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        }
+      }
+    },
+    "groot": {
+      "label": "Groot",
+      "pattern": "VIJF",
+      "geometry": {
+        "labels": {
+          "en": "Large",
+          "nl": "Groot"
+        },
+        "widthCm": 142,
+        "heightCm": 284,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "incoming": {
+        "name": "Neus",
+        "from": {
+          "x": 71,
+          "y": 213
+        },
+        "to": {
+          "x": 2.9999999999999982,
+          "y": 123.03726708074534
+        },
+        "arrival": {
+          "band": "west",
+          "value": 50,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": false
+        }
+      },
+      "outgoing": {
+        "name": "Kop",
+        "from": {
+          "x": 2.9999999999999982,
+          "y": 123.03726708074534
+        },
+        "to": {
+          "x": 48.51076696647843,
+          "y": 3.0000000000000018
+        },
+        "departure": {
+          "band": "west",
+          "value": 36.05444,
+          "status": "calculated",
+          "source": "automatic",
+          "calculationBasis": "karkas_contact",
+          "userAdjusted": false,
+          "measurement": false
+        },
+        "arrival": {
+          "band": "noord",
+          "value": 15,
+          "status": "approved",
+          "source": "kruin_sqlite",
+          "measurement": true
+        }
+      }
+    }
+  }
+}
