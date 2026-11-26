@@ -185,3 +185,7 @@ NEGEN/HALF NEGEN/P−1/P−2 en alle gedeelde aansluitballen worden apart
 gecontroleerd voor klein/groot en west/oost. De gewone regressietests
 blijven aanwezig. Een echte browserlayouttest kon in deze werkomgeving
 niet worden uitgevoerd doordat Chromium niet beschikbaar is.
+
+## Kop A · vervolgafspraak 26 november 2026
+
+Kop A tijdens de stoot snel én precies registreren is een probleem voor speler en meetsysteem. Toon VIJF zonder en met de bestaande Kop A (Klein 19) om het ontbrekende tussenstuk te verklaren. Geen fictieve Kop tekenen als deze waarde ontbreekt. Later: profielmal, verkorte vierbander en **Bandstoten**. De bewaarde botsing-concepttekst blijft onbewerkt.

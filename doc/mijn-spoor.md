@@ -184,3 +184,13 @@ In het centrale bedieningspaneel, bij Cursus en Namen, staat ook een eigen knop 
 ### Versies en reservekopieën (v208-r126)
 
 U werkt alleen op productie. User-JSON bevat de volledige appversie, datum/tijd, tafel, richting, spoor en een controlecode. Een JSON uit een nieuwere app wordt geweigerd. Een oudere versie, andere meetbasis of oudere meetgegevens wordt expliciet gemeld vóór terugladen. Vóór terugladen of basiswissel bewaart de app automatisch een benoemde lokale reservekopie, te downloaden via Mijn tafel → Reservekopieën. Browseropslag is geen gedownload bestand. SQLite-bewaring archiveert eveneens de vorige werkstand lokaal; downloads krijgen datum, tijd, tafel, spoor en versie in de naam.
+
+## In de cursus meten · v208-r127
+
+Cursus bestaat uit lessen; Uitleg uit H-hoofdstukken. Editor en instellingen staan apart. Cursus start opnieuw bij Waaier en Parallel; Verder met mijn les bewaart de voortgang.
+
+Na de lijnverkenning van VIJF: Neus A invoeren → Kop A invoeren → Romp V en A invoeren → de aankomst aan de echte tafel controleren → JSON bewaren. Iedere lijn opent het bestaande Spoorscherm. Gedeeltelijke User-metingen blijven concept totdat de eigen basis compleet is. Kruins voorbeeld telt niet als eigen meting. Daarna volgen VIJF+1 en VIJF−1 en groeit de eigen aankomstreeks op Zuid. ZES heeft een eigen cursus.
+
+Kop A is niet Noord R: het is de doorsnijding van de verlengde aankomstlijn met de stiplijn. Zonder eigen Kopmeting blijft deze tussenlijn onbekend. Profielmal: uitleg volgt. Verkorte vierbander: toepassing later.
+
+Kop A: tijdens de stoot kan de speler niet snel genoeg goed in de Kop-lijn kijken om A nauwkeurig te registreren. Daardoor heeft ook het meetsysteem geen betrouwbare Kop A. Alleen Neus en Romp vullen die ontbrekende meting niet aan. Een schatting is geen meting. De profielmal moet hierbij helpen; de werkwijze volgt nog. Meten later laat de cursus doorgaan zonder een meting als voltooid aan te merken.

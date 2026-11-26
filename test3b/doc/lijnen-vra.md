@@ -1,6 +1,6 @@
 # Lijnen · V, R en A
 
-Dit is een zelfstandig onderdeel in iedere patrooncursus, vóór H1. De voorbeelden lezen de **eigen waarden van het gekozen patroon en de gekozen meetbasis**.
+Dit is H5 in Uitleg. De praktische meetstappen horen bij de Cursus. De voorbeelden lezen de **eigen waarden van het gekozen patroon en de gekozen meetbasis**.
 
 [Open bij VIJF](https://kruin.github.io/3b/?cursus=les&les=13&leerspoor=VIJF#owner=user) · [ZES](https://kruin.github.io/3b/?cursus=les&les=13&leerspoor=ZES#owner=user) · [ZEVEN](https://kruin.github.io/3b/?cursus=les&les=13&leerspoor=ZEVEN#owner=user) · [ACHT](https://kruin.github.io/3b/?cursus=les&les=13&leerspoor=ACHT#owner=user) · [VIER](https://kruin.github.io/3b/?cursus=les&les=13&leerspoor=VIER#owner=user).
 
@@ -54,3 +54,21 @@ Als voor het gekozen patroon nog geen Kop naar Noord beschikbaar is, tekent de c
 ## Kort Meetsysteem
 
 Meetsysteem bevat de algemene meetvolgorde en verwijst naar dit onderdeel en de patrooncursussen. Specifieke meetwaarden, correctievoorbeelden en tafelvergelijkingen staan in de eigen cursussen.
+
+## Kop A: het meetprobleem
+
+De bal raakt Noord bij R. Kop A ligt op de stiplijn achter die band: bepaal waar de verlengde aankomende Kop-lijn die stiplijn snijdt. R als A invoeren geeft een verkeerde lijn. Neus en Romp alleen bepalen de tussenliggende Kop niet; een ideale spiegeling is geen meting van de werkelijke afslag.
+
+In de cursus meet U daarom Kop A na Neus A en vóór Romp V/A. Kop V en R berekent de app. Een betrouwbare lijnverlenging is nodig; de werkwijze met de profielmal volgt. Ook bij de verkorte vierbander is Kop A onmisbaar; die toepassing komt later.
+
+Kop A: tijdens de stoot kan de speler niet snel genoeg goed in de Kop-lijn kijken om A nauwkeurig te registreren. Daardoor heeft ook het meetsysteem geen betrouwbare Kop A. Alleen Neus en Romp vullen die ontbrekende meting niet aan. Een schatting is geen meting. De profielmal moet hierbij helpen; de werkwijze volgt nog. Meten later laat de cursus doorgaan zonder een meting als voltooid aan te merken.
+
+## VIJF zonder en met Kop A · fysieke betekenis
+
+Klein ingespeeld: Neus A 50, Romp V 20 → A 38. Zonder Kop A kent het systeem de bandbal op West en die op Oost. Het weet niet waar de bal daartussen Noord bereikte. De vergelijking tekent daarom uitsluitend de bekende Neus en Romp; geen verzonnen Kop of Nek.
+
+Met Kruins gemeten Kop A 19 ligt de Kop-lijn vast tussen de bekende West-bandbal en A op de noordelijke stiplijn. De bandbal op Noord en de aansluitende Nek naar de bekende Oost-bandbal zijn dan te berekenen. De gelijke Neus en Romp blijven zichtbaar. Dit is een reconstructie uit meetankers, geen voorspelling van een nieuwe afstoot.
+
+Fysiek: de richting vóór West bepaalt de richting erna niet via een ideale spiegeling. Effect, tempo en rollen of schuiven doen ertoe. Om Kop A zonder meting te voorspellen zou het systeem de werkelijke botsingsrespons op West en het verdere verloop moeten kennen. Dat model heeft het niet. Romp waarnemen registreert het latere verloop; het registreert niet alsnog het gemiste tussenstuk.
+
+Later bij dit onderwerp: **Bandstoten**. Nog uitwerken, samen met de meetaanpak en de profielmal.

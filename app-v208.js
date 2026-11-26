@@ -231,8 +231,8 @@
   function tableFilePayload(){window.ThreeBVersionSafety?.touch(state);return{appVersion:window.THREEB_RELEASE?.version,appChannel:window.THREEB_RELEASE?.channel,createdAt:new Date().toISOString(),context:window.ThreeBVersionSafety?.context(state),format:"3B-tafel",version:1,appRelease:Number(window.THREEB_START_CONFIG.publicRelease||window.THREEB_START_CONFIG.release),tableName:state.tableName||"",basis:copy(state.basis),state:copy({...state,history:{undo:[],redo:[]},basis:undefined})};}
   async function downloadTableFile(){
     const button=$("downloadTableFile");button.disabled=true;
-    try{const payload=tableFilePayload(),format="json",bytes=await window.ThreeBFiles.encode(payload,format);download(window.ThreeBFiles.filename(payload,format),bytes,"application/octet-stream");$("tableFileStatus").textContent="Je tafel is gedownload. Bewaar het bestand om later verder te gaan.";}
-    catch(error){$("tableFileStatus").textContent=error.message;}finally{button.disabled=false;}
+    try{const payload=tableFilePayload(),format="json",bytes=await window.ThreeBFiles.encode(payload,format);const name=window.ThreeBFiles.filename(payload,format);download(name,bytes,"application/octet-stream");$("tableFileStatus").textContent="Download aangeboden: "+name+". Bewaar het bestand om later verder te gaan.";return {ok:true,name};}
+    catch(error){$("tableFileStatus").textContent=error.message;return {ok:false,error:error.message};}finally{button.disabled=false;}
   }
   async function importTableFile(event){
     if(window.ThreeBDatabaseWorkspace?.required){$("tableFileStatus").textContent="Kruin werkt op SQLite. Gebruik Open werkdatabase.";return;}
@@ -1453,7 +1453,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
   // Isolated measurement preview: existing skeleton solver, no save/render/state writes.
   function measurementPreviewRoute(table,input,changes){
     let route=copy(input);const requested={},groups={},g={...C.tables[table],inset:bandCenterLineInsetCm(),startAcquitOffset:0},radius=C.ballDiameterMm/20;
-    for(const c of changes){if(!['neus','kop','nek','romp','kruis','been'].includes(c.line)||!['V','A','R'].includes(c.kind)||!bands.includes(c.point?.band)||!Number.isFinite(c.point.value)||c.point.value<0||c.point.value>(['west','oost'].includes(c.point.band)?80:40))throw Error('Ongeldige lijnwaarde voor de voorvertoning.');(groups[c.line]??={})[c.kind]=copy(c.point);}
+    for(const c of changes){if(!['neus','kop','nek','romp','kruis','been'].includes(c.line)||!['V','A','R'].includes(c.kind)||!bands.includes(c.point?.band)||!Number.isFinite(c.point.value)||c.kind==='R'&&(c.point.value<0||c.point.value>(['west','oost'].includes(c.point.band)?80:40)))throw Error('Ongeldige lijnwaarde voor de voorvertoning.');(groups[c.line]??={})[c.kind]=copy(c.point);}
     const edited=p=>({...copy(p),status:'edited',source:'user',userAdjusted:true,measurement:false});
     for(const line of ['neus','kop','nek','romp','kruis','been']){const c=groups[line];if(!c)continue;route=calculateSkeletonRoute(table,route);const pair=route[line];if(!pair)throw Error('Deze lijn is nog niet bepaald.');let V=c.V||pair.from,A=c.A||pair.to;if(c.V&&pair.from?.kind==='acquit')throw Error('Het benedenacquit blijft het vaste vertrekpunt.');
       if(c.R){if(c.A&&!c.V&&V?.kind!=='acquit'){const r=c.R,ball={west:{x:g.inset,y:g.heightCm*(1-r.value/80)},oost:{x:g.widthCm-g.inset,y:g.heightCm*r.value/80},noord:{x:g.widthCm*r.value/40,y:g.inset},zuid:{x:g.widthCm*(1-r.value/40),y:g.heightCm-g.inset}}[r.band];V=SpoorGeometry.departureFromBall(ball,A,V.band,g);}else if(!c.A){const start=V?.kind==='acquit'?canonicalPoint(point(V,table),table):c.V?SpoorGeometry.point(V,g):canonicalPoint(bandBall(pair.from,pair.to,table,radius),table);A=SpoorGeometry.arrivalFromBall(start,c.R,g);if(V?.kind!=='acquit'&&!c.V)V=SpoorGeometry.departureFromBall(start,A,V.band,g);}
@@ -1668,7 +1668,10 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
 
     enterPractice(){ui.explanationOpen=false;selectedBall=null;document.body.classList.remove("first-course-focus","awaiting-table-start");finishTableStart();forceFreshTableView();save();render();closeTableMenu();},
 
-    prepareLklCourse(){ui.editTable=courseTable();ui.tableMode=courseTable();ui.playRange='lkl';ui.pattern='VIJF';ui.trackFamily='parallel';ui.lineOneMode='basis';ui.parallelOffset=0;save();render();},
+    prepareLklCourse(track='VIJF'){if(!/^(VIER|VIJF|ZES|ZEVEN|ACHT)([+-]\d+)?$/.test(track))throw Error('Onbekend meetspoor.');window.threebVijfCourseScope=false;ui.editTable=courseTable();ui.tableMode=courseTable();ui.playRange='lkl';ui.trackFamily='parallel';ui.direction='west';state.startAcquitOffset=0;chooseCentralTrack(track);save();render();},
+    courseMeasurementStatus(track,table=courseTable()){const key='omb:0:'+table+':'+track,route=copy(state.lklUserDrafts?.[key]||state.startAcquitRoutes?.[key]||{}),manual=p=>p&&Number.isFinite(p.value)&&ThreeBValueOrigin.kind(p)==='manual'&&(PRIVATE_OWNER||p.inputOwner==='user'||p.editOwner==='user'||p.source==='user'),checks={neus:Boolean(manual(route.neus?.to)),kop:Boolean(manual(route.kop?.to)),romp:Boolean(manual(route.romp?.from)&&manual(route.romp?.to))};return {checks,complete:Object.values(checks).every(Boolean),route,table,track};},
+    personalLessonData(track,table=courseTable()){const own=this.courseMeasurementStatus(track,table);if(!own.complete)return null;const changes=[['neus','A','to'],['kop','A','to'],['romp','V','from'],['romp','A','to']].map(([line,kind,side])=>({line,kind,point:copy(own.route[line][side])}));return this.lesson1Data(track,table,changes);},
+    async exportCourseTable(){if(window.ThreeBDatabaseWorkspace?.required){document.getElementById('downloadDatabaseWorkspace')?.click();return 'Database-reservekopie aangeboden';}const result=await downloadTableFile();if(!result?.ok)throw Error(result?.error||'Tafelbestand niet aangeboden.');return result.name;},
 
     availableStartAcquits(){
       if(ui.playRange!=='lkl')return [-2,0,2,4];

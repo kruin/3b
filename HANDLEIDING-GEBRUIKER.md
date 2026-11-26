@@ -1,4 +1,4 @@
-# 3B v208-r126 — User-werkwijze
+# 3B v208-r127 — User-werkwijze
 
 # De Waaier — Van Top tot Teen
 
@@ -349,3 +349,13 @@ Kruin opent **Editor · V/R/A** op het hoofdscherm. Kies tafel en spoor in de ed
 ## User-JSON, versies en reservekopieën
 
 U werkt op productie. Mijn tafel bewaart JSON met de volledige appversie, datum/tijd, tafel, richting, spoor en een controlecode. Bij terugladen verschijnt eerst een overzicht en waarschuwing bij oudere bestanden of een andere meetbasis. JSON uit een nieuwere app wordt geweigerd. Vóór terugladen, basiswissel of reset komt een lokale reservekopie in Mijn tafel → Reservekopieën. Download belangrijke kopieën ook zelf: browseropslag blijft op dit apparaat. Bestandsnamen bevatten datum, tijd (NL), tafel, spoor en versie.
+
+## Cursus, uitleg en meten
+
+Cursus start bij Les 1: Waaier en Parallel. Verder met mijn les hervat je eerdere stap. Uitleg bevat de hoofdstukken H1 enzovoort, met Meetsysteem en Namen. Editor en instellingen staan apart.
+
+Na VIJF lijn na lijn meet je aan de echte tafel: eerst Neus A, daarna Kop A, dan Romp V/A. Controleer de aankomst en bewaar jouw JSON-tafelbestand. Daarna kun je VIJF+1 en VIJF−1 meten en hun aankomstballen op Zuid zien groeien. ZES heeft een eigen cursus. Berekende waarden tellen niet als eigen meting.
+
+Kop A is het eindpunt van de Kop-lijn op de noordelijke stiplijn, niet het raakpunt R. Alleen Neus en Romp meten bepaalt de Kop niet. De lijnverlenging moet betrouwbaar zijn; uitleg over de profielmal volgt. Ook de verkorte vierbander heeft deze meting nodig en komt later.
+
+Kop A: tijdens de stoot kan de speler niet snel genoeg goed in de Kop-lijn kijken om A nauwkeurig te registreren. Daardoor heeft ook het meetsysteem geen betrouwbare Kop A. Alleen Neus en Romp vullen die ontbrekende meting niet aan. Een schatting is geen meting. De profielmal moet hierbij helpen; de werkwijze volgt nog. Meten later laat de cursus doorgaan zonder een meting als voltooid aan te merken.

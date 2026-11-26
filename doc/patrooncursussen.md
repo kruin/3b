@@ -59,3 +59,7 @@ De afzonderlijke H4-controles blijven:
 Alle patrooncursussen hebben de zelfstandige onderdelen [Lijnen · V, R en A](lijnen-vra.md) en [Aankomsten op ZUID](aankomsten-zuid.md). De voorbeelden gebruiken hun eigen bronwaarden. Meetsysteem is teruggebracht tot de algemene meetvolgorde; specifieke uitleg staat in de eigen cursus.
 
 Controle: `CHROMIUM_PATH=/usr/bin/chromium node test3b/lijnen-zuid-controle-v208.js`.
+
+## Navigatie vanaf v208-r127
+
+Cursus gebruikt Les-nummers en start bij Waaier en Parallel. Verder met mijn les hervat de bewaarde stap. De H-hoofdstukken staan afzonderlijk onder Uitleg; daar staan Meetsysteem, Lijnen · V/R/A en Namen. De praktische meetles komt na VIJF lijn na lijn: Neus A, Kop A, Romp V/A, aankomst controleren en het eigen tafelbestand bewaren. Daarna VIJF+1 en VIJF−1; ZES blijft een eigen cursus.

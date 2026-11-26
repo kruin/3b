@@ -267,12 +267,12 @@ Kruin werkt voorlopig met de twee bestaande standaardtafels: **Groot en Klein**.
 4. Kies **Bewaar spoor** om de verbonden private GitHub-database bij te werken. Geen download nodig. **Bewaar db lokaal** is uitsluitend een extra back-up.
 5. Vernieuw de gepubliceerde testmeetbasis om deze metingen in de User-cursus te controleren. Naar productie publiceren blijft een afzonderlijke opdracht.
 
-De **Gebruiker** kan eigen metingen ook op mobiel invoeren via het bestaande Spoorscherm en bewaart ze in het persoonlijke tafelbestand. Kruins werkwijze richt zich nu op desktop; er komt hiervoor geen aparte mobiele beheerroute. De cursus gebruikt uitsluitend Kruins gepubliceerde meetbasis.
+De **Gebruiker** kan eigen metingen ook op mobiel invoeren via het bestaande Spoorscherm en bewaart ze in het persoonlijke tafelbestand. Kruins werkwijze richt zich nu op desktop; er komt hiervoor geen aparte mobiele beheerroute. De verkenning gebruikt Kruins gepubliceerde meetbasis. De praktische meetles toont daarnaast je eigen ingevoerde spoor.
 
 
-Deze meetwerkwijze hoort bij **Meetsysteem: meten en invoeren**. De Cursus legt uit met Kruins meetbasis; de Tafel toont het actieve Spoor. Gebruik het bestaande Spoorscherm voor alle meetinvoer. De ingang Meetsysteem opent momenteel nog de naslag; bereik het Spoorscherm via Tafel/Config.
+Deze meetwerkwijze hoort bij **Meetsysteem: meten en invoeren**. De Cursus legt uit met Kruins meetbasis; de Tafel toont het actieve Spoor. Gebruik het bestaande Spoorscherm voor alle meetinvoer. Meetsysteem staat bij Uitleg. De Cursus opent tijdens de meetstappen het Spoorscherm.
 
-Kruins metingen zijn het uitgangspunt. Begin met LKL op je eigen tafel: eerst het hoofdspoor VIJF op Klein of Groot. Meet en controleer dat aan de echte tafel; doe daarna hetzelfde met ZES. De parallellen berekent het systeem; controleer die naar behoefte. Je onderzoekt wat je eigen afstoot werkelijk doet. Het zichtbare Karkas is Neus en Romp: hun vertrek V en aankomst A op de stiplijnen kun je rechtstreeks zien en meten. Dat leer je eerst herkennen. In deze latere meetles onderzoek je wat je eigen afstoot doet, met de vraag: waar ligt mijn Kop A? Bouw de complete eigen meetbasis op uit ingevoerde metingen van **Neus, Kop en Romp**. Een getekende basiswaarde of schatting telt nog niet als een eigen meetgegeven. Begin pas aan andere patronen nadat deze werkwijze goed werkt.
+Kruins metingen zijn het uitgangspunt. Begin met LKL op je eigen tafel: eerst het hoofdspoor VIJF op Klein of Groot. Meet en controleer dat aan de echte tafel; doe daarna hetzelfde met ZES. De parallellen berekent het systeem; controleer die naar behoefte. Je onderzoekt wat je eigen afstoot werkelijk doet. Het zichtbare Karkas is Neus en Romp: hun vertrek V en aankomst A op de stiplijnen kun je rechtstreeks zien en meten. Dat leer je eerst herkennen. In de meetles na de lijnverkenning onderzoek je wat je eigen afstoot doet, met de vraag: waar ligt mijn Kop A? Bouw de complete eigen meetbasis op uit ingevoerde metingen van **Neus, Kop en Romp**. Een getekende basiswaarde of schatting telt nog niet als een eigen meetgegeven. Begin pas aan andere patronen nadat deze werkwijze goed werkt.
 
 ## Verplicht voor User: eerst je eigen basis
 
@@ -299,9 +299,9 @@ Meet de Neus van je gekozen afstoot en voer R of A in. De startpositie is bekend
 
 Zet pionnen op de rand van de noordband rond het verwachte raakpunt. Test je afstoot. De pion die loodrecht op de band omvalt, markeert het raakpunt R. Voer **Kop R** in; de app berekent **Kop A**. Kop V is altijd berekend en wordt niet als zelfstandig meetveld aangeboden.
 
-## Kop: A waarnemen door mee te lopen
+## Kop A: tijdens de stoot niet betrouwbaar af te lezen
 
-Loop met de bal mee, ga in de Kop-lijn kijken en zie de gespeelde lijn **Kop V–Kop A**. Bepaal A op de noordelijke stiplijn en voer **Kop A** in. De app berekent dan **Kop R**. Je hoeft niet zowel R als A afzonderlijk te meten: het zijn twee manieren om dezelfde gemeten Kop vast te leggen.
+Tijdens de stoot kun je niet snel genoeg precies in de Kop-lijn kijken om Kop A betrouwbaar te registreren. Meelopen is daarvoor geen afdoende meetinstructie. Ook het systeem mist dan de onafhankelijke Kop A; alleen Neus en Romp leveren die niet op. De profielmal moet bij deze registratie helpen; de werkwijze volgt nog. Bij een betrouwbaar bepaalde A kan de app Kop V en R berekenen. Een gemeten R blijft een aparte invoermogelijkheid en is niet hetzelfde als A.
 
 ## Romp: je afstoot waarnemen
 
