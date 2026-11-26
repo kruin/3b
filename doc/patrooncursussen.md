@@ -73,3 +73,9 @@ Bij Zelf · LKL wordt het belang van precieze Kop A opnieuw uitgelegd: de bekend
 ## Later: verschil LKL / 6–7-bander · VIER apart
 
 De uitleg van het verschil komt later. VIER is daarbij een bijzonder geval en krijgt een eigen voorbeeld en toelichting. Houd rekening met de eigen bandvolgorde en het eindpunt; de Romp van VIER kan Zuid overslaan. Neem regels voor andere sporen niet automatisch over. De huidige Zelf-les blijft bij jouw gekozen LKL-patroon en de daarvoor beschikbare meetresultaten.
+
+## Karkas staat bij Uitleg · v208-r130
+
+Karkas is uit de cursusvolgorde gehaald. De uitleg, voorbeelden, directe links en begripslinks blijven beschikbaar onder Uitleg → H1. De lessen na Romp en Neus lopen verder met De Parallel van VIJF. Lesnummers schuiven mee; opgeslagen voortgang gebruikt interne les-ID’s. Wie bij Karkas was gebleven gaat verder bij Parallel; de oorspronkelijke voortgang krijgt eerst een lokale reservekopie met Nederlandse datum/tijd, tafel, spoor en versie. Meetgegevens veranderen niet.
+
+Mogelijke volgende vereenvoudigingen, nog niet uitgevoerd: Vergelijk Klein/Groot, uitgebreide Neusvarianten en BIBU/BUBI als verdieping onder Uitleg. Concrete oefeningen in waarnemen, kiezen en uitvoeren blijven in de cursus.
