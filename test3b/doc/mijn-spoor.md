@@ -168,3 +168,9 @@ Bij W verschijnt Volgende nadat U ZES én ZEVEN heeft gekozen. Bij P geldt dat v
 ### Meten is weten — aan de tafel (v208-r122)
 
 De cursus begint met Kruins werkwijze aan de echte biljarttafel: spelen, lijnen meten en controleren. VIJF, de parallellen +/− en andere hoofdsporen zoals ZES vormen de meetbasis die de app laat zien. Gemeten en berekende waarden blijven onderscheiden. De U-cursus geeft dit eerst als korte oorsprong bij de tafel; de praktische meetles voor de eigen tafel volgt later.
+
+### Direct naar de editor (v208-r124)
+
+Kruin heeft op het hoofdscherm een eigen knop **Editor · V/R/A**, ook op mobiel. Zonder geopend werkbestand leidt deze naar de GitHub-verbinding; na openen van de database verschijnt de editor. De directe ingang is `?editor=1#owner=kruin`. Neus V is de terugverlenging naar de Zuid-stiplijn, berekend uit de Neus; het is niet de positie van de vertrekbal. De kwartstipweergave 3− betekent 2,75. De precieze geometrische waarde kan bij weergave zijn afgerond. Er worden geen spoor- of databasewaarden gewijzigd door deze ingang.
+
+Onvolledige sporen blijven in de eigen spoorkeuze van de editor beschikbaar. Kies bijvoorbeeld VIER en vul de ontbrekende karkasankers in. De editor gebruikt geen filter voor volledig tekenbare LKL-sporen. Afgeleide velden blijven berekend; ontbrekende onafhankelijke meetvelden blijven invoerbaar.

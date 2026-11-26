@@ -1707,20 +1707,25 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
       const previous=spoorPreview;spoorPreview=null;
       try{const calculated=calculateSkeletonRoute(original.table,route),blocked=original.userMustMeasure&&(!ThreeBLklKarkas.routeStatus(calculated).complete&&!original.transferInfo||!validLklMeasuredRoute(original.table,calculated));spoorPreview={table:original.table,direction:original.direction,route:calculated,blocked};render();return this.read(original.direction);}catch(error){spoorPreview=previous;throw error;}
     },
+    editorTracks(){const base=['VIER','VIJF','ZES','ZEVEN','ACHT','NEGEN'],keys=Object.keys(K.tracks?.[ui.editTable]||{});return [...new Set([...base,...keys.filter(key=>base.includes(key.replace(/[+-]\d+$/,'')))])];},
+    selectEditorTable(table){if(!PRIVATE_OWNER||!['klein','groot'].includes(table))throw Error('Kies Klein of Groot.');ui.tableMode=table;ui.editTable=table;spoorPreview=null;originRayCache.clear();save();render();},
+    selectEditorTrack(track){if(!PRIVATE_OWNER)throw Error('Deze spoorkeuze is voor Kruin.');if(!this.editorTracks().includes(track))throw Error('Onbekend spoor.');window.threebVijfCourseScope=false;ui.playRange='lkl';ui.trackFamily='parallel';spoorPreview=null;chooseCentralTrack(track);originRayCache.clear();save();render();},
     read(direction=ui.direction){const table=ui.editTable,extent=patternExtent(table),key=table+':'+selectedTrackKey();
       const east=spoorGeometryReady?null:state.spoorDirectionalMeasurements?.[key]?.oost,model=dragModels[table];
       const westLength=originStrokeLength(table,'west')??model?.lengthCm??state.strokeLengthsCm?.[table]?.[ui.pattern]??C.drawing.departureBall.defaultLengthsCm?.[table]?.[ui.pattern]??baseStrokeLength(table);
       const strokeLimits=direction==='oost'?{min:0,max:Math.hypot(C.tables[table].widthCm,C.tables[table].heightCm)}:model?{min:model.startDistance*(1-model.maxFraction)-model.radiusCm*2,max:model.startDistance-model.radiusCm*2}:null;
-      const userMustMeasure=!PRIVATE_OWNER&&ui.playRange==='lkl',draftKey=originRouteKey(table,direction),draft=userMustMeasure&&state.lklUserDrafts?.[draftKey],editorPreview=spoorPreview?.table===table&&spoorPreview.direction===direction;const displayedRoute=editorPreview?copy(spoorPreview.route):draft?calculateSkeletonRoute(table,copy(draft)):spoorGeometryReady?resolvedSpoorRoute(table,direction):data(table);
+      const userMustMeasure=!PRIVATE_OWNER&&ui.playRange==='lkl',draftKey=originRouteKey(table,direction),draft=userMustMeasure&&state.lklUserDrafts?.[draftKey],editorPreview=spoorPreview?.table===table&&spoorPreview.direction===direction;const displayedRoute=copy(editorPreview?copy(spoorPreview.route):draft?calculateSkeletonRoute(table,copy(draft)):spoorGeometryReady?resolvedSpoorRoute(table,direction):data(table));
+      const editorStoredRoute=Boolean(PRIVATE_OWNER&&ui.playRange==='lkl'&&window.ThreeBDatabaseWorkspace?.active&&/^(VIER|VIJF|ZES|ZEVEN|ACHT|NEGEN)([+-]\d+)?$/.test(selectedTrackKey()));
+      if(editorStoredRoute&&!editorPreview)for(const line of ['neus','kop','romp']){const stored=window.ThreeBDatabaseWorkspace.lineReferenceValues({table,track:selectedTrackKey(),line});for(const [kind,side]of [['V','from'],['A','to']])if(skeletonEditable(line,side)&&!Number.isFinite(stored[kind]?.value)&&stored[kind]?.kind!=='acquit'&&!(kind==='A'&&Number.isFinite(stored.R?.value))){displayedRoute[line]??={};displayedRoute[line][side]={...copy(displayedRoute[line][side]||{}),...copy(stored[kind]||{}),value:null,status:'missing',source:'database_missing',measurement:false};}}
       if(userMustMeasure&&!draft&&!editorPreview&&!state.startAcquitRoutes?.[draftKey])for(const pair of Object.values(displayedRoute))for(const [side,p] of Object.entries(pair||{}))if(p&&typeof p==='object')pair[side]={...p,inputOwner:'kruin'};
       return copy({
       transferInfo:userMustMeasure&&ThreeBLklKarkas.validTransfer(state,K,draftKey)?copy(state.lklTransfers[draftKey]):null,transferExpired:userMustMeasure&&state.lklTransfers?.[draftKey]?.expired,canTransfer:userMustMeasure&&canonicalStart()?.total===0&&ThreeBLklKarkas.routeStatus(state.startAcquitRoutes?.[draftKey]).complete,userMustMeasure,hasUserDraft:Boolean(draft),activeSource:userMustMeasure?(ThreeBLklKarkas.validTransfer(state,K,draftKey)?'Overgenomen uit je basis':state.startAcquitRoutes?.[draftKey]?'Eigen meetgegevens':'Kruinconfiguratie'):null,selectedPattern:ui.playRange==='sixSeven'?'6–7 banden':ui.playRange==='vrij'?'Vrij spel':'LKL',actualPattern:actualStartPattern(table,direction),startError:spoorGeometryReady&&actualStartPattern(table,direction)==='?'?startRay(table,direction).error:null,startAcquitOffset:startAcquitOffset(),strokeLengthCm:originStrokeLength(table,direction)??(direction==='oost'?(east?.lengthCm??westLength):westLength),strokeLimits,
-      route:displayedRoute,table,spoor:selectedTrackKey(),label:originFullLabel()+' · '+tableLabel(table),
+      editorStoredRoute,route:displayedRoute,table,spoor:selectedTrackKey(),label:originFullLabel()+' · '+tableLabel(table),
       token:JSON.stringify({route:spoorSnapshot(table),east,startAcquitOffset:startAcquitOffset()}),direction:direction==='oost'?'oost':'west',
       geometry:{...C.tables[table],inset:bandCenterLineInsetCm(),startAcquitOffset:startAcquitPhysicalOffset()},
-      lines:activeLines().slice(0,extent.index+1).map((part,index)=>({
+      lines:activeLines().slice(0,Math.max(extent.index+1,ui.playRange==='lkl'?6:0)).map((part,index)=>({
         key:part.key,note:(state.spoorLineNotes||K.spoorLineNotes||{})[originRouteKey(table,direction)]?.[part.key]||'',label:lineLabel(part),editableV:skeletonEditable(part.key,'from'),editableA:skeletonEditable(part.key,'to'),startBall:part.key==='neus'?canonicalPoint(point(displayedRoute.neus.from,table),table):index>0&&displayedRoute[activeLines()[index-1].key]&&[displayedRoute[activeLines()[index-1].key].from,displayedRoute[activeLines()[index-1].key].to].every(complete)?canonicalPoint(bandBall(displayedRoute[activeLines()[index-1].key].to,displayedRoute[activeLines()[index-1].key].from,table,C.ballDiameterMm/20),table):null,V:part.key==='neus'?noseDiamondDeparture(table,displayedRoute):!spoorGeometryReady&&direction==='oost'&&east?.lines?.[part.key]?east.lines[part.key].V:displayedRoute[part.key]?.from,A:!spoorGeometryReady&&direction==='oost'&&east?.lines?.[part.key]?east.lines[part.key].A:displayedRoute[part.key]?.to,
-        terminal:index===extent.index,fraction:index===extent.index?extent.fraction:1
+        terminal:index===extent.index&&!(ui.playRange==='lkl'&&index<5),fraction:index===extent.index?extent.fraction:1
       }))
     });},
     async save(original,changes){
@@ -1732,7 +1737,7 @@ const centralStep=panelStepState();$("centralTrackMinus").disabled=!centralStep.
       if(spoorGeometryReady){
         const routeKey=originRouteKey(table,original.direction),before=copy(state);tableCheckpoint(table);
         try{
-          state.startAcquitRoutes??=copy(K.startAcquitRoutes||{});const route=copy(original.userMustMeasure?original.route:resolvedSpoorRoute(table,original.direction));
+          state.startAcquitRoutes??=copy(K.startAcquitRoutes||{});const route=copy(original.userMustMeasure||original.editorStoredRoute?original.route:resolvedSpoorRoute(table,original.direction));
           // Preserve the exact shown skeleton anchors when saving an edit.
           // Legacy six/seven defaults may otherwise regenerate Romp V from
           // the newly saved A on reload, changing the measured ray.
