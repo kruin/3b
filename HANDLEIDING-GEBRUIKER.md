@@ -1,4 +1,4 @@
-# 3B v208-r123 — User-werkwijze
+# 3B v208-r125 — User-werkwijze
 
 # De Waaier — Van Top tot Teen
 
@@ -341,3 +341,7 @@ Onder Mijn tafel kun je de naam gebruiken om spelen vanaf het noordelijke of zui
 
 
 Bewaar mijn tafel en Terugladen gebruiken het volledige JSON-tafelbestand. De officiële private Kruin-database wordt hiermee niet gewijzigd.
+
+## Editor: herkenbaar tijdens scrollen
+
+Kruin opent **Editor · V/R/A** op het hoofdscherm. Kies tafel en spoor in de editor, ook bij ontbrekende meetgegevens. Bij scrollen blijft de gekozen spoornaam bovenaan zichtbaar.

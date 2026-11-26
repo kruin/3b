@@ -174,3 +174,9 @@ De cursus begint met Kruins werkwijze aan de echte biljarttafel: spelen, lijnen 
 Kruin heeft op het hoofdscherm een eigen knop **Editor · V/R/A**, ook op mobiel. Zonder geopend werkbestand leidt deze naar de GitHub-verbinding; na openen van de database verschijnt de editor. De directe ingang is `?editor=1#owner=kruin`. Neus V is de terugverlenging naar de Zuid-stiplijn, berekend uit de Neus; het is niet de positie van de vertrekbal. De kwartstipweergave 3− betekent 2,75. De precieze geometrische waarde kan bij weergave zijn afgerond. Er worden geen spoor- of databasewaarden gewijzigd door deze ingang.
 
 Onvolledige sporen blijven in de eigen spoorkeuze van de editor beschikbaar. Kies bijvoorbeeld VIER en vul de ontbrekende karkasankers in. De editor gebruikt geen filter voor volledig tekenbare LKL-sporen. Afgeleide velden blijven berekend; ontbrekende onafhankelijke meetvelden blijven invoerbaar.
+
+### Spoornaam blijft in beeld (v208-r125)
+
+De kop van de editor blijft bovenaan zichtbaar bij het scrollen naar invoervelden. De gekozen spoornaam (zoals VIER), tafel en Sluiten blijven daardoor in beeld.
+
+In het centrale bedieningspaneel, bij Cursus en Namen, staat ook een eigen knop **Editor · V/R/A** voor Kruin. Die opent de editor voor het gekozen spoor.
