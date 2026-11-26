@@ -63,3 +63,9 @@ Controle: `CHROMIUM_PATH=/usr/bin/chromium node test3b/lijnen-zuid-controle-v208
 ## Navigatie vanaf v208-r127
 
 Cursus gebruikt Les-nummers en start bij Waaier en Parallel. Verder met mijn les hervat de bewaarde stap. De H-hoofdstukken staan afzonderlijk onder Uitleg; daar staan Meetsysteem, Lijnen · V/R/A en Namen. De praktische meetles komt na VIJF lijn na lijn: Neus A, Kop A, Romp V/A, aankomst controleren en het eigen tafelbestand bewaren. Daarna VIJF+1 en VIJF−1; ZES blijft een eigen cursus.
+
+## Eerst resultaten zien, daarna Zelf · v208-r128
+
+Zelf meten komt na Aankomsten op ZUID. U ziet eerst Kruins meetresultaten en de aankomstballen van het hoofdspoor en de parallellen. Pas daarna volgt eigen meetinvoer, spoor voor spoor. De verkorte vierbander komt later als eigen cursusonderdeel met meetresultaten; er staat al een technische basis voor vertrek vanaf Kop en indicatieve correctie. Andere meetresultaten kunnen later op dezelfde manier vóór Zelf worden toegevoegd. Er worden nu geen nieuwe geometrie of meetwaarden toegevoegd.
+
+Bij Zelf · LKL wordt het belang van precieze Kop A opnieuw uitgelegd: de bekende Neus-bandbal op West en Romp-bandbal op Oost bepalen het tussenstuk via Noord niet. Een fout in Kop A maakt de berekende Kop en Nek onbetrouwbaar, ook als Neus en Romp kloppen. Kruins waarde geldt voor zijn tafel; U meet op de eigen tafel. Tijdens de stoot snel én precies registreren blijft het meetprobleem; profielmal volgt.

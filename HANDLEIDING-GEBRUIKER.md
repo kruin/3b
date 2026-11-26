@@ -1,4 +1,4 @@
-# 3B v208-r127 — User-werkwijze
+# 3B v208-r128 — User-werkwijze
 
 # De Waaier — Van Top tot Teen
 
@@ -359,3 +359,7 @@ Na VIJF lijn na lijn meet je aan de echte tafel: eerst Neus A, daarna Kop A, dan
 Kop A is het eindpunt van de Kop-lijn op de noordelijke stiplijn, niet het raakpunt R. Alleen Neus en Romp meten bepaalt de Kop niet. De lijnverlenging moet betrouwbaar zijn; uitleg over de profielmal volgt. Ook de verkorte vierbander heeft deze meting nodig en komt later.
 
 Kop A: tijdens de stoot kan de speler niet snel genoeg goed in de Kop-lijn kijken om A nauwkeurig te registreren. Daardoor heeft ook het meetsysteem geen betrouwbare Kop A. Alleen Neus en Romp vullen die ontbrekende meting niet aan. Een schatting is geen meting. De profielmal moet hierbij helpen; de werkwijze volgt nog. Meten later laat de cursus doorgaan zonder een meting als voltooid aan te merken.
+
+## Eerst resultaten zien, daarna Zelf · v208-r128
+
+Zelf meten komt na Aankomsten op ZUID. U ziet eerst Kruins meetresultaten en de aankomstballen van het hoofdspoor en de parallellen. Pas daarna volgt eigen meetinvoer, spoor voor spoor. De verkorte vierbander komt later als eigen cursusonderdeel met meetresultaten; er staat al een technische basis voor vertrek vanaf Kop en indicatieve correctie. Andere meetresultaten kunnen later op dezelfde manier vóór Zelf worden toegevoegd. Er worden nu geen nieuwe geometrie of meetwaarden toegevoegd.

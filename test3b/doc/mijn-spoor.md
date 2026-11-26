@@ -194,3 +194,9 @@ Na de lijnverkenning van VIJF: Neus A invoeren → Kop A invoeren → Romp V en 
 Kop A is niet Noord R: het is de doorsnijding van de verlengde aankomstlijn met de stiplijn. Zonder eigen Kopmeting blijft deze tussenlijn onbekend. Profielmal: uitleg volgt. Verkorte vierbander: toepassing later.
 
 Kop A: tijdens de stoot kan de speler niet snel genoeg goed in de Kop-lijn kijken om A nauwkeurig te registreren. Daardoor heeft ook het meetsysteem geen betrouwbare Kop A. Alleen Neus en Romp vullen die ontbrekende meting niet aan. Een schatting is geen meting. De profielmal moet hierbij helpen; de werkwijze volgt nog. Meten later laat de cursus doorgaan zonder een meting als voltooid aan te merken.
+
+## Eerst resultaten zien, daarna Zelf · v208-r128
+
+Zelf meten komt na Aankomsten op ZUID. U ziet eerst Kruins meetresultaten en de aankomstballen van het hoofdspoor en de parallellen. Pas daarna volgt eigen meetinvoer, spoor voor spoor. De verkorte vierbander komt later als eigen cursusonderdeel met meetresultaten; er staat al een technische basis voor vertrek vanaf Kop en indicatieve correctie. Andere meetresultaten kunnen later op dezelfde manier vóór Zelf worden toegevoegd. Er worden nu geen nieuwe geometrie of meetwaarden toegevoegd.
+
+Bij Zelf · LKL wordt het belang van precieze Kop A opnieuw uitgelegd: de bekende Neus-bandbal op West en Romp-bandbal op Oost bepalen het tussenstuk via Noord niet. Een fout in Kop A maakt de berekende Kop en Nek onbetrouwbaar, ook als Neus en Romp kloppen. Kruins waarde geldt voor zijn tafel; U meet op de eigen tafel. Tijdens de stoot snel én precies registreren blijft het meetprobleem; profielmal volgt.
