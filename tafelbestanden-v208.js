@@ -24,6 +24,7 @@ window.ThreeBFiles = (() => {
     return result;
   }
   function validate(payload) {
+    if(payload?.format==='3B-tafel'&&payload.version!==1)throw Error('Bestandsindeling '+payload.version+' wordt niet ondersteund. Open eerst de nieuwste productieversie; je huidige tafel blijft behouden.');
     if (payload?.format !== '3B-tafel' || payload.version !== 1 || !payload.basis?.id || !payload.basis.config?.tables || !payload.basis.values?.tracks || !payload.state?.data || typeof payload.tableName !== 'string') throw Error('Dit is geen geldig 3B-tafelbestand.');
     const visit = (value, depth = 0) => {
       if (depth > 60) throw Error('Het tafelbestand is te diep genest.');
@@ -87,7 +88,7 @@ window.ThreeBFiles = (() => {
     window.XLSX.utils.book_append_sheet(book, sheet, 'Aanpassingen');
     window.XLSX.utils.book_append_sheet(book, window.XLSX.utils.aoa_to_sheet([
       ['3B tafelbestand', ''], ['Tafelnaam (optioneel)', payload.tableName], ['Kruinbasis',payload.basis.id], ['Basisnaam',payload.basis.label],
-      ['Appversie',181], ['Groot en Klein','Apart bewaard'], ['Terugladen','Gebruik Menu > Instellingen > Mijn tafel > Terugladen.'],
+      ['Appversie',payload.appVersion||payload.appRelease||'onbekend'], ['Groot en Klein','Apart bewaard'], ['Terugladen','Gebruik Menu > Instellingen > Mijn tafel > Terugladen.'],
       ['Bewerken','Bij Aanpassing: getal = numeriek; json = JSON-waarde. Bewaar de Tafelbestand-regels.']
     ]), 'Toelichting');
     return window.XLSX.write(book, {bookType:format,type:'array'});
@@ -117,18 +118,18 @@ window.ThreeBFiles = (() => {
 (() => {
   'use strict';
   const legacy=window.ThreeBFiles;
-  window.ThreeBFiles={...legacy,
+  window.ThreeBFiles={...legacy,filename(payload,format){return format==='json'&&window.ThreeBVersionSafety?window.ThreeBVersionSafety.filename(payload,format):legacy.filename(payload,format);},
     async encode(payload,format){
       if(format!=='json')return legacy.encode(payload,format);
       legacy.validate(payload);
       const complete=JSON.parse(JSON.stringify(payload));
       complete.provenance={appRelease:complete.appRelease,basisId:complete.basis.id,databaseRevision:complete.basis.values.beheerRevision||null};
-      return JSON.stringify(complete,null,2)+'\n';
+      const safe=window.ThreeBVersionSafety?await window.ThreeBVersionSafety.seal(complete):complete;return JSON.stringify(safe,null,2)+'\n';
     },
     async decode(bytes,filename){
       if(filename.split('.').at(-1).toLowerCase()!=='json')return legacy.decode(bytes,filename);
       const text=new TextDecoder('utf-8',{fatal:true}).decode(bytes).replace(/^\uFEFF/,'');
-      return legacy.validate(JSON.parse(text));
+      const payload=legacy.validate(JSON.parse(text));return window.ThreeBVersionSafety?window.ThreeBVersionSafety.verify(payload):payload;
     }
   };
 })();

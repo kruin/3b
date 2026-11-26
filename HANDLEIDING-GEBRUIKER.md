@@ -1,4 +1,4 @@
-# 3B v208-r125 — User-werkwijze
+# 3B v208-r126 — User-werkwijze
 
 # De Waaier — Van Top tot Teen
 
@@ -345,3 +345,7 @@ Bewaar mijn tafel en Terugladen gebruiken het volledige JSON-tafelbestand. De of
 ## Editor: herkenbaar tijdens scrollen
 
 Kruin opent **Editor · V/R/A** op het hoofdscherm. Kies tafel en spoor in de editor, ook bij ontbrekende meetgegevens. Bij scrollen blijft de gekozen spoornaam bovenaan zichtbaar.
+
+## User-JSON, versies en reservekopieën
+
+U werkt op productie. Mijn tafel bewaart JSON met de volledige appversie, datum/tijd, tafel, richting, spoor en een controlecode. Bij terugladen verschijnt eerst een overzicht en waarschuwing bij oudere bestanden of een andere meetbasis. JSON uit een nieuwere app wordt geweigerd. Vóór terugladen, basiswissel of reset komt een lokale reservekopie in Mijn tafel → Reservekopieën. Download belangrijke kopieën ook zelf: browseropslag blijft op dit apparaat. Bestandsnamen bevatten datum, tijd (NL), tafel, spoor en versie.

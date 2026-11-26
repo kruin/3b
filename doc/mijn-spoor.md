@@ -180,3 +180,7 @@ Onvolledige sporen blijven in de eigen spoorkeuze van de editor beschikbaar. Kie
 De kop van de editor blijft bovenaan zichtbaar bij het scrollen naar invoervelden. De gekozen spoornaam (zoals VIER), tafel en Sluiten blijven daardoor in beeld.
 
 In het centrale bedieningspaneel, bij Cursus en Namen, staat ook een eigen knop **Editor · V/R/A** voor Kruin. Die opent de editor voor het gekozen spoor.
+
+### Versies en reservekopieën (v208-r126)
+
+U werkt alleen op productie. User-JSON bevat de volledige appversie, datum/tijd, tafel, richting, spoor en een controlecode. Een JSON uit een nieuwere app wordt geweigerd. Een oudere versie, andere meetbasis of oudere meetgegevens wordt expliciet gemeld vóór terugladen. Vóór terugladen of basiswissel bewaart de app automatisch een benoemde lokale reservekopie, te downloaden via Mijn tafel → Reservekopieën. Browseropslag is geen gedownload bestand. SQLite-bewaring archiveert eveneens de vorige werkstand lokaal; downloads krijgen datum, tijd, tafel, spoor en versie in de naam.

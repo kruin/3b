@@ -2,7 +2,7 @@
 
 De voormalige H2-les Aankomsten is een **zelfstandig cursusonderdeel** geworden. Het staat in iedere patrooncursus, na H2. Het toont de **aankomst van de Romp op Zuid**, spoor voor spoor.
 
-[VIJF](../?cursus=les&les=6&leerspoor=VIJF#owner=user) · [ZES](../?cursus=les&les=6&leerspoor=ZES#owner=user) · [ZEVEN](../?cursus=les&les=6&leerspoor=ZEVEN#owner=user) · [ACHT](../?cursus=les&les=6&leerspoor=ACHT#owner=user) · [VIER](../?cursus=les&les=6&leerspoor=VIER#owner=user).
+[VIJF](https://kruin.github.io/3b/?cursus=les&les=6&leerspoor=VIJF#owner=user) · [ZES](https://kruin.github.io/3b/?cursus=les&les=6&leerspoor=ZES#owner=user) · [ZEVEN](https://kruin.github.io/3b/?cursus=les&les=6&leerspoor=ZEVEN#owner=user) · [ACHT](https://kruin.github.io/3b/?cursus=les&les=6&leerspoor=ACHT#owner=user) · [VIER](https://kruin.github.io/3b/?cursus=les&les=6&leerspoor=VIER#owner=user).
 
 ## De ballen naast elkaar op Zuid
 

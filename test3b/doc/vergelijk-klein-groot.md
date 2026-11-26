@@ -2,7 +2,7 @@
 
 VIJF en ACHT hebben elk hun eigen H4 binnen hun patrooncursus. De automatische lesvolgorde van VIJF gaat niet door naar ACHT. [Cursusindeling](patrooncursussen.md).
 
-[Open het hoofdstuk in de cursus](../?cursus=les&les=10&leerspoor=VIJF&meetprofiel=klein-ingespeeld#owner=user).
+[Open het hoofdstuk in de cursus](https://kruin.github.io/3b/?cursus=les&les=10&leerspoor=VIJF&meetprofiel=klein-ingespeeld#owner=user).
 
 ## VIJF · Kop A 19 op Klein, 15 op Groot
 
@@ -58,7 +58,7 @@ Bronnen: Kruins bevestigde tests en de gepubliceerde profielen **klein-ingespeel
 
 ## ACHT · Romp V 45 op Klein, 48 op Groot
 
-[Open ACHT in H4](../?cursus=les&les=11&leerspoor=ACHT&meetprofiel=klein-ingespeeld#owner=user).
+[Open ACHT in H4](https://kruin.github.io/3b/?cursus=les&les=11&leerspoor=ACHT&meetprofiel=klein-ingespeeld#owner=user).
 
 Bij ACHT vergelijken we het **vertrek van de Romp op de oostelijke stiplijn**. Dit is een andere lijnwaarde dan Kop A 19/15 bij VIJF.
 

@@ -2,7 +2,7 @@
 
 Dit is een zelfstandig onderdeel in iedere patrooncursus, vóór H1. De voorbeelden lezen de **eigen waarden van het gekozen patroon en de gekozen meetbasis**.
 
-[Open bij VIJF](../?cursus=les&les=13&leerspoor=VIJF#owner=user) · [ZES](../?cursus=les&les=13&leerspoor=ZES#owner=user) · [ZEVEN](../?cursus=les&les=13&leerspoor=ZEVEN#owner=user) · [ACHT](../?cursus=les&les=13&leerspoor=ACHT#owner=user) · [VIER](../?cursus=les&les=13&leerspoor=VIER#owner=user).
+[Open bij VIJF](https://kruin.github.io/3b/?cursus=les&les=13&leerspoor=VIJF#owner=user) · [ZES](https://kruin.github.io/3b/?cursus=les&les=13&leerspoor=ZES#owner=user) · [ZEVEN](https://kruin.github.io/3b/?cursus=les&les=13&leerspoor=ZEVEN#owner=user) · [ACHT](https://kruin.github.io/3b/?cursus=les&les=13&leerspoor=ACHT#owner=user) · [VIER](https://kruin.github.io/3b/?cursus=les&les=13&leerspoor=VIER#owner=user).
 
 ## De waarde hoort bij de lijn
 

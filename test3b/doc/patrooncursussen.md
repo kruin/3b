@@ -2,11 +2,11 @@
 
 **VIJF is de hoofdcursus.** VIER, ZES, ZEVEN en ACHT hebben elk een eigen cursusroute. Via de knop Cursus kies je het patroon en zie je alleen de hoofdstukken die daarbij horen. Het hoofdscherm neemt dat patroon meteen over, inclusief de patroonkeuze en het spoorlabel. Naar tafel en terug naar de les behouden dezelfde keuze.
 
-- [Cursus VIJF](../?cursus=inhoud&leerspoor=VIJF#owner=user)
-- [Cursus VIER](../?cursus=inhoud&leerspoor=VIER#owner=user)
-- [Cursus ZES](../?cursus=inhoud&leerspoor=ZES#owner=user)
-- [Cursus ZEVEN](../?cursus=inhoud&leerspoor=ZEVEN#owner=user)
-- [Cursus ACHT](../?cursus=inhoud&leerspoor=ACHT#owner=user)
+- [Cursus VIJF](https://kruin.github.io/3b/?cursus=inhoud&leerspoor=VIJF#owner=user)
+- [Cursus VIER](https://kruin.github.io/3b/?cursus=inhoud&leerspoor=VIER#owner=user)
+- [Cursus ZES](https://kruin.github.io/3b/?cursus=inhoud&leerspoor=ZES#owner=user)
+- [Cursus ZEVEN](https://kruin.github.io/3b/?cursus=inhoud&leerspoor=ZEVEN#owner=user)
+- [Cursus ACHT](https://kruin.github.io/3b/?cursus=inhoud&leerspoor=ACHT#owner=user)
 
 ## VIJF
 
