@@ -200,3 +200,9 @@ Kop A: tijdens de stoot kan de speler niet snel genoeg goed in de Kop-lijn kijke
 Zelf meten komt na Aankomsten op ZUID. U ziet eerst Kruins meetresultaten en de aankomstballen van het hoofdspoor en de parallellen. Pas daarna volgt eigen meetinvoer, spoor voor spoor. De verkorte vierbander komt later als eigen cursusonderdeel met meetresultaten; er staat al een technische basis voor vertrek vanaf Kop en indicatieve correctie. Andere meetresultaten kunnen later op dezelfde manier vóór Zelf worden toegevoegd. Er worden nu geen nieuwe geometrie of meetwaarden toegevoegd.
 
 Bij Zelf · LKL wordt het belang van precieze Kop A opnieuw uitgelegd: de bekende Neus-bandbal op West en Romp-bandbal op Oost bepalen het tussenstuk via Noord niet. Een fout in Kop A maakt de berekende Kop en Nek onbetrouwbaar, ook als Neus en Romp kloppen. Kruins waarde geldt voor zijn tafel; U meet op de eigen tafel. Tijdens de stoot snel én precies registreren blijft het meetprobleem; profielmal volgt.
+
+## Eigen tafel betekent ook eigen afstoot · v208-r129
+
+Jouw tafel, jouw afstoot, jouw meetresultaten. Ook effect, tempo en de omstandigheden van jouw spel horen daarbij. Eigen metingen leggen vast wat jouw afstoot op jouw tafel oplevert; Kruins metingen zijn de referentie om mee te vergelijken. Herhaal je stoten om te controleren of je resultaten herhaalbaar zijn.
+
+De opening van Zelf luidt: **Meet jouw LKL-patroon. Meten is weten.** Eigen tafel en eigen afstoot blijven gekoppeld aan het gekozen LKL-patroon en het huidige spoor. De uitleg van het verschil tussen LKL en de zes-/zevenbander komt later. Zelf blijft nu bij jouw LKL-patroon.

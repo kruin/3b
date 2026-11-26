@@ -69,3 +69,7 @@ Cursus gebruikt Les-nummers en start bij Waaier en Parallel. Verder met mijn les
 Zelf meten komt na Aankomsten op ZUID. U ziet eerst Kruins meetresultaten en de aankomstballen van het hoofdspoor en de parallellen. Pas daarna volgt eigen meetinvoer, spoor voor spoor. De verkorte vierbander komt later als eigen cursusonderdeel met meetresultaten; er staat al een technische basis voor vertrek vanaf Kop en indicatieve correctie. Andere meetresultaten kunnen later op dezelfde manier vóór Zelf worden toegevoegd. Er worden nu geen nieuwe geometrie of meetwaarden toegevoegd.
 
 Bij Zelf · LKL wordt het belang van precieze Kop A opnieuw uitgelegd: de bekende Neus-bandbal op West en Romp-bandbal op Oost bepalen het tussenstuk via Noord niet. Een fout in Kop A maakt de berekende Kop en Nek onbetrouwbaar, ook als Neus en Romp kloppen. Kruins waarde geldt voor zijn tafel; U meet op de eigen tafel. Tijdens de stoot snel én precies registreren blijft het meetprobleem; profielmal volgt.
+
+## Later: verschil LKL / 6–7-bander · VIER apart
+
+De uitleg van het verschil komt later. VIER is daarbij een bijzonder geval en krijgt een eigen voorbeeld en toelichting. Houd rekening met de eigen bandvolgorde en het eindpunt; de Romp van VIER kan Zuid overslaan. Neem regels voor andere sporen niet automatisch over. De huidige Zelf-les blijft bij jouw gekozen LKL-patroon en de daarvoor beschikbare meetresultaten.
