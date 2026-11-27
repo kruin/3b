@@ -1,0 +1,3034 @@
+{
+  "schema": 1,
+  "appVersionRead": "v208-r131",
+  "measurementRevision": "af0db7f79b00c741b35ed19da2437fdbd629b07c079bcc5eecfc9d9ecc8a447f",
+  "source": "Gepubliceerde Kruin-meetbasis via de werkelijke appgeometrie; alleen de Rompwaarden en berekende bandbalposities.",
+  "rows": [
+    {
+      "table": "klein",
+      "track": "ACHT",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": "been",
+      "geometry": {
+        "labels": {
+          "en": "Small",
+          "nl": "Klein"
+        },
+        "widthCm": 115,
+        "heightCm": 230,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": 45,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "L62"
+            },
+            "confirmedBy": "Kruin"
+          },
+          "to": {
+            "band": "zuid",
+            "value": 20,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "M62"
+            },
+            "confirmedBy": "Kruin"
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 112,
+          "y": 149.9207089552239
+        },
+        "to": {
+          "x": 65.10499432463111,
+          "y": 227
+        },
+        "fullTo": {
+          "x": 65.10499432463111,
+          "y": 227
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "klein",
+      "track": "ACHT-1",
+      "actualPattern": "?",
+      "excluded": true,
+      "unavailable": "kop",
+      "geometry": {
+        "labels": {
+          "en": "Small",
+          "nl": "Klein"
+        },
+        "widthCm": 115,
+        "heightCm": 230,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": 40,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "L61"
+            },
+            "confirmedBy": "Kruin"
+          },
+          "to": {
+            "band": "zuid",
+            "value": 22,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "M61"
+            },
+            "confirmedBy": "Kruin"
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 112,
+          "y": 136.39175257731958
+        },
+        "to": {
+          "x": 59.054216867469876,
+          "y": 227
+        },
+        "fullTo": {
+          "x": 59.054216867469876,
+          "y": 227
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "klein",
+      "track": "ACHT-2",
+      "actualPattern": "?",
+      "excluded": true,
+      "unavailable": "kop",
+      "geometry": {
+        "labels": {
+          "en": "Small",
+          "nl": "Klein"
+        },
+        "widthCm": 115,
+        "heightCm": 230,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": 37,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "L60"
+            },
+            "confirmedBy": "Kruin"
+          },
+          "to": {
+            "band": "zuid",
+            "value": 23,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "M60"
+            },
+            "confirmedBy": "Kruin"
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 112,
+          "y": 128.37913223140495
+        },
+        "to": {
+          "x": 55.97593896713616,
+          "y": 227
+        },
+        "fullTo": {
+          "x": 55.97593896713616,
+          "y": 227
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "klein",
+      "track": "NEGEN",
+      "actualPattern": "?",
+      "excluded": true,
+      "unavailable": "kop",
+      "geometry": {
+        "labels": {
+          "en": "Small",
+          "nl": "Klein"
+        },
+        "widthCm": 115,
+        "heightCm": 230,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "calculationBasis": "negen_extrapolation",
+            "referenceTracks": [
+              "ZEVEN",
+              "ACHT"
+            ],
+            "source": "estimate",
+            "status": "calculated",
+            "value": 51
+          },
+          "to": {
+            "band": "zuid",
+            "calculationBasis": "negen_extrapolation",
+            "referenceTracks": [
+              "ZEVEN",
+              "ACHT"
+            ],
+            "source": "estimate",
+            "status": "calculated",
+            "value": 15
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 112,
+          "y": 168.6855700712589
+        },
+        "to": {
+          "x": 78.95777254374158,
+          "y": 227
+        },
+        "fullTo": {
+          "x": 78.95777254374158,
+          "y": 227
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "klein",
+      "track": "NEGEN-1",
+      "actualPattern": "?",
+      "excluded": true,
+      "unavailable": "kop",
+      "geometry": {
+        "labels": {
+          "en": "Small",
+          "nl": "Klein"
+        },
+        "widthCm": 115,
+        "heightCm": 230,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "zuid",
+            "source": "automatic",
+            "status": "approved",
+            "value": null
+          }
+        }
+      },
+      "rompPart": null
+    },
+    {
+      "table": "klein",
+      "track": "NEGEN-2",
+      "actualPattern": "?",
+      "excluded": true,
+      "unavailable": "kop",
+      "geometry": {
+        "labels": {
+          "en": "Small",
+          "nl": "Klein"
+        },
+        "widthCm": 115,
+        "heightCm": 230,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "zuid",
+            "source": "automatic",
+            "status": "approved",
+            "value": null
+          }
+        }
+      },
+      "rompPart": null
+    },
+    {
+      "table": "klein",
+      "track": "VIER",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": null,
+      "geometry": {
+        "labels": {
+          "en": "Small",
+          "nl": "Klein"
+        },
+        "widthCm": 115,
+        "heightCm": 230,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": 5,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "L35"
+            },
+            "confirmedBy": "Kruin"
+          },
+          "to": {
+            "band": "west",
+            "value": 10,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "M35"
+            },
+            "confirmedBy": "Kruin",
+            "sheetPoint": {
+              "band": "west",
+              "value": 70,
+              "zero": "noord"
+            },
+            "numberingConversion": "80 - sheetValue"
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 112,
+          "y": 31.807369402985074
+        },
+        "to": {
+          "x": 3,
+          "y": 183.81763059701493
+        },
+        "fullTo": {
+          "x": 3,
+          "y": 183.81763059701493
+        },
+        "fraction": 1,
+        "band": "west"
+      }
+    },
+    {
+      "table": "klein",
+      "track": "VIER+1",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": null,
+      "geometry": {
+        "labels": {
+          "en": "Small",
+          "nl": "Klein"
+        },
+        "widthCm": 115,
+        "heightCm": 230,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": 10,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "L36"
+            },
+            "confirmedBy": "Kruin"
+          },
+          "to": {
+            "band": "west",
+            "value": 5,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "M36"
+            },
+            "confirmedBy": "Kruin",
+            "sheetPoint": {
+              "band": "west",
+              "value": 75,
+              "zero": "noord"
+            },
+            "numberingConversion": "80 - sheetValue"
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 112,
+          "y": 46.182369402985074
+        },
+        "to": {
+          "x": 3,
+          "y": 198.19263059701493
+        },
+        "fullTo": {
+          "x": 3,
+          "y": 198.19263059701493
+        },
+        "fraction": 1,
+        "band": "west"
+      }
+    },
+    {
+      "table": "klein",
+      "track": "VIER+2",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": null,
+      "geometry": {
+        "labels": {
+          "en": "Small",
+          "nl": "Klein"
+        },
+        "widthCm": 115,
+        "heightCm": 230,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": 13,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "L37"
+            },
+            "confirmedBy": "Kruin"
+          },
+          "to": {
+            "band": "west",
+            "value": 0,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "M37"
+            },
+            "confirmedBy": "Kruin",
+            "sheetPoint": {
+              "band": "west",
+              "value": 80,
+              "zero": "noord"
+            },
+            "numberingConversion": "80 - sheetValue"
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 112,
+          "y": 55.34375
+        },
+        "to": {
+          "x": 3,
+          "y": 212.03125
+        },
+        "fullTo": {
+          "x": 3,
+          "y": 212.03125
+        },
+        "fraction": 1,
+        "band": "west"
+      }
+    },
+    {
+      "table": "klein",
+      "track": "VIER+3",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": null,
+      "geometry": {
+        "labels": {
+          "en": "Small",
+          "nl": "Klein"
+        },
+        "widthCm": 115,
+        "heightCm": 230,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": 20,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "L38"
+            },
+            "confirmedBy": "Kruin"
+          },
+          "to": {
+            "band": "west",
+            "value": -5,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "M38"
+            },
+            "confirmedBy": "Kruin",
+            "sheetPoint": {
+              "band": "west",
+              "value": 85,
+              "zero": "noord"
+            },
+            "numberingConversion": "80 - sheetValue"
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 112,
+          "y": 74.93236940298507
+        },
+        "to": {
+          "x": 3,
+          "y": 226.94263059701493
+        },
+        "fullTo": {
+          "x": 3,
+          "y": 226.94263059701493
+        },
+        "fraction": 1,
+        "band": "west"
+      }
+    },
+    {
+      "table": "klein",
+      "track": "VIER-1",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": null,
+      "geometry": {
+        "labels": {
+          "en": "Small",
+          "nl": "Klein"
+        },
+        "widthCm": 115,
+        "heightCm": 230,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": 2,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "L34"
+            },
+            "confirmedBy": "Kruin"
+          },
+          "to": {
+            "band": "west",
+            "value": 10,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "M34"
+            },
+            "confirmedBy": "Kruin",
+            "sheetPoint": {
+              "band": "west",
+              "value": 70,
+              "zero": "noord"
+            },
+            "numberingConversion": "80 - sheetValue"
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 112,
+          "y": 23.986940298507463
+        },
+        "to": {
+          "x": 3,
+          "y": 183.01305970149252
+        },
+        "fullTo": {
+          "x": 3,
+          "y": 183.01305970149252
+        },
+        "fraction": 1,
+        "band": "west"
+      }
+    },
+    {
+      "table": "klein",
+      "track": "VIER-2",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": null,
+      "geometry": {
+        "labels": {
+          "en": "Small",
+          "nl": "Klein"
+        },
+        "widthCm": 115,
+        "heightCm": 230,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": 0,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "L33"
+            },
+            "confirmedBy": "Kruin"
+          },
+          "to": {
+            "band": "west",
+            "value": 10,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "M33"
+            },
+            "confirmedBy": "Kruin",
+            "sheetPoint": {
+              "band": "west",
+              "value": 70,
+              "zero": "noord"
+            },
+            "numberingConversion": "80 - sheetValue"
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 112,
+          "y": 18.77332089552239
+        },
+        "to": {
+          "x": 3,
+          "y": 182.47667910447763
+        },
+        "fullTo": {
+          "x": 3,
+          "y": 182.47667910447763
+        },
+        "fraction": 1,
+        "band": "west"
+      }
+    },
+    {
+      "table": "klein",
+      "track": "VIJF",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": null,
+      "geometry": {
+        "labels": {
+          "en": "Small",
+          "nl": "Klein"
+        },
+        "widthCm": 115,
+        "heightCm": 230,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": 20,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": false
+          },
+          "to": {
+            "band": "zuid",
+            "value": 38,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": false
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 112,
+          "y": 76.65789473684211
+        },
+        "to": {
+          "x": 13.9059065934066,
+          "y": 227
+        },
+        "fullTo": {
+          "x": 13.9059065934066,
+          "y": 227
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "klein",
+      "track": "VIJF+1",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": null,
+      "geometry": {
+        "labels": {
+          "en": "Small",
+          "nl": "Klein"
+        },
+        "widthCm": 115,
+        "heightCm": 230,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": 23,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": false
+          },
+          "to": {
+            "band": "zuid",
+            "value": 35.861,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": false
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 112,
+          "y": 85.37171654068648
+        },
+        "to": {
+          "x": 20.017892844268214,
+          "y": 227
+        },
+        "fullTo": {
+          "x": 20.017892844268214,
+          "y": 227
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "klein",
+      "track": "VIJF+2",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": null,
+      "geometry": {
+        "labels": {
+          "en": "Small",
+          "nl": "Klein"
+        },
+        "widthCm": 115,
+        "heightCm": 230,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": 27,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": false
+          },
+          "to": {
+            "band": "zuid",
+            "value": 33.722,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": false
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 112,
+          "y": 96.6332033240724
+        },
+        "to": {
+          "x": 26.269385135135124,
+          "y": 227
+        },
+        "fullTo": {
+          "x": 26.269385135135124,
+          "y": 227
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "klein",
+      "track": "VIJF+3",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": null,
+      "geometry": {
+        "labels": {
+          "en": "Small",
+          "nl": "Klein"
+        },
+        "widthCm": 115,
+        "heightCm": 230,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": 30,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": false
+          },
+          "to": {
+            "band": "zuid",
+            "value": 31.583,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": false
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 112,
+          "y": 105.34873892241987
+        },
+        "to": {
+          "x": 32.38004343393149,
+          "y": 227
+        },
+        "fullTo": {
+          "x": 32.38004343393149,
+          "y": 227
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "klein",
+      "track": "VIJF-1",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": null,
+      "geometry": {
+        "labels": {
+          "en": "Small",
+          "nl": "Klein"
+        },
+        "widthCm": 115,
+        "heightCm": 230,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": 17,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": false
+          },
+          "to": {
+            "band": "zuid",
+            "value": 40.14,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": false
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 112,
+          "y": 67.9523803566782
+        },
+        "to": {
+          "x": 7.787827868852453,
+          "y": 227
+        },
+        "fullTo": {
+          "x": 7.787827868852453,
+          "y": 227
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "klein",
+      "track": "VIJF-2",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": "romp",
+      "geometry": {
+        "labels": {
+          "en": "Small",
+          "nl": "Klein"
+        },
+        "widthCm": 115,
+        "heightCm": 230,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": 13,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": false
+          },
+          "to": {
+            "band": "zuid",
+            "value": 42.278,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": false
+          }
+        }
+      },
+      "rompPart": null
+    },
+    {
+      "table": "klein",
+      "track": "ZES",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": "been",
+      "geometry": {
+        "labels": {
+          "en": "Small",
+          "nl": "Klein"
+        },
+        "widthCm": 115,
+        "heightCm": 230,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": 30,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "L51"
+            },
+            "confirmedBy": "Kruin"
+          },
+          "to": {
+            "band": "zuid",
+            "value": 30,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "O51"
+            },
+            "confirmedBy": "Kruin"
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 112,
+          "y": 106.25652741514361
+        },
+        "to": {
+          "x": 36.55995106035889,
+          "y": 227
+        },
+        "fullTo": {
+          "x": 36.55995106035889,
+          "y": 227
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "klein",
+      "track": "ZES+1",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": null,
+      "geometry": {
+        "labels": {
+          "en": "Small",
+          "nl": "Klein"
+        },
+        "widthCm": 115,
+        "heightCm": 230,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": 32,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "L52"
+            },
+            "confirmedBy": "Kruin"
+          },
+          "to": {
+            "band": "zuid",
+            "value": 28,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "O52"
+            },
+            "confirmedBy": "Kruin"
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 112,
+          "y": 112.48611111111111
+        },
+        "to": {
+          "x": 42.12711864406781,
+          "y": 227
+        },
+        "fullTo": {
+          "x": 42.12711864406781,
+          "y": 227
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "klein",
+      "track": "ZES+2",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": null,
+      "geometry": {
+        "labels": {
+          "en": "Small",
+          "nl": "Klein"
+        },
+        "widthCm": 115,
+        "heightCm": 230,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": 35,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "L53"
+            },
+            "confirmedBy": "Kruin"
+          },
+          "to": {
+            "band": "zuid",
+            "value": 27,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "O53"
+            },
+            "confirmedBy": "Kruin"
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 112,
+          "y": 120.54967718794835
+        },
+        "to": {
+          "x": 45.21703420342033,
+          "y": 227
+        },
+        "fullTo": {
+          "x": 45.21703420342033,
+          "y": 227
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "klein",
+      "track": "ZES-1",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": null,
+      "geometry": {
+        "labels": {
+          "en": "Small",
+          "nl": "Klein"
+        },
+        "widthCm": 115,
+        "heightCm": 230,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": 28,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "L49"
+            },
+            "confirmedBy": "Kruin"
+          },
+          "to": {
+            "band": "zuid",
+            "value": 31,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "O49"
+            },
+            "confirmedBy": "Kruin"
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 112,
+          "y": 100.65209125475286
+        },
+        "to": {
+          "x": 33.62853773584905,
+          "y": 227
+        },
+        "fullTo": {
+          "x": 33.62853773584905,
+          "y": 227
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "klein",
+      "track": "ZES-2",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": null,
+      "geometry": {
+        "labels": {
+          "en": "Small",
+          "nl": "Klein"
+        },
+        "widthCm": 115,
+        "heightCm": 230,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": 22,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "L48"
+            },
+            "confirmedBy": "Kruin"
+          },
+          "to": {
+            "band": "zuid",
+            "value": 32,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=89506246",
+              "tab": "Klein-Ingespeeld",
+              "cell": "O48"
+            },
+            "confirmedBy": "Kruin"
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 112,
+          "y": 84.95566502463055
+        },
+        "to": {
+          "x": 30.198581560283685,
+          "y": 227
+        },
+        "fullTo": {
+          "x": 30.198581560283685,
+          "y": 227
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "klein",
+      "track": "ZEVEN",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": "been",
+      "geometry": {
+        "labels": {
+          "en": "Small",
+          "nl": "Klein"
+        },
+        "widthCm": 115,
+        "heightCm": 230,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 35
+          },
+          "to": {
+            "band": "zuid",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 23
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 112,
+          "y": 123.57954545454545
+        },
+        "to": {
+          "x": 55.68193069306931,
+          "y": 227
+        },
+        "fullTo": {
+          "x": 55.68193069306931,
+          "y": 227
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "klein",
+      "track": "ZEVEN+1",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": null,
+      "geometry": {
+        "labels": {
+          "en": "Small",
+          "nl": "Klein"
+        },
+        "widthCm": 115,
+        "heightCm": 230,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 39
+          },
+          "to": {
+            "band": "zuid",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 17.861
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 112,
+          "y": 138.2906152488789
+        },
+        "to": {
+          "x": 69.62120252698723,
+          "y": 227
+        },
+        "fullTo": {
+          "x": 69.62120252698723,
+          "y": 227
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "klein",
+      "track": "ZEVEN-1",
+      "actualPattern": "?",
+      "excluded": true,
+      "unavailable": "kop",
+      "geometry": {
+        "labels": {
+          "en": "Small",
+          "nl": "Klein"
+        },
+        "widthCm": 115,
+        "heightCm": 230,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 31
+          },
+          "to": {
+            "band": "zuid",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 22.14
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 112,
+          "y": 114.82046495335088
+        },
+        "to": {
+          "x": 57.4283395677473,
+          "y": 227
+        },
+        "fullTo": {
+          "x": 57.4283395677473,
+          "y": 227
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "klein",
+      "track": "ZEVEN-2",
+      "actualPattern": "?",
+      "excluded": true,
+      "unavailable": "kop",
+      "geometry": {
+        "labels": {
+          "en": "Small",
+          "nl": "Klein"
+        },
+        "widthCm": 115,
+        "heightCm": 230,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 26
+          },
+          "to": {
+            "band": "zuid",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 24.278
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 112,
+          "y": 100.71966553908139
+        },
+        "to": {
+          "x": 51.217385053110775,
+          "y": 227
+        },
+        "fullTo": {
+          "x": 51.217385053110775,
+          "y": 227
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "groot",
+      "track": "ACHT",
+      "actualPattern": "?",
+      "excluded": true,
+      "unavailable": "kop",
+      "geometry": {
+        "labels": {
+          "en": "Large",
+          "nl": "Groot"
+        },
+        "widthCm": 142,
+        "heightCm": 284,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": 48,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=1691958707",
+              "tab": "Raedthuys-Ingespeeld",
+              "cell": "M62"
+            },
+            "confirmedBy": "Kruin"
+          },
+          "to": {
+            "band": "zuid",
+            "value": 18,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=1691958707",
+              "tab": "Raedthuys-Ingespeeld",
+              "cell": "O62"
+            },
+            "confirmedBy": "Kruin"
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 139,
+          "y": 191.36389645776566
+        },
+        "to": {
+          "x": 85.55329000812348,
+          "y": 281
+        },
+        "fullTo": {
+          "x": 85.55329000812348,
+          "y": 281
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "groot",
+      "track": "ACHT-1",
+      "actualPattern": "?",
+      "excluded": true,
+      "unavailable": "kop",
+      "geometry": {
+        "labels": {
+          "en": "Large",
+          "nl": "Groot"
+        },
+        "widthCm": 142,
+        "heightCm": 284,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 44
+          },
+          "to": {
+            "band": "zuid",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 20.599
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 139,
+          "y": 176.97119372791644
+        },
+        "to": {
+          "x": 76.39598718135471,
+          "y": 281
+        },
+        "fullTo": {
+          "x": 76.39598718135471,
+          "y": 281
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "groot",
+      "track": "ACHT-2",
+      "actualPattern": "?",
+      "excluded": true,
+      "unavailable": "kop",
+      "geometry": {
+        "labels": {
+          "en": "Large",
+          "nl": "Groot"
+        },
+        "widthCm": 142,
+        "heightCm": 284,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 39
+          },
+          "to": {
+            "band": "zuid",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 23.197
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 139,
+          "y": 159.55112918599858
+        },
+        "to": {
+          "x": 67.0554669945179,
+          "y": 281
+        },
+        "fullTo": {
+          "x": 67.0554669945179,
+          "y": 281
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "groot",
+      "track": "NEGEN",
+      "actualPattern": "?",
+      "excluded": true,
+      "unavailable": "kop",
+      "geometry": {
+        "labels": {
+          "en": "Large",
+          "nl": "Groot"
+        },
+        "widthCm": 142,
+        "heightCm": 284,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "calculationBasis": "negen_extrapolation",
+            "referenceTracks": [
+              "ZEVEN",
+              "ACHT"
+            ],
+            "source": "estimate",
+            "status": "calculated",
+            "value": 59
+          },
+          "to": {
+            "band": "zuid",
+            "calculationBasis": "negen_extrapolation",
+            "referenceTracks": [
+              "ZEVEN",
+              "ACHT"
+            ],
+            "source": "estimate",
+            "status": "calculated",
+            "value": 14
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 139,
+          "y": 227.19704391891892
+        },
+        "to": {
+          "x": 101.10428316478287,
+          "y": 281
+        },
+        "fullTo": {
+          "x": 101.10428316478287,
+          "y": 281
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "groot",
+      "track": "NEGEN-1",
+      "actualPattern": "?",
+      "excluded": true,
+      "unavailable": "kop",
+      "geometry": {
+        "labels": {
+          "en": "Large",
+          "nl": "Groot"
+        },
+        "widthCm": 142,
+        "heightCm": 284,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "zuid",
+            "source": "automatic",
+            "status": "approved",
+            "value": null
+          }
+        }
+      },
+      "rompPart": null
+    },
+    {
+      "table": "groot",
+      "track": "NEGEN-2",
+      "actualPattern": "?",
+      "excluded": true,
+      "unavailable": "kop",
+      "geometry": {
+        "labels": {
+          "en": "Large",
+          "nl": "Groot"
+        },
+        "widthCm": 142,
+        "heightCm": 284,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "zuid",
+            "source": "automatic",
+            "status": "approved",
+            "value": null
+          }
+        }
+      },
+      "rompPart": null
+    },
+    {
+      "table": "groot",
+      "track": "VIER",
+      "actualPattern": "?",
+      "excluded": true,
+      "unavailable": "kop",
+      "geometry": {
+        "labels": {
+          "en": "Large",
+          "nl": "Groot"
+        },
+        "widthCm": 142,
+        "heightCm": 284,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "west",
+            "value": 10,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=1691958707",
+              "tab": "Raedthuys-Ingespeeld",
+              "cell": "N35"
+            },
+            "confirmedBy": "Kruin",
+            "sheetPoint": {
+              "band": "west",
+              "value": 70,
+              "zero": "noord"
+            },
+            "numberingConversion": "80 - sheetValue"
+          }
+        }
+      },
+      "rompPart": null
+    },
+    {
+      "table": "groot",
+      "track": "VIER+1",
+      "actualPattern": "?",
+      "excluded": true,
+      "unavailable": "kop",
+      "geometry": {
+        "labels": {
+          "en": "Large",
+          "nl": "Groot"
+        },
+        "widthCm": 142,
+        "heightCm": 284,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": null
+          },
+          "to": {
+            "band": "west",
+            "value": null
+          }
+        }
+      },
+      "rompPart": null
+    },
+    {
+      "table": "groot",
+      "track": "VIER+2",
+      "actualPattern": "?",
+      "excluded": true,
+      "unavailable": "kop",
+      "geometry": {
+        "labels": {
+          "en": "Large",
+          "nl": "Groot"
+        },
+        "widthCm": 142,
+        "heightCm": 284,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": null
+          },
+          "to": {
+            "band": "west",
+            "value": null
+          }
+        }
+      },
+      "rompPart": null
+    },
+    {
+      "table": "groot",
+      "track": "VIER+3",
+      "actualPattern": "?",
+      "excluded": true,
+      "unavailable": "kop",
+      "geometry": {
+        "labels": {
+          "en": "Large",
+          "nl": "Groot"
+        },
+        "widthCm": 142,
+        "heightCm": 284,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": null
+          },
+          "to": {
+            "band": "west",
+            "value": null
+          }
+        }
+      },
+      "rompPart": null
+    },
+    {
+      "table": "groot",
+      "track": "VIER-1",
+      "actualPattern": "?",
+      "excluded": true,
+      "unavailable": "kop",
+      "geometry": {
+        "labels": {
+          "en": "Large",
+          "nl": "Groot"
+        },
+        "widthCm": 142,
+        "heightCm": 284,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "zuid",
+            "source": "automatic",
+            "status": "approved",
+            "value": null
+          }
+        }
+      },
+      "rompPart": null
+    },
+    {
+      "table": "groot",
+      "track": "VIER-2",
+      "actualPattern": "?",
+      "excluded": true,
+      "unavailable": "kop",
+      "geometry": {
+        "labels": {
+          "en": "Large",
+          "nl": "Groot"
+        },
+        "widthCm": 142,
+        "heightCm": 284,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "source": "automatic",
+            "status": "calculated",
+            "value": null
+          },
+          "to": {
+            "band": "zuid",
+            "source": "automatic",
+            "status": "approved",
+            "value": null
+          }
+        }
+      },
+      "rompPart": null
+    },
+    {
+      "table": "groot",
+      "track": "VIJF",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": "been",
+      "geometry": {
+        "labels": {
+          "en": "Large",
+          "nl": "Groot"
+        },
+        "widthCm": 142,
+        "heightCm": 284,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": 20,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=1691958707",
+              "tab": "Raedthuys-Ingespeeld",
+              "cell": "M43"
+            },
+            "confirmedBy": "Kruin"
+          },
+          "to": {
+            "band": "zuid",
+            "value": 36,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=1691958707",
+              "tab": "Raedthuys-Ingespeeld",
+              "cell": "N43"
+            },
+            "confirmedBy": "Kruin"
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 139,
+          "y": 91.25673707210487
+        },
+        "to": {
+          "x": 21.913483146067414,
+          "y": 281
+        },
+        "fullTo": {
+          "x": 21.913483146067414,
+          "y": 281
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "groot",
+      "track": "VIJF+1",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": null,
+      "geometry": {
+        "labels": {
+          "en": "Large",
+          "nl": "Groot"
+        },
+        "widthCm": 142,
+        "heightCm": 284,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 24
+          },
+          "to": {
+            "band": "zuid",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 33.401
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 139,
+          "y": 105.53011500032599
+        },
+        "to": {
+          "x": 31.112092702832435,
+          "y": 281
+        },
+        "fullTo": {
+          "x": 31.112092702832435,
+          "y": 281
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "groot",
+      "track": "VIJF+2",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": null,
+      "geometry": {
+        "labels": {
+          "en": "Large",
+          "nl": "Groot"
+        },
+        "widthCm": 142,
+        "heightCm": 284,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 28
+          },
+          "to": {
+            "band": "zuid",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 30.803
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 139,
+          "y": 119.81427623660451
+        },
+        "to": {
+          "x": 40.303307367336416,
+          "y": 281
+        },
+        "fullTo": {
+          "x": 40.303307367336416,
+          "y": 281
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "groot",
+      "track": "VIJF+3",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": null,
+      "geometry": {
+        "labels": {
+          "en": "Large",
+          "nl": "Groot"
+        },
+        "widthCm": 142,
+        "heightCm": 284,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 33
+          },
+          "to": {
+            "band": "zuid",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 28.204
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 139,
+          "y": 137.2584705749278
+        },
+        "to": {
+          "x": 49.6461572441168,
+          "y": 281
+        },
+        "fullTo": {
+          "x": 49.6461572441168,
+          "y": 281
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "groot",
+      "track": "VIJF-1",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": null,
+      "geometry": {
+        "labels": {
+          "en": "Large",
+          "nl": "Groot"
+        },
+        "widthCm": 142,
+        "heightCm": 284,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 16
+          },
+          "to": {
+            "band": "zuid",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 38.599
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 139,
+          "y": 76.99260003910558
+        },
+        "to": {
+          "x": 12.711533206590632,
+          "y": 281
+        },
+        "fullTo": {
+          "x": 12.711533206590632,
+          "y": 281
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "groot",
+      "track": "VIJF-2",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": null,
+      "geometry": {
+        "labels": {
+          "en": "Large",
+          "nl": "Groot"
+        },
+        "widthCm": 142,
+        "heightCm": 284,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 12
+          },
+          "to": {
+            "band": "zuid",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 41.197
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 139,
+          "y": 62.7365206339545
+        },
+        "to": {
+          "x": 3.5101831805500217,
+          "y": 281
+        },
+        "fullTo": {
+          "x": 3.5101831805500217,
+          "y": 281
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "groot",
+      "track": "ZES",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": "been",
+      "geometry": {
+        "labels": {
+          "en": "Large",
+          "nl": "Groot"
+        },
+        "widthCm": 142,
+        "heightCm": 284,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": 30,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=1691958707",
+              "tab": "Raedthuys-Ingespeeld",
+              "cell": "M51"
+            },
+            "confirmedBy": "Kruin"
+          },
+          "to": {
+            "band": "zuid",
+            "value": 28,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=1691958707",
+              "tab": "Raedthuys-Ingespeeld",
+              "cell": "N51"
+            },
+            "confirmedBy": "Kruin"
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 139,
+          "y": 127.96464646464646
+        },
+        "to": {
+          "x": 49.87941176470589,
+          "y": 281
+        },
+        "fullTo": {
+          "x": 49.87941176470589,
+          "y": 281
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "groot",
+      "track": "ZES+1",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": null,
+      "geometry": {
+        "labels": {
+          "en": "Large",
+          "nl": "Groot"
+        },
+        "widthCm": 142,
+        "heightCm": 284,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 34
+          },
+          "to": {
+            "band": "zuid",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 25.401
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 139,
+          "y": 142.37074414425894
+        },
+        "to": {
+          "x": 59.03663156828704,
+          "y": 281
+        },
+        "fullTo": {
+          "x": 59.03663156828704,
+          "y": 281
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "groot",
+      "track": "ZES+2",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": null,
+      "geometry": {
+        "labels": {
+          "en": "Large",
+          "nl": "Groot"
+        },
+        "widthCm": 142,
+        "heightCm": 284,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 39
+          },
+          "to": {
+            "band": "zuid",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 22.803
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 139,
+          "y": 159.87743031697394
+        },
+        "to": {
+          "x": 68.34140498226378,
+          "y": 281
+        },
+        "fullTo": {
+          "x": 68.34140498226378,
+          "y": 281
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "groot",
+      "track": "ZES-1",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": null,
+      "geometry": {
+        "labels": {
+          "en": "Large",
+          "nl": "Groot"
+        },
+        "widthCm": 142,
+        "heightCm": 284,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 26
+          },
+          "to": {
+            "band": "zuid",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 30.599
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 139,
+          "y": 113.59074394430714
+        },
+        "to": {
+          "x": 40.712419905566605,
+          "y": 281
+        },
+        "fullTo": {
+          "x": 40.712419905566605,
+          "y": 281
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "groot",
+      "track": "ZES-2",
+      "actualPattern": "LKL",
+      "excluded": false,
+      "unavailable": null,
+      "geometry": {
+        "labels": {
+          "en": "Large",
+          "nl": "Groot"
+        },
+        "widthCm": 142,
+        "heightCm": 284,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 21
+          },
+          "to": {
+            "band": "zuid",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 33.197
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 139,
+          "y": 96.04107945976952
+        },
+        "to": {
+          "x": 31.42110843799954,
+          "y": 281
+        },
+        "fullTo": {
+          "x": 31.42110843799954,
+          "y": 281
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "groot",
+      "track": "ZEVEN",
+      "actualPattern": "?",
+      "excluded": true,
+      "unavailable": "kop",
+      "geometry": {
+        "labels": {
+          "en": "Large",
+          "nl": "Groot"
+        },
+        "widthCm": 142,
+        "heightCm": 284,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "value": 37,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=1691958707",
+              "tab": "Raedthuys-Ingespeeld",
+              "cell": "M57"
+            },
+            "confirmedBy": "Kruin"
+          },
+          "to": {
+            "band": "zuid",
+            "value": 22,
+            "status": "approved",
+            "source": "kruin_sqlite",
+            "measurement": true,
+            "measurementKind": "stipwaarde",
+            "sourceRef": {
+              "url": "https://docs.google.com/spreadsheets/d/1CKztHLnXb4BX_3fngsVrye9j1ynxPRpGB3YRG22J0xI/edit?usp=drive_link&gid=1691958707",
+              "tab": "Raedthuys-Ingespeeld",
+              "cell": "N57"
+            },
+            "confirmedBy": "Kruin"
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 139,
+          "y": 154.48784246575343
+        },
+        "to": {
+          "x": 70.65300647548565,
+          "y": 281
+        },
+        "fullTo": {
+          "x": 70.65300647548565,
+          "y": 281
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "groot",
+      "track": "ZEVEN+1",
+      "actualPattern": "?",
+      "excluded": true,
+      "unavailable": "kop",
+      "geometry": {
+        "labels": {
+          "en": "Large",
+          "nl": "Groot"
+        },
+        "widthCm": 142,
+        "heightCm": 284,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 42
+          },
+          "to": {
+            "band": "zuid",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 19.401
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 139,
+          "y": 172.1307291171575
+        },
+        "to": {
+          "x": 79.91086395429362,
+          "y": 281
+        },
+        "fullTo": {
+          "x": 79.91086395429362,
+          "y": 281
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "groot",
+      "track": "ZEVEN-1",
+      "actualPattern": "?",
+      "excluded": true,
+      "unavailable": "kop",
+      "geometry": {
+        "labels": {
+          "en": "Large",
+          "nl": "Groot"
+        },
+        "widthCm": 142,
+        "heightCm": 284,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 32
+          },
+          "to": {
+            "band": "zuid",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 24.599
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 139,
+          "y": 136.82454246747662
+        },
+        "to": {
+          "x": 61.401346692607,
+          "y": 281
+        },
+        "fullTo": {
+          "x": 61.401346692607,
+          "y": 281
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    },
+    {
+      "table": "groot",
+      "track": "ZEVEN-2",
+      "actualPattern": "?",
+      "excluded": true,
+      "unavailable": "kop",
+      "geometry": {
+        "labels": {
+          "en": "Large",
+          "nl": "Groot"
+        },
+        "widthCm": 142,
+        "heightCm": 284,
+        "dotOffsetCm": 9.5,
+        "inset": 3,
+        "startAcquitOffset": 0
+      },
+      "radiusCm": 3.075,
+      "route": {
+        "romp": {
+          "from": {
+            "band": "oost",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 27
+          },
+          "to": {
+            "band": "zuid",
+            "measurement": false,
+            "source": "kruin_sqlite",
+            "status": "approved",
+            "value": 27.197
+          }
+        }
+      },
+      "rompPart": {
+        "key": "romp",
+        "from": {
+          "x": 139,
+          "y": 119.1469367563309
+        },
+        "to": {
+          "x": 52.15754033645333,
+          "y": 281
+        },
+        "fullTo": {
+          "x": 52.15754033645333,
+          "y": 281
+        },
+        "fraction": 1,
+        "band": "zuid"
+      }
+    }
+  ]
+}

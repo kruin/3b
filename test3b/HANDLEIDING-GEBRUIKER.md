@@ -1,4 +1,4 @@
-# 3B v208-r131 — User-werkwijze
+# 3B v208-r132 — User-werkwijze
 
 # De Waaier — Van Top tot Teen
 
@@ -378,3 +378,9 @@ Karkas staat onder Uitleg → H1 en via de begripslinks. De losse les vervalt; d
 ## VIJF en parallellen op Zuid · v208-r131
 
 Aankomsten op Zuid toont direct de twee rijen met aankomstballen: Klein vrijwel aansluitend, Groot met iets meer ruimte. De rijen staan op dezelfde fysieke schaal en gebruiken de bestaande meetwaarden en balbreedte. Met Eén aankomst open je het bandcontact-detail; Uitleg toont V/A/R. De vergelijking staat nu voorop, ook op mobiel.
+
+## Aankomstvoorstellen standaard zichtbaar · v208-r132
+
+VIJF−2 op Klein staat nu als gestippelde hoekprojectie bij de Zuidband-rij. De bestaande V/A blijven behouden; de verlenging komt bij de hoek uit en West wordt eerst geraakt. Test dit voorstel met jouw afstoot op jouw tafel. Berekende voorstellen tellen niet als nieuwe metingen en wijzigen geen tafelgegevens.
+
+Inventaris VIER–NEGEN bevat per tafel de reeks −2 t/m +3. Bestaande Rompwaarden mogen een aankomst tonen terwijl de aanloop nog onvolledig is. De inventaris onderscheidt bron, voorstel, hoekzone en nog aanvullen. Kleine verschillen tussen rekenmodellen zijn geen gemeten fysieke foutmarge. Kopmeting en profielmal staan als later onderwerp vermeld.

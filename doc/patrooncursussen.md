@@ -79,3 +79,7 @@ De uitleg van het verschil komt later. VIER is daarbij een bijzonder geval en kr
 Karkas is uit de cursusvolgorde gehaald. De uitleg, voorbeelden, directe links en begripslinks blijven beschikbaar onder Uitleg → H1. De lessen na Romp en Neus lopen verder met De Parallel van VIJF. Lesnummers schuiven mee; opgeslagen voortgang gebruikt interne les-ID’s. Wie bij Karkas was gebleven gaat verder bij Parallel; de oorspronkelijke voortgang krijgt eerst een lokale reservekopie met Nederlandse datum/tijd, tafel, spoor en versie. Meetgegevens veranderen niet.
 
 Mogelijke volgende vereenvoudigingen, nog niet uitgevoerd: Vergelijk Klein/Groot, uitgebreide Neusvarianten en BIBU/BUBI als verdieping onder Uitleg. Concrete oefeningen in waarnemen, kiezen en uitvoeren blijven in de cursus.
+
+## Later · Kopmeting en profielmal
+
+Kopmeting blijft een belangrijk later onderwerp. De huidige uitbreiding behandelt de aankomsten uit Rompwaarden en herkenbare rekenvoorstellen. Het meten van de Kop en de werkwijze met de profielmal worden hier niet verder uitgewerkt.
