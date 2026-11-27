@@ -1,4 +1,4 @@
-# 3B v208-r130 — User-werkwijze
+# 3B v208-r131 — User-werkwijze
 
 # De Waaier — Van Top tot Teen
 
@@ -373,3 +373,7 @@ De opening van Zelf luidt: **Meet jouw LKL-patroon. Meten is weten.** Eigen tafe
 ## Karkas bij Uitleg · v208-r130
 
 Karkas staat onder Uitleg → H1 en via de begripslinks. De losse les vervalt; de cursus loopt van Romp en Neus door naar Parallel. De volgende lessen krijgen daardoor een lager lesnummer. Bij opgeslagen Karkas-voortgang bewaart de app eerst een benoemde lokale reservekopie en hervat bij Parallel. De tafelmetingen en JSON-indeling blijven gelijk.
+
+## VIJF en parallellen op Zuid · v208-r131
+
+Aankomsten op Zuid toont direct de twee rijen met aankomstballen: Klein vrijwel aansluitend, Groot met iets meer ruimte. De rijen staan op dezelfde fysieke schaal en gebruiken de bestaande meetwaarden en balbreedte. Met Eén aankomst open je het bandcontact-detail; Uitleg toont V/A/R. De vergelijking staat nu voorop, ook op mobiel.

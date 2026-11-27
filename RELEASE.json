@@ -1,12 +1,12 @@
 {
-  "version": "v208-r130",
-  "date": "2026-11-26",
+  "version": "v208-r131",
+  "date": "2026-11-27",
   "channel": "production",
   "compatibilityBase": "v208-r15",
   "name": "De Waaier",
   "measurementRevision": "af0db7f79b00c741b35ed19da2437fdbd629b07c079bcc5eecfc9d9ecc8a447f",
-  "appSourceCommit": "cef50de07801dff0262e8186d8035feb0239b0d1",
+  "appSourceCommit": "2c9518bd48557a956eb001332a8efccc87392710",
   "measurementReference": "test-Kruin",
   "measurementSourceDbSha": "6345a0c518103237aa7803f840b7485227bdc6c6",
-  "testVersion": "v208-r130"
+  "testVersion": "v208-r131"
 }

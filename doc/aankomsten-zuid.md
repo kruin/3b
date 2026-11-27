@@ -47,3 +47,7 @@ De voorafgaande sheet/referentie-combinatie is [apart bewaard](../meetgegevens/k
 De cursus leest de bestaande bronlijnen, balmaat, effectieve bandmiddelpuntlijn en stiplijnafstand. De zichtbare detailbeelden blijven op beide assen gelijk geschaald. **Gemeten**, **berekend** en **referentie** staan bij de eigen lijnwaarden.
 
 R is hier een afgeleide van de getoonde meetbasis. In de zelfstandige les [Lijnen · V, R en A](lijnen-vra.md) staat ook de omgekeerde meetroute: bij de Kop kan een waargenomen R op Noord het meetanker zijn waaruit de lijnwaarden volgen.
+
+## Zuidband-rijen direct zichtbaar · v208-r131
+
+Aankomsten op Zuid opent met Klein en Groot naast/onder elkaar als hoofdafbeelding. VIJF en de parallellen liggen op Klein vrijwel aansluitend; op Groot iets uit elkaar. De beelden gebruiken dezelfde fysieke schaal, gemeten middelpunten en echte balbreedte. Via Eén aankomst blijft het bandcontact-detail bereikbaar; Uitleg toont de lijnwaarden. Er zijn geen meetwaarden of ballen verschoven om de rijen netjes te maken.
